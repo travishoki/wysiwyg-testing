@@ -1,13 +1,8 @@
 import React from "react";
 
-import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import { ContentEditable } from "@lexical/react/LexicalContentEditable";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
-import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 
-import { OnChangePlugin } from "./plugins/OnChangePlugin.ts";
-import { Placeholder } from "./Placeholder/Placeholder.tsx";
+import { Editor } from "./Editor/Editor.tsx";
 import "./Composer.css";
 
 const theme = {
@@ -28,18 +23,10 @@ const initialConfig = {
 };
 
 export const Composer = () => {
-  const onChange = () => {};
-
   return (
     <div className="editor-wrapper">
       <LexicalComposer initialConfig={initialConfig}>
-        <RichTextPlugin
-          contentEditable={<ContentEditable className="content-editable" />}
-          placeholder={<Placeholder />}
-          ErrorBoundary={LexicalErrorBoundary}
-        />
-        <HistoryPlugin />
-        <OnChangePlugin onChange={onChange} />
+        <Editor />
       </LexicalComposer>
     </div>
   );
