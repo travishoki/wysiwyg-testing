@@ -2,7 +2,7 @@ import React from "react";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 
-import { Editor } from "./Editor.tsx";
+import { Editor } from "./Editor";
 import "./App.css";
 
 const theme = {

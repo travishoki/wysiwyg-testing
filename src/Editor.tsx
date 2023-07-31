@@ -5,8 +5,8 @@ import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 
-import { OnChangePlugin } from "./plugins/OnChangePlugin.ts";
-import { Placeholder } from "./Placeholder/Placeholder.tsx";
+import { OnChangePlugin } from "./plugins/OnChangePlugin";
+import { Placeholder } from "./Placeholder/Placeholder";
 
 export const Editor = () => {
   const onChange = () => {};

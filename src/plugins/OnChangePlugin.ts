@@ -1,7 +1,12 @@
 import { useEffect } from "react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { EditorState } from "lexical";
 
-export function OnChangePlugin({ onChange }) {
+type OnChangePluginType = {
+  onChange: (editorState: EditorState) => void;
+};
+
+export function OnChangePlugin({ onChange }: OnChangePluginType): null {
   const [editor] = useLexicalComposerContext();
 
   useEffect(() => {
