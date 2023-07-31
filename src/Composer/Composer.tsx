@@ -4,6 +4,7 @@ import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 
 const theme = {
   // Theme styling goes here
@@ -31,6 +32,7 @@ export const Composer = () => {
           placeholder={<div className="placeholder">Enter some text...</div>}
           ErrorBoundary={LexicalErrorBoundary}
         />
+        <HistoryPlugin />
       </LexicalComposer>
     </div>
   );
