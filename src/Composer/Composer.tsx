@@ -24,12 +24,14 @@ const initialConfig = {
 
 export const Composer = () => {
   return (
-    <LexicalComposer initialConfig={initialConfig}>
-      <PlainTextPlugin
-        contentEditable={<ContentEditable />}
-        placeholder={<div>Enter some text...</div>}
-        ErrorBoundary={LexicalErrorBoundary}
-      />
-    </LexicalComposer>
+    <div className="editor-wrapper">
+      <LexicalComposer initialConfig={initialConfig}>
+        <PlainTextPlugin
+          contentEditable={<ContentEditable className="content-editable" />}
+          placeholder={<div className="placeholder">Enter some text...</div>}
+          ErrorBoundary={LexicalErrorBoundary}
+        />
+      </LexicalComposer>
+    </div>
   );
 };
