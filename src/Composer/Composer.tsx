@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
+
+import { OnChangePlugin } from "./plugins/OnChangePlugin.ts";
 import { Placeholder } from "./Placeholder/Placeholder.tsx";
 import "./Composer.css";
 
@@ -26,18 +27,6 @@ const initialConfig = {
   onError,
 };
 
-function MyOnChangePlugin({ onChange }) {
-  const [editor] = useLexicalComposerContext();
-
-  useEffect(() => {
-    return editor.registerUpdateListener((editorState) => {
-      onChange(editorState);
-    });
-  }, [onChange, editor]);
-
-  return null;
-}
-
 export const Composer = () => {
   const onChange = () => {};
 
@@ -50,7 +39,7 @@ export const Composer = () => {
           ErrorBoundary={LexicalErrorBoundary}
         />
         <HistoryPlugin />
-        <MyOnChangePlugin onChange={onChange} />
+        <OnChangePlugin onChange={onChange} />
       </LexicalComposer>
     </div>
   );
