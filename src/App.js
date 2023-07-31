@@ -1,10 +1,9 @@
 import "./App.css";
+import { Composer } from "./Composer/Composer.tsx";
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <p>Hoki was Here</p>
-    </header>
+  <div className="app">
+    <Composer />
   </div>
 );
 
