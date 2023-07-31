@@ -8,21 +8,3 @@ body {
   max-width: 1200px;
   padding: 20px;
 }
-
-.editor-wrapper {
-  position: relative;
-}
-
-.content-editable {
-  border-radius: 4px;
-  border: 1px solid #ffffff;
-  height: 500px;
-  padding: 0 15px;
-  max-width: 100%;
-}
-
-.placeholder {
-  padding-left: 16px;
-  position: absolute;
-  top: 16px;
-}

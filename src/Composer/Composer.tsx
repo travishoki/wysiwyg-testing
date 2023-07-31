@@ -7,6 +7,7 @@ import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { Placeholder } from "./Placeholder/Placeholder.tsx";
+import "./Composer.css";
 
 const theme = {
   // Theme styling goes here
