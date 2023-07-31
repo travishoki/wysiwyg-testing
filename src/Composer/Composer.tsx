@@ -18,7 +18,7 @@ function onError(error: Error) {
 }
 
 const initialConfig = {
-  namespace: "MyEditor",
+  namespace: "document-composer",
   theme,
   onError,
 };
