@@ -6,6 +6,7 @@ import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
+import { Placeholder } from "./Placeholder/Placeholder.tsx";
 
 const theme = {
   // Theme styling goes here
@@ -44,7 +45,7 @@ export const Composer = () => {
       <LexicalComposer initialConfig={initialConfig}>
         <RichTextPlugin
           contentEditable={<ContentEditable className="content-editable" />}
-          placeholder={<div className="placeholder">Enter some text...</div>}
+          placeholder={<Placeholder />}
           ErrorBoundary={LexicalErrorBoundary}
         />
         <HistoryPlugin />
