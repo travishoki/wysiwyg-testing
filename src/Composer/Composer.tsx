@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
@@ -42,7 +42,7 @@ export const Composer = () => {
   return (
     <div className="editor-wrapper">
       <LexicalComposer initialConfig={initialConfig}>
-        <PlainTextPlugin
+        <RichTextPlugin
           contentEditable={<ContentEditable className="content-editable" />}
           placeholder={<div className="placeholder">Enter some text...</div>}
           ErrorBoundary={LexicalErrorBoundary}
