@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 
 const theme = {
@@ -23,7 +24,21 @@ const initialConfig = {
   onError,
 };
 
+function MyOnChangePlugin({ onChange }) {
+  const [editor] = useLexicalComposerContext();
+
+  useEffect(() => {
+    return editor.registerUpdateListener((editorState) => {
+      onChange(editorState);
+    });
+  }, [onChange, editor]);
+
+  return null;
+}
+
 export const Composer = () => {
+  const onChange = () => {};
+
   return (
     <div className="editor-wrapper">
       <LexicalComposer initialConfig={initialConfig}>
@@ -33,6 +48,7 @@ export const Composer = () => {
           ErrorBoundary={LexicalErrorBoundary}
         />
         <HistoryPlugin />
+        <MyOnChangePlugin onChange={onChange} />
       </LexicalComposer>
     </div>
   );
