@@ -6,6 +6,7 @@ import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 
 import { Placeholder } from "./Placeholder/Placeholder";
+import ToolbarPlugin from "./plugins/ToolbarPlugin";
 
 export const Editor = () => {
   return (
@@ -16,6 +17,7 @@ export const Editor = () => {
         ErrorBoundary={LexicalErrorBoundary}
       />
       <HistoryPlugin />
+      <ToolbarPlugin />
     </>
   );
 };
