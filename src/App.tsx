@@ -1,6 +1,10 @@
 import React from "react";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import { SharedHistoryContext } from "./context/SharedHistoryContext";
+import { TableContext } from "./plugins/TablePlugin";
+import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext";
+import PlaygroundNodes from "./nodes/PlaygroundNodes";
 
 import Editor from "./Editor";
 import "./App.css";
@@ -20,13 +24,20 @@ const initialConfig = {
   namespace: "document-composer",
   theme,
   onError,
+  nodes: [...PlaygroundNodes],
 };
 
 export const App = () => {
   return (
     <div className="editor-wrapper">
       <LexicalComposer initialConfig={initialConfig}>
-        <Editor />
+        <SharedHistoryContext>
+          <TableContext>
+            <SharedAutocompleteContext>
+              <Editor />
+            </SharedAutocompleteContext>
+          </TableContext>
+        </SharedHistoryContext>
       </LexicalComposer>
     </div>
   );
