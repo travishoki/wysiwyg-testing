@@ -19,9 +19,9 @@ export type SettingName =
   | "emptyEditor"
   | "showTableOfContents"
   | "tableCellMerge"
-  | "tableCellBackgroundColor";
+  | "tableCellBackgroundColor"
 
-type Settings = Record<SettingName, boolean>;
+type Settings = Record<SettingName, boolean>
 
 export const DEFAULT_SETTINGS: Settings = {
   disableBeforeInput: false,
@@ -37,4 +37,4 @@ export const DEFAULT_SETTINGS: Settings = {
   showTreeView: true,
   tableCellBackgroundColor: true,
   tableCellMerge: true,
-};
+}

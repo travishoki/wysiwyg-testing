@@ -6,19 +6,19 @@
  *
  */
 
-import "./Input.css";
+import "./Input.css"
 
-import * as React from "react";
-import { HTMLInputTypeAttribute } from "react";
+import * as React from "react"
+import { HTMLInputTypeAttribute } from "react"
 
 type Props = Readonly<{
-  "data-test-id"?: string;
-  label: string;
-  onChange: (val: string) => void;
-  placeholder?: string;
-  value: string;
-  type?: HTMLInputTypeAttribute;
-}>;
+  "data-test-id"?: string
+  label: string
+  onChange: (val: string) => void
+  placeholder?: string
+  value: string
+  type?: HTMLInputTypeAttribute
+}>
 
 export default function TextInput({
   label,
@@ -37,10 +37,10 @@ export default function TextInput({
         placeholder={placeholder}
         value={value}
         onChange={(e) => {
-          onChange(e.target.value);
+          onChange(e.target.value)
         }}
         data-test-id={dataTestId}
       />
     </div>
-  );
+  )
 }

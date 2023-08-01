@@ -1,39 +1,39 @@
-import { execSync } from "child_process";
+import { execSync } from "child_process"
 
-export const log = console.log;
+export const log = console.log
 
 export const spacer = () => {
-  log("");
-};
+  log("")
+}
 
 export const trimExecSync = (cmd) => {
-  return execSync(cmd).toString().trim();
-};
+  return execSync(cmd).toString().trim()
+}
 
 export const organizeDeadCodeList = (list) => {
   const obj = {
     default: [],
     usedInModule: [],
     other: [],
-  };
+  }
 
-  const useInModuleStr = " (used in module)";
-  const defaultStr = " - default";
+  const useInModuleStr = " (used in module)"
+  const defaultStr = " - default"
 
   list.forEach((str) => {
     if (str.includes(useInModuleStr)) {
-      const thing = str.split(useInModuleStr)[0];
-      obj.usedInModule.push(thing);
+      const thing = str.split(useInModuleStr)[0]
+      obj.usedInModule.push(thing)
     } else if (str.includes(defaultStr)) {
-      const thing = str.split(defaultStr)[0];
-      obj.default.push(thing);
+      const thing = str.split(defaultStr)[0]
+      obj.default.push(thing)
     } else {
-      obj.other.push(str);
+      obj.other.push(str)
     }
-  });
+  })
 
-  return obj;
-};
+  return obj
+}
 
 // module.exports = {
 //   log,

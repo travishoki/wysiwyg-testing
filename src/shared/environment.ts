@@ -6,17 +6,16 @@
  *
  */
 
-import { CAN_USE_DOM } from "./canUseDOM";
+import { CAN_USE_DOM } from "./canUseDOM"
 
 declare global {
   interface Document {
-    documentMode?: unknown;
+    documentMode?: unknown
   }
 
   interface Window {
-    MSStream?: unknown;
+    MSStream?: unknown
   }
 }
 
-export const IS_APPLE: boolean =
-  CAN_USE_DOM && /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+export const IS_APPLE: boolean = CAN_USE_DOM && /Mac|iPod|iPhone|iPad/.test(navigator.platform)

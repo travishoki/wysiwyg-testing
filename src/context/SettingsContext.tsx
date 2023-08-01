@@ -6,25 +6,25 @@
  *
  */
 
-import type { SettingName } from "../appSettings";
+import type { SettingName } from "../appSettings"
 
-import * as React from "react";
-import { createContext, useContext } from "react";
+import * as React from "react"
+import { createContext, useContext } from "react"
 
-import { DEFAULT_SETTINGS } from "../appSettings";
+import { DEFAULT_SETTINGS } from "../appSettings"
 
 type SettingsContextShape = {
-  setOption: (name: SettingName, value: boolean) => void;
-  settings: Record<SettingName, boolean>;
-};
+  setOption: (name: SettingName, value: boolean) => void
+  settings: Record<SettingName, boolean>
+}
 
 const Context: React.Context<SettingsContextShape> = createContext({
   setOption: (name: SettingName, value: boolean) => {
-    return;
+    return
   },
   settings: DEFAULT_SETTINGS,
-});
+})
 
 export const useSettings = (): SettingsContextShape => {
-  return useContext(Context);
-};
+  return useContext(Context)
+}

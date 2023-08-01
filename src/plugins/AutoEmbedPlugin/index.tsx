@@ -12,34 +12,34 @@ import {
   EmbedMatchResult,
   LexicalAutoEmbedPlugin,
   URL_MATCHER,
-} from "@lexical/react/LexicalAutoEmbedPlugin";
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import { useMemo, useState } from "react";
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+} from "@lexical/react/LexicalAutoEmbedPlugin"
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
+import { useMemo, useState } from "react"
+import * as React from "react"
+import * as ReactDOM from "react-dom"
 
-import useModal from "../../hooks/useModal";
-import Button from "../../ui/Button";
-import { DialogActions } from "../../ui/Dialog";
+import useModal from "../../hooks/useModal"
+import Button from "../../ui/Button"
+import { DialogActions } from "../../ui/Dialog"
 
 interface PlaygroundEmbedConfig extends EmbedConfig {
   // Human readable name of the embeded content e.g. Tweet or Google Map.
-  contentName: string;
+  contentName: string
 
   // Icon for display.
-  icon?: JSX.Element;
+  icon?: JSX.Element
 
   // An example of a matching url https://twitter.com/jack/status/20
-  exampleUrl: string;
+  exampleUrl: string
 
   // For extra searching.
-  keywords: Array<string>;
+  keywords: Array<string>
 
   // Embed a Figma Project.
-  description?: string;
+  description?: string
 }
 
-const EmbedConfigs: PlaygroundEmbedConfig[] = [];
+const EmbedConfigs: PlaygroundEmbedConfig[] = []
 
 function AutoEmbedMenuItem({
   index,
@@ -48,15 +48,15 @@ function AutoEmbedMenuItem({
   onMouseEnter,
   option,
 }: {
-  index: number;
-  isSelected: boolean;
-  onClick: () => void;
-  onMouseEnter: () => void;
-  option: AutoEmbedOption;
+  index: number
+  isSelected: boolean
+  onClick: () => void
+  onMouseEnter: () => void
+  option: AutoEmbedOption
 }) {
-  let className = "item";
+  let className = "item"
   if (isSelected) {
-    className += " selected";
+    className += " selected"
   }
   return (
     <li
@@ -72,7 +72,7 @@ function AutoEmbedMenuItem({
     >
       <span className="text">{option.title}</span>
     </li>
-  );
+  )
 }
 
 function AutoEmbedMenu({
@@ -81,10 +81,10 @@ function AutoEmbedMenu({
   onOptionClick,
   onOptionMouseEnter,
 }: {
-  selectedItemIndex: number | null;
-  onOptionClick: (option: AutoEmbedOption, index: number) => void;
-  onOptionMouseEnter: (index: number) => void;
-  options: Array<AutoEmbedOption>;
+  selectedItemIndex: number | null
+  onOptionClick: (option: AutoEmbedOption, index: number) => void
+  onOptionMouseEnter: (index: number) => void
+  options: Array<AutoEmbedOption>
 }) {
   return (
     <div className="typeahead-popover">
@@ -101,53 +101,51 @@ function AutoEmbedMenu({
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
 const debounce = (callback: (text: string) => void, delay: number) => {
-  let timeoutId: number;
+  let timeoutId: number
   return (text: string) => {
-    window.clearTimeout(timeoutId);
+    window.clearTimeout(timeoutId)
     timeoutId = window.setTimeout(() => {
-      callback(text);
-    }, delay);
-  };
-};
+      callback(text)
+    }, delay)
+  }
+}
 
 function AutoEmbedDialog({
   embedConfig,
   onClose,
 }: {
-  embedConfig: PlaygroundEmbedConfig;
-  onClose: () => void;
+  embedConfig: PlaygroundEmbedConfig
+  onClose: () => void
 }): JSX.Element {
-  const [text, setText] = useState("");
-  const [editor] = useLexicalComposerContext();
-  const [embedResult, setEmbedResult] = useState<EmbedMatchResult | null>(null);
+  const [text, setText] = useState("")
+  const [editor] = useLexicalComposerContext()
+  const [embedResult, setEmbedResult] = useState<EmbedMatchResult | null>(null)
 
   const validateText = useMemo(
     () =>
       debounce((inputText: string) => {
-        const urlMatch = URL_MATCHER.exec(inputText);
+        const urlMatch = URL_MATCHER.exec(inputText)
         if (embedConfig != null && inputText != null && urlMatch != null) {
-          Promise.resolve(embedConfig.parseUrl(inputText)).then(
-            (parseResult) => {
-              setEmbedResult(parseResult);
-            }
-          );
+          Promise.resolve(embedConfig.parseUrl(inputText)).then((parseResult) => {
+            setEmbedResult(parseResult)
+          })
         } else if (embedResult != null) {
-          setEmbedResult(null);
+          setEmbedResult(null)
         }
       }, 200),
-    [embedConfig, embedResult]
-  );
+    [embedConfig, embedResult],
+  )
 
   const onClick = () => {
     if (embedResult != null) {
-      embedConfig.insertNode(editor, embedResult);
-      onClose();
+      embedConfig.insertNode(editor, embedResult)
+      onClose()
     }
-  };
+  }
 
   return (
     <div style={{ width: "600px" }}>
@@ -159,9 +157,9 @@ function AutoEmbedDialog({
           value={text}
           data-test-id={`${embedConfig.type}-embed-modal-url`}
           onChange={(e) => {
-            const { value } = e.target;
-            setText(value);
-            validateText(value);
+            const { value } = e.target
+            setText(value)
+            validateText(value)
           }}
         />
       </div>
@@ -175,22 +173,22 @@ function AutoEmbedDialog({
         </Button>
       </DialogActions>
     </div>
-  );
+  )
 }
 
 export default function AutoEmbedPlugin(): JSX.Element {
-  const [modal, showModal] = useModal();
+  const [modal, showModal] = useModal()
 
   const openEmbedModal = (embedConfig: PlaygroundEmbedConfig) => {
     showModal(`Embed ${embedConfig.contentName}`, (onClose) => (
       <AutoEmbedDialog embedConfig={embedConfig} onClose={onClose} />
-    ));
-  };
+    ))
+  }
 
   const getMenuOptions = (
     activeEmbedConfig: PlaygroundEmbedConfig,
     embedFn: () => void,
-    dismissFn: () => void
+    dismissFn: () => void,
   ) => {
     return [
       new AutoEmbedOption("Dismiss", {
@@ -199,8 +197,8 @@ export default function AutoEmbedPlugin(): JSX.Element {
       new AutoEmbedOption(`Embed ${activeEmbedConfig.contentName}`, {
         onSelect: embedFn,
       }),
-    ];
-  };
+    ]
+  }
 
   return (
     <>
@@ -211,12 +209,7 @@ export default function AutoEmbedPlugin(): JSX.Element {
         getMenuOptions={getMenuOptions}
         menuRenderFn={(
           anchorElementRef,
-          {
-            selectedIndex,
-            options,
-            selectOptionAndCleanUp,
-            setHighlightedIndex,
-          }
+          { selectedIndex, options, selectOptionAndCleanUp, setHighlightedIndex },
         ) =>
           anchorElementRef.current
             ? ReactDOM.createPortal(
@@ -231,19 +224,19 @@ export default function AutoEmbedPlugin(): JSX.Element {
                     options={options}
                     selectedItemIndex={selectedIndex}
                     onOptionClick={(option: AutoEmbedOption, index: number) => {
-                      setHighlightedIndex(index);
-                      selectOptionAndCleanUp(option);
+                      setHighlightedIndex(index)
+                      selectOptionAndCleanUp(option)
                     }}
                     onOptionMouseEnter={(index: number) => {
-                      setHighlightedIndex(index);
+                      setHighlightedIndex(index)
                     }}
                   />
                 </div>,
-                anchorElementRef.current
+                anchorElementRef.current,
               )
             : null
         }
       />
     </>
-  );
+  )
 }

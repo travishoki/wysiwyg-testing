@@ -1,19 +1,19 @@
-import React from "react";
+import React from "react"
 
-import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import { SharedHistoryContext } from "./context/SharedHistoryContext";
-import { TableContext } from "./plugins/TablePlugin";
-import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext";
-import PlaygroundNodes from "./nodes/PlaygroundNodes";
-import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
+import { LexicalComposer } from "@lexical/react/LexicalComposer"
+import { SharedHistoryContext } from "./context/SharedHistoryContext"
+import { TableContext } from "./plugins/TablePlugin"
+import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext"
+import PlaygroundNodes from "./nodes/PlaygroundNodes"
+import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme"
 
-import Editor from "./Editor";
+import Editor from "./Editor"
 
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
 // try to recover gracefully without losing user data.
 function onError(error: Error) {
-  console.error(error);
+  console.error(error)
 }
 
 const initialConfig = {
@@ -21,7 +21,7 @@ const initialConfig = {
   nodes: [...PlaygroundNodes],
   onError,
   theme: PlaygroundEditorTheme,
-};
+}
 
 // ts-prune-ignore-next
 export const App = () => {
@@ -37,5 +37,5 @@ export const App = () => {
         </TableContext>
       </SharedHistoryContext>
     </LexicalComposer>
-  );
-};
+  )
+}
