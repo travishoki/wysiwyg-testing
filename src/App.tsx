@@ -18,9 +18,9 @@ function onError(error: Error) {
 
 const initialConfig = {
   namespace: "Playground",
-  theme: PlaygroundEditorTheme,
-  onError,
   nodes: [...PlaygroundNodes],
+  onError,
+  theme: PlaygroundEditorTheme,
 };
 
 // ts-prune-ignore-next
