@@ -1,0 +1,23 @@
+#!/bin/sh
+
+. "$(dirname "$0")/_/husky.sh"
+
+## The preflight checks run by default but if you prefer to skip them
+## there are a few options:
+##
+##   HUSKY=0 git push
+##
+##   git push --no-verify
+##
+##   SPIFF_REACT_NO_PRE_PUSH=1 git push
+##
+## Or set the flag in your shell configuration to ALWAYS skip:
+##
+##   export SPIFF_REACT_NO_PRE_PUSH=1
+##
+## Then run `git push` like normal and it will skip the preflight checks.
+
+if [ "$SPIFF_REACT_NO_PRE_PUSH" != "1" ]; then
+  # Compatability mode for how the previous preflight script was configured to run
+  NO_TSC=1 NO_JEST=1 PREFLIGHT_FIX_ERRORS=1 PREFLIGHT_COMMIT_ON_ERROR=1 yarn preflight
+fi

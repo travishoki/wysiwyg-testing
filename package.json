@@ -9,7 +9,8 @@
     "eject": "react-scripts eject",
     "bounce": "rm -rf node_modules && yarn install",
     "deadcode": "node scripts/deadcode.mjs",
-    "lint": "eslint --cache --ext .js,.ts,.tsx,.md,.mdx src"
+    "lint": "eslint --cache --ext .js,.ts,.tsx,.md,.mdx src",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@lexical/clipboard": "^0.11.3",
@@ -67,6 +68,7 @@
     "@types/katex": "^0.16.2",
     "@types/lodash-es": "^4.17.8",
     "@types/prettier": "3.0.0",
-    "chalk": "^5.3.0"
+    "chalk": "^5.3.0",
+    "husky": "^8.0.3"
   }
 }

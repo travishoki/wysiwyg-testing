@@ -1,0 +1,18 @@
+#!/bin/sh
+
+. "$(dirname "$0")/_/husky.sh"
+
+## lint-staged does not run by default but can be enabled.
+##
+## To run only once:
+##
+##   SPIFF_REACT_PRE_COMMIT=1 git push
+##
+## Or set the flag in your shell configuration to ALWAYS run:
+##
+##   export SPIFF_REACT_PRE_COMMIT=1
+
+if [ "$SPIFF_REACT_PRE_COMMIT" == "1" ]; then
+  # Lint the staged changes
+  yarn lint-staged
+fi
