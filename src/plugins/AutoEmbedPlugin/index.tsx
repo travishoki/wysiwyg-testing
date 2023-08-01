@@ -6,8 +6,6 @@
  *
  */
 
-import type { LexicalEditor } from "lexical";
-
 import {
   AutoEmbedOption,
   EmbedConfig,

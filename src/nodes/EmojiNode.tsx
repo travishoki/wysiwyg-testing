@@ -8,7 +8,6 @@
 
 import type {
   EditorConfig,
-  LexicalNode,
   NodeKey,
   SerializedTextNode,
   Spread,

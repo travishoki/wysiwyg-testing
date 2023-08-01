@@ -6,7 +6,7 @@
  *
  */
 
-import type { EditorConfig, LexicalNode, SerializedTextNode } from "lexical";
+import type { EditorConfig, SerializedTextNode } from "lexical";
 
 import { TextNode } from "lexical";
 

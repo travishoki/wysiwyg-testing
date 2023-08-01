@@ -9,14 +9,7 @@
 import type { SettingName } from "../appSettings";
 
 import * as React from "react";
-import {
-  createContext,
-  ReactNode,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from "react";
+import { createContext, useContext } from "react";
 
 import { DEFAULT_SETTINGS } from "../appSettings";
 
