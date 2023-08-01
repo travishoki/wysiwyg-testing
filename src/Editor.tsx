@@ -78,7 +78,6 @@ export default function Editor(): JSX.Element {
       isMaxLength,
       isCharLimit,
       isCharLimitUtf8,
-      isRichText,
       showTreeView,
       showTableOfContents,
       shouldUseLexicalContextMenu,
@@ -89,9 +88,7 @@ export default function Editor(): JSX.Element {
   const isEditable = useLexicalEditable();
   const text = isCollab
     ? "Enter some collaborative rich text..."
-    : isRichText
-    ? "Enter some rich text..."
-    : "Enter some plain text...";
+    : "Enter some rich text...";
   const placeholder = <Placeholder>{text}</Placeholder>;
   const [floatingAnchorElem, setFloatingAnchorElem] =
     useState<HTMLDivElement | null>(null);
@@ -132,12 +129,8 @@ export default function Editor(): JSX.Element {
 
   return (
     <>
-      {isRichText && <ToolbarPlugin />}
-      <div
-        className={`editor-container ${showTreeView ? "tree-view" : ""} ${
-          !isRichText ? "plain-text" : ""
-        }`}
-      >
+      <ToolbarPlugin />
+      <div className={`editor-container ${showTreeView ? "tree-view" : ""}`}>
         {isMaxLength && <MaxLengthPlugin maxLength={30} />}
         <DragDropPaste />
         <AutoFocusPlugin />
@@ -151,86 +144,71 @@ export default function Editor(): JSX.Element {
         <HashtagPlugin />
         <KeywordsPlugin />
         <AutoLinkPlugin />
-        {isRichText ? (
-          <>
-            {isCollab ? (
-              <CollaborationPlugin
-                id="main"
-                providerFactory={createWebsocketProvider}
-                shouldBootstrap={!skipCollaborationInit}
-              />
-            ) : (
-              <HistoryPlugin externalHistoryState={historyState} />
-            )}
-            <RichTextPlugin
-              contentEditable={
-                <div className="editor-scroller">
-                  <div className="editor" ref={onRef}>
-                    <ContentEditable />
-                  </div>
-                </div>
-              }
-              placeholder={placeholder}
-              ErrorBoundary={LexicalErrorBoundary}
-            />
-            <MarkdownShortcutPlugin />
-            <CodeHighlightPlugin />
-            <ListPlugin />
-            <CheckListPlugin />
-            <ListMaxIndentLevelPlugin maxDepth={7} />
-            <TablePlugin
-              hasCellMerge={tableCellMerge}
-              hasCellBackgroundColor={tableCellBackgroundColor}
-            />
-            <TableCellResizer />
-            <NewTablePlugin cellEditorConfig={cellEditorConfig}>
-              <AutoFocusPlugin />
-              <RichTextPlugin
-                contentEditable={
-                  <ContentEditable className="TableNode__contentEditable" />
-                }
-                placeholder={null}
-                ErrorBoundary={LexicalErrorBoundary}
-              />
-              <MentionsPlugin />
-              <HistoryPlugin />
-              <ImagesPlugin captionsEnabled={false} />
-              <LinkPlugin />
-              <LexicalClickableLinkPlugin />
-              <FloatingTextFormatToolbarPlugin />
-            </NewTablePlugin>
-            <ImagesPlugin />
-            <InlineImagePlugin />
-            <LinkPlugin />
-            {!isEditable && <LexicalClickableLinkPlugin />}
-            <HorizontalRulePlugin />
-            <EquationsPlugin />
-            <ExcalidrawPlugin />
-            <TabFocusPlugin />
-            <TabIndentationPlugin />
-            {floatingAnchorElem && !isSmallWidthViewport && (
-              <>
-                <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
-                <CodeActionMenuPlugin anchorElem={floatingAnchorElem} />
-                <FloatingLinkEditorPlugin anchorElem={floatingAnchorElem} />
-                <TableCellActionMenuPlugin
-                  anchorElem={floatingAnchorElem}
-                  cellMerge={true}
-                />
-                <FloatingTextFormatToolbarPlugin
-                  anchorElem={floatingAnchorElem}
-                />
-              </>
-            )}
-          </>
+        {isCollab ? (
+          <CollaborationPlugin
+            id="main"
+            providerFactory={createWebsocketProvider}
+            shouldBootstrap={!skipCollaborationInit}
+          />
         ) : (
+          <HistoryPlugin externalHistoryState={historyState} />
+        )}
+        <RichTextPlugin
+          contentEditable={
+            <div className="editor-scroller">
+              <div className="editor" ref={onRef}>
+                <ContentEditable />
+              </div>
+            </div>
+          }
+          placeholder={placeholder}
+          ErrorBoundary={LexicalErrorBoundary}
+        />
+        <MarkdownShortcutPlugin />
+        <CodeHighlightPlugin />
+        <ListPlugin />
+        <CheckListPlugin />
+        <ListMaxIndentLevelPlugin maxDepth={7} />
+        <TablePlugin
+          hasCellMerge={tableCellMerge}
+          hasCellBackgroundColor={tableCellBackgroundColor}
+        />
+        <TableCellResizer />
+        <NewTablePlugin cellEditorConfig={cellEditorConfig}>
+          <AutoFocusPlugin />
+          <RichTextPlugin
+            contentEditable={
+              <ContentEditable className="TableNode__contentEditable" />
+            }
+            placeholder={null}
+            ErrorBoundary={LexicalErrorBoundary}
+          />
+          <MentionsPlugin />
+          <HistoryPlugin />
+          <ImagesPlugin captionsEnabled={false} />
+          <LinkPlugin />
+          <LexicalClickableLinkPlugin />
+          <FloatingTextFormatToolbarPlugin />
+        </NewTablePlugin>
+        <ImagesPlugin />
+        <InlineImagePlugin />
+        <LinkPlugin />
+        {!isEditable && <LexicalClickableLinkPlugin />}
+        <HorizontalRulePlugin />
+        <EquationsPlugin />
+        <ExcalidrawPlugin />
+        <TabFocusPlugin />
+        <TabIndentationPlugin />
+        {floatingAnchorElem && !isSmallWidthViewport && (
           <>
-            <PlainTextPlugin
-              contentEditable={<ContentEditable />}
-              placeholder={placeholder}
-              ErrorBoundary={LexicalErrorBoundary}
+            <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
+            <CodeActionMenuPlugin anchorElem={floatingAnchorElem} />
+            <FloatingLinkEditorPlugin anchorElem={floatingAnchorElem} />
+            <TableCellActionMenuPlugin
+              anchorElem={floatingAnchorElem}
+              cellMerge={true}
             />
-            <HistoryPlugin externalHistoryState={historyState} />
+            <FloatingTextFormatToolbarPlugin anchorElem={floatingAnchorElem} />
           </>
         )}
         {(isCharLimit || isCharLimitUtf8) && (
@@ -242,7 +220,7 @@ export default function Editor(): JSX.Element {
         {isAutocomplete && <AutocompletePlugin />}
         <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
-        <ActionsPlugin isRichText={isRichText} />
+        <ActionsPlugin />
       </div>
       {showTreeView && <TreeViewPlugin />}
     </>
