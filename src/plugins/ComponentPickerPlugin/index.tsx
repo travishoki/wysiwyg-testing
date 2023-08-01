@@ -36,7 +36,6 @@ import * as ReactDOM from "react-dom";
 import useModal from "../../hooks/useModal";
 import catTypingGif from "../../images/cat-typing.gif";
 import { InsertEquationDialog } from "../EquationsPlugin";
-import { INSERT_EXCALIDRAW_COMMAND } from "../ExcalidrawPlugin";
 import { INSERT_IMAGE_COMMAND, InsertImageDialog } from "../ImagesPlugin";
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin";
 
@@ -261,12 +260,6 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
         keywords: ["horizontal rule", "divider", "hr"],
         onSelect: () =>
           editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined),
-      }),
-      new ComponentPickerOption("Excalidraw", {
-        icon: <i className="icon diagram-2" />,
-        keywords: ["excalidraw", "diagram", "drawing"],
-        onSelect: () =>
-          editor.dispatchCommand(INSERT_EXCALIDRAW_COMMAND, undefined),
       }),
       new ComponentPickerOption("Equation", {
         icon: <i className="icon equation" />,
