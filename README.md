@@ -1,9 +1,8 @@
 # WYSIWYG Testing
 
-## WYSIWYG Testing
-
-## Lexical WYSIWYG
+## Testing out the Lexical WYSIWYG
 
 https://lexical.dev/
 
+Code Built off of:
 https://playground.lexical.dev/
