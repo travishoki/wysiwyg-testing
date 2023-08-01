@@ -27,7 +27,6 @@ import { InlineImageNode } from "./InlineImageNode";
 import { KeywordNode } from "./KeywordNode";
 import { MentionNode } from "./MentionNode";
 import { TableNode as NewTableNode } from "./TableNode";
-import { YouTubeNode } from "./YouTubeNode";
 
 const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   HeadingNode,
@@ -53,7 +52,6 @@ const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   AutocompleteNode,
   KeywordNode,
   HorizontalRuleNode,
-  YouTubeNode,
   MarkNode,
 ];
 
