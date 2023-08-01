@@ -29,8 +29,6 @@ import { ImageNode } from "./ImageNode";
 import { InlineImageNode } from "./InlineImageNode";
 import { KeywordNode } from "./KeywordNode";
 import { MentionNode } from "./MentionNode";
-import { PollNode } from "./PollNode";
-import { StickyNode } from "./StickyNode";
 import { TableNode as NewTableNode } from "./TableNode";
 import { YouTubeNode } from "./YouTubeNode";
 
@@ -49,8 +47,6 @@ const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   AutoLinkNode,
   LinkNode,
   OverflowNode,
-  PollNode,
-  StickyNode,
   ImageNode,
   InlineImageNode,
   MentionNode,
