@@ -7,7 +7,6 @@ import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext";
 import PlaygroundNodes from "./nodes/PlaygroundNodes";
 
 import Editor from "./Editor";
-import "./App.css";
 
 const theme = {
   // Theme styling goes here
@@ -33,7 +32,9 @@ export const App = () => {
       <SharedHistoryContext>
         <TableContext>
           <SharedAutocompleteContext>
-            <Editor />
+            <div className="editor-shell">
+              <Editor />
+            </div>
           </SharedAutocompleteContext>
         </TableContext>
       </SharedHistoryContext>
