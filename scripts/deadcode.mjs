@@ -1,5 +1,7 @@
 import chalk from "chalk";
 import { log } from "console";
+import lodash from "lodash";
+
 import { organizeDeadCodeList, trimExecSync, spacer } from "./helpers.mjs";
 
 log(chalk.bold.underline("Find Dead Code"));
@@ -8,11 +10,14 @@ log("Log a list of unused variables, functions, or types");
 const cmd = "npx ts-prune";
 const output = trimExecSync(cmd);
 
-if (output === cmd) {
-  log("No Dead Code");
+const outputArray = lodash.compact(output.split("\n"));
+
+const noDeadCode = cmd === output || outputArray.length === 0;
+
+if (noDeadCode) {
+  log(chalk.green("No Dead Code"));
 } else {
   spacer();
-  const outputArray = output.split("\n");
   const deadCodeObj = organizeDeadCodeList(outputArray);
 
   if (deadCodeObj.default.length > 0) {

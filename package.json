@@ -33,6 +33,7 @@
     "@types/react": "^18.2.18",
     "katex": "^0.16.8",
     "lexical": "^0.11.3",
+    "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "prettier": "^3.0.0",
     "react": "^18.2.0",
