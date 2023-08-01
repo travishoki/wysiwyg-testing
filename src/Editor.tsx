@@ -36,7 +36,6 @@ import AutoEmbedPlugin from "./plugins/AutoEmbedPlugin";
 import AutoLinkPlugin from "./plugins/AutoLinkPlugin";
 import CodeActionMenuPlugin from "./plugins/CodeActionMenuPlugin";
 import CodeHighlightPlugin from "./plugins/CodeHighlightPlugin";
-import CollapsiblePlugin from "./plugins/CollapsiblePlugin";
 import ComponentPickerPlugin from "./plugins/ComponentPickerPlugin";
 import ContextMenuPlugin from "./plugins/ContextMenuPlugin";
 import DragDropPaste from "./plugins/DragDropPastePlugin";
@@ -211,7 +210,6 @@ export default function Editor(): JSX.Element {
             <ExcalidrawPlugin />
             <TabFocusPlugin />
             <TabIndentationPlugin />
-            <CollapsiblePlugin />
             {floatingAnchorElem && !isSmallWidthViewport && (
               <>
                 <DraggableBlockPlugin anchorElem={floatingAnchorElem} />

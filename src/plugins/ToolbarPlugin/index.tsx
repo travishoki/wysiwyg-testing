@@ -78,7 +78,6 @@ import DropDown, { DropDownItem } from "../../ui/DropDown";
 import DropdownColorPicker from "../../ui/DropdownColorPicker";
 import { getSelectedNode } from "../../utils/getSelectedNode";
 import { sanitizeUrl } from "../../utils/url";
-import { INSERT_COLLAPSIBLE_COMMAND } from "../CollapsiblePlugin";
 import { InsertEquationDialog } from "../EquationsPlugin";
 import { INSERT_EXCALIDRAW_COMMAND } from "../ExcalidrawPlugin";
 import { InsertImageDialog } from "../ImagesPlugin";
@@ -987,15 +986,6 @@ export default function ToolbarPlugin(): JSX.Element {
             >
               <i className="icon equation" />
               <span className="text">Equation</span>
-            </DropDownItem>
-            <DropDownItem
-              onClick={() => {
-                editor.dispatchCommand(INSERT_COLLAPSIBLE_COMMAND, undefined);
-              }}
-              className="item"
-            >
-              <i className="icon caret-right" />
-              <span className="text">Collapsible container</span>
             </DropDownItem>
           </DropDown>
         </>
