@@ -7,7 +7,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "bounce": "rm -rf node_modules && yarn install"
+    "bounce": "rm -rf node_modules && yarn install",
+    "deadcode": "npx ts-prune"
   },
   "dependencies": {
     "@excalidraw/excalidraw": "^0.15.2",
