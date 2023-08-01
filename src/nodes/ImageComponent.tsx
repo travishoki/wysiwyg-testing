@@ -12,21 +12,21 @@ import type {
   NodeKey,
   NodeSelection,
   RangeSelection,
-} from 'lexical';
+} from "lexical";
 
-import './ImageNode.css';
+import "./ImageNode.css";
 
-import {AutoFocusPlugin} from '@lexical/react/LexicalAutoFocusPlugin';
-import {useCollaborationContext} from '@lexical/react/LexicalCollaborationContext';
-import {CollaborationPlugin} from '@lexical/react/LexicalCollaborationPlugin';
-import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
-import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
-import {HashtagPlugin} from '@lexical/react/LexicalHashtagPlugin';
-import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
-import {LexicalNestedComposer} from '@lexical/react/LexicalNestedComposer';
-import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
-import {useLexicalNodeSelection} from '@lexical/react/useLexicalNodeSelection';
-import {mergeRegister} from '@lexical/utils';
+import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
+import { useCollaborationContext } from "@lexical/react/LexicalCollaborationContext";
+import { CollaborationPlugin } from "@lexical/react/LexicalCollaborationPlugin";
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import { HashtagPlugin } from "@lexical/react/LexicalHashtagPlugin";
+import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
+import { LexicalNestedComposer } from "@lexical/react/LexicalNestedComposer";
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import { useLexicalNodeSelection } from "@lexical/react/useLexicalNodeSelection";
+import { mergeRegister } from "@lexical/utils";
 import {
   $getNodeByKey,
   $getSelection,
@@ -40,22 +40,22 @@ import {
   KEY_ENTER_COMMAND,
   KEY_ESCAPE_COMMAND,
   SELECTION_CHANGE_COMMAND,
-} from 'lexical';
-import * as React from 'react';
-import {Suspense, useCallback, useEffect, useRef, useState} from 'react';
+} from "lexical";
+import * as React from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 
-import {createWebsocketProvider} from '../collaboration';
-import {useSettings} from '../context/SettingsContext';
-import {useSharedHistoryContext} from '../context/SharedHistoryContext';
-import EmojisPlugin from '../plugins/EmojisPlugin';
-import KeywordsPlugin from '../plugins/KeywordsPlugin';
-import LinkPlugin from '../plugins/LinkPlugin';
-import MentionsPlugin from '../plugins/MentionsPlugin';
-import TreeViewPlugin from '../plugins/TreeViewPlugin';
-import ContentEditable from '../ui/ContentEditable';
-import ImageResizer from '../ui/ImageResizer';
-import Placeholder from '../ui/Placeholder';
-import {$isImageNode} from './ImageNode';
+import { createWebsocketProvider } from "../collaboration";
+import { useSettings } from "../context/SettingsContext";
+import { useSharedHistoryContext } from "../context/SharedHistoryContext";
+import EmojisPlugin from "../plugins/EmojisPlugin";
+import KeywordsPlugin from "../plugins/KeywordsPlugin";
+import LinkPlugin from "../plugins/LinkPlugin";
+import MentionsPlugin from "../plugins/MentionsPlugin";
+import TreeViewPlugin from "../plugins/TreeViewPlugin";
+import ContentEditable from "../ui/ContentEditable";
+import ImageResizer from "../ui/ImageResizer";
+import Placeholder from "../ui/Placeholder";
+import { $isImageNode } from "./ImageNode";
 
 const imageCache = new Set();
 
@@ -83,11 +83,11 @@ function LazyImage({
 }: {
   altText: string;
   className: string | null;
-  height: 'inherit' | number;
-  imageRef: {current: null | HTMLImageElement};
+  height: "inherit" | number;
+  imageRef: { current: null | HTMLImageElement };
   maxWidth: number;
   src: string;
-  width: 'inherit' | number;
+  width: "inherit" | number;
 }): JSX.Element {
   useSuspenseImage(src);
   return (
@@ -120,13 +120,13 @@ export default function ImageComponent({
 }: {
   altText: string;
   caption: LexicalEditor;
-  height: 'inherit' | number;
+  height: "inherit" | number;
   maxWidth: number;
   nodeKey: NodeKey;
   resizable: boolean;
   showCaption: boolean;
   src: string;
-  width: 'inherit' | number;
+  width: "inherit" | number;
   captionsEnabled: boolean;
 }): JSX.Element {
   const imageRef = useRef<null | HTMLImageElement>(null);
@@ -134,7 +134,7 @@ export default function ImageComponent({
   const [isSelected, setSelected, clearSelection] =
     useLexicalNodeSelection(nodeKey);
   const [isResizing, setIsResizing] = useState<boolean>(false);
-  const {isCollabActive} = useCollaborationContext();
+  const { isCollabActive } = useCollaborationContext();
   const [editor] = useLexicalComposerContext();
   const [selection, setSelection] = useState<
     RangeSelection | NodeSelection | GridSelection | null
@@ -153,7 +153,7 @@ export default function ImageComponent({
       }
       return false;
     },
-    [isSelected, nodeKey],
+    [isSelected, nodeKey]
   );
 
   const onEnter = useCallback(
@@ -182,7 +182,7 @@ export default function ImageComponent({
       }
       return false;
     },
-    [caption, isSelected, showCaption],
+    [caption, isSelected, showCaption]
   );
 
   const onEscape = useCallback(
@@ -203,13 +203,13 @@ export default function ImageComponent({
       }
       return false;
     },
-    [caption, editor, setSelected],
+    [caption, editor, setSelected]
   );
 
   useEffect(() => {
     let isMounted = true;
     const unregister = mergeRegister(
-      editor.registerUpdateListener(({editorState}) => {
+      editor.registerUpdateListener(({ editorState }) => {
         if (isMounted) {
           setSelection(editorState.read(() => $getSelection()));
         }
@@ -220,7 +220,7 @@ export default function ImageComponent({
           activeEditorRef.current = activeEditor;
           return false;
         },
-        COMMAND_PRIORITY_LOW,
+        COMMAND_PRIORITY_LOW
       ),
       editor.registerCommand<MouseEvent>(
         CLICK_COMMAND,
@@ -242,7 +242,7 @@ export default function ImageComponent({
 
           return false;
         },
-        COMMAND_PRIORITY_LOW,
+        COMMAND_PRIORITY_LOW
       ),
       editor.registerCommand(
         DRAGSTART_COMMAND,
@@ -255,24 +255,20 @@ export default function ImageComponent({
           }
           return false;
         },
-        COMMAND_PRIORITY_LOW,
+        COMMAND_PRIORITY_LOW
       ),
       editor.registerCommand(
         KEY_DELETE_COMMAND,
         onDelete,
-        COMMAND_PRIORITY_LOW,
+        COMMAND_PRIORITY_LOW
       ),
       editor.registerCommand(
         KEY_BACKSPACE_COMMAND,
         onDelete,
-        COMMAND_PRIORITY_LOW,
+        COMMAND_PRIORITY_LOW
       ),
       editor.registerCommand(KEY_ENTER_COMMAND, onEnter, COMMAND_PRIORITY_LOW),
-      editor.registerCommand(
-        KEY_ESCAPE_COMMAND,
-        onEscape,
-        COMMAND_PRIORITY_LOW,
-      ),
+      editor.registerCommand(KEY_ESCAPE_COMMAND, onEscape, COMMAND_PRIORITY_LOW)
     );
     return () => {
       isMounted = false;
@@ -300,8 +296,8 @@ export default function ImageComponent({
   };
 
   const onResizeEnd = (
-    nextWidth: 'inherit' | number,
-    nextHeight: 'inherit' | number,
+    nextWidth: "inherit" | number,
+    nextHeight: "inherit" | number
   ) => {
     // Delay hiding the resize bars for click case
     setTimeout(() => {
@@ -320,9 +316,9 @@ export default function ImageComponent({
     setIsResizing(true);
   };
 
-  const {historyState} = useSharedHistoryContext();
+  const { historyState } = useSharedHistoryContext();
   const {
-    settings: {showNestedEditorTreeView},
+    settings: { showNestedEditorTreeView },
   } = useSettings();
 
   const draggable = isSelected && $isNodeSelection(selection) && !isResizing;
@@ -334,7 +330,7 @@ export default function ImageComponent({
           <LazyImage
             className={
               isFocused
-                ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}`
+                ? `focused ${$isNodeSelection(selection) ? "draggable" : ""}`
                 : null
             }
             src={src}

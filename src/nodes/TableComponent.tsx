@@ -1269,7 +1269,7 @@ export default function TableComponent({
               updateTableNode((tableNode) => {
                 const [x, y] = cellCoordMap.get(primarySelectedCellID) as [
                   number,
-                  number
+                  number,
                 ];
                 $addUpdateTag("history-push");
                 tableNode.mergeRows(x, y, pasteRows);
@@ -1518,7 +1518,7 @@ export default function TableComponent({
             const isBackward = event.shiftKey;
             const [x, y] = cellCoordMap.get(primarySelectedCellID) as [
               number,
-              number
+              number,
             ];
             event.preventDefault();
             let nextX = null;

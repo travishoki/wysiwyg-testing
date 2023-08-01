@@ -6,13 +6,13 @@
  *
  */
 
-import type {ExcalidrawElementFragment} from './ExcalidrawModal';
-import type {NodeKey} from 'lexical';
+import type { ExcalidrawElementFragment } from "./ExcalidrawModal";
+import type { NodeKey } from "lexical";
 
-import {AppState, BinaryFiles} from '@excalidraw/excalidraw/types/types';
-import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
-import {useLexicalNodeSelection} from '@lexical/react/useLexicalNodeSelection';
-import {mergeRegister} from '@lexical/utils';
+import { AppState, BinaryFiles } from "@excalidraw/excalidraw/types/types";
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { useLexicalNodeSelection } from "@lexical/react/useLexicalNodeSelection";
+import { mergeRegister } from "@lexical/utils";
 import {
   $getNodeByKey,
   $getSelection,
@@ -21,14 +21,14 @@ import {
   COMMAND_PRIORITY_LOW,
   KEY_BACKSPACE_COMMAND,
   KEY_DELETE_COMMAND,
-} from 'lexical';
-import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
-import * as React from 'react';
+} from "lexical";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import * as React from "react";
 
-import ImageResizer from '../../ui/ImageResizer';
-import {$isExcalidrawNode} from '.';
-import ExcalidrawImage from './ExcalidrawImage';
-import ExcalidrawModal from './ExcalidrawModal';
+import ImageResizer from "../../ui/ImageResizer";
+import { $isExcalidrawNode } from ".";
+import ExcalidrawImage from "./ExcalidrawImage";
+import ExcalidrawModal from "./ExcalidrawModal";
 
 export default function ExcalidrawComponent({
   nodeKey,
@@ -39,7 +39,7 @@ export default function ExcalidrawComponent({
 }): JSX.Element {
   const [editor] = useLexicalComposerContext();
   const [isModalOpen, setModalOpen] = useState<boolean>(
-    data === '[]' && editor.isEditable(),
+    data === "[]" && editor.isEditable()
   );
   const imageContainerRef = useRef<HTMLImageElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -61,7 +61,7 @@ export default function ExcalidrawComponent({
       }
       return false;
     },
-    [editor, isSelected, nodeKey],
+    [editor, isSelected, nodeKey]
   );
 
   // Set editor to readOnly if excalidraw is open to prevent unwanted changes
@@ -98,18 +98,18 @@ export default function ExcalidrawComponent({
 
           return false;
         },
-        COMMAND_PRIORITY_LOW,
+        COMMAND_PRIORITY_LOW
       ),
       editor.registerCommand(
         KEY_DELETE_COMMAND,
         onDelete,
-        COMMAND_PRIORITY_LOW,
+        COMMAND_PRIORITY_LOW
       ),
       editor.registerCommand(
         KEY_BACKSPACE_COMMAND,
         onDelete,
-        COMMAND_PRIORITY_LOW,
-      ),
+        COMMAND_PRIORITY_LOW
+      )
     );
   }, [clearSelection, editor, isSelected, isResizing, onDelete, setSelected]);
 
@@ -126,7 +126,7 @@ export default function ExcalidrawComponent({
   const setData = (
     els: ReadonlyArray<ExcalidrawElementFragment>,
     aps: Partial<AppState>,
-    fls: BinaryFiles,
+    fls: BinaryFiles
   ) => {
     if (!editor.isEditable()) {
       return;
@@ -140,7 +140,7 @@ export default function ExcalidrawComponent({
               appState: aps,
               elements: els,
               files: fls,
-            }),
+            })
           );
         } else {
           node.remove();
@@ -189,7 +189,8 @@ export default function ExcalidrawComponent({
       {elements.length > 0 && (
         <button
           ref={buttonRef}
-          className={`excalidraw-button ${isSelected ? 'selected' : ''}`}>
+          className={`excalidraw-button ${isSelected ? "selected" : ""}`}
+        >
           <ExcalidrawImage
             imageContainerRef={imageContainerRef}
             className="image"
