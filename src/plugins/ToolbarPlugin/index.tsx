@@ -24,7 +24,6 @@ import {
   ListNode,
   REMOVE_LIST_COMMAND,
 } from "@lexical/list";
-import { INSERT_EMBED_COMMAND } from "@lexical/react/LexicalAutoEmbedPlugin";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { $isDecoratorBlockNode } from "@lexical/react/LexicalDecoratorBlockNode";
 import { INSERT_HORIZONTAL_RULE_COMMAND } from "@lexical/react/LexicalHorizontalRuleNode";
@@ -81,7 +80,6 @@ import DropDown, { DropDownItem } from "../../ui/DropDown";
 import DropdownColorPicker from "../../ui/DropdownColorPicker";
 import { getSelectedNode } from "../../utils/getSelectedNode";
 import { sanitizeUrl } from "../../utils/url";
-import { EmbedConfigs } from "../AutoEmbedPlugin";
 import { INSERT_COLLAPSIBLE_COMMAND } from "../CollapsiblePlugin";
 import { InsertEquationDialog } from "../EquationsPlugin";
 import { INSERT_EXCALIDRAW_COMMAND } from "../ExcalidrawPlugin";
@@ -1049,21 +1047,6 @@ export default function ToolbarPlugin(): JSX.Element {
               <i className="icon caret-right" />
               <span className="text">Collapsible container</span>
             </DropDownItem>
-            {EmbedConfigs.map((embedConfig) => (
-              <DropDownItem
-                key={embedConfig.type}
-                onClick={() => {
-                  activeEditor.dispatchCommand(
-                    INSERT_EMBED_COMMAND,
-                    embedConfig.type
-                  );
-                }}
-                className="item"
-              >
-                {embedConfig.icon}
-                <span className="text">{embedConfig.contentName}</span>
-              </DropDownItem>
-            ))}
           </DropDown>
         </>
       )}

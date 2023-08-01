@@ -64,7 +64,6 @@ import TableOfContentsPlugin from "./plugins/TableOfContentsPlugin";
 import { TablePlugin as NewTablePlugin } from "./plugins/TablePlugin";
 import ToolbarPlugin from "./plugins/ToolbarPlugin";
 import TreeViewPlugin from "./plugins/TreeViewPlugin";
-import YouTubePlugin from "./plugins/YouTubePlugin";
 import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
 import ContentEditable from "./ui/ContentEditable";
 import Placeholder from "./ui/Placeholder";
@@ -208,7 +207,6 @@ export default function Editor(): JSX.Element {
             <InlineImagePlugin />
             <LinkPlugin />
             <PollPlugin />
-            <YouTubePlugin />
             {!isEditable && <LexicalClickableLinkPlugin />}
             <HorizontalRulePlugin />
             <EquationsPlugin />
