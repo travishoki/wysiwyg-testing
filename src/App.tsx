@@ -5,12 +5,9 @@ import { SharedHistoryContext } from "./context/SharedHistoryContext";
 import { TableContext } from "./plugins/TablePlugin";
 import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext";
 import PlaygroundNodes from "./nodes/PlaygroundNodes";
+import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme";
 
 import Editor from "./Editor";
-
-const theme = {
-  // Theme styling goes here
-};
 
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
@@ -20,8 +17,8 @@ function onError(error: Error) {
 }
 
 const initialConfig = {
-  namespace: "document-composer",
-  theme,
+  namespace: "Playground",
+  theme: PlaygroundEditorTheme,
   onError,
   nodes: [...PlaygroundNodes],
 };
