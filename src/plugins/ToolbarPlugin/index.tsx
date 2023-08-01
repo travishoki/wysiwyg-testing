@@ -84,7 +84,6 @@ import { InsertEquationDialog } from "../EquationsPlugin";
 import { INSERT_EXCALIDRAW_COMMAND } from "../ExcalidrawPlugin";
 import { InsertImageDialog } from "../ImagesPlugin";
 import { InsertInlineImageDialog } from "../InlineImagePlugin";
-import { InsertPollDialog } from "../PollPlugin";
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin";
 
 const blockTypeToBlockName = {
@@ -976,21 +975,6 @@ export default function ToolbarPlugin(): JSX.Element {
               <i className="icon table" />
               <span className="text">Table (Experimental)</span>
             </DropDownItem>
-            <DropDownItem
-              onClick={() => {
-                showModal("Insert Poll", (onClose) => (
-                  <InsertPollDialog
-                    activeEditor={activeEditor}
-                    onClose={onClose}
-                  />
-                ));
-              }}
-              className="item"
-            >
-              <i className="icon poll" />
-              <span className="text">Poll</span>
-            </DropDownItem>
-
             <DropDownItem
               onClick={() => {
                 showModal("Insert Equation", (onClose) => (
