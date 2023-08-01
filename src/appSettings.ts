@@ -9,7 +9,6 @@
 export type SettingName =
   | "disableBeforeInput"
   | "measureTypingPerf"
-  | "isCollab"
   | "isCharLimit"
   | "isMaxLength"
   | "isCharLimitUtf8"
@@ -30,7 +29,6 @@ export const DEFAULT_SETTINGS: Settings = {
   isAutocomplete: false,
   isCharLimit: false,
   isCharLimitUtf8: false,
-  isCollab: false,
   isMaxLength: false,
   measureTypingPerf: false,
   shouldUseLexicalContextMenu: false,
