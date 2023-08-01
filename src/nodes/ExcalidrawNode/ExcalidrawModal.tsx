@@ -26,6 +26,7 @@ import { createPortal } from "react-dom";
 
 import Button from "../../ui/Button";
 import Modal from "../../ui/Modal";
+import { ExcalidrawElement } from "@excalidraw/excalidraw/types/element/types";
 
 export type ExcalidrawElementFragment = {
   isDeleted?: boolean;
@@ -36,7 +37,7 @@ type Props = {
   /**
    * The initial set of elements to draw into the scene
    */
-  initialElements: ReadonlyArray<ExcalidrawElementFragment>;
+  initialElements: ReadonlyArray<ExcalidrawElement>;
   /**
    * The initial set of elements to draw into the scene
    */
@@ -213,7 +214,7 @@ export default function ExcalidrawModal({
   }
 
   const onChange = (
-    els: ReadonlyArray<ExcalidrawElementFragment>,
+    els: ReadonlyArray<ExcalidrawElement>,
     _: AppState,
     fls: BinaryFiles
   ) => {
