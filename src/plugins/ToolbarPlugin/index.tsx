@@ -74,7 +74,6 @@ import * as React from "react";
 import { IS_APPLE } from "../../shared/environment";
 
 import useModal from "../../hooks/useModal";
-import catTypingGif from "../../images/cat-typing.gif";
 import { $createStickyNode } from "../../nodes/StickyNode";
 import DropDown, { DropDownItem } from "../../ui/DropDown";
 import DropdownColorPicker from "../../ui/DropdownColorPicker";
@@ -83,11 +82,7 @@ import { sanitizeUrl } from "../../utils/url";
 import { INSERT_COLLAPSIBLE_COMMAND } from "../CollapsiblePlugin";
 import { InsertEquationDialog } from "../EquationsPlugin";
 import { INSERT_EXCALIDRAW_COMMAND } from "../ExcalidrawPlugin";
-import {
-  INSERT_IMAGE_COMMAND,
-  InsertImageDialog,
-  InsertImagePayload,
-} from "../ImagesPlugin";
+import { InsertImageDialog } from "../ImagesPlugin";
 import { InsertInlineImageDialog } from "../InlineImagePlugin";
 import { InsertPollDialog } from "../PollPlugin";
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin";
@@ -659,9 +654,6 @@ export default function ToolbarPlugin(): JSX.Element {
     },
     [activeEditor, selectedElementKey]
   );
-  const insertGifOnClick = (payload: InsertImagePayload) => {
-    activeEditor.dispatchCommand(INSERT_IMAGE_COMMAND, payload);
-  };
 
   return (
     <div className="toolbar">
@@ -943,18 +935,6 @@ export default function ToolbarPlugin(): JSX.Element {
             >
               <i className="icon image" />
               <span className="text">Inline Image</span>
-            </DropDownItem>
-            <DropDownItem
-              onClick={() =>
-                insertGifOnClick({
-                  altText: "Cat typing on a laptop",
-                  src: catTypingGif,
-                })
-              }
-              className="item"
-            >
-              <i className="icon gif" />
-              <span className="text">GIF</span>
             </DropDownItem>
             <DropDownItem
               onClick={() => {
