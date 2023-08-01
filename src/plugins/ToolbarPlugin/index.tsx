@@ -78,7 +78,6 @@ import DropdownColorPicker from "../../ui/DropdownColorPicker";
 import { getSelectedNode } from "../../utils/getSelectedNode";
 import { sanitizeUrl } from "../../utils/url";
 import { InsertEquationDialog } from "../EquationsPlugin";
-import { INSERT_EXCALIDRAW_COMMAND } from "../ExcalidrawPlugin";
 import { InsertImageDialog } from "../ImagesPlugin";
 import { InsertInlineImageDialog } from "../InlineImagePlugin";
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin";
@@ -326,12 +325,12 @@ function Divider(): JSX.Element {
 function FontDropDown({
   editor,
   value,
-  style,
+  styleName,
   disabled = false,
 }: {
   editor: LexicalEditor;
   value: string;
-  style: string;
+  styleName: string;
   disabled?: boolean;
 }): JSX.Element {
   const handleClick = useCallback(
@@ -340,42 +339,43 @@ function FontDropDown({
         const selection = $getSelection();
         if ($isRangeSelection(selection)) {
           $patchStyleText(selection, {
-            [style]: option,
+            [styleName]: option,
           });
         }
       });
     },
-    [editor, style]
+    [editor, styleName]
   );
 
   const buttonAriaLabel =
-    style === "font-family"
+    styleName === "font-family"
       ? "Formatting options for font family"
       : "Formatting options for font size";
 
   return (
     <DropDown
       disabled={disabled}
-      buttonClassName={"toolbar-item " + style}
+      buttonClassName={"toolbar-item " + styleName}
       buttonLabel={value}
       buttonIconClassName={
-        style === "font-family" ? "icon block-type font-family" : ""
+        styleName === "font-family" ? "icon block-type font-family" : ""
       }
       buttonAriaLabel={buttonAriaLabel}
     >
-      {(style === "font-family" ? FONT_FAMILY_OPTIONS : FONT_SIZE_OPTIONS).map(
-        ([option, text]) => (
-          <DropDownItem
-            className={`item ${dropDownActiveClass(value === option)} ${
-              style === "font-size" ? "fontsize-item" : ""
-            }`}
-            onClick={() => handleClick(option)}
-            key={option}
-          >
-            <span className="text">{text}</span>
-          </DropDownItem>
-        )
-      )}
+      {(styleName === "font-family"
+        ? FONT_FAMILY_OPTIONS
+        : FONT_SIZE_OPTIONS
+      ).map(([option, text]) => (
+        <DropDownItem
+          className={`item ${dropDownActiveClass(value === option)} ${
+            styleName === "font-size" ? "fontsize-item" : ""
+          }`}
+          onClick={() => handleClick(option)}
+          key={option}
+        >
+          <span className="text">{text}</span>
+        </DropDownItem>
+      ))}
     </DropDown>
   );
 }
@@ -714,13 +714,13 @@ export default function ToolbarPlugin(): JSX.Element {
         <>
           <FontDropDown
             disabled={!isEditable}
-            style={"font-family"}
+            styleName={"font-family"}
             value={fontFamily}
             editor={editor}
           />
           <FontDropDown
             disabled={!isEditable}
-            style={"font-size"}
+            styleName={"font-size"}
             value={fontSize}
             editor={editor}
           />
@@ -931,18 +931,6 @@ export default function ToolbarPlugin(): JSX.Element {
             >
               <i className="icon image" />
               <span className="text">Inline Image</span>
-            </DropDownItem>
-            <DropDownItem
-              onClick={() => {
-                activeEditor.dispatchCommand(
-                  INSERT_EXCALIDRAW_COMMAND,
-                  undefined
-                );
-              }}
-              className="item"
-            >
-              <i className="icon diagram-2" />
-              <span className="text">Excalidraw</span>
             </DropDownItem>
             <DropDownItem
               onClick={() => {
