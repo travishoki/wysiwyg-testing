@@ -45,7 +45,7 @@ import FileInput from "../../ui/FileInput";
 import Select from "../../ui/Select";
 import TextInput from "../../ui/TextInput";
 
-export type InsertInlineImagePayload = Readonly<InlineImagePayload>;
+type InsertInlineImagePayload = Readonly<InlineImagePayload>;
 
 const getDOMSelection = (targetWindow: Window | null): Selection | null =>
   CAN_USE_DOM ? (targetWindow || window).getSelection() : null;

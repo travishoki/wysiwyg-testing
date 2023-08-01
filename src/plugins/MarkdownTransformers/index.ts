@@ -53,7 +53,7 @@ import {
 } from "../../nodes/ImageNode";
 import emojiList from "../../utils/emoji-list";
 
-export const HR: ElementTransformer = {
+const HR: ElementTransformer = {
   dependencies: [HorizontalRuleNode],
   export: (node: LexicalNode) => {
     return $isHorizontalRuleNode(node) ? "***" : null;
@@ -74,7 +74,7 @@ export const HR: ElementTransformer = {
   type: "element",
 };
 
-export const IMAGE: TextMatchTransformer = {
+const IMAGE: TextMatchTransformer = {
   dependencies: [ImageNode],
   export: (node) => {
     if (!$isImageNode(node)) {
@@ -98,7 +98,7 @@ export const IMAGE: TextMatchTransformer = {
   type: "text-match",
 };
 
-export const EMOJI: TextMatchTransformer = {
+const EMOJI: TextMatchTransformer = {
   dependencies: [],
   export: () => null,
   importRegExp: /:([a-z0-9_]+):/,
@@ -113,7 +113,7 @@ export const EMOJI: TextMatchTransformer = {
   type: "text-match",
 };
 
-export const EQUATION: TextMatchTransformer = {
+const EQUATION: TextMatchTransformer = {
   dependencies: [EquationNode],
   export: (node) => {
     if (!$isEquationNode(node)) {
@@ -137,7 +137,7 @@ export const EQUATION: TextMatchTransformer = {
 const TABLE_ROW_REG_EXP = /^(?:\|)(.+)(?:\|)\s?$/;
 const TABLE_ROW_DIVIDER_REG_EXP = /^(\| ?:?-*:? ?)+\|\s?$/;
 
-export const TABLE: ElementTransformer = {
+const TABLE: ElementTransformer = {
   dependencies: [TableNode, TableRowNode, TableCellNode],
   export: (node: LexicalNode) => {
     if (!$isTableNode(node)) {

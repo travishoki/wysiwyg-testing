@@ -23,6 +23,7 @@ const initialConfig = {
   nodes: [...PlaygroundNodes],
 };
 
+// ts-prune-ignore-next
 export const App = () => {
   return (
     <LexicalComposer initialConfig={initialConfig}>

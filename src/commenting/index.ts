@@ -19,7 +19,7 @@ import {
   YEvent,
 } from "yjs";
 
-export type Comment = {
+type Comment = {
   author: string;
   content: string;
   deleted: boolean;
@@ -28,14 +28,14 @@ export type Comment = {
   type: "comment";
 };
 
-export type Thread = {
+type Thread = {
   comments: Array<Comment>;
   id: string;
   quote: string;
   type: "thread";
 };
 
-export type Comments = Array<Thread | Comment>;
+type Comments = Array<Thread | Comment>;
 
 function createUID(): string {
   return Math.random()
@@ -44,7 +44,7 @@ function createUID(): string {
     .substr(0, 5);
 }
 
-export function createComment(
+function createComment(
   content: string,
   author: string,
   id?: string,
@@ -61,7 +61,7 @@ export function createComment(
   };
 }
 
-export function createThread(
+function createThread(
   quote: string,
   comments: Array<Comment>,
   id?: string
@@ -101,7 +101,7 @@ function triggerOnChange(commentStore: CommentStore): void {
   }
 }
 
-export class CommentStore {
+class CommentStore {
   _editor: LexicalEditor;
   _comments: Comments;
   _changeListeners: Set<() => void>;
@@ -434,18 +434,4 @@ export class CommentStore {
       this._collabProvider = null;
     };
   }
-}
-
-export function useCommentStore(commentStore: CommentStore): Comments {
-  const [comments, setComments] = useState<Comments>(
-    commentStore.getComments()
-  );
-
-  useEffect(() => {
-    return commentStore.registerOnChange(() => {
-      setComments(commentStore.getComments());
-    });
-  }, [commentStore]);
-
-  return comments;
 }

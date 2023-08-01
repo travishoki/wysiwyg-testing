@@ -27,13 +27,13 @@ import Button from "../ui/Button";
 import { DialogActions } from "../ui/Dialog";
 import TextInput from "../ui/TextInput";
 
-export type InsertTableCommandPayload = Readonly<{
+type InsertTableCommandPayload = Readonly<{
   columns: string;
   rows: string;
   includeHeaders?: boolean;
 }>;
 
-export type CellContextShape = {
+type CellContextShape = {
   cellEditorConfig: null | CellEditorConfig;
   cellEditorPlugins: null | JSX.Element | Array<JSX.Element>;
   set: (
@@ -42,7 +42,7 @@ export type CellContextShape = {
   ) => void;
 };
 
-export type CellEditorConfig = Readonly<{
+type CellEditorConfig = Readonly<{
   namespace: string;
   nodes?: ReadonlyArray<Klass<LexicalNode>>;
   onError: (error: Error, editor: LexicalEditor) => void;
@@ -50,7 +50,7 @@ export type CellEditorConfig = Readonly<{
   theme?: EditorThemeClasses;
 }>;
 
-export const INSERT_NEW_TABLE_COMMAND: LexicalCommand<InsertTableCommandPayload> =
+const INSERT_NEW_TABLE_COMMAND: LexicalCommand<InsertTableCommandPayload> =
   createCommand("INSERT_NEW_TABLE_COMMAND");
 
 export const CellContext = createContext<CellContextShape>({

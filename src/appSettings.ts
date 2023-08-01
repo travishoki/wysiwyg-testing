@@ -23,16 +23,11 @@ export type SettingName =
   | "tableCellMerge"
   | "tableCellBackgroundColor";
 
-export type Settings = Record<SettingName, boolean>;
-
-const hostName = window.location.hostname;
-export const isDevPlayground: boolean =
-  hostName !== "playground.lexical.dev" &&
-  hostName !== "lexical-playground.vercel.app";
+type Settings = Record<SettingName, boolean>;
 
 export const DEFAULT_SETTINGS: Settings = {
   disableBeforeInput: false,
-  emptyEditor: isDevPlayground,
+  emptyEditor: false,
   isAutocomplete: false,
   isCharLimit: false,
   isCharLimitUtf8: false,

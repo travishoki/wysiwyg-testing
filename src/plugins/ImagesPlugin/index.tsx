@@ -42,7 +42,7 @@ import { DialogActions, DialogButtonsList } from "../../ui/Dialog";
 import FileInput from "../../ui/FileInput";
 import TextInput from "../../ui/TextInput";
 
-export type InsertImagePayload = Readonly<ImagePayload>;
+type InsertImagePayload = Readonly<ImagePayload>;
 
 const getDOMSelection = (targetWindow: Window | null): Selection | null =>
   CAN_USE_DOM ? (targetWindow || window).getSelection() : null;
@@ -50,7 +50,7 @@ const getDOMSelection = (targetWindow: Window | null): Selection | null =>
 export const INSERT_IMAGE_COMMAND: LexicalCommand<InsertImagePayload> =
   createCommand("INSERT_IMAGE_COMMAND");
 
-export function InsertImageUriDialogBody({
+function InsertImageUriDialogBody({
   onClick,
 }: {
   onClick: (payload: InsertImagePayload) => void;
@@ -89,7 +89,7 @@ export function InsertImageUriDialogBody({
   );
 }
 
-export function InsertImageUploadedDialogBody({
+function InsertImageUploadedDialogBody({
   onClick,
 }: {
   onClick: (payload: InsertImagePayload) => void;

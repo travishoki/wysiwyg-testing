@@ -116,7 +116,7 @@ const debounce = (callback: (text: string) => void, delay: number) => {
   };
 };
 
-export function AutoEmbedDialog({
+function AutoEmbedDialog({
   embedConfig,
   onClose,
 }: {
