@@ -190,8 +190,8 @@ export default function Editor({ onSubmit }: EditorProps): JSX.Element {
         <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
         <ActionsPlugin />
-        <SubmitButton onSubmit={onSubmit} />
       </div>
+      <SubmitButton onSubmit={onSubmit} />
     </>
   )
 }
