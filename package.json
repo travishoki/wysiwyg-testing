@@ -9,7 +9,7 @@
     "eject": "react-scripts eject",
     "bounce": "rm -rf node_modules && yarn install",
     "deadcode": "node scripts/deadcode.mjs",
-    "lint": "eslint --cache --ext .js,.ts,.tsx,.md,.mdx src",
+    "lint": "eslint --cache --ext .js,.ts,.tsx src",
     "prepare": "husky install"
   },
   "dependencies": {
