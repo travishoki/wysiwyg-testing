@@ -59,7 +59,7 @@ import ToolbarPlugin from "./plugins/ToolbarPlugin"
 import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme"
 import ContentEditable from "./ui/ContentEditable"
 import Placeholder from "./ui/Placeholder"
-import { SubmitButton } from "./SubmitButton/SubmitButton"
+import { Controls } from "./Controls/Controls"
 
 export default function Editor({ onSubmit }: EditorProps): JSX.Element {
   const { historyState } = useSharedHistoryContext()
@@ -191,7 +191,7 @@ export default function Editor({ onSubmit }: EditorProps): JSX.Element {
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
         <ActionsPlugin />
       </div>
-      <SubmitButton onSubmit={onSubmit} />
+      <Controls onSubmit={onSubmit} />
     </>
   )
 }
