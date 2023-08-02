@@ -16,6 +16,10 @@ function onError(error: Error) {
   console.error(error)
 }
 
+const onSubmit = (value: string) => {
+  console.log(value)
+}
+
 const initialConfig = {
   namespace: "Playground",
   nodes: [...PlaygroundNodes],
@@ -31,7 +35,7 @@ export const App = () => {
         <TableContext>
           <SharedAutocompleteContext>
             <div className="editor-shell">
-              <Editor />
+              <Editor onSubmit={onSubmit} />
             </div>
           </SharedAutocompleteContext>
         </TableContext>

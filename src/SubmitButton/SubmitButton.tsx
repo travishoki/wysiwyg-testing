@@ -1,21 +1,22 @@
 import React from "react"
 
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
+import { $generateHtmlFromNodes } from "@lexical/html"
 
-export const SubmitButton = () => {
+export const SubmitButton = ({ onSubmit }: SubmitButtonProps) => {
   const [editor] = useLexicalComposerContext()
 
-  const onSubmit = () => {
-    console.log("%c---- %s -----", "font-size: 12px;", "onSubmit")
+  const onClick = () => {
+    editor.update(() => {
+      const htmlString = $generateHtmlFromNodes(editor, null)
 
-    console.log("editor:")
-    console.dir(editor)
-
-    const editorState = editor.getEditorState()
-
-    console.log("editorState:")
-    console.dir(editorState)
+      onSubmit(htmlString)
+    })
   }
 
-  return <button onClick={onSubmit}>Submit</button>
+  return <button onClick={onClick}>Submit</button>
+}
+
+type SubmitButtonProps = {
+  onSubmit: (value: string) => void
 }

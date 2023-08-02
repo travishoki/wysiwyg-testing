@@ -59,8 +59,9 @@ import ToolbarPlugin from "./plugins/ToolbarPlugin"
 import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme"
 import ContentEditable from "./ui/ContentEditable"
 import Placeholder from "./ui/Placeholder"
+import { SubmitButton } from "./SubmitButton/SubmitButton"
 
-export default function Editor(): JSX.Element {
+export default function Editor({ onSubmit }: EditorProps): JSX.Element {
   const { historyState } = useSharedHistoryContext()
   const {
     settings: {
@@ -189,7 +190,12 @@ export default function Editor(): JSX.Element {
         <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
         <ActionsPlugin />
+        <SubmitButton onSubmit={onSubmit} />
       </div>
     </>
   )
+}
+
+type EditorProps = {
+  onSubmit: (value: string) => void
 }
