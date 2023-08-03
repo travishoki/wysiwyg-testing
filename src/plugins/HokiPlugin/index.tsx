@@ -13,7 +13,7 @@ import { $createHokiNode, HokiNode } from "../../nodes/HokiNode"
 
 export default function HokiPlugin(): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
-  const [farts, setFarts] = useState<HokiNode>()
+  const [element, setElement] = useState<HokiNode>()
 
   useEffect(() => {
     if (!editor.hasNodes([HokiNode])) {
@@ -29,7 +29,7 @@ export default function HokiPlugin(): JSX.Element | null {
           if ($isRootOrShadowRoot(hokiNode.getParentOrThrow())) {
             $wrapNodeInElement(hokiNode, $createParagraphNode).selectEnd()
           }
-          setFarts(hokiNode)
+          setElement(hokiNode)
 
           return true
         },
@@ -38,8 +38,8 @@ export default function HokiPlugin(): JSX.Element | null {
       editor.registerCommand(
         DELETE_HOKI_COMMAND,
         () => {
-          if (farts) {
-            farts.remove()
+          if (element) {
+            element.remove()
           }
 
           return true
@@ -47,7 +47,7 @@ export default function HokiPlugin(): JSX.Element | null {
         COMMAND_PRIORITY_EDITOR,
       ),
     )
-  }, [editor, farts])
+  }, [editor, element])
 
   return null
 }
