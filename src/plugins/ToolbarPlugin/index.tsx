@@ -81,6 +81,7 @@ import { InsertEquationDialog } from "../EquationsPlugin"
 import { InsertImageDialog } from "../ImagesPlugin"
 import { InsertInlineImageDialog } from "../InlineImagePlugin"
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"
+import { INSERT_HOKI_COMMAND } from "../../const"
 
 const blockTypeToBlockName = {
   bullet: "Bulleted List",
@@ -831,6 +832,15 @@ export default function ToolbarPlugin(): JSX.Element {
             buttonAriaLabel="Insert specialized editor node"
             buttonIconClassName="icon plus"
           >
+            <DropDownItem
+              onClick={() => {
+                activeEditor.dispatchCommand(INSERT_HOKI_COMMAND, undefined)
+              }}
+              className="item"
+            >
+              <i className="icon hoki" />
+              <span className="text">Hoki</span>
+            </DropDownItem>
             <DropDownItem
               onClick={() => {
                 activeEditor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined)

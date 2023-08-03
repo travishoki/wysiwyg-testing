@@ -414,6 +414,10 @@ i.link {
   background-image: url(images/icons/link.svg);
 }
 
+i.hoki {
+  background-image: url(images/icons/plus.svg);
+}
+
 i.horizontal-rule {
   background-image: url(images/icons/horizontal-rule.svg);
 }

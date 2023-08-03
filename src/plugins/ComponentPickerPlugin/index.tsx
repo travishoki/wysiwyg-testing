@@ -38,6 +38,7 @@ import catTypingGif from "../../images/cat-typing.gif"
 import { InsertEquationDialog } from "../EquationsPlugin"
 import { INSERT_IMAGE_COMMAND, InsertImageDialog } from "../ImagesPlugin"
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"
+import { INSERT_HOKI_COMMAND } from "../../const"
 
 class ComponentPickerOption extends MenuOption {
   // What shows up in the editor
@@ -249,6 +250,11 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
               }
             }
           }),
+      }),
+      new ComponentPickerOption("Hoki", {
+        icon: <i className="icon hoki" />,
+        keywords: ["hoki"],
+        onSelect: () => editor.dispatchCommand(INSERT_HOKI_COMMAND, undefined),
       }),
       new ComponentPickerOption("Divider", {
         icon: <i className="icon horizontal-rule" />,

@@ -42,6 +42,7 @@ import EmojisPlugin from "./plugins/EmojisPlugin"
 import EquationsPlugin from "./plugins/EquationsPlugin"
 import FloatingLinkEditorPlugin from "./plugins/FloatingLinkEditorPlugin"
 import FloatingTextFormatToolbarPlugin from "./plugins/FloatingTextFormatToolbarPlugin"
+import HokiPlugin from "./plugins/HokiPlugin"
 import ImagesPlugin from "./plugins/ImagesPlugin"
 import InlineImagePlugin from "./plugins/InlineImagePlugin"
 import KeywordsPlugin from "./plugins/KeywordsPlugin"
@@ -166,6 +167,7 @@ export default function Editor({ onSubmit }: EditorProps): JSX.Element {
           <LexicalClickableLinkPlugin />
           <FloatingTextFormatToolbarPlugin />
         </NewTablePlugin>
+        <HokiPlugin />
         <ImagesPlugin />
         <InlineImagePlugin />
         <LinkPlugin />
