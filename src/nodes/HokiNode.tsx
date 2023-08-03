@@ -55,10 +55,14 @@ export class HokiNode extends DecoratorNode<JSX.Element> {
     return false
   }
 
+  onClose() {
+    console.log("onClose")
+  }
+
   decorate(): JSX.Element {
     return (
       <Suspense fallback={null}>
-        <HokiComponent />
+        <HokiComponent onClose={this.onClose} />
       </Suspense>
     )
   }

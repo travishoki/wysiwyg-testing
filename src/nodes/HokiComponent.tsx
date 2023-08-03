@@ -5,11 +5,7 @@ import "./HokiComponent.css"
 import ImageFile from "../images/icons/file-image.svg"
 import ImageClose from "../images/icons/close.svg"
 
-export default function HokiComponent(): JSX.Element {
-  const onClose = () => {
-    console.log("onClose")
-  }
-
+export default function HokiComponent({ onClose }: HokiComponentProps): JSX.Element {
   return (
     <Suspense fallback={null}>
       <div className="hoki-component-inner">
@@ -24,4 +20,8 @@ export default function HokiComponent(): JSX.Element {
       </div>
     </Suspense>
   )
+}
+
+type HokiComponentProps = {
+  onClose: () => void
 }
