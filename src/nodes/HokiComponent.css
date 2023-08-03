@@ -1,8 +1,30 @@
 .hoki-component {
   background: #80e0ff;
+  display: inline-block;
   padding: 5px 10px;
+  width: 200px;
 }
 
-.svg {
-  margin: 0 5px;
+.hoki-component-inner {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hoki-component-content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.svg-icon {
+  margin-right: 5px;
+}
+
+.svg-close {
+  cursor: pointer;
+}
+
+.hoki-component-content p {
+  margin: 0;
 }
