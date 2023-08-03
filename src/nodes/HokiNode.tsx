@@ -4,6 +4,7 @@ import {
   $applyNodeReplacement,
   DOMConversionMap,
   DOMConversionOutput,
+  DOMExportOutput,
   DecoratorNode,
   LexicalNode,
 } from "lexical"
@@ -45,9 +46,15 @@ export class HokiNode extends DecoratorNode<JSX.Element> {
   }
 
   createDOM(): HTMLElement {
-    const div = document.createElement("div")
-    div.className = "hoki-component"
-    return div
+    const element = document.createElement("div")
+    element.className = "hoki-component"
+    return element
+  }
+
+  exportDOM(): DOMExportOutput {
+    const element = document.createElement("div")
+    element.className = "hoki-component"
+    return { element }
   }
 
   updateDOM(): false {
