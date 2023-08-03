@@ -47,7 +47,7 @@ export class HokiNode extends DecoratorNode<JSX.Element> {
 
   createDOM(config: EditorConfig): HTMLElement {
     const span = document.createElement("span")
-    span.className = "farts"
+    span.className = "hoki-component"
     return span
   }
 
