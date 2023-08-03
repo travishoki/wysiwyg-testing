@@ -1715,13 +1715,13 @@ hr.selected {
   z-index: 3;
 }
 
-.PlaygroundEditorTheme__blockCursor {
+.ComposerTheme__blockCursor {
   display: block;
   pointer-events: none;
   position: absolute;
 }
 
-.PlaygroundEditorTheme__blockCursor:after {
+.ComposerTheme__blockCursor:after {
   content: "";
   display: block;
   position: absolute;
