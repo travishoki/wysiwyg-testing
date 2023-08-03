@@ -58,7 +58,7 @@ import TableCellResizer from "./plugins/TableCellResizer"
 import TableOfContentsPlugin from "./plugins/TableOfContentsPlugin"
 import { TablePlugin as NewTablePlugin } from "./plugins/TablePlugin"
 import ToolbarPlugin from "./plugins/ToolbarPlugin"
-import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme"
+import ComposerTheme from "./themes/ComposerTheme"
 import ContentEditable from "./ui/ContentEditable"
 import Placeholder from "./ui/Placeholder"
 import { Controls } from "./Controls/Controls"
@@ -95,7 +95,7 @@ export default function Editor({ onChange, onSubmit }: EditorProps): JSX.Element
     onError: (error: Error) => {
       throw error
     },
-    theme: PlaygroundEditorTheme,
+    theme: ComposerTheme,
   }
 
   useEffect(() => {

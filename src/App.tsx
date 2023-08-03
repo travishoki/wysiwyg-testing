@@ -5,7 +5,7 @@ import { SharedHistoryContext } from "./context/SharedHistoryContext"
 import { TableContext } from "./plugins/TablePlugin"
 import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext"
 import PlaygroundNodes from "./nodes/PlaygroundNodes"
-import PlaygroundEditorTheme from "./themes/PlaygroundEditorTheme"
+import ComposerTheme from "./themes/ComposerTheme"
 
 import Editor from "./Editor"
 import { Output } from "./Output/Output"
@@ -18,10 +18,10 @@ function onError(error: Error) {
 }
 
 const initialConfig = {
-  namespace: "Playground",
+  namespace: "Composer",
   nodes: [...PlaygroundNodes],
   onError,
-  theme: PlaygroundEditorTheme,
+  theme: ComposerTheme,
 }
 
 // ts-prune-ignore-next
