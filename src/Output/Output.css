@@ -1,0 +1,11 @@
+.output-shell {
+  margin: 50px auto 20px;
+  max-width: 1100px;
+}
+
+.output-content {
+  margin-bottom: 20px;
+  border-radius: 2px;
+  background: #ddd;
+  padding: 10px;
+}
