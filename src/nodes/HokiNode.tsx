@@ -34,7 +34,7 @@ export class HokiNode extends DecoratorNode<JSX.Element> {
   static importDOM(): DOMConversionMap | null {
     return {
       span: (domNode: HTMLElement) => {
-        if (!domNode.hasAttribute("data-lexical-hoki")) {
+        if (!domNode.hasAttribute("data-hoki-component")) {
           return null
         }
         return {
@@ -52,8 +52,9 @@ export class HokiNode extends DecoratorNode<JSX.Element> {
   }
 
   exportDOM(): DOMExportOutput {
-    const element = document.createElement("div")
-    element.className = "hoki-component"
+    const element = document.createElement("span")
+    element.setAttribute("data-hoki-component", "true")
+    element.textContent = `{{hoki}}`
     return { element }
   }
 
