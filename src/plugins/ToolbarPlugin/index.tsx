@@ -834,15 +834,6 @@ export default function ToolbarPlugin(): JSX.Element {
           >
             <DropDownItem
               onClick={() => {
-                activeEditor.dispatchCommand(INSERT_HOKI_COMMAND, undefined)
-              }}
-              className="item"
-            >
-              <i className="icon hoki" />
-              <span className="text">Hoki</span>
-            </DropDownItem>
-            <DropDownItem
-              onClick={() => {
                 activeEditor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined)
               }}
               className="item"

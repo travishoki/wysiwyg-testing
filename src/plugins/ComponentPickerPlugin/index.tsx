@@ -251,11 +251,6 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
             }
           }),
       }),
-      new ComponentPickerOption("Hoki", {
-        icon: <i className="icon hoki" />,
-        keywords: ["hoki"],
-        onSelect: () => editor.dispatchCommand(INSERT_HOKI_COMMAND, undefined),
-      }),
       new ComponentPickerOption("Divider", {
         icon: <i className="icon horizontal-rule" />,
         keywords: ["horizontal rule", "divider", "hr"],

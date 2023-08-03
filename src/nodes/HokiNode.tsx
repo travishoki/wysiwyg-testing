@@ -33,7 +33,7 @@ export class HokiNode extends DecoratorNode<JSX.Element> {
   static importDOM(): DOMConversionMap | null {
     return {
       span: (domNode: HTMLElement) => {
-        if (!domNode.hasAttribute("data-lexical-mention")) {
+        if (!domNode.hasAttribute("data-lexical-hoki")) {
           return null
         }
         return {
