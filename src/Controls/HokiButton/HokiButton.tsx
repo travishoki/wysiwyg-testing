@@ -4,6 +4,7 @@ import { useCallback } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 
 import { INSERT_HOKI_COMMAND } from "../../const"
+import { Button } from "../Button/Button"
 
 export const HokiButton = () => {
   const [editor] = useLexicalComposerContext()
@@ -12,5 +13,5 @@ export const HokiButton = () => {
     editor.dispatchCommand(INSERT_HOKI_COMMAND, undefined)
   }, [editor])
 
-  return <button onClick={onClick}>Hoki</button>
+  return <Button onClick={onClick} title="Hoki" />
 }

@@ -3,7 +3,7 @@ import React from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $generateHtmlFromNodes } from "@lexical/html"
 
-import "./SubmitButton.css"
+import { Button } from "../Button/Button"
 
 export const SubmitButton = ({ onSubmit }: SubmitButtonProps) => {
   const [editor] = useLexicalComposerContext()
@@ -16,11 +16,7 @@ export const SubmitButton = ({ onSubmit }: SubmitButtonProps) => {
     })
   }
 
-  return (
-    <button className="submit-button" onClick={onClick}>
-      Submit
-    </button>
-  )
+  return <Button onClick={onClick} title="Submit" />
 }
 
 type SubmitButtonProps = {
