@@ -7,7 +7,6 @@ import {
   DecoratorNode,
   LexicalNode,
 } from "lexical"
-import { DELETE_HOKI_COMMAND } from "../const"
 
 const HokiComponent = React.lazy(
   // @ts-ignore
