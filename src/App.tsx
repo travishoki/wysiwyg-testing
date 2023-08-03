@@ -28,6 +28,10 @@ const initialConfig = {
 export const App = () => {
   const [output, setOutput] = useState<string>()
 
+  const onChange = () => {
+    setOutput(null)
+  }
+
   return (
     <>
       <LexicalComposer initialConfig={initialConfig}>
@@ -35,7 +39,7 @@ export const App = () => {
           <TableContext>
             <SharedAutocompleteContext>
               <div className="editor-shell">
-                <Editor onSubmit={setOutput} />
+                <Editor onChange={onChange} onSubmit={setOutput} />
               </div>
             </SharedAutocompleteContext>
           </TableContext>

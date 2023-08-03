@@ -5,6 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
+import * as React from "react"
+import { useEffect, useState } from "react"
 
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin"
 import { CharacterLimitPlugin } from "@lexical/react/LexicalCharacterLimitPlugin"
@@ -20,10 +22,9 @@ import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
 import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin"
 import { TablePlugin } from "@lexical/react/LexicalTablePlugin"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
-import * as React from "react"
-import { useEffect, useState } from "react"
-import { CAN_USE_DOM } from "./shared/canUseDOM"
+import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
 
+import { CAN_USE_DOM } from "./shared/canUseDOM"
 import { useSettings } from "./context/SettingsContext"
 import { useSharedHistoryContext } from "./context/SharedHistoryContext"
 import TableCellNodes from "./nodes/TableCellNodes"
@@ -62,7 +63,7 @@ import ContentEditable from "./ui/ContentEditable"
 import Placeholder from "./ui/Placeholder"
 import { Controls } from "./Controls/Controls"
 
-export default function Editor({ onSubmit }: EditorProps): JSX.Element {
+export default function Editor({ onChange, onSubmit }: EditorProps): JSX.Element {
   const { historyState } = useSharedHistoryContext()
   const {
     settings: {
@@ -193,11 +194,14 @@ export default function Editor({ onSubmit }: EditorProps): JSX.Element {
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
         <ActionsPlugin />
       </div>
+
+      <OnChangePlugin onChange={onChange} />
       <Controls onSubmit={onSubmit} />
     </>
   )
 }
 
 type EditorProps = {
+  onChange: () => void
   onSubmit: (value: string) => void
 }
