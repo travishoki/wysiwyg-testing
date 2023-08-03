@@ -77,7 +77,6 @@ import DropDown, { DropDownItem } from "../../ui/DropDown"
 import DropdownColorPicker from "../../ui/DropdownColorPicker"
 import { getSelectedNode } from "../../utils/getSelectedNode"
 import { sanitizeUrl } from "../../utils/url"
-import { InsertEquationDialog } from "../EquationsPlugin"
 import { InsertImageDialog } from "../ImagesPlugin"
 import { InsertInlineImageDialog } from "../InlineImagePlugin"
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"
@@ -884,17 +883,6 @@ export default function ToolbarPlugin(): JSX.Element {
             >
               <i className="icon table" />
               <span className="text">Table (Experimental)</span>
-            </DropDownItem>
-            <DropDownItem
-              onClick={() => {
-                showModal("Insert Equation", (onClose) => (
-                  <InsertEquationDialog activeEditor={activeEditor} onClose={onClose} />
-                ))
-              }}
-              className="item"
-            >
-              <i className="icon equation" />
-              <span className="text">Equation</span>
             </DropDownItem>
           </DropDown>
         </>

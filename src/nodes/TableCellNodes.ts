@@ -16,7 +16,6 @@ import { HeadingNode, QuoteNode } from "@lexical/rich-text"
 
 import { AutocompleteNode } from "./AutocompleteNode"
 import { EmojiNode } from "./EmojiNode"
-import { EquationNode } from "./EquationNode"
 import { ImageNode } from "./ImageNode"
 import { KeywordNode } from "./KeywordNode"
 import { MentionNode } from "./MentionNode"
@@ -34,7 +33,6 @@ const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   ImageNode,
   MentionNode,
   EmojiNode,
-  EquationNode,
   AutocompleteNode,
   KeywordNode,
 ]

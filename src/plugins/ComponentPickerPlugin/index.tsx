@@ -35,7 +35,6 @@ import * as ReactDOM from "react-dom"
 
 import useModal from "../../hooks/useModal"
 import catTypingGif from "../../images/cat-typing.gif"
-import { InsertEquationDialog } from "../EquationsPlugin"
 import { INSERT_IMAGE_COMMAND, InsertImageDialog } from "../ImagesPlugin"
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"
 import { INSERT_HOKI_COMMAND } from "../../const"
@@ -255,14 +254,6 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
         icon: <i className="icon horizontal-rule" />,
         keywords: ["horizontal rule", "divider", "hr"],
         onSelect: () => editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined),
-      }),
-      new ComponentPickerOption("Equation", {
-        icon: <i className="icon equation" />,
-        keywords: ["equation", "latex", "math"],
-        onSelect: () =>
-          showModal("Insert Equation", (onClose) => (
-            <InsertEquationDialog activeEditor={editor} onClose={onClose} />
-          )),
       }),
       new ComponentPickerOption("GIF", {
         icon: <i className="icon gif" />,

@@ -1536,7 +1536,6 @@ const DICTIONARY = [
   "calculation",
   "consolidated",
   "occasions",
-  "equations",
   "exceptional",
   "respondents",
   "considerations",
