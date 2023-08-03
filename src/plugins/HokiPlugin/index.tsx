@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import {
   $createParagraphNode,
@@ -7,11 +7,13 @@ import {
   COMMAND_PRIORITY_EDITOR,
 } from "lexical"
 import { $wrapNodeInElement, mergeRegister } from "@lexical/utils"
-import { INSERT_HOKI_COMMAND } from "../../const"
+
+import { DELETE_HOKI_COMMAND, INSERT_HOKI_COMMAND } from "../../const"
 import { $createHokiNode, HokiNode } from "../../nodes/HokiNode"
 
 export default function HokiPlugin(): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
+  const [farts, setFarts] = useState<HokiNode>()
 
   useEffect(() => {
     if (!editor.hasNodes([HokiNode])) {
@@ -27,13 +29,25 @@ export default function HokiPlugin(): JSX.Element | null {
           if ($isRootOrShadowRoot(hokiNode.getParentOrThrow())) {
             $wrapNodeInElement(hokiNode, $createParagraphNode).selectEnd()
           }
+          setFarts(hokiNode)
+
+          return true
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        DELETE_HOKI_COMMAND,
+        () => {
+          if (farts) {
+            farts.remove()
+          }
 
           return true
         },
         COMMAND_PRIORITY_EDITOR,
       ),
     )
-  }, [editor])
+  }, [editor, farts])
 
   return null
 }
