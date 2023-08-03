@@ -5,7 +5,7 @@ import "./HokiComponent.css"
 export default function HokiComponent(): JSX.Element {
   return (
     <Suspense fallback={null}>
-      <>Hoki is Here!</>
+      <>Hoki was here!</>
     </Suspense>
   )
 }
