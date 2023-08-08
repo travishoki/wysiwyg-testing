@@ -65,7 +65,7 @@ export class HokiNode extends DecoratorNode<JSX.Element> {
   decorate(): JSX.Element {
     return (
       <Suspense fallback={null}>
-        <HokiComponent />
+        <HokiComponent nodeKey={this.getKey()} />
       </Suspense>
     )
   }

@@ -4,15 +4,21 @@ import "./HokiComponent.css"
 
 import ImageFile from "../images/icons/file-image.svg"
 import ImageClose from "../images/icons/close.svg"
-import { DELETE_HOKI_COMMAND } from "../const"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
+import { $getNodeByKey } from "lexical"
+import { $isHokiNodeNode } from "./HokiNode"
 
-export default function HokiComponent(): JSX.Element {
+export default function HokiComponent({ nodeKey }: HokiComponentProps): JSX.Element {
   const [editor] = useLexicalComposerContext()
 
   const onClickClose = useCallback(() => {
-    editor.dispatchCommand(DELETE_HOKI_COMMAND, undefined)
-  }, [editor])
+    editor.update(() => {
+      const node = $getNodeByKey(nodeKey)
+      if ($isHokiNodeNode(node)) {
+        node.remove()
+      }
+    })
+  }, [editor, nodeKey])
 
   return (
     <Suspense fallback={null}>
@@ -28,4 +34,8 @@ export default function HokiComponent(): JSX.Element {
       </div>
     </Suspense>
   )
+}
+
+type HokiComponentProps = {
+  nodeKey: string
 }
