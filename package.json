@@ -10,7 +10,8 @@
     "bounce": "rm -rf node_modules && yarn install",
     "deadcode": "node scripts/deadcode.mjs",
     "lint": "eslint --cache --ext .js,.ts,.tsx src",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "ts-check": "yarn tsc"
   },
   "dependencies": {
     "@lexical/clipboard": "^0.11.3",
