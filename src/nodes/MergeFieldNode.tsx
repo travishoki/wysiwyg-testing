@@ -22,6 +22,8 @@ function convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
   return null
 }
 
+const mergeFieldKey = "merge-field-key"
+
 export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   static getType(): string {
     return "merge-field"
@@ -54,7 +56,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   exportDOM(): DOMExportOutput {
     const element = document.createElement("span")
     element.setAttribute("data-merge-field-component", "true")
-    element.textContent = `{{hoki}}`
+    element.textContent = `{{${mergeFieldKey}}}`
     return { element }
   }
 
@@ -65,7 +67,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   decorate(): JSX.Element {
     return (
       <Suspense fallback={null}>
-        <MergeFieldComponent nodeKey={this.getKey()} mergeFieldKey="merge-field-key" />
+        <MergeFieldComponent nodeKey={this.getKey()} mergeFieldKey={mergeFieldKey} />
       </Suspense>
     )
   }
