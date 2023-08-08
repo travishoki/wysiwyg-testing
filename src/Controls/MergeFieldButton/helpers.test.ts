@@ -1,4 +1,4 @@
-import { capitalizeWord, formatTitle } from "./helpers"
+import { capitalizeWord, formatMergeFieldTitle } from "./helpers"
 
 describe("capitalizeWord", () => {
   it("capitalizeWord", () => {
@@ -9,10 +9,10 @@ describe("capitalizeWord", () => {
   })
 })
 
-describe("formatTitle", () => {
-  it("formatTitle", () => {
+describe("formatMergeFieldTitle", () => {
+  it("formatMergeFieldTitle", () => {
     const str = "one-two-three"
-    const result = formatTitle(str)
+    const result = formatMergeFieldTitle(str)
     const expectedResult = "One Two Three"
     expect(result).toEqual(expectedResult)
   })

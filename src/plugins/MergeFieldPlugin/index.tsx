@@ -22,8 +22,8 @@ export default function MergeFieldPlugin(): JSX.Element | null {
     return mergeRegister(
       editor.registerCommand(
         INSERT_MERGE_FIELD_COMMAND,
-        () => {
-          const mergeFieldKey = "farts"
+        (payload) => {
+          const { mergeFieldKey } = payload
           const MergeFieldNode = $createMergeFieldNode(mergeFieldKey)
           $insertNodes([MergeFieldNode])
           if ($isRootOrShadowRoot(MergeFieldNode.getParentOrThrow())) {

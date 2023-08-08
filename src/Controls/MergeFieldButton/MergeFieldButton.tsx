@@ -5,16 +5,17 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 
 import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
 import { Button } from "../Button/Button"
-import { formatTitle } from "./helpers"
+import { formatMergeFieldTitle } from "./helpers"
 
 export const MergeFieldButton = ({ mergeFieldKey }: MergeFieldButtonProps) => {
   const [editor] = useLexicalComposerContext()
 
   const onClick = useCallback(() => {
-    editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, undefined)
-  }, [editor])
+    const payload = { mergeFieldKey }
+    editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, payload)
+  }, [editor, mergeFieldKey])
 
-  const title = formatTitle(mergeFieldKey)
+  const title = formatMergeFieldTitle(mergeFieldKey)
 
   return <Button onClick={onClick} title={title} />
 }
