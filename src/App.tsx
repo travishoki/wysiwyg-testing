@@ -7,13 +7,9 @@ import { Composer } from "./Composer"
 export const App = () => {
   const [output, setOutput] = useState<string>()
 
-  const onChange = () => {
-    setOutput(null)
-  }
-
   return (
     <>
-      <Composer onChange={onChange} setOutput={setOutput} />
+      <Composer setOutput={setOutput} />
 
       <Output output={output} />
     </>

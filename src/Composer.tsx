@@ -25,14 +25,14 @@ const initialConfig = {
   theme: ComposerTheme,
 }
 
-export const Composer = ({ onChange, setOutput }: ComposerProps) => {
+export const Composer = ({ setOutput }: ComposerProps) => {
   return (
     <LexicalComposer initialConfig={initialConfig}>
       <SharedHistoryContext>
         <TableContext>
           <SharedAutocompleteContext>
             <div className="editor-shell">
-              <Editor onChange={onChange} />
+              <Editor onChange={() => setOutput(null)} />
               <Controls onSubmit={setOutput} />
               <MergeFieldControls />
             </div>
@@ -44,6 +44,5 @@ export const Composer = ({ onChange, setOutput }: ComposerProps) => {
 }
 
 type ComposerProps = {
-  onChange: () => void
   setOutput: (output: string) => void
 }
