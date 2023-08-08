@@ -7,18 +7,18 @@ import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
 import { Button } from "../Button/Button"
 import { formatTitle } from "./helpers"
 
-export const MergeFieldButton = ({ mergeFieldItem }: MergeFieldButtonProps) => {
+export const MergeFieldButton = ({ mergeFieldKey }: MergeFieldButtonProps) => {
   const [editor] = useLexicalComposerContext()
 
   const onClick = useCallback(() => {
     editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, undefined)
   }, [editor])
 
-  const title = formatTitle(mergeFieldItem)
+  const title = formatTitle(mergeFieldKey)
 
   return <Button onClick={onClick} title={title} />
 }
 
 type MergeFieldButtonProps = {
-  mergeFieldItem: string
+  mergeFieldKey: string
 }

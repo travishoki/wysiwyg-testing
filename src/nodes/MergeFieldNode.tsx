@@ -16,21 +16,22 @@ const MergeFieldComponent = React.lazy(
 
 function convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
   if (domNode instanceof HTMLImageElement) {
-    const node = $createMergeFieldNode()
+    const mergeFieldKey = "farts"
+    const node = $createMergeFieldNode(mergeFieldKey)
     return { node }
   }
   return null
 }
 
-const mergeFieldKey = "merge-field-key"
-
 export class MergeFieldNode extends DecoratorNode<JSX.Element> {
+  mergeFieldKey: string
+
   static getType(): string {
     return "merge-field"
   }
 
-  static clone(): MergeFieldNode {
-    return new MergeFieldNode()
+  static clone(node: MergeFieldNode): MergeFieldNode {
+    return new MergeFieldNode(node.mergeFieldKey)
   }
 
   static importDOM(): DOMConversionMap | null {
@@ -47,6 +48,11 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     }
   }
 
+  constructor(mergeFieldKey: string) {
+    super()
+    this.mergeFieldKey = mergeFieldKey
+  }
+
   createDOM(): HTMLElement {
     const element = document.createElement("div")
     element.className = "merge-field-component"
@@ -56,7 +62,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   exportDOM(): DOMExportOutput {
     const element = document.createElement("span")
     element.setAttribute("data-merge-field-component", "true")
-    element.textContent = `{{${mergeFieldKey}}}`
+    element.textContent = `{{${this.mergeFieldKey}}}`
     return { element }
   }
 
@@ -67,14 +73,14 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   decorate(): JSX.Element {
     return (
       <Suspense fallback={null}>
-        <MergeFieldComponent nodeKey={this.getKey()} mergeFieldKey={mergeFieldKey} />
+        <MergeFieldComponent nodeKey={this.getKey()} mergeFieldKey={this.mergeFieldKey} />
       </Suspense>
     )
   }
 }
 
-export function $createMergeFieldNode(): MergeFieldNode {
-  return $applyNodeReplacement(new MergeFieldNode())
+export function $createMergeFieldNode(mergeFieldKey: string): MergeFieldNode {
+  return $applyNodeReplacement(new MergeFieldNode(mergeFieldKey))
 }
 
 export function $isMergeFieldNode(node: LexicalNode | null | undefined): node is MergeFieldNode {

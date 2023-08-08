@@ -23,7 +23,8 @@ export default function MergeFieldPlugin(): JSX.Element | null {
       editor.registerCommand(
         INSERT_MERGE_FIELD_COMMAND,
         () => {
-          const MergeFieldNode = $createMergeFieldNode()
+          const mergeFieldKey = "farts"
+          const MergeFieldNode = $createMergeFieldNode(mergeFieldKey)
           $insertNodes([MergeFieldNode])
           if ($isRootOrShadowRoot(MergeFieldNode.getParentOrThrow())) {
             $wrapNodeInElement(MergeFieldNode, $createParagraphNode).selectEnd()

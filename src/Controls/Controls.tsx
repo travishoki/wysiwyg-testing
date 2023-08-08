@@ -2,15 +2,15 @@ import * as React from "react"
 
 import { MergeFieldButton } from "./MergeFieldButton/MergeFieldButton"
 import { SubmitButton } from "./SubmitButton/SubmitButton"
-import { mergeFieldArray } from "./const"
+import { mergeFieldKeyArray } from "./const"
 import "./Controls.css"
 
 export const Controls = ({ onSubmit }: ControlsProps) => (
   <div className="controls">
     <SubmitButton onSubmit={onSubmit} />
 
-    {mergeFieldArray.map((mergeFieldItem) => (
-      <MergeFieldButton key={mergeFieldItem} mergeFieldItem={mergeFieldItem} />
+    {mergeFieldKeyArray.map((mergeFieldKey) => (
+      <MergeFieldButton key={mergeFieldKey} mergeFieldKey={mergeFieldKey} />
     ))}
   </div>
 )

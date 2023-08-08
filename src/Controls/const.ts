@@ -1,1 +1,1 @@
-export const mergeFieldArray: string[] = ["one-one-1", "two-two-2", "three-three-3"]
+export const mergeFieldKeyArray: string[] = ["one-one-1", "two-two-2", "three-three-3"]
