@@ -42,7 +42,7 @@ import EmojiPickerPlugin from "./plugins/EmojiPickerPlugin"
 import EmojisPlugin from "./plugins/EmojisPlugin"
 import FloatingLinkEditorPlugin from "./plugins/FloatingLinkEditorPlugin"
 import FloatingTextFormatToolbarPlugin from "./plugins/FloatingTextFormatToolbarPlugin"
-import HokiPlugin from "./plugins/HokiPlugin"
+import MergeFieldPlugin from "./plugins/MergeFieldPlugin"
 import ImagesPlugin from "./plugins/ImagesPlugin"
 import InlineImagePlugin from "./plugins/InlineImagePlugin"
 import KeywordsPlugin from "./plugins/KeywordsPlugin"
@@ -167,7 +167,7 @@ export default function Editor({ onChange, onSubmit }: EditorProps): JSX.Element
           <LexicalClickableLinkPlugin />
           <FloatingTextFormatToolbarPlugin />
         </NewTablePlugin>
-        <HokiPlugin />
+        <MergeFieldPlugin />
         <ImagesPlugin />
         <InlineImagePlugin />
         <LinkPlugin />

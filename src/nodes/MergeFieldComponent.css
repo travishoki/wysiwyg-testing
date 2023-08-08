@@ -1,17 +1,17 @@
-.hoki-component {
+.merge-field-component {
   background: #80e0ff;
   display: inline-block;
   padding: 4px 8px;
   width: 200px;
 }
 
-.hoki-component-inner {
+.merge-field-component-inner {
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
 
-.hoki-component-content {
+.merge-field-component-content {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -34,6 +34,6 @@
   padding: 0;
 }
 
-.hoki-component-content p {
+.merge-field-component-content p {
   margin: 0;
 }

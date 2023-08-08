@@ -1,13 +1,13 @@
 import * as React from "react"
 
-import { HokiButton } from "./HokiButton/HokiButton"
+import { MergeFieldButton } from "./MergeFieldButton/MergeFieldButton"
 import { SubmitButton } from "./SubmitButton/SubmitButton"
 import "./Controls.css"
 
 export const Controls = ({ onSubmit }: ControlsProps) => (
   <div className="controls">
     <SubmitButton onSubmit={onSubmit} />
-    <HokiButton />
+    <MergeFieldButton />
   </div>
 )
 

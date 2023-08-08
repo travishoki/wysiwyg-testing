@@ -1,20 +1,20 @@
 import * as React from "react"
 import { Suspense, useCallback } from "react"
-import "./HokiComponent.css"
+import "./MergeFieldComponent.css"
 
 import ImageFile from "../images/icons/file-image.svg"
 import ImageClose from "../images/icons/close.svg"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $getNodeByKey } from "lexical"
-import { $isHokiNode } from "./HokiNode"
+import { $isMergeFieldNode } from "./MergeFieldNode"
 
-export default function HokiComponent({ nodeKey }: HokiComponentProps): JSX.Element {
+export default function MergeFieldComponent({ nodeKey }: MergeFieldComponentProps): JSX.Element {
   const [editor] = useLexicalComposerContext()
 
   const onClickClose = useCallback(() => {
     editor.update(() => {
       const node = $getNodeByKey(nodeKey)
-      if ($isHokiNode(node)) {
+      if ($isMergeFieldNode(node)) {
         node.remove()
       }
     })
@@ -22,8 +22,8 @@ export default function HokiComponent({ nodeKey }: HokiComponentProps): JSX.Elem
 
   return (
     <Suspense fallback={null}>
-      <div className="hoki-component-inner">
-        <div className="hoki-component-content">
+      <div className="merge-field-component-inner">
+        <div className="merge-field-component-content">
           <img alt="icon" className="svg-icon" height="15" src={ImageFile} width="15" />
           <p>Hoki was here!</p>
         </div>
@@ -36,6 +36,6 @@ export default function HokiComponent({ nodeKey }: HokiComponentProps): JSX.Elem
   )
 }
 
-type HokiComponentProps = {
+type MergeFieldComponentProps = {
   nodeKey: string
 }
