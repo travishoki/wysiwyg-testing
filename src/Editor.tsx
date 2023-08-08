@@ -196,7 +196,7 @@ export default function Editor({ onChange, onSubmit }: EditorProps): JSX.Element
 
       <OnChangePlugin onChange={onChange} />
       <Controls onSubmit={onSubmit} />
-      <MergeFieldControls onSubmit={onSubmit} />
+      <MergeFieldControls />
     </>
   )
 }
