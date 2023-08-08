@@ -61,6 +61,7 @@ import ComposerTheme from "./themes/ComposerTheme"
 import ContentEditable from "./ui/ContentEditable"
 import Placeholder from "./ui/Placeholder"
 import { Controls } from "./Controls/Controls"
+import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 
 export default function Editor({ onChange, onSubmit }: EditorProps): JSX.Element {
   const { historyState } = useSharedHistoryContext()
@@ -195,6 +196,7 @@ export default function Editor({ onChange, onSubmit }: EditorProps): JSX.Element
 
       <OnChangePlugin onChange={onChange} />
       <Controls onSubmit={onSubmit} />
+      <MergeFieldControls onSubmit={onSubmit} />
     </>
   )
 }

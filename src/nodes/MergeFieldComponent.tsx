@@ -6,7 +6,7 @@ import { $getNodeByKey } from "lexical"
 
 import ImageClose from "../images/icons/close.svg"
 import { $isMergeFieldNode } from "./MergeFieldNode"
-import { formatMergeFieldTitle } from "../Controls/MergeFieldButton/helpers"
+import { formatMergeFieldTitle } from "../MergeFieldControls/MergeFieldButton/helpers"
 import "./MergeFieldComponent.css"
 
 export default function MergeFieldComponent({
