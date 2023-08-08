@@ -10,7 +10,7 @@ export const Controls = ({ onSubmit }: ControlsProps) => (
     <SubmitButton onSubmit={onSubmit} />
 
     {mergeFieldArray.map((mergeFieldItem) => (
-      <MergeFieldButton key={mergeFieldItem.key} mergeFieldItem={mergeFieldItem} />
+      <MergeFieldButton key={mergeFieldItem} mergeFieldItem={mergeFieldItem} />
     ))}
   </div>
 )

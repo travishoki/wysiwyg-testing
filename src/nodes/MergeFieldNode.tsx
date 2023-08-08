@@ -65,7 +65,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   decorate(): JSX.Element {
     return (
       <Suspense fallback={null}>
-        <MergeFieldComponent nodeKey={this.getKey()} />
+        <MergeFieldComponent nodeKey={this.getKey()} mergeFieldKey="merge-field-key" />
       </Suspense>
     )
   }

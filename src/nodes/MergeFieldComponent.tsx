@@ -8,7 +8,10 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { $getNodeByKey } from "lexical"
 import { $isMergeFieldNode } from "./MergeFieldNode"
 
-export default function MergeFieldComponent({ nodeKey }: MergeFieldComponentProps): JSX.Element {
+export default function MergeFieldComponent({
+  mergeFieldKey,
+  nodeKey,
+}: MergeFieldComponentProps): JSX.Element {
   const [editor] = useLexicalComposerContext()
 
   const onClickClose = useCallback(() => {
@@ -25,7 +28,7 @@ export default function MergeFieldComponent({ nodeKey }: MergeFieldComponentProp
       <div className="merge-field-component-inner">
         <div className="merge-field-component-content">
           <img alt="icon" className="svg-icon" height="15" src={ImageFile} width="15" />
-          <p>Hoki was here!</p>
+          <p>{mergeFieldKey}</p>
         </div>
 
         <button className="button-close" onClick={onClickClose}>
@@ -37,5 +40,6 @@ export default function MergeFieldComponent({ nodeKey }: MergeFieldComponentProp
 }
 
 type MergeFieldComponentProps = {
+  mergeFieldKey: string
   nodeKey: string
 }
