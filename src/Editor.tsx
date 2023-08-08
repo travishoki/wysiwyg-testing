@@ -60,10 +60,8 @@ import ToolbarPlugin from "./plugins/ToolbarPlugin"
 import ComposerTheme from "./themes/ComposerTheme"
 import ContentEditable from "./ui/ContentEditable"
 import Placeholder from "./ui/Placeholder"
-import { Controls } from "./Controls/Controls"
-import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 
-export default function Editor({ onChange, onSubmit }: EditorProps): JSX.Element {
+export default function Editor({ onChange }: EditorProps): JSX.Element {
   const { historyState } = useSharedHistoryContext()
   const {
     settings: {
@@ -195,13 +193,10 @@ export default function Editor({ onChange, onSubmit }: EditorProps): JSX.Element
       </div>
 
       <OnChangePlugin onChange={onChange} />
-      <Controls onSubmit={onSubmit} />
-      <MergeFieldControls />
     </>
   )
 }
 
 type EditorProps = {
   onChange: () => void
-  onSubmit: (value: string) => void
 }

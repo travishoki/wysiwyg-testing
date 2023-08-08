@@ -8,6 +8,8 @@ import PlaygroundNodes from "./nodes/PlaygroundNodes"
 import ComposerTheme from "./themes/ComposerTheme"
 
 import Editor from "./Editor"
+import { Controls } from "./Controls/Controls"
+import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
@@ -30,7 +32,9 @@ export const Composer = ({ onChange, setOutput }: ComposerProps) => {
         <TableContext>
           <SharedAutocompleteContext>
             <div className="editor-shell">
-              <Editor onChange={onChange} onSubmit={setOutput} />
+              <Editor onChange={onChange} />
+              <Controls onSubmit={setOutput} />
+              <MergeFieldControls />
             </div>
           </SharedAutocompleteContext>
         </TableContext>
