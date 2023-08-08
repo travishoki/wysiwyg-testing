@@ -15,7 +15,7 @@ const MergeFieldComponent = React.lazy(
 )
 
 function convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
-  if (domNode instanceof HTMLImageElement) {
+  if (domNode instanceof HTMLElement) {
     const mergeFieldKey = "farts"
     const node = $createMergeFieldNode(mergeFieldKey)
     return { node }
