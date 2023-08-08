@@ -5,7 +5,7 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 
 import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
 import { Button } from "../Button/Button"
-import { formatTitle } from "./const"
+import { formatTitle } from "./helpers"
 
 export const MergeFieldButton = ({ mergeFieldItem }: MergeFieldButtonProps) => {
   const [editor] = useLexicalComposerContext()
