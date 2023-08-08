@@ -1,1 +1,15 @@
-export const mergeFieldKeyArray: string[] = ["hoki-1", "hoki-2", "hoki-3"]
+export const mergeFieldKeyArray: mergeFieldObject[] = [
+  {
+    key: "hoki-1",
+  },
+  {
+    key: "hoki-2",
+  },
+  {
+    key: "hoki-3",
+  },
+]
+
+type mergeFieldObject = {
+  key: string
+}
