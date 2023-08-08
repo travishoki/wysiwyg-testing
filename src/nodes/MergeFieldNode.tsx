@@ -14,15 +14,6 @@ const MergeFieldComponent = React.lazy(
   () => import("./MergeFieldComponent"),
 )
 
-function convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
-  if (domNode instanceof HTMLElement) {
-    const mergeFieldKey = "farts"
-    const node = $createMergeFieldNode(mergeFieldKey)
-    return { node }
-  }
-  return null
-}
-
 export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   mergeFieldKey: string
 
@@ -34,14 +25,22 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return new MergeFieldNode(node.mergeFieldKey)
   }
 
-  static importDOM(): DOMConversionMap | null {
+  convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
+    if (domNode instanceof HTMLElement) {
+      const node = $createMergeFieldNode(this.mergeFieldKey)
+      return { node }
+    }
+    return null
+  }
+
+  importDOM(): DOMConversionMap | null {
     return {
       span: (domNode: HTMLElement) => {
         if (!domNode.hasAttribute("data-merge-field-component")) {
           return null
         }
         return {
-          conversion: convertMergeFieldElement,
+          conversion: this.convertMergeFieldElement,
           priority: 1,
         }
       },
