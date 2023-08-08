@@ -24,7 +24,7 @@ function convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
 
 export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   static getType(): string {
-    return "hoki"
+    return "merge-field"
   }
 
   static clone(): MergeFieldNode {
