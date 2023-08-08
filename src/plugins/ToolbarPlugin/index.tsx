@@ -80,7 +80,6 @@ import { sanitizeUrl } from "../../utils/url"
 import { InsertImageDialog } from "../ImagesPlugin"
 import { InsertInlineImageDialog } from "../InlineImagePlugin"
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"
-import { INSERT_HOKI_COMMAND } from "../../const"
 
 const blockTypeToBlockName = {
   bullet: "Bulleted List",

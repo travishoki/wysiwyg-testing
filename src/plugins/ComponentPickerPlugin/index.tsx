@@ -37,7 +37,6 @@ import useModal from "../../hooks/useModal"
 import catTypingGif from "../../images/cat-typing.gif"
 import { INSERT_IMAGE_COMMAND, InsertImageDialog } from "../ImagesPlugin"
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"
-import { INSERT_HOKI_COMMAND } from "../../const"
 
 class ComponentPickerOption extends MenuOption {
   // What shows up in the editor
