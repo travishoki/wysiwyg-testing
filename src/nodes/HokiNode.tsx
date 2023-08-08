@@ -75,6 +75,6 @@ export function $createHokiNode(): HokiNode {
   return $applyNodeReplacement(new HokiNode())
 }
 
-export function $isHokiNodeNode(node: LexicalNode | null | undefined): node is HokiNode {
+export function $isHokiNode(node: LexicalNode | null | undefined): node is HokiNode {
   return node instanceof HokiNode
 }

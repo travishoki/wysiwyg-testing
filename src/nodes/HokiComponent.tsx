@@ -6,7 +6,7 @@ import ImageFile from "../images/icons/file-image.svg"
 import ImageClose from "../images/icons/close.svg"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $getNodeByKey } from "lexical"
-import { $isHokiNodeNode } from "./HokiNode"
+import { $isHokiNode } from "./HokiNode"
 
 export default function HokiComponent({ nodeKey }: HokiComponentProps): JSX.Element {
   const [editor] = useLexicalComposerContext()
@@ -14,7 +14,7 @@ export default function HokiComponent({ nodeKey }: HokiComponentProps): JSX.Elem
   const onClickClose = useCallback(() => {
     editor.update(() => {
       const node = $getNodeByKey(nodeKey)
-      if ($isHokiNodeNode(node)) {
+      if ($isHokiNode(node)) {
         node.remove()
       }
     })
