@@ -4,7 +4,7 @@ import { MergeFieldButton } from "./MergeFieldButton/MergeFieldButton"
 import { mergeFieldKeyArray } from "./const"
 import "./MergeFieldControls.css"
 
-export const MergeFieldControls = ({ onSubmit }: MergeFieldControlsProps) => (
+export const MergeFieldControls = () => (
   <div className="controls">
     {mergeFieldKeyArray.map((mergeFieldKey) => (
       <MergeFieldButton
@@ -15,7 +15,3 @@ export const MergeFieldControls = ({ onSubmit }: MergeFieldControlsProps) => (
     ))}
   </div>
 )
-
-type MergeFieldControlsProps = {
-  onSubmit: (value: string) => void
-}
