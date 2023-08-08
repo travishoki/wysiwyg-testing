@@ -3,14 +3,14 @@ import { Suspense, useCallback } from "react"
 
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $getNodeByKey } from "lexical"
-import ImageFile from "../images/icons/file-image.svg"
-import ImageClose from "../images/icons/close.svg"
 
+import ImageClose from "../images/icons/close.svg"
 import { $isMergeFieldNode } from "./MergeFieldNode"
 import { formatMergeFieldTitle } from "../Controls/MergeFieldButton/helpers"
 import "./MergeFieldComponent.css"
 
 export default function MergeFieldComponent({
+  mergeFieldIconUrl,
   mergeFieldKey,
   nodeKey,
 }: MergeFieldComponentProps): JSX.Element {
@@ -29,7 +29,7 @@ export default function MergeFieldComponent({
     <Suspense fallback={null}>
       <div className="merge-field-component-inner">
         <div className="merge-field-component-content">
-          <img alt="icon" className="svg-icon" height="15" src={ImageFile} width="15" />
+          <img alt="icon" className="svg-icon" height="15" src={mergeFieldIconUrl} width="15" />
           <p>{formatMergeFieldTitle(mergeFieldKey)}</p>
         </div>
 
@@ -42,6 +42,7 @@ export default function MergeFieldComponent({
 }
 
 type MergeFieldComponentProps = {
+  mergeFieldIconUrl: string
   mergeFieldKey: string
   nodeKey: string
 }

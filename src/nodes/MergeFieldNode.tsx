@@ -15,6 +15,7 @@ const MergeFieldComponent = React.lazy(
 )
 
 export class MergeFieldNode extends DecoratorNode<JSX.Element> {
+  mergeFieldIconUrl: string
   mergeFieldKey: string
 
   static getType(): string {
@@ -22,12 +23,12 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   static clone(node: MergeFieldNode): MergeFieldNode {
-    return new MergeFieldNode(node.mergeFieldKey)
+    return new MergeFieldNode(node.mergeFieldIconUrl, node.mergeFieldKey)
   }
 
   convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
     if (domNode instanceof HTMLElement) {
-      const node = $createMergeFieldNode(this.mergeFieldKey)
+      const node = $createMergeFieldNode(this.mergeFieldIconUrl, this.mergeFieldKey)
       return { node }
     }
     return null
@@ -47,8 +48,9 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     }
   }
 
-  constructor(mergeFieldKey: string) {
+  constructor(mergeFieldIconUrl: string, mergeFieldKey: string) {
     super()
+    this.mergeFieldIconUrl = mergeFieldIconUrl
     this.mergeFieldKey = mergeFieldKey
   }
 
@@ -72,14 +74,21 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   decorate(): JSX.Element {
     return (
       <Suspense fallback={null}>
-        <MergeFieldComponent nodeKey={this.getKey()} mergeFieldKey={this.mergeFieldKey} />
+        <MergeFieldComponent
+          nodeKey={this.getKey()}
+          mergeFieldIconUrl={this.mergeFieldIconUrl}
+          mergeFieldKey={this.mergeFieldKey}
+        />
       </Suspense>
     )
   }
 }
 
-export function $createMergeFieldNode(mergeFieldKey: string): MergeFieldNode {
-  return $applyNodeReplacement(new MergeFieldNode(mergeFieldKey))
+export function $createMergeFieldNode(
+  mergeFieldIconUrl: string,
+  mergeFieldKey: string,
+): MergeFieldNode {
+  return $applyNodeReplacement(new MergeFieldNode(mergeFieldIconUrl, mergeFieldKey))
 }
 
 export function $isMergeFieldNode(node: LexicalNode | null | undefined): node is MergeFieldNode {
