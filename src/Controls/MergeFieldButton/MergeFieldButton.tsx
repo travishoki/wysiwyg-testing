@@ -4,7 +4,7 @@ import { useCallback } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 
 import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
-import { Button } from "../Button/Button"
+import { ButtonWithIcon } from "../ButtonWithIcon/ButtonWithIcon"
 import { formatMergeFieldTitle } from "./helpers"
 
 export const MergeFieldButton = ({ mergeFieldIconUrl, mergeFieldKey }: MergeFieldButtonProps) => {
@@ -17,7 +17,7 @@ export const MergeFieldButton = ({ mergeFieldIconUrl, mergeFieldKey }: MergeFiel
 
   const title = formatMergeFieldTitle(mergeFieldKey)
 
-  return <Button onClick={onClick} title={title} />
+  return <ButtonWithIcon iconUrl={mergeFieldIconUrl} onClick={onClick} title={title} />
 }
 
 type MergeFieldButtonProps = {
