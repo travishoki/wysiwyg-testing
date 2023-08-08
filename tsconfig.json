@@ -9,5 +9,7 @@
     "target": "es2015",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
-  }
+  },
+  "include": ["src"], // *** The files TypeScript should type check ***
+  "exclude": ["node_modules"] // *** The files to not type check ***
 }
