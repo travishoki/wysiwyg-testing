@@ -13,7 +13,7 @@ export const mergeFieldKeyArray: mergeFieldObject[] = [
   },
 ]
 
-type mergeFieldObject = {
+export type mergeFieldObject = {
   key: string
   iconUrl: string
 }
