@@ -34,7 +34,7 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 
 import useModal from "../../hooks/useModal"
-import { INSERT_IMAGE_COMMAND, InsertImageDialog } from "../ImagesPlugin"
+import { InsertImageDialog } from "../ImagesPlugin"
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"
 
 class ComponentPickerOption extends MenuOption {
