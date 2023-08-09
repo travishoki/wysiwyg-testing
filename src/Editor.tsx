@@ -22,7 +22,6 @@ import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
 import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin"
 import { TablePlugin } from "@lexical/react/LexicalTablePlugin"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
-import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
 
 import { CAN_USE_DOM } from "./shared/canUseDOM"
 import { useSettings } from "./context/SettingsContext"
@@ -61,7 +60,7 @@ import ComposerTheme from "./themes/ComposerTheme"
 import ContentEditable from "./ui/ContentEditable"
 import Placeholder from "./ui/Placeholder"
 
-export default function Editor({ onChange }: EditorProps): JSX.Element {
+export default function Editor(): JSX.Element {
   const { historyState } = useSharedHistoryContext()
   const {
     settings: {
@@ -191,12 +190,6 @@ export default function Editor({ onChange }: EditorProps): JSX.Element {
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
         <ActionsPlugin />
       </div>
-
-      <OnChangePlugin onChange={onChange} />
     </>
   )
-}
-
-type EditorProps = {
-  onChange: () => void
 }

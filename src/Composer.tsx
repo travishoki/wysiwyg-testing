@@ -1,12 +1,13 @@
 import React from "react"
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer"
+import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
+
 import { SharedHistoryContext } from "./context/SharedHistoryContext"
 import { TableContext } from "./plugins/TablePlugin"
 import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext"
 import PlaygroundNodes from "./nodes/PlaygroundNodes"
 import ComposerTheme from "./themes/ComposerTheme"
-
 import Editor from "./Editor"
 import { Controls } from "./Controls/Controls"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
@@ -32,9 +33,10 @@ export const Composer = ({ setOutput }: ComposerProps) => {
         <TableContext>
           <SharedAutocompleteContext>
             <div className="editor-shell">
-              <Editor onChange={() => setOutput(null)} />
+              <Editor />
               <Controls onSubmit={setOutput} />
               <MergeFieldControls />
+              <OnChangePlugin onChange={() => setOutput(null)} />
             </div>
           </SharedAutocompleteContext>
         </TableContext>
