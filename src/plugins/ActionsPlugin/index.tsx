@@ -27,22 +27,6 @@ import useModal from "../../hooks/useModal"
 import Button from "../../ui/Button"
 import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
 
-async function sendEditorState(editor: LexicalEditor): Promise<void> {
-  const stringifiedEditorState = JSON.stringify(editor.getEditorState())
-  try {
-    await fetch("http://localhost:1235/setEditorState", {
-      body: stringifiedEditorState,
-      headers: {
-        Accept: "application/json",
-        "Content-type": "application/json",
-      },
-      method: "POST",
-    })
-  } catch {
-    // NO-OP
-  }
-}
-
 async function validateEditorState(editor: LexicalEditor): Promise<void> {
   const stringifiedEditorState = JSON.stringify(editor.getEditorState())
   let response = null
@@ -142,20 +126,6 @@ export default function ActionsPlugin(): JSX.Element {
         aria-label="Clear editor contents"
       >
         <i className="clear" />
-      </button>
-      <button
-        className={`action-button ${!isEditable ? "unlock" : "lock"}`}
-        onClick={() => {
-          // Send latest editor state to commenting validation server
-          if (isEditable) {
-            sendEditorState(editor)
-          }
-          editor.setEditable(!editor.isEditable())
-        }}
-        title="Read-Only Mode"
-        aria-label={`${!isEditable ? "Unlock" : "Lock"} read-only mode`}
-      >
-        <i className={!isEditable ? "unlock" : "lock"} />
       </button>
       <button
         className="action-button"

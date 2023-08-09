@@ -9,7 +9,6 @@ export const Button = ({ onClick, title }: ButtonProps) => (
 )
 
 type ButtonProps = {
-  iconUrl: string
   onClick: () => void
   title: string
 }

@@ -10,7 +10,6 @@ export const App = () => {
   return (
     <>
       <Composer setOutput={setOutput} />
-
       <Output output={output} />
     </>
   )
