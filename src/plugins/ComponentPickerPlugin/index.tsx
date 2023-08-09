@@ -34,7 +34,6 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 
 import useModal from "../../hooks/useModal"
-import catTypingGif from "../../images/cat-typing.gif"
 import { INSERT_IMAGE_COMMAND, InsertImageDialog } from "../ImagesPlugin"
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"
 
@@ -253,15 +252,6 @@ export default function ComponentPickerMenuPlugin(): JSX.Element {
         icon: <i className="icon horizontal-rule" />,
         keywords: ["horizontal rule", "divider", "hr"],
         onSelect: () => editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined),
-      }),
-      new ComponentPickerOption("GIF", {
-        icon: <i className="icon gif" />,
-        keywords: ["gif", "animate", "image", "file"],
-        onSelect: () =>
-          editor.dispatchCommand(INSERT_IMAGE_COMMAND, {
-            altText: "Cat typing on a laptop",
-            src: catTypingGif,
-          }),
       }),
       new ComponentPickerOption("Image", {
         icon: <i className="icon image" />,
