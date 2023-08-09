@@ -4,6 +4,7 @@
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
+    "skipLibCheck": true, // Skip type checking of all declaration files
     "sourceMap": true,
     "jsx": "react",
     "target": "es2015",
