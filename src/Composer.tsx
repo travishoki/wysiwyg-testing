@@ -8,7 +8,7 @@ import { TableContext } from "./plugins/TablePlugin"
 import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext"
 import PlaygroundNodes from "./nodes/PlaygroundNodes"
 import ComposerTheme from "./themes/ComposerTheme"
-import Editor from "./Editor"
+import { Editor } from "./Editor"
 import { Controls } from "./Controls/Controls"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 

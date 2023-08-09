@@ -65,5 +65,9 @@ module.exports = {
     "import/no-named-as-default-member": "off", // handled by Typescript
     "import/named": "off", // handled by Typescript
     "import/no-cycle": "off",
+
+    "import/no-default-export": "warn", // Prefer named exports
+
+    "import/prefer-default-export": "off",
   },
 }

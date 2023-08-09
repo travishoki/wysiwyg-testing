@@ -60,7 +60,7 @@ import ComposerTheme from "./themes/ComposerTheme"
 import ContentEditable from "./ui/ContentEditable"
 import Placeholder from "./ui/Placeholder"
 
-export default function Editor(): JSX.Element {
+export function Editor(): JSX.Element {
   const { historyState } = useSharedHistoryContext()
   const {
     settings: {

@@ -122,7 +122,7 @@ function DropDownItems({
   )
 }
 
-export default function DropDown({
+export function DropDown({
   disabled = false,
   buttonLabel,
   buttonAriaLabel,

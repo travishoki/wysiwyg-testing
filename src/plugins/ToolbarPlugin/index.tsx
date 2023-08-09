@@ -73,7 +73,7 @@ import * as React from "react"
 import { IS_APPLE } from "../../shared/environment"
 
 import useModal from "../../hooks/useModal"
-import DropDown, { DropDownItem } from "../../ui/DropDown"
+import { DropDown, DropDownItem } from "../../ui/DropDown"
 import DropdownColorPicker from "../../ui/DropdownColorPicker"
 import { getSelectedNode } from "../../utils/getSelectedNode"
 import { sanitizeUrl } from "../../utils/url"
