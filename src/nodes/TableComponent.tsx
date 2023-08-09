@@ -1309,7 +1309,7 @@ export default function TableComponent({
     return mergeRegister(
       editor.registerCommand(
         CLICK_COMMAND,
-        (payload) => {
+        (_payload) => {
           const selection = $getSelection()
           if ($isNodeSelection(selection)) {
             return true
