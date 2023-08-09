@@ -41,9 +41,9 @@ import {
 } from "../../nodes/InlineImageNode"
 import Button from "../../ui/Button"
 import { DialogActions } from "../../ui/Dialog"
-import FileInput from "../../ui/FileInput"
+import { FileInput } from "../../ui/FileInput"
 import Select from "../../ui/Select"
-import TextInput from "../../ui/TextInput"
+import { TextInput } from "../../ui/TextInput"
 
 type InsertInlineImagePayload = Readonly<InlineImagePayload>
 

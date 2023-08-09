@@ -20,7 +20,7 @@ type Props = Readonly<{
   type?: HTMLInputTypeAttribute
 }>
 
-export default function TextInput({
+export function TextInput({
   label,
   value,
   onChange,

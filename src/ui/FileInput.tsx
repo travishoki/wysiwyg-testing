@@ -17,7 +17,7 @@ type Props = Readonly<{
   onChange: (files: FileList | null) => void
 }>
 
-export default function FileInput({
+export function FileInput({
   accept,
   label,
   onChange,

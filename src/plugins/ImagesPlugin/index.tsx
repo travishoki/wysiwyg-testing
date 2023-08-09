@@ -34,8 +34,8 @@ import yellowFlowerImage from "../../images/yellow-flower.jpg"
 import { $createImageNode, $isImageNode, ImageNode, ImagePayload } from "../../nodes/ImageNode"
 import Button from "../../ui/Button"
 import { DialogActions, DialogButtonsList } from "../../ui/Dialog"
-import FileInput from "../../ui/FileInput"
-import TextInput from "../../ui/TextInput"
+import { FileInput } from "../../ui/FileInput"
+import { TextInput } from "../../ui/TextInput"
 
 type InsertImagePayload = Readonly<ImagePayload>
 

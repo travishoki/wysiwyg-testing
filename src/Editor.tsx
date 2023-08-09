@@ -45,7 +45,7 @@ import MergeFieldPlugin from "./plugins/MergeFieldPlugin"
 import ImagesPlugin from "./plugins/ImagesPlugin"
 import InlineImagePlugin from "./plugins/InlineImagePlugin"
 import KeywordsPlugin from "./plugins/KeywordsPlugin"
-import LinkPlugin from "./plugins/LinkPlugin"
+import { LinkPlugin } from "./plugins/LinkPlugin"
 import ListMaxIndentLevelPlugin from "./plugins/ListMaxIndentLevelPlugin"
 import MarkdownShortcutPlugin from "./plugins/MarkdownShortcutPlugin"
 import { MaxLengthPlugin } from "./plugins/MaxLengthPlugin"
@@ -58,7 +58,7 @@ import { TablePlugin as NewTablePlugin } from "./plugins/TablePlugin"
 import ToolbarPlugin from "./plugins/ToolbarPlugin"
 import ComposerTheme from "./themes/ComposerTheme"
 import ContentEditable from "./ui/ContentEditable"
-import Placeholder from "./ui/Placeholder"
+import { Placeholder } from "./ui/Placeholder"
 
 export function Editor(): JSX.Element {
   const { historyState } = useSharedHistoryContext()

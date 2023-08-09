@@ -11,7 +11,7 @@ import "./ColorPicker.css"
 import { useEffect, useMemo, useRef, useState } from "react"
 import * as React from "react"
 
-import TextInput from "./TextInput"
+import { TextInput } from "./TextInput"
 
 interface ColorPickerProps {
   color: string
@@ -39,7 +39,7 @@ const basicColors = [
 const WIDTH = 214
 const HEIGHT = 150
 
-export default function ColorPicker({ color, onChange }: Readonly<ColorPickerProps>): JSX.Element {
+export function ColorPicker({ color, onChange }: Readonly<ColorPickerProps>): JSX.Element {
   const [selfColor, setSelfColor] = useState(transformColor("hex", color))
   const [inputColor, setInputColor] = useState(color)
   const innerDivRef = useRef(null)
