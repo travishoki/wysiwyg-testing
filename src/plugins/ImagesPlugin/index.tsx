@@ -193,7 +193,7 @@ export function InsertImageDialog({
   )
 }
 
-export default function ImagesPlugin({
+export function ImagesPlugin({
   captionsEnabled,
 }: {
   captionsEnabled?: boolean

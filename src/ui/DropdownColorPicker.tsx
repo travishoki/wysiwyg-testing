@@ -23,7 +23,7 @@ type Props = {
   onChange?: (color: string) => void
 }
 
-export default function DropdownColorPicker({
+export function DropdownColorPicker({
   disabled = false,
   stopCloseOnClickSelf = true,
   color,

@@ -11,7 +11,7 @@ import { $wrapNodeInElement, mergeRegister } from "@lexical/utils"
 import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
 import { $createMergeFieldNode, MergeFieldNode } from "../../nodes/MergeFieldNode"
 
-export default function MergeFieldPlugin(): JSX.Element | null {
+export function MergeFieldPlugin(): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {
