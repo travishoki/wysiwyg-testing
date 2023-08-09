@@ -6,6 +6,7 @@
     "preserveConstEnums": true,
     "skipLibCheck": true, // Skip type checking of all declaration files
     "sourceMap": true,
+    "noEmit": true, // Do not emit output (meaning do not compile code, only perform type checking)
     "jsx": "react",
     "target": "es2015",
     "allowSyntheticDefaultImports": true,
