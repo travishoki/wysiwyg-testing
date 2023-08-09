@@ -33,5 +33,37 @@ module.exports = {
 
     /** Typescript */
     "@typescript-eslint/no-redeclare": ["error"],
+
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      { classes: false, functions: false, variables: false },
+    ],
+
+    /** React */
+    "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx", ".tsx", ".mdx"] }], // Allow JSX for file extensions    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "react/no-deprecated": "off",
+    "react/button-has-type": "off",
+    "react/destructuring-assignment": "off",
+    "react/forbid-prop-types": "off",
+    "react/no-access-state-in-setstate": "off",
+    "react/no-array-index-key": "off",
+    "react/no-did-update-set-state": "off",
+    "react/no-multi-comp": "off",
+    "react/no-unescaped-entities": "off",
+    "react/no-unused-prop-types": "off",
+    "react/require-default-props": "off",
+    "react/sort-comp": "off",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        additionalHooks: "(useUpdateEffect)",
+      },
+    ],
+
+    /** import */
+    "import/no-named-as-default-member": "off", // handled by Typescript
+    "import/named": "off", // handled by Typescript
+    "import/no-cycle": "off",
   },
 }
