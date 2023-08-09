@@ -1,8 +1,9 @@
 import * as React from "react"
 import { Suspense, useCallback } from "react"
 
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $getNodeByKey } from "lexical"
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
+import useLexicalEditable from "@lexical/react/useLexicalEditable"
 
 import ImageClose from "../images/icons/close.svg"
 import { $isMergeFieldNode } from "./MergeFieldNode"
@@ -15,6 +16,7 @@ export default function MergeFieldComponent({
   nodeKey,
 }: MergeFieldComponentProps): JSX.Element {
   const [editor] = useLexicalComposerContext()
+  const isEditable = useLexicalEditable()
 
   const onClickClose = useCallback(() => {
     editor.update(() => {
@@ -33,9 +35,11 @@ export default function MergeFieldComponent({
           <p>{formatMergeFieldTitle(mergeFieldKey)}</p>
         </div>
 
-        <button className="button-close" onClick={onClickClose}>
-          <img alt="close" className="svg-close" height="15" src={ImageClose} width="15" />
-        </button>
+        {isEditable && (
+          <button className="button-close" onClick={onClickClose}>
+            <img alt="close" height="15" src={ImageClose} width="15" />
+          </button>
+        )}
       </div>
     </Suspense>
   )
