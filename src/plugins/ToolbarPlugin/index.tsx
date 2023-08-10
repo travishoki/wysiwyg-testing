@@ -144,11 +144,11 @@ function dropDownActiveClass(active: boolean) {
 function BlockFormatDropDown({
   editor,
   blockType,
-  rootType,
+  _rootType,
   disabled = false,
 }: {
   blockType: keyof typeof blockTypeToBlockName
-  rootType: keyof typeof rootTypeToRootName
+  _rootType: keyof typeof rootTypeToRootName
   editor: LexicalEditor
   disabled?: boolean
 }): JSX.Element {
@@ -635,7 +635,7 @@ export function ToolbarPlugin(): JSX.Element {
           <BlockFormatDropDown
             disabled={!isEditable}
             blockType={blockType}
-            rootType={rootType}
+            _rootType={rootType}
             editor={editor}
           />
           <Divider />
