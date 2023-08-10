@@ -24,7 +24,7 @@ import * as React from "react"
 import { useCallback, useEffect, useState } from "react"
 
 import useModal from "../../hooks/useModal"
-import Button from "../../ui/Button"
+import { Button } from "../../ui/Button"
 import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
 
 async function validateEditorState(editor: LexicalEditor): Promise<void> {
