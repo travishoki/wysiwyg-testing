@@ -10,6 +10,7 @@ import { $isMergeFieldNode } from "./MergeFieldNode"
 import { formatMergeFieldTitle } from "../MergeFieldControls/MergeFieldButton/helpers"
 import "./MergeFieldComponent.css"
 
+// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
 export default function MergeFieldComponent({
   mergeFieldIconUrl,
   mergeFieldKey,

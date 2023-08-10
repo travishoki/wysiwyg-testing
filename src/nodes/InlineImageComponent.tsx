@@ -173,6 +173,7 @@ export function UpdateInlineImageDialog({
   )
 }
 
+// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
 export default function InlineImageComponent({
   src,
   altText,
