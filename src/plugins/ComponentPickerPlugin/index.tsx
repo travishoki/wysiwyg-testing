@@ -33,7 +33,7 @@ import { useCallback, useMemo, useState } from "react"
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 
-import useModal from "../../hooks/useModal"
+import { useModal } from "../../hooks/useModal"
 import { InsertImageDialog } from "../ImagesPlugin"
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"
 

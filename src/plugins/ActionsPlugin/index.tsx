@@ -23,7 +23,7 @@ import {
 import * as React from "react"
 import { useCallback, useEffect, useState } from "react"
 
-import useModal from "../../hooks/useModal"
+import { useModal } from "../../hooks/useModal"
 import { Button } from "../../ui/Button"
 import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
 

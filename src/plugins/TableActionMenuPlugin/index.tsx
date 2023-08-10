@@ -45,7 +45,7 @@ import { ReactPortal, useCallback, useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import invariant from "../../shared/invariant"
 
-import useModal from "../../hooks/useModal"
+import { useModal } from "../../hooks/useModal"
 import { ColorPicker } from "../../ui/ColorPicker"
 
 function computeSelectionCount(selection: GridSelection): {

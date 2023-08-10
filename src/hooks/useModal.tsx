@@ -11,7 +11,7 @@ import * as React from "react"
 
 import Modal from "../ui/Modal"
 
-export default function useModal(): [
+export function useModal(): [
   JSX.Element | null,
   (title: string, showModal: (onClose: () => void) => JSX.Element) => void,
 ] {
