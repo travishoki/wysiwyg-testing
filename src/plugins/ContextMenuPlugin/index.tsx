@@ -98,7 +98,7 @@ class ContextMenuOption extends MenuOption {
   }
 }
 
-export default function ContextMenuPlugin(): JSX.Element {
+export function ContextMenuPlugin(): JSX.Element {
   const [editor] = useLexicalComposerContext()
 
   const options = useMemo(() => {

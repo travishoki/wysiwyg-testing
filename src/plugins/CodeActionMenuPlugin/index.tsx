@@ -154,7 +154,7 @@ function getMouseInfo(event: MouseEvent): {
   }
 }
 
-export default function CodeActionMenuPlugin({
+export function CodeActionMenuPlugin({
   anchorElem = document.body,
 }: {
   anchorElem?: HTMLElement

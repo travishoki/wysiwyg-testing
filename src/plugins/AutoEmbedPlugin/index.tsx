@@ -176,7 +176,7 @@ function AutoEmbedDialog({
   )
 }
 
-export default function AutoEmbedPlugin(): JSX.Element {
+export function AutoEmbedPlugin(): JSX.Element {
   const [modal, showModal] = useModal()
 
   const openEmbedModal = (embedConfig: PlaygroundEmbedConfig) => {

@@ -20,7 +20,7 @@ import { ImageNode } from "./ImageNode"
 import { KeywordNode } from "./KeywordNode"
 import { MentionNode } from "./MentionNode"
 
-const PlaygroundNodes: Array<Klass<LexicalNode>> = [
+export const TableCellNodes: Array<Klass<LexicalNode>> = [
   HeadingNode,
   ListNode,
   ListItemNode,
@@ -36,5 +36,3 @@ const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   AutocompleteNode,
   KeywordNode,
 ]
-
-export default PlaygroundNodes
