@@ -84,7 +84,7 @@ type Emoji = {
 
 const MAX_EMOJI_SUGGESTION_COUNT = 10
 
-export default function EmojiPickerPlugin() {
+export function EmojiPickerPlugin() {
   const [editor] = useLexicalComposerContext()
   const [queryString, setQueryString] = useState<string | null>(null)
   const [emojis, setEmojis] = useState<Array<Emoji>>([])

@@ -400,7 +400,7 @@ function useDraggableBlockMenu(
   )
 }
 
-export default function DraggableBlockPlugin({
+export function DraggableBlockPlugin({
   anchorElem = document.body,
 }: {
   anchorElem?: HTMLElement

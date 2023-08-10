@@ -163,7 +163,7 @@ export function InsertInlineImageDialog({
   )
 }
 
-export default function InlineImagePlugin(): JSX.Element | null {
+export function InlineImagePlugin(): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {
