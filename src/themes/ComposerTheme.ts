@@ -10,7 +10,7 @@ import type { EditorThemeClasses } from "lexical"
 
 import "./ComposerTheme.css"
 
-const theme: EditorThemeClasses = {
+export const ComposerTheme: EditorThemeClasses = {
   blockCursor: "ComposerTheme__blockCursor",
   characterLimit: "ComposerTheme__characterLimit",
   code: "ComposerTheme__code",
@@ -111,5 +111,3 @@ const theme: EditorThemeClasses = {
     underlineStrikethrough: "ComposerTheme__textUnderlineStrikethrough",
   },
 }
-
-export default theme
