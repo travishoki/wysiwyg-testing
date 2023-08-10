@@ -57,7 +57,7 @@ import TableOfContentsPlugin from "./plugins/TableOfContentsPlugin"
 import { TablePlugin as NewTablePlugin } from "./plugins/TablePlugin"
 import ToolbarPlugin from "./plugins/ToolbarPlugin"
 import ComposerTheme from "./themes/ComposerTheme"
-import ContentEditable from "./ui/ContentEditable"
+import { ContentEditable } from "./ui/ContentEditable"
 import { Placeholder } from "./ui/Placeholder"
 
 export function Editor(): JSX.Element {

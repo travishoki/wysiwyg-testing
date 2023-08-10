@@ -39,7 +39,7 @@ import { FloatingLinkEditorPlugin } from "../plugins/FloatingLinkEditorPlugin/in
 import { FloatingTextFormatToolbarPlugin } from "../plugins/FloatingTextFormatToolbarPlugin/index"
 import { LinkPlugin } from "../plugins/LinkPlugin"
 import Button from "../ui/Button"
-import ContentEditable from "../ui/ContentEditable"
+import { ContentEditable } from "../ui/ContentEditable"
 import { DialogActions } from "../ui/Dialog"
 import { Placeholder } from "../ui/Placeholder"
 import Select from "../ui/Select"
