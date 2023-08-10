@@ -33,7 +33,10 @@ module.exports = {
 
     /** Typescript */
     "@typescript-eslint/no-redeclare": ["error"],
-
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { argsIgnorePattern: "^_", varsIgnorePattern: "^_", ignoreRestSiblings: true },
+    ],
     "@typescript-eslint/no-use-before-define": [
       "error",
       { classes: false, functions: false, variables: false },
