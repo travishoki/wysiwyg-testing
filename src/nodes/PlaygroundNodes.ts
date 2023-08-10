@@ -27,7 +27,7 @@ import { KeywordNode } from "./KeywordNode"
 import { MentionNode } from "./MentionNode"
 import { TableNode as NewTableNode } from "./TableNode"
 
-const PlaygroundNodes: Array<Klass<LexicalNode>> = [
+export const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   HeadingNode,
   ListNode,
   ListItemNode,
@@ -52,5 +52,3 @@ const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   HorizontalRuleNode,
   MarkNode,
 ]
-
-export default PlaygroundNodes

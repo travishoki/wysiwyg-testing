@@ -84,7 +84,7 @@ function PortalImpl({
   )
 }
 
-export default function Modal({
+export function Modal({
   onClose,
   children,
   title,
