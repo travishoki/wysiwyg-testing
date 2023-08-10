@@ -17,7 +17,12 @@ module.exports = {
     "no-else-return": "off",
     "no-param-reassign": "off",
     "no-plusplus": "off",
-
+    "no-restricted-imports": [
+      "error",
+      {
+        paths: [],
+      },
+    ],
     "no-return-assign": "off",
     "no-shadow": "off",
     "no-throw-literal": "off",
