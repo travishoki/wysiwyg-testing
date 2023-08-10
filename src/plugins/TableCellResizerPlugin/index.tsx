@@ -347,7 +347,7 @@ function TableCellResizer({ editor }: { editor: LexicalEditor }): JSX.Element {
   )
 }
 
-export default function TableCellResizerPlugin(): null | ReactPortal {
+export function TableCellResizerPlugin(): null | ReactPortal {
   const [editor] = useLexicalComposerContext()
   const isEditable = useLexicalEditable()
 

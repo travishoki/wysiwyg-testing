@@ -52,7 +52,7 @@ import { MaxLengthPlugin } from "./plugins/MaxLengthPlugin"
 import { MentionsPlugin } from "./plugins/MentionsPlugin"
 import { TabFocusPlugin } from "./plugins/TabFocusPlugin"
 import { TableActionMenuPlugin } from "./plugins/TableActionMenuPlugin"
-import TableCellResizer from "./plugins/TableCellResizer"
+import { TableCellResizerPlugin } from "./plugins/TableCellResizerPlugin"
 import TableOfContentsPlugin from "./plugins/TableOfContentsPlugin"
 import { TablePlugin as NewTablePlugin } from "./plugins/TablePlugin"
 import ToolbarPlugin from "./plugins/ToolbarPlugin"
@@ -150,7 +150,7 @@ export function Editor(): JSX.Element {
           hasCellMerge={tableCellMerge}
           hasCellBackgroundColor={tableCellBackgroundColor}
         />
-        <TableCellResizer />
+        <TableCellResizerPlugin />
         <NewTablePlugin cellEditorConfig={cellEditorConfig}>
           <AutoFocusPlugin />
           <RichTextPlugin
