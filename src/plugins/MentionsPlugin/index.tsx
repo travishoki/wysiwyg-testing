@@ -629,7 +629,7 @@ function MentionsTypeaheadMenuItem({
   )
 }
 
-export default function NewMentionsPlugin(): JSX.Element | null {
+export function MentionsPlugin(): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
 
   const [queryString, setQueryString] = useState<string | null>(null)
