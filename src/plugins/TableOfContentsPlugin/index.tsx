@@ -177,7 +177,7 @@ function TableOfContentsList({
   )
 }
 
-export default function TableOfContentsPlugin() {
+export function TableOfContentsPlugin() {
   return (
     <LexicalTableOfContents>
       {(tableOfContents) => {

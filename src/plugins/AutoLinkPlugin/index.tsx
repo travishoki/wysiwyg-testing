@@ -6,7 +6,10 @@
  *
  */
 
-import { AutoLinkPlugin, createLinkMatcherWithRegExp } from "@lexical/react/LexicalAutoLinkPlugin"
+import {
+  AutoLinkPlugin as LexicalAutoLinkPlugin,
+  createLinkMatcherWithRegExp,
+} from "@lexical/react/LexicalAutoLinkPlugin"
 import * as React from "react"
 
 const URL_REGEX =
@@ -24,6 +27,6 @@ const MATCHERS = [
   }),
 ]
 
-export default function LexicalAutoLinkPlugin(): JSX.Element {
-  return <AutoLinkPlugin matchers={MATCHERS} />
+export function AutoLinkPlugin(): JSX.Element {
+  return <LexicalAutoLinkPlugin matchers={MATCHERS} />
 }

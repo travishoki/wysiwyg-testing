@@ -361,7 +361,7 @@ function FontDropDown({
   )
 }
 
-export default function ToolbarPlugin(): JSX.Element {
+export function ToolbarPlugin(): JSX.Element {
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
   const [blockType, setBlockType] = useState<keyof typeof blockTypeToBlockName>("paragraph")
