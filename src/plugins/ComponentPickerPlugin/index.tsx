@@ -102,7 +102,7 @@ function ComponentPickerMenuItem({
   )
 }
 
-export default function ComponentPickerMenuPlugin(): JSX.Element {
+export function ComponentPickerPlugin(): JSX.Element {
   const [editor] = useLexicalComposerContext()
   const [modal, showModal] = useModal()
   const [queryString, setQueryString] = useState<string | null>(null)
