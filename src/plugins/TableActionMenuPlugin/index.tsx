@@ -707,7 +707,7 @@ function TableCellActionMenuContainer({
   )
 }
 
-export default function TableActionMenuPlugin({
+export function TableActionMenuPlugin({
   anchorElem = document.body,
   cellMerge = false,
 }: {

@@ -51,7 +51,7 @@ import { MarkdownShortcutPlugin } from "./plugins/MarkdownShortcutPlugin"
 import { MaxLengthPlugin } from "./plugins/MaxLengthPlugin"
 import { MentionsPlugin } from "./plugins/MentionsPlugin"
 import { TabFocusPlugin } from "./plugins/TabFocusPlugin"
-import TableCellActionMenuPlugin from "./plugins/TableActionMenuPlugin"
+import { TableActionMenuPlugin } from "./plugins/TableActionMenuPlugin"
 import TableCellResizer from "./plugins/TableCellResizer"
 import TableOfContentsPlugin from "./plugins/TableOfContentsPlugin"
 import { TablePlugin as NewTablePlugin } from "./plugins/TablePlugin"
@@ -178,7 +178,7 @@ export function Editor(): JSX.Element {
             <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
             <CodeActionMenuPlugin anchorElem={floatingAnchorElem} />
             <FloatingLinkEditorPlugin anchorElem={floatingAnchorElem} />
-            <TableCellActionMenuPlugin anchorElem={floatingAnchorElem} cellMerge={true} />
+            <TableActionMenuPlugin anchorElem={floatingAnchorElem} cellMerge={true} />
             <FloatingTextFormatToolbarPlugin anchorElem={floatingAnchorElem} />
           </>
         )}
