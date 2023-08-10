@@ -641,6 +641,7 @@ function TableCell({
   )
 }
 
+// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
 export default function TableComponent({
   nodeKey,
   rows: rawRows,
