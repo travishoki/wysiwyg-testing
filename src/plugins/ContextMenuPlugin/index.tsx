@@ -10,15 +10,9 @@ import * as React from "react"
 import { useCallback, useMemo } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { LexicalContextMenuPlugin, MenuOption } from "@lexical/react/LexicalContextMenuPlugin"
-import {
-  type LexicalNode,
-  $getSelection,
-  $isRangeSelection,
-  COPY_COMMAND,
-  CUT_COMMAND,
-  PASTE_COMMAND,
-} from "lexical"
+import { $getSelection, $isRangeSelection, COPY_COMMAND, CUT_COMMAND, PASTE_COMMAND } from "lexical"
 import * as ReactDOM from "react-dom"
+import type { LexicalNode } from "lexical"
 
 function ContextMenuItem({
   index,

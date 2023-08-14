@@ -6,7 +6,6 @@
  *
  */
 
-
 import { useCallback, useEffect } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $isAtNodeEnd } from "@lexical/selection"
