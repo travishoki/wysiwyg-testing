@@ -1,17 +1,17 @@
 import * as React from "react"
 
 import { MergeFieldButton } from "./MergeFieldButton/MergeFieldButton"
-import { mergeFieldKeyArray, mergeFieldObject } from "./const"
+import { mergeFieldIdArray, mergeFieldObject } from "./const"
 import "./MergeFieldControls.css"
 
 export const MergeFieldControls = ({ onClick }: MergeFieldControlsProps) => {
   return (
     <div className="merge-field-controls">
-      {mergeFieldKeyArray.map((mergeFieldKey) => (
+      {mergeFieldIdArray.map((mergeField) => (
         <MergeFieldButton
-          key={mergeFieldKey.key}
-          mergeFieldIconUrl={mergeFieldKey.iconUrl}
-          mergeFieldKey={mergeFieldKey.key}
+          key={mergeField.id}
+          mergeFieldIconUrl={mergeField.iconUrl}
+          mergeFieldId={mergeField.id}
           onClick={onClick}
         />
       ))}

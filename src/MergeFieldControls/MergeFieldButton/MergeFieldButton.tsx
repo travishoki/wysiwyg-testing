@@ -7,20 +7,20 @@ import { mergeFieldObject } from "../const"
 
 export const MergeFieldButton = ({
   mergeFieldIconUrl,
-  mergeFieldKey,
+  mergeFieldId,
   onClick,
 }: MergeFieldButtonProps) => {
   const onClickButton = useCallback(() => {
-    onClick({ iconUrl: mergeFieldIconUrl, key: mergeFieldKey })
-  }, [mergeFieldIconUrl, mergeFieldKey, onClick])
+    onClick({ iconUrl: mergeFieldIconUrl, id: mergeFieldId })
+  }, [mergeFieldIconUrl, mergeFieldId, onClick])
 
-  const title = formatMergeFieldTitle(mergeFieldKey)
+  const title = formatMergeFieldTitle(mergeFieldId)
 
   return <ButtonWithIcon iconUrl={mergeFieldIconUrl} onClick={onClickButton} title={title} />
 }
 
 type MergeFieldButtonProps = {
   mergeFieldIconUrl: string
-  mergeFieldKey: string
+  mergeFieldId: string
   onClick: (mergeFieldObject: mergeFieldObject) => void
 }

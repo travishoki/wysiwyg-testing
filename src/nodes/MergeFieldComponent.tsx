@@ -13,7 +13,7 @@ import "./MergeFieldComponent.css"
 // eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
 export default function MergeFieldComponent({
   mergeFieldIconUrl,
-  mergeFieldKey,
+  mergeFieldId,
   nodeKey,
 }: MergeFieldComponentProps): JSX.Element {
   const [editor] = useLexicalComposerContext()
@@ -33,7 +33,7 @@ export default function MergeFieldComponent({
       <div className="merge-field-component-inner">
         <div className="merge-field-component-content">
           <img alt="icon" className="svg-icon" height="15" src={mergeFieldIconUrl} width="15" />
-          <p>{formatMergeFieldTitle(mergeFieldKey)}</p>
+          <p>{formatMergeFieldTitle(mergeFieldId)}</p>
         </div>
 
         {isEditable && (
@@ -48,6 +48,6 @@ export default function MergeFieldComponent({
 
 type MergeFieldComponentProps = {
   mergeFieldIconUrl: string
-  mergeFieldKey: string
+  mergeFieldId: string
   nodeKey: string
 }
