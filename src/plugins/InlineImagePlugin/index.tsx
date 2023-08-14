@@ -34,13 +34,13 @@ import {
   InlineImagePayload,
 } from "../../nodes/InlineImageNode"
 import { CAN_USE_DOM } from "../../shared/canUseDOM"
-import "../../ui/Checkbox.css"
 import { Button } from "../../ui/Button"
 import { DialogActions } from "../../ui/Dialog"
 import { FileInput } from "../../ui/FileInput"
 import { Select } from "../../ui/Select"
 import { TextInput } from "../../ui/TextInput"
 import type { Position } from "../../nodes/InlineImageNode"
+import "../../ui/Checkbox.css"
 
 type InsertInlineImagePayload = Readonly<InlineImagePayload>
 
