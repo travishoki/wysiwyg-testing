@@ -8,9 +8,6 @@
 
 import * as React from "react"
 import { useCallback, useEffect, useState } from "react"
-
-import type { LexicalEditor, NodeKey } from "lexical"
-
 import {
   $createCodeNode,
   $isCodeNode,
@@ -71,9 +68,8 @@ import {
   SELECTION_CHANGE_COMMAND,
   UNDO_COMMAND,
 } from "lexical"
-import { IS_APPLE } from "../../shared/environment"
-
 import { useModal } from "../../hooks/useModal"
+import { IS_APPLE } from "../../shared/environment"
 import { DropDown, DropDownItem } from "../../ui/DropDown"
 import { DropdownColorPicker } from "../../ui/DropdownColorPicker"
 import { getSelectedNode } from "../../utils/getSelectedNode"
@@ -81,6 +77,7 @@ import { sanitizeUrl } from "../../utils/url"
 import { InsertImageDialog } from "../ImagesPlugin"
 import { InsertInlineImageDialog } from "../InlineImagePlugin"
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"
+import type { LexicalEditor, NodeKey } from "lexical"
 
 const blockTypeToBlockName = {
   bullet: "Bulleted List",

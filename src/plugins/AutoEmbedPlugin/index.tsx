@@ -8,8 +8,6 @@
 
 import * as React from "react"
 import { useMemo, useState } from "react"
-import * as ReactDOM from "react-dom"
-
 import {
   AutoEmbedOption,
   EmbedConfig,
@@ -18,7 +16,7 @@ import {
   URL_MATCHER,
 } from "@lexical/react/LexicalAutoEmbedPlugin"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
-
+import * as ReactDOM from "react-dom"
 import { useModal } from "../../hooks/useModal"
 import { Button } from "../../ui/Button"
 import { DialogActions } from "../../ui/Dialog"

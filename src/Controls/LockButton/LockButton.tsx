@@ -1,7 +1,5 @@
 import React from "react"
-
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
-
 import { Button } from "../Button/Button"
 
 export const LockButton = () => {

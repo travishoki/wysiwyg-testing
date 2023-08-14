@@ -7,9 +7,7 @@
  */
 
 import * as React from "react"
-
 import { MarkdownShortcutPlugin as LexicalMarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPlugin"
-
 import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
 
 export function MarkdownShortcutPlugin(): JSX.Element {

@@ -1,9 +1,8 @@
 import React, { useRef, useState } from "react"
-
-import { Output } from "./Output/Output"
 import { Composer } from "./Composer"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 import { composerRefProps } from "./MergeFieldHandler/MergeFieldHandler"
+import { Output } from "./Output/Output"
 
 // ts-prune-ignore-next
 export const App = () => {

@@ -80,7 +80,24 @@ module.exports = {
       },
     ],
     "import/no-default-export": "warn", // Prefer named exports
-
+    "import/order": [
+      "error",
+      {
+        alphabetize: {
+          order: "asc",
+        },
+        groups: ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+        "newlines-between": "never",
+        pathGroups: [
+          {
+            pattern: "react",
+            group: "builtin",
+            position: "before",
+          },
+        ],
+        pathGroupsExcludedImportTypes: ["react"],
+      },
+    ],
     "import/prefer-default-export": "off",
   },
 }

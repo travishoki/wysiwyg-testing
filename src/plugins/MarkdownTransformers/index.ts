@@ -35,7 +35,6 @@ import {
   TableRowNode,
 } from "@lexical/table"
 import { $createTextNode, $isParagraphNode, $isTextNode, LexicalNode } from "lexical"
-
 import { $createImageNode, $isImageNode, ImageNode } from "../../nodes/ImageNode"
 import emojiList from "../../utils/emoji-list"
 

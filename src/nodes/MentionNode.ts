@@ -6,8 +6,6 @@
  *
  */
 
-import type { Spread } from "lexical"
-
 import {
   type DOMConversionMap,
   type DOMConversionOutput,
@@ -18,6 +16,8 @@ import {
   $applyNodeReplacement,
   TextNode,
 } from "lexical"
+import type { Spread } from "lexical"
+
 
 type SerializedMentionNode = Spread<
   {

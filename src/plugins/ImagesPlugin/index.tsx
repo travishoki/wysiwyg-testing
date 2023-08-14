@@ -7,7 +7,6 @@
  */
 import * as React from "react"
 import { useEffect, useRef, useState } from "react"
-
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $wrapNodeInElement, mergeRegister } from "@lexical/utils"
 import {
@@ -28,11 +27,10 @@ import {
   LexicalCommand,
   LexicalEditor,
 } from "lexical"
-import { CAN_USE_DOM } from "../../shared/canUseDOM"
-
 import landscapeImage from "../../images/landscape.jpg"
 import yellowFlowerImage from "../../images/yellow-flower.jpg"
 import { $createImageNode, $isImageNode, ImageNode, ImagePayload } from "../../nodes/ImageNode"
+import { CAN_USE_DOM } from "../../shared/canUseDOM"
 import { Button } from "../../ui/Button"
 import { DialogActions, DialogButtonsList } from "../../ui/Dialog"
 import { FileInput } from "../../ui/FileInput"

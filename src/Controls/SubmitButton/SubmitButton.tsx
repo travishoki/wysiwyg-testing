@@ -1,8 +1,6 @@
 import React from "react"
-
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $generateHtmlFromNodes } from "@lexical/html"
-
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { Button } from "../Button/Button"
 
 export const SubmitButton = ({ onSubmit }: SubmitButtonProps) => {

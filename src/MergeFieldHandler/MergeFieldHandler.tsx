@@ -1,5 +1,4 @@
 import React, { useImperativeHandle } from "react"
-
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { mergeFieldObject } from "../MergeFieldControls/const"
 import { INSERT_MERGE_FIELD_COMMAND } from "../const"

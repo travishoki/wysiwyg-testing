@@ -15,11 +15,6 @@ import {
   useRef,
   useState,
 } from "react"
-import { createPortal } from "react-dom"
-
-import type { Cell } from "@lexical/table"
-import type { LexicalEditor } from "lexical"
-
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
 import {
@@ -37,6 +32,9 @@ import {
   DEPRECATED_$isGridSelection,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
+import { createPortal } from "react-dom"
+import type { Cell } from "@lexical/table"
+import type { LexicalEditor } from "lexical"
 import "./index.css"
 
 type MousePosition = {

@@ -1,13 +1,11 @@
 import * as React from "react"
 import { Suspense, useCallback } from "react"
-
-import { $getNodeByKey } from "lexical"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
-
+import { $getNodeByKey } from "lexical"
+import { formatMergeFieldTitle } from "../MergeFieldControls/MergeFieldButton/helpers"
 import ImageClose from "../images/icons/close.svg"
 import { $isMergeFieldNode } from "./MergeFieldNode"
-import { formatMergeFieldTitle } from "../MergeFieldControls/MergeFieldButton/helpers"
 import "./MergeFieldComponent.css"
 
 // eslint-disable-next-line import/no-default-export -- This component is lazy loaded.

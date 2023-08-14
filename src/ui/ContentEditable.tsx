@@ -7,7 +7,6 @@
  */
 
 import * as React from "react"
-
 import { ContentEditable as LexicalContentEditable } from "@lexical/react/LexicalContentEditable"
 
 import "./ContentEditable.css"

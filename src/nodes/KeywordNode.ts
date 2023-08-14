@@ -6,9 +6,9 @@
  *
  */
 
+import { TextNode } from "lexical"
 import type { EditorConfig, SerializedTextNode } from "lexical"
 
-import { TextNode } from "lexical"
 
 type SerializedKeywordNode = SerializedTextNode
 

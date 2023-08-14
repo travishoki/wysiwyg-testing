@@ -8,9 +8,6 @@
 
 import * as React from "react"
 import { useCallback, useEffect, useState } from "react"
-
-import type { LexicalEditor } from "lexical"
-
 import { $createCodeNode, $isCodeNode } from "@lexical/code"
 import { $convertFromMarkdownString, $convertToMarkdownString } from "@lexical/markdown"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
@@ -23,10 +20,10 @@ import {
   CLEAR_EDITOR_COMMAND,
   COMMAND_PRIORITY_EDITOR,
 } from "lexical"
-
 import { useModal } from "../../hooks/useModal"
 import { Button } from "../../ui/Button"
 import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
+import type { LexicalEditor } from "lexical"
 
 async function validateEditorState(editor: LexicalEditor): Promise<void> {
   const stringifiedEditorState = JSON.stringify(editor.getEditorState())

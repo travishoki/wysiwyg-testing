@@ -7,8 +7,6 @@
  */
 import * as React from "react"
 import { DragEvent as ReactDragEvent, useEffect, useRef, useState } from "react"
-import { createPortal } from "react-dom"
-
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { eventFiles } from "@lexical/rich-text"
 import { mergeRegister } from "@lexical/utils"
@@ -22,7 +20,7 @@ import {
   DROP_COMMAND,
   LexicalEditor,
 } from "lexical"
-
+import { createPortal } from "react-dom"
 import { isHTMLElement } from "../../utils/guard"
 import { Point } from "../../utils/point"
 import { Rect } from "../../utils/rect"

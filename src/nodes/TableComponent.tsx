@@ -8,10 +8,6 @@
 
 import * as React from "react"
 import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react"
-import { createPortal } from "react-dom"
-
-import type { RangeSelection, TextFormatType } from "lexical"
-
 import {
   $generateJSONFromSelectedNodes,
   $generateNodesFromSerializedNodes,
@@ -51,9 +47,9 @@ import {
   NodeKey,
   PASTE_COMMAND,
 } from "lexical"
-import { IS_APPLE } from "../shared/environment"
-
+import { createPortal } from "react-dom"
 import { CellContext } from "../plugins/TablePlugin"
+import { IS_APPLE } from "../shared/environment"
 import {
   $isTableNode,
   Cell,
@@ -66,6 +62,7 @@ import {
   Rows,
   TableNode,
 } from "./TableNode"
+import type { RangeSelection, TextFormatType } from "lexical"
 
 type SortOptions = { type: "ascending" | "descending"; x: number }
 

@@ -7,7 +7,6 @@
  */
 
 import * as React from "react"
-
 import {
   AutoLinkPlugin as LexicalAutoLinkPlugin,
   createLinkMatcherWithRegExp,

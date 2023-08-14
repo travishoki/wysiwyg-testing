@@ -7,8 +7,6 @@
  */
 import * as React from "react"
 import { useCallback, useMemo, useState } from "react"
-import * as ReactDOM from "react-dom"
-
 import { $createCodeNode } from "@lexical/code"
 import {
   INSERT_CHECK_LIST_COMMAND,
@@ -32,7 +30,7 @@ import {
   FORMAT_ELEMENT_COMMAND,
   TextNode,
 } from "lexical"
-
+import * as ReactDOM from "react-dom"
 import { useModal } from "../../hooks/useModal"
 import { InsertImageDialog } from "../ImagesPlugin"
 import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"

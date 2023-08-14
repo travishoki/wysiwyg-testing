@@ -8,7 +8,6 @@
 
 import * as React from "react"
 import { useEffect, useMemo, useRef, useState } from "react"
-
 import { TextInput } from "./TextInput"
 import "./ColorPicker.css"
 

@@ -6,8 +6,7 @@
  *
  */
 
-import type { RangeSelection } from "lexical"
-
+import { useEffect } from "react"
 import { $getListDepth, $isListItemNode, $isListNode } from "@lexical/list"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import {
@@ -18,7 +17,7 @@ import {
   ElementNode,
   INDENT_CONTENT_COMMAND,
 } from "lexical"
-import { useEffect } from "react"
+import type { RangeSelection } from "lexical"
 
 type Props = Readonly<{
   maxDepth: number | null | undefined

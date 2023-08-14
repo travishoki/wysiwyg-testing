@@ -7,9 +7,6 @@
  */
 import * as React from "react"
 import { Suspense, useCallback, useEffect, useRef, useState } from "react"
-
-import type { GridSelection, LexicalEditor, NodeKey, NodeSelection, RangeSelection } from "lexical"
-
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary"
@@ -31,8 +28,6 @@ import {
   KEY_ESCAPE_COMMAND,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-
-import type { Position } from "./InlineImageNode"
 import { useModal } from "../hooks/useModal"
 import { FloatingLinkEditorPlugin } from "../plugins/FloatingLinkEditorPlugin/index"
 import { FloatingTextFormatToolbarPlugin } from "../plugins/FloatingTextFormatToolbarPlugin/index"
@@ -44,6 +39,8 @@ import { Placeholder } from "../ui/Placeholder"
 import { Select } from "../ui/Select"
 import { TextInput } from "../ui/TextInput"
 import { $isInlineImageNode, InlineImageNode } from "./InlineImageNode"
+import type { Position } from "./InlineImageNode"
+import type { GridSelection, LexicalEditor, NodeKey, NodeSelection, RangeSelection } from "lexical"
 import "./InlineImageNode.css"
 
 const imageCache = new Set()

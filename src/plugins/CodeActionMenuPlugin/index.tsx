@@ -8,12 +8,10 @@
 
 import * as React from "react"
 import { useEffect, useRef, useState } from "react"
-import { createPortal } from "react-dom"
-
 import { $isCodeNode, CodeNode, getLanguageFriendlyName, normalizeCodeLang } from "@lexical/code"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $getNearestNodeFromDOMNode } from "lexical"
-
+import { createPortal } from "react-dom"
 import { CopyButton } from "./components/CopyButton"
 import { canBePrettier, PrettierButton } from "./components/PrettierButton"
 import { useDebounce } from "./utils"

@@ -1,5 +1,4 @@
 import * as React from "react"
-
 import { LockButton } from "./LockButton/LockButton"
 import { SubmitButton } from "./SubmitButton/SubmitButton"
 import "./Controls.css"

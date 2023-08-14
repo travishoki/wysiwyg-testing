@@ -15,7 +15,7 @@
 
 import * as React from "react"
 import { Suspense } from "react"
-
+import { $applyNodeReplacement, createEditor, DecoratorNode } from "lexical"
 import type {
   DOMConversionMap,
   DOMConversionOutput,
@@ -28,7 +28,6 @@ import type {
   SerializedLexicalNode,
   Spread,
 } from "lexical"
-import { $applyNodeReplacement, createEditor, DecoratorNode } from "lexical"
 
 const InlineImageComponent = React.lazy(() => import("./InlineImageComponent"))
 

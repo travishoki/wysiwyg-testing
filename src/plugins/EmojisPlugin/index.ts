@@ -6,13 +6,12 @@
  *
  */
 
-import type { LexicalEditor } from "lexical"
 
+import { useEffect } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { TextNode } from "lexical"
-import { useEffect } from "react"
-
 import { $createEmojiNode, EmojiNode } from "../../nodes/EmojiNode"
+import type { LexicalEditor } from "lexical"
 
 const emojis: Map<string, [string, string]> = new Map([
   [":)", ["emoji happysmile", "🙂"]],

@@ -6,7 +6,6 @@
  *
  */
 
-import type { Klass, LexicalNode } from "lexical"
 
 import { CodeHighlightNode, CodeNode } from "@lexical/code"
 import { HashtagNode } from "@lexical/hashtag"
@@ -17,15 +16,15 @@ import { OverflowNode } from "@lexical/overflow"
 import { HorizontalRuleNode } from "@lexical/react/LexicalHorizontalRuleNode"
 import { HeadingNode, QuoteNode } from "@lexical/rich-text"
 import { TableCellNode, TableNode, TableRowNode } from "@lexical/table"
-
 import { AutocompleteNode } from "./AutocompleteNode"
 import { EmojiNode } from "./EmojiNode"
-import { MergeFieldNode } from "./MergeFieldNode"
 import { ImageNode } from "./ImageNode"
 import { InlineImageNode } from "./InlineImageNode"
 import { KeywordNode } from "./KeywordNode"
 import { MentionNode } from "./MentionNode"
+import { MergeFieldNode } from "./MergeFieldNode"
 import { TableNode as NewTableNode } from "./TableNode"
+import type { Klass, LexicalNode } from "lexical"
 
 export const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   HeadingNode,

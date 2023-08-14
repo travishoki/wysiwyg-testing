@@ -1,9 +1,8 @@
 import * as React from "react"
 import { useCallback } from "react"
-
 import { ButtonWithIcon } from "../ButtonWithIcon/ButtonWithIcon"
-import { formatMergeFieldTitle } from "./helpers"
 import { mergeFieldObject } from "../const"
+import { formatMergeFieldTitle } from "./helpers"
 
 export const MergeFieldButton = ({
   mergeFieldIconUrl,

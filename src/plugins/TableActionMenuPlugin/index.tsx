@@ -8,10 +8,6 @@
 
 import * as React from "react"
 import { ReactPortal, useCallback, useEffect, useRef, useState } from "react"
-import { createPortal } from "react-dom"
-
-import type { DEPRECATED_GridCellNode, ElementNode, LexicalEditor } from "lexical"
-
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
 import {
@@ -44,10 +40,11 @@ import {
   DEPRECATED_$isGridSelection,
   GridSelection,
 } from "lexical"
-
-import { invariant } from "../../shared/invariant"
+import { createPortal } from "react-dom"
 import { useModal } from "../../hooks/useModal"
+import { invariant } from "../../shared/invariant"
 import { ColorPicker } from "../../ui/ColorPicker"
+import type { DEPRECATED_GridCellNode, ElementNode, LexicalEditor } from "lexical"
 
 function computeSelectionCount(selection: GridSelection): {
   columns: number

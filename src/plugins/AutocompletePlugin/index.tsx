@@ -6,8 +6,8 @@
  *
  */
 
-import type { GridSelection, NodeKey, NodeSelection, RangeSelection } from "lexical"
 
+import { useCallback, useEffect } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $isAtNodeEnd } from "@lexical/selection"
 import { mergeRegister } from "@lexical/utils"
@@ -22,11 +22,10 @@ import {
   KEY_ARROW_RIGHT_COMMAND,
   KEY_TAB_COMMAND,
 } from "lexical"
-import { useCallback, useEffect } from "react"
-
 import { useSharedAutocompleteContext } from "../../context/SharedAutocompleteContext"
 import { $createAutocompleteNode, AutocompleteNode } from "../../nodes/AutocompleteNode"
 import { addSwipeRightListener } from "../../utils/swipe"
+import type { GridSelection, NodeKey, NodeSelection, RangeSelection } from "lexical"
 
 type SearchPromise = {
   dismiss: () => void

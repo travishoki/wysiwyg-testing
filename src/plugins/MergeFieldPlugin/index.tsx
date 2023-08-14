@@ -1,13 +1,12 @@
 import { useEffect } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
+import { $wrapNodeInElement, mergeRegister } from "@lexical/utils"
 import {
   $createParagraphNode,
   $insertNodes,
   $isRootOrShadowRoot,
   COMMAND_PRIORITY_EDITOR,
 } from "lexical"
-import { $wrapNodeInElement, mergeRegister } from "@lexical/utils"
-
 import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
 import { $createMergeFieldNode, MergeFieldNode } from "../../nodes/MergeFieldNode"
 

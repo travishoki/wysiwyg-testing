@@ -7,8 +7,6 @@
  */
 import * as React from "react"
 import { Dispatch, useCallback, useEffect, useRef, useState } from "react"
-import { createPortal } from "react-dom"
-
 import { $isAutoLinkNode, $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $findMatchingParent, mergeRegister } from "@lexical/utils"
@@ -25,7 +23,7 @@ import {
   RangeSelection,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-
+import { createPortal } from "react-dom"
 import { getSelectedNode } from "../../utils/getSelectedNode"
 import { setFloatingElemPositionForLinkEditor } from "../../utils/setFloatingElemPositionForLinkEditor"
 import { sanitizeUrl } from "../../utils/url"

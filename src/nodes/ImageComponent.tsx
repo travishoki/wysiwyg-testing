@@ -8,9 +8,6 @@
 
 import * as React from "react"
 import { Suspense, useCallback, useEffect, useRef, useState } from "react"
-
-import type { GridSelection, LexicalEditor, NodeKey, NodeSelection, RangeSelection } from "lexical"
-
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary"
@@ -34,7 +31,6 @@ import {
   KEY_ESCAPE_COMMAND,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-
 import { useSharedHistoryContext } from "../context/SharedHistoryContext"
 import { EmojisPlugin } from "../plugins/EmojisPlugin"
 import { KeywordsPlugin } from "../plugins/KeywordsPlugin"
@@ -44,6 +40,7 @@ import { ContentEditable } from "../ui/ContentEditable"
 import { ImageResizer } from "../ui/ImageResizer"
 import { Placeholder } from "../ui/Placeholder"
 import { $isImageNode } from "./ImageNode"
+import type { GridSelection, LexicalEditor, NodeKey, NodeSelection, RangeSelection } from "lexical"
 import "./ImageNode.css"
 
 const imageCache = new Set()

@@ -7,7 +7,6 @@
  */
 import * as React from "react"
 import { useEffect, useRef, useState } from "react"
-
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $wrapNodeInElement, mergeRegister } from "@lexical/utils"
 import {
@@ -28,21 +27,20 @@ import {
   LexicalCommand,
   LexicalEditor,
 } from "lexical"
-
-import { CAN_USE_DOM } from "../../shared/canUseDOM"
-import type { Position } from "../../nodes/InlineImageNode"
-import "../../ui/Checkbox.css"
 import {
   $createInlineImageNode,
   $isInlineImageNode,
   InlineImageNode,
   InlineImagePayload,
 } from "../../nodes/InlineImageNode"
+import { CAN_USE_DOM } from "../../shared/canUseDOM"
+import "../../ui/Checkbox.css"
 import { Button } from "../../ui/Button"
 import { DialogActions } from "../../ui/Dialog"
 import { FileInput } from "../../ui/FileInput"
 import { Select } from "../../ui/Select"
 import { TextInput } from "../../ui/TextInput"
+import type { Position } from "../../nodes/InlineImageNode"
 
 type InsertInlineImagePayload = Readonly<InlineImagePayload>
 

@@ -8,7 +8,6 @@
 
 import * as React from "react"
 import { createContext, useContext, useEffect, useMemo, useState } from "react"
-
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { INSERT_TABLE_COMMAND } from "@lexical/table"
 import {
@@ -21,9 +20,8 @@ import {
   LexicalEditor,
   LexicalNode,
 } from "lexical"
-
-import { invariant } from "../shared/invariant"
 import { $createTableNodeWithDimensions, TableNode } from "../nodes/TableNode"
+import { invariant } from "../shared/invariant"
 import { Button } from "../ui/Button"
 import { DialogActions } from "../ui/Dialog"
 import { TextInput } from "../ui/TextInput"
