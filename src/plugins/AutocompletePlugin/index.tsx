@@ -222,7 +222,7 @@ class AutocompleteServer {
       setTimeout(() => {
         if (isDismissed) {
           // TODO cache result
-          return reject("Dismissed")
+          return reject(new Error("Dismissed"))
         }
         const searchTextLength = searchText.length
         if (searchText === "" || searchTextLength < 4) {
