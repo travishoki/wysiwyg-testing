@@ -5,6 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
+import * as React from "react"
+import { useCallback, useMemo, useState } from "react"
+import * as ReactDOM from "react-dom"
 
 import { $createCodeNode } from "@lexical/code"
 import {
@@ -29,9 +32,6 @@ import {
   FORMAT_ELEMENT_COMMAND,
   TextNode,
 } from "lexical"
-import { useCallback, useMemo, useState } from "react"
-import * as React from "react"
-import * as ReactDOM from "react-dom"
 
 import { useModal } from "../../hooks/useModal"
 import { InsertImageDialog } from "../ImagesPlugin"

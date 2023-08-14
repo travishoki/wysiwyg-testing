@@ -6,6 +6,10 @@
  *
  */
 
+import * as React from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
+import * as ReactDOM from "react-dom"
+
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import {
   LexicalTypeaheadMenuPlugin,
@@ -14,9 +18,6 @@ import {
   useBasicTypeaheadTriggerMatch,
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
 import { TextNode } from "lexical"
-import { useCallback, useEffect, useMemo, useState } from "react"
-import * as React from "react"
-import * as ReactDOM from "react-dom"
 
 import { $createMentionNode } from "../../nodes/MentionNode"
 

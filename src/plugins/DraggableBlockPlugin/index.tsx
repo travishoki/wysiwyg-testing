@@ -5,7 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-import "./index.css"
+import * as React from "react"
+import { DragEvent as ReactDragEvent, useEffect, useRef, useState } from "react"
+import { createPortal } from "react-dom"
 
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { eventFiles } from "@lexical/rich-text"
@@ -20,13 +22,11 @@ import {
   DROP_COMMAND,
   LexicalEditor,
 } from "lexical"
-import * as React from "react"
-import { DragEvent as ReactDragEvent, useEffect, useRef, useState } from "react"
-import { createPortal } from "react-dom"
 
 import { isHTMLElement } from "../../utils/guard"
 import { Point } from "../../utils/point"
 import { Rect } from "../../utils/rect"
+import "./index.css"
 
 const SPACE = 4
 const TARGET_LINE_HALF_HEIGHT = 2

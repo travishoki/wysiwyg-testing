@@ -6,6 +6,9 @@
  *
  */
 
+import * as React from "react"
+import { useCallback, useEffect, useState } from "react"
+
 import type { LexicalEditor } from "lexical"
 
 import { $createCodeNode, $isCodeNode } from "@lexical/code"
@@ -20,8 +23,6 @@ import {
   CLEAR_EDITOR_COMMAND,
   COMMAND_PRIORITY_EDITOR,
 } from "lexical"
-import * as React from "react"
-import { useCallback, useEffect, useState } from "react"
 
 import { useModal } from "../../hooks/useModal"
 import { Button } from "../../ui/Button"

@@ -6,6 +6,10 @@
  *
  */
 
+import * as React from "react"
+import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react"
+import { createPortal } from "react-dom"
+
 import type { RangeSelection, TextFormatType } from "lexical"
 
 import {
@@ -47,9 +51,6 @@ import {
   NodeKey,
   PASTE_COMMAND,
 } from "lexical"
-import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react"
-import * as React from "react"
-import { createPortal } from "react-dom"
 import { IS_APPLE } from "../shared/environment"
 
 import { CellContext } from "../plugins/TablePlugin"

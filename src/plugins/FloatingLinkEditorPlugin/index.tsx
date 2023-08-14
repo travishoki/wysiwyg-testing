@@ -5,7 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-import "./index.css"
+import * as React from "react"
+import { Dispatch, useCallback, useEffect, useRef, useState } from "react"
+import { createPortal } from "react-dom"
 
 import { $isAutoLinkNode, $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
@@ -23,13 +25,11 @@ import {
   RangeSelection,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-import { Dispatch, useCallback, useEffect, useRef, useState } from "react"
-import * as React from "react"
-import { createPortal } from "react-dom"
 
 import { getSelectedNode } from "../../utils/getSelectedNode"
 import { setFloatingElemPositionForLinkEditor } from "../../utils/setFloatingElemPositionForLinkEditor"
 import { sanitizeUrl } from "../../utils/url"
+import "./index.css"
 
 function FloatingLinkEditor({
   editor,

@@ -6,11 +6,10 @@
  *
  */
 
-import type { SettingName } from "../appSettings"
-
 import * as React from "react"
 import { createContext, useContext } from "react"
 
+import type { SettingName } from "../appSettings"
 import { DEFAULT_SETTINGS } from "../appSettings"
 
 type SettingsContextShape = {

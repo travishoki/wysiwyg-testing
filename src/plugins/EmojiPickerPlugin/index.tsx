@@ -6,6 +6,10 @@
  *
  */
 
+import * as React from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
+import * as ReactDOM from "react-dom"
+
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import {
   LexicalTypeaheadMenuPlugin,
@@ -13,9 +17,6 @@ import {
   useBasicTypeaheadTriggerMatch,
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
 import { $createTextNode, $getSelection, $isRangeSelection, TextNode } from "lexical"
-import * as React from "react"
-import { useCallback, useEffect, useMemo, useState } from "react"
-import * as ReactDOM from "react-dom"
 
 class EmojiOption extends MenuOption {
   title: string

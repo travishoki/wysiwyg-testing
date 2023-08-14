@@ -5,9 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-import type { Position } from "../../nodes/InlineImageNode"
-
-import "../../ui/Checkbox.css"
+import * as React from "react"
+import { useEffect, useRef, useState } from "react"
 
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $wrapNodeInElement, mergeRegister } from "@lexical/utils"
@@ -29,10 +28,10 @@ import {
   LexicalCommand,
   LexicalEditor,
 } from "lexical"
-import * as React from "react"
-import { useEffect, useRef, useState } from "react"
-import { CAN_USE_DOM } from "../../shared/canUseDOM"
 
+import { CAN_USE_DOM } from "../../shared/canUseDOM"
+import type { Position } from "../../nodes/InlineImageNode"
+import "../../ui/Checkbox.css"
 import {
   $createInlineImageNode,
   $isInlineImageNode,

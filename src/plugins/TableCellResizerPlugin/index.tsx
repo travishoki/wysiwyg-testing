@@ -5,10 +5,20 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
+import * as React from "react"
+import {
+  MouseEventHandler,
+  ReactPortal,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react"
+import { createPortal } from "react-dom"
+
 import type { Cell } from "@lexical/table"
 import type { LexicalEditor } from "lexical"
-
-import "./index.css"
 
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
@@ -27,17 +37,7 @@ import {
   DEPRECATED_$isGridSelection,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-import * as React from "react"
-import {
-  MouseEventHandler,
-  ReactPortal,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react"
-import { createPortal } from "react-dom"
+import "./index.css"
 
 type MousePosition = {
   x: number

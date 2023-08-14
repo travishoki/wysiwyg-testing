@@ -6,10 +6,10 @@
  *
  */
 
-import "./Dialog.css"
-
 import * as React from "react"
 import { ReactNode } from "react"
+
+import "./Dialog.css"
 
 type Props = Readonly<{
   "data-test-id"?: string

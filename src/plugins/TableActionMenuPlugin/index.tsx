@@ -6,6 +6,10 @@
  *
  */
 
+import * as React from "react"
+import { ReactPortal, useCallback, useEffect, useRef, useState } from "react"
+import { createPortal } from "react-dom"
+
 import type { DEPRECATED_GridCellNode, ElementNode, LexicalEditor } from "lexical"
 
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
@@ -40,9 +44,6 @@ import {
   DEPRECATED_$isGridSelection,
   GridSelection,
 } from "lexical"
-import * as React from "react"
-import { ReactPortal, useCallback, useEffect, useRef, useState } from "react"
-import { createPortal } from "react-dom"
 
 import { invariant } from "../../shared/invariant"
 import { useModal } from "../../hooks/useModal"

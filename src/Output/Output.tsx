@@ -1,4 +1,5 @@
 import * as React from "react"
+
 import "./Output.css"
 
 export const Output = ({ output }: OutputProps) => {

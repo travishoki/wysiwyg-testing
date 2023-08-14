@@ -6,6 +6,9 @@
  *
  */
 
+import * as React from "react"
+import { useCallback, useEffect, useState } from "react"
+
 import type { LexicalEditor, NodeKey } from "lexical"
 
 import {
@@ -68,8 +71,6 @@ import {
   SELECTION_CHANGE_COMMAND,
   UNDO_COMMAND,
 } from "lexical"
-import { useCallback, useEffect, useState } from "react"
-import * as React from "react"
 import { IS_APPLE } from "../../shared/environment"
 
 import { useModal } from "../../hooks/useModal"

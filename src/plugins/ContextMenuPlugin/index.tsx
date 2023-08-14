@@ -6,6 +6,10 @@
  *
  */
 
+import * as React from "react"
+import { useCallback, useMemo } from "react"
+import * as ReactDOM from "react-dom"
+
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { LexicalContextMenuPlugin, MenuOption } from "@lexical/react/LexicalContextMenuPlugin"
 import {
@@ -16,9 +20,6 @@ import {
   CUT_COMMAND,
   PASTE_COMMAND,
 } from "lexical"
-import { useCallback, useMemo } from "react"
-import * as React from "react"
-import * as ReactDOM from "react-dom"
 
 function ContextMenuItem({
   index,
