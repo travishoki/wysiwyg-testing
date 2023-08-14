@@ -16,6 +16,7 @@
 import * as React from "react"
 import { Suspense } from "react"
 import { $applyNodeReplacement, createEditor, DecoratorNode } from "lexical"
+import { ComposerNodeFallback } from "../ComposerNodeFallback/ComposerNodeFallback"
 import type {
   DOMConversionMap,
   DOMConversionOutput,
@@ -243,7 +244,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
 
   decorate(): JSX.Element {
     return (
-      <Suspense fallback={null}>
+      <Suspense fallback={<ComposerNodeFallback />}>
         <InlineImageComponent
           src={this.__src}
           altText={this.__altText}

@@ -31,6 +31,7 @@ import {
   KEY_ESCAPE_COMMAND,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
+import { ComposerNodeFallback } from "../ComposerNodeFallback/ComposerNodeFallback"
 import { useSharedHistoryContext } from "../context/SharedHistoryContext"
 import { EmojisPlugin } from "../plugins/EmojisPlugin"
 import { KeywordsPlugin } from "../plugins/KeywordsPlugin"
@@ -289,7 +290,7 @@ export default function ImageComponent({
   const draggable = isSelected && $isNodeSelection(selection) && !isResizing
   const isFocused = isSelected || isResizing
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<ComposerNodeFallback />}>
       <>
         <div draggable={draggable}>
           <LazyImage

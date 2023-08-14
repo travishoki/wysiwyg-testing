@@ -28,6 +28,7 @@ import {
   KEY_ESCAPE_COMMAND,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
+import { ComposerNodeFallback } from "../ComposerNodeFallback/ComposerNodeFallback"
 import { useModal } from "../hooks/useModal"
 import { FloatingLinkEditorPlugin } from "../plugins/FloatingLinkEditorPlugin/index"
 import { FloatingTextFormatToolbarPlugin } from "../plugins/FloatingTextFormatToolbarPlugin/index"
@@ -320,7 +321,7 @@ export default function InlineImageComponent({
   const draggable = isSelected && $isNodeSelection(selection)
   const isFocused = isSelected
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<ComposerNodeFallback />}>
       <>
         <div draggable={draggable}>
           <button

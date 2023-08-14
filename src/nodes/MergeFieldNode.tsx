@@ -8,6 +8,7 @@ import {
   DecoratorNode,
   LexicalNode,
 } from "lexical"
+import { ComposerNodeFallback } from "../ComposerNodeFallback/ComposerNodeFallback"
 
 const MergeFieldComponent = React.lazy(
   // @ts-ignore
@@ -73,7 +74,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
   decorate(): JSX.Element {
     return (
-      <Suspense fallback={null}>
+      <Suspense fallback={<ComposerNodeFallback />}>
         <MergeFieldComponent
           nodeKey={this.getKey()}
           mergeFieldIconUrl={this.mergeFieldIconUrl}

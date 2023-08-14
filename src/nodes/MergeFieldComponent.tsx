@@ -3,6 +3,7 @@ import { Suspense, useCallback } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
 import { $getNodeByKey } from "lexical"
+import { ComposerNodeFallback } from "../ComposerNodeFallback/ComposerNodeFallback"
 import { formatMergeFieldTitle } from "../MergeFieldControls/MergeFieldButton/helpers"
 import ImageClose from "../images/icons/close.svg"
 import { $isMergeFieldNode } from "./MergeFieldNode"
@@ -27,7 +28,7 @@ export default function MergeFieldComponent({
   }, [editor, nodeKey])
 
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<ComposerNodeFallback />}>
       <div className="merge-field-component-inner">
         <div className="merge-field-component-content">
           <img alt="icon" className="svg-icon" height="15" src={mergeFieldIconUrl} width="15" />
