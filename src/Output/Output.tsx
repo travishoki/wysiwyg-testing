@@ -16,5 +16,5 @@ export const Output = ({ output }: OutputProps) => {
 }
 
 type OutputProps = {
-  output: string
+  output?: string
 }
