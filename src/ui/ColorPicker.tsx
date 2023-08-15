@@ -8,6 +8,7 @@
 
 import * as React from "react"
 import { useEffect, useMemo, useRef, useState } from "react"
+import { ColorPickerMoveWrapper, Position } from "./ColorPickerMoveWrapper"
 import { TextInput } from "./TextInput"
 import "./ColorPicker.css"
 
@@ -115,7 +116,7 @@ export function ColorPicker({ color, onChange }: Readonly<ColorPickerProps>): JS
           />
         ))}
       </div>
-      <MoveWrapper
+      <ColorPickerMoveWrapper
         className="color-picker-saturation"
         style={{ backgroundColor: `hsl(${selfColor.hsv.h}, 100%, 50%)` }}
         onChange={onMoveSaturation}
@@ -128,8 +129,8 @@ export function ColorPicker({ color, onChange }: Readonly<ColorPickerProps>): JS
             top: saturationPosition.y,
           }}
         />
-      </MoveWrapper>
-      <MoveWrapper className="color-picker-hue" onChange={onMoveHue}>
+      </ColorPickerMoveWrapper>
+      <ColorPickerMoveWrapper className="color-picker-hue" onChange={onMoveHue}>
         <div
           className="color-picker-hue_cursor"
           style={{
@@ -137,68 +138,10 @@ export function ColorPicker({ color, onChange }: Readonly<ColorPickerProps>): JS
             left: huePosition.x,
           }}
         />
-      </MoveWrapper>
+      </ColorPickerMoveWrapper>
       <div className="color-picker-color" style={{ backgroundColor: selfColor.hex }} />
     </div>
   )
-}
-
-interface Position {
-  x: number
-  y: number
-}
-
-interface MoveWrapperProps {
-  className?: string
-  style?: React.CSSProperties
-  onChange: (position: Position) => void
-  children: JSX.Element
-}
-
-function MoveWrapper({ className, style, onChange, children }: MoveWrapperProps) {
-  const divRef = useRef<HTMLDivElement>(null)
-
-  const move = (e: React.MouseEvent | MouseEvent): void => {
-    if (divRef.current) {
-      const { current: div } = divRef
-      const { width, height, left, top } = div.getBoundingClientRect()
-
-      const x = clamp(e.clientX - left, width, 0)
-      const y = clamp(e.clientY - top, height, 0)
-
-      onChange({ x, y })
-    }
-  }
-
-  const onMouseDown = (e: React.MouseEvent): void => {
-    if (e.button !== 0) return
-
-    move(e)
-
-    const onMouseMove = (_e: MouseEvent): void => {
-      move(_e)
-    }
-
-    const onMouseUp = (_e: MouseEvent): void => {
-      document.removeEventListener("mousemove", onMouseMove, false)
-      document.removeEventListener("mouseup", onMouseUp, false)
-
-      move(_e)
-    }
-
-    document.addEventListener("mousemove", onMouseMove, false)
-    document.addEventListener("mouseup", onMouseUp, false)
-  }
-
-  return (
-    <div ref={divRef} className={className} style={style} onMouseDown={onMouseDown}>
-      {children}
-    </div>
-  )
-}
-
-function clamp(value: number, max: number, min: number) {
-  return value > max ? max : value < min ? min : value
 }
 
 interface RGB {
