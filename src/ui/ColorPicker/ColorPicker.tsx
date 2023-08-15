@@ -8,8 +8,8 @@
 
 import * as React from "react"
 import { useEffect, useMemo, useRef, useState } from "react"
-import { ColorPickerMoveWrapper, Position } from "./ColorPickerMoveWrapper"
-import { TextInput } from "./TextInput"
+import { TextInput } from "../TextInput"
+import { MoveWrapper, Position } from "./MoveWrapper"
 import "./ColorPicker.css"
 
 interface ColorPickerProps {
@@ -116,7 +116,7 @@ export function ColorPicker({ color, onChange }: Readonly<ColorPickerProps>): JS
           />
         ))}
       </div>
-      <ColorPickerMoveWrapper
+      <MoveWrapper
         className="color-picker-saturation"
         style={{ backgroundColor: `hsl(${selfColor.hsv.h}, 100%, 50%)` }}
         onChange={onMoveSaturation}
@@ -129,8 +129,8 @@ export function ColorPicker({ color, onChange }: Readonly<ColorPickerProps>): JS
             top: saturationPosition.y,
           }}
         />
-      </ColorPickerMoveWrapper>
-      <ColorPickerMoveWrapper className="color-picker-hue" onChange={onMoveHue}>
+      </MoveWrapper>
+      <MoveWrapper className="color-picker-hue" onChange={onMoveHue}>
         <div
           className="color-picker-hue_cursor"
           style={{
@@ -138,7 +138,7 @@ export function ColorPicker({ color, onChange }: Readonly<ColorPickerProps>): JS
             left: huePosition.x,
           }}
         />
-      </ColorPickerMoveWrapper>
+      </MoveWrapper>
       <div className="color-picker-color" style={{ backgroundColor: selfColor.hex }} />
     </div>
   )

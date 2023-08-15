@@ -43,7 +43,7 @@ import {
 import { createPortal } from "react-dom"
 import { useModal } from "../../hooks/useModal"
 import { invariant } from "../../shared/invariant"
-import { ColorPicker } from "../../ui/ColorPicker"
+import { ColorPicker } from "../../ui/ColorPicker/ColorPicker"
 import type { DEPRECATED_GridCellNode, ElementNode, LexicalEditor } from "lexical"
 
 function computeSelectionCount(selection: GridSelection): {

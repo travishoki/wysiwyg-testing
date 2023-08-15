@@ -6,19 +6,14 @@ export interface Position {
   y: number
 }
 
-interface ColorPickerMoveWrapperProps {
+interface MoveWrapperProps {
   className?: string
   style?: React.CSSProperties
   onChange: (position: Position) => void
   children: JSX.Element
 }
 
-export function ColorPickerMoveWrapper({
-  className,
-  style,
-  onChange,
-  children,
-}: ColorPickerMoveWrapperProps) {
+export function MoveWrapper({ className, style, onChange, children }: MoveWrapperProps) {
   const divRef = useRef<HTMLDivElement>(null)
 
   const move = (e: React.MouseEvent | MouseEvent): void => {
