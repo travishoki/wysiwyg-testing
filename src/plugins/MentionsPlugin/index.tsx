@@ -11,13 +11,14 @@ import { useCallback, useEffect, useMemo, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import {
   LexicalTypeaheadMenuPlugin,
-  MenuOption,
   MenuTextMatch,
   useBasicTypeaheadTriggerMatch,
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
 import { TextNode } from "lexical"
 import * as ReactDOM from "react-dom"
 import { $createMentionNode } from "../../nodes/MentionNode"
+import { MentionTypeaheadOption } from "./MentionTypeaheadOption"
+import { MentionsTypeaheadMenuItem } from "./MentionsTypeaheadMenuItem"
 
 const PUNCTUATION = "\\.,\\+\\*\\?\\$\\@\\|#{}\\(\\)\\^\\-\\[\\]\\\\/!%'\"~=<>_:;"
 const NAME = "\\b[A-Z][^\\s" + PUNCTUATION + "]"
@@ -580,52 +581,6 @@ function checkForAtSignMentions(text: string, minMatchLength: number): MenuTextM
 function getPossibleQueryMatch(text: string): MenuTextMatch | null {
   const match = checkForAtSignMentions(text, 1)
   return match === null ? checkForCapitalizedNameMentions(text, 3) : match
-}
-
-class MentionTypeaheadOption extends MenuOption {
-  name: string
-  picture: JSX.Element
-
-  constructor(name: string, picture: JSX.Element) {
-    super(name)
-    this.name = name
-    this.picture = picture
-  }
-}
-
-function MentionsTypeaheadMenuItem({
-  index,
-  isSelected,
-  onClick,
-  onMouseEnter,
-  option,
-}: {
-  index: number
-  isSelected: boolean
-  onClick: () => void
-  onMouseEnter: () => void
-  option: MentionTypeaheadOption
-}) {
-  let className = "item"
-  if (isSelected) {
-    className += " selected"
-  }
-  return (
-    <li
-      key={option.key}
-      tabIndex={-1}
-      className={className}
-      ref={option.setRefElement}
-      role="option"
-      aria-selected={isSelected}
-      id={"typeahead-item-" + index}
-      onMouseEnter={onMouseEnter}
-      onClick={onClick}
-    >
-      {option.picture}
-      <span className="text">{option.name}</span>
-    </li>
-  )
 }
 
 export function MentionsPlugin(): JSX.Element | null {
