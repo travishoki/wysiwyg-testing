@@ -51,13 +51,15 @@ export const INSERT_INLINE_IMAGE_COMMAND: LexicalCommand<InlineImagePayload> = c
   "INSERT_INLINE_IMAGE_COMMAND",
 )
 
+type InsertInlineImageDialogProps = {
+  activeEditor: LexicalEditor
+  onClose: () => void
+}
+
 export function InsertInlineImageDialog({
   activeEditor,
   onClose,
-}: {
-  activeEditor: LexicalEditor
-  onClose: () => void
-}): JSX.Element {
+}: InsertInlineImageDialogProps): JSX.Element {
   const hasModifier = useRef(false)
 
   const [src, setSrc] = useState("")

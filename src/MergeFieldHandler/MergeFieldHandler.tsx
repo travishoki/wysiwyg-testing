@@ -7,6 +7,10 @@ export type composerRefProps = {
   dispatchMergeField: (mergeFieldObject: mergeFieldObject) => void
 }
 
+type MergeFieldHandlerProps = {
+  composerRef: React.MutableRefObject<composerRefProps>
+}
+
 export const MergeFieldHandler = ({ composerRef }: MergeFieldHandlerProps): null => {
   const [editor] = useLexicalComposerContext()
 
@@ -21,8 +25,4 @@ export const MergeFieldHandler = ({ composerRef }: MergeFieldHandlerProps): null
   }))
 
   return null
-}
-
-type MergeFieldHandlerProps = {
-  composerRef: React.MutableRefObject<composerRefProps>
 }

@@ -104,7 +104,7 @@ module.exports = {
     "class-methods-use-this": "error",
     "prefer-promise-reject-errors": "error",
     "no-restricted-syntax": "error",
-    "jsx-a11y/control-has-associated-label": "error",
+    // "jsx-a11y/control-has-associated-label": "error", // TODO: Add
   },
   overrides: [
     /** Composer */

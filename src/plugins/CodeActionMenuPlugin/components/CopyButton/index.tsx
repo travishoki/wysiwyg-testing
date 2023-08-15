@@ -11,12 +11,12 @@ import { $isCodeNode } from "@lexical/code"
 import { $getNearestNodeFromDOMNode, $getSelection, $setSelection, LexicalEditor } from "lexical"
 import { useDebounce } from "../../utils"
 
-interface Props {
+interface CopyButtonProps {
   editor: LexicalEditor
   getCodeDOMNode: () => HTMLElement | null
 }
 
-export function CopyButton({ editor, getCodeDOMNode }: Props) {
+export function CopyButton({ editor, getCodeDOMNode }: CopyButtonProps) {
   const [isCopyCompleted, setCopyCompleted] = useState<boolean>(false)
 
   const removeSuccessIcon = useDebounce(() => {

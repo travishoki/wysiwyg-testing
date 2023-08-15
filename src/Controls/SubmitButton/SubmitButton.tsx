@@ -3,6 +3,10 @@ import { $generateHtmlFromNodes } from "@lexical/html"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { Button } from "../Button/Button"
 
+type SubmitButtonProps = {
+  onSubmit: (value: string) => void
+}
+
 export const SubmitButton = ({ onSubmit }: SubmitButtonProps) => {
   const [editor] = useLexicalComposerContext()
 
@@ -15,8 +19,4 @@ export const SubmitButton = ({ onSubmit }: SubmitButtonProps) => {
   }
 
   return <Button onClick={onClick} title="Submit" />
-}
-
-type SubmitButtonProps = {
-  onSubmit: (value: string) => void
 }

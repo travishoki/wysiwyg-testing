@@ -40,19 +40,21 @@ interface PlaygroundEmbedConfig extends EmbedConfig {
 
 const EmbedConfigs: PlaygroundEmbedConfig[] = []
 
+type AutoEmbedMenuItemProps = {
+  index: number
+  isSelected: boolean
+  onClick: () => void
+  onMouseEnter: () => void
+  option: AutoEmbedOption
+}
+
 function AutoEmbedMenuItem({
   index,
   isSelected,
   onClick,
   onMouseEnter,
   option,
-}: {
-  index: number
-  isSelected: boolean
-  onClick: () => void
-  onMouseEnter: () => void
-  option: AutoEmbedOption
-}) {
+}: AutoEmbedMenuItemProps) {
   let className = "item"
   if (isSelected) {
     className += " selected"
@@ -74,17 +76,19 @@ function AutoEmbedMenuItem({
   )
 }
 
+type AutoEmbedMenuProps = {
+  selectedItemIndex: number | null
+  onOptionClick: (option: AutoEmbedOption, index: number) => void
+  onOptionMouseEnter: (index: number) => void
+  options: Array<AutoEmbedOption>
+}
+
 function AutoEmbedMenu({
   options,
   selectedItemIndex,
   onOptionClick,
   onOptionMouseEnter,
-}: {
-  selectedItemIndex: number | null
-  onOptionClick: (option: AutoEmbedOption, index: number) => void
-  onOptionMouseEnter: (index: number) => void
-  options: Array<AutoEmbedOption>
-}) {
+}: AutoEmbedMenuProps) {
   return (
     <div className="typeahead-popover">
       <ul>

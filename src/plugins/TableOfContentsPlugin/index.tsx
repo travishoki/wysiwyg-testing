@@ -42,11 +42,11 @@ function isHeadingBelowTheTopOfThePage(element: HTMLElement): boolean {
   return elementYPosition >= MARGIN_ABOVE_EDITOR + HEADING_WIDTH
 }
 
-function TableOfContentsList({
-  tableOfContents,
-}: {
+type TableOfContentsListProps = {
   tableOfContents: Array<TableOfContentsEntry>
-}): JSX.Element {
+}
+
+function TableOfContentsList({ tableOfContents }: TableOfContentsListProps): JSX.Element {
   const [selectedKey, setSelectedKey] = useState("")
   const selectedIndex = useRef(0)
   const [editor] = useLexicalComposerContext()

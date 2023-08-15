@@ -59,6 +59,16 @@ function useSuspenseImage(src: string) {
   }
 }
 
+type LazyImageProps = {
+  altText: string
+  className: string | null
+  height: "inherit" | number
+  imageRef: { current: null | HTMLImageElement }
+  maxWidth: number
+  src: string
+  width: "inherit" | number
+}
+
 function LazyImage({
   altText,
   className,
@@ -67,15 +77,7 @@ function LazyImage({
   width,
   height,
   maxWidth,
-}: {
-  altText: string
-  className: string | null
-  height: "inherit" | number
-  imageRef: { current: null | HTMLImageElement }
-  maxWidth: number
-  src: string
-  width: "inherit" | number
-}): JSX.Element {
+}: LazyImageProps): JSX.Element {
   useSuspenseImage(src)
   return (
     <img
@@ -93,6 +95,19 @@ function LazyImage({
   )
 }
 
+type ImageComponentProps = {
+  altText: string
+  caption: LexicalEditor
+  height: "inherit" | number
+  maxWidth: number
+  nodeKey: NodeKey
+  resizable: boolean
+  showCaption: boolean
+  src: string
+  width: "inherit" | number
+  captionsEnabled: boolean
+}
+
 // eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
 export default function ImageComponent({
   src,
@@ -105,18 +120,7 @@ export default function ImageComponent({
   showCaption,
   caption,
   captionsEnabled,
-}: {
-  altText: string
-  caption: LexicalEditor
-  height: "inherit" | number
-  maxWidth: number
-  nodeKey: NodeKey
-  resizable: boolean
-  showCaption: boolean
-  src: string
-  width: "inherit" | number
-  captionsEnabled: boolean
-}): JSX.Element {
+}: ImageComponentProps): JSX.Element {
   const imageRef = useRef<null | HTMLImageElement>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
   const [isSelected, setSelected, clearSelection] = useLexicalNodeSelection(nodeKey)

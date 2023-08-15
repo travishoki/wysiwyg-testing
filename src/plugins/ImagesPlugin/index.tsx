@@ -44,7 +44,11 @@ const getDOMSelection = (targetWindow: Window | null): Selection | null =>
 export const INSERT_IMAGE_COMMAND: LexicalCommand<InsertImagePayload> =
   createCommand("INSERT_IMAGE_COMMAND")
 
-function InsertImageUriDialogBody({ onClick }: { onClick: (payload: InsertImagePayload) => void }) {
+type InsertImageUriDialogBodyProps = {
+  onClick: (payload: InsertImagePayload) => void
+}
+
+function InsertImageUriDialogBody({ onClick }: InsertImageUriDialogBodyProps) {
   const [src, setSrc] = useState("")
   const [altText, setAltText] = useState("")
 
@@ -130,13 +134,12 @@ function InsertImageUploadedDialogBody({
   )
 }
 
-export function InsertImageDialog({
-  activeEditor,
-  onClose,
-}: {
+type InsertImageDialogProps = {
   activeEditor: LexicalEditor
   onClose: () => void
-}): JSX.Element {
+}
+
+export function InsertImageDialog({ activeEditor, onClose }: InsertImageDialogProps): JSX.Element {
   const [mode, setMode] = useState<null | "url" | "file">(null)
   const hasModifier = useRef(false)
 
@@ -192,11 +195,11 @@ export function InsertImageDialog({
   )
 }
 
-export function ImagesPlugin({
-  captionsEnabled,
-}: {
+type ImagesPluginProps = {
   captionsEnabled?: boolean
-}): JSX.Element | null {
+}
+
+export function ImagesPlugin({ captionsEnabled }: ImagesPluginProps): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {

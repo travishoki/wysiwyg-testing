@@ -14,19 +14,21 @@ import { $getSelection, $isRangeSelection, COPY_COMMAND, CUT_COMMAND, PASTE_COMM
 import * as ReactDOM from "react-dom"
 import type { LexicalNode } from "lexical"
 
+type ContextMenuItemProps = {
+  index: number
+  isSelected: boolean
+  onClick: () => void
+  onMouseEnter: () => void
+  option: ContextMenuOption
+}
+
 function ContextMenuItem({
   index,
   isSelected,
   onClick,
   onMouseEnter,
   option,
-}: {
-  index: number
-  isSelected: boolean
-  onClick: () => void
-  onMouseEnter: () => void
-  option: ContextMenuOption
-}) {
+}: ContextMenuItemProps) {
   let className = "item"
   if (isSelected) {
     className += " selected"

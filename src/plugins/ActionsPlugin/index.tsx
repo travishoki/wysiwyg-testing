@@ -144,13 +144,12 @@ export function ActionsPlugin(): JSX.Element {
   )
 }
 
-function ShowClearDialog({
-  editor,
-  onClose,
-}: {
+type ShowClearDialogProps = {
   editor: LexicalEditor
   onClose: () => void
-}): JSX.Element {
+}
+
+function ShowClearDialog({ editor, onClose }: ShowClearDialogProps): JSX.Element {
   return (
     <>
       Are you sure you want to clear the editor?

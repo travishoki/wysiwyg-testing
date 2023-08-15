@@ -12,17 +12,14 @@ import { createPortal } from "react-dom"
 
 import "./Modal.css"
 
-function PortalImpl({
-  onClose,
-  children,
-  title,
-  closeOnClickOutside,
-}: {
+type PortalImplProps = {
   children: ReactNode
   closeOnClickOutside: boolean
   onClose: () => void
   title: string
-}) {
+}
+
+function PortalImpl({ onClose, children, title, closeOnClickOutside }: PortalImplProps) {
   const modalRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -84,17 +81,19 @@ function PortalImpl({
   )
 }
 
+type ModalProps = {
+  children: ReactNode
+  closeOnClickOutside?: boolean
+  onClose: () => void
+  title: string
+}
+
 export function Modal({
   onClose,
   children,
   title,
   closeOnClickOutside = false,
-}: {
-  children: ReactNode
-  closeOnClickOutside?: boolean
-  onClose: () => void
-  title: string
-}): JSX.Element {
+}: ModalProps): JSX.Element {
   return createPortal(
     <PortalImpl onClose={onClose} title={title} closeOnClickOutside={closeOnClickOutside}>
       {children}

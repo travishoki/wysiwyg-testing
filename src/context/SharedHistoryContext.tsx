@@ -17,7 +17,11 @@ type ContextShape = {
 
 const Context: React.Context<ContextShape> = createContext({})
 
-export const SharedHistoryContext = ({ children }: { children: ReactNode }) => {
+type SharedHistoryContextProps = {
+  children: ReactNode
+}
+
+export const SharedHistoryContext = ({ children }: SharedHistoryContextProps) => {
   const historyContext = useMemo(() => ({ historyState: createEmptyHistoryState() }), [])
   return <Context.Provider value={historyContext}>{children}</Context.Provider>
 }

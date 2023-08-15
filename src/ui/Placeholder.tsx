@@ -11,12 +11,11 @@ import { ReactNode } from "react"
 
 import "./Placeholder.css"
 
-export function Placeholder({
-  children,
-  className,
-}: {
+type PlaceholderProps = {
   children: ReactNode
   className?: string
-}): JSX.Element {
+}
+
+export function Placeholder({ children, className }: PlaceholderProps): JSX.Element {
   return <div className={className || "Placeholder__root"}>{children}</div>
 }

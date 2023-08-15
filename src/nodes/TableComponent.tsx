@@ -639,16 +639,14 @@ function TableCell({
   )
 }
 
-// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
-export default function TableComponent({
-  nodeKey,
-  rows: rawRows,
-  theme,
-}: {
+type TableComponentProps = {
   nodeKey: NodeKey
   rows: Rows
   theme: EditorThemeClasses
-}) {
+}
+
+// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
+export default function TableComponent({ nodeKey, rows: rawRows, theme }: TableComponentProps) {
   const [isSelected, setSelected, clearSelection] = useLexicalNodeSelection(nodeKey)
   const resizeMeasureRef = useRef<{ size: number; point: number }>({
     point: 0,

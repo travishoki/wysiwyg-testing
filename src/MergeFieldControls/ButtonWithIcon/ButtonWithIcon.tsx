@@ -2,6 +2,12 @@ import React from "react"
 
 import "./ButtonWithIcon.css"
 
+type ButtonWithIconProps = {
+  iconUrl: string
+  onClick: () => void
+  title: string
+}
+
 export const ButtonWithIcon = ({ iconUrl, onClick, title }: ButtonWithIconProps) => (
   <button className="control-button" onClick={onClick}>
     <div className="control-button-inner">
@@ -10,9 +16,3 @@ export const ButtonWithIcon = ({ iconUrl, onClick, title }: ButtonWithIconProps)
     </div>
   </button>
 )
-
-type ButtonWithIconProps = {
-  iconUrl: string
-  onClick: () => void
-  title: string
-}

@@ -18,17 +18,14 @@ const DropDownContext = React.createContext<DropDownContextType | null>(null)
 
 const dropDownPadding = 4
 
-export function DropDownItem({
-  children,
-  className,
-  onClick,
-  title,
-}: {
+type DropDownItemProps = {
   children: React.ReactNode
   className: string
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
   title?: string
-}) {
+}
+
+export function DropDownItem({ children, className, onClick, title }: DropDownItemProps) {
   const ref = useRef<HTMLButtonElement>(null)
 
   const dropDownContext = React.useContext(DropDownContext)
@@ -122,6 +119,16 @@ function DropDownItems({
   )
 }
 
+type DropDownProps = {
+  disabled?: boolean
+  buttonAriaLabel?: string
+  buttonClassName: string
+  buttonIconClassName?: string
+  buttonLabel?: string
+  children: ReactNode
+  stopCloseOnClickSelf?: boolean
+}
+
 export function DropDown({
   disabled = false,
   buttonLabel,
@@ -130,15 +137,7 @@ export function DropDown({
   buttonIconClassName,
   children,
   stopCloseOnClickSelf,
-}: {
-  disabled?: boolean
-  buttonAriaLabel?: string
-  buttonClassName: string
-  buttonIconClassName?: string
-  buttonLabel?: string
-  children: ReactNode
-  stopCloseOnClickSelf?: boolean
-}): JSX.Element {
+}: DropDownProps): JSX.Element {
   const dropDownRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const [showDropDown, setShowDropDown] = useState(false)

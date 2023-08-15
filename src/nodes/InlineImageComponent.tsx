@@ -59,6 +59,16 @@ function useSuspenseImage(src: string) {
   }
 }
 
+type LazyImageProps = {
+  altText: string
+  className: string | null
+  height: "inherit" | number
+  imageRef: { current: null | HTMLImageElement }
+  src: string
+  width: "inherit" | number
+  position: Position
+}
+
 function LazyImage({
   altText,
   className,
@@ -67,15 +77,7 @@ function LazyImage({
   width,
   height,
   position,
-}: {
-  altText: string
-  className: string | null
-  height: "inherit" | number
-  imageRef: { current: null | HTMLImageElement }
-  src: string
-  width: "inherit" | number
-  position: Position
-}): JSX.Element {
+}: LazyImageProps): JSX.Element {
   useSuspenseImage(src)
   return (
     <img
@@ -171,6 +173,17 @@ export function UpdateInlineImageDialog({
   )
 }
 
+type InlineImageComponentProps = {
+  altText: string
+  caption: LexicalEditor
+  height: "inherit" | number
+  nodeKey: NodeKey
+  showCaption: boolean
+  src: string
+  width: "inherit" | number
+  position: Position
+}
+
 // eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
 export default function InlineImageComponent({
   src,
@@ -181,16 +194,7 @@ export default function InlineImageComponent({
   showCaption,
   caption,
   position,
-}: {
-  altText: string
-  caption: LexicalEditor
-  height: "inherit" | number
-  nodeKey: NodeKey
-  showCaption: boolean
-  src: string
-  width: "inherit" | number
-  position: Position
-}): JSX.Element {
+}: InlineImageComponentProps): JSX.Element {
   const [modal, showModal] = useModal()
   const imageRef = useRef<null | HTMLImageElement>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)

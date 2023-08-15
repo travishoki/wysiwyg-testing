@@ -25,7 +25,11 @@ const Context: React.Context<ContextShape> = createContext([
   },
 ])
 
-export const SharedAutocompleteContext = ({ children }: { children: ReactNode }) => {
+type SharedAutocompleteContextProps = {
+  children: ReactNode
+}
+
+export const SharedAutocompleteContext = ({ children }: SharedAutocompleteContextProps) => {
   const context: ContextShape = useMemo(() => {
     let suggestion: Suggestion | null = null
     const listeners: Set<CallbackFn> = new Set()

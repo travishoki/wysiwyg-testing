@@ -28,6 +28,19 @@ import { setFloatingElemPosition } from "../../utils/setFloatingElemPosition"
 import { INSERT_INLINE_IMAGE_COMMAND } from "../InlineImagePlugin"
 import "./index.css"
 
+type TextFormatFloatingToolbarProps = {
+  editor: LexicalEditor
+  anchorElem: HTMLElement
+  isBold: boolean
+  isCode: boolean
+  isItalic: boolean
+  isLink: boolean
+  isStrikethrough: boolean
+  isSubscript: boolean
+  isSuperscript: boolean
+  isUnderline: boolean
+}
+
 function TextFormatFloatingToolbar({
   editor,
   anchorElem,
@@ -39,18 +52,7 @@ function TextFormatFloatingToolbar({
   isStrikethrough,
   isSubscript,
   isSuperscript,
-}: {
-  editor: LexicalEditor
-  anchorElem: HTMLElement
-  isBold: boolean
-  isCode: boolean
-  isItalic: boolean
-  isLink: boolean
-  isStrikethrough: boolean
-  isSubscript: boolean
-  isSuperscript: boolean
-  isUnderline: boolean
-}): JSX.Element {
+}: TextFormatFloatingToolbarProps): JSX.Element {
   const popupCharStylesEditorRef = useRef<HTMLDivElement | null>(null)
 
   const insertLink = useCallback(() => {

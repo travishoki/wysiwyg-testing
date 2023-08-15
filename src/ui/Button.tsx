@@ -11,6 +11,16 @@ import { ReactNode } from "react"
 import { joinClasses } from "../utils/joinClasses"
 import "./Button.css"
 
+type ButtonProps = {
+  "data-test-id"?: string
+  children: ReactNode
+  className?: string
+  disabled?: boolean
+  onClick: () => void
+  small?: boolean
+  title?: string
+}
+
 export function Button({
   "data-test-id": dataTestId,
   children,
@@ -19,15 +29,7 @@ export function Button({
   disabled,
   small,
   title,
-}: {
-  "data-test-id"?: string
-  children: ReactNode
-  className?: string
-  disabled?: boolean
-  onClick: () => void
-  small?: boolean
-  title?: string
-}): JSX.Element {
+}: ButtonProps): JSX.Element {
   return (
     <button
       disabled={disabled}

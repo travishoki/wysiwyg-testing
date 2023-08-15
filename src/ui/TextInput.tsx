@@ -11,7 +11,7 @@ import { HTMLInputTypeAttribute } from "react"
 
 import "./Input.css"
 
-type Props = Readonly<{
+type TextInputProps = Readonly<{
   "data-test-id"?: string
   label: string
   onChange: (val: string) => void
@@ -27,7 +27,7 @@ export function TextInput({
   placeholder = "",
   "data-test-id": dataTestId,
   type = "text",
-}: Props): JSX.Element {
+}: TextInputProps): JSX.Element {
   return (
     <div className="Input__wrapper">
       <label className="Input__label">{label}</label>

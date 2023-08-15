@@ -2,6 +2,10 @@ import * as React from "react"
 import "./Output.css"
 import { Maybe } from "../types/globals"
 
+type OutputProps = {
+  output: Maybe<string>
+}
+
 export const Output = ({ output }: OutputProps) => {
   if (!output) return null
 
@@ -13,8 +17,4 @@ export const Output = ({ output }: OutputProps) => {
       </div>
     </div>
   )
-}
-
-type OutputProps = {
-  output: Maybe<string>
 }

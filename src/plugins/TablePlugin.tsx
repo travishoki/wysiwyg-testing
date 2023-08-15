@@ -61,7 +61,9 @@ export const CellContext = createContext<CellContextShape>({
   },
 })
 
-export function TableContext({ children }: { children: JSX.Element }) {
+type TableContextProps = { children: JSX.Element }
+
+export function TableContext({ children }: TableContextProps) {
   const [contextValue, setContextValue] = useState<{
     cellEditorConfig: null | CellEditorConfig
     cellEditorPlugins: null | JSX.Element | Array<JSX.Element>
@@ -144,13 +146,15 @@ export function InsertTableDialog({
   )
 }
 
+type InsertNewTableDialogProps = {
+  activeEditor: LexicalEditor
+  onClose: () => void
+}
+
 export function InsertNewTableDialog({
   activeEditor,
   onClose,
-}: {
-  activeEditor: LexicalEditor
-  onClose: () => void
-}): JSX.Element {
+}: InsertNewTableDialogProps): JSX.Element {
   const [rows, setRows] = useState("")
   const [columns, setColumns] = useState("")
   const [isDisabled, setIsDisabled] = useState(true)
@@ -197,13 +201,12 @@ export function InsertNewTableDialog({
   )
 }
 
-export function TablePlugin({
-  cellEditorConfig,
-  children,
-}: {
+type TablePluginProps = {
   cellEditorConfig: CellEditorConfig
   children: JSX.Element | Array<JSX.Element>
-}): JSX.Element | null {
+}
+
+export function TablePlugin({ cellEditorConfig, children }: TablePluginProps): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
   const cellContext = useContext(CellContext)
 

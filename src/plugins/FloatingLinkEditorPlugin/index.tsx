@@ -29,17 +29,19 @@ import { setFloatingElemPositionForLinkEditor } from "../../utils/setFloatingEle
 import { sanitizeUrl } from "../../utils/url"
 import "./index.css"
 
+type FloatingLinkEditorProps = {
+  editor: LexicalEditor
+  isLink: boolean
+  setIsLink: Dispatch<boolean>
+  anchorElem: HTMLElement
+}
+
 function FloatingLinkEditor({
   editor,
   isLink,
   setIsLink,
   anchorElem,
-}: {
-  editor: LexicalEditor
-  isLink: boolean
-  setIsLink: Dispatch<boolean>
-  anchorElem: HTMLElement
-}): JSX.Element {
+}: FloatingLinkEditorProps): JSX.Element {
   const editorRef = useRef<HTMLDivElement | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const [linkUrl, setLinkUrl] = useState("")

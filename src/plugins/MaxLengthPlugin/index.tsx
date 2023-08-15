@@ -12,7 +12,9 @@ import { trimTextContentFromAnchor } from "@lexical/selection"
 import { $restoreEditorState } from "@lexical/utils"
 import { $getSelection, $isRangeSelection, EditorState, RootNode } from "lexical"
 
-export function MaxLengthPlugin({ maxLength }: { maxLength: number }): null {
+type MaxLengthPluginProps = { maxLength: number }
+
+export function MaxLengthPlugin({ maxLength }: MaxLengthPluginProps): null {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {
