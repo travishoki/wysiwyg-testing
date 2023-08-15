@@ -63,6 +63,7 @@ import { InsertInlineImageDialog } from "../InlineImagePlugin"
 import { InsertNewTableDialog } from "../TablePlugin"
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog"
 import { BlockFormatDropDown } from "./BlockFormatDropDown"
+import { Divider } from "./Divider"
 import { FontDropDown } from "./FontDropDown"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"
 import { dropDownActiveClass } from "./helpers"
@@ -79,10 +80,6 @@ function getCodeLanguageOptions(): [string, string][] {
 }
 
 const CODE_LANGUAGE_OPTIONS = getCodeLanguageOptions()
-
-function Divider(): JSX.Element {
-  return <div className="divider" />
-}
 
 export function ToolbarPlugin(): JSX.Element {
   const [editor] = useLexicalComposerContext()
