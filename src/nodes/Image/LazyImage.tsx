@@ -25,7 +25,7 @@ type ImageComponentLazyImageProps = {
   width: "inherit" | number
 }
 
-export function ImageComponentLazyImage({
+export function LazyImage({
   altText,
   className,
   imageRef,

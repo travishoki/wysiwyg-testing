@@ -40,8 +40,8 @@ import { MentionsPlugin } from "../../plugins/MentionsPlugin"
 import { ContentEditable } from "../../ui/ContentEditable/ContentEditable"
 import { ImageResizer } from "../../ui/ImageResizer/ImageResizer"
 import { Placeholder } from "../../ui/Placeholder/Placeholder"
-import { ImageComponentLazyImage } from "./ImageComponentLazyImage"
 import { $isImageNode } from "./ImageNode"
+import { LazyImage } from "./LazyImage"
 import type { GridSelection, LexicalEditor, NodeKey, NodeSelection, RangeSelection } from "lexical"
 import "./ImageNode.css"
 
@@ -247,7 +247,7 @@ export default function ImageComponent({
     <Suspense fallback={<ComposerNodeFallback />}>
       <>
         <div draggable={draggable}>
-          <ImageComponentLazyImage
+          <LazyImage
             className={
               isFocused ? `focused ${$isNodeSelection(selection) ? "draggable" : ""}` : null
             }
