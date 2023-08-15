@@ -8,7 +8,7 @@ import {
   COMMAND_PRIORITY_EDITOR,
 } from "lexical"
 import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
-import { $createMergeFieldNode, MergeFieldNode } from "../../nodes/MergeFieldNode"
+import { $createMergeFieldNode, MergeFieldNode } from "../../nodes/MergeField/MergeFieldNode"
 
 export function MergeFieldPlugin(): JSX.Element | null {
   const [editor] = useLexicalComposerContext()

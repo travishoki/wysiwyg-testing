@@ -8,7 +8,7 @@ import {
   DecoratorNode,
   LexicalNode,
 } from "lexical"
-import { ComposerNodeFallback } from "../ComposerNodeFallback/ComposerNodeFallback"
+import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFallback"
 
 const MergeFieldComponent = React.lazy(
   // @ts-ignore

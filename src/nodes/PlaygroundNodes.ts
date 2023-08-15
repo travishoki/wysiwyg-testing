@@ -21,7 +21,7 @@ import { ImageNode } from "./Image/ImageNode"
 import { InlineImageNode } from "./InlineImage/InlineImageNode"
 import { KeywordNode } from "./KeywordNode"
 import { MentionNode } from "./MentionNode"
-import { MergeFieldNode } from "./MergeFieldNode"
+import { MergeFieldNode } from "./MergeField/MergeFieldNode"
 import { TableNode as NewTableNode } from "./TableNode"
 import type { Klass, LexicalNode } from "lexical"
 
