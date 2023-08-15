@@ -9,36 +9,21 @@
 import * as React from "react"
 import { useCallback, useEffect, useState } from "react"
 import {
-  $createCodeNode,
   $isCodeNode,
   CODE_LANGUAGE_FRIENDLY_NAME_MAP,
   CODE_LANGUAGE_MAP,
   getLanguageFriendlyName,
 } from "@lexical/code"
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link"
-import {
-  $isListNode,
-  INSERT_CHECK_LIST_COMMAND,
-  INSERT_ORDERED_LIST_COMMAND,
-  INSERT_UNORDERED_LIST_COMMAND,
-  ListNode,
-  REMOVE_LIST_COMMAND,
-} from "@lexical/list"
+import { $isListNode, ListNode } from "@lexical/list"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $isDecoratorBlockNode } from "@lexical/react/LexicalDecoratorBlockNode"
 import { INSERT_HORIZONTAL_RULE_COMMAND } from "@lexical/react/LexicalHorizontalRuleNode"
-import {
-  $createHeadingNode,
-  $createQuoteNode,
-  $isHeadingNode,
-  $isQuoteNode,
-  HeadingTagType,
-} from "@lexical/rich-text"
+import { $isHeadingNode, $isQuoteNode } from "@lexical/rich-text"
 import {
   $getSelectionStyleValueForProperty,
   $isParentElementRTL,
   $patchStyleText,
-  $setBlocksType,
 } from "@lexical/selection"
 import { $isTableNode } from "@lexical/table"
 import {
@@ -58,7 +43,6 @@ import {
   CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_CRITICAL,
   COMMAND_PRIORITY_NORMAL,
-  DEPRECATED_$isGridSelection,
   FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
   INDENT_CONTENT_COMMAND,
@@ -78,27 +62,10 @@ import { InsertImageDialog } from "../ImagesPlugin/InsertImageDialog"
 import { InsertInlineImageDialog } from "../InlineImagePlugin"
 import { InsertNewTableDialog } from "../TablePlugin"
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog"
+import { BlockFormatDropDown } from "./BlockFormatDropDown"
+import { blockTypeToBlockName, rootTypeToRootName } from "./const"
+import { dropDownActiveClass } from "./helpers"
 import type { LexicalEditor, NodeKey } from "lexical"
-
-const blockTypeToBlockName = {
-  bullet: "Bulleted List",
-  check: "Check List",
-  code: "Code Block",
-  h1: "Heading 1",
-  h2: "Heading 2",
-  h3: "Heading 3",
-  h4: "Heading 4",
-  h5: "Heading 5",
-  h6: "Heading 6",
-  number: "Numbered List",
-  paragraph: "Normal",
-  quote: "Quote",
-}
-
-const rootTypeToRootName = {
-  root: "Root",
-  table: "Table",
-}
 
 function getCodeLanguageOptions(): [string, string][] {
   const options: [string, string][] = []
@@ -134,172 +101,6 @@ const FONT_SIZE_OPTIONS: [string, string][] = [
   ["19px", "19px"],
   ["20px", "20px"],
 ]
-
-function dropDownActiveClass(active: boolean) {
-  if (active) return "active dropdown-item-active"
-  else return ""
-}
-
-function BlockFormatDropDown({
-  editor,
-  blockType,
-  _rootType,
-  disabled = false,
-}: {
-  blockType: keyof typeof blockTypeToBlockName
-  _rootType: keyof typeof rootTypeToRootName
-  editor: LexicalEditor
-  disabled?: boolean
-}): JSX.Element {
-  const formatParagraph = () => {
-    editor.update(() => {
-      const selection = $getSelection()
-      if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
-        $setBlocksType(selection, () => $createParagraphNode())
-      }
-    })
-  }
-
-  const formatHeading = (headingSize: HeadingTagType) => {
-    if (blockType !== headingSize) {
-      editor.update(() => {
-        const selection = $getSelection()
-        if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
-          $setBlocksType(selection, () => $createHeadingNode(headingSize))
-        }
-      })
-    }
-  }
-
-  const formatBulletList = () => {
-    if (blockType !== "bullet") {
-      editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined)
-    } else {
-      editor.dispatchCommand(REMOVE_LIST_COMMAND, undefined)
-    }
-  }
-
-  const formatCheckList = () => {
-    if (blockType !== "check") {
-      editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined)
-    } else {
-      editor.dispatchCommand(REMOVE_LIST_COMMAND, undefined)
-    }
-  }
-
-  const formatNumberedList = () => {
-    if (blockType !== "number") {
-      editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined)
-    } else {
-      editor.dispatchCommand(REMOVE_LIST_COMMAND, undefined)
-    }
-  }
-
-  const formatQuote = () => {
-    if (blockType !== "quote") {
-      editor.update(() => {
-        const selection = $getSelection()
-        if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
-          $setBlocksType(selection, () => $createQuoteNode())
-        }
-      })
-    }
-  }
-
-  const formatCode = () => {
-    if (blockType !== "code") {
-      editor.update(() => {
-        let selection = $getSelection()
-
-        if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
-          if (selection.isCollapsed()) {
-            $setBlocksType(selection, () => $createCodeNode())
-          } else {
-            const textContent = selection.getTextContent()
-            const codeNode = $createCodeNode()
-            selection.insertNodes([codeNode])
-            selection = $getSelection()
-            if ($isRangeSelection(selection)) selection.insertRawText(textContent)
-          }
-        }
-      })
-    }
-  }
-
-  return (
-    <DropDown
-      disabled={disabled}
-      buttonClassName="toolbar-item block-controls"
-      buttonIconClassName={"icon block-type " + blockType}
-      buttonLabel={blockTypeToBlockName[blockType]}
-      buttonAriaLabel="Formatting options for text style"
-    >
-      <DropDownItem
-        className={"item " + dropDownActiveClass(blockType === "paragraph")}
-        onClick={formatParagraph}
-      >
-        <i className="icon paragraph" />
-        <span className="text">Normal</span>
-      </DropDownItem>
-      <DropDownItem
-        className={"item " + dropDownActiveClass(blockType === "h1")}
-        onClick={() => formatHeading("h1")}
-      >
-        <i className="icon h1" />
-        <span className="text">Heading 1</span>
-      </DropDownItem>
-      <DropDownItem
-        className={"item " + dropDownActiveClass(blockType === "h2")}
-        onClick={() => formatHeading("h2")}
-      >
-        <i className="icon h2" />
-        <span className="text">Heading 2</span>
-      </DropDownItem>
-      <DropDownItem
-        className={"item " + dropDownActiveClass(blockType === "h3")}
-        onClick={() => formatHeading("h3")}
-      >
-        <i className="icon h3" />
-        <span className="text">Heading 3</span>
-      </DropDownItem>
-      <DropDownItem
-        className={"item " + dropDownActiveClass(blockType === "bullet")}
-        onClick={formatBulletList}
-      >
-        <i className="icon bullet-list" />
-        <span className="text">Bullet List</span>
-      </DropDownItem>
-      <DropDownItem
-        className={"item " + dropDownActiveClass(blockType === "number")}
-        onClick={formatNumberedList}
-      >
-        <i className="icon numbered-list" />
-        <span className="text">Numbered List</span>
-      </DropDownItem>
-      <DropDownItem
-        className={"item " + dropDownActiveClass(blockType === "check")}
-        onClick={formatCheckList}
-      >
-        <i className="icon check-list" />
-        <span className="text">Check List</span>
-      </DropDownItem>
-      <DropDownItem
-        className={"item " + dropDownActiveClass(blockType === "quote")}
-        onClick={formatQuote}
-      >
-        <i className="icon quote" />
-        <span className="text">Quote</span>
-      </DropDownItem>
-      <DropDownItem
-        className={"item " + dropDownActiveClass(blockType === "code")}
-        onClick={formatCode}
-      >
-        <i className="icon code" />
-        <span className="text">Code Block</span>
-      </DropDownItem>
-    </DropDown>
-  )
-}
 
 function Divider(): JSX.Element {
   return <div className="divider" />
