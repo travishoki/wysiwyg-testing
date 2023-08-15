@@ -7,7 +7,7 @@
  */
 
 import * as React from "react"
-import { ColorPicker } from "./ColorPicker/ColorPicker"
+import { ColorPicker } from "../ColorPicker/ColorPicker"
 import { DropDown } from "./DropDown"
 
 type Props = {
