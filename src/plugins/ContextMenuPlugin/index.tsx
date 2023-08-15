@@ -9,90 +9,12 @@
 import * as React from "react"
 import { useCallback, useMemo } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
-import { LexicalContextMenuPlugin, MenuOption } from "@lexical/react/LexicalContextMenuPlugin"
+import { LexicalContextMenuPlugin } from "@lexical/react/LexicalContextMenuPlugin"
 import { $getSelection, $isRangeSelection, COPY_COMMAND, CUT_COMMAND, PASTE_COMMAND } from "lexical"
 import * as ReactDOM from "react-dom"
+import { ContextMenu } from "./ContextMenu"
+import { ContextMenuOption } from "./ContextMenuOption"
 import type { LexicalNode } from "lexical"
-
-type ContextMenuItemProps = {
-  index: number
-  isSelected: boolean
-  onClick: () => void
-  onMouseEnter: () => void
-  option: ContextMenuOption
-}
-
-function ContextMenuItem({
-  index,
-  isSelected,
-  onClick,
-  onMouseEnter,
-  option,
-}: ContextMenuItemProps) {
-  let className = "item"
-  if (isSelected) {
-    className += " selected"
-  }
-  return (
-    <li
-      key={option.key}
-      tabIndex={-1}
-      className={className}
-      ref={option.setRefElement}
-      role="option"
-      aria-selected={isSelected}
-      id={"typeahead-item-" + index}
-      onMouseEnter={onMouseEnter}
-      onClick={onClick}
-    >
-      <span className="text">{option.title}</span>
-    </li>
-  )
-}
-
-function ContextMenu({
-  options,
-  selectedItemIndex,
-  onOptionClick,
-  onOptionMouseEnter,
-}: {
-  selectedItemIndex: number | null
-  onOptionClick: (option: ContextMenuOption, index: number) => void
-  onOptionMouseEnter: (index: number) => void
-  options: Array<ContextMenuOption>
-}) {
-  return (
-    <div className="typeahead-popover">
-      <ul>
-        {options.map((option: ContextMenuOption, i: number) => (
-          <ContextMenuItem
-            index={i}
-            isSelected={selectedItemIndex === i}
-            onClick={() => onOptionClick(option, i)}
-            onMouseEnter={() => onOptionMouseEnter(i)}
-            key={option.key}
-            option={option}
-          />
-        ))}
-      </ul>
-    </div>
-  )
-}
-
-class ContextMenuOption extends MenuOption {
-  title: string
-  onSelect: (targetNode: LexicalNode | null) => void
-  constructor(
-    title: string,
-    options: {
-      onSelect: (targetNode: LexicalNode | null) => void
-    },
-  ) {
-    super(title)
-    this.title = title
-    this.onSelect = options.onSelect.bind(this)
-  }
-}
 
 export function ContextMenuPlugin(): JSX.Element {
   const [editor] = useLexicalComposerContext()
