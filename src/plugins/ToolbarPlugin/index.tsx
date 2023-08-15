@@ -76,7 +76,8 @@ import { getSelectedNode } from "../../utils/getSelectedNode"
 import { sanitizeUrl } from "../../utils/url"
 import { InsertImageDialog } from "../ImagesPlugin/InsertImageDialog"
 import { InsertInlineImageDialog } from "../InlineImagePlugin"
-import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"
+import { InsertNewTableDialog } from "../TablePlugin"
+import { InsertTableDialog } from "../TablePlugin/InsertTableDialog"
 import type { LexicalEditor, NodeKey } from "lexical"
 
 const blockTypeToBlockName = {

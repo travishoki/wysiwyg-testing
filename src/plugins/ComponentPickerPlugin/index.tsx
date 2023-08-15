@@ -32,7 +32,8 @@ import {
 import * as ReactDOM from "react-dom"
 import { useModal } from "../../hooks/useModal"
 import { InsertImageDialog } from "../ImagesPlugin/InsertImageDialog"
-import { InsertNewTableDialog, InsertTableDialog } from "../TablePlugin"
+import { InsertNewTableDialog } from "../TablePlugin"
+import { InsertTableDialog } from "../TablePlugin/InsertTableDialog"
 import { ComponentPickerMenuItem } from "./ComponentPickerMenuItem"
 import { ComponentPickerOption } from "./ComponentPickerOption"
 
