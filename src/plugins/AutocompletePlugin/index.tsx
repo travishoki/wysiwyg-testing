@@ -22,7 +22,10 @@ import {
   KEY_TAB_COMMAND,
 } from "lexical"
 import { useSharedAutocompleteContext } from "../../context/SharedAutocompleteContext"
-import { $createAutocompleteNode, AutocompleteNode } from "../../nodes/AutocompleteNode"
+import {
+  $createAutocompleteNode,
+  AutocompleteNode,
+} from "../../nodes/Autocomplete/AutocompleteNode"
 import { addSwipeRightListener } from "../../utils/swipe"
 import type { GridSelection, NodeKey, NodeSelection, RangeSelection } from "lexical"
 

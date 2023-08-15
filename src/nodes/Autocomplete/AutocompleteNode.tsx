@@ -8,8 +8,8 @@
 
 import * as React from "react"
 import { DecoratorNode, EditorConfig, NodeKey, SerializedLexicalNode } from "lexical"
-import { useSharedAutocompleteContext } from "../context/SharedAutocompleteContext"
-import { uuid as UUID } from "../plugins/AutocompletePlugin"
+import { useSharedAutocompleteContext } from "../../context/SharedAutocompleteContext"
+import { uuid as UUID } from "../../plugins/AutocompletePlugin"
 import type { Spread } from "lexical"
 
 declare global {
