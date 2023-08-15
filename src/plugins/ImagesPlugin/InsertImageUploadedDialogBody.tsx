@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Button } from "../../ui/Button/Button"
 import { DialogActions } from "../../ui/Dialog/Dialog"
 import { FileInput } from "../../ui/FileInput/FileInput"
-import { TextInput } from "../../ui/TextInput"
+import { TextInput } from "../../ui/TextInput/TextInput"
 import { InsertImagePayload } from "./types"
 
 type InsertImageUploadedDialogBodyProps = {
