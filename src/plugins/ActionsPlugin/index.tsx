@@ -13,16 +13,10 @@ import { $convertFromMarkdownString, $convertToMarkdownString } from "@lexical/m
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { mergeRegister } from "@lexical/utils"
 import { CONNECTED_COMMAND } from "@lexical/yjs"
-import {
-  $createTextNode,
-  $getRoot,
-  $isParagraphNode,
-  CLEAR_EDITOR_COMMAND,
-  COMMAND_PRIORITY_EDITOR,
-} from "lexical"
+import { $createTextNode, $getRoot, $isParagraphNode, COMMAND_PRIORITY_EDITOR } from "lexical"
 import { useModal } from "../../hooks/useModal"
-import { Button } from "../../ui/Button"
 import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
+import { ShowClearDialog } from "./ShowClearDialog"
 import type { LexicalEditor } from "lexical"
 
 async function validateEditorState(editor: LexicalEditor): Promise<void> {
@@ -141,37 +135,5 @@ export function ActionsPlugin(): JSX.Element {
       </button>
       {modal}
     </div>
-  )
-}
-
-type ShowClearDialogProps = {
-  editor: LexicalEditor
-  onClose: () => void
-}
-
-function ShowClearDialog({ editor, onClose }: ShowClearDialogProps): JSX.Element {
-  return (
-    <>
-      Are you sure you want to clear the editor?
-      <div className="Modal__content">
-        <Button
-          onClick={() => {
-            editor.dispatchCommand(CLEAR_EDITOR_COMMAND, undefined)
-            editor.focus()
-            onClose()
-          }}
-        >
-          Clear
-        </Button>{" "}
-        <Button
-          onClick={() => {
-            editor.focus()
-            onClose()
-          }}
-        >
-          Cancel
-        </Button>
-      </div>
-    </>
   )
 }
