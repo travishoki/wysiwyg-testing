@@ -20,7 +20,7 @@ import * as ReactDOM from "react-dom"
 import { useModal } from "../../hooks/useModal"
 import { Button } from "../../ui/Button"
 import { DialogActions } from "../../ui/Dialog"
-import { AutoEmbedMenuItem } from "./AutoEmbedMenuItem"
+import { AutoEmbedMenu } from "./AutoEmbedMenu"
 
 interface PlaygroundEmbedConfig extends EmbedConfig {
   // Human readable name of the embeded content e.g. Tweet or Google Map.
@@ -40,37 +40,6 @@ interface PlaygroundEmbedConfig extends EmbedConfig {
 }
 
 const EmbedConfigs: PlaygroundEmbedConfig[] = []
-
-type AutoEmbedMenuProps = {
-  selectedItemIndex: number | null
-  onOptionClick: (option: AutoEmbedOption, index: number) => void
-  onOptionMouseEnter: (index: number) => void
-  options: Array<AutoEmbedOption>
-}
-
-function AutoEmbedMenu({
-  options,
-  selectedItemIndex,
-  onOptionClick,
-  onOptionMouseEnter,
-}: AutoEmbedMenuProps) {
-  return (
-    <div className="typeahead-popover">
-      <ul>
-        {options.map((option: AutoEmbedOption, i: number) => (
-          <AutoEmbedMenuItem
-            index={i}
-            isSelected={selectedItemIndex === i}
-            onClick={() => onOptionClick(option, i)}
-            onMouseEnter={() => onOptionMouseEnter(i)}
-            key={option.key}
-            option={option}
-          />
-        ))}
-      </ul>
-    </div>
-  )
-}
 
 const debounce = (callback: (text: string) => void, delay: number) => {
   let timeoutId: number
