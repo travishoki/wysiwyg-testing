@@ -1,7 +1,7 @@
 import * as React from "react"
 import { useState } from "react"
 import { $getNodeByKey } from "lexical"
-import { Button } from "../ui/Button"
+import { Button } from "../ui/Button/Button"
 import { DialogActions } from "../ui/Dialog/Dialog"
 import { Select } from "../ui/Select"
 import { TextInput } from "../ui/TextInput"

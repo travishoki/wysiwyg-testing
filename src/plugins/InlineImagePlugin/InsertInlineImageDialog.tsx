@@ -1,7 +1,7 @@
 import * as React from "react"
 import { useEffect, useRef, useState } from "react"
 import { LexicalEditor } from "lexical"
-import { Button } from "../../ui/Button"
+import { Button } from "../../ui/Button/Button"
 import { DialogActions } from "../../ui/Dialog/Dialog"
 import { FileInput } from "../../ui/FileInput"
 import { Select } from "../../ui/Select"

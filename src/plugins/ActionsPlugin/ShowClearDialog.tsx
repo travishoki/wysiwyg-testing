@@ -1,6 +1,6 @@
 import * as React from "react"
 import { CLEAR_EDITOR_COMMAND } from "lexical"
-import { Button } from "../../ui/Button"
+import { Button } from "../../ui/Button/Button"
 import type { LexicalEditor } from "lexical"
 
 type ShowClearDialogProps = {
