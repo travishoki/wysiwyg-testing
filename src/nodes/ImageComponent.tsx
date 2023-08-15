@@ -40,60 +40,10 @@ import { MentionsPlugin } from "../plugins/MentionsPlugin"
 import { ContentEditable } from "../ui/ContentEditable"
 import { ImageResizer } from "../ui/ImageResizer"
 import { Placeholder } from "../ui/Placeholder"
+import { ImageComponentLazyImage } from "./ImageComponentLazyImage"
 import { $isImageNode } from "./ImageNode"
 import type { GridSelection, LexicalEditor, NodeKey, NodeSelection, RangeSelection } from "lexical"
 import "./ImageNode.css"
-
-const imageCache = new Set()
-
-function useSuspenseImage(src: string) {
-  if (!imageCache.has(src)) {
-    throw new Promise((resolve) => {
-      const img = new Image()
-      img.src = src
-      img.onload = () => {
-        imageCache.add(src)
-        resolve(null)
-      }
-    })
-  }
-}
-
-type LazyImageProps = {
-  altText: string
-  className: string | null
-  height: "inherit" | number
-  imageRef: { current: null | HTMLImageElement }
-  maxWidth: number
-  src: string
-  width: "inherit" | number
-}
-
-function LazyImage({
-  altText,
-  className,
-  imageRef,
-  src,
-  width,
-  height,
-  maxWidth,
-}: LazyImageProps): JSX.Element {
-  useSuspenseImage(src)
-  return (
-    <img
-      className={className || undefined}
-      src={src}
-      alt={altText}
-      ref={imageRef}
-      style={{
-        height,
-        maxWidth,
-        width,
-      }}
-      draggable="false"
-    />
-  )
-}
 
 type ImageComponentProps = {
   altText: string
@@ -297,7 +247,7 @@ export default function ImageComponent({
     <Suspense fallback={<ComposerNodeFallback />}>
       <>
         <div draggable={draggable}>
-          <LazyImage
+          <ImageComponentLazyImage
             className={
               isFocused ? `focused ${$isNodeSelection(selection) ? "draggable" : ""}` : null
             }
