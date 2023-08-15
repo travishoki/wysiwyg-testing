@@ -1,6 +1,6 @@
 import * as React from "react"
-
 import "./Output.css"
+import { Maybe } from "../types/globals"
 
 export const Output = ({ output }: OutputProps) => {
   if (!output) return null
@@ -16,5 +16,5 @@ export const Output = ({ output }: OutputProps) => {
 }
 
 type OutputProps = {
-  output?: string
+  output: Maybe<string>
 }

@@ -3,11 +3,12 @@ import { Composer } from "./Composer"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 import { composerRefProps } from "./MergeFieldHandler/MergeFieldHandler"
 import { Output } from "./Output/Output"
+import { Maybe } from "./types/globals"
 
 // ts-prune-ignore-next
 export const App = () => {
   const composerRef = useRef<composerRefProps>()
-  const [output, setOutput] = useState<string>()
+  const [output, setOutput] = useState<Maybe<string>>()
 
   return (
     <>
