@@ -9,7 +9,7 @@
 import { useContext, useEffect } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $insertNodes, COMMAND_PRIORITY_EDITOR } from "lexical"
-import { $createTableNodeWithDimensions, TableNode } from "../../nodes/TableNode"
+import { $createTableNodeWithDimensions, TableNode } from "../../nodes/Table/TableNode"
 import { invariant } from "../../shared/invariant"
 import { CellContext, INSERT_NEW_TABLE_COMMAND } from "./const"
 import { CellEditorConfig, InsertTableCommandPayload } from "./types"

@@ -22,7 +22,7 @@ import { InlineImageNode } from "./InlineImage/InlineImageNode"
 import { KeywordNode } from "./KeywordNode"
 import { MentionNode } from "./MentionNode"
 import { MergeFieldNode } from "./MergeField/MergeFieldNode"
-import { TableNode as NewTableNode } from "./TableNode"
+import { TableNode as NewTableNode } from "./Table/TableNode"
 import type { Klass, LexicalNode } from "lexical"
 
 export const PlaygroundNodes: Array<Klass<LexicalNode>> = [
