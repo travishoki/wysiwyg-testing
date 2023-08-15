@@ -34,7 +34,7 @@ import { FloatingLinkEditorPlugin } from "../plugins/FloatingLinkEditorPlugin/in
 import { FloatingTextFormatToolbarPlugin } from "../plugins/FloatingTextFormatToolbarPlugin/index"
 import { LinkPlugin } from "../plugins/LinkPlugin"
 import { ContentEditable } from "../ui/ContentEditable"
-import { Placeholder } from "../ui/Placeholder"
+import { Placeholder } from "../ui/Placeholder/Placeholder"
 import { InlineImageComponentLazyImage } from "./InlineImageComponentLazyImage"
 import { InlineImageComponentUpdateInlineImageDialog } from "./InlineImageComponentUpdateInlineImageDialog"
 import { $isInlineImageNode } from "./InlineImageNode"

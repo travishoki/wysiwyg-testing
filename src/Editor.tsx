@@ -56,7 +56,7 @@ import { ToolbarPlugin } from "./plugins/ToolbarPlugin"
 import { CAN_USE_DOM } from "./shared/canUseDOM"
 import { ComposerTheme } from "./themes/ComposerTheme"
 import { ContentEditable } from "./ui/ContentEditable"
-import { Placeholder } from "./ui/Placeholder"
+import { Placeholder } from "./ui/Placeholder/Placeholder"
 
 export function Editor(): JSX.Element {
   const { historyState } = useSharedHistoryContext()
