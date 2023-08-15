@@ -66,7 +66,7 @@ function isIndentPermitted(maxDepth: number): boolean {
   return totalDepth <= maxDepth
 }
 
-export function ListMaxIndentLevelPlugin({ maxDepth }: Props): null {
+export const ListMaxIndentLevelPlugin = ({ maxDepth }: Props): null => {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {

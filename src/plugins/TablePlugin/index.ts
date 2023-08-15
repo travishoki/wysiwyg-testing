@@ -19,7 +19,10 @@ type TablePluginProps = {
   children: JSX.Element | Array<JSX.Element>
 }
 
-export function TablePlugin({ cellEditorConfig, children }: TablePluginProps): JSX.Element | null {
+export const TablePlugin = ({
+  cellEditorConfig,
+  children,
+}: TablePluginProps): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
   const cellContext = useContext(CellContext)
 

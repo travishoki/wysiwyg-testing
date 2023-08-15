@@ -40,7 +40,7 @@ type InsertInlineImagePayload = Readonly<InlineImagePayload>
 const getDOMSelection = (targetWindow: Window | null): Selection | null =>
   CAN_USE_DOM ? (targetWindow || window).getSelection() : null
 
-export function InlineImagePlugin(): JSX.Element | null {
+export const InlineImagePlugin = (): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {

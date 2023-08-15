@@ -36,7 +36,7 @@ type ImagesPluginProps = {
   captionsEnabled?: boolean
 }
 
-export function ImagesPlugin({ captionsEnabled }: ImagesPluginProps): JSX.Element | null {
+export const ImagesPlugin = ({ captionsEnabled }: ImagesPluginProps): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {

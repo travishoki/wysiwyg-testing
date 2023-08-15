@@ -78,10 +78,10 @@ function deleteListener(element: HTMLElement, cb: Listener): void {
   }
 }
 
-export function addSwipeRightListener(
+export const addSwipeRightListener = (
   element: HTMLElement,
   cb: (_force: number, e: TouchEvent) => void,
-) {
+) => {
   return addListener(element, (force, e) => {
     const [x, y] = force
     if (x > 0 && x > Math.abs(y)) {
