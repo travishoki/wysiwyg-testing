@@ -7,7 +7,7 @@
  */
 
 import * as React from "react"
-import { DialogProps } from "./DialogTypes"
+import { DialogProps } from "./types"
 import "./Dialog.css"
 
 export function DialogActions({ "data-test-id": dataTestId, children }: DialogProps): JSX.Element {
