@@ -9,45 +9,9 @@
 import * as React from "react"
 import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { createPortal } from "react-dom"
-
-type DropDownContextType = {
-  registerItem: (ref: React.RefObject<HTMLButtonElement>) => void
-}
-
-const DropDownContext = React.createContext<DropDownContextType | null>(null)
+import { DropDownContext } from "./DropDownTypes"
 
 const dropDownPadding = 4
-
-type DropDownItemProps = {
-  children: React.ReactNode
-  className: string
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
-  title?: string
-}
-
-export function DropDownItem({ children, className, onClick, title }: DropDownItemProps) {
-  const ref = useRef<HTMLButtonElement>(null)
-
-  const dropDownContext = React.useContext(DropDownContext)
-
-  if (dropDownContext === null) {
-    throw new Error("DropDownItem must be used within a DropDown")
-  }
-
-  const { registerItem } = dropDownContext
-
-  useEffect(() => {
-    if (ref && ref.current) {
-      registerItem(ref)
-    }
-  }, [ref, registerItem])
-
-  return (
-    <button className={className} onClick={onClick} ref={ref} title={title} type="button">
-      {children}
-    </button>
-  )
-}
 
 function DropDownItems({
   children,

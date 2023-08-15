@@ -14,7 +14,8 @@ import {
   $isRangeSelection,
   DEPRECATED_$isGridSelection,
 } from "lexical"
-import { DropDown, DropDownItem } from "../../ui/DropDown"
+import { DropDown } from "../../ui/DropDown"
+import { DropDownItem } from "../../ui/DropDownItem"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"
 import { dropDownActiveClass } from "./helpers"
 import type { LexicalEditor } from "lexical"
