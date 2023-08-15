@@ -15,7 +15,7 @@ import { AutocompleteNode } from "../AutocompleteNode"
 import { EmojiNode } from "../Emoji/EmojiNode"
 import { ImageNode } from "../Image/ImageNode"
 import { KeywordNode } from "../KeywordNode"
-import { MentionNode } from "../MentionNode"
+import { MentionNode } from "../Mention/MentionNode"
 import type { Klass, LexicalNode } from "lexical"
 
 export const TableCellNodes: Array<Klass<LexicalNode>> = [

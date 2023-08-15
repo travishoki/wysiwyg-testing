@@ -16,7 +16,7 @@ import {
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
 import { TextNode } from "lexical"
 import * as ReactDOM from "react-dom"
-import { $createMentionNode } from "../../nodes/MentionNode"
+import { $createMentionNode } from "../../nodes/Mention/MentionNode"
 import { MentionTypeaheadOption } from "./MentionTypeaheadOption"
 import { MentionsTypeaheadMenuItem } from "./MentionsTypeaheadMenuItem"
 
