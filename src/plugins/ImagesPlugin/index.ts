@@ -24,7 +24,7 @@ import {
   DROP_COMMAND,
   LexicalEditor,
 } from "lexical"
-import { $createImageNode, $isImageNode, ImageNode } from "../../nodes/ImageNode"
+import { $createImageNode, $isImageNode, ImageNode } from "../../nodes/Image/ImageNode"
 import { CAN_USE_DOM } from "../../shared/canUseDOM"
 import { INSERT_IMAGE_COMMAND } from "./const"
 import { InsertImagePayload } from "./types"
