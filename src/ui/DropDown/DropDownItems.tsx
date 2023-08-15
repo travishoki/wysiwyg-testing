@@ -2,15 +2,13 @@ import * as React from "react"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { DropDownContext } from "./types"
 
-export function DropDownItems({
-  children,
-  dropDownRef,
-  onClose,
-}: {
+type DropDownItemsProps = {
   children: React.ReactNode
   dropDownRef: React.Ref<HTMLDivElement>
   onClose: () => void
-}) {
+}
+
+export function DropDownItems({ children, dropDownRef, onClose }: DropDownItemsProps) {
   const [items, setItems] = useState<React.RefObject<HTMLButtonElement>[]>()
   const [highlightedItem, setHighlightedItem] = useState<React.RefObject<HTMLButtonElement>>()
 

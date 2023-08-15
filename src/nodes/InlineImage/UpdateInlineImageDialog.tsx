@@ -9,15 +9,17 @@ import { InlineImageNode } from "./InlineImageNode"
 import type { Position } from "./InlineImageNode"
 import type { LexicalEditor, NodeKey } from "lexical"
 
+type UpdateInlineImageDialogProps = {
+  activeEditor: LexicalEditor
+  nodeKey: NodeKey
+  onClose: () => void
+}
+
 export function UpdateInlineImageDialog({
   activeEditor,
   nodeKey,
   onClose,
-}: {
-  activeEditor: LexicalEditor
-  nodeKey: NodeKey
-  onClose: () => void
-}): JSX.Element {
+}: UpdateInlineImageDialogProps): JSX.Element {
   const editorState = activeEditor.getEditorState()
   const node = editorState.read(() => $getNodeByKey(nodeKey) as InlineImageNode)
   const [altText, setAltText] = useState(node.getAltText())

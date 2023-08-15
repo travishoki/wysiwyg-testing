@@ -4,7 +4,11 @@ import { LexicalNestedComposer } from "@lexical/react/LexicalNestedComposer"
 import { LexicalEditor } from "lexical"
 import { CellContext } from "../../plugins/TablePlugin/const"
 
-export function TableCellEditor({ cellEditor }: { cellEditor: LexicalEditor }) {
+type TableCellEditorProps = {
+  cellEditor: LexicalEditor
+}
+
+export function TableCellEditor({ cellEditor }: TableCellEditorProps) {
   const { cellEditorConfig, cellEditorPlugins } = useContext(CellContext)
 
   if (cellEditorPlugins === null || cellEditorConfig === null) {

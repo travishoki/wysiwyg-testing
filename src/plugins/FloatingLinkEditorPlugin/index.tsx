@@ -303,11 +303,13 @@ function useFloatingLinkEditorToolbar(
   )
 }
 
+type FloatingLinkEditorPluginProps = {
+  anchorElem?: HTMLElement
+}
+
 export function FloatingLinkEditorPlugin({
   anchorElem = document.body,
-}: {
-  anchorElem?: HTMLElement
-}): JSX.Element | null {
+}: FloatingLinkEditorPluginProps): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
   return useFloatingLinkEditorToolbar(editor, anchorElem)
 }

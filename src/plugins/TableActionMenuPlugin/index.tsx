@@ -575,13 +575,15 @@ function TableActionMenu({
   )
 }
 
+type TableCellActionMenuContainerProps = {
+  anchorElem: HTMLElement
+  cellMerge: boolean
+}
+
 function TableCellActionMenuContainer({
   anchorElem,
   cellMerge,
-}: {
-  anchorElem: HTMLElement
-  cellMerge: boolean
-}): JSX.Element {
+}: TableCellActionMenuContainerProps): JSX.Element {
   const [editor] = useLexicalComposerContext()
 
   const menuButtonRef = useRef(null)
@@ -705,13 +707,15 @@ function TableCellActionMenuContainer({
   )
 }
 
+type TableActionMenuPluginProps = {
+  anchorElem?: HTMLElement
+  cellMerge?: boolean
+}
+
 export function TableActionMenuPlugin({
   anchorElem = document.body,
   cellMerge = false,
-}: {
-  anchorElem?: HTMLElement
-  cellMerge?: boolean
-}): null | ReactPortal {
+}: TableActionMenuPluginProps): null | ReactPortal {
   const isEditable = useLexicalEditable()
   return createPortal(
     isEditable ? (
