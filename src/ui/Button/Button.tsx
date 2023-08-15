@@ -8,7 +8,7 @@
 
 import * as React from "react"
 import { ReactNode } from "react"
-import { joinClasses } from "../utils/joinClasses"
+import { joinClasses } from "../../utils/joinClasses"
 import "./Button.css"
 
 type ButtonProps = {

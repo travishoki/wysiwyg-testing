@@ -9,7 +9,7 @@
 import * as React from "react"
 import { HTMLInputTypeAttribute } from "react"
 
-import "./Input.css"
+import "../Input.css"
 
 type TextInputProps = Readonly<{
   "data-test-id"?: string

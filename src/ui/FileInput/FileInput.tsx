@@ -8,7 +8,7 @@
 
 import * as React from "react"
 
-import "./Input.css"
+import "../Input.css"
 
 type Props = Readonly<{
   "data-test-id"?: string
