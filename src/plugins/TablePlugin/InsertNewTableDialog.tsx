@@ -2,7 +2,7 @@ import * as React from "react"
 import { useEffect, useState } from "react"
 import { LexicalEditor } from "lexical"
 import { Button } from "../../ui/Button"
-import { DialogActions } from "../../ui/Dialog"
+import { DialogActions } from "../../ui/Dialog/Dialog"
 import { TextInput } from "../../ui/TextInput"
 import { INSERT_NEW_TABLE_COMMAND } from "./const"
 

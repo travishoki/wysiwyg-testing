@@ -3,7 +3,7 @@ import { useMemo, useState } from "react"
 import { EmbedMatchResult, URL_MATCHER } from "@lexical/react/LexicalAutoEmbedPlugin"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { Button } from "../../ui/Button"
-import { DialogActions } from "../../ui/Dialog"
+import { DialogActions } from "../../ui/Dialog/Dialog"
 import { PlaygroundEmbedConfig } from "./PlaygroundEmbedConfig"
 
 const debounce = (callback: (text: string) => void, delay: number) => {

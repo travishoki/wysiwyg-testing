@@ -1,7 +1,7 @@
 import * as React from "react"
 import { useState } from "react"
 import { Button } from "../../ui/Button"
-import { DialogActions } from "../../ui/Dialog"
+import { DialogActions } from "../../ui/Dialog/Dialog"
 import { TextInput } from "../../ui/TextInput"
 import { InsertImagePayload } from "./types"
 

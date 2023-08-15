@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { INSERT_TABLE_COMMAND } from "@lexical/table"
 import { LexicalEditor } from "lexical"
 import { Button } from "../../ui/Button"
-import { DialogActions } from "../../ui/Dialog"
+import { DialogActions } from "../../ui/Dialog/Dialog"
 import { TextInput } from "../../ui/TextInput"
 
 type InsertTableDialogProps = {
