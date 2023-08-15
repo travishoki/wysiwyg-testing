@@ -20,11 +20,11 @@ import {
   LexicalEditor,
   LexicalNode,
 } from "lexical"
-import { $createTableNodeWithDimensions, TableNode } from "../nodes/TableNode"
-import { invariant } from "../shared/invariant"
-import { Button } from "../ui/Button"
-import { DialogActions } from "../ui/Dialog"
-import { TextInput } from "../ui/TextInput"
+import { $createTableNodeWithDimensions, TableNode } from "../../nodes/TableNode"
+import { invariant } from "../../shared/invariant"
+import { Button } from "../../ui/Button"
+import { DialogActions } from "../../ui/Dialog"
+import { TextInput } from "../../ui/TextInput"
 
 type InsertTableCommandPayload = Readonly<{
   columns: string
