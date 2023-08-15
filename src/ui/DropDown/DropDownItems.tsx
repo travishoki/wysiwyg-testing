@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useCallback, useEffect, useMemo, useState } from "react"
-import { DropDownContext } from "./DropDownTypes"
+import { DropDownContext } from "./types"
 
 export function DropDownItems({
   children,

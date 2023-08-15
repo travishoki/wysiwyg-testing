@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useEffect, useRef } from "react"
-import { DropDownContext } from "./DropDownTypes"
+import { DropDownContext } from "./types"
 
 type DropDownItemProps = {
   children: React.ReactNode
