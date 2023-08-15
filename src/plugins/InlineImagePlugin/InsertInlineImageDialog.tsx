@@ -7,7 +7,7 @@ import { FileInput } from "../../ui/FileInput/FileInput"
 import { Select } from "../../ui/Select/Select"
 import { TextInput } from "../../ui/TextInput/TextInput"
 import { INSERT_INLINE_IMAGE_COMMAND } from "./const"
-import type { Position } from "../../nodes/InlineImageNode"
+import type { Position } from "../../nodes/InlineImage/InlineImageNode"
 
 type InsertInlineImageDialogProps = {
   activeEditor: LexicalEditor

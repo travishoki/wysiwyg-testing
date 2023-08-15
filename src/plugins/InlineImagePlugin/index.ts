@@ -30,7 +30,7 @@ import {
   $isInlineImageNode,
   InlineImageNode,
   InlineImagePayload,
-} from "../../nodes/InlineImageNode"
+} from "../../nodes/InlineImage/InlineImageNode"
 import { CAN_USE_DOM } from "../../shared/canUseDOM"
 import "../../ui/Checkbox.css"
 import { INSERT_INLINE_IMAGE_COMMAND } from "./const"
