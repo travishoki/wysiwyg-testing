@@ -26,7 +26,7 @@ type InlineImageComponentLazyImageProps = {
   position: Position
 }
 
-export function InlineImageComponentLazyImage({
+export function LazyImage({
   altText,
   className,
   imageRef,

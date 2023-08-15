@@ -35,7 +35,7 @@ import { FloatingTextFormatToolbarPlugin } from "../../plugins/FloatingTextForma
 import { LinkPlugin } from "../../plugins/LinkPlugin"
 import { ContentEditable } from "../../ui/ContentEditable/ContentEditable"
 import { Placeholder } from "../../ui/Placeholder/Placeholder"
-import { InlineImageComponentLazyImage } from "./InlineImageComponentLazyImage"
+import { LazyImage } from "./LazyImage"
 import { $isInlineImageNode } from "./InlineImageNode"
 import { UpdateInlineImageDialog } from "./UpdateInlineImageDialog"
 import type { Position } from "./InlineImageNode"
@@ -212,7 +212,7 @@ export default function InlineImageComponent({
           >
             Edit
           </button>
-          <InlineImageComponentLazyImage
+          <LazyImage
             className={
               isFocused ? `focused ${$isNodeSelection(selection) ? "draggable" : ""}` : null
             }
