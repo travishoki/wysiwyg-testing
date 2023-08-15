@@ -9,7 +9,7 @@ import { InlineImageNode } from "./InlineImageNode"
 import type { Position } from "./InlineImageNode"
 import type { LexicalEditor, NodeKey } from "lexical"
 
-export function InlineImageComponentUpdateInlineImageDialog({
+export function UpdateInlineImageDialog({
   activeEditor,
   nodeKey,
   onClose,

@@ -36,8 +36,8 @@ import { LinkPlugin } from "../../plugins/LinkPlugin"
 import { ContentEditable } from "../../ui/ContentEditable/ContentEditable"
 import { Placeholder } from "../../ui/Placeholder/Placeholder"
 import { InlineImageComponentLazyImage } from "./InlineImageComponentLazyImage"
-import { InlineImageComponentUpdateInlineImageDialog } from "./InlineImageComponentUpdateInlineImageDialog"
 import { $isInlineImageNode } from "./InlineImageNode"
+import { UpdateInlineImageDialog } from "./UpdateInlineImageDialog"
 import type { Position } from "./InlineImageNode"
 import type { GridSelection, LexicalEditor, NodeKey, NodeSelection, RangeSelection } from "lexical"
 import "./InlineImageNode.css"
@@ -202,7 +202,7 @@ export default function InlineImageComponent({
             ref={buttonRef}
             onClick={() => {
               showModal("Update Inline Image", (onClose) => (
-                <InlineImageComponentUpdateInlineImageDialog
+                <UpdateInlineImageDialog
                   activeEditor={editor}
                   nodeKey={nodeKey}
                   onClose={onClose}
