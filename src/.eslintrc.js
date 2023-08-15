@@ -99,5 +99,20 @@ module.exports = {
       },
     ],
     "import/prefer-default-export": "off",
+
+    /** Syncronizing Rules */
+    "class-methods-use-this": "error",
+    "prefer-promise-reject-errors": "error",
+    "no-restricted-syntax": "error",
+    "jsx-a11y/control-has-associated-label": "error",
   },
+  overrides: [
+    /** Composer */
+    {
+      files: ["**/nodes/**/*", "**/plugins/**/*"],
+      rules: {
+        "class-methods-use-this": 0,
+      },
+    },
+  ],
 }
