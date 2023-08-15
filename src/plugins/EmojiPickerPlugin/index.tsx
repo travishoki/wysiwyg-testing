@@ -11,65 +11,12 @@ import { useCallback, useEffect, useMemo, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import {
   LexicalTypeaheadMenuPlugin,
-  MenuOption,
   useBasicTypeaheadTriggerMatch,
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
 import { $createTextNode, $getSelection, $isRangeSelection, TextNode } from "lexical"
 import * as ReactDOM from "react-dom"
-
-class EmojiOption extends MenuOption {
-  title: string
-  emoji: string
-  keywords: Array<string>
-
-  constructor(
-    title: string,
-    emoji: string,
-    options: {
-      keywords?: Array<string>
-    },
-  ) {
-    super(title)
-    this.title = title
-    this.emoji = emoji
-    this.keywords = options.keywords || []
-  }
-}
-function EmojiMenuItem({
-  index,
-  isSelected,
-  onClick,
-  onMouseEnter,
-  option,
-}: {
-  index: number
-  isSelected: boolean
-  onClick: () => void
-  onMouseEnter: () => void
-  option: EmojiOption
-}) {
-  let className = "item"
-  if (isSelected) {
-    className += " selected"
-  }
-  return (
-    <li
-      key={option.key}
-      tabIndex={-1}
-      className={className}
-      ref={option.setRefElement}
-      role="option"
-      aria-selected={isSelected}
-      id={"typeahead-item-" + index}
-      onMouseEnter={onMouseEnter}
-      onClick={onClick}
-    >
-      <span className="text">
-        {option.emoji} {option.title}
-      </span>
-    </li>
-  )
-}
+import { EmojiMenuItem } from "./EmojiMenuItem.js"
+import { EmojiOption } from "./EmojiOption.js"
 
 type Emoji = {
   emoji: string
