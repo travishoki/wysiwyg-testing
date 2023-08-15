@@ -36,7 +36,7 @@ type TableOfContentsListProps = {
   tableOfContents: Array<TableOfContentsEntry>
 }
 
-export function TableOfContentsList({ tableOfContents }: TableOfContentsListProps): JSX.Element {
+export function TableOfContentsList({ tableOfContents }: TableOfContentsListProps) {
   const [selectedKey, setSelectedKey] = useState("")
   const selectedIndex = useRef(0)
   const [editor] = useLexicalComposerContext()

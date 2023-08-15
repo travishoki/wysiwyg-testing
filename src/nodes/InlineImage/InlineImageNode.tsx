@@ -242,7 +242,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     return false
   }
 
-  decorate(): JSX.Element {
+  decorate() {
     return (
       <Suspense fallback={<ComposerNodeFallback />}>
         <InlineImageComponent

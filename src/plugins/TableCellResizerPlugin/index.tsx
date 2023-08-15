@@ -49,7 +49,7 @@ const MIN_COLUMN_WIDTH = 50
 
 type TableCellResizerProps = { editor: LexicalEditor }
 
-function TableCellResizer({ editor }: TableCellResizerProps): JSX.Element {
+function TableCellResizer({ editor }: TableCellResizerProps) {
   const targetRef = useRef<HTMLElement | null>(null)
   const resizerRef = useRef<HTMLDivElement | null>(null)
   const tableRectRef = useRef<ClientRect | null>(null)

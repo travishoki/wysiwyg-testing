@@ -37,12 +37,7 @@ type FontDropDownProps = {
   disabled?: boolean
 }
 
-export function FontDropDown({
-  editor,
-  value,
-  styleName,
-  disabled = false,
-}: FontDropDownProps): JSX.Element {
+export function FontDropDown({ editor, value, styleName, disabled = false }: FontDropDownProps) {
   const handleClick = useCallback(
     (option: string) => {
       editor.update(() => {

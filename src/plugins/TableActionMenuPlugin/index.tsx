@@ -583,7 +583,7 @@ type TableCellActionMenuContainerProps = {
 function TableCellActionMenuContainer({
   anchorElem,
   cellMerge,
-}: TableCellActionMenuContainerProps): JSX.Element {
+}: TableCellActionMenuContainerProps) {
   const [editor] = useLexicalComposerContext()
 
   const menuButtonRef = useRef(null)

@@ -8,7 +8,7 @@ type ShowClearDialogProps = {
   onClose: () => void
 }
 
-export function ShowClearDialog({ editor, onClose }: ShowClearDialogProps): JSX.Element {
+export function ShowClearDialog({ editor, onClose }: ShowClearDialogProps) {
   return (
     <>
       Are you sure you want to clear the editor?

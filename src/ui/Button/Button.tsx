@@ -29,7 +29,7 @@ export function Button({
   disabled,
   small,
   title,
-}: ButtonProps): JSX.Element {
+}: ButtonProps) {
   return (
     <button
       disabled={disabled}

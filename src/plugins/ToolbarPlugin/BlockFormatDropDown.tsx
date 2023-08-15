@@ -32,7 +32,7 @@ export function BlockFormatDropDown({
   blockType,
   _rootType,
   disabled = false,
-}: BlockFormatDropDownProps): JSX.Element {
+}: BlockFormatDropDownProps) {
   const formatParagraph = () => {
     editor.update(() => {
       const selection = $getSelection()

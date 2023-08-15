@@ -14,7 +14,7 @@ export default function MergeFieldComponent({
   mergeFieldIconUrl,
   mergeFieldId,
   nodeKey,
-}: MergeFieldComponentProps): JSX.Element {
+}: MergeFieldComponentProps) {
   const [editor] = useLexicalComposerContext()
   const isEditable = useLexicalEditable()
 

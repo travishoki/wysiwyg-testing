@@ -82,7 +82,7 @@ function getCodeLanguageOptions(): [string, string][] {
 
 const CODE_LANGUAGE_OPTIONS = getCodeLanguageOptions()
 
-export function ToolbarPlugin(): JSX.Element {
+export function ToolbarPlugin() {
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
   const [blockType, setBlockType] = useState<keyof typeof blockTypeToBlockName>("paragraph")

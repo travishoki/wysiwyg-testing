@@ -16,7 +16,7 @@ import { ContextMenu } from "./ContextMenu"
 import { ContextMenuOption } from "./ContextMenuOption"
 import type { LexicalNode } from "lexical"
 
-export function ContextMenuPlugin(): JSX.Element {
+export function ContextMenuPlugin() {
   const [editor] = useLexicalComposerContext()
 
   const options = useMemo(() => {

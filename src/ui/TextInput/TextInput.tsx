@@ -27,7 +27,7 @@ export function TextInput({
   placeholder = "",
   "data-test-id": dataTestId,
   type = "text",
-}: TextInputProps): JSX.Element {
+}: TextInputProps) {
   return (
     <div className="Input__wrapper">
       <label className="Input__label">{label}</label>

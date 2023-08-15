@@ -36,12 +36,7 @@ type FloatingLinkEditorProps = {
   anchorElem: HTMLElement
 }
 
-function FloatingLinkEditor({
-  editor,
-  isLink,
-  setIsLink,
-  anchorElem,
-}: FloatingLinkEditorProps): JSX.Element {
+function FloatingLinkEditor({ editor, isLink, setIsLink, anchorElem }: FloatingLinkEditorProps) {
   const editorRef = useRef<HTMLDivElement | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const [linkUrl, setLinkUrl] = useState("")

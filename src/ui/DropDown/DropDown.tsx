@@ -31,7 +31,7 @@ export function DropDown({
   buttonIconClassName,
   children,
   stopCloseOnClickSelf,
-}: DropDownProps): JSX.Element {
+}: DropDownProps) {
   const dropDownRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const [showDropDown, setShowDropDown] = useState(false)

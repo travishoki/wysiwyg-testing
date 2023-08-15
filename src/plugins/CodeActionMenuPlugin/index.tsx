@@ -28,7 +28,7 @@ type CodeActionMenuContainerProps = {
   anchorElem: HTMLElement
 }
 
-function CodeActionMenuContainer({ anchorElem }: CodeActionMenuContainerProps): JSX.Element {
+function CodeActionMenuContainer({ anchorElem }: CodeActionMenuContainerProps) {
   const [editor] = useLexicalComposerContext()
 
   const [lang, setLang] = useState("")

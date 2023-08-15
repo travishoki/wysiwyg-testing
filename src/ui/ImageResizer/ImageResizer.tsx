@@ -43,7 +43,7 @@ export function ImageResizer({
   showCaption,
   setShowCaption,
   captionsEnabled,
-}: ImageResizerProps): JSX.Element {
+}: ImageResizerProps) {
   const controlWrapperRef = useRef<HTMLDivElement>(null)
   const userSelect = useRef({
     priority: "",

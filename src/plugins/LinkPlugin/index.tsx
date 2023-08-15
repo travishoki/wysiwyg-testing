@@ -10,6 +10,6 @@ import * as React from "react"
 import { LinkPlugin as LexicalLinkPlugin } from "@lexical/react/LexicalLinkPlugin"
 import { validateUrl } from "../../utils/url"
 
-export function LinkPlugin(): JSX.Element {
+export function LinkPlugin() {
   return <LexicalLinkPlugin validateUrl={validateUrl} />
 }

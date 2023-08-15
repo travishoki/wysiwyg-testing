@@ -52,7 +52,7 @@ function TextFormatFloatingToolbar({
   isStrikethrough,
   isSubscript,
   isSuperscript,
-}: TextFormatFloatingToolbarProps): JSX.Element {
+}: TextFormatFloatingToolbarProps) {
   const popupCharStylesEditorRef = useRef<HTMLDivElement | null>(null)
 
   const insertLink = useCallback(() => {

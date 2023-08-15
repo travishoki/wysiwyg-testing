@@ -16,6 +16,6 @@ type PlaceholderProps = {
   className?: string
 }
 
-export function Placeholder({ children, className }: PlaceholderProps): JSX.Element {
+export function Placeholder({ children, className }: PlaceholderProps) {
   return <div className={className || "Placeholder__root"}>{children}</div>
 }

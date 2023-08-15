@@ -78,7 +78,7 @@ export function $createAutocompleteNode(uuid: string): AutocompleteNode {
   return new AutocompleteNode(uuid)
 }
 
-function AutocompleteComponent(): JSX.Element {
+function AutocompleteComponent() {
   const [suggestion] = useSharedAutocompleteContext()
   const userAgentData = window.navigator.userAgentData
   const isMobile =

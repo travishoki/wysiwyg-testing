@@ -63,7 +63,7 @@ export default function InlineImageComponent({
   showCaption,
   caption,
   position,
-}: InlineImageComponentProps): JSX.Element {
+}: InlineImageComponentProps) {
   const [modal, showModal] = useModal()
   const imageRef = useRef<null | HTMLImageElement>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)

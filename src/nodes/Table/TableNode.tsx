@@ -373,7 +373,7 @@ export class TableNode extends DecoratorNode<JSX.Element> {
     }
   }
 
-  decorate(_: LexicalEditor, config: EditorConfig): JSX.Element {
+  decorate(_: LexicalEditor, config: EditorConfig) {
     return (
       <Suspense>
         <TableComponent nodeKey={this.__key} theme={config.theme} rows={this.__rows} />

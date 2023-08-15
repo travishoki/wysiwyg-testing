@@ -19,7 +19,7 @@ export function UpdateInlineImageDialog({
   activeEditor,
   nodeKey,
   onClose,
-}: UpdateInlineImageDialogProps): JSX.Element {
+}: UpdateInlineImageDialogProps) {
   const editorState = activeEditor.getEditorState()
   const node = editorState.read(() => $getNodeByKey(nodeKey) as InlineImageNode)
   const [altText, setAltText] = useState(node.getAltText())

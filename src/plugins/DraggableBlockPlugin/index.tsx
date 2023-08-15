@@ -234,7 +234,7 @@ function useDraggableBlockMenu(
   editor: LexicalEditor,
   anchorElem: HTMLElement,
   isEditable: boolean,
-): JSX.Element {
+) {
   const scrollerElem = anchorElem.parentElement
 
   const menuRef = useRef<HTMLDivElement>(null)
@@ -402,9 +402,7 @@ type DraggableBlockPluginProps = {
   anchorElem?: HTMLElement
 }
 
-export function DraggableBlockPlugin({
-  anchorElem = document.body,
-}: DraggableBlockPluginProps): JSX.Element {
+export function DraggableBlockPlugin({ anchorElem = document.body }: DraggableBlockPluginProps) {
   const [editor] = useLexicalComposerContext()
   return useDraggableBlockMenu(editor, anchorElem, editor._editable)
 }

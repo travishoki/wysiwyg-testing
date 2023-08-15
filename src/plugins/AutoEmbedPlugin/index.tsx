@@ -16,7 +16,7 @@ import { PlaygroundEmbedConfig } from "./PlaygroundEmbedConfig"
 
 const EmbedConfigs: PlaygroundEmbedConfig[] = []
 
-export function AutoEmbedPlugin(): JSX.Element {
+export function AutoEmbedPlugin() {
   const [modal, showModal] = useModal()
 
   const openEmbedModal = (embedConfig: PlaygroundEmbedConfig) => {

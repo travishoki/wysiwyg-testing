@@ -88,12 +88,7 @@ type ModalProps = {
   title: string
 }
 
-export function Modal({
-  onClose,
-  children,
-  title,
-  closeOnClickOutside = false,
-}: ModalProps): JSX.Element {
+export function Modal({ onClose, children, title, closeOnClickOutside = false }: ModalProps) {
   return createPortal(
     <PortalImpl onClose={onClose} title={title} closeOnClickOutside={closeOnClickOutside}>
       {children}

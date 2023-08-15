@@ -70,7 +70,7 @@ export default function ImageComponent({
   showCaption,
   caption,
   captionsEnabled,
-}: ImageComponentProps): JSX.Element {
+}: ImageComponentProps) {
   const imageRef = useRef<null | HTMLImageElement>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
   const [isSelected, setSelected, clearSelection] = useLexicalNodeSelection(nodeKey)

@@ -11,10 +11,7 @@ type InsertNewTableDialogProps = {
   onClose: () => void
 }
 
-export function InsertNewTableDialog({
-  activeEditor,
-  onClose,
-}: InsertNewTableDialogProps): JSX.Element {
+export function InsertNewTableDialog({ activeEditor, onClose }: InsertNewTableDialogProps) {
   const [rows, setRows] = useState("")
   const [columns, setColumns] = useState("")
   const [isDisabled, setIsDisabled] = useState(true)

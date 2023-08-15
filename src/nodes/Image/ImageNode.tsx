@@ -198,7 +198,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
     return this.__altText
   }
 
-  decorate(): JSX.Element {
+  decorate() {
     return (
       <Suspense fallback={<ComposerNodeFallback />}>
         <ImageComponent

@@ -37,7 +37,7 @@ import { InsertTableDialog } from "../TablePlugin/InsertTableDialog"
 import { ComponentPickerMenuItem } from "./ComponentPickerMenuItem"
 import { ComponentPickerOption } from "./ComponentPickerOption"
 
-export function ComponentPickerPlugin(): JSX.Element {
+export function ComponentPickerPlugin() {
   const [editor] = useLexicalComposerContext()
   const [modal, showModal] = useModal()
   const [queryString, setQueryString] = useState<string | null>(null)

@@ -33,7 +33,7 @@ export function LazyImage({
   width,
   height,
   maxWidth,
-}: ImageComponentLazyImageProps): JSX.Element {
+}: ImageComponentLazyImageProps) {
   useSuspenseImage(src)
   return (
     <img
