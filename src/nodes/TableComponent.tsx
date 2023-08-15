@@ -46,7 +46,7 @@ import {
   NodeKey,
   PASTE_COMMAND,
 } from "lexical"
-import { CellContext } from "../plugins/TablePlugin"
+import { CellContext } from "../plugins/TablePlugin/const"
 import { IS_APPLE } from "../shared/environment"
 import { TableCell } from "./TableComponentTableCell"
 import { SortOptions } from "./TableComponentTypes"

@@ -7,7 +7,7 @@ import { MergeFieldHandler, composerRefProps } from "./MergeFieldHandler/MergeFi
 import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext"
 import { SharedHistoryContext } from "./context/SharedHistoryContext"
 import { PlaygroundNodes } from "./nodes/PlaygroundNodes"
-import { TableContext } from "./plugins/TablePlugin"
+import { TableContext } from "./plugins/TablePlugin/TableContext"
 import { ComposerTheme } from "./themes/ComposerTheme"
 import { Maybe } from "./types/globals"
 
