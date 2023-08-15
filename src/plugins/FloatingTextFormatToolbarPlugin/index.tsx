@@ -25,7 +25,7 @@ import { createPortal } from "react-dom"
 import { getDOMRangeRect } from "../../utils/getDOMRangeRect"
 import { getSelectedNode } from "../../utils/getSelectedNode"
 import { setFloatingElemPosition } from "../../utils/setFloatingElemPosition"
-import { INSERT_INLINE_IMAGE_COMMAND } from "../InlineImagePlugin"
+import { INSERT_INLINE_IMAGE_COMMAND } from "../InlineImagePlugin/const"
 import "./index.css"
 
 type TextFormatFloatingToolbarProps = {
