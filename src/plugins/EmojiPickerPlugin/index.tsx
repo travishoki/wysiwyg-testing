@@ -15,8 +15,8 @@ import {
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
 import { $createTextNode, $getSelection, $isRangeSelection, TextNode } from "lexical"
 import * as ReactDOM from "react-dom"
-import { EmojiMenuItem } from "./EmojiMenuItem.js"
-import { EmojiOption } from "./EmojiOption.js"
+import { EmojiMenuItem } from "./EmojiMenuItem"
+import { EmojiOption } from "./EmojiOption"
 
 type Emoji = {
   emoji: string
