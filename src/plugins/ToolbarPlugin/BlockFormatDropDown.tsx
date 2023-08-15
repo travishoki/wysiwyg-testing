@@ -27,12 +27,12 @@ type BlockFormatDropDownProps = {
   disabled?: boolean
 }
 
-export function BlockFormatDropDown({
+export const BlockFormatDropDown = ({
   editor,
   blockType,
   _rootType,
   disabled = false,
-}: BlockFormatDropDownProps) {
+}: BlockFormatDropDownProps) => {
   const formatParagraph = () => {
     editor.update(() => {
       const selection = $getSelection()

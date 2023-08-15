@@ -26,7 +26,7 @@ type InlineImageComponentLazyImageProps = {
   position: Position
 }
 
-export function LazyImage({
+export const LazyImage = ({
   altText,
   className,
   imageRef,
@@ -34,7 +34,7 @@ export function LazyImage({
   width,
   height,
   position,
-}: InlineImageComponentLazyImageProps) {
+}: InlineImageComponentLazyImageProps) => {
   useSuspenseImage(src)
   return (
     <img

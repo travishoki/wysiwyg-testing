@@ -16,7 +16,7 @@ type TableComponentTableActionMenuProps = {
   sortingOptions: null | SortOptions
 }
 
-export function TableComponentTableActionMenu({
+export const TableComponentTableActionMenu = ({
   cell,
   rows,
   cellCoordMap,
@@ -26,7 +26,7 @@ export function TableComponentTableActionMenu({
   updateTableNode,
   setSortingOptions,
   sortingOptions,
-}: TableComponentTableActionMenuProps) {
+}: TableComponentTableActionMenuProps) => {
   const dropDownRef = useRef<null | HTMLDivElement>(null)
 
   useEffect(() => {

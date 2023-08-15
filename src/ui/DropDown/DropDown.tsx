@@ -23,7 +23,7 @@ type DropDownProps = {
   stopCloseOnClickSelf?: boolean
 }
 
-export function DropDown({
+export const DropDown = ({
   disabled = false,
   buttonLabel,
   buttonAriaLabel,
@@ -31,7 +31,7 @@ export function DropDown({
   buttonIconClassName,
   children,
   stopCloseOnClickSelf,
-}: DropDownProps) {
+}: DropDownProps) => {
   const dropDownRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
   const [showDropDown, setShowDropDown] = useState(false)

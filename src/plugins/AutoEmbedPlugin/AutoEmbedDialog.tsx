@@ -21,7 +21,7 @@ type AutoEmbedDialogProps = {
   onClose: () => void
 }
 
-export function AutoEmbedDialog({ embedConfig, onClose }: AutoEmbedDialogProps) {
+export const AutoEmbedDialog = ({ embedConfig, onClose }: AutoEmbedDialogProps) => {
   const [text, setText] = useState("")
   const [editor] = useLexicalComposerContext()
   const [embedResult, setEmbedResult] = useState<EmbedMatchResult | null>(null)

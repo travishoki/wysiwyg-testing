@@ -8,7 +8,7 @@ type DropDownItemsProps = {
   onClose: () => void
 }
 
-export function DropDownItems({ children, dropDownRef, onClose }: DropDownItemsProps) {
+export const DropDownItems = ({ children, dropDownRef, onClose }: DropDownItemsProps) => {
   const [items, setItems] = useState<React.RefObject<HTMLButtonElement>[]>()
   const [highlightedItem, setHighlightedItem] = useState<React.RefObject<HTMLButtonElement>>()
 

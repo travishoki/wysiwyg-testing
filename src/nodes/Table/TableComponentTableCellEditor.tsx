@@ -8,7 +8,7 @@ type TableCellEditorProps = {
   cellEditor: LexicalEditor
 }
 
-export function TableCellEditor({ cellEditor }: TableCellEditorProps) {
+export const TableCellEditor = ({ cellEditor }: TableCellEditorProps) => {
   const { cellEditorConfig, cellEditorPlugins } = useContext(CellContext)
 
   if (cellEditorPlugins === null || cellEditorConfig === null) {

@@ -260,7 +260,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
   }
 }
 
-export function $createInlineImageNode({
+export const $createInlineImageNode = ({
   altText,
   position,
   height,
@@ -269,12 +269,14 @@ export function $createInlineImageNode({
   showCaption,
   caption,
   key,
-}: InlineImagePayload): InlineImageNode {
+}: InlineImagePayload): InlineImageNode => {
   return $applyNodeReplacement(
     new InlineImageNode(src, altText, position, width, height, showCaption, caption, key),
   )
 }
 
-export function $isInlineImageNode(node: LexicalNode | null | undefined): node is InlineImageNode {
+export const $isInlineImageNode = (
+  node: LexicalNode | null | undefined,
+): node is InlineImageNode => {
   return node instanceof InlineImageNode
 }

@@ -21,7 +21,7 @@ type ButtonProps = {
   title?: string
 }
 
-export function Button({
+export const Button = ({
   "data-test-id": dataTestId,
   children,
   className,
@@ -29,7 +29,7 @@ export function Button({
   disabled,
   small,
   title,
-}: ButtonProps) {
+}: ButtonProps) => {
   return (
     <button
       disabled={disabled}

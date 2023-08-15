@@ -10,7 +10,7 @@ type InsertImageUploadedDialogBodyProps = {
   onClick: (payload: InsertImagePayload) => void
 }
 
-export function InsertImageUploadedDialogBody({ onClick }: InsertImageUploadedDialogBodyProps) {
+export const InsertImageUploadedDialogBody = ({ onClick }: InsertImageUploadedDialogBodyProps) => {
   const [src, setSrc] = useState("")
   const [altText, setAltText] = useState("")
 

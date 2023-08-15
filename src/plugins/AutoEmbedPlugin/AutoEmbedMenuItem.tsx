@@ -9,13 +9,13 @@ type AutoEmbedMenuItemProps = {
   option: AutoEmbedOption
 }
 
-export function AutoEmbedMenuItem({
+export const AutoEmbedMenuItem = ({
   index,
   isSelected,
   onClick,
   onMouseEnter,
   option,
-}: AutoEmbedMenuItemProps) {
+}: AutoEmbedMenuItemProps) => {
   let className = "item"
   if (isSelected) {
     className += " selected"

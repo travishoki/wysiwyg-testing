@@ -712,10 +712,10 @@ type TableActionMenuPluginProps = {
   cellMerge?: boolean
 }
 
-export function TableActionMenuPlugin({
+export const TableActionMenuPlugin = ({
   anchorElem = document.body,
   cellMerge = false,
-}: TableActionMenuPluginProps): null | ReactPortal {
+}: TableActionMenuPluginProps): null | ReactPortal => {
   const isEditable = useLexicalEditable()
   return createPortal(
     isEditable ? (

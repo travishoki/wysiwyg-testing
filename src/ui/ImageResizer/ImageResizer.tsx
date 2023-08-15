@@ -33,7 +33,7 @@ type ImageResizerProps = {
   captionsEnabled: boolean
 }
 
-export function ImageResizer({
+export const ImageResizer = ({
   onResizeStart,
   onResizeEnd,
   buttonRef,
@@ -43,7 +43,7 @@ export function ImageResizer({
   showCaption,
   setShowCaption,
   captionsEnabled,
-}: ImageResizerProps) {
+}: ImageResizerProps) => {
   const controlWrapperRef = useRef<HTMLDivElement>(null)
   const userSelect = useRef({
     priority: "",

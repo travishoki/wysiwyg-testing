@@ -74,7 +74,7 @@ export class AutocompleteNode extends DecoratorNode<JSX.Element | null> {
   }
 }
 
-export function $createAutocompleteNode(uuid: string): AutocompleteNode {
+export const $createAutocompleteNode = (uuid: string): AutocompleteNode => {
   return new AutocompleteNode(uuid)
 }
 

@@ -9,7 +9,6 @@
 import { $applyNodeReplacement, TextNode } from "lexical"
 import type { EditorConfig, NodeKey, SerializedTextNode, Spread } from "lexical"
 
-
 type SerializedEmojiNode = Spread<
   {
     className: string
@@ -74,7 +73,7 @@ export class EmojiNode extends TextNode {
   }
 }
 
-export function $createEmojiNode(className: string, emojiText: string): EmojiNode {
+export const $createEmojiNode = (className: string, emojiText: string): EmojiNode => {
   const node = new EmojiNode(className, emojiText).setMode("token")
   return $applyNodeReplacement(node)
 }

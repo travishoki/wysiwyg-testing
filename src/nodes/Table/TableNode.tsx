@@ -53,7 +53,7 @@ const TableComponent = React.lazy(
   () => import("./TableComponent"),
 )
 
-export function createUID(): string {
+export const createUID = (): string => {
   return Math.random()
     .toString(36)
     .replace(/[^a-z]+/g, "")
@@ -70,7 +70,7 @@ function createCell(type: "normal" | "header"): Cell {
   }
 }
 
-export function createRow(): Row {
+export const createRow = (): Row => {
   return {
     cells: [],
     height: null,
@@ -85,7 +85,7 @@ type SerializedTableNode = Spread<
   SerializedLexicalNode
 >
 
-export function extractRowsFromHTML(tableElem: HTMLTableElement): Rows {
+export const extractRowsFromHTML = (tableElem: HTMLTableElement): Rows => {
   const rowElems = tableElem.querySelectorAll("tr")
   const rows: Rows = []
   for (let y = 0; y < rowElems.length; y++) {
@@ -136,10 +136,10 @@ function convertTableElement(domNode: HTMLElement): null | DOMConversionOutput {
   return { node: $createTableNode(rows) }
 }
 
-export function exportTableCellsToHTML(
+export const exportTableCellsToHTML = (
   rows: Rows,
   rect?: { startX: number; endX: number; startY: number; endY: number },
-): HTMLElement {
+): HTMLElement => {
   const table = document.createElement("table")
   const colGroup = document.createElement("colgroup")
   const tBody = document.createElement("tbody")
@@ -386,7 +386,7 @@ export class TableNode extends DecoratorNode<JSX.Element> {
   }
 }
 
-export function $isTableNode(node: LexicalNode | null | undefined): node is TableNode {
+export const $isTableNode = (node: LexicalNode | null | undefined): node is TableNode => {
   return node instanceof TableNode
 }
 
@@ -394,11 +394,11 @@ function $createTableNode(rows: Rows): TableNode {
   return new TableNode(rows)
 }
 
-export function $createTableNodeWithDimensions(
+export const $createTableNodeWithDimensions = (
   rowCount: number,
   columnCount: number,
   includeHeaders = true,
-): TableNode {
+): TableNode => {
   const rows: Rows = []
   for (let y = 0; y < columnCount; y++) {
     const row: Row = createRow()

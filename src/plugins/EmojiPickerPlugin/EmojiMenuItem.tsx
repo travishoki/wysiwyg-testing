@@ -9,13 +9,13 @@ type EmojiMenuItemProps = {
   option: EmojiOption
 }
 
-export function EmojiMenuItem({
+export const EmojiMenuItem = ({
   index,
   isSelected,
   onClick,
   onMouseEnter,
   option,
-}: EmojiMenuItemProps) {
+}: EmojiMenuItemProps) => {
   let className = "item"
   if (isSelected) {
     className += " selected"

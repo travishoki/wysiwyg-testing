@@ -9,13 +9,13 @@ type ComponentPickerMenuItemProps = {
   option: ComponentPickerOption
 }
 
-export function ComponentPickerMenuItem({
+export const ComponentPickerMenuItem = ({
   index,
   isSelected,
   onClick,
   onMouseEnter,
   option,
-}: ComponentPickerMenuItemProps) {
+}: ComponentPickerMenuItemProps) => {
   let className = "item"
   if (isSelected) {
     className += " selected"

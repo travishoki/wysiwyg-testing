@@ -85,13 +85,13 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 }
 
-export function $createMergeFieldNode(
+export const $createMergeFieldNode = (
   mergeFieldIconUrl: string,
   mergeFieldId: string,
-): MergeFieldNode {
+): MergeFieldNode => {
   return $applyNodeReplacement(new MergeFieldNode(mergeFieldIconUrl, mergeFieldId))
 }
 
-export function $isMergeFieldNode(node: LexicalNode | null | undefined): node is MergeFieldNode {
+export const $isMergeFieldNode = (node: LexicalNode | null | undefined): node is MergeFieldNode => {
   return node instanceof MergeFieldNode
 }

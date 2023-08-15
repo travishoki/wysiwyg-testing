@@ -10,7 +10,7 @@ import * as React from "react"
 import { DialogProps } from "./types"
 import "./Dialog.css"
 
-export function DialogActions({ "data-test-id": dataTestId, children }: DialogProps) {
+export const DialogActions = ({ "data-test-id": dataTestId, children }: DialogProps) => {
   return (
     <div className="DialogActions" data-test-id={dataTestId}>
       {children}

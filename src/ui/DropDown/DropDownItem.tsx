@@ -9,7 +9,7 @@ type DropDownItemProps = {
   title?: string
 }
 
-export function DropDownItem({ children, className, onClick, title }: DropDownItemProps) {
+export const DropDownItem = ({ children, className, onClick, title }: DropDownItemProps) => {
   const ref = useRef<HTMLButtonElement>(null)
 
   const dropDownContext = React.useContext(DropDownContext)

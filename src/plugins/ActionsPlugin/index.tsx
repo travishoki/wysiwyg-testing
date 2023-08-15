@@ -39,7 +39,7 @@ async function validateEditorState(editor: LexicalEditor): Promise<void> {
   }
 }
 
-export function ActionsPlugin() {
+export const ActionsPlugin = () => {
   const [editor] = useLexicalComposerContext()
   const [isEditable, setIsEditable] = useState(() => editor.isEditable())
   const [isEditorEmpty, setIsEditorEmpty] = useState(true)

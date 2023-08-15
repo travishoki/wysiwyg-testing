@@ -20,14 +20,14 @@ type TextInputProps = Readonly<{
   type?: HTMLInputTypeAttribute
 }>
 
-export function TextInput({
+export const TextInput = ({
   label,
   value,
   onChange,
   placeholder = "",
   "data-test-id": dataTestId,
   type = "text",
-}: TextInputProps) {
+}: TextInputProps) => {
   return (
     <div className="Input__wrapper">
       <label className="Input__label">{label}</label>

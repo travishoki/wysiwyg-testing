@@ -10,7 +10,7 @@ import * as React from "react"
 import { ColorPicker } from "../ColorPicker/ColorPicker"
 import { DropDown } from "./DropDown"
 
-type Props = {
+type DropdownColorPickerProps = {
   disabled?: boolean
   buttonAriaLabel?: string
   buttonClassName: string
@@ -22,13 +22,13 @@ type Props = {
   onChange?: (color: string) => void
 }
 
-export function DropdownColorPicker({
+export const DropdownColorPicker = ({
   disabled = false,
   stopCloseOnClickSelf = true,
   color,
   onChange,
   ...rest
-}: Props) {
+}: DropdownColorPickerProps) => {
   return (
     <DropDown {...rest} disabled={disabled} stopCloseOnClickSelf={stopCloseOnClickSelf}>
       <ColorPicker color={color} onChange={onChange} />

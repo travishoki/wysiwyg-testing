@@ -9,13 +9,13 @@ type MentionsTypeaheadMenuItemProps = {
   option: MentionTypeaheadOption
 }
 
-export function MentionsTypeaheadMenuItem({
+export const MentionsTypeaheadMenuItem = ({
   index,
   isSelected,
   onClick,
   onMouseEnter,
   option,
-}: MentionsTypeaheadMenuItemProps) {
+}: MentionsTypeaheadMenuItemProps) => {
   let className = "item"
   if (isSelected) {
     className += " selected"

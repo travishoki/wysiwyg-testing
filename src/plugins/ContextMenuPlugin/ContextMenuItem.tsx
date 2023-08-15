@@ -9,13 +9,13 @@ type ContextMenuItemProps = {
   option: ContextMenuOption
 }
 
-export function ContextMenuItem({
+export const ContextMenuItem = ({
   index,
   isSelected,
   onClick,
   onMouseEnter,
   option,
-}: ContextMenuItemProps) {
+}: ContextMenuItemProps) => {
   let className = "item"
   if (isSelected) {
     className += " selected"

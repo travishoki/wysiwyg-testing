@@ -58,7 +58,7 @@ import { ComposerTheme } from "./themes/ComposerTheme"
 import { ContentEditable } from "./ui/ContentEditable/ContentEditable"
 import { Placeholder } from "./ui/Placeholder/Placeholder"
 
-export function Editor() {
+export const Editor = () => {
   const { historyState } = useSharedHistoryContext()
   const {
     settings: {

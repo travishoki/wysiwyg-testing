@@ -15,7 +15,7 @@ type InsertImageDialogProps = {
   onClose: () => void
 }
 
-export function InsertImageDialog({ activeEditor, onClose }: InsertImageDialogProps) {
+export const InsertImageDialog = ({ activeEditor, onClose }: InsertImageDialogProps) => {
   const [mode, setMode] = useState<null | "url" | "file">(null)
   const hasModifier = useRef(false)
 

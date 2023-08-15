@@ -383,9 +383,9 @@ type FloatingTextFormatToolbarPluginProps = {
   anchorElem?: HTMLElement
 }
 
-export function FloatingTextFormatToolbarPlugin({
+export const FloatingTextFormatToolbarPlugin = ({
   anchorElem = document.body,
-}: FloatingTextFormatToolbarPluginProps): JSX.Element | null {
+}: FloatingTextFormatToolbarPluginProps): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
   return useFloatingTextFormatToolbar(editor, anchorElem)
 }

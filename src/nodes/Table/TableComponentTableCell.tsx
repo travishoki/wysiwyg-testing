@@ -39,7 +39,7 @@ type TableCellProps = {
   sortingOptions: null | SortOptions
 }
 
-export function TableCell({
+export const TableCell = ({
   cell,
   cellCoordMap,
   cellEditor,
@@ -52,7 +52,7 @@ export function TableCell({
   rows,
   setSortingOptions,
   sortingOptions,
-}: TableCellProps) {
+}: TableCellProps) => {
   const [showMenu, setShowMenu] = useState(false)
   const menuRootRef = useRef(null)
   const isHeader = cell.type !== "normal"

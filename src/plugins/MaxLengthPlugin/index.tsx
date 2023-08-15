@@ -14,7 +14,7 @@ import { $getSelection, $isRangeSelection, EditorState, RootNode } from "lexical
 
 type MaxLengthPluginProps = { maxLength: number }
 
-export function MaxLengthPlugin({ maxLength }: MaxLengthPluginProps): null {
+export const MaxLengthPlugin = ({ maxLength }: MaxLengthPluginProps): null => {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {

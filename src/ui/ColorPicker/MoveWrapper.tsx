@@ -13,7 +13,7 @@ interface MoveWrapperProps {
   children: JSX.Element
 }
 
-export function MoveWrapper({ className, style, onChange, children }: MoveWrapperProps) {
+export const MoveWrapper = ({ className, style, onChange, children }: MoveWrapperProps) => {
   const divRef = useRef<HTMLDivElement>(null)
 
   const move = (e: React.MouseEvent | MouseEvent): void => {

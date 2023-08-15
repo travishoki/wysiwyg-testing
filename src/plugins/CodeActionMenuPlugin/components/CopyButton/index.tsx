@@ -16,7 +16,7 @@ interface CopyButtonProps {
   getCodeDOMNode: () => HTMLElement | null
 }
 
-export function CopyButton({ editor, getCodeDOMNode }: CopyButtonProps) {
+export const CopyButton = ({ editor, getCodeDOMNode }: CopyButtonProps) => {
   const [isCopyCompleted, setCopyCompleted] = useState<boolean>(false)
 
   const removeSuccessIcon = useDebounce(() => {

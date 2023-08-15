@@ -76,7 +76,7 @@ function useQuery(): (searchText: string) => SearchPromise {
   }, [])
 }
 
-export function AutocompletePlugin(): JSX.Element | null {
+export const AutocompletePlugin = (): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
   const [, setSuggestion] = useSharedAutocompleteContext()
   const query = useQuery()

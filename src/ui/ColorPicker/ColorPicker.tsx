@@ -38,7 +38,7 @@ const basicColors = [
 const WIDTH = 214
 const HEIGHT = 150
 
-export function ColorPicker({ color, onChange }: Readonly<ColorPickerProps>) {
+export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => {
   const [selfColor, setSelfColor] = useState(transformColor("hex", color))
   const [inputColor, setInputColor] = useState(color)
   const innerDivRef = useRef(null)

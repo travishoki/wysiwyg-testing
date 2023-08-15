@@ -25,7 +25,7 @@ type ImageComponentLazyImageProps = {
   width: "inherit" | number
 }
 
-export function LazyImage({
+export const LazyImage = ({
   altText,
   className,
   imageRef,
@@ -33,7 +33,7 @@ export function LazyImage({
   width,
   height,
   maxWidth,
-}: ImageComponentLazyImageProps) {
+}: ImageComponentLazyImageProps) => {
   useSuspenseImage(src)
   return (
     <img

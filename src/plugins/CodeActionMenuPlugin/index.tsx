@@ -160,8 +160,8 @@ type CodeActionMenuPluginProps = {
   anchorElem?: HTMLElement
 }
 
-export function CodeActionMenuPlugin({
+export const CodeActionMenuPlugin = ({
   anchorElem = document.body,
-}: CodeActionMenuPluginProps): React.ReactPortal | null {
+}: CodeActionMenuPluginProps): React.ReactPortal | null => {
   return createPortal(<CodeActionMenuContainer anchorElem={anchorElem} />, anchorElem)
 }

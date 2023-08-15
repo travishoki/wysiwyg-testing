@@ -10,7 +10,7 @@ import LexicalTableOfContents from "@lexical/react/LexicalTableOfContents"
 import { TableOfContentsList } from "./TableOfContentsList"
 import "./index.css"
 
-export function TableOfContentsPlugin() {
+export const TableOfContentsPlugin = () => {
   return (
     <LexicalTableOfContents>
       {(tableOfContents) => {

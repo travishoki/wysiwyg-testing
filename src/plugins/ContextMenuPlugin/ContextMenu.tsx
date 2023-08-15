@@ -9,12 +9,12 @@ type ContextMenuProps = {
   options: Array<ContextMenuOption>
 }
 
-export function ContextMenu({
+export const ContextMenu = ({
   options,
   selectedItemIndex,
   onOptionClick,
   onOptionMouseEnter,
-}: ContextMenuProps) {
+}: ContextMenuProps) => {
   return (
     <div className="typeahead-popover">
       <ul>

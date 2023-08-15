@@ -11,7 +11,7 @@ type InsertTableDialogProps = {
   onClose: () => void
 }
 
-export function InsertTableDialog({ activeEditor, onClose }: InsertTableDialogProps) {
+export const InsertTableDialog = ({ activeEditor, onClose }: InsertTableDialogProps) => {
   const [rows, setRows] = useState("5")
   const [columns, setColumns] = useState("5")
   const [isDisabled, setIsDisabled] = useState(true)

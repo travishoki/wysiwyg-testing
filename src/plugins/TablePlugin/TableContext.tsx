@@ -5,7 +5,7 @@ import { CellEditorConfig } from "./types"
 
 type TableContextProps = { children: JSX.Element }
 
-export function TableContext({ children }: TableContextProps) {
+export const TableContext = ({ children }: TableContextProps) => {
   const [contextValue, setContextValue] = useState<{
     cellEditorConfig: null | CellEditorConfig
     cellEditorPlugins: null | JSX.Element | Array<JSX.Element>

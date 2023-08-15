@@ -402,7 +402,7 @@ type DraggableBlockPluginProps = {
   anchorElem?: HTMLElement
 }
 
-export function DraggableBlockPlugin({ anchorElem = document.body }: DraggableBlockPluginProps) {
+export const DraggableBlockPlugin = ({ anchorElem = document.body }: DraggableBlockPluginProps) => {
   const [editor] = useLexicalComposerContext()
   return useDraggableBlockMenu(editor, anchorElem, editor._editable)
 }

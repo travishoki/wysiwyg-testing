@@ -1,5 +1,5 @@
 import * as React from "react"
 
-export function Divider() {
+export const Divider = () => {
   return <div className="divider" />
 }

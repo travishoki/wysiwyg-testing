@@ -583,7 +583,7 @@ function getPossibleQueryMatch(text: string): MenuTextMatch | null {
   return match === null ? checkForCapitalizedNameMentions(text, 3) : match
 }
 
-export function MentionsPlugin(): JSX.Element | null {
+export const MentionsPlugin = (): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
 
   const [queryString, setQueryString] = useState<string | null>(null)

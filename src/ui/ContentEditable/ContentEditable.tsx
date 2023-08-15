@@ -15,6 +15,6 @@ type ContentEditableProps = {
   className?: string
 }
 
-export function ContentEditable({ className }: ContentEditableProps) {
+export const ContentEditable = ({ className }: ContentEditableProps) => {
   return <LexicalContentEditable className={className || "ContentEditable__root"} />
 }

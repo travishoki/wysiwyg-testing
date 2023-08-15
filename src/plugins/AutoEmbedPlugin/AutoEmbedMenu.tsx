@@ -9,12 +9,12 @@ type AutoEmbedMenuProps = {
   options: Array<AutoEmbedOption>
 }
 
-export function AutoEmbedMenu({
+export const AutoEmbedMenu = ({
   options,
   selectedItemIndex,
   onOptionClick,
   onOptionMouseEnter,
-}: AutoEmbedMenuProps) {
+}: AutoEmbedMenuProps) => {
   return (
     <div className="typeahead-popover">
       <ul>

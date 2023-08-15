@@ -55,7 +55,7 @@ const PRETTIER_OPTIONS_BY_LANG: Record<string, Options> = {
 
 const LANG_CAN_BE_PRETTIER = Object.keys(PRETTIER_OPTIONS_BY_LANG)
 
-export function canBePrettier(lang: string): boolean {
+export const canBePrettier = (lang: string): boolean => {
   return LANG_CAN_BE_PRETTIER.includes(lang)
 }
 
@@ -68,7 +68,7 @@ function getPrettierOptions(lang: string): Options {
   return options
 }
 
-export function PrettierButton({ lang, editor, getCodeDOMNode }: Props) {
+export const PrettierButton = ({ lang, editor, getCodeDOMNode }: Props) => {
   const [syntaxError, setSyntaxError] = useState<string>("")
   const [tipsVisible, setTipsVisible] = useState<boolean>(false)
 
