@@ -8,7 +8,7 @@
 
 import * as React from "react"
 import { useCallback, useMemo, useState } from "react"
-import { Modal } from "../ui/Modal"
+import { Modal } from "../ui/Modal/Modal"
 
 export function useModal(): [
   JSX.Element | null,
