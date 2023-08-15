@@ -6,7 +6,6 @@
  *
  */
 
-
 import { CodeHighlightNode, CodeNode } from "@lexical/code"
 import { HashtagNode } from "@lexical/hashtag"
 import { AutoLinkNode, LinkNode } from "@lexical/link"

@@ -9,6 +9,7 @@ import { SharedHistoryContext } from "./context/SharedHistoryContext"
 import { PlaygroundNodes } from "./nodes/PlaygroundNodes"
 import { TableContext } from "./plugins/TablePlugin"
 import { ComposerTheme } from "./themes/ComposerTheme"
+import { Maybe } from "./types/globals"
 
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
@@ -45,5 +46,5 @@ export const Composer = ({ composerRef, setOutput }: ComposerProps) => {
 
 type ComposerProps = {
   composerRef: React.MutableRefObject<composerRefProps>
-  setOutput: (output: string) => void
+  setOutput: (output: Maybe<string>) => void
 }
