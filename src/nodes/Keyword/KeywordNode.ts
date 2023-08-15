@@ -9,7 +9,6 @@
 import { TextNode } from "lexical"
 import type { EditorConfig, SerializedTextNode } from "lexical"
 
-
 type SerializedKeywordNode = SerializedTextNode
 
 export class KeywordNode extends TextNode {

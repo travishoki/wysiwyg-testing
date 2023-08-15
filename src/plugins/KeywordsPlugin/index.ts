@@ -6,11 +6,10 @@
  *
  */
 
-
 import { useCallback, useEffect } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { useLexicalTextEntity } from "@lexical/react/useLexicalTextEntity"
-import { $createKeywordNode, KeywordNode } from "../../nodes/KeywordNode"
+import { $createKeywordNode, KeywordNode } from "../../nodes/Keyword/KeywordNode"
 import type { TextNode } from "lexical"
 
 const KEYWORDS_REGEX =

@@ -14,7 +14,7 @@ import { HeadingNode, QuoteNode } from "@lexical/rich-text"
 import { AutocompleteNode } from "../Autocomplete/AutocompleteNode"
 import { EmojiNode } from "../Emoji/EmojiNode"
 import { ImageNode } from "../Image/ImageNode"
-import { KeywordNode } from "../KeywordNode"
+import { KeywordNode } from "../Keyword/KeywordNode"
 import { MentionNode } from "../Mention/MentionNode"
 import type { Klass, LexicalNode } from "lexical"
 
