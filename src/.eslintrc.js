@@ -57,7 +57,7 @@ module.exports = {
     "react/no-access-state-in-setstate": "off",
     "react/no-array-index-key": "off",
     "react/no-did-update-set-state": "off",
-    "react/no-multi-comp": "off",
+    // "react/no-multi-comp": "off", // TODO: overriden temporarily
     "react/no-unescaped-entities": "off",
     "react/no-unused-prop-types": "off",
     "react/require-default-props": "off",
@@ -105,6 +105,9 @@ module.exports = {
     "prefer-promise-reject-errors": "error",
     "no-restricted-syntax": "error",
     // "jsx-a11y/control-has-associated-label": "error", // TODO: Add
+
+    /* Taking it a step further to make things clean */
+    "react/no-multi-comp": "error",
   },
   overrides: [
     /** Composer */
