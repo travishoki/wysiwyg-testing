@@ -66,7 +66,7 @@ const $search = (
 }
 
 // TODO query should be custom
-function useQuery(): (searchText: string) => SearchPromise {
+const useQuery = (): ((searchText: string) => SearchPromise) => {
   return useCallback((searchText: string) => {
     const server = new AutocompleteServer()
     // console.time("query")
