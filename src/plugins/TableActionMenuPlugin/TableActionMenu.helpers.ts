@@ -2,6 +2,19 @@ import { $isTableCellNode, $isTableRowNode } from "@lexical/table"
 import { GridSelection } from "lexical"
 import { invariant } from "../../shared/invariant"
 
+type computeSelectionCountProps = {
+  columns: number
+  rows: number
+}
+
+export const computeSelectionCount = (selection: GridSelection): computeSelectionCountProps => {
+  const selectionShape = selection.getShape()
+  return {
+    columns: selectionShape.toX - selectionShape.fromX + 1,
+    rows: selectionShape.toY - selectionShape.fromY + 1,
+  }
+}
+
 // This is important when merging cells as there is no good way to re-merge weird shapes (a result
 // of selecting merged cells and non-merged)
 export const isGridSelectionRectangular = (selection: GridSelection): boolean => {

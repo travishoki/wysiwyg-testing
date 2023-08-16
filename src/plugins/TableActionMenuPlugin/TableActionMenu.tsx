@@ -30,25 +30,11 @@ import {
   DEPRECATED_$isGridSelection,
   DEPRECATED_GridCellNode,
   ElementNode,
-  GridSelection,
   LexicalEditor,
 } from "lexical"
 import { createPortal } from "react-dom"
 import { ColorPicker } from "../../ui/ColorPicker/ColorPicker"
-import { isGridSelectionRectangular } from "./TableActionMenu.helpers"
-
-type computeSelectionCountProps = {
-  columns: number
-  rows: number
-}
-
-const computeSelectionCount = (selection: GridSelection): computeSelectionCountProps => {
-  const selectionShape = selection.getShape()
-  return {
-    columns: selectionShape.toX - selectionShape.fromX + 1,
-    rows: selectionShape.toY - selectionShape.fromY + 1,
-  }
-}
+import { computeSelectionCount, isGridSelectionRectangular } from "./TableActionMenu.helpers"
 
 const $canUnmerge = (): boolean => {
   const selection = $getSelection()
@@ -84,6 +70,7 @@ const $selectLastDescendant = (node: ElementNode): void => {
     lastDescendant.selectNext()
   }
 }
+
 const currentCellBackgroundColor = (editor: LexicalEditor): null | string => {
   return editor.getEditorState().read(() => {
     const selection = $getSelection()
