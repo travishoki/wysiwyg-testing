@@ -1,7 +1,7 @@
 import * as React from "react"
+import styles from "./Controls.module.scss"
 import { LockButton } from "./LockButton/LockButton"
 import { SubmitButton } from "./SubmitButton/SubmitButton"
-import styles from "./Controls.module.scss"
 
 type ControlsProps = {
   onSubmit: (value: string) => void
