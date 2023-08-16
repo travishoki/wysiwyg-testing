@@ -28,12 +28,12 @@ const PRETTIER_PARSER_MODULES = {
 
 type LanguagesType = keyof typeof PRETTIER_PARSER_MODULES
 
-async function loadPrettierParserByLang(lang: string) {
+const loadPrettierParserByLang = async (lang: string) => {
   const dynamicImport = PRETTIER_PARSER_MODULES[lang as LanguagesType]
   return await dynamicImport()
 }
 
-async function loadPrettierFormat() {
+const loadPrettierFormat = async () => {
   const { format } = await import("prettier/standalone")
   return format
 }
@@ -72,7 +72,7 @@ export const PrettierButton = ({ lang, editor, getCodeDOMNode }: Props) => {
   const [syntaxError, setSyntaxError] = useState<string>("")
   const [tipsVisible, setTipsVisible] = useState<boolean>(false)
 
-  async function handleClick(): Promise<void> {
+  const handleClick = async (): Promise<void> => {
     const codeDOMNode = getCodeDOMNode()
 
     try {

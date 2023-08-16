@@ -23,7 +23,7 @@ export const CopyButton = ({ editor, getCodeDOMNode }: CopyButtonProps) => {
     setCopyCompleted(false)
   }, 1000)
 
-  async function handleClick(): Promise<void> {
+  const handleClick = async (): Promise<void> => {
     const codeDOMNode = getCodeDOMNode()
 
     if (!codeDOMNode) {
