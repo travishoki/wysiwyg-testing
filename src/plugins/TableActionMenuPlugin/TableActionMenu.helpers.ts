@@ -1,5 +1,12 @@
 import { $isTableCellNode, $isTableRowNode } from "@lexical/table"
-import { GridSelection } from "lexical"
+import {
+  $getSelection,
+  $isRangeSelection,
+  DEPRECATED_$getNodeTriplet,
+  DEPRECATED_$isGridSelection,
+  GridSelection,
+  LexicalEditor,
+} from "lexical"
 import { invariant } from "../../shared/invariant"
 
 type computeSelectionCountProps = {
@@ -13,6 +20,19 @@ export const computeSelectionCount = (selection: GridSelection): computeSelectio
     columns: selectionShape.toX - selectionShape.fromX + 1,
     rows: selectionShape.toY - selectionShape.fromY + 1,
   }
+}
+
+export const currentCellBackgroundColor = (editor: LexicalEditor): null | string => {
+  return editor.getEditorState().read(() => {
+    const selection = $getSelection()
+    if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
+      const [cell] = DEPRECATED_$getNodeTriplet(selection.anchor)
+      if ($isTableCellNode(cell)) {
+        return cell.getBackgroundColor()
+      }
+    }
+    return null
+  })
 }
 
 // This is important when merging cells as there is no good way to re-merge weird shapes (a result

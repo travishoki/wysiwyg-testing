@@ -30,11 +30,14 @@ import {
   DEPRECATED_$isGridSelection,
   DEPRECATED_GridCellNode,
   ElementNode,
-  LexicalEditor,
 } from "lexical"
 import { createPortal } from "react-dom"
 import { ColorPicker } from "../../ui/ColorPicker/ColorPicker"
-import { computeSelectionCount, isGridSelectionRectangular } from "./TableActionMenu.helpers"
+import {
+  computeSelectionCount,
+  currentCellBackgroundColor,
+  isGridSelectionRectangular,
+} from "./TableActionMenu.helpers"
 
 const $canUnmerge = (): boolean => {
   const selection = $getSelection()
@@ -69,19 +72,6 @@ const $selectLastDescendant = (node: ElementNode): void => {
   } else if (lastDescendant !== null) {
     lastDescendant.selectNext()
   }
-}
-
-const currentCellBackgroundColor = (editor: LexicalEditor): null | string => {
-  return editor.getEditorState().read(() => {
-    const selection = $getSelection()
-    if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
-      const [cell] = DEPRECATED_$getNodeTriplet(selection.anchor)
-      if ($isTableCellNode(cell)) {
-        return cell.getBackgroundColor()
-      }
-    }
-    return null
-  })
 }
 
 type TableCellActionMenuProps = Readonly<{
