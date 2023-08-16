@@ -104,7 +104,7 @@ module.exports = {
     "class-methods-use-this": "error",
     "prefer-promise-reject-errors": "error",
     "no-restricted-syntax": "error",
-    // "jsx-a11y/control-has-associated-label": "error", // TODO: Add
+    "jsx-a11y/control-has-associated-label": "error",
 
     /* Taking it a step further to make things clean */
     "react/no-multi-comp": "error",

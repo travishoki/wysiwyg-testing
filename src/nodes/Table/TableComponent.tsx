@@ -1255,8 +1255,17 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
           ))}
         </tbody>
       </table>
-      {showAddColumns && <button className={theme.tableAddColumns} onClick={addColumns} />}
-      {showAddRows && <button className={theme.tableAddRows} onClick={addRows} ref={addRowsRef} />}
+      {showAddColumns && (
+        <button aria-label="button" className={theme.tableAddColumns} onClick={addColumns} />
+      )}
+      {showAddRows && (
+        <button
+          aria-label="button"
+          className={theme.tableAddRows}
+          onClick={addRows}
+          ref={addRowsRef}
+        />
+      )}
       {resizingID !== null && <div className={theme.tableResizeRuler} ref={tableResizerRulerRef} />}
     </div>
   )

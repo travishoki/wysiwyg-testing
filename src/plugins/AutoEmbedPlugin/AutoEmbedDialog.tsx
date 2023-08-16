@@ -43,6 +43,7 @@ export const AutoEmbedDialog = ({ embedConfig, onClose }: AutoEmbedDialogProps) 
     <div style={{ width: "600px" }}>
       <div className="Input__wrapper">
         <input
+          aria-label="text"
           type="text"
           className="Input__input"
           placeholder={embedConfig.exampleUrl}

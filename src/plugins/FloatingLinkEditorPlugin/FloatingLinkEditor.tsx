@@ -179,6 +179,7 @@ export const FloatingLinkEditor = ({
       {!isLink ? null : isEditMode ? (
         <>
           <input
+            aria-label="input"
             ref={inputRef}
             className="link-input"
             value={editedLinkUrl}
@@ -191,6 +192,7 @@ export const FloatingLinkEditor = ({
           />
           <div>
             <div
+              aria-label="cancel"
               className="link-cancel"
               role="button"
               tabIndex={0}
@@ -201,6 +203,7 @@ export const FloatingLinkEditor = ({
             />
 
             <div
+              aria-label="confim"
               className="link-confirm"
               role="button"
               tabIndex={0}
@@ -215,6 +218,7 @@ export const FloatingLinkEditor = ({
             {linkUrl}
           </a>
           <div
+            aria-label="edit"
             className="link-edit"
             role="button"
             tabIndex={0}
@@ -225,6 +229,7 @@ export const FloatingLinkEditor = ({
             }}
           />
           <div
+            aria-label="trash"
             className="link-trash"
             role="button"
             tabIndex={0}

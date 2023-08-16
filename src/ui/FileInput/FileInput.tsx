@@ -27,6 +27,7 @@ export const FileInput = ({
     <div className="Input__wrapper">
       <label className="Input__label">{label}</label>
       <input
+        aria-label="file"
         type="file"
         accept={accept}
         className="Input__input"

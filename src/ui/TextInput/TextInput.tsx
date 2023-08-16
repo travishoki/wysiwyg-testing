@@ -32,6 +32,7 @@ export const TextInput = ({
     <div className="Input__wrapper">
       <label className="Input__label">{label}</label>
       <input
+        aria-label="input"
         type={type}
         className="Input__input"
         placeholder={placeholder}

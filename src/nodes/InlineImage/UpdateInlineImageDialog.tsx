@@ -71,6 +71,7 @@ export const UpdateInlineImageDialog = ({
 
       <div className="Input__wrapper">
         <input
+          aria-label="caption"
           id="caption"
           type="checkbox"
           checked={showCaption}
