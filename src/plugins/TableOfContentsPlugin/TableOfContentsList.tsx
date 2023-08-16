@@ -1,38 +1,14 @@
 import * as React from "react"
 import { useEffect, useRef, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
+import {
+  indent,
+  isHeadingAtTheTopOfThePage,
+  isHeadingAboveViewport,
+  isHeadingBelowTheTopOfThePage,
+} from "./TableOfContentsList.helpers"
 import type { TableOfContentsEntry } from "@lexical/react/LexicalTableOfContents"
-import type { HeadingTagType } from "@lexical/rich-text"
 import type { NodeKey } from "lexical"
-
-const MARGIN_ABOVE_EDITOR = 624
-const HEADING_WIDTH = 9
-
-const indent = (tagName: HeadingTagType) => {
-  if (tagName === "h2") {
-    return "heading2"
-  } else if (tagName === "h3") {
-    return "heading3"
-  }
-}
-
-const isHeadingAtTheTopOfThePage = (element: HTMLElement): boolean => {
-  const elementYPosition = element?.getClientRects()[0].y
-  return (
-    elementYPosition >= MARGIN_ABOVE_EDITOR &&
-    elementYPosition <= MARGIN_ABOVE_EDITOR + HEADING_WIDTH
-  )
-}
-
-const isHeadingAboveViewport = (element: HTMLElement): boolean => {
-  const elementYPosition = element?.getClientRects()[0].y
-  return elementYPosition < MARGIN_ABOVE_EDITOR
-}
-
-const isHeadingBelowTheTopOfThePage = (element: HTMLElement): boolean => {
-  const elementYPosition = element?.getClientRects()[0].y
-  return elementYPosition >= MARGIN_ABOVE_EDITOR + HEADING_WIDTH
-}
 
 type TableOfContentsListProps = {
   tableOfContents: Array<TableOfContentsEntry>
