@@ -1,10 +1,10 @@
 import * as React from "react"
 import { useEffect, useRef } from "react"
 import { $addUpdateTag, $createParagraphNode, $getRoot } from "lexical"
-import { SortOptions } from "./TableComponentTypes"
 import { Cell, Rows, TableNode } from "./TableNode"
+import { SortOptions } from "./types"
 
-type TableComponentTableActionMenuProps = {
+type TableActionMenuProps = {
   cell: Cell
   menuElem: HTMLElement
   updateCellsByID: (ids: Array<string>, fn: () => void) => void
@@ -16,7 +16,7 @@ type TableComponentTableActionMenuProps = {
   sortingOptions: null | SortOptions
 }
 
-export const TableComponentTableActionMenu = ({
+export const TableActionMenu = ({
   cell,
   rows,
   cellCoordMap,
@@ -26,7 +26,7 @@ export const TableComponentTableActionMenu = ({
   updateTableNode,
   setSortingOptions,
   sortingOptions,
-}: TableComponentTableActionMenuProps) => {
+}: TableActionMenuProps) => {
   const dropDownRef = useRef<null | HTMLDivElement>(null)
 
   useEffect(() => {

@@ -48,9 +48,8 @@ import {
 } from "lexical"
 import { CellContext } from "../../plugins/TablePlugin/const"
 import { IS_APPLE } from "../../shared/environment"
+import { TableCell } from "./TableCell"
 import { isStartingResize } from "./TableComponent.helpers"
-import { TableCell } from "./TableComponentTableCell"
-import { SortOptions } from "./TableComponentTypes"
 import {
   $isTableNode,
   Cell,
@@ -63,6 +62,7 @@ import {
   Rows,
   TableNode,
 } from "./TableNode"
+import { SortOptions } from "./types"
 import type { RangeSelection, TextFormatType } from "lexical"
 
 const NO_CELLS: [] = []

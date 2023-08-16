@@ -2,11 +2,11 @@ import * as React from "react"
 import { useEffect, useRef, useState } from "react"
 import { EditorThemeClasses, LexicalEditor } from "lexical"
 import { createPortal } from "react-dom"
-import { TableComponentTableActionMenu } from "./TableComponentTableActionMenu"
-import { createEmptyParagraphHTML, generateHTMLFromJSON } from "./TableComponentTableCell.helpers"
-import { TableCellEditor } from "./TableComponentTableCellEditor"
-import { SortOptions } from "./TableComponentTypes"
+import { TableActionMenu } from "./TableActionMenu"
+import { createEmptyParagraphHTML, generateHTMLFromJSON } from "./TableCell.helpers"
+import { TableCellEditor } from "./TableCellEditor"
 import { Cell, Rows, TableNode } from "./TableNode"
+import { SortOptions } from "./types"
 
 type TableCellProps = {
   cell: Cell
@@ -102,7 +102,7 @@ export const TableCell = ({
       {showMenu &&
         menuElem !== null &&
         createPortal(
-          <TableComponentTableActionMenu
+          <TableActionMenu
             cell={cell}
             menuElem={menuElem}
             updateCellsByID={updateCellsByID}
