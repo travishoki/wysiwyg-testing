@@ -234,9 +234,9 @@ const getTableColumnsSize = (table: TableNode) => {
 }
 
 const createTableCell = (textContent: string): TableCellNode => {
-  textContent = textContent.replace(/\\n/g, "\n")
+  const formattedTextContent = textContent.replace(/\\n/g, "\n")
   const cell = $createTableCellNode(TableCellHeaderStates.NO_STATUS)
-  $convertFromMarkdownString(textContent, PLAYGROUND_TRANSFORMERS, cell)
+  $convertFromMarkdownString(formattedTextContent, PLAYGROUND_TRANSFORMERS, cell)
   return cell
 }
 
