@@ -2,7 +2,7 @@ module.exports = {
   extends: ["react-app"],
   rules: {
     /** General */
-    "sort-keys": "off",
+    // "sort-keys": "off", // Hoki Overriden
     "no-unused-vars": "off", // handled by Typescript
     "linebreak-style": ["error", "unix"], // Handle Mac and PC returns. Not enabled by default.
     "no-console": ["error", { allow: ["warn", "error"] }], // Catches console.logs but allows warn and error
@@ -57,7 +57,7 @@ module.exports = {
     "react/no-access-state-in-setstate": "off",
     "react/no-array-index-key": "off",
     "react/no-did-update-set-state": "off",
-    // "react/no-multi-comp": "off", // TODO: overriden temporarily
+    // "react/no-multi-comp": "off", // Hoki Overriden
     "react/no-unescaped-entities": "off",
     "react/no-unused-prop-types": "off",
     "react/require-default-props": "off",
@@ -108,6 +108,7 @@ module.exports = {
 
     /* Taking it a step further to make things clean */
     "react/no-multi-comp": "error",
+    "sort-keys": "error",
   },
   overrides: [
     /** Composer */
