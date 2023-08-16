@@ -1,13 +1,53 @@
 import { $isTableCellNode, $isTableRowNode } from "@lexical/table"
 import {
   $getSelection,
+  $isElementNode,
+  $isParagraphNode,
   $isRangeSelection,
+  $isTextNode,
   DEPRECATED_$getNodeTriplet,
   DEPRECATED_$isGridSelection,
+  DEPRECATED_GridCellNode,
+  ElementNode,
   GridSelection,
   LexicalEditor,
 } from "lexical"
 import { invariant } from "../../shared/invariant"
+
+export const $canUnmerge = (): boolean => {
+  const selection = $getSelection()
+  if (
+    ($isRangeSelection(selection) && !selection.isCollapsed()) ||
+    (DEPRECATED_$isGridSelection(selection) && !selection.anchor.is(selection.focus)) ||
+    (!$isRangeSelection(selection) && !DEPRECATED_$isGridSelection(selection))
+  ) {
+    return false
+  }
+  const [cell] = DEPRECATED_$getNodeTriplet(selection.anchor)
+  return cell.__colSpan > 1 || cell.__rowSpan > 1
+}
+
+export const $cellContainsEmptyParagraph = (cell: DEPRECATED_GridCellNode): boolean => {
+  if (cell.getChildrenSize() !== 1) {
+    return false
+  }
+  const firstChild = cell.getFirstChildOrThrow()
+  if (!$isParagraphNode(firstChild) || !firstChild.isEmpty()) {
+    return false
+  }
+  return true
+}
+
+export const $selectLastDescendant = (node: ElementNode): void => {
+  const lastDescendant = node.getLastDescendant()
+  if ($isTextNode(lastDescendant)) {
+    lastDescendant.select()
+  } else if ($isElementNode(lastDescendant)) {
+    lastDescendant.selectEnd()
+  } else if (lastDescendant !== null) {
+    lastDescendant.selectNext()
+  }
+}
 
 type computeSelectionCountProps = {
   columns: number
