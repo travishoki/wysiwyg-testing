@@ -45,7 +45,7 @@ export const EmojiPickerPlugin = () => {
     () =>
       emojis != null
         ? emojis.map(
-            ({ emoji, aliases, tags }) =>
+            ({ aliases, emoji, tags }) =>
               new EmojiOption(aliases[0], emoji, {
                 keywords: [...aliases, ...tags],
               }),
@@ -95,7 +95,7 @@ export const EmojiPickerPlugin = () => {
     <LexicalTypeaheadMenuPlugin
       menuRenderFn={(
         anchorElementRef,
-        { selectedIndex, selectOptionAndCleanUp, setHighlightedIndex },
+        { selectOptionAndCleanUp, selectedIndex, setHighlightedIndex },
       ) => {
         if (anchorElementRef.current == null || options.length === 0) {
           return null

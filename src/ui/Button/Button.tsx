@@ -22,11 +22,11 @@ type ButtonProps = {
 }
 
 export const Button = ({
-  "data-test-id": dataTestId,
   children,
   className,
-  onClick,
+  "data-test-id": dataTestId,
   disabled,
+  onClick,
   small,
   title,
 }: ButtonProps) => {

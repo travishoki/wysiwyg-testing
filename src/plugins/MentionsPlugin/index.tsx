@@ -641,7 +641,7 @@ export const MentionsPlugin = (): JSX.Element | null => {
     <LexicalTypeaheadMenuPlugin<MentionTypeaheadOption>
       menuRenderFn={(
         anchorElementRef,
-        { selectedIndex, selectOptionAndCleanUp, setHighlightedIndex },
+        { selectOptionAndCleanUp, selectedIndex, setHighlightedIndex },
       ) =>
         anchorElementRef.current && results.length
           ? ReactDOM.createPortal(

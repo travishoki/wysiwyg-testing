@@ -28,14 +28,14 @@ export const TableCell = ({
   cellCoordMap,
   cellEditor,
   isEditing,
-  isSelected,
   isPrimarySelected,
-  theme,
-  updateCellsByID,
-  updateTableNode,
+  isSelected,
   rows,
   setSortingOptions,
   sortingOptions,
+  theme,
+  updateCellsByID,
+  updateTableNode,
 }: TableCellProps) => {
   const [showMenu, setShowMenu] = useState(false)
   const menuRootRef = useRef(null)

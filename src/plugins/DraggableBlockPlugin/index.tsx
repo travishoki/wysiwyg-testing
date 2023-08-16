@@ -96,7 +96,7 @@ const getBlockElement = (
       }
       const point = new Point(event.x, event.y)
       const domRect = Rect.fromDOM(elem)
-      const { marginTop, marginBottom } = getCollapsedMargins(elem)
+      const { marginBottom, marginTop } = getCollapsedMargins(elem)
 
       const rect = domRect.generateNewRect({
         bottom: domRect.bottom + marginBottom,
@@ -106,8 +106,8 @@ const getBlockElement = (
       })
 
       const {
+        reason: { isOnBottomSide, isOnTopSide },
         result,
-        reason: { isOnTopSide, isOnBottomSide },
       } = rect.contains(point)
 
       if (result) {
@@ -180,11 +180,11 @@ const setTargetLine = (
   mouseY: number,
   anchorElem: HTMLElement,
 ) => {
-  const { top: targetBlockElemTop, height: targetBlockElemHeight } =
+  const { height: targetBlockElemHeight, top: targetBlockElemTop } =
     targetBlockElem.getBoundingClientRect()
   const { top: anchorTop, width: anchorWidth } = anchorElem.getBoundingClientRect()
 
-  const { marginTop, marginBottom } = getCollapsedMargins(targetBlockElem)
+  const { marginBottom, marginTop } = getCollapsedMargins(targetBlockElem)
   let lineTop = targetBlockElemTop
   if (mouseY >= targetBlockElemTop) {
     lineTop += targetBlockElemHeight + marginBottom / 2
@@ -289,7 +289,7 @@ const useDraggableBlockMenu = (
       if (isFileTransfer) {
         return false
       }
-      const { target, dataTransfer, pageY } = event
+      const { dataTransfer, pageY, target } = event
       const dragData = dataTransfer?.getData(DRAG_DATA_FORMAT) || ""
       const draggedNode = $getNodeByKey(dragData)
       if (!draggedNode) {

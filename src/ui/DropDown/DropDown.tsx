@@ -24,12 +24,12 @@ type DropDownProps = {
 }
 
 export const DropDown = ({
-  disabled = false,
-  buttonLabel,
   buttonAriaLabel,
   buttonClassName,
   buttonIconClassName,
+  buttonLabel,
   children,
+  disabled = false,
   stopCloseOnClickSelf,
 }: DropDownProps) => {
   const dropDownRef = useRef<HTMLDivElement>(null)
@@ -48,7 +48,7 @@ export const DropDown = ({
     const dropDown = dropDownRef.current
 
     if (showDropDown && button !== null && dropDown !== null) {
-      const { top, left } = button.getBoundingClientRect()
+      const { left, top } = button.getBoundingClientRect()
       dropDown.style.top = `${top + button.offsetHeight + dropDownPadding}px`
       dropDown.style.left = `${Math.min(left, window.innerWidth - dropDown.offsetWidth - 20)}px`
     }

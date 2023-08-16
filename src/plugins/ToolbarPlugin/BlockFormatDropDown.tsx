@@ -28,10 +28,10 @@ type BlockFormatDropDownProps = {
 }
 
 export const BlockFormatDropDown = ({
-  editor,
-  blockType,
   _rootType,
+  blockType,
   disabled = false,
+  editor,
 }: BlockFormatDropDownProps) => {
   const formatParagraph = () => {
     editor.update(() => {

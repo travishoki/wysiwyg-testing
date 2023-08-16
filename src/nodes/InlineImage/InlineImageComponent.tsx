@@ -58,14 +58,14 @@ type InlineImageComponentProps = {
 }
 
 const InlineImageComponent = ({
-  src,
   altText,
-  nodeKey,
-  width,
-  height,
-  showCaption,
   caption,
+  height,
+  nodeKey,
   position,
+  showCaption,
+  src,
+  width,
 }: InlineImageComponentProps) => {
   const [modal, showModal] = useModal()
   const imageRef = useRef<null | HTMLImageElement>(null)

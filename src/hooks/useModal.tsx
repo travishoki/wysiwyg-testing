@@ -28,7 +28,7 @@ export const useModal = (): [
     if (modalContent === null) {
       return null
     }
-    const { title, content, closeOnClickOutside } = modalContent
+    const { closeOnClickOutside, content, title } = modalContent
 
     return (
       <Modal closeOnClickOutside={closeOnClickOutside} onClose={onClose} title={title}>

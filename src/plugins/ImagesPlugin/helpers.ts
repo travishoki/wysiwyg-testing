@@ -123,7 +123,7 @@ const getDragImageData = (event: DragEvent): null | InsertImagePayload => {
   if (!dragData) {
     return null
   }
-  const { type, data } = JSON.parse(dragData)
+  const { data, type } = JSON.parse(dragData)
   if (type !== "image") {
     return null
   }

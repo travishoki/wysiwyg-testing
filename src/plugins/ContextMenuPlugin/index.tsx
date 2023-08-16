@@ -121,7 +121,7 @@ export const ContextMenuPlugin = () => {
     <LexicalContextMenuPlugin
       menuRenderFn={(
         anchorElementRef,
-        { selectedIndex, options: _options, selectOptionAndCleanUp, setHighlightedIndex },
+        { options: _options, selectOptionAndCleanUp, selectedIndex, setHighlightedIndex },
         { setMenuRef },
       ) =>
         anchorElementRef.current

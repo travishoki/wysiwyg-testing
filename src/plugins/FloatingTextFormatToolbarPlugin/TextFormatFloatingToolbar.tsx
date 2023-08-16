@@ -27,16 +27,16 @@ type TextFormatFloatingToolbarProps = {
 }
 
 export const TextFormatFloatingToolbar = ({
-  editor,
   anchorElem,
-  isLink,
+  editor,
   isBold,
-  isItalic,
-  isUnderline,
   isCode,
+  isItalic,
+  isLink,
   isStrikethrough,
   isSubscript,
   isSuperscript,
+  isUnderline,
 }: TextFormatFloatingToolbarProps) => {
   const popupCharStylesEditorRef = useRef<HTMLDivElement | null>(null)
 

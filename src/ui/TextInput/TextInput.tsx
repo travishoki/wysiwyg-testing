@@ -20,12 +20,12 @@ type TextInputProps = Readonly<{
 }>
 
 export const TextInput = ({
+  "data-test-id": dataTestId,
   label,
-  value,
   onChange,
   placeholder = "",
-  "data-test-id": dataTestId,
   type = "text",
+  value,
 }: TextInputProps) => {
   return (
     <div className="Input__wrapper">

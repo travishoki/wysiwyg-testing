@@ -31,15 +31,15 @@ type ImageResizerProps = {
 }
 
 export const ImageResizer = ({
-  onResizeStart,
-  onResizeEnd,
   buttonRef,
+  captionsEnabled,
+  editor,
   imageRef,
   maxWidth,
-  editor,
-  showCaption,
+  onResizeEnd,
+  onResizeStart,
   setShowCaption,
-  captionsEnabled,
+  showCaption,
 }: ImageResizerProps) => {
   const controlWrapperRef = useRef<HTMLDivElement>(null)
   const userSelect = useRef({
@@ -124,7 +124,7 @@ export const ImageResizer = ({
 
     if (image !== null && controlWrapper !== null) {
       event.preventDefault()
-      const { width, height } = image.getBoundingClientRect()
+      const { height, width } = image.getBoundingClientRect()
       const positioning = positioningRef.current
       positioning.startWidth = width
       positioning.startHeight = height

@@ -48,7 +48,7 @@ export const AutoEmbedPlugin = () => {
         getMenuOptions={getMenuOptions}
         menuRenderFn={(
           anchorElementRef,
-          { selectedIndex, options, selectOptionAndCleanUp, setHighlightedIndex },
+          { options, selectOptionAndCleanUp, selectedIndex, setHighlightedIndex },
         ) =>
           anchorElementRef.current
             ? ReactDOM.createPortal(

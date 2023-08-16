@@ -18,14 +18,14 @@ type TableActionMenuProps = {
 
 export const TableActionMenu = ({
   cell,
-  rows,
   cellCoordMap,
   menuElem,
-  updateCellsByID,
   onClose,
-  updateTableNode,
+  rows,
   setSortingOptions,
   sortingOptions,
+  updateCellsByID,
+  updateTableNode,
 }: TableActionMenuProps) => {
   const dropDownRef = useRef<null | HTMLDivElement>(null)
 

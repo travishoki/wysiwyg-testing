@@ -70,7 +70,7 @@ const getPrettierOptions = (lang: string): Options => {
   return options
 }
 
-export const PrettierButton = ({ lang, editor, getCodeDOMNode }: PrettierButtonProps) => {
+export const PrettierButton = ({ editor, getCodeDOMNode, lang }: PrettierButtonProps) => {
   const [syntaxError, setSyntaxError] = useState<string>("")
   const [tipsVisible, setTipsVisible] = useState<boolean>(false)
 

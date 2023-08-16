@@ -229,7 +229,7 @@ const getSelectedIDs = (
   if (rect === null) {
     return []
   }
-  const { startX, endY, endX, startY } = rect
+  const { endX, endY, startX, startY } = rect
   const ids = []
 
   for (let x = startX; x <= endX; x++) {
@@ -245,7 +245,7 @@ const extractCellsFromRows = (
   rows: Rows,
   rect: { endX: number; endY: number, startX: number; startY: number; },
 ): Rows => {
-  const { startX, endY, endX, startY } = rect
+  const { endX, endY, startX, startY } = rect
   const newRows: Rows = []
 
   for (let y = startY; y <= endY; y++) {
@@ -503,7 +503,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
       if (resizingID !== null) {
         const tableResizerRulerElem = tableResizerRulerRef.current
         if (tableResizerRulerElem !== null) {
-          const { size, point } = resizeMeasureRef.current
+          const { point, size } = resizeMeasureRef.current
           const diff = event.clientX - point
           const newWidth = size + diff
           let x = event.clientX - tableRect.x
@@ -521,7 +521,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
       }
       if (!isEditing) {
         const { clientX, clientY } = event
-        const { width, x, y, height } = tableRect
+        const { height, width, x, y } = tableRect
         const isOnRightEdge =
           clientX > x + width * 0.9 && clientX < x + width + 40 && !mouseDownRef.current
         setShowAddColumns(isOnRightEdge)
@@ -550,7 +550,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
 
     const handlePointerUp = (event: PointerEvent) => {
       if (resizingID !== null) {
-        const { size, point } = resizeMeasureRef.current
+        const { point, size } = resizeMeasureRef.current
         const diff = event.clientX - point
         let newWidth = size + diff
         if (newWidth < 10) {

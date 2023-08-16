@@ -10,10 +10,10 @@ type AutoEmbedMenuProps = {
 }
 
 export const AutoEmbedMenu = ({
-  options,
-  selectedItemIndex,
   onOptionClick,
   onOptionMouseEnter,
+  options,
+  selectedItemIndex,
 }: AutoEmbedMenuProps) => {
   return (
     <div className="typeahead-popover">

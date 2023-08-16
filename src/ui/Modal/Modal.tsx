@@ -19,7 +19,7 @@ type ModalProps = {
   title: string
 }
 
-export const Modal = ({ onClose, children, title, closeOnClickOutside = false }: ModalProps) => {
+export const Modal = ({ children, closeOnClickOutside = false, onClose, title }: ModalProps) => {
   return createPortal(
     <PortalImpl closeOnClickOutside={closeOnClickOutside} onClose={onClose} title={title}>
       {children}

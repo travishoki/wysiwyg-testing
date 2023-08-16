@@ -23,10 +23,10 @@ type DropdownColorPickerProps = {
 }
 
 export const DropdownColorPicker = ({
-  disabled = false,
-  stopCloseOnClickSelf = true,
   color,
+  disabled = false,
   onChange,
+  stopCloseOnClickSelf = true,
   ...rest
 }: DropdownColorPickerProps) => {
   return (

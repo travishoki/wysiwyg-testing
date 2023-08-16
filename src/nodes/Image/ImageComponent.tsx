@@ -63,16 +63,16 @@ type ImageComponentProps = {
 }
 
 const ImageComponent = ({
-  src,
   altText,
-  nodeKey,
-  width,
-  height,
-  maxWidth,
-  resizable,
-  showCaption,
   caption,
   captionsEnabled,
+  height,
+  maxWidth,
+  nodeKey,
+  resizable,
+  showCaption,
+  src,
+  width,
 }: ImageComponentProps) => {
   const imageRef = useRef<null | HTMLImageElement>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)

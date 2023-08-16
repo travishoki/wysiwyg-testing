@@ -35,7 +35,7 @@ export const TablePlugin = ({
 
     return editor.registerCommand<InsertTableCommandPayload>(
       INSERT_NEW_TABLE_COMMAND,
-      ({ columns, rows, includeHeaders }) => {
+      ({ columns, includeHeaders, rows }) => {
         const tableNode = $createTableNodeWithDimensions(
           Number(rows),
           Number(columns),

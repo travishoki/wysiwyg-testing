@@ -52,7 +52,7 @@ const hex2rgb = (hex: string): RGB => {
   }
 }
 
-const rgb2hsv = ({ r, g, b }: RGB): HSV => {
+const rgb2hsv = ({ b, g, r }: RGB): HSV => {
   r /= 255
   g /= 255
   b /= 255

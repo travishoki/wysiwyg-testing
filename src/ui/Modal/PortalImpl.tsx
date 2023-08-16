@@ -8,7 +8,7 @@ type PortalImplProps = {
   title: string
 }
 
-export const PortalImpl = ({ onClose, children, title, closeOnClickOutside }: PortalImplProps) => {
+export const PortalImpl = ({ children, closeOnClickOutside, onClose, title }: PortalImplProps) => {
   const modalRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

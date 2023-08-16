@@ -64,8 +64,8 @@ export const CodeActionMenuContainer = ({ anchorElem }: CodeActionMenuContainerP
       })
 
       if (codeNode) {
-        const { y: editorElemY, right: editorElemRight } = anchorElem.getBoundingClientRect()
-        const { y, right } = codeDOMNode.getBoundingClientRect()
+        const { right: editorElemRight, y: editorElemY } = anchorElem.getBoundingClientRect()
+        const { right, y } = codeDOMNode.getBoundingClientRect()
         setLang(_lang)
         setShown(true)
         setPosition({

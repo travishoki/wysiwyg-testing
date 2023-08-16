@@ -10,10 +10,10 @@ type ContextMenuProps = {
 }
 
 export const ContextMenu = ({
-  options,
-  selectedItemIndex,
   onOptionClick,
   onOptionMouseEnter,
+  options,
+  selectedItemIndex,
 }: ContextMenuProps) => {
   return (
     <div className="typeahead-popover">

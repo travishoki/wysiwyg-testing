@@ -256,7 +256,7 @@ export const TableCellResizer = ({ editor }: TableCellResizerProps) => {
 
   const getResizers = useCallback(() => {
     if (activeCell) {
-      const { height, width, top, left } = activeCell.elem.getBoundingClientRect()
+      const { height, left, top, width } = activeCell.elem.getBoundingClientRect()
 
       const styles = {
         bottom: {

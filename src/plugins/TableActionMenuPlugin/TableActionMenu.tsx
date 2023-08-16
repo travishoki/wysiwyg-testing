@@ -49,12 +49,12 @@ type TableCellActionMenuProps = Readonly<{
 }>
 
 export const TableActionMenu = ({
-  onClose,
-  tableCellNode: _tableCellNode,
-  setIsMenuOpen,
-  contextRef,
   cellMerge,
+  contextRef,
+  onClose,
+  setIsMenuOpen,
   showColorPickerModal,
+  tableCellNode: _tableCellNode,
 }: TableCellActionMenuProps) => {
   const [editor] = useLexicalComposerContext()
   const dropDownRef = useRef<HTMLDivElement | null>(null)

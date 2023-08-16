@@ -55,7 +55,7 @@ interface UpdateInlineImagePayload {
 
 const convertInlineImageElement = (domNode: Node): null | DOMConversionOutput => {
   if (domNode instanceof HTMLImageElement) {
-    const { alt: altText, src, width, height } = domNode
+    const { alt: altText, height, src, width } = domNode
     const node = $createInlineImageNode({ altText, height, src, width })
 
     return { node }
@@ -104,7 +104,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
   }
 
   static importJSON(serializedNode: SerializedInlineImageNode): InlineImageNode {
-    const { altText, height, width, caption, src, showCaption, position } = serializedNode
+    const { altText, caption, height, position, showCaption, src, width } = serializedNode
     const node = $createInlineImageNode({
       altText,
       height,
@@ -214,7 +214,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
 
   update(payload: UpdateInlineImagePayload): void {
     const writable = this.getWritable()
-    const { altText, showCaption, position } = payload
+    const { altText, position, showCaption } = payload
     if (altText !== undefined) {
       writable.__altText = altText
     }
@@ -270,13 +270,13 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
 
 export const $createInlineImageNode = ({
   altText,
-  position,
+  caption,
   height,
+  key,
+  position,
+  showCaption,
   src,
   width,
-  showCaption,
-  caption,
-  key,
 }: InlineImagePayload): InlineImageNode => {
   return $applyNodeReplacement(
     new InlineImageNode(src, altText, position, width, height, showCaption, caption, key),

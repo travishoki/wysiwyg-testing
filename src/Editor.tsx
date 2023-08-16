@@ -64,13 +64,13 @@ export const Editor = () => {
   const {
     settings: {
       isAutocomplete,
-      isMaxLength,
       isCharLimit,
       isCharLimitUtf8,
-      showTableOfContents,
+      isMaxLength,
       shouldUseLexicalContextMenu,
-      tableCellMerge,
+      showTableOfContents,
       tableCellBackgroundColor,
+      tableCellMerge,
     },
   } = useSettings()
   const isEditable = useLexicalEditable()

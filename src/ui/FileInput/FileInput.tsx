@@ -18,9 +18,9 @@ type FileInputProps = Readonly<{
 
 export const FileInput = ({
   accept,
+  "data-test-id": dataTestId,
   label,
   onChange,
-  "data-test-id": dataTestId,
 }: FileInputProps) => {
   return (
     <div className="Input__wrapper">

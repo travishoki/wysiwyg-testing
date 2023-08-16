@@ -1,6 +1,6 @@
 module.exports = {
   extends: ["react-app"],
-  plugins: ["typescript-sort-keys"],
+  plugins: ["typescript-sort-keys", "sort-destructure-keys"],
   rules: {
     /** General */
     // "sort-keys": "off", // Hoki Overriden
@@ -113,14 +113,15 @@ module.exports = {
     "no-else-return": "error",
     "no-duplicate-imports": "error",
 
-    // Nice to have eventually
-    // "no-param-reassign": "error",
-    // "no-nested-ternary": "error",
-
     // Extra Formatting
     "padding-line-between-statements": [1, { blankLine: "always", prev: "*", next: "return" }],
     "react/jsx-sort-props": ["error"],
     "typescript-sort-keys/interface": "error",
+    "sort-destructure-keys/sort-destructure-keys": 2,
+
+    // Nice to have eventually
+    // "no-param-reassign": "error",
+    // "no-nested-ternary": "error",
   },
   overrides: [
     /** Composer */

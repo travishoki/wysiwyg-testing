@@ -58,14 +58,14 @@ export class Rect {
     return Math.abs(this._bottom - this._top)
   }
 
-  public equals({ top, left, bottom, right }: Rect): boolean {
+  public equals({ bottom, left, right, top }: Rect): boolean {
     return (
       top === this._top && bottom === this._bottom && left === this._left && right === this._right
     )
   }
 
   public contains({ x, y }: Point): ContainsPointReturn
-  public contains({ top, left, bottom, right }: Rect): boolean
+  public contains({ bottom, left, right, top }: Rect): boolean
   public contains(target: Point | Rect): boolean | ContainsPointReturn {
     if (isPoint(target)) {
       const { x, y } = target
@@ -88,7 +88,7 @@ export class Rect {
       }
     }
 
-    const { top, left, bottom, right } = target
+    const { bottom, left, right, top } = target
 
     return (
       top >= this._top &&
@@ -103,8 +103,8 @@ export class Rect {
   }
 
   public intersectsWith(rect: Rect): boolean {
-    const { left: x1, top: y1, width: w1, height: h1 } = rect
-    const { left: x2, top: y2, width: w2, height: h2 } = this
+    const { height: h1, left: x1, top: y1, width: w1 } = rect
+    const { height: h2, left: x2, top: y2, width: w2 } = this
     const maxX = x1 + w1 >= x2 + w2 ? x1 + w1 : x2 + w2
     const maxY = y1 + h1 >= y2 + h2 ? y1 + h1 : y2 + h2
     const minX = x1 <= x2 ? x1 : x2
@@ -114,10 +114,10 @@ export class Rect {
   }
 
   public generateNewRect({
-    left = this.left,
-    top = this.top,
-    right = this.right,
     bottom = this.bottom,
+    left = this.left,
+    right = this.right,
+    top = this.top,
   }): Rect {
     return new Rect(left, top, right, bottom)
   }
@@ -131,14 +131,14 @@ export class Rect {
   }
 
   static fromPoints(startPoint: Point, endPoint: Point): Rect {
-    const { y: top, x: left } = startPoint
-    const { y: bottom, x: right } = endPoint
+    const { x: left, y: top } = startPoint
+    const { x: right, y: bottom } = endPoint
 
     return Rect.fromLTRB(left, top, right, bottom)
   }
 
   static fromDOM(dom: HTMLElement): Rect {
-    const { top, width, left, height } = dom.getBoundingClientRect()
+    const { height, left, top, width } = dom.getBoundingClientRect()
 
     return Rect.fromLWTH(left, width, top, height)
   }

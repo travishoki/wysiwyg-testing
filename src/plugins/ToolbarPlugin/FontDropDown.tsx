@@ -36,7 +36,7 @@ type FontDropDownProps = {
   value: string
 }
 
-export const FontDropDown = ({ editor, value, styleName, disabled = false }: FontDropDownProps) => {
+export const FontDropDown = ({ disabled = false, editor, styleName, value }: FontDropDownProps) => {
   const handleClick = useCallback(
     (option: string) => {
       editor.update(() => {

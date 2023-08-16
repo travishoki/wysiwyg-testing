@@ -247,7 +247,7 @@ export const ComponentPickerPlugin = () => {
       <LexicalTypeaheadMenuPlugin<ComponentPickerOption>
         menuRenderFn={(
           anchorElementRef,
-          { selectedIndex, selectOptionAndCleanUp, setHighlightedIndex },
+          { selectOptionAndCleanUp, selectedIndex, setHighlightedIndex },
         ) =>
           anchorElementRef.current && options.length
             ? ReactDOM.createPortal(

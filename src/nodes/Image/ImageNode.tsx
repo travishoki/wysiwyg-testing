@@ -44,7 +44,7 @@ export interface ImagePayload {
 
 const convertImageElement = (domNode: Node): null | DOMConversionOutput => {
   if (domNode instanceof HTMLImageElement) {
-    const { alt: altText, src, width, height } = domNode
+    const { alt: altText, height, src, width } = domNode
     const node = $createImageNode({ altText, height, src, width })
 
     return { node }
@@ -96,7 +96,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
   }
 
   static importJSON(serializedNode: SerializedImageNode): ImageNode {
-    const { altText, height, width, maxWidth, caption, src, showCaption } = serializedNode
+    const { altText, caption, height, maxWidth, showCaption, src, width } = serializedNode
     const node = $createImageNode({
       altText,
       height,
@@ -227,14 +227,14 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
 
 export const $createImageNode = ({
   altText,
-  height,
-  maxWidth = 500,
+  caption,
   captionsEnabled,
+  height,
+  key,
+  maxWidth = 500,
+  showCaption,
   src,
   width,
-  showCaption,
-  caption,
-  key,
 }: ImagePayload): ImageNode => {
   return $applyNodeReplacement(
     new ImageNode(

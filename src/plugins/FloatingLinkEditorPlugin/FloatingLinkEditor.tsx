@@ -26,10 +26,10 @@ type FloatingLinkEditorProps = {
 }
 
 export const FloatingLinkEditor = ({
+  anchorElem,
   editor,
   isLink,
   setIsLink,
-  anchorElem,
 }: FloatingLinkEditorProps) => {
   const editorRef = useRef<HTMLDivElement | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
