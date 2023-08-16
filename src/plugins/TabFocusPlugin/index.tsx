@@ -16,7 +16,7 @@ const TAB_TO_FOCUS_INTERVAL = 100
 let lastTabKeyDownTimestamp = 0
 let hasRegisteredKeyDownListener = false
 
-function registerKeyTimeStampTracker() {
+const registerKeyTimeStampTracker = () => {
   window.addEventListener(
     "keydown",
     (event: KeyboardEvent) => {

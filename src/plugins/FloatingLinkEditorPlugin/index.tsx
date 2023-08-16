@@ -36,7 +36,7 @@ type FloatingLinkEditorProps = {
   anchorElem: HTMLElement
 }
 
-function FloatingLinkEditor({ editor, isLink, setIsLink, anchorElem }: FloatingLinkEditorProps) {
+const FloatingLinkEditor = ({ editor, isLink, setIsLink, anchorElem }: FloatingLinkEditorProps) => {
   const editorRef = useRef<HTMLDivElement | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const [linkUrl, setLinkUrl] = useState("")
@@ -245,10 +245,10 @@ function FloatingLinkEditor({ editor, isLink, setIsLink, anchorElem }: FloatingL
   )
 }
 
-function useFloatingLinkEditorToolbar(
+const useFloatingLinkEditorToolbar = (
   editor: LexicalEditor,
   anchorElem: HTMLElement,
-): JSX.Element | null {
+): JSX.Element | null => {
   const [activeEditor, setActiveEditor] = useState(editor)
   const [isLink, setIsLink] = useState(false)
 

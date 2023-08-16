@@ -28,7 +28,7 @@ type CodeActionMenuContainerProps = {
   anchorElem: HTMLElement
 }
 
-function CodeActionMenuContainer({ anchorElem }: CodeActionMenuContainerProps) {
+const CodeActionMenuContainer = ({ anchorElem }: CodeActionMenuContainerProps) => {
   const [editor] = useLexicalComposerContext()
 
   const [lang, setLang] = useState("")
@@ -41,7 +41,7 @@ function CodeActionMenuContainer({ anchorElem }: CodeActionMenuContainerProps) {
   const codeSetRef = useRef<Set<string>>(new Set())
   const codeDOMNodeRef = useRef<HTMLElement | null>(null)
 
-  function getCodeDOMNode(): HTMLElement | null {
+  const getCodeDOMNode = (): HTMLElement | null => {
     return codeDOMNodeRef.current
   }
 
@@ -138,10 +138,12 @@ function CodeActionMenuContainer({ anchorElem }: CodeActionMenuContainerProps) {
   )
 }
 
-function getMouseInfo(event: MouseEvent): {
+type getMouseInfoProps = {
   codeDOMNode: HTMLElement | null
   isOutside: boolean
-} {
+}
+
+const getMouseInfo = (event: MouseEvent): getMouseInfoProps => {
   const target = event.target
 
   if (target && target instanceof HTMLElement) {

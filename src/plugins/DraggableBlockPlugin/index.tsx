@@ -38,7 +38,7 @@ const Indeterminate = 0
 
 let prevIndex = Infinity
 
-function getCurrentIndex(keysLength: number): number {
+const getCurrentIndex = (keysLength: number): number => {
   if (keysLength === 0) {
     return Infinity
   }
@@ -49,14 +49,16 @@ function getCurrentIndex(keysLength: number): number {
   return Math.floor(keysLength / 2)
 }
 
-function getTopLevelNodeKeys(editor: LexicalEditor): string[] {
+const getTopLevelNodeKeys = (editor: LexicalEditor): string[] => {
   return editor.getEditorState().read(() => $getRoot().getChildrenKeys())
 }
 
-function getCollapsedMargins(elem: HTMLElement): {
+const getCollapsedMargins = (
+  elem: HTMLElement,
+): {
   marginTop: number
   marginBottom: number
-} {
+} => {
   const getMargin = (element: Element | null, margin: "marginTop" | "marginBottom"): number =>
     element ? parseFloat(window.getComputedStyle(element)[margin]) : 0
 
@@ -69,12 +71,12 @@ function getCollapsedMargins(elem: HTMLElement): {
   return { marginBottom: collapsedBottomMargin, marginTop: collapsedTopMargin }
 }
 
-function getBlockElement(
+const getBlockElement = (
   anchorElem: HTMLElement,
   editor: LexicalEditor,
   event: MouseEvent,
   useEdgeAsDefault = false,
-): HTMLElement | null {
+): HTMLElement | null => {
   const anchorElementRect = anchorElem.getBoundingClientRect()
   const topLevelNodeKeys = getTopLevelNodeKeys(editor)
 
@@ -154,15 +156,15 @@ function getBlockElement(
   return blockElem
 }
 
-function isOnMenu(element: HTMLElement): boolean {
+const isOnMenu = (element: HTMLElement): boolean => {
   return !!element.closest(`.${DRAGGABLE_BLOCK_MENU_CLASSNAME}`)
 }
 
-function setMenuPosition(
+const setMenuPosition = (
   targetElem: HTMLElement | null,
   floatingElem: HTMLElement,
   anchorElem: HTMLElement,
-) {
+) => {
   if (!targetElem) {
     floatingElem.style.opacity = "0"
     floatingElem.style.transform = "translate(-10000px, -10000px)"
@@ -185,7 +187,7 @@ function setMenuPosition(
   floatingElem.style.transform = `translate(${left}px, ${top}px)`
 }
 
-function setDragImage(dataTransfer: DataTransfer, draggableBlockElem: HTMLElement) {
+const setDragImage = (dataTransfer: DataTransfer, draggableBlockElem: HTMLElement) => {
   const { transform } = draggableBlockElem.style
 
   // Remove dragImage borders
@@ -197,12 +199,12 @@ function setDragImage(dataTransfer: DataTransfer, draggableBlockElem: HTMLElemen
   })
 }
 
-function setTargetLine(
+const setTargetLine = (
   targetLineElem: HTMLElement,
   targetBlockElem: HTMLElement,
   mouseY: number,
   anchorElem: HTMLElement,
-) {
+) => {
   const { top: targetBlockElemTop, height: targetBlockElemHeight } =
     targetBlockElem.getBoundingClientRect()
   const { top: anchorTop, width: anchorWidth } = anchorElem.getBoundingClientRect()
@@ -223,18 +225,18 @@ function setTargetLine(
   targetLineElem.style.opacity = ".4"
 }
 
-function hideTargetLine(targetLineElem: HTMLElement | null) {
+const hideTargetLine = (targetLineElem: HTMLElement | null) => {
   if (targetLineElem) {
     targetLineElem.style.opacity = "0"
     targetLineElem.style.transform = "translate(-10000px, -10000px)"
   }
 }
 
-function useDraggableBlockMenu(
+const useDraggableBlockMenu = (
   editor: LexicalEditor,
   anchorElem: HTMLElement,
   isEditable: boolean,
-) {
+) => {
   const scrollerElem = anchorElem.parentElement
 
   const menuRef = useRef<HTMLDivElement>(null)
@@ -243,7 +245,7 @@ function useDraggableBlockMenu(
   const [draggableBlockElem, setDraggableBlockElem] = useState<HTMLElement | null>(null)
 
   useEffect(() => {
-    function onMouseMove(event: MouseEvent) {
+    const onMouseMove = (event: MouseEvent) => {
       const target = event.target
       if (!isHTMLElement(target)) {
         setDraggableBlockElem(null)
@@ -259,7 +261,7 @@ function useDraggableBlockMenu(
       setDraggableBlockElem(_draggableBlockElem)
     }
 
-    function onMouseLeave() {
+    const onMouseLeave = () => {
       setDraggableBlockElem(null)
     }
 
@@ -279,7 +281,7 @@ function useDraggableBlockMenu(
   }, [anchorElem, draggableBlockElem])
 
   useEffect(() => {
-    function onDragover(event: DragEvent): boolean {
+    const onDragover = (event: DragEvent): boolean => {
       if (!isDraggingBlockRef.current) {
         return false
       }
@@ -302,7 +304,7 @@ function useDraggableBlockMenu(
       return true
     }
 
-    function onDrop(event: DragEvent): boolean {
+    const onDrop = (event: DragEvent): boolean => {
       if (!isDraggingBlockRef.current) {
         return false
       }
@@ -359,7 +361,7 @@ function useDraggableBlockMenu(
     )
   }, [anchorElem, editor])
 
-  function onDragStart(event: ReactDragEvent<HTMLDivElement>): void {
+  const onDragStart = (event: ReactDragEvent<HTMLDivElement>): void => {
     const dataTransfer = event.dataTransfer
     if (!dataTransfer || !draggableBlockElem) {
       return
@@ -376,7 +378,7 @@ function useDraggableBlockMenu(
     dataTransfer.setData(DRAG_DATA_FORMAT, nodeKey)
   }
 
-  function onDragEnd(): void {
+  const onDragEnd = (): void => {
     isDraggingBlockRef.current = false
     hideTargetLine(targetLineRef.current)
   }

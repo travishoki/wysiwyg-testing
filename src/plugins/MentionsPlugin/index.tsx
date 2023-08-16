@@ -505,7 +505,7 @@ const dummyLookupService = {
   },
 }
 
-function useMentionLookupService(mentionString: string | null) {
+const useMentionLookupService = (mentionString: string | null) => {
   const [results, setResults] = useState<Array<string>>([])
 
   useEffect(() => {

@@ -3,7 +3,7 @@ import type { Position } from "./InlineImageNode"
 
 const imageCache = new Set()
 
-function useSuspenseImage(src: string) {
+const useSuspenseImage = (src: string) => {
   if (!imageCache.has(src)) {
     throw new Promise((resolve) => {
       const img = new Image()

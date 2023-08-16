@@ -40,9 +40,9 @@ export const uuid = Math.random()
   .substr(0, 5)
 
 // TODO lookup should be custom
-function $search(
+const $search = (
   selection: null | RangeSelection | NodeSelection | GridSelection,
-): [boolean, string] {
+): [boolean, string] => {
   if (!$isRangeSelection(selection) || !selection.isCollapsed()) {
     return [false, ""]
   }
@@ -86,7 +86,8 @@ export const AutocompletePlugin = (): JSX.Element | null => {
     let lastMatch: null | string = null
     let lastSuggestion: null | string = null
     let searchPromise: null | SearchPromise = null
-    function $clearSuggestion() {
+
+    const $clearSuggestion = () => {
       const autocompleteNode =
         autocompleteNodeKey !== null ? $getNodeByKey(autocompleteNodeKey) : null
       if (autocompleteNode !== null && autocompleteNode.isAttached()) {
@@ -101,7 +102,11 @@ export const AutocompletePlugin = (): JSX.Element | null => {
       lastSuggestion = null
       setSuggestion(null)
     }
-    function updateAsyncSuggestion(refSearchPromise: SearchPromise, newSuggestion: null | string) {
+
+    const updateAsyncSuggestion = (
+      refSearchPromise: SearchPromise,
+      newSuggestion: null | string,
+    ) => {
       if (searchPromise !== refSearchPromise || newSuggestion === null) {
         // Outdated or no suggestion
         return
@@ -126,14 +131,15 @@ export const AutocompletePlugin = (): JSX.Element | null => {
       )
     }
 
-    function handleAutocompleteNodeTransform(node: AutocompleteNode) {
+    const handleAutocompleteNodeTransform = (node: AutocompleteNode) => {
       const key = node.getKey()
       if (node.__uuid === uuid && key !== autocompleteNodeKey) {
         // Max one Autocomplete node per session
         $clearSuggestion()
       }
     }
-    function handleUpdate() {
+
+    const handleUpdate = () => {
       editor.update(() => {
         const selection = $getSelection()
         const [hasMatch, match] = $search(selection)
@@ -158,7 +164,8 @@ export const AutocompletePlugin = (): JSX.Element | null => {
         lastMatch = match
       })
     }
-    function $handleAutocompleteIntent(): boolean {
+
+    const $handleAutocompleteIntent = (): boolean => {
       if (lastSuggestion === null || autocompleteNodeKey === null) {
         return false
       }
@@ -172,21 +179,23 @@ export const AutocompletePlugin = (): JSX.Element | null => {
       $clearSuggestion()
       return true
     }
-    function $handleKeypressCommand(e: Event) {
+
+    const $handleKeypressCommand = (e: Event) => {
       if ($handleAutocompleteIntent()) {
         e.preventDefault()
         return true
       }
       return false
     }
-    function handleSwipeRight(_force: number, e: TouchEvent) {
+
+    const handleSwipeRight = (_force: number, e: TouchEvent) => {
       editor.update(() => {
         if ($handleAutocompleteIntent()) {
           e.preventDefault()
         }
       })
     }
-    function unmountSuggestion() {
+    const unmountSuggestion = () => {
       editor.update(() => {
         $clearSuggestion()
       })

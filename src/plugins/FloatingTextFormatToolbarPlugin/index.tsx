@@ -41,7 +41,7 @@ type TextFormatFloatingToolbarProps = {
   isUnderline: boolean
 }
 
-function TextFormatFloatingToolbar({
+const TextFormatFloatingToolbar = ({
   editor,
   anchorElem,
   isLink,
@@ -52,7 +52,7 @@ function TextFormatFloatingToolbar({
   isStrikethrough,
   isSubscript,
   isSuperscript,
-}: TextFormatFloatingToolbarProps) {
+}: TextFormatFloatingToolbarProps) => {
   const popupCharStylesEditorRef = useRef<HTMLDivElement | null>(null)
 
   const insertLink = useCallback(() => {
@@ -67,7 +67,7 @@ function TextFormatFloatingToolbar({
     editor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, undefined)
   }
 
-  function mouseMoveListener(e: MouseEvent) {
+  const mouseMoveListener = (e: MouseEvent) => {
     if (popupCharStylesEditorRef?.current && (e.buttons === 1 || e.buttons === 3)) {
       if (popupCharStylesEditorRef.current.style.pointerEvents !== "none") {
         const x = e.clientX
@@ -81,7 +81,8 @@ function TextFormatFloatingToolbar({
       }
     }
   }
-  function mouseUpListener(_e: MouseEvent) {
+
+  const mouseUpListener = (_e: MouseEvent) => {
     if (popupCharStylesEditorRef?.current) {
       if (popupCharStylesEditorRef.current.style.pointerEvents !== "auto") {
         popupCharStylesEditorRef.current.style.pointerEvents = "auto"
@@ -267,10 +268,10 @@ function TextFormatFloatingToolbar({
   )
 }
 
-function useFloatingTextFormatToolbar(
+const useFloatingTextFormatToolbar = (
   editor: LexicalEditor,
   anchorElem: HTMLElement,
-): JSX.Element | null {
+): JSX.Element | null => {
   const [isText, setIsText] = useState(false)
   const [isLink, setIsLink] = useState(false)
   const [isBold, setIsBold] = useState(false)

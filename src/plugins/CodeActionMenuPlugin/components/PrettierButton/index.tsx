@@ -111,7 +111,7 @@ export const PrettierButton = ({ lang, editor, getCodeDOMNode }: Props) => {
     }
   }
 
-  function setError(error: unknown) {
+  const setError = (error: unknown) => {
     if (error instanceof Error) {
       setSyntaxError(error.message)
       setTipsVisible(true)
@@ -120,13 +120,13 @@ export const PrettierButton = ({ lang, editor, getCodeDOMNode }: Props) => {
     }
   }
 
-  function handleMouseEnter() {
+  const handleMouseEnter = () => {
     if (syntaxError !== "") {
       setTipsVisible(true)
     }
   }
 
-  function handleMouseLeave() {
+  const handleMouseLeave = () => {
     if (syntaxError !== "") {
       setTipsVisible(false)
     }

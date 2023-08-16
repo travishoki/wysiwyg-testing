@@ -43,7 +43,7 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
   const selectedIndex = useRef(0)
   const [editor] = useLexicalComposerContext()
 
-  function scrollToNode(key: NodeKey, currIndex: number) {
+  const scrollToNode = (key: NodeKey, currIndex: number) => {
     editor.getEditorState().read(() => {
       const domElement = editor.getElementByKey(key)
       if (domElement !== null) {
@@ -55,7 +55,7 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
   }
 
   useEffect(() => {
-    function scrollCallback() {
+    const scrollCallback = () => {
       if (tableOfContents.length !== 0 && selectedIndex.current < tableOfContents.length - 1) {
         let currentHeading = editor.getElementByKey(tableOfContents[selectedIndex.current][0])
         if (currentHeading !== null) {

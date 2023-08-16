@@ -46,10 +46,12 @@ import { invariant } from "../../shared/invariant"
 import { ColorPicker } from "../../ui/ColorPicker/ColorPicker"
 import type { DEPRECATED_GridCellNode, ElementNode, LexicalEditor } from "lexical"
 
-function computeSelectionCount(selection: GridSelection): {
+type computeSelectionCountProps = {
   columns: number
   rows: number
-} {
+}
+
+const computeSelectionCount = (selection: GridSelection): computeSelectionCountProps => {
   const selectionShape = selection.getShape()
   return {
     columns: selectionShape.toX - selectionShape.fromX + 1,
@@ -59,7 +61,7 @@ function computeSelectionCount(selection: GridSelection): {
 
 // This is important when merging cells as there is no good way to re-merge weird shapes (a result
 // of selecting merged cells and non-merged)
-function isGridSelectionRectangular(selection: GridSelection): boolean {
+const isGridSelectionRectangular = (selection: GridSelection): boolean => {
   const nodes = selection.getNodes()
   const currentRows: Array<number> = []
   let currentRow = null
@@ -96,7 +98,7 @@ function isGridSelectionRectangular(selection: GridSelection): boolean {
   )
 }
 
-function $canUnmerge(): boolean {
+const $canUnmerge = (): boolean => {
   const selection = $getSelection()
   if (
     ($isRangeSelection(selection) && !selection.isCollapsed()) ||
@@ -109,7 +111,7 @@ function $canUnmerge(): boolean {
   return cell.__colSpan > 1 || cell.__rowSpan > 1
 }
 
-function $cellContainsEmptyParagraph(cell: DEPRECATED_GridCellNode): boolean {
+const $cellContainsEmptyParagraph = (cell: DEPRECATED_GridCellNode): boolean => {
   if (cell.getChildrenSize() !== 1) {
     return false
   }
@@ -120,7 +122,7 @@ function $cellContainsEmptyParagraph(cell: DEPRECATED_GridCellNode): boolean {
   return true
 }
 
-function $selectLastDescendant(node: ElementNode): void {
+const $selectLastDescendant = (node: ElementNode): void => {
   const lastDescendant = node.getLastDescendant()
   if ($isTextNode(lastDescendant)) {
     lastDescendant.select()
@@ -131,7 +133,7 @@ function $selectLastDescendant(node: ElementNode): void {
   }
 }
 
-function currentCellBackgroundColor(editor: LexicalEditor): null | string {
+const currentCellBackgroundColor = (editor: LexicalEditor): null | string => {
   return editor.getEditorState().read(() => {
     const selection = $getSelection()
     if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
@@ -153,14 +155,14 @@ type TableCellActionMenuProps = Readonly<{
   cellMerge: boolean
 }>
 
-function TableActionMenu({
+const TableActionMenu = ({
   onClose,
   tableCellNode: _tableCellNode,
   setIsMenuOpen,
   contextRef,
   cellMerge,
   showColorPickerModal,
-}: TableCellActionMenuProps) {
+}: TableCellActionMenuProps) => {
   const [editor] = useLexicalComposerContext()
   const dropDownRef = useRef<HTMLDivElement | null>(null)
   const [tableCellNode, updateTableCellNode] = useState(_tableCellNode)
@@ -235,7 +237,7 @@ function TableActionMenu({
   }, [contextRef, dropDownRef, editor])
 
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         dropDownRef.current != null &&
         contextRef.current != null &&
@@ -580,10 +582,10 @@ type TableCellActionMenuContainerProps = {
   cellMerge: boolean
 }
 
-function TableCellActionMenuContainer({
+const TableCellActionMenuContainer = ({
   anchorElem,
   cellMerge,
-}: TableCellActionMenuContainerProps) {
+}: TableCellActionMenuContainerProps) => {
   const [editor] = useLexicalComposerContext()
 
   const menuButtonRef = useRef(null)
