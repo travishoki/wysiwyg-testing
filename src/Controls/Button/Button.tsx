@@ -1,5 +1,5 @@
 import React from "react"
-import "./Button.css"
+import styles from "./Button.module.scss"
 
 type ButtonProps = {
   onClick: () => void
@@ -7,7 +7,7 @@ type ButtonProps = {
 }
 
 export const Button = ({ onClick, title }: ButtonProps) => (
-  <button className="control-button" onClick={onClick}>
+  <button className={styles["control-button"]} onClick={onClick}>
     {title}
   </button>
 )
