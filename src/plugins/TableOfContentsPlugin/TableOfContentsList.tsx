@@ -114,30 +114,30 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
                 <br />
               </div>
             )
-          } else {
-            return (
-              <div
-                className={`normal-heading-wrapper ${
-                  selectedKey === key ? "selected-heading-wrapper" : ""
-                }`}
-                key={key}
-              >
-                <div
-                  onClick={() => scrollToNode(key, index)}
-                  role="button"
-                  className={indent(tag)}
-                  tabIndex={0}
-                >
-                  <li
-                    className={`normal-heading ${selectedKey === key ? "selected-heading" : ""}
-                    `}
-                  >
-                    {("" + text).length > 27 ? text.substring(0, 27) + "..." : text}
-                  </li>
-                </div>
-              </div>
-            )
           }
+
+          return (
+            <div
+              className={`normal-heading-wrapper ${
+                selectedKey === key ? "selected-heading-wrapper" : ""
+              }`}
+              key={key}
+            >
+              <div
+                onClick={() => scrollToNode(key, index)}
+                role="button"
+                className={indent(tag)}
+                tabIndex={0}
+              >
+                <li
+                  className={`normal-heading ${selectedKey === key ? "selected-heading" : ""}
+                    `}
+                >
+                  {("" + text).length > 27 ? text.substring(0, 27) + "..." : text}
+                </li>
+              </div>
+            </div>
+          )
         })}
       </ul>
     </div>

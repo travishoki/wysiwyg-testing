@@ -12,5 +12,6 @@ export const getCodeLanguageOptions = (): [string, string][] => {
 
 export const dropDownActiveClass = (active: boolean) => {
   if (active) return "active dropdown-item-active"
-  else return ""
+
+  return ""
 }

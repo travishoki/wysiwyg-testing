@@ -109,6 +109,7 @@ module.exports = {
     /* Taking it a step further to make things clean */
     "react/no-multi-comp": "error",
     "sort-keys": "error",
+    "no-else-return": "error",
   },
   overrides: [
     /** Composer */

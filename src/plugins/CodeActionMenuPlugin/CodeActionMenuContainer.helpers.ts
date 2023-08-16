@@ -13,7 +13,7 @@ export const getMouseInfo = (event: MouseEvent): getMouseInfoProps => {
     )
 
     return { codeDOMNode, isOutside }
-  } else {
-    return { codeDOMNode: null, isOutside: true }
   }
+
+  return { codeDOMNode: null, isOutside: true }
 }
