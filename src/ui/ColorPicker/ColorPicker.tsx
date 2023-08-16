@@ -102,7 +102,7 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
   }, [color])
 
   return (
-    <div className="color-picker-wrapper" style={{ width: WIDTH }} ref={innerDivRef}>
+    <div className="color-picker-wrapper" ref={innerDivRef} style={{ width: WIDTH }}>
       <TextInput label="Hex" onChange={onSetHex} value={inputColor} />
       <div className="color-picker-basic-color">
         {basicColors.map((basicColor) => (
@@ -110,18 +110,18 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
             aria-label="color picker"
             className={basicColor === selfColor.hex ? " active" : ""}
             key={basicColor}
-            style={{ backgroundColor: basicColor }}
             onClick={() => {
               setInputColor(basicColor)
               setSelfColor(transformColor("hex", basicColor))
             }}
+            style={{ backgroundColor: basicColor }}
           />
         ))}
       </div>
       <MoveWrapper
         className="color-picker-saturation"
-        style={{ backgroundColor: `hsl(${selfColor.hsv.h}, 100%, 50%)` }}
         onChange={onMoveSaturation}
+        style={{ backgroundColor: `hsl(${selfColor.hsv.h}, 100%, 50%)` }}
       >
         <div
           className="color-picker-saturation_cursor"

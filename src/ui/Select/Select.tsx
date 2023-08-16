@@ -18,7 +18,7 @@ interface SelectProps extends SelectIntrinsicProps {
 export const Select = ({ children, label, className, ...other }: SelectProps) => {
   return (
     <div className="Input__wrapper">
-      <label style={{ marginTop: "-1em" }} className="Input__label">
+      <label className="Input__label" style={{ marginTop: "-1em" }}>
         {label}
       </label>
       <select {...other} className={className || "select"}>

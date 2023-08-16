@@ -118,12 +118,21 @@ module.exports = {
 
     // Extra Formatting
     "padding-line-between-statements": [1, { blankLine: "always", prev: "*", next: "return" }],
+    "react/jsx-sort-props": ["error"],
 
-    // "arrow-parens": [1, "always", { requireForBlockBody: false }],
-    // "keyword-spacing": [1],
-    // "no-multiple-empty-lines": ["error", { max: 1 }],
-    // "no-trailing-spaces": 1,
-    // "object-curly-spacing": ["error", "always"],
+    // React
+    // "react/display-name": 0,
+    // "react/jsx-key": 1,
+    // "react/jsx-no-duplicate-props": 1,
+    // "react/jsx-uses-react": 1,
+    // "react/jsx-uses-vars": 1,
+    // "react/no-danger": 1,
+    // "react/no-direct-mutation-state": 1,
+    // "react/no-unknown-property": 1,
+    // "react/prefer-es6-class": 1,
+    // "react/prop-types": 1,
+    // "react/react-in-jsx-scope": 1,
+    // "react/self-closing-comp": 1,
   },
   overrides: [
     /** Composer */

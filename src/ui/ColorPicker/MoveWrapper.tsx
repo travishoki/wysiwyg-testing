@@ -49,7 +49,7 @@ export const MoveWrapper = ({ className, style, onChange, children }: MoveWrappe
   }
 
   return (
-    <div ref={divRef} className={className} style={style} onMouseDown={onMouseDown}>
+    <div className={className} onMouseDown={onMouseDown} ref={divRef} style={style}>
       {children}
     </div>
   )

@@ -23,15 +23,15 @@ export const ComponentPickerMenuItem = ({
 
   return (
     <li
-      key={option.key}
-      tabIndex={-1}
+      aria-selected={isSelected}
       className={className}
+      id={"typeahead-item-" + index}
+      key={option.key}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
       ref={option.setRefElement}
       role="option"
-      aria-selected={isSelected}
-      id={"typeahead-item-" + index}
-      onMouseEnter={onMouseEnter}
-      onClick={onClick}
+      tabIndex={-1}
     >
       {option.icon}
       <span className="text">{option.title}</span>

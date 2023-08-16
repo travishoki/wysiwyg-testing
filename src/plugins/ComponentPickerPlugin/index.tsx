@@ -245,10 +245,6 @@ export const ComponentPickerPlugin = () => {
     <>
       {modal}
       <LexicalTypeaheadMenuPlugin<ComponentPickerOption>
-        onQueryChange={setQueryString}
-        onSelectOption={onSelectOption}
-        triggerFn={checkForTriggerMatch}
-        options={options}
         menuRenderFn={(
           anchorElementRef,
           { selectedIndex, selectOptionAndCleanUp, setHighlightedIndex },
@@ -261,6 +257,7 @@ export const ComponentPickerPlugin = () => {
                       <ComponentPickerMenuItem
                         index={i}
                         isSelected={selectedIndex === i}
+                        key={option.key}
                         onClick={() => {
                           setHighlightedIndex(i)
                           selectOptionAndCleanUp(option)
@@ -268,7 +265,6 @@ export const ComponentPickerPlugin = () => {
                         onMouseEnter={() => {
                           setHighlightedIndex(i)
                         }}
-                        key={option.key}
                         option={option}
                       />
                     ))}
@@ -278,6 +274,10 @@ export const ComponentPickerPlugin = () => {
               )
             : null
         }
+        onQueryChange={setQueryString}
+        onSelectOption={onSelectOption}
+        options={options}
+        triggerFn={checkForTriggerMatch}
       />
     </>
   )

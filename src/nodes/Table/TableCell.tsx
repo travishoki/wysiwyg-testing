@@ -63,8 +63,8 @@ export const TableCell = ({
         isSelected ? theme.tableCellSelected : ""
       }`}
       data-id={cell.id}
-      tabIndex={-1}
       style={{ width: cellWidth !== null ? cellWidth : undefined }}
+      tabIndex={-1}
     >
       {isPrimarySelected && (
         <div
@@ -104,14 +104,14 @@ export const TableCell = ({
         createPortal(
           <TableActionMenu
             cell={cell}
-            menuElem={menuElem}
-            updateCellsByID={updateCellsByID}
-            onClose={() => setShowMenu(false)}
-            updateTableNode={updateTableNode}
             cellCoordMap={cellCoordMap}
+            menuElem={menuElem}
+            onClose={() => setShowMenu(false)}
             rows={rows}
             setSortingOptions={setSortingOptions}
             sortingOptions={sortingOptions}
+            updateCellsByID={updateCellsByID}
+            updateTableNode={updateTableNode}
           />,
           document.body,
         )}

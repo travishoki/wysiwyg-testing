@@ -209,16 +209,16 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
     return (
       <Suspense fallback={<ComposerNodeFallback />}>
         <ImageComponent
-          src={this.__src}
           altText={this.__altText}
-          width={this.__width}
+          caption={this.__caption}
+          captionsEnabled={this.__captionsEnabled}
           height={this.__height}
           maxWidth={this.__maxWidth}
           nodeKey={this.getKey()}
-          showCaption={this.__showCaption}
-          caption={this.__caption}
-          captionsEnabled={this.__captionsEnabled}
           resizable={true}
+          showCaption={this.__showCaption}
+          src={this.__src}
+          width={this.__width}
         />
       </Suspense>
     )

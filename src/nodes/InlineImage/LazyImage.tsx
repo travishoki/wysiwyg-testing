@@ -39,17 +39,17 @@ export const LazyImage = ({
 
   return (
     <img
-      className={className || undefined}
-      src={src}
       alt={altText}
-      ref={imageRef}
+      className={className || undefined}
       data-position={position}
+      draggable="false"
+      ref={imageRef}
+      src={src}
       style={{
         display: "block",
         height,
         width,
       }}
-      draggable="false"
     />
   )
 }

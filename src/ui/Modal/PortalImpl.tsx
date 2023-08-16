@@ -54,13 +54,13 @@ export const PortalImpl = ({ onClose, children, title, closeOnClickOutside }: Po
 
   return (
     <div className="Modal__overlay" role="dialog">
-      <div className="Modal__modal" tabIndex={-1} ref={modalRef}>
+      <div className="Modal__modal" ref={modalRef} tabIndex={-1}>
         <h2 className="Modal__title">{title}</h2>
         <button
-          className="Modal__closeButton"
           aria-label="Close modal"
-          type="button"
+          className="Modal__closeButton"
           onClick={onClose}
+          type="button"
         >
           X
         </button>

@@ -44,23 +44,23 @@ export const AutoEmbedDialog = ({ embedConfig, onClose }: AutoEmbedDialogProps) 
       <div className="Input__wrapper">
         <input
           aria-label="text"
-          type="text"
           className="Input__input"
-          placeholder={embedConfig.exampleUrl}
-          value={text}
           data-test-id={`${embedConfig.type}-embed-modal-url`}
           onChange={(e) => {
             const { value } = e.target
             setText(value)
             validateText(value)
           }}
+          placeholder={embedConfig.exampleUrl}
+          type="text"
+          value={text}
         />
       </div>
       <DialogActions>
         <Button
+          data-test-id={`${embedConfig.type}-embed-modal-submit-btn`}
           disabled={!embedResult}
           onClick={onClick}
-          data-test-id={`${embedConfig.type}-embed-modal-submit-btn`}
         >
           Embed
         </Button>

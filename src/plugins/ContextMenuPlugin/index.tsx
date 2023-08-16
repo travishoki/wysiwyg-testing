@@ -119,8 +119,6 @@ export const ContextMenuPlugin = () => {
 
   return (
     <LexicalContextMenuPlugin
-      options={options}
-      onSelectOption={onSelectOption}
       menuRenderFn={(
         anchorElementRef,
         { selectedIndex, options: _options, selectOptionAndCleanUp, setHighlightedIndex },
@@ -130,16 +128,14 @@ export const ContextMenuPlugin = () => {
           ? ReactDOM.createPortal(
               <div
                 className="typeahead-popover auto-embed-menu"
+                ref={setMenuRef}
                 style={{
                   marginLeft: anchorElementRef.current.style.width,
                   userSelect: "none",
                   width: 200,
                 }}
-                ref={setMenuRef}
               >
                 <ContextMenu
-                  options={options}
-                  selectedItemIndex={selectedIndex}
                   onOptionClick={(option: ContextMenuOption, index: number) => {
                     setHighlightedIndex(index)
                     selectOptionAndCleanUp(option)
@@ -147,12 +143,16 @@ export const ContextMenuPlugin = () => {
                   onOptionMouseEnter={(index: number) => {
                     setHighlightedIndex(index)
                   }}
+                  options={options}
+                  selectedItemIndex={selectedIndex}
                 />
               </div>,
               anchorElementRef.current,
             )
           : null
       }
+      onSelectOption={onSelectOption}
+      options={options}
     />
   )
 }

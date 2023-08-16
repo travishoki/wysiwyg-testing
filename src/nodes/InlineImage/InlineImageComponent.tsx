@@ -214,7 +214,6 @@ const InlineImageComponent = ({
         <div draggable={draggable}>
           <button
             className="image-edit-button"
-            ref={buttonRef}
             onClick={() => {
               showModal("Update Inline Image", (onClose) => (
                 <UpdateInlineImageDialog
@@ -224,19 +223,20 @@ const InlineImageComponent = ({
                 />
               ))
             }}
+            ref={buttonRef}
           >
             Edit
           </button>
           <LazyImage
+            altText={altText}
             className={
               isFocused ? `focused ${$isNodeSelection(selection) ? "draggable" : ""}` : null
             }
-            src={src}
-            altText={altText}
-            imageRef={imageRef}
-            width={width}
             height={height}
+            imageRef={imageRef}
             position={position}
+            src={src}
+            width={width}
           />
         </div>
         {showCaption && (
@@ -247,13 +247,13 @@ const InlineImageComponent = ({
               <FloatingLinkEditorPlugin />
               <FloatingTextFormatToolbarPlugin />
               <RichTextPlugin
+                ErrorBoundary={LexicalErrorBoundary}
                 contentEditable={<ContentEditable className="InlineImageNode__contentEditable" />}
                 placeholder={
                   <Placeholder className="InlineImageNode__placeholder">
                     Enter a caption...
                   </Placeholder>
                 }
-                ErrorBoundary={LexicalErrorBoundary}
               />
             </LexicalNestedComposer>
           </div>

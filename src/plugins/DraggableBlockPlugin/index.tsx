@@ -364,10 +364,10 @@ const useDraggableBlockMenu = (
     <>
       <div
         className="icon draggable-block-menu"
-        ref={menuRef}
         draggable={true}
-        onDragStart={onDragStart}
         onDragEnd={onDragEnd}
+        onDragStart={onDragStart}
+        ref={menuRef}
       >
         <div className={isEditable ? "icon" : ""} />
       </div>

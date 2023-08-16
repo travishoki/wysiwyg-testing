@@ -108,16 +108,16 @@ export const useFloatingTextFormatToolbar = (
 
   return createPortal(
     <TextFormatFloatingToolbar
-      editor={editor}
       anchorElem={anchorElem}
-      isLink={isLink}
+      editor={editor}
       isBold={isBold}
+      isCode={isCode}
       isItalic={isItalic}
+      isLink={isLink}
       isStrikethrough={isStrikethrough}
       isSubscript={isSubscript}
       isSuperscript={isSuperscript}
       isUnderline={isUnderline}
-      isCode={isCode}
     />,
     anchorElem,
   )

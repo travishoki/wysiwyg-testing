@@ -137,11 +137,11 @@ export const PrettierButton = ({ lang, editor, getCodeDOMNode }: PrettierButtonP
   return (
     <div className="prettier-wrapper">
       <button
+        aria-label="prettier"
         className="menu-item"
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        aria-label="prettier"
       >
         {syntaxError ? <i className="format prettier-error" /> : <i className="format prettier" />}
       </button>

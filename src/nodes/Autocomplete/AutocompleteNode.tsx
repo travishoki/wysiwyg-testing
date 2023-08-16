@@ -89,7 +89,7 @@ const AutocompleteComponent = () => {
 
   // TODO Move to theme
   return (
-    <span style={{ color: "#ccc" }} spellCheck="false">
+    <span spellCheck="false" style={{ color: "#ccc" }}>
       {suggestion} {isMobile ? "(SWIPE \u2B95)" : "(TAB)"}
     </span>
   )

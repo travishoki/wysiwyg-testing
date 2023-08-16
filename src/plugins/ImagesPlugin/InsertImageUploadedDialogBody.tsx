@@ -34,17 +34,17 @@ export const InsertImageUploadedDialogBody = ({ onClick }: InsertImageUploadedDi
   return (
     <>
       <FileInput
-        label="Image Upload"
-        onChange={loadImage}
         accept="image/*"
         data-test-id="image-modal-file-upload"
+        label="Image Upload"
+        onChange={loadImage}
       />
       <TextInput
-        label="Alt Text"
-        placeholder="Descriptive alternative text"
-        onChange={setAltText}
-        value={altText}
         data-test-id="image-modal-alt-text-input"
+        label="Alt Text"
+        onChange={setAltText}
+        placeholder="Descriptive alternative text"
+        value={altText}
       />
       <DialogActions>
         <Button

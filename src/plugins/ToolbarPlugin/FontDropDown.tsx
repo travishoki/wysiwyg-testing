@@ -58,11 +58,11 @@ export const FontDropDown = ({ editor, value, styleName, disabled = false }: Fon
 
   return (
     <DropDown
-      disabled={disabled}
-      buttonClassName={"toolbar-item " + styleName}
-      buttonLabel={value}
-      buttonIconClassName={styleName === "font-family" ? "icon block-type font-family" : ""}
       buttonAriaLabel={buttonAriaLabel}
+      buttonClassName={"toolbar-item " + styleName}
+      buttonIconClassName={styleName === "font-family" ? "icon block-type font-family" : ""}
+      buttonLabel={value}
+      disabled={disabled}
     >
       {(styleName === "font-family" ? FONT_FAMILY_OPTIONS : FONT_SIZE_OPTIONS).map(
         ([option, text]) => (
@@ -70,8 +70,8 @@ export const FontDropDown = ({ editor, value, styleName, disabled = false }: Fon
             className={`item ${dropDownActiveClass(value === option)} ${
               styleName === "font-size" ? "fontsize-item" : ""
             }`}
-            onClick={() => handleClick(option)}
             key={option}
+            onClick={() => handleClick(option)}
           >
             <span className="text">{text}</span>
           </DropDownItem>

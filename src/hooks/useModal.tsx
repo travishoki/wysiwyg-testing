@@ -31,7 +31,7 @@ export const useModal = (): [
     const { title, content, closeOnClickOutside } = modalContent
 
     return (
-      <Modal onClose={onClose} title={title} closeOnClickOutside={closeOnClickOutside}>
+      <Modal closeOnClickOutside={closeOnClickOutside} onClose={onClose} title={title}>
         {content}
       </Modal>
     )

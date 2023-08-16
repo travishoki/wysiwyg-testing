@@ -26,12 +26,12 @@ export const FileInput = ({
     <div className="Input__wrapper">
       <label className="Input__label">{label}</label>
       <input
-        aria-label="file"
-        type="file"
         accept={accept}
+        aria-label="file"
         className="Input__input"
-        onChange={(e) => onChange(e.target.files)}
         data-test-id={dataTestId}
+        onChange={(e) => onChange(e.target.files)}
+        type="file"
       />
     </div>
   )

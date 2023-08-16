@@ -125,9 +125,9 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
               key={key}
             >
               <div
+                className={indent(tag)}
                 onClick={() => scrollToNode(key, index)}
                 role="button"
-                className={indent(tag)}
                 tabIndex={0}
               >
                 <li

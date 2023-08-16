@@ -46,21 +46,21 @@ export const UpdateInlineImageDialog = ({
     <>
       <div style={{ marginBottom: "1em" }}>
         <TextInput
-          label="Alt Text"
-          placeholder="Descriptive alternative text"
-          onChange={setAltText}
-          value={altText}
           data-test-id="image-modal-alt-text-input"
+          label="Alt Text"
+          onChange={setAltText}
+          placeholder="Descriptive alternative text"
+          value={altText}
         />
       </div>
 
       <Select
-        style={{ marginBottom: "1em", width: "208px" }}
-        value={position}
+        id="position-select"
         label="Position"
         name="position"
-        id="position-select"
         onChange={handlePositionChange}
+        style={{ marginBottom: "1em", width: "208px" }}
+        value={position}
       >
         <option value="left">Left</option>
         <option value="right">Right</option>
@@ -70,10 +70,10 @@ export const UpdateInlineImageDialog = ({
       <div className="Input__wrapper">
         <input
           aria-label="caption"
-          id="caption"
-          type="checkbox"
           checked={showCaption}
+          id="caption"
           onChange={handleShowCaptionChange}
+          type="checkbox"
         />
         <label htmlFor="caption">Show Caption</label>
       </div>

@@ -100,12 +100,12 @@ export const DropDown = ({
   return (
     <>
       <button
-        type="button"
-        disabled={disabled}
         aria-label={buttonAriaLabel || buttonLabel}
         className={buttonClassName}
+        disabled={disabled}
         onClick={() => setShowDropDown(!showDropDown)}
         ref={buttonRef}
+        type="button"
       >
         {buttonIconClassName && <span className={buttonIconClassName} />}
         {buttonLabel && <span className="text dropdown-button-text">{buttonLabel}</span>}

@@ -10,7 +10,7 @@ type ButtonWithIconProps = {
 export const ButtonWithIcon = ({ iconUrl, onClick, title }: ButtonWithIconProps) => (
   <button className="control-button" onClick={onClick}>
     <div className="control-button-inner">
-      {iconUrl && <img className="icon" alt={title} height="15" src={iconUrl} width="15" />}
+      {iconUrl && <img alt={title} className="icon" height="15" src={iconUrl} width="15" />}
       {title}
     </div>
   </button>

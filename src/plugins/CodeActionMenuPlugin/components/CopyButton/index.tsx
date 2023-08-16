@@ -54,7 +54,7 @@ export const CopyButton = ({ editor, getCodeDOMNode }: CopyButtonProps) => {
   }
 
   return (
-    <button className="menu-item" onClick={handleClick} aria-label="copy">
+    <button aria-label="copy" className="menu-item" onClick={handleClick}>
       {isCopyCompleted ? <i className="format success" /> : <i className="format copy" />}
     </button>
   )

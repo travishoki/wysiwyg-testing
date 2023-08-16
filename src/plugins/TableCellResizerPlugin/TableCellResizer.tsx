@@ -314,15 +314,15 @@ export const TableCellResizer = ({ editor }: TableCellResizerProps) => {
         <>
           <div
             className="TableCellResizer__resizer TableCellResizer__ui"
-            style={resizerStyles.right || undefined}
             onMouseDown={toggleResize("right")}
             onMouseUp={toggleResize("right")}
+            style={resizerStyles.right || undefined}
           />
           <div
             className="TableCellResizer__resizer TableCellResizer__ui"
-            style={resizerStyles.bottom || undefined}
             onMouseDown={toggleResize("bottom")}
             onMouseUp={toggleResize("bottom")}
+            style={resizerStyles.bottom || undefined}
           />
         </>
       )}

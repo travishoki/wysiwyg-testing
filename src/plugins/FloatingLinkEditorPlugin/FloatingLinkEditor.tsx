@@ -178,68 +178,68 @@ export const FloatingLinkEditor = ({
   }
 
   return (
-    <div ref={editorRef} className="link-editor">
+    <div className="link-editor" ref={editorRef}>
       {!isLink ? null : isEditMode ? (
         <>
           <input
             aria-label="input"
-            ref={inputRef}
             className="link-input"
-            value={editedLinkUrl}
             onChange={(event) => {
               setEditedLinkUrl(event.target.value)
             }}
             onKeyDown={(event) => {
               monitorInputInteraction(event)
             }}
+            ref={inputRef}
+            value={editedLinkUrl}
           />
           <div>
             <div
               aria-label="cancel"
               className="link-cancel"
-              role="button"
-              tabIndex={0}
-              onMouseDown={(event) => event.preventDefault()}
               onClick={() => {
                 setEditMode(false)
               }}
+              onMouseDown={(event) => event.preventDefault()}
+              role="button"
+              tabIndex={0}
             />
 
             <div
               aria-label="confim"
               className="link-confirm"
+              onClick={handleLinkSubmission}
+              onMouseDown={(event) => event.preventDefault()}
               role="button"
               tabIndex={0}
-              onMouseDown={(event) => event.preventDefault()}
-              onClick={handleLinkSubmission}
             />
           </div>
         </>
       ) : (
         <div className="link-view">
-          <a href={sanitizeUrl(linkUrl)} target="_blank" rel="noopener noreferrer">
+          <a href={sanitizeUrl(linkUrl)} rel="noopener noreferrer" target="_blank">
             {linkUrl}
           </a>
           <div
             aria-label="edit"
             className="link-edit"
-            role="button"
-            tabIndex={0}
-            onMouseDown={(event) => event.preventDefault()}
             onClick={() => {
               setEditedLinkUrl(linkUrl)
               setEditMode(true)
             }}
+            onMouseDown={(event) => event.preventDefault()}
+            role="button"
+            tabIndex={0}
           />
           <div
             aria-label="trash"
             className="link-trash"
-            role="button"
-            tabIndex={0}
-            onMouseDown={(event) => event.preventDefault()}
             onClick={() => {
               editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)
             }}
+            onMouseDown={(event) => event.preventDefault()}
+            role="button"
+            tabIndex={0}
           />
         </div>
       )}

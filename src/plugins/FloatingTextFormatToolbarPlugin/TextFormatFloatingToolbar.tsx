@@ -158,96 +158,96 @@ export const TextFormatFloatingToolbar = ({
   }, [editor, updateTextFormatFloatingToolbar])
 
   return (
-    <div ref={popupCharStylesEditorRef} className="floating-text-format-popup">
+    <div className="floating-text-format-popup" ref={popupCharStylesEditorRef}>
       {editor.isEditable() && (
         <>
           <button
-            type="button"
+            aria-label="Format text as bold"
+            className={"popup-item spaced " + (isBold ? "active" : "")}
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")
             }}
-            className={"popup-item spaced " + (isBold ? "active" : "")}
-            aria-label="Format text as bold"
+            type="button"
           >
             <i className="format bold" />
           </button>
           <button
-            type="button"
+            aria-label="Format text as italics"
+            className={"popup-item spaced " + (isItalic ? "active" : "")}
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic")
             }}
-            className={"popup-item spaced " + (isItalic ? "active" : "")}
-            aria-label="Format text as italics"
+            type="button"
           >
             <i className="format italic" />
           </button>
           <button
-            type="button"
+            aria-label="Format text to underlined"
+            className={"popup-item spaced " + (isUnderline ? "active" : "")}
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "underline")
             }}
-            className={"popup-item spaced " + (isUnderline ? "active" : "")}
-            aria-label="Format text to underlined"
+            type="button"
           >
             <i className="format underline" />
           </button>
           <button
-            type="button"
+            aria-label="Format text with a strikethrough"
+            className={"popup-item spaced " + (isStrikethrough ? "active" : "")}
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "strikethrough")
             }}
-            className={"popup-item spaced " + (isStrikethrough ? "active" : "")}
-            aria-label="Format text with a strikethrough"
+            type="button"
           >
             <i className="format strikethrough" />
           </button>
           <button
-            type="button"
+            aria-label="Format Subscript"
+            className={"popup-item spaced " + (isSubscript ? "active" : "")}
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "subscript")
             }}
-            className={"popup-item spaced " + (isSubscript ? "active" : "")}
             title="Subscript"
-            aria-label="Format Subscript"
+            type="button"
           >
             <i className="format subscript" />
           </button>
           <button
-            type="button"
+            aria-label="Format Superscript"
+            className={"popup-item spaced " + (isSuperscript ? "active" : "")}
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "superscript")
             }}
-            className={"popup-item spaced " + (isSuperscript ? "active" : "")}
             title="Superscript"
-            aria-label="Format Superscript"
+            type="button"
           >
             <i className="format superscript" />
           </button>
           <button
-            type="button"
+            aria-label="Insert code block"
+            className={"popup-item spaced " + (isCode ? "active" : "")}
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "code")
             }}
-            className={"popup-item spaced " + (isCode ? "active" : "")}
-            aria-label="Insert code block"
+            type="button"
           >
             <i className="format code" />
           </button>
           <button
-            type="button"
-            onClick={insertLink}
-            className={"popup-item spaced " + (isLink ? "active" : "")}
             aria-label="Insert link"
+            className={"popup-item spaced " + (isLink ? "active" : "")}
+            onClick={insertLink}
+            type="button"
           >
             <i className="format link" />
           </button>
         </>
       )}
       <button
-        type="button"
-        onClick={insertComment}
-        className={"popup-item spaced insert-comment"}
         aria-label="Insert comment"
+        className={"popup-item spaced insert-comment"}
+        onClick={insertComment}
+        type="button"
       >
         <i className="format add-comment" />
       </button>

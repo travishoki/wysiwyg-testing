@@ -1284,25 +1284,25 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
       >
         <tbody>
           {rows.map((row) => (
-            <tr key={row.id} className={theme.tableRow}>
+            <tr className={theme.tableRow} key={row.id}>
               {row.cells.map((cell) => {
                 const { id } = cell
 
                 return (
                   <TableCell
-                    key={id}
                     cell={cell}
-                    theme={theme}
-                    isSelected={selectedCellSet.has(id)}
-                    isPrimarySelected={primarySelectedCellID === id}
-                    isEditing={isEditing}
-                    sortingOptions={sortingOptions}
-                    cellEditor={cellEditor}
-                    updateCellsByID={updateCellsByID}
-                    updateTableNode={updateTableNode}
                     cellCoordMap={cellCoordMap}
+                    cellEditor={cellEditor}
+                    isEditing={isEditing}
+                    isPrimarySelected={primarySelectedCellID === id}
+                    isSelected={selectedCellSet.has(id)}
+                    key={id}
                     rows={rows}
                     setSortingOptions={setSortingOptions}
+                    sortingOptions={sortingOptions}
+                    theme={theme}
+                    updateCellsByID={updateCellsByID}
+                    updateTableNode={updateTableNode}
                   />
                 )
               })}

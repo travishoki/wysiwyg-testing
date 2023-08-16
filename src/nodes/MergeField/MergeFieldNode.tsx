@@ -81,9 +81,9 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return (
       <Suspense fallback={<ComposerNodeFallback />}>
         <MergeFieldComponent
-          nodeKey={this.getKey()}
           mergeFieldIconUrl={this.mergeFieldIconUrl}
           mergeFieldId={this.mergeFieldId}
+          nodeKey={this.getKey()}
         />
       </Suspense>
     )

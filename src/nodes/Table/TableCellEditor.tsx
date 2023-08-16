@@ -18,8 +18,8 @@ export const TableCellEditor = ({ cellEditor }: TableCellEditorProps) => {
   return (
     <LexicalNestedComposer
       initialEditor={cellEditor}
-      initialTheme={cellEditorConfig.theme}
       initialNodes={cellEditorConfig.nodes}
+      initialTheme={cellEditorConfig.theme}
       skipCollabChecks={true}
     >
       {cellEditorPlugins}

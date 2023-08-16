@@ -93,10 +93,6 @@ export const EmojiPickerPlugin = () => {
 
   return (
     <LexicalTypeaheadMenuPlugin
-      onQueryChange={setQueryString}
-      onSelectOption={onSelectOption}
-      triggerFn={checkForTriggerMatch}
-      options={options}
       menuRenderFn={(
         anchorElementRef,
         { selectedIndex, selectOptionAndCleanUp, setHighlightedIndex },
@@ -131,6 +127,10 @@ export const EmojiPickerPlugin = () => {
             )
           : null
       }}
+      onQueryChange={setQueryString}
+      onSelectOption={onSelectOption}
+      options={options}
+      triggerFn={checkForTriggerMatch}
     />
   )
 }

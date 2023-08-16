@@ -349,8 +349,8 @@ export const TableActionMenu = ({
       mergeCellButton = (
         <button
           className="item"
-          onClick={() => mergeTableCellsAtSelection()}
           data-test-id="table-merge-cells"
+          onClick={() => mergeTableCellsAtSelection()}
         >
           Merge cells
         </button>
@@ -359,8 +359,8 @@ export const TableActionMenu = ({
       mergeCellButton = (
         <button
           className="item"
-          onClick={() => unmergeTableCellsAtSelection()}
           data-test-id="table-unmerge-cells"
+          onClick={() => unmergeTableCellsAtSelection()}
         >
           Unmerge cells
         </button>
@@ -372,28 +372,28 @@ export const TableActionMenu = ({
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       className="dropdown"
-      ref={dropDownRef}
       onClick={(e) => {
         e.stopPropagation()
       }}
+      ref={dropDownRef}
     >
       {mergeCellButton}
       <button
         className="item"
+        data-test-id="table-background-color"
         onClick={() =>
           showColorPickerModal("Cell background color", () => (
             <ColorPicker color={backgroundColor} onChange={handleCellBackgroundColor} />
           ))
         }
-        data-test-id="table-background-color"
       >
         <span className="text">Background color</span>
       </button>
       <hr />
       <button
         className="item"
-        onClick={() => insertTableRowAtSelection(false)}
         data-test-id="table-insert-row-above"
+        onClick={() => insertTableRowAtSelection(false)}
       >
         <span className="text">
           Insert {selectionCounts.rows === 1 ? "row" : `${selectionCounts.rows} rows`} above
@@ -401,8 +401,8 @@ export const TableActionMenu = ({
       </button>
       <button
         className="item"
-        onClick={() => insertTableRowAtSelection(true)}
         data-test-id="table-insert-row-below"
+        onClick={() => insertTableRowAtSelection(true)}
       >
         <span className="text">
           Insert {selectionCounts.rows === 1 ? "row" : `${selectionCounts.rows} rows`} below
@@ -411,8 +411,8 @@ export const TableActionMenu = ({
       <hr />
       <button
         className="item"
-        onClick={() => insertTableColumnAtSelection(false)}
         data-test-id="table-insert-column-before"
+        onClick={() => insertTableColumnAtSelection(false)}
       >
         <span className="text">
           Insert {selectionCounts.columns === 1 ? "column" : `${selectionCounts.columns} columns`}{" "}
@@ -421,8 +421,8 @@ export const TableActionMenu = ({
       </button>
       <button
         className="item"
-        onClick={() => insertTableColumnAtSelection(true)}
         data-test-id="table-insert-column-after"
+        onClick={() => insertTableColumnAtSelection(true)}
       >
         <span className="text">
           Insert {selectionCounts.columns === 1 ? "column" : `${selectionCounts.columns} columns`}{" "}
@@ -432,19 +432,19 @@ export const TableActionMenu = ({
       <hr />
       <button
         className="item"
-        onClick={() => deleteTableColumnAtSelection()}
         data-test-id="table-delete-columns"
+        onClick={() => deleteTableColumnAtSelection()}
       >
         <span className="text">Delete column</span>
       </button>
       <button
         className="item"
-        onClick={() => deleteTableRowAtSelection()}
         data-test-id="table-delete-rows"
+        onClick={() => deleteTableRowAtSelection()}
       >
         <span className="text">Delete row</span>
       </button>
-      <button className="item" onClick={() => deleteTableAtSelection()} data-test-id="table-delete">
+      <button className="item" data-test-id="table-delete" onClick={() => deleteTableAtSelection()}>
         <span className="text">Delete table</span>
       </button>
       <hr />

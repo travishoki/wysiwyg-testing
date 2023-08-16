@@ -34,20 +34,20 @@ export const InsertNewTableDialog = ({ activeEditor, onClose }: InsertNewTableDi
   return (
     <>
       <TextInput
-        placeholder={"# of rows (1-500)"}
+        data-test-id="table-modal-rows"
         label="Rows"
         onChange={setRows}
-        value={rows}
-        data-test-id="table-modal-rows"
+        placeholder={"# of rows (1-500)"}
         type="number"
+        value={rows}
       />
       <TextInput
-        placeholder={"# of columns (1-50)"}
+        data-test-id="table-modal-columns"
         label="Columns"
         onChange={setColumns}
-        value={columns}
-        data-test-id="table-modal-columns"
+        placeholder={"# of columns (1-50)"}
         type="number"
+        value={columns}
       />
       <DialogActions data-test-id="table-model-confirm-insert">
         <Button disabled={isDisabled} onClick={onClick}>

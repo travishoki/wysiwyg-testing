@@ -110,11 +110,11 @@ export const BlockFormatDropDown = ({
 
   return (
     <DropDown
-      disabled={disabled}
+      buttonAriaLabel="Formatting options for text style"
       buttonClassName="toolbar-item block-controls"
       buttonIconClassName={"icon block-type " + blockType}
       buttonLabel={blockTypeToBlockName[blockType]}
-      buttonAriaLabel="Formatting options for text style"
+      disabled={disabled}
     >
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "paragraph")}

@@ -130,6 +130,7 @@ export const Editor = () => {
         <AutoLinkPlugin />
         <HistoryPlugin externalHistoryState={historyState} />
         <RichTextPlugin
+          ErrorBoundary={LexicalErrorBoundary}
           contentEditable={
             <div className="editor-scroller">
               <div className="editor" ref={onRef}>
@@ -138,7 +139,6 @@ export const Editor = () => {
             </div>
           }
           placeholder={placeholder}
-          ErrorBoundary={LexicalErrorBoundary}
         />
         <MarkdownShortcutPlugin />
         <CodeHighlightPlugin />
@@ -146,16 +146,16 @@ export const Editor = () => {
         <CheckListPlugin />
         <ListMaxIndentLevelPlugin maxDepth={7} />
         <TablePlugin
-          hasCellMerge={tableCellMerge}
           hasCellBackgroundColor={tableCellBackgroundColor}
+          hasCellMerge={tableCellMerge}
         />
         <TableCellResizerPlugin />
         <NewTablePlugin cellEditorConfig={cellEditorConfig}>
           <AutoFocusPlugin />
           <RichTextPlugin
+            ErrorBoundary={LexicalErrorBoundary}
             contentEditable={<ContentEditable className="TableNode__contentEditable" />}
             placeholder={null}
-            ErrorBoundary={LexicalErrorBoundary}
           />
           <MentionsPlugin />
           <HistoryPlugin />

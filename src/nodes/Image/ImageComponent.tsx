@@ -263,15 +263,15 @@ const ImageComponent = ({
       <>
         <div draggable={draggable}>
           <LazyImage
+            altText={altText}
             className={
               isFocused ? `focused ${$isNodeSelection(selection) ? "draggable" : ""}` : null
             }
-            src={src}
-            altText={altText}
-            imageRef={imageRef}
-            width={width}
             height={height}
+            imageRef={imageRef}
             maxWidth={maxWidth}
+            src={src}
+            width={width}
           />
         </div>
         {showCaption && (
@@ -285,26 +285,26 @@ const ImageComponent = ({
               <KeywordsPlugin />
               <HistoryPlugin externalHistoryState={historyState} />
               <RichTextPlugin
+                ErrorBoundary={LexicalErrorBoundary}
                 contentEditable={<ContentEditable className="ImageNode__contentEditable" />}
                 placeholder={
                   <Placeholder className="ImageNode__placeholder">Enter a caption...</Placeholder>
                 }
-                ErrorBoundary={LexicalErrorBoundary}
               />
             </LexicalNestedComposer>
           </div>
         )}
         {resizable && $isNodeSelection(selection) && isFocused && (
           <ImageResizer
-            showCaption={showCaption}
-            setShowCaption={setShowCaption}
-            editor={editor}
             buttonRef={buttonRef}
+            captionsEnabled={captionsEnabled}
+            editor={editor}
             imageRef={imageRef}
             maxWidth={maxWidth}
-            onResizeStart={onResizeStart}
             onResizeEnd={onResizeEnd}
-            captionsEnabled={captionsEnabled}
+            onResizeStart={onResizeStart}
+            setShowCaption={setShowCaption}
+            showCaption={showCaption}
           />
         )}
       </>

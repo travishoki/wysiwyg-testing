@@ -58,9 +58,9 @@ export const useFloatingLinkEditorToolbar = (
 
   return createPortal(
     <FloatingLinkEditor
+      anchorElem={anchorElem}
       editor={activeEditor}
       isLink={isLink}
-      anchorElem={anchorElem}
       setIsLink={setIsLink}
     />,
     anchorElem,

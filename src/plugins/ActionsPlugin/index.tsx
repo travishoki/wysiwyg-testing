@@ -118,6 +118,7 @@ export const ActionsPlugin = () => {
   return (
     <div className="actions">
       <button
+        aria-label="Clear editor contents"
         className="action-button clear"
         disabled={isEditorEmpty}
         onClick={() => {
@@ -126,15 +127,14 @@ export const ActionsPlugin = () => {
           ))
         }}
         title="Clear"
-        aria-label="Clear editor contents"
       >
         <i className="clear" />
       </button>
       <button
+        aria-label="Convert from markdown"
         className="action-button"
         onClick={handleMarkdownToggle}
         title="Convert From Markdown"
-        aria-label="Convert from markdown"
       >
         <i className="markdown" />
       </button>

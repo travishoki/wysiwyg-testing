@@ -127,12 +127,12 @@ export const TableCellActionMenuContainer = ({
           {colorPickerModal}
           {isMenuOpen && (
             <TableActionMenu
-              contextRef={menuRootRef}
-              setIsMenuOpen={setIsMenuOpen}
-              onClose={() => setIsMenuOpen(false)}
-              tableCellNode={tableCellNode}
               cellMerge={cellMerge}
+              contextRef={menuRootRef}
+              onClose={() => setIsMenuOpen(false)}
+              setIsMenuOpen={setIsMenuOpen}
               showColorPickerModal={showColorPickerModal}
+              tableCellNode={tableCellNode}
             />
           )}
         </>

@@ -319,26 +319,26 @@ export const ToolbarPlugin = () => {
   return (
     <div className="toolbar">
       <button
+        aria-label="Undo"
+        className="toolbar-item spaced"
         disabled={!canUndo || !isEditable}
         onClick={() => {
           activeEditor.dispatchCommand(UNDO_COMMAND, undefined)
         }}
         title={IS_APPLE ? "Undo (⌘Z)" : "Undo (Ctrl+Z)"}
         type="button"
-        className="toolbar-item spaced"
-        aria-label="Undo"
       >
         <i className="format undo" />
       </button>
       <button
+        aria-label="Redo"
+        className="toolbar-item"
         disabled={!canRedo || !isEditable}
         onClick={() => {
           activeEditor.dispatchCommand(REDO_COMMAND, undefined)
         }}
         title={IS_APPLE ? "Redo (⌘Y)" : "Redo (Ctrl+Y)"}
         type="button"
-        className="toolbar-item"
-        aria-label="Redo"
       >
         <i className="format redo" />
       </button>
@@ -346,9 +346,9 @@ export const ToolbarPlugin = () => {
       {blockType in blockTypeToBlockName && activeEditor === editor && (
         <>
           <BlockFormatDropDown
-            disabled={!isEditable}
-            blockType={blockType}
             _rootType={rootType}
+            blockType={blockType}
+            disabled={!isEditable}
             editor={editor}
           />
           <Divider />
@@ -356,17 +356,17 @@ export const ToolbarPlugin = () => {
       )}
       {blockType === "code" ? (
         <DropDown
-          disabled={!isEditable}
+          buttonAriaLabel="Select language"
           buttonClassName="toolbar-item code-language"
           buttonLabel={getLanguageFriendlyName(codeLanguage)}
-          buttonAriaLabel="Select language"
+          disabled={!isEditable}
         >
           {CODE_LANGUAGE_OPTIONS.map(([value, name]) => {
             return (
               <DropDownItem
                 className={`item ${dropDownActiveClass(value === codeLanguage)}`}
-                onClick={() => onCodeLanguageSelect(value)}
                 key={value}
+                onClick={() => onCodeLanguageSelect(value)}
               >
                 <span className="text">{name}</span>
               </DropDownItem>
@@ -377,138 +377,138 @@ export const ToolbarPlugin = () => {
         <>
           <FontDropDown
             disabled={!isEditable}
+            editor={editor}
             styleName={"font-family"}
             value={fontFamily}
-            editor={editor}
           />
           <FontDropDown
             disabled={!isEditable}
+            editor={editor}
             styleName={"font-size"}
             value={fontSize}
-            editor={editor}
           />
           <Divider />
           <button
+            aria-label={`Format text as bold. Shortcut: ${IS_APPLE ? "⌘B" : "Ctrl+B"}`}
+            className={"toolbar-item spaced " + (isBold ? "active" : "")}
             disabled={!isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")
             }}
-            className={"toolbar-item spaced " + (isBold ? "active" : "")}
             title={IS_APPLE ? "Bold (⌘B)" : "Bold (Ctrl+B)"}
             type="button"
-            aria-label={`Format text as bold. Shortcut: ${IS_APPLE ? "⌘B" : "Ctrl+B"}`}
           >
             <i className="format bold" />
           </button>
           <button
+            aria-label={`Format text as italics. Shortcut: ${IS_APPLE ? "⌘I" : "Ctrl+I"}`}
+            className={"toolbar-item spaced " + (isItalic ? "active" : "")}
             disabled={!isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic")
             }}
-            className={"toolbar-item spaced " + (isItalic ? "active" : "")}
             title={IS_APPLE ? "Italic (⌘I)" : "Italic (Ctrl+I)"}
             type="button"
-            aria-label={`Format text as italics. Shortcut: ${IS_APPLE ? "⌘I" : "Ctrl+I"}`}
           >
             <i className="format italic" />
           </button>
           <button
+            aria-label={`Format text to underlined. Shortcut: ${IS_APPLE ? "⌘U" : "Ctrl+U"}`}
+            className={"toolbar-item spaced " + (isUnderline ? "active" : "")}
             disabled={!isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "underline")
             }}
-            className={"toolbar-item spaced " + (isUnderline ? "active" : "")}
             title={IS_APPLE ? "Underline (⌘U)" : "Underline (Ctrl+U)"}
             type="button"
-            aria-label={`Format text to underlined. Shortcut: ${IS_APPLE ? "⌘U" : "Ctrl+U"}`}
           >
             <i className="format underline" />
           </button>
           <button
+            aria-label="Insert code block"
+            className={"toolbar-item spaced " + (isCode ? "active" : "")}
             disabled={!isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "code")
             }}
-            className={"toolbar-item spaced " + (isCode ? "active" : "")}
             title="Insert code block"
             type="button"
-            aria-label="Insert code block"
           >
             <i className="format code" />
           </button>
           <button
+            aria-label="Insert link"
+            className={"toolbar-item spaced " + (isLink ? "active" : "")}
             disabled={!isEditable}
             onClick={insertLink}
-            className={"toolbar-item spaced " + (isLink ? "active" : "")}
-            aria-label="Insert link"
             title="Insert link"
             type="button"
           >
             <i className="format link" />
           </button>
           <DropdownColorPicker
-            disabled={!isEditable}
-            buttonClassName="toolbar-item color-picker"
             buttonAriaLabel="Formatting text color"
+            buttonClassName="toolbar-item color-picker"
             buttonIconClassName="icon font-color"
             color={fontColor}
+            disabled={!isEditable}
             onChange={onFontColorSelect}
             title="text color"
           />
           <DropdownColorPicker
-            disabled={!isEditable}
-            buttonClassName="toolbar-item color-picker"
             buttonAriaLabel="Formatting background color"
+            buttonClassName="toolbar-item color-picker"
             buttonIconClassName="icon bg-color"
             color={bgColor}
+            disabled={!isEditable}
             onChange={onBgColorSelect}
             title="bg color"
           />
           <DropDown
-            disabled={!isEditable}
-            buttonClassName="toolbar-item spaced"
-            buttonLabel=""
             buttonAriaLabel="Formatting options for additional text styles"
+            buttonClassName="toolbar-item spaced"
             buttonIconClassName="icon dropdown-more"
+            buttonLabel=""
+            disabled={!isEditable}
           >
             <DropDownItem
+              aria-label="Format text with a strikethrough"
+              className={"item " + dropDownActiveClass(isStrikethrough)}
               onClick={() => {
                 activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "strikethrough")
               }}
-              className={"item " + dropDownActiveClass(isStrikethrough)}
               title="Strikethrough"
-              aria-label="Format text with a strikethrough"
             >
               <i className="icon strikethrough" />
               <span className="text">Strikethrough</span>
             </DropDownItem>
             <DropDownItem
+              aria-label="Format text with a subscript"
+              className={"item " + dropDownActiveClass(isSubscript)}
               onClick={() => {
                 activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "subscript")
               }}
-              className={"item " + dropDownActiveClass(isSubscript)}
               title="Subscript"
-              aria-label="Format text with a subscript"
             >
               <i className="icon subscript" />
               <span className="text">Subscript</span>
             </DropDownItem>
             <DropDownItem
+              aria-label="Format text with a superscript"
+              className={"item " + dropDownActiveClass(isSuperscript)}
               onClick={() => {
                 activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "superscript")
               }}
-              className={"item " + dropDownActiveClass(isSuperscript)}
               title="Superscript"
-              aria-label="Format text with a superscript"
             >
               <i className="icon superscript" />
               <span className="text">Superscript</span>
             </DropDownItem>
             <DropDownItem
-              onClick={clearFormatting}
-              className="item"
-              title="Clear text formatting"
               aria-label="Clear all text formatting"
+              className="item"
+              onClick={clearFormatting}
+              title="Clear text formatting"
             >
               <i className="icon clear" />
               <span className="text">Clear Formatting</span>
@@ -518,17 +518,17 @@ export const ToolbarPlugin = () => {
           {rootType === "table" && (
             <>
               <DropDown
-                disabled={!isEditable}
-                buttonClassName="toolbar-item spaced"
-                buttonLabel="Table"
                 buttonAriaLabel="Open table toolkit"
+                buttonClassName="toolbar-item spaced"
                 buttonIconClassName="icon table secondary"
+                buttonLabel="Table"
+                disabled={!isEditable}
               >
                 <DropDownItem
+                  className="item"
                   onClick={() => {
                     /**/
                   }}
-                  className="item"
                 >
                   <span className="text">TODO</span>
                 </DropDownItem>
@@ -537,61 +537,61 @@ export const ToolbarPlugin = () => {
             </>
           )}
           <DropDown
-            disabled={!isEditable}
-            buttonClassName="toolbar-item spaced"
-            buttonLabel="Insert"
             buttonAriaLabel="Insert specialized editor node"
+            buttonClassName="toolbar-item spaced"
             buttonIconClassName="icon plus"
+            buttonLabel="Insert"
+            disabled={!isEditable}
           >
             <DropDownItem
+              className="item"
               onClick={() => {
                 activeEditor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined)
               }}
-              className="item"
             >
               <i className="icon horizontal-rule" />
               <span className="text">Horizontal Rule</span>
             </DropDownItem>
             <DropDownItem
+              className="item"
               onClick={() => {
                 showModal("Insert Image", (onClose) => (
                   <InsertImageDialog activeEditor={activeEditor} onClose={onClose} />
                 ))
               }}
-              className="item"
             >
               <i className="icon image" />
               <span className="text">Image</span>
             </DropDownItem>
             <DropDownItem
+              className="item"
               onClick={() => {
                 showModal("Insert Inline Image", (onClose) => (
                   <InsertInlineImageDialog activeEditor={activeEditor} onClose={onClose} />
                 ))
               }}
-              className="item"
             >
               <i className="icon image" />
               <span className="text">Inline Image</span>
             </DropDownItem>
             <DropDownItem
+              className="item"
               onClick={() => {
                 showModal("Insert Table", (onClose) => (
                   <InsertTableDialog activeEditor={activeEditor} onClose={onClose} />
                 ))
               }}
-              className="item"
             >
               <i className="icon table" />
               <span className="text">Table</span>
             </DropDownItem>
             <DropDownItem
+              className="item"
               onClick={() => {
                 showModal("Insert Table", (onClose) => (
                   <InsertNewTableDialog activeEditor={activeEditor} onClose={onClose} />
                 ))
               }}
-              className="item"
             >
               <i className="icon table" />
               <span className="text">Table (Experimental)</span>
@@ -601,63 +601,63 @@ export const ToolbarPlugin = () => {
       )}
       <Divider />
       <DropDown
-        disabled={!isEditable}
-        buttonLabel="Align"
-        buttonIconClassName="icon left-align"
-        buttonClassName="toolbar-item spaced alignment"
         buttonAriaLabel="Formatting options for text alignment"
+        buttonClassName="toolbar-item spaced alignment"
+        buttonIconClassName="icon left-align"
+        buttonLabel="Align"
+        disabled={!isEditable}
       >
         <DropDownItem
+          className="item"
           onClick={() => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "left")
           }}
-          className="item"
         >
           <i className="icon left-align" />
           <span className="text">Left Align</span>
         </DropDownItem>
         <DropDownItem
+          className="item"
           onClick={() => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "center")
           }}
-          className="item"
         >
           <i className="icon center-align" />
           <span className="text">Center Align</span>
         </DropDownItem>
         <DropDownItem
+          className="item"
           onClick={() => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "right")
           }}
-          className="item"
         >
           <i className="icon right-align" />
           <span className="text">Right Align</span>
         </DropDownItem>
         <DropDownItem
+          className="item"
           onClick={() => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "justify")
           }}
-          className="item"
         >
           <i className="icon justify-align" />
           <span className="text">Justify Align</span>
         </DropDownItem>
         <Divider />
         <DropDownItem
+          className="item"
           onClick={() => {
             activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
           }}
-          className="item"
         >
           <i className={"icon " + (isRTL ? "indent" : "outdent")} />
           <span className="text">Outdent</span>
         </DropDownItem>
         <DropDownItem
+          className="item"
           onClick={() => {
             activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
           }}
-          className="item"
         >
           <i className={"icon " + (isRTL ? "outdent" : "indent")} />
           <span className="text">Indent</span>

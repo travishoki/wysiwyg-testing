@@ -61,19 +61,19 @@ export const TableActionMenu = ({
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       className="dropdown"
-      ref={dropDownRef}
-      onPointerMove={(e) => {
+      onClick={(e) => {
         e.stopPropagation()
       }}
       onPointerDown={(e) => {
         e.stopPropagation()
       }}
+      onPointerMove={(e) => {
+        e.stopPropagation()
+      }}
       onPointerUp={(e) => {
         e.stopPropagation()
       }}
-      onClick={(e) => {
-        e.stopPropagation()
-      }}
+      ref={dropDownRef}
     >
       <button
         className="item"

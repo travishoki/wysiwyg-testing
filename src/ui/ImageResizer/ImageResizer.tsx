@@ -217,10 +217,10 @@ export const ImageResizer = ({
       {!showCaption && captionsEnabled && (
         <button
           className="image-caption-button"
-          ref={buttonRef}
           onClick={() => {
             setShowCaption(!showCaption)
           }}
+          ref={buttonRef}
         >
           Add Caption
         </button>

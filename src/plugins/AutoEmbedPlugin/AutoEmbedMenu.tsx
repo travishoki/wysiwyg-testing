@@ -22,9 +22,9 @@ export const AutoEmbedMenu = ({
           <AutoEmbedMenuItem
             index={i}
             isSelected={selectedItemIndex === i}
+            key={option.key}
             onClick={() => onOptionClick(option, i)}
             onMouseEnter={() => onOptionMouseEnter(i)}
-            key={option.key}
             option={option}
           />
         ))}

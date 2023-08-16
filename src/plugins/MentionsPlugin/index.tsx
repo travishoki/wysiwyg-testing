@@ -639,10 +639,6 @@ export const MentionsPlugin = (): JSX.Element | null => {
 
   return (
     <LexicalTypeaheadMenuPlugin<MentionTypeaheadOption>
-      onQueryChange={setQueryString}
-      onSelectOption={onSelectOption}
-      triggerFn={checkForMentionMatch}
-      options={options}
       menuRenderFn={(
         anchorElementRef,
         { selectedIndex, selectOptionAndCleanUp, setHighlightedIndex },
@@ -655,6 +651,7 @@ export const MentionsPlugin = (): JSX.Element | null => {
                     <MentionsTypeaheadMenuItem
                       index={i}
                       isSelected={selectedIndex === i}
+                      key={option.key}
                       onClick={() => {
                         setHighlightedIndex(i)
                         selectOptionAndCleanUp(option)
@@ -662,7 +659,6 @@ export const MentionsPlugin = (): JSX.Element | null => {
                       onMouseEnter={() => {
                         setHighlightedIndex(i)
                       }}
-                      key={option.key}
                       option={option}
                     />
                   ))}
@@ -672,6 +668,10 @@ export const MentionsPlugin = (): JSX.Element | null => {
             )
           : null
       }
+      onQueryChange={setQueryString}
+      onSelectOption={onSelectOption}
+      options={options}
+      triggerFn={checkForMentionMatch}
     />
   )
 }

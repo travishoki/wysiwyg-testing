@@ -45,7 +45,6 @@ export const AutoEmbedPlugin = () => {
       {modal}
       <LexicalAutoEmbedPlugin<PlaygroundEmbedConfig>
         embedConfigs={EmbedConfigs}
-        onOpenEmbedModalForConfig={openEmbedModal}
         getMenuOptions={getMenuOptions}
         menuRenderFn={(
           anchorElementRef,
@@ -61,8 +60,6 @@ export const AutoEmbedPlugin = () => {
                   }}
                 >
                   <AutoEmbedMenu
-                    options={options}
-                    selectedItemIndex={selectedIndex}
                     onOptionClick={(option: AutoEmbedOption, index: number) => {
                       setHighlightedIndex(index)
                       selectOptionAndCleanUp(option)
@@ -70,12 +67,15 @@ export const AutoEmbedPlugin = () => {
                     onOptionMouseEnter={(index: number) => {
                       setHighlightedIndex(index)
                     }}
+                    options={options}
+                    selectedItemIndex={selectedIndex}
                   />
                 </div>,
                 anchorElementRef.current,
               )
             : null
         }
+        onOpenEmbedModalForConfig={openEmbedModal}
       />
     </>
   )

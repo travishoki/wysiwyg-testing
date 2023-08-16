@@ -32,14 +32,14 @@ export const TextInput = ({
       <label className="Input__label">{label}</label>
       <input
         aria-label="input"
-        type={type}
         className="Input__input"
-        placeholder={placeholder}
-        value={value}
+        data-test-id={dataTestId}
         onChange={(e) => {
           onChange(e.target.value)
         }}
-        data-test-id={dataTestId}
+        placeholder={placeholder}
+        type={type}
+        value={value}
       />
     </div>
   )
