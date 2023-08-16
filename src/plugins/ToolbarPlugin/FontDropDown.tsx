@@ -1,11 +1,10 @@
 import * as React from "react"
 import { useCallback } from "react"
 import { $patchStyleText } from "@lexical/selection"
-import { $getSelection, $isRangeSelection } from "lexical"
+import { $getSelection, $isRangeSelection, LexicalEditor } from "lexical"
 import { DropDown } from "../../ui/DropDown/DropDown"
 import { DropDownItem } from "../../ui/DropDown/DropDownItem"
 import { dropDownActiveClass } from "./helpers"
-import type { LexicalEditor } from "lexical"
 
 const FONT_FAMILY_OPTIONS: [string, string][] = [
   ["Arial", "Arial"],

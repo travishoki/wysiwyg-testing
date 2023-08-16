@@ -44,6 +44,8 @@ import {
   LexicalEditor,
   NodeKey,
   PASTE_COMMAND,
+  RangeSelection,
+  TextFormatType,
   createEditor,
 } from "lexical"
 import { CellContext } from "../../plugins/TablePlugin/const"
@@ -63,7 +65,6 @@ import {
   extractRowsFromHTML,
 } from "./TableNode"
 import { SortOptions } from "./types"
-import type { RangeSelection, TextFormatType } from "lexical"
 
 const NO_CELLS: [] = []
 

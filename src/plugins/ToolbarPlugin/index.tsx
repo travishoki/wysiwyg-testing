@@ -42,6 +42,7 @@ import {
   FORMAT_TEXT_COMMAND,
   INDENT_CONTENT_COMMAND,
   KEY_MODIFIER_COMMAND,
+  NodeKey,
   OUTDENT_CONTENT_COMMAND,
   REDO_COMMAND,
   SELECTION_CHANGE_COMMAND,
@@ -63,7 +64,6 @@ import { Divider } from "./Divider"
 import { FontDropDown } from "./FontDropDown"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"
 import { dropDownActiveClass, getCodeLanguageOptions } from "./helpers"
-import type { NodeKey } from "lexical"
 
 const CODE_LANGUAGE_OPTIONS = getCodeLanguageOptions()
 

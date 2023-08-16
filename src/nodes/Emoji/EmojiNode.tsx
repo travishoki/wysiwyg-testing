@@ -6,8 +6,14 @@
  *
  */
 
-import { $applyNodeReplacement, TextNode } from "lexical"
-import type { EditorConfig, NodeKey, SerializedTextNode, Spread } from "lexical"
+import {
+  $applyNodeReplacement,
+  EditorConfig,
+  NodeKey,
+  SerializedTextNode,
+  Spread,
+  TextNode,
+} from "lexical"
 
 type SerializedEmojiNode = Spread<
   {

@@ -18,8 +18,12 @@ import {
   $isTextNode,
   $setSelection,
   COMMAND_PRIORITY_LOW,
+  GridSelection,
   KEY_ARROW_RIGHT_COMMAND,
   KEY_TAB_COMMAND,
+  NodeKey,
+  NodeSelection,
+  RangeSelection,
 } from "lexical"
 import { useSharedAutocompleteContext } from "../../context/SharedAutocompleteContext"
 import {
@@ -27,7 +31,6 @@ import {
   AutocompleteNode,
 } from "../../nodes/Autocomplete/AutocompleteNode"
 import { addSwipeRightListener } from "../../utils/swipe"
-import type { GridSelection, NodeKey, NodeSelection, RangeSelection } from "lexical"
 
 type SearchPromise = {
   dismiss: () => void

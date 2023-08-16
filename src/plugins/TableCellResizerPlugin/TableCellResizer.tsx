@@ -6,6 +6,7 @@ import {
   $getTableRowIndexFromTableCellNode,
   $isTableCellNode,
   $isTableRowNode,
+  Cell,
   getCellFromTarget,
 } from "@lexical/table"
 import {
@@ -13,10 +14,9 @@ import {
   $getSelection,
   COMMAND_PRIORITY_HIGH,
   DEPRECATED_$isGridSelection,
+  LexicalEditor,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-import type { Cell } from "@lexical/table"
-import type { LexicalEditor } from "lexical"
 
 type MousePosition = {
   x: number

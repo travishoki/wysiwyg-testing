@@ -6,8 +6,7 @@
  *
  */
 
-import { TextNode } from "lexical"
-import type { EditorConfig, SerializedTextNode } from "lexical"
+import { EditorConfig, SerializedTextNode, TextNode } from "lexical"
 
 type SerializedKeywordNode = SerializedTextNode
 

@@ -15,6 +15,7 @@ import { OverflowNode } from "@lexical/overflow"
 import { HorizontalRuleNode } from "@lexical/react/LexicalHorizontalRuleNode"
 import { HeadingNode, QuoteNode } from "@lexical/rich-text"
 import { TableCellNode, TableNode, TableRowNode } from "@lexical/table"
+import { Klass, LexicalNode } from "lexical"
 import { AutocompleteNode } from "./Autocomplete/AutocompleteNode"
 import { EmojiNode } from "./Emoji/EmojiNode"
 import { ImageNode } from "./Image/ImageNode"
@@ -23,7 +24,6 @@ import { KeywordNode } from "./Keyword/KeywordNode"
 import { MentionNode } from "./Mention/MentionNode"
 import { MergeFieldNode } from "./MergeField/MergeFieldNode"
 import { TableNode as NewTableNode } from "./Table/TableNode"
-import type { Klass, LexicalNode } from "lexical"
 
 export const PlaygroundNodes: Array<Klass<LexicalNode>> = [
   HeadingNode,

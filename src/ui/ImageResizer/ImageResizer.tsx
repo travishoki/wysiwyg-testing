@@ -8,8 +8,8 @@
 
 import * as React from "react"
 import { useRef } from "react"
+import { LexicalEditor } from "lexical"
 import { clamp } from "./helpers"
-import type { LexicalEditor } from "lexical"
 
 const Direction = {
   east: 1 << 0,

@@ -1,4 +1,4 @@
-import type { HeadingTagType } from "@lexical/rich-text"
+import { HeadingTagType } from "@lexical/rich-text"
 
 const MARGIN_ABOVE_EDITOR = 624
 const HEADING_WIDTH = 9

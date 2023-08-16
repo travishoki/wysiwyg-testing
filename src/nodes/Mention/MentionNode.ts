@@ -6,16 +6,17 @@
  *
  */
 
-import { $applyNodeReplacement, TextNode } from "lexical"
-import type {
+import {
+  $applyNodeReplacement,
   DOMConversionMap,
   DOMConversionOutput,
   DOMExportOutput,
   EditorConfig,
   NodeKey,
   SerializedTextNode,
+  Spread,
+  TextNode,
 } from "lexical"
-import type { Spread } from "lexical"
 
 type SerializedMentionNode = Spread<
   {

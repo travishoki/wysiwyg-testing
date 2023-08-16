@@ -1,14 +1,14 @@
 import * as React from "react"
 import { useEffect, useRef, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
+import { TableOfContentsEntry } from "@lexical/react/LexicalTableOfContents"
+import { NodeKey } from "lexical"
 import {
   indent,
   isHeadingAboveViewport,
   isHeadingAtTheTopOfThePage,
   isHeadingBelowTheTopOfThePage,
 } from "./TableOfContentsList.helpers"
-import type { TableOfContentsEntry } from "@lexical/react/LexicalTableOfContents"
-import type { NodeKey } from "lexical"
 
 type TableOfContentsListProps = {
   tableOfContents: Array<TableOfContentsEntry>

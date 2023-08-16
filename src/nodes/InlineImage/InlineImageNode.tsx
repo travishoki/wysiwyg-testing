@@ -15,12 +15,12 @@
 
 import * as React from "react"
 import { Suspense } from "react"
-import { $applyNodeReplacement, DecoratorNode, createEditor } from "lexical"
-import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFallback"
-import type {
+import {
+  $applyNodeReplacement,
   DOMConversionMap,
   DOMConversionOutput,
   DOMExportOutput,
+  DecoratorNode,
   EditorConfig,
   LexicalEditor,
   LexicalNode,
@@ -28,7 +28,9 @@ import type {
   SerializedEditor,
   SerializedLexicalNode,
   Spread,
+  createEditor,
 } from "lexical"
+import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFallback"
 
 const InlineImageComponent = React.lazy(() => import("./InlineImageComponent"))
 

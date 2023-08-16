@@ -8,10 +8,9 @@
 
 import { useEffect } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
-import { TextNode } from "lexical"
+import { LexicalEditor, TextNode } from "lexical"
 import { EmojiNode } from "../../nodes/Emoji/EmojiNode"
 import { findAndTransformEmoji } from "./helpers"
-import type { LexicalEditor } from "lexical"
 
 const textNodeTransform = (node: TextNode): void => {
   let targetNode: TextNode | null = node

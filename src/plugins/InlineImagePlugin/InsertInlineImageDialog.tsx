@@ -1,13 +1,13 @@
 import * as React from "react"
 import { useEffect, useRef, useState } from "react"
 import { LexicalEditor } from "lexical"
+import { Position } from "../../nodes/InlineImage/InlineImageNode"
 import { Button } from "../../ui/Button/Button"
 import { DialogActions } from "../../ui/Dialog/Dialog"
 import { FileInput } from "../../ui/FileInput/FileInput"
 import { Select } from "../../ui/Select/Select"
 import { TextInput } from "../../ui/TextInput/TextInput"
 import { INSERT_INLINE_IMAGE_COMMAND } from "./const"
-import type { Position } from "../../nodes/InlineImage/InlineImageNode"
 
 type InsertInlineImageDialogProps = {
   activeEditor: LexicalEditor

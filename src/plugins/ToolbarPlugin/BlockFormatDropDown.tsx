@@ -13,12 +13,12 @@ import {
   $getSelection,
   $isRangeSelection,
   DEPRECATED_$isGridSelection,
+  LexicalEditor,
 } from "lexical"
 import { DropDown } from "../../ui/DropDown/DropDown"
 import { DropDownItem } from "../../ui/DropDown/DropDownItem"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"
 import { dropDownActiveClass } from "./helpers"
-import type { LexicalEditor } from "lexical"
 
 type BlockFormatDropDownProps = {
   blockType: keyof typeof blockTypeToBlockName

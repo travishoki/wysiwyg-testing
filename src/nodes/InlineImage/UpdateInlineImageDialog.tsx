@@ -1,13 +1,11 @@
 import * as React from "react"
 import { useState } from "react"
-import { $getNodeByKey } from "lexical"
+import { $getNodeByKey, LexicalEditor, NodeKey } from "lexical"
 import { Button } from "../../ui/Button/Button"
 import { DialogActions } from "../../ui/Dialog/Dialog"
 import { Select } from "../../ui/Select/Select"
 import { TextInput } from "../../ui/TextInput/TextInput"
-import { InlineImageNode } from "./InlineImageNode"
-import type { Position } from "./InlineImageNode"
-import type { LexicalEditor, NodeKey } from "lexical"
+import { InlineImageNode, Position } from "./InlineImageNode"
 
 type UpdateInlineImageDialogProps = {
   activeEditor: LexicalEditor

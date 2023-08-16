@@ -8,8 +8,7 @@
 
 import * as React from "react"
 import { createContext, useContext } from "react"
-import { DEFAULT_SETTINGS } from "../appSettings"
-import type { SettingName } from "../appSettings"
+import { DEFAULT_SETTINGS, SettingName } from "../appSettings"
 
 type SettingsContextShape = {
   setOption: (name: SettingName, value: boolean) => void

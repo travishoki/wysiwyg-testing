@@ -13,11 +13,16 @@ import { $convertFromMarkdownString, $convertToMarkdownString } from "@lexical/m
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { mergeRegister } from "@lexical/utils"
 import { CONNECTED_COMMAND } from "@lexical/yjs"
-import { $createTextNode, $getRoot, $isParagraphNode, COMMAND_PRIORITY_EDITOR } from "lexical"
+import {
+  $createTextNode,
+  $getRoot,
+  $isParagraphNode,
+  COMMAND_PRIORITY_EDITOR,
+  LexicalEditor,
+} from "lexical"
 import { useModal } from "../../hooks/useModal"
 import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
 import { ShowClearDialog } from "./ShowClearDialog"
-import type { LexicalEditor } from "lexical"
 
 const validateEditorState = async (editor: LexicalEditor): Promise<void> => {
   const stringifiedEditorState = JSON.stringify(editor.getEditorState())

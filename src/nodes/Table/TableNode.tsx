@@ -8,8 +8,8 @@
 
 import * as React from "react"
 import { Suspense } from "react"
-import { DecoratorNode } from "lexical"
-import type {
+import {
+  DecoratorNode,
   DOMConversionMap,
   DOMConversionOutput,
   DOMExportOutput,

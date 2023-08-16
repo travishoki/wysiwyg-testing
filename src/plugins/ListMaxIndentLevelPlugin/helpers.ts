@@ -1,6 +1,11 @@
 import { $getListDepth, $isListItemNode, $isListNode } from "@lexical/list"
-import { $getSelection, $isElementNode, $isRangeSelection, ElementNode } from "lexical"
-import type { RangeSelection } from "lexical"
+import {
+  $getSelection,
+  $isElementNode,
+  $isRangeSelection,
+  ElementNode,
+  RangeSelection,
+} from "lexical"
 
 const getElementNodesInSelection = (selection: RangeSelection): Set<ElementNode> => {
   const nodesInSelection = selection.getNodes()

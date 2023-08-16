@@ -25,10 +25,15 @@ import {
   CLICK_COMMAND,
   COMMAND_PRIORITY_LOW,
   DRAGSTART_COMMAND,
+  GridSelection,
   KEY_BACKSPACE_COMMAND,
   KEY_DELETE_COMMAND,
   KEY_ENTER_COMMAND,
   KEY_ESCAPE_COMMAND,
+  LexicalEditor,
+  NodeKey,
+  NodeSelection,
+  RangeSelection,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
 import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFallback"
@@ -42,7 +47,6 @@ import { ImageResizer } from "../../ui/ImageResizer/ImageResizer"
 import { Placeholder } from "../../ui/Placeholder/Placeholder"
 import { $isImageNode } from "./ImageNode"
 import { LazyImage } from "./LazyImage"
-import type { GridSelection, LexicalEditor, NodeKey, NodeSelection, RangeSelection } from "lexical"
 import "./ImageNode.css"
 
 type ImageComponentProps = {

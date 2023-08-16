@@ -1,5 +1,5 @@
 import * as React from "react"
-import type { Position } from "./InlineImageNode"
+import { Position } from "./InlineImageNode"
 
 const imageCache = new Set()
 

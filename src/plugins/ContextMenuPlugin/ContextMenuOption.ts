@@ -1,5 +1,5 @@
 import { MenuOption } from "@lexical/react/LexicalContextMenuPlugin"
-import type { LexicalNode } from "lexical"
+import { LexicalNode } from "lexical"
 
 export class ContextMenuOption extends MenuOption {
   title: string

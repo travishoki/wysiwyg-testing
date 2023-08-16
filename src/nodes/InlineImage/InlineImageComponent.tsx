@@ -23,10 +23,15 @@ import {
   CLICK_COMMAND,
   COMMAND_PRIORITY_LOW,
   DRAGSTART_COMMAND,
+  GridSelection,
   KEY_BACKSPACE_COMMAND,
   KEY_DELETE_COMMAND,
   KEY_ENTER_COMMAND,
   KEY_ESCAPE_COMMAND,
+  LexicalEditor,
+  NodeKey,
+  NodeSelection,
+  RangeSelection,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
 import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFallback"
@@ -36,11 +41,9 @@ import { FloatingTextFormatToolbarPlugin } from "../../plugins/FloatingTextForma
 import { LinkPlugin } from "../../plugins/LinkPlugin"
 import { ContentEditable } from "../../ui/ContentEditable/ContentEditable"
 import { Placeholder } from "../../ui/Placeholder/Placeholder"
-import { $isInlineImageNode } from "./InlineImageNode"
+import { $isInlineImageNode, Position } from "./InlineImageNode"
 import { LazyImage } from "./LazyImage"
 import { UpdateInlineImageDialog } from "./UpdateInlineImageDialog"
-import type { Position } from "./InlineImageNode"
-import type { GridSelection, LexicalEditor, NodeKey, NodeSelection, RangeSelection } from "lexical"
 import "./InlineImageNode.css"
 
 type InlineImageComponentProps = {

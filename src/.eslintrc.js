@@ -110,9 +110,11 @@ module.exports = {
     "react/no-multi-comp": "error",
     "sort-keys": "error",
     "no-else-return": "error",
+    "no-duplicate-imports": "error",
 
     // Nice to have eventually
     // "no-param-reassign": "error",
+    // "no-nested-ternary": "error",
   },
   overrides: [
     /** Composer */
