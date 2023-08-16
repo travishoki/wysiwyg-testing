@@ -3,10 +3,10 @@ import { AutoEmbedOption } from "@lexical/react/LexicalAutoEmbedPlugin"
 import { AutoEmbedMenuItem } from "./AutoEmbedMenuItem"
 
 type AutoEmbedMenuProps = {
+  onOptionClick: (option: AutoEmbedOption, index: number) => void,
+  onOptionMouseEnter: (index: number) => void,
+  options: Array<AutoEmbedOption>,
   selectedItemIndex: number | null
-  onOptionClick: (option: AutoEmbedOption, index: number) => void
-  onOptionMouseEnter: (index: number) => void
-  options: Array<AutoEmbedOption>
 }
 
 export const AutoEmbedMenu = ({

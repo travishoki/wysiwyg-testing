@@ -6,14 +6,14 @@ import { SortOptions } from "./types"
 
 type TableActionMenuProps = {
   cell: Cell
-  menuElem: HTMLElement
-  updateCellsByID: (ids: Array<string>, fn: () => void) => void
+  cellCoordMap: Map<string, [number, number]>,
+  menuElem: HTMLElement,
   onClose: () => void
+  rows: Rows,
+  setSortingOptions: (options: null | SortOptions) => void,
+  sortingOptions: null | SortOptions,
+  updateCellsByID: (ids: Array<string>, fn: () => void) => void,
   updateTableNode: (fn2: (tableNode: TableNode) => void) => void
-  cellCoordMap: Map<string, [number, number]>
-  rows: Rows
-  setSortingOptions: (options: null | SortOptions) => void
-  sortingOptions: null | SortOptions
 }
 
 export const TableActionMenu = ({

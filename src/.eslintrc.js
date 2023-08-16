@@ -1,5 +1,6 @@
 module.exports = {
   extends: ["react-app"],
+  plugins: ["typescript-sort-keys"],
   rules: {
     /** General */
     // "sort-keys": "off", // Hoki Overriden
@@ -106,7 +107,7 @@ module.exports = {
     "no-restricted-syntax": "error",
     "jsx-a11y/control-has-associated-label": "error",
 
-    // Taking it a step further to make things clean
+    // Extra Syntax
     "react/no-multi-comp": "error",
     "sort-keys": "error",
     "no-else-return": "error",
@@ -119,20 +120,7 @@ module.exports = {
     // Extra Formatting
     "padding-line-between-statements": [1, { blankLine: "always", prev: "*", next: "return" }],
     "react/jsx-sort-props": ["error"],
-
-    // React
-    // "react/display-name": 0,
-    // "react/jsx-key": 1,
-    // "react/jsx-no-duplicate-props": 1,
-    // "react/jsx-uses-react": 1,
-    // "react/jsx-uses-vars": 1,
-    // "react/no-danger": 1,
-    // "react/no-direct-mutation-state": 1,
-    // "react/no-unknown-property": 1,
-    // "react/prefer-es6-class": 1,
-    // "react/prop-types": 1,
-    // "react/react-in-jsx-scope": 1,
-    // "react/self-closing-comp": 1,
+    "typescript-sort-keys/interface": "error",
   },
   overrides: [
     /** Composer */

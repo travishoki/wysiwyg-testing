@@ -8,8 +8,8 @@ export const getTopLevelNodeKeys = (editor: LexicalEditor): string[] => {
 export const getCollapsedMargins = (
   elem: HTMLElement,
 ): {
+  marginBottom: number,
   marginTop: number
-  marginBottom: number
 } => {
   const getMargin = (element: Element | null, margin: "marginTop" | "marginBottom"): number =>
     element ? parseFloat(window.getComputedStyle(element)[margin]) : 0

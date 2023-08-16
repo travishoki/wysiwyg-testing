@@ -19,14 +19,14 @@ import { EmojiMenuItem } from "./EmojiMenuItem"
 import { EmojiOption } from "./EmojiOption"
 
 type Emoji = {
-  emoji: string
-  description: string
-  category: string
-  aliases: Array<string>
-  tags: Array<string>
+  aliases: Array<string>,
+  category: string,
+  description: string,
+  emoji: string,
+  ios_version: string,
+  skin_tones?: boolean,
+  tags: Array<string>,
   unicode_version: string
-  ios_version: string
-  skin_tones?: boolean
 }
 
 const MAX_EMOJI_SUGGESTION_COUNT = 10

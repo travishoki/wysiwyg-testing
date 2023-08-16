@@ -11,15 +11,15 @@ import { ColorPicker } from "../ColorPicker/ColorPicker"
 import { DropDown } from "./DropDown"
 
 type DropdownColorPickerProps = {
-  disabled?: boolean
-  buttonAriaLabel?: string
-  buttonClassName: string
-  buttonIconClassName?: string
-  buttonLabel?: string
+  buttonAriaLabel?: string,
+  buttonClassName: string,
+  buttonIconClassName?: string,
+  buttonLabel?: string,
+  color: string,
+  disabled?: boolean,
+  onChange?: (color: string) => void,
+  stopCloseOnClickSelf?: boolean,
   title?: string
-  stopCloseOnClickSelf?: boolean
-  color: string
-  onChange?: (color: string) => void
 }
 
 export const DropdownColorPicker = ({

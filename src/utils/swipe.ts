@@ -9,10 +9,10 @@
 type Force = [number, number]
 type Listener = (force: Force, e: TouchEvent) => void
 type ElementValues = {
+  handleTouchend: (e: TouchEvent) => void,
+  handleTouchstart: (e: TouchEvent) => void,
+  listeners: Set<Listener>,
   start: null | Force
-  listeners: Set<Listener>
-  handleTouchstart: (e: TouchEvent) => void
-  handleTouchend: (e: TouchEvent) => void
 }
 
 const elements = new WeakMap<HTMLElement, ElementValues>()

@@ -15,8 +15,8 @@ type TextInputProps = Readonly<{
   label: string
   onChange: (val: string) => void
   placeholder?: string
+  type?: HTMLInputTypeAttribute,
   value: string
-  type?: HTMLInputTypeAttribute
 }>
 
 export const TextInput = ({

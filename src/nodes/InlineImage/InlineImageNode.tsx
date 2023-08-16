@@ -41,16 +41,16 @@ export interface InlineImagePayload {
   caption?: LexicalEditor
   height?: number
   key?: NodeKey
-  showCaption?: boolean
-  src: string
+  position?: Position,
+  showCaption?: boolean,
+  src: string,
   width?: number
-  position?: Position
 }
 
 interface UpdateInlineImagePayload {
   altText?: string
+  position?: Position,
   showCaption?: boolean
-  position?: Position
 }
 
 const convertInlineImageElement = (domNode: Node): null | DOMConversionOutput => {
@@ -69,10 +69,10 @@ type SerializedInlineImageNode = Spread<
     altText: string
     caption: SerializedEditor
     height?: number
-    showCaption: boolean
-    src: string
+    position?: Position,
+    showCaption: boolean,
+    src: string,
     width?: number
-    position?: Position
   },
   SerializedLexicalNode
 >

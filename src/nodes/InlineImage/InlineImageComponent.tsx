@@ -51,10 +51,10 @@ type InlineImageComponentProps = {
   caption: LexicalEditor
   height: "inherit" | number
   nodeKey: NodeKey
-  showCaption: boolean
-  src: string
+  position: Position,
+  showCaption: boolean,
+  src: string,
   width: "inherit" | number
-  position: Position
 }
 
 const InlineImageComponent = ({

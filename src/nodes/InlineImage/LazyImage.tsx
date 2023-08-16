@@ -21,9 +21,9 @@ type InlineImageComponentLazyImageProps = {
   className: string | null
   height: "inherit" | number
   imageRef: { current: null | HTMLImageElement }
-  src: string
+  position: Position,
+  src: string,
   width: "inherit" | number
-  position: Position
 }
 
 export const LazyImage = ({

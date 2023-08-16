@@ -19,10 +19,10 @@ import { setFloatingElemPositionForLinkEditor } from "../../utils/setFloatingEle
 import { sanitizeUrl } from "../../utils/url"
 
 type FloatingLinkEditorProps = {
-  editor: LexicalEditor
-  isLink: boolean
+  anchorElem: HTMLElement,
+  editor: LexicalEditor,
+  isLink: boolean,
   setIsLink: Dispatch<boolean>
-  anchorElem: HTMLElement
 }
 
 export const FloatingLinkEditor = ({

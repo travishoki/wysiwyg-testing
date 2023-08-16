@@ -21,10 +21,10 @@ import { blockTypeToBlockName, rootTypeToRootName } from "./const"
 import { dropDownActiveClass } from "./helpers"
 
 type BlockFormatDropDownProps = {
-  blockType: keyof typeof blockTypeToBlockName
-  _rootType: keyof typeof rootTypeToRootName
+  _rootType: keyof typeof rootTypeToRootName,
+  blockType: keyof typeof blockTypeToBlockName,
+  disabled?: boolean,
   editor: LexicalEditor
-  disabled?: boolean
 }
 
 export const BlockFormatDropDown = ({

@@ -200,7 +200,7 @@ const getSelectedRect = (
   startID: string,
   endID: string,
   cellCoordMap: Map<string, [number, number]>,
-): null | { startX: number; endX: number; startY: number; endY: number } => {
+): null | { endX: number; endY: number, startX: number; startY: number; } => {
   const startCoords = cellCoordMap.get(startID)
   const endCoords = cellCoordMap.get(endID)
   if (startCoords === undefined || endCoords === undefined) {
@@ -243,7 +243,7 @@ const getSelectedIDs = (
 
 const extractCellsFromRows = (
   rows: Rows,
-  rect: { startX: number; endX: number; startY: number; endY: number },
+  rect: { endX: number; endY: number, startX: number; startY: number; },
 ): Rows => {
   const { startX, endY, endX, startY } = rect
   const newRows: Rows = []
@@ -285,7 +285,7 @@ type TableComponentProps = {
 
 const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) => {
   const [isSelected, setSelected, clearSelection] = useLexicalNodeSelection(nodeKey)
-  const resizeMeasureRef = useRef<{ size: number; point: number }>({
+  const resizeMeasureRef = useRef<{ point: number, size: number; }>({
     point: 0,
     size: 0,
   })

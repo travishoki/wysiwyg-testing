@@ -23,9 +23,9 @@ import {
 
 export type Cell = {
   colSpan: number
-  json: string
-  type: "normal" | "header"
-  id: string
+  id: string,
+  json: string,
+  type: "normal" | "header",
   width: number | null
 }
 
@@ -140,7 +140,7 @@ const convertTableElement = (domNode: HTMLElement): null | DOMConversionOutput =
 
 export const exportTableCellsToHTML = (
   rows: Rows,
-  rect?: { startX: number; endX: number; startY: number; endY: number },
+  rect?: { endX: number; endY: number, startX: number; startY: number; },
 ): HTMLElement => {
   const table = document.createElement("table")
   const colGroup = document.createElement("colgroup")

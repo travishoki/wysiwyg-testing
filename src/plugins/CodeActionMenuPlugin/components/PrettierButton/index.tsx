@@ -14,9 +14,9 @@ import { Options } from "prettier"
 import "./index.css"
 
 interface PrettierButtonProps {
+  editor: LexicalEditor,
+  getCodeDOMNode: () => HTMLElement | null,
   lang: string
-  editor: LexicalEditor
-  getCodeDOMNode: () => HTMLElement | null
 }
 
 const PRETTIER_PARSER_MODULES = {

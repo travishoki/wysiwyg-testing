@@ -19,15 +19,15 @@ const Direction = {
 }
 
 type ImageResizerProps = {
-  editor: LexicalEditor
-  buttonRef: { current: null | HTMLButtonElement }
-  imageRef: { current: null | HTMLElement }
-  maxWidth?: number
-  onResizeEnd: (width: "inherit" | number, height: "inherit" | number) => void
-  onResizeStart: () => void
-  setShowCaption: (show: boolean) => void
+  buttonRef: { current: null | HTMLButtonElement },
+  captionsEnabled: boolean,
+  editor: LexicalEditor,
+  imageRef: { current: null | HTMLElement },
+  maxWidth?: number,
+  onResizeEnd: (width: "inherit" | number, height: "inherit" | number) => void,
+  onResizeStart: () => void,
+  setShowCaption: (show: boolean) => void,
   showCaption: boolean
-  captionsEnabled: boolean
 }
 
 export const ImageResizer = ({

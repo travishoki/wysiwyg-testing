@@ -40,12 +40,12 @@ import {
 } from "./TableActionMenu.helpers"
 
 type TableCellActionMenuProps = Readonly<{
-  contextRef: { current: null | HTMLElement }
-  onClose: () => void
-  setIsMenuOpen: (isOpen: boolean) => void
-  showColorPickerModal: (title: string, showModal: (onClose: () => void) => JSX.Element) => void
+  cellMerge: boolean,
+  contextRef: { current: null | HTMLElement },
+  onClose: () => void,
+  setIsMenuOpen: (isOpen: boolean) => void,
+  showColorPickerModal: (title: string, showModal: (onClose: () => void) => JSX.Element) => void,
   tableCellNode: TableCellNode
-  cellMerge: boolean
 }>
 
 export const TableActionMenu = ({

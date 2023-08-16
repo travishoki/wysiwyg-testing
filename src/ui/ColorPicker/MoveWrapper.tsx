@@ -7,10 +7,10 @@ export interface Position {
 }
 
 interface MoveWrapperProps {
-  className?: string
-  style?: React.CSSProperties
+  children: JSX.Element,
+  className?: string,
   onChange: (position: Position) => void
-  children: JSX.Element
+  style?: React.CSSProperties
 }
 
 export const MoveWrapper = ({ className, style, onChange, children }: MoveWrapperProps) => {

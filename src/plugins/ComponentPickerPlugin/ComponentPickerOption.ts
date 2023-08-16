@@ -16,8 +16,8 @@ export class ComponentPickerOption extends MenuOption {
     title: string,
     options: {
       icon?: JSX.Element
-      keywords?: Array<string>
-      keyboardShortcut?: string
+      keyboardShortcut?: string,
+      keywords?: Array<string>,
       onSelect: (queryString: string) => void
     },
   ) {

@@ -30,10 +30,10 @@ const FONT_SIZE_OPTIONS: [string, string][] = [
 ]
 
 type FontDropDownProps = {
-  editor: LexicalEditor
-  value: string
+  disabled?: boolean,
+  editor: LexicalEditor,
   styleName: string
-  disabled?: boolean
+  value: string
 }
 
 export const FontDropDown = ({ editor, value, styleName, disabled = false }: FontDropDownProps) => {

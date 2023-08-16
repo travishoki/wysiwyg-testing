@@ -14,12 +14,12 @@ import { DropDownItems } from "./DropDownItems"
 const dropDownPadding = 4
 
 type DropDownProps = {
-  disabled?: boolean
-  buttonAriaLabel?: string
-  buttonClassName: string
-  buttonIconClassName?: string
-  buttonLabel?: string
-  children: ReactNode
+  buttonAriaLabel?: string,
+  buttonClassName: string,
+  buttonIconClassName?: string,
+  buttonLabel?: string,
+  children: ReactNode,
+  disabled?: boolean,
   stopCloseOnClickSelf?: boolean
 }
 

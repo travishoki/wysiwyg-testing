@@ -14,8 +14,8 @@ import { setFloatingElemPosition } from "../../utils/setFloatingElemPosition"
 import { INSERT_INLINE_IMAGE_COMMAND } from "../InlineImagePlugin/const"
 
 type TextFormatFloatingToolbarProps = {
-  editor: LexicalEditor
-  anchorElem: HTMLElement
+  anchorElem: HTMLElement,
+  editor: LexicalEditor,
   isBold: boolean
   isCode: boolean
   isItalic: boolean

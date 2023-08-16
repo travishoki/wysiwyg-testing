@@ -52,14 +52,14 @@ import "./ImageNode.css"
 type ImageComponentProps = {
   altText: string
   caption: LexicalEditor
-  height: "inherit" | number
-  maxWidth: number
-  nodeKey: NodeKey
-  resizable: boolean
-  showCaption: boolean
-  src: string
+  captionsEnabled: boolean,
+  height: "inherit" | number,
+  maxWidth: number,
+  nodeKey: NodeKey,
+  resizable: boolean,
+  showCaption: boolean,
+  src: string,
   width: "inherit" | number
-  captionsEnabled: boolean
 }
 
 const ImageComponent = ({

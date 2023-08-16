@@ -12,9 +12,9 @@ import { joinClasses } from "../../utils/joinClasses"
 import "./Button.css"
 
 type ButtonProps = {
-  "data-test-id"?: string
-  children: ReactNode
-  className?: string
+  children: ReactNode,
+  className?: string,
+  "data-test-id"?: string,
   disabled?: boolean
   onClick: () => void
   small?: boolean

@@ -11,8 +11,8 @@ import { useDebounce } from "./utils"
 const CODE_PADDING = 8
 
 interface Position {
+  right: string,
   top: string
-  right: string
 }
 
 type CodeActionMenuContainerProps = {
