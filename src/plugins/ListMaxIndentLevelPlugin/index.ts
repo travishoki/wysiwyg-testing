@@ -11,11 +11,11 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { COMMAND_PRIORITY_CRITICAL, INDENT_CONTENT_COMMAND } from "lexical"
 import { isIndentPermitted } from "./helpers"
 
-type Props = Readonly<{
+type ListMaxIndentLevelPluginProps = Readonly<{
   maxDepth: number | null | undefined
 }>
 
-export const ListMaxIndentLevelPlugin = ({ maxDepth }: Props): null => {
+export const ListMaxIndentLevelPlugin = ({ maxDepth }: ListMaxIndentLevelPluginProps): null => {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {
