@@ -48,6 +48,7 @@ import {
 } from "lexical"
 import { CellContext } from "../../plugins/TablePlugin/const"
 import { IS_APPLE } from "../../shared/environment"
+import { isStartingResize } from "./TableComponent.helpers"
 import { TableCell } from "./TableComponentTableCell"
 import { SortOptions } from "./TableComponentTypes"
 import {
@@ -78,10 +79,6 @@ const focusCell = (tableElem: HTMLElement, id: string): void => {
     return
   }
   cellElem.focus()
-}
-
-const isStartingResize = (target: HTMLElement): boolean => {
-  return target.nodeType === 1 && target.hasAttribute("data-table-resize")
 }
 
 const getCurrentDocument = (editor: LexicalEditor): Document => {

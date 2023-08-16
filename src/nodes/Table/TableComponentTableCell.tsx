@@ -1,28 +1,12 @@
 import * as React from "react"
 import { useEffect, useRef, useState } from "react"
-import { $generateHtmlFromNodes } from "@lexical/html"
-import { $getRoot, EditorThemeClasses, LexicalEditor } from "lexical"
+import { EditorThemeClasses, LexicalEditor } from "lexical"
 import { createPortal } from "react-dom"
 import { TableComponentTableActionMenu } from "./TableComponentTableActionMenu"
+import { createEmptyParagraphHTML, generateHTMLFromJSON } from "./TableComponentTableCell.helpers"
 import { TableCellEditor } from "./TableComponentTableCellEditor"
 import { SortOptions } from "./TableComponentTypes"
-import { Cell, cellHTMLCache, cellTextContentCache, Rows, TableNode } from "./TableNode"
-
-const createEmptyParagraphHTML = (theme: EditorThemeClasses): string => {
-  return `<p class="${theme.paragraph}"><br></p>`
-}
-
-const generateHTMLFromJSON = (editorStateJSON: string, cellEditor: LexicalEditor): string => {
-  const editorState = cellEditor.parseEditorState(editorStateJSON)
-  let html = cellHTMLCache.get(editorStateJSON)
-  if (html === undefined) {
-    html = editorState.read(() => $generateHtmlFromNodes(cellEditor, null))
-    const textContent = editorState.read(() => $getRoot().getTextContent())
-    cellHTMLCache.set(editorStateJSON, html)
-    cellTextContentCache.set(editorStateJSON, textContent)
-  }
-  return html
-}
+import { Cell, Rows, TableNode } from "./TableNode"
 
 type TableCellProps = {
   cell: Cell
