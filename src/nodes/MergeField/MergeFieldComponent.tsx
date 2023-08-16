@@ -9,12 +9,11 @@ import ImageClose from "../../images/icons/close.svg"
 import { $isMergeFieldNode } from "./MergeFieldNode"
 import "./MergeFieldComponent.css"
 
-// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
-export default function MergeFieldComponent({
+const MergeFieldComponent = ({
   mergeFieldIconUrl,
   mergeFieldId,
   nodeKey,
-}: MergeFieldComponentProps) {
+}: MergeFieldComponentProps) => {
   const [editor] = useLexicalComposerContext()
   const isEditable = useLexicalEditable()
 
@@ -50,3 +49,6 @@ type MergeFieldComponentProps = {
   mergeFieldId: string
   nodeKey: string
 }
+
+// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
+export default MergeFieldComponent

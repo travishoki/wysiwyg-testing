@@ -58,8 +58,7 @@ type ImageComponentProps = {
   captionsEnabled: boolean
 }
 
-// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
-export default function ImageComponent({
+const ImageComponent = ({
   src,
   altText,
   nodeKey,
@@ -70,7 +69,7 @@ export default function ImageComponent({
   showCaption,
   caption,
   captionsEnabled,
-}: ImageComponentProps) {
+}: ImageComponentProps) => {
   const imageRef = useRef<null | HTMLImageElement>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
   const [isSelected, setSelected, clearSelection] = useLexicalNodeSelection(nodeKey)
@@ -296,3 +295,6 @@ export default function ImageComponent({
     </Suspense>
   )
 }
+
+// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
+export default ImageComponent

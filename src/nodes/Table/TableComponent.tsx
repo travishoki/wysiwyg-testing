@@ -277,8 +277,7 @@ type TableComponentProps = {
   theme: EditorThemeClasses
 }
 
-// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
-export default function TableComponent({ nodeKey, rows: rawRows, theme }: TableComponentProps) {
+const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) => {
   const [isSelected, setSelected, clearSelection] = useLexicalNodeSelection(nodeKey)
   const resizeMeasureRef = useRef<{ size: number; point: number }>({
     point: 0,
@@ -1265,3 +1264,6 @@ export default function TableComponent({ nodeKey, rows: rawRows, theme }: TableC
     </div>
   )
 }
+
+// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
+export default TableComponent

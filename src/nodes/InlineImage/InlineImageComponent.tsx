@@ -53,8 +53,7 @@ type InlineImageComponentProps = {
   position: Position
 }
 
-// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
-export default function InlineImageComponent({
+const InlineImageComponent = ({
   src,
   altText,
   nodeKey,
@@ -63,7 +62,7 @@ export default function InlineImageComponent({
   showCaption,
   caption,
   position,
-}: InlineImageComponentProps) {
+}: InlineImageComponentProps) => {
   const [modal, showModal] = useModal()
   const imageRef = useRef<null | HTMLImageElement>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
@@ -248,3 +247,6 @@ export default function InlineImageComponent({
     </Suspense>
   )
 }
+
+// eslint-disable-next-line import/no-default-export -- This component is lazy loaded.
+export default InlineImageComponent
