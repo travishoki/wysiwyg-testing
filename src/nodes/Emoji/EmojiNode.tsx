@@ -44,6 +44,7 @@ export class EmojiNode extends TextNode {
     dom.className = this.__className
     inner.className = "emoji-inner"
     dom.appendChild(inner)
+
     return dom
   }
 
@@ -53,6 +54,7 @@ export class EmojiNode extends TextNode {
       return true
     }
     super.updateDOM(prevNode, inner as HTMLElement, config)
+
     return false
   }
 
@@ -62,6 +64,7 @@ export class EmojiNode extends TextNode {
     node.setDetail(serializedNode.detail)
     node.setMode(serializedNode.mode)
     node.setStyle(serializedNode.style)
+
     return node
   }
 
@@ -75,11 +78,13 @@ export class EmojiNode extends TextNode {
 
   getClassName(): string {
     const self = this.getLatest()
+
     return self.__className
   }
 }
 
 export const $createEmojiNode = (className: string, emojiText: string): EmojiNode => {
   const node = new EmojiNode(className, emojiText).setMode("token")
+
   return $applyNodeReplacement(node)
 }

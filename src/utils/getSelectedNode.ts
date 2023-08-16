@@ -20,5 +20,6 @@ export const getSelectedNode = (selection: RangeSelection): TextNode | ElementNo
   if (isBackward) {
     return $isAtNodeEnd(focus) ? anchorNode : focusNode
   }
+
   return $isAtNodeEnd(anchor) ? anchorNode : focusNode
 }

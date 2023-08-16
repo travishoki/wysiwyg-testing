@@ -36,6 +36,7 @@ export const LazyImage = ({
   position,
 }: InlineImageComponentLazyImageProps) => {
   useSuspenseImage(src)
+
   return (
     <img
       className={className || undefined}

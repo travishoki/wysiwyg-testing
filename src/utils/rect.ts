@@ -109,6 +109,7 @@ export class Rect {
     const maxY = y1 + h1 >= y2 + h2 ? y1 + h1 : y2 + h2
     const minX = x1 <= x2 ? x1 : x2
     const minY = y1 <= y2 ? y1 : y2
+
     return maxX - minX <= w1 + w2 && maxY - minY <= h1 + h2
   }
 
@@ -132,11 +133,13 @@ export class Rect {
   static fromPoints(startPoint: Point, endPoint: Point): Rect {
     const { y: top, x: left } = startPoint
     const { y: bottom, x: right } = endPoint
+
     return Rect.fromLTRB(left, top, right, bottom)
   }
 
   static fromDOM(dom: HTMLElement): Rect {
     const { top, width, left, height } = dom.getBoundingClientRect()
+
     return Rect.fromLWTH(left, width, top, height)
   }
 }

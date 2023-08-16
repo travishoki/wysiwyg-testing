@@ -20,6 +20,7 @@ export const AutoEmbedMenuItem = ({
   if (isSelected) {
     className += " selected"
   }
+
   return (
     <li
       key={option.key}

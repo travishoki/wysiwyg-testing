@@ -51,6 +51,7 @@ export const ContextMenuPlugin = () => {
             })
             if (permission.state === "denied") {
               alert("Not allowed to paste from clipboard.")
+
               return
             }
 
@@ -77,6 +78,7 @@ export const ContextMenuPlugin = () => {
 
             if (permission.state === "denied") {
               alert("Not allowed to paste from clipboard.")
+
               return
             }
 

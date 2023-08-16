@@ -30,11 +30,13 @@ type LanguagesType = keyof typeof PRETTIER_PARSER_MODULES
 
 const loadPrettierParserByLang = async (lang: string) => {
   const dynamicImport = PRETTIER_PARSER_MODULES[lang as LanguagesType]
+
   return await dynamicImport()
 }
 
 const loadPrettierFormat = async () => {
   const { format } = await import("prettier/standalone")
+
   return format
 }
 

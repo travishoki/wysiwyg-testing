@@ -20,6 +20,7 @@ export const MentionsTypeaheadMenuItem = ({
   if (isSelected) {
     className += " selected"
   }
+
   return (
     <li
       key={option.key}

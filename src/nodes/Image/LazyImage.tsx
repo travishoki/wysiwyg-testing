@@ -35,6 +35,7 @@ export const LazyImage = ({
   maxWidth,
 }: ImageComponentLazyImageProps) => {
   useSuspenseImage(src)
+
   return (
     <img
       className={className || undefined}

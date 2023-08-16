@@ -30,6 +30,7 @@ const convertMentionElement = (domNode: HTMLElement): DOMConversionOutput | null
 
   if (textContent !== null) {
     const node = $createMentionNode(textContent)
+
     return {
       node,
     }
@@ -57,6 +58,7 @@ export class MentionNode extends TextNode {
     node.setDetail(serializedNode.detail)
     node.setMode(serializedNode.mode)
     node.setStyle(serializedNode.style)
+
     return node
   }
 
@@ -78,6 +80,7 @@ export class MentionNode extends TextNode {
     const dom = super.createDOM(config)
     dom.style.cssText = mentionStyle
     dom.className = "mention"
+
     return dom
   }
 
@@ -85,6 +88,7 @@ export class MentionNode extends TextNode {
     const element = document.createElement("span")
     element.setAttribute("data-lexical-mention", "true")
     element.textContent = this.__text
+
     return { element }
   }
 
@@ -94,6 +98,7 @@ export class MentionNode extends TextNode {
         if (!domNode.hasAttribute("data-lexical-mention")) {
           return null
         }
+
         return {
           conversion: convertMentionElement,
           priority: 1,
@@ -118,5 +123,6 @@ export class MentionNode extends TextNode {
 export const $createMentionNode = (mentionName: string): MentionNode => {
   const mentionNode = new MentionNode(mentionName)
   mentionNode.setMode("segmented").toggleDirectionless()
+
   return $applyNodeReplacement(mentionNode)
 }

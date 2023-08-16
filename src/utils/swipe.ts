@@ -22,6 +22,7 @@ const readTouch = (e: TouchEvent): [number, number] | null => {
   if (touch === undefined) {
     return null
   }
+
   return [touch.clientX, touch.clientY]
 }
 
@@ -61,6 +62,7 @@ const addListener = (element: HTMLElement, cb: Listener): (() => void) => {
     elements.set(element, elementValues)
   }
   elementValues.listeners.add(cb)
+
   return () => deleteListener(element, cb)
 }
 

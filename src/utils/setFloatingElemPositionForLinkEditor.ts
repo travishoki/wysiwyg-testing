@@ -20,6 +20,7 @@ export const setFloatingElemPositionForLinkEditor = (
   if (targetRect === null || !scrollerElem) {
     floatingElem.style.opacity = "0"
     floatingElem.style.transform = "translate(-10000px, -10000px)"
+
     return
   }
 

@@ -71,6 +71,7 @@ const NO_CELLS: [] = []
 const $createSelectAll = (): RangeSelection => {
   const sel = $createRangeSelection()
   sel.focus.set("root", $getRoot().getChildrenSize(), "element")
+
   return sel
 }
 
@@ -84,6 +85,7 @@ const focusCell = (tableElem: HTMLElement, id: string): void => {
 
 const getCurrentDocument = (editor: LexicalEditor): Document => {
   const rootElement = editor.getRootElement()
+
   return rootElement !== null ? rootElement.ownerDocument : document
 }
 
@@ -139,6 +141,7 @@ const getCellID = (domElement: HTMLElement): null | string => {
     }
     node = node.parentElement
   }
+
   return null
 }
 
@@ -150,6 +153,7 @@ const getTableCellWidth = (domElement: HTMLElement): number => {
     }
     node = node.parentElement
   }
+
   return 0
 }
 
@@ -188,6 +192,7 @@ const isTargetOnPossibleUIControl = (target: HTMLElement): boolean => {
     }
     node = node.parentElement
   }
+
   return false
 }
 
@@ -232,6 +237,7 @@ const getSelectedIDs = (
       ids.push(rows[y].cells[x].id)
     }
   }
+
   return ids
 }
 
@@ -252,6 +258,7 @@ const extractCellsFromRows = (
     }
     newRows.push(newRow)
   }
+
   return newRows
 }
 
@@ -266,6 +273,7 @@ const getCell = (
   }
   const [x, y] = coords
   const row = rows[y]
+
   return row.cells[x]
 }
 
@@ -304,6 +312,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
         map.set(cell.id, [x, y])
       }
     }
+
     return map
   }, [rawRows])
   const rows = useMemo(() => {
@@ -323,9 +332,11 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
       if (sortingOptions.type === "ascending") {
         return aContent.localeCompare(bContent)
       }
+
       return bContent.localeCompare(aContent)
     })
     _rows.unshift(rawRows[0])
+
     return _rows
   }, [rawRows, sortingOptions])
   const [primarySelectedCellID, setPrimarySelectedCellID] = useState<null | string>(null)
@@ -339,6 +350,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
       onError: (error) => cellEditorConfig.onError(error, _cellEditor),
       theme: cellEditorConfig.theme,
     })
+
     return _cellEditor
   }, [cellEditorConfig])
   const [selectedCellIDs, setSelectedCellIDs] = useState<Array<string>>([])
@@ -428,6 +440,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
     const isAtEdgeOfTable = (event: PointerEvent) => {
       const x = event.clientX - tableRect.x
       const y = event.clientY - tableRect.y
+
       return x < 5 || y < 5
     }
 
@@ -442,6 +455,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
           setSelected(true)
           setPrimarySelectedCellID(null)
           selectTable()
+
           return
         }
         setSelected(false)
@@ -452,6 +466,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
             point: event.clientX,
             size: getTableCellWidth(event.target as HTMLElement),
           }
+
           return
         }
         mouseDownRef.current = true
@@ -501,6 +516,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
           }
           tableResizerRulerElem.style.left = `${x}px`
         }
+
         return
       }
       if (!isEditing) {
@@ -629,14 +645,17 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
         ) {
           if (isCopy(keyCode, event.shiftKey, event.metaKey, event.ctrlKey)) {
             editor.dispatchCommand(COPY_COMMAND, event)
+
             return
           }
           if (isCut(keyCode, event.shiftKey, event.metaKey, event.ctrlKey)) {
             editor.dispatchCommand(CUT_COMMAND, event)
+
             return
           }
           if (isPaste(keyCode, event.shiftKey, event.metaKey, event.ctrlKey)) {
             editor.dispatchCommand(PASTE_COMMAND, event)
+
             return
           }
         }
@@ -673,6 +692,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
         root.clear()
         root.append($createParagraphNode())
       })
+
       return true
     } else if (isSelected) {
       updateTableNode((tableNode) => {
@@ -681,6 +701,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
         tableNode.remove()
       })
     }
+
     return false
   }, [
     isEditing,
@@ -784,6 +805,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
                   }
                 },
               )
+
               return
             }
             // eslint-disable-next-line no-empty
@@ -805,6 +827,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
                 $addUpdateTag("history-push")
                 tableNode.mergeRows(x, y, pasteRows)
               })
+
               return
             }
             $updateCells(
@@ -825,6 +848,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
                 }
               },
             )
+
             return
             // eslint-disable-next-line no-empty
           } catch {}
@@ -886,6 +910,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
         const plainTextString = dom.outerText
         const tableNodeJSON = editor.getEditorState().read(() => {
           const tableNode = $getNodeByKey(nodeKey) as TableNode
+
           return tableNode.exportJSON()
         })
         tableNodeJSON.rows = extractCellsFromRows(rows, rect)
@@ -909,8 +934,10 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
         pasteContent(event)
         mouseDownRef.current = false
         setSelectedCellIDs(NO_CELLS)
+
         return true
       }
+
       return false
     }
 
@@ -927,8 +954,10 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
         } else {
           copyCellRange(event)
         }
+
         return true
       }
+
       return false
     }
 
@@ -940,6 +969,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
           if ($isNodeSelection(selection)) {
             return true
           }
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -951,8 +981,10 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
         (event: ClipboardEvent, activeEditor) => {
           if (handleCopy(event, activeEditor)) {
             clearCellsCommand()
+
             return true
           }
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -982,8 +1014,10 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
                 sel.formatText(payload)
               },
             )
+
             return true
           }
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -1006,8 +1040,10 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
             event.preventDefault()
             event.stopPropagation()
             clearSelection()
+
             return true
           }
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -1041,9 +1077,11 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
             }
             if (nextX !== null && nextY !== null) {
               modifySelectedCells(nextX, nextY, false)
+
               return true
             }
           }
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -1061,6 +1099,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
               const [x, y] = cellCoordMap.get(cellID) as [number, number]
               if (y !== 0) {
                 modifySelectedCells(x, y - 1, extend)
+
                 return true
               }
             }
@@ -1073,8 +1112,10 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
             selection.anchor.getNode().getTopLevelElementOrThrow().getPreviousSibling() === null
           ) {
             event.preventDefault()
+
             return true
           }
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -1092,6 +1133,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
               const [x, y] = cellCoordMap.get(cellID) as [number, number]
               if (y !== rows.length - 1) {
                 modifySelectedCells(x, y + 1, extend)
+
                 return true
               }
             }
@@ -1104,8 +1146,10 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
             selection.anchor.getNode().getTopLevelElementOrThrow().getNextSibling() === null
           ) {
             event.preventDefault()
+
             return true
           }
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -1123,6 +1167,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
               const [x, y] = cellCoordMap.get(cellID) as [number, number]
               if (x !== 0) {
                 modifySelectedCells(x - 1, y, extend)
+
                 return true
               }
             }
@@ -1132,8 +1177,10 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
           }
           if (selection.isCollapsed() && selection.anchor.offset === 0) {
             event.preventDefault()
+
             return true
           }
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -1151,6 +1198,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
               const [x, y] = cellCoordMap.get(cellID) as [number, number]
               if (x !== rows[y].cells.length - 1) {
                 modifySelectedCells(x + 1, y, extend)
+
                 return true
               }
             }
@@ -1165,9 +1213,11 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
               (anchor.type === "element" && anchor.offset === anchor.getNode().getChildrenSize())
             ) {
               event.preventDefault()
+
               return true
             }
           }
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -1180,6 +1230,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
             setSelected(true)
             setPrimarySelectedCellID(null)
             selectTable()
+
             return true
           }
           if (!$isRangeSelection(selection)) {
@@ -1193,8 +1244,10 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
                 focusCell(tableElem, primarySelectedCellID)
               }, 20)
             }
+
             return true
           }
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -1234,6 +1287,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
             <tr key={row.id} className={theme.tableRow}>
               {row.cells.map((cell) => {
                 const { id } = cell
+
                 return (
                   <TableCell
                     key={id}

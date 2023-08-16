@@ -29,6 +29,7 @@ export const useModal = (): [
       return null
     }
     const { title, content, closeOnClickOutside } = modalContent
+
     return (
       <Modal onClose={onClose} title={title} closeOnClickOutside={closeOnClickOutside}>
         {content}

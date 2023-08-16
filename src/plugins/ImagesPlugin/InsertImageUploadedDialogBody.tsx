@@ -22,6 +22,7 @@ export const InsertImageUploadedDialogBody = ({ onClick }: InsertImageUploadedDi
       if (typeof reader.result === "string") {
         setSrc(reader.result)
       }
+
       return ""
     }
 

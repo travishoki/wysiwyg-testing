@@ -101,6 +101,7 @@ export const ToolbarPlugin = () => {
           ? anchorNode
           : $findMatchingParent(anchorNode, (e) => {
               const parent = e.getParent()
+
               return parent !== null && $isRootOrShadowRoot(parent)
             })
 
@@ -151,6 +152,7 @@ export const ToolbarPlugin = () => {
           if ($isCodeNode(element)) {
             const language = element.getLanguage() as keyof typeof CODE_LANGUAGE_MAP
             setCodeLanguage(language ? CODE_LANGUAGE_MAP[language] || language : "")
+
             return
           }
         }
@@ -169,6 +171,7 @@ export const ToolbarPlugin = () => {
       (_payload, newEditor) => {
         $updateToolbar()
         setActiveEditor(newEditor)
+
         return false
       },
       COMMAND_PRIORITY_CRITICAL,
@@ -189,6 +192,7 @@ export const ToolbarPlugin = () => {
         CAN_UNDO_COMMAND,
         (payload) => {
           setCanUndo(payload)
+
           return false
         },
         COMMAND_PRIORITY_CRITICAL,
@@ -197,6 +201,7 @@ export const ToolbarPlugin = () => {
         CAN_REDO_COMMAND,
         (payload) => {
           setCanRedo(payload)
+
           return false
         },
         COMMAND_PRIORITY_CRITICAL,
@@ -213,8 +218,10 @@ export const ToolbarPlugin = () => {
 
         if (code === "KeyK" && (ctrlKey || metaKey)) {
           event.preventDefault()
+
           return activeEditor.dispatchCommand(TOGGLE_LINK_COMMAND, sanitizeUrl("https://"))
         }
+
         return false
       },
       COMMAND_PRIORITY_NORMAL,

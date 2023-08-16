@@ -41,6 +41,7 @@ export const CodeActionMenuContainer = ({ anchorElem }: CodeActionMenuContainerP
       const { codeDOMNode, isOutside } = getMouseInfo(event)
       if (isOutside) {
         setShown(false)
+
         return
       }
 

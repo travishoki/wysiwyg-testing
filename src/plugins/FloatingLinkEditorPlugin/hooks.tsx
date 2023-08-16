@@ -48,6 +48,7 @@ export const useFloatingLinkEditorToolbar = (
         (_payload, newEditor) => {
           updateToolbar()
           setActiveEditor(newEditor)
+
           return false
         },
         COMMAND_PRIORITY_CRITICAL,

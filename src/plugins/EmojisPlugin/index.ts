@@ -37,5 +37,6 @@ const useEmojis = (editor: LexicalEditor): void => {
 export const EmojisPlugin = (): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
   useEmojis(editor)
+
   return null
 }

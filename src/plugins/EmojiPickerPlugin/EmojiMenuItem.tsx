@@ -20,6 +20,7 @@ export const EmojiMenuItem = ({
   if (isSelected) {
     className += " selected"
   }
+
   return (
     <li
       key={option.key}

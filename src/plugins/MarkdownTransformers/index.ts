@@ -163,6 +163,7 @@ const TABLE: ElementTransformer = {
 
       // Remove line
       parentNode.remove()
+
       return
     }
 
@@ -230,6 +231,7 @@ const TABLE: ElementTransformer = {
 
 const getTableColumnsSize = (table: TableNode) => {
   const row = table.getFirstChild()
+
   return $isTableRowNode(row) ? row.getChildrenSize() : 0
 }
 
@@ -237,6 +239,7 @@ const createTableCell = (textContent: string): TableCellNode => {
   const formattedTextContent = textContent.replace(/\\n/g, "\n")
   const cell = $createTableCellNode(TableCellHeaderStates.NO_STATUS)
   $convertFromMarkdownString(formattedTextContent, PLAYGROUND_TRANSFORMERS, cell)
+
   return cell
 }
 
@@ -245,6 +248,7 @@ const mapToTableCells = (textContent: string): Array<TableCellNode> | null => {
   if (!match || !match[1]) {
     return null
   }
+
   return match[1].split("|").map((text) => createTableCell(text))
 }
 

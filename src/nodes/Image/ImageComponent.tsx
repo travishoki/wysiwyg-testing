@@ -94,6 +94,7 @@ const ImageComponent = ({
           node.remove()
         }
       }
+
       return false
     },
     [isSelected, nodeKey],
@@ -113,13 +114,16 @@ const ImageComponent = ({
           $setSelection(null)
           event.preventDefault()
           caption.focus()
+
           return true
         } else if (buttonElem !== null && buttonElem !== document.activeElement) {
           event.preventDefault()
           buttonElem.focus()
+
           return true
         }
       }
+
       return false
     },
     [caption, isSelected, showCaption],
@@ -136,8 +140,10 @@ const ImageComponent = ({
             parentRootElement.focus()
           }
         })
+
         return true
       }
+
       return false
     },
     [caption, editor, setSelected],
@@ -155,6 +161,7 @@ const ImageComponent = ({
         SELECTION_CHANGE_COMMAND,
         (_, activeEditor) => {
           activeEditorRef.current = activeEditor
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -174,6 +181,7 @@ const ImageComponent = ({
               clearSelection()
               setSelected(true)
             }
+
             return true
           }
 
@@ -188,8 +196,10 @@ const ImageComponent = ({
             // TODO This is just a temporary workaround for FF to behave like other browsers.
             // Ideally, this handles drag & drop too (and all browsers).
             event.preventDefault()
+
             return true
           }
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -199,6 +209,7 @@ const ImageComponent = ({
       editor.registerCommand(KEY_ENTER_COMMAND, onEnter, COMMAND_PRIORITY_LOW),
       editor.registerCommand(KEY_ESCAPE_COMMAND, onEscape, COMMAND_PRIORITY_LOW),
     )
+
     return () => {
       isMounted = false
       unregister()
@@ -246,6 +257,7 @@ const ImageComponent = ({
 
   const draggable = isSelected && $isNodeSelection(selection) && !isResizing
   const isFocused = isSelected || isResizing
+
   return (
     <Suspense fallback={<ComposerNodeFallback />}>
       <>

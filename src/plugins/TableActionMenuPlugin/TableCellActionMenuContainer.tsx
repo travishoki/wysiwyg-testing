@@ -33,6 +33,7 @@ export const TableCellActionMenuContainer = ({
 
     if (selection == null || menu == null) {
       setTableMenuCellNode(null)
+
       return
     }
 
@@ -50,6 +51,7 @@ export const TableCellActionMenuContainer = ({
 
       if (tableCellNodeFromSelection == null) {
         setTableMenuCellNode(null)
+
         return
       }
 
@@ -57,6 +59,7 @@ export const TableCellActionMenuContainer = ({
 
       if (tableCellParentNodeDOM == null) {
         setTableMenuCellNode(null)
+
         return
       }
 

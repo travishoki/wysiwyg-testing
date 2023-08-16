@@ -46,8 +46,10 @@ const convertImageElement = (domNode: Node): null | DOMConversionOutput => {
   if (domNode instanceof HTMLImageElement) {
     const { alt: altText, src, width, height } = domNode
     const node = $createImageNode({ altText, height, src, width })
+
     return { node }
   }
+
   return null
 }
 
@@ -108,6 +110,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
     if (!editorState.isEmpty()) {
       nestedEditor.setEditorState(editorState)
     }
+
     return node
   }
 
@@ -117,6 +120,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
     element.setAttribute("alt", this.__altText)
     element.setAttribute("width", this.__width.toString())
     element.setAttribute("height", this.__height.toString())
+
     return { element }
   }
 
@@ -185,6 +189,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
     if (className !== undefined) {
       span.className = className
     }
+
     return span
   }
 

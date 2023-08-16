@@ -47,6 +47,7 @@ export const TabFocusPlugin = (): null => {
             $setSelection(selection.clone())
           }
         }
+
         return false
       },
       COMMAND_PRIORITY_LOW,

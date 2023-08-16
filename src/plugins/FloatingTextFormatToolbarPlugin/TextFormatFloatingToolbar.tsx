@@ -137,6 +137,7 @@ export const TextFormatFloatingToolbar = ({
     editor.getEditorState().read(() => {
       updateTextFormatFloatingToolbar()
     })
+
     return mergeRegister(
       editor.registerUpdateListener(({ editorState }) => {
         editorState.read(() => {
@@ -148,6 +149,7 @@ export const TextFormatFloatingToolbar = ({
         SELECTION_CHANGE_COMMAND,
         () => {
           updateTextFormatFloatingToolbar()
+
           return false
         },
         COMMAND_PRIORITY_LOW,

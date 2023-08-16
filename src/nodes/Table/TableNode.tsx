@@ -106,6 +106,7 @@ export const extractRowsFromHTML = (tableElem: HTMLTableElement): Rows => {
     row.cells = cells
     rows.push(row)
   }
+
   return rows
 }
 
@@ -133,6 +134,7 @@ const convertTableElement = (domNode: HTMLElement): null | DOMConversionOutput =
     row.cells = cells
     rows.push(row)
   }
+
   return { node: $createTableNode(rows) }
 }
 
@@ -178,6 +180,7 @@ export const exportTableCellsToHTML = (
 
   table.appendChild(colGroup)
   table.appendChild(tBody)
+
   return table
 }
 
@@ -409,5 +412,6 @@ export const $createTableNodeWithDimensions = (
       )
     }
   }
+
   return new TableNode(rows)
 }

@@ -25,5 +25,6 @@ export const ListMaxIndentLevelPlugin = ({ maxDepth }: ListMaxIndentLevelPluginP
       COMMAND_PRIORITY_CRITICAL,
     )
   }, [editor, maxDepth])
+
   return null
 }

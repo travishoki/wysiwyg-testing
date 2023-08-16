@@ -39,6 +39,7 @@ export const useFloatingTextFormatToolbar = (
           !rootElement.contains(nativeSelection.anchorNode))
       ) {
         setIsText(false)
+
         return
       }
 
@@ -74,6 +75,7 @@ export const useFloatingTextFormatToolbar = (
       const rawTextContent = selection.getTextContent().replace(/\n/g, "")
       if (!selection.isCollapsed() && rawTextContent === "") {
         setIsText(false)
+
         return
       }
     })
@@ -81,6 +83,7 @@ export const useFloatingTextFormatToolbar = (
 
   useEffect(() => {
     document.addEventListener("selectionchange", updatePopup)
+
     return () => {
       document.removeEventListener("selectionchange", updatePopup)
     }

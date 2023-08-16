@@ -25,6 +25,7 @@ export const InsertImageDialog = ({ activeEditor, onClose }: InsertImageDialogPr
       hasModifier.current = e.altKey
     }
     document.addEventListener("keydown", handler)
+
     return () => {
       document.removeEventListener("keydown", handler)
     }

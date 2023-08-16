@@ -56,6 +56,7 @@ export const onDragover = (event: DragEvent): boolean => {
   if (!canDropImage(event)) {
     event.preventDefault()
   }
+
   return true
 }
 
@@ -79,6 +80,7 @@ export const onDrop = (event: DragEvent, editor: LexicalEditor): boolean => {
     $setSelection(rangeSelection)
     editor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, data)
   }
+
   return true
 }
 
@@ -89,6 +91,7 @@ const getImageNodeInSelection = (): InlineImageNode | null => {
   }
   const nodes = selection.getNodes()
   const node = nodes[0]
+
   return $isInlineImageNode(node) ? node : null
 }
 
@@ -114,6 +117,7 @@ declare global {
 
 const canDropImage = (event: DragEvent): boolean => {
   const target = event.target
+
   return !!(
     target &&
     target instanceof HTMLElement &&

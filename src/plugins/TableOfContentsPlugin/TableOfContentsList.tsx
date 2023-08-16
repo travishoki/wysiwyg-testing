@@ -93,6 +93,7 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
     }
 
     document.addEventListener("scroll", onScroll)
+
     return () => document.removeEventListener("scroll", onScroll)
   }, [tableOfContents, editor])
 

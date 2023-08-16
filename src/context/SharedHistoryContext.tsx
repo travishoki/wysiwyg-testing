@@ -22,6 +22,7 @@ type SharedHistoryContextProps = {
 
 export const SharedHistoryContext = ({ children }: SharedHistoryContextProps) => {
   const historyContext = useMemo(() => ({ historyState: createEmptyHistoryState() }), [])
+
   return <Context.Provider value={historyContext}>{children}</Context.Provider>
 }
 

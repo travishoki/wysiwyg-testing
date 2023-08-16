@@ -22,6 +22,7 @@ export const TableActionMenuPlugin = ({
   cellMerge = false,
 }: TableActionMenuPluginProps): null | ReactPortal => {
   const isEditable = useLexicalEditable()
+
   return createPortal(
     isEditable ? (
       <TableCellActionMenuContainer anchorElem={anchorElem} cellMerge={cellMerge} />

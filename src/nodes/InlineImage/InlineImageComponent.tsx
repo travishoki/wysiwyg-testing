@@ -87,6 +87,7 @@ const InlineImageComponent = ({
           node.remove()
         }
       }
+
       return false
     },
     [isSelected, nodeKey],
@@ -106,13 +107,16 @@ const InlineImageComponent = ({
           $setSelection(null)
           event.preventDefault()
           caption.focus()
+
           return true
         } else if (buttonElem !== null && buttonElem !== document.activeElement) {
           event.preventDefault()
           buttonElem.focus()
+
           return true
         }
       }
+
       return false
     },
     [caption, isSelected, showCaption],
@@ -129,8 +133,10 @@ const InlineImageComponent = ({
             parentRootElement.focus()
           }
         })
+
         return true
       }
+
       return false
     },
     [caption, editor, setSelected],
@@ -148,6 +154,7 @@ const InlineImageComponent = ({
         SELECTION_CHANGE_COMMAND,
         (_, activeEditor) => {
           activeEditorRef.current = activeEditor
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -163,6 +170,7 @@ const InlineImageComponent = ({
               clearSelection()
               setSelected(true)
             }
+
             return true
           }
 
@@ -177,8 +185,10 @@ const InlineImageComponent = ({
             // TODO This is just a temporary workaround for FF to behave like other browsers.
             // Ideally, this handles drag & drop too (and all browsers).
             event.preventDefault()
+
             return true
           }
+
           return false
         },
         COMMAND_PRIORITY_LOW,
@@ -188,6 +198,7 @@ const InlineImageComponent = ({
       editor.registerCommand(KEY_ENTER_COMMAND, onEnter, COMMAND_PRIORITY_LOW),
       editor.registerCommand(KEY_ESCAPE_COMMAND, onEscape, COMMAND_PRIORITY_LOW),
     )
+
     return () => {
       isMounted = false
       unregister()
@@ -196,6 +207,7 @@ const InlineImageComponent = ({
 
   const draggable = isSelected && $isNodeSelection(selection)
   const isFocused = isSelected
+
   return (
     <Suspense fallback={<ComposerNodeFallback />}>
       <>

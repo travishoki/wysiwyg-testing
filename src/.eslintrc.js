@@ -106,7 +106,7 @@ module.exports = {
     "no-restricted-syntax": "error",
     "jsx-a11y/control-has-associated-label": "error",
 
-    /* Taking it a step further to make things clean */
+    // Taking it a step further to make things clean
     "react/no-multi-comp": "error",
     "sort-keys": "error",
     "no-else-return": "error",
@@ -115,6 +115,15 @@ module.exports = {
     // Nice to have eventually
     // "no-param-reassign": "error",
     // "no-nested-ternary": "error",
+
+    // Extra Formatting
+    "padding-line-between-statements": [1, { blankLine: "always", prev: "*", next: "return" }],
+
+    // "arrow-parens": [1, "always", { requireForBlockBody: false }],
+    // "keyword-spacing": [1],
+    // "no-multiple-empty-lines": ["error", { max: 1 }],
+    // "no-trailing-spaces": 1,
+    // "object-curly-spacing": ["error", "always"],
   },
   overrides: [
     /** Composer */

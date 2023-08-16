@@ -77,6 +77,7 @@ export const TableCellResizer = ({ editor }: TableCellResizerProps) => {
             x: event.clientX,
             y: event.clientY,
           })
+
           return
         }
 
@@ -122,6 +123,7 @@ export const TableCellResizer = ({ editor }: TableCellResizerProps) => {
 
   const isHeightChanging = (direction: MouseDraggingDirection) => {
     if (direction === "bottom") return true
+
     return false
   }
 

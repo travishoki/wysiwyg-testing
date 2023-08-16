@@ -57,8 +57,10 @@ const convertInlineImageElement = (domNode: Node): null | DOMConversionOutput =>
   if (domNode instanceof HTMLImageElement) {
     const { alt: altText, src, width, height } = domNode
     const node = $createInlineImageNode({ altText, height, src, width })
+
     return { node }
   }
+
   return null
 }
 
@@ -116,6 +118,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     if (!editorState.isEmpty()) {
       nestedEditor.setEditorState(editorState)
     }
+
     return node
   }
 
@@ -154,6 +157,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     element.setAttribute("alt", this.__altText)
     element.setAttribute("width", this.__width.toString())
     element.setAttribute("height", this.__height.toString())
+
     return { element }
   }
 
@@ -230,6 +234,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     if (className !== undefined) {
       span.className = className
     }
+
     return span
   }
 
@@ -241,6 +246,7 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
         dom.className = className
       }
     }
+
     return false
   }
 

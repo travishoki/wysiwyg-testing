@@ -18,5 +18,6 @@ export const FloatingLinkEditorPlugin = ({
   anchorElem = document.body,
 }: FloatingLinkEditorPluginProps): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
+
   return useFloatingLinkEditorToolbar(editor, anchorElem)
 }

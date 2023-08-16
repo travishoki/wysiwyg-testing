@@ -41,6 +41,7 @@ export const InsertInlineImageDialog = ({
       if (typeof reader.result === "string") {
         setSrc(reader.result)
       }
+
       return ""
     }
 
@@ -55,6 +56,7 @@ export const InsertInlineImageDialog = ({
       hasModifier.current = e.altKey
     }
     document.addEventListener("keydown", handler)
+
     return () => {
       document.removeEventListener("keydown", handler)
     }

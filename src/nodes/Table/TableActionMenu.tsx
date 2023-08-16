@@ -47,6 +47,7 @@ export const TableActionMenu = ({
     }
 
     window.addEventListener("click", handleClickOutside)
+
     return () => window.removeEventListener("click", handleClickOutside)
   }, [onClose])
   const coords = cellCoordMap.get(cell.id)

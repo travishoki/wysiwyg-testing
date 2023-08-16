@@ -33,10 +33,12 @@ export const SharedAutocompleteContext = ({ children }: SharedAutocompleteContex
   const context: ContextShape = useMemo(() => {
     let suggestion: Suggestion | null = null
     const listeners: Set<CallbackFn> = new Set()
+
     return [
       (cb: (newSuggestion: Suggestion) => void) => {
         cb(suggestion)
         listeners.add(cb)
+
         return () => {
           listeners.delete(cb)
         }
@@ -49,6 +51,7 @@ export const SharedAutocompleteContext = ({ children }: SharedAutocompleteContex
       },
     ]
   }, [])
+
   return <Context.Provider value={context}>{children}</Context.Provider>
 }
 
@@ -60,5 +63,6 @@ export const useSharedAutocompleteContext = (): HookShape => {
       setSuggestion(newSuggestion)
     })
   }, [subscribe])
+
   return [suggestion, publish]
 }

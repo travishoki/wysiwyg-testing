@@ -125,6 +125,7 @@ export const FloatingLinkEditor = ({
         SELECTION_CHANGE_COMMAND,
         () => {
           updateLinkEditor()
+
           return true
         },
         COMMAND_PRIORITY_LOW,
@@ -134,8 +135,10 @@ export const FloatingLinkEditor = ({
         () => {
           if (isLink) {
             setIsLink(false)
+
             return true
           }
+
           return false
         },
         COMMAND_PRIORITY_HIGH,

@@ -18,5 +18,6 @@ export const FloatingTextFormatToolbarPlugin = ({
   anchorElem = document.body,
 }: FloatingTextFormatToolbarPluginProps): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
+
   return useFloatingTextFormatToolbar(editor, anchorElem)
 }

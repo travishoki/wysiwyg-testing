@@ -18,5 +18,6 @@ export const generateHTMLFromJSON = (
     cellHTMLCache.set(editorStateJSON, html)
     cellTextContentCache.set(editorStateJSON, textContent)
   }
+
   return html
 }

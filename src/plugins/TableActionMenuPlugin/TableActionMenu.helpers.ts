@@ -24,6 +24,7 @@ export const $canUnmerge = (): boolean => {
     return false
   }
   const [cell] = DEPRECATED_$getNodeTriplet(selection.anchor)
+
   return cell.__colSpan > 1 || cell.__rowSpan > 1
 }
 
@@ -35,6 +36,7 @@ export const $cellContainsEmptyParagraph = (cell: DEPRECATED_GridCellNode): bool
   if (!$isParagraphNode(firstChild) || !firstChild.isEmpty()) {
     return false
   }
+
   return true
 }
 
@@ -56,6 +58,7 @@ type computeSelectionCountProps = {
 
 export const computeSelectionCount = (selection: GridSelection): computeSelectionCountProps => {
   const selectionShape = selection.getShape()
+
   return {
     columns: selectionShape.toX - selectionShape.fromX + 1,
     rows: selectionShape.toY - selectionShape.fromY + 1,
@@ -71,6 +74,7 @@ export const currentCellBackgroundColor = (editor: LexicalEditor): null | string
         return cell.getBackgroundColor()
       }
     }
+
     return null
   })
 }
@@ -108,6 +112,7 @@ export const isGridSelectionRectangular = (selection: GridSelection): boolean =>
       currentColumns += colSpan
     }
   }
+
   return (
     (expectedColumns === null || currentColumns === expectedColumns) &&
     currentRows.every((v) => v === currentRows[0])

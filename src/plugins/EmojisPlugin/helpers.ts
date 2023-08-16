@@ -30,6 +30,7 @@ export const findAndTransformEmoji = (node: TextNode): null | TextNode => {
 
       const emojiNode = $createEmojiNode(emojiStyle, emojiText)
       targetNode.replace(emojiNode)
+
       return emojiNode
     }
   }

@@ -13,6 +13,7 @@ export const indent = (tagName: HeadingTagType) => {
 
 export const isHeadingAtTheTopOfThePage = (element: HTMLElement): boolean => {
   const elementYPosition = element?.getClientRects()[0].y
+
   return (
     elementYPosition >= MARGIN_ABOVE_EDITOR &&
     elementYPosition <= MARGIN_ABOVE_EDITOR + HEADING_WIDTH
@@ -21,10 +22,12 @@ export const isHeadingAtTheTopOfThePage = (element: HTMLElement): boolean => {
 
 export const isHeadingAboveViewport = (element: HTMLElement): boolean => {
   const elementYPosition = element?.getClientRects()[0].y
+
   return elementYPosition < MARGIN_ABOVE_EDITOR
 }
 
 export const isHeadingBelowTheTopOfThePage = (element: HTMLElement): boolean => {
   const elementYPosition = element?.getClientRects()[0].y
+
   return elementYPosition >= MARGIN_ABOVE_EDITOR + HEADING_WIDTH
 }

@@ -38,6 +38,7 @@ export const KeywordsPlugin = (): JSX.Element | null => {
     const hashtagLength = matchArr[2].length
     const startOffset = matchArr.index + matchArr[1].length
     const endOffset = startOffset + hashtagLength
+
     return {
       end: endOffset,
       start: startOffset,

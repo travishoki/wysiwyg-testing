@@ -18,6 +18,7 @@ export const sanitizeUrl = (url: string): string => {
   } catch {
     return url
   }
+
   return url
 }
 

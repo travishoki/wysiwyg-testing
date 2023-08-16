@@ -40,6 +40,7 @@ export class AutocompleteNode extends DecoratorNode<JSX.Element | null> {
 
   static importJSON(serializedNode: SerializedAutocompleteNode): AutocompleteNode {
     const node = $createAutocompleteNode(serializedNode.uuid)
+
     return node
   }
 
@@ -69,6 +70,7 @@ export class AutocompleteNode extends DecoratorNode<JSX.Element | null> {
     if (this.__uuid !== UUID) {
       return null
     }
+
     return <AutocompleteComponent />
   }
 }
@@ -84,6 +86,7 @@ const AutocompleteComponent = () => {
     userAgentData !== undefined
       ? userAgentData.mobile
       : window.innerWidth <= 800 && window.innerHeight <= 600
+
   // TODO Move to theme
   return (
     <span style={{ color: "#ccc" }} spellCheck="false">

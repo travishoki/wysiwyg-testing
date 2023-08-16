@@ -13,6 +13,7 @@ export const TableContext = ({ children }: TableContextProps) => {
     cellEditorConfig: null,
     cellEditorPlugins: null,
   })
+
   return (
     <CellContext.Provider
       value={useMemo(

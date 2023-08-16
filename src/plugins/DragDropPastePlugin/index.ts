@@ -35,10 +35,12 @@ export const DragDropPaste = (): null => {
             }
           }
         })()
+
         return true
       },
       COMMAND_PRIORITY_LOW,
     )
   }, [editor])
+
   return null
 }

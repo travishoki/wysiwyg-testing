@@ -142,6 +142,7 @@ const setMenuPosition = (
   if (!targetElem) {
     floatingElem.style.opacity = "0"
     floatingElem.style.transform = "translate(-10000px, -10000px)"
+
     return
   }
 
@@ -223,6 +224,7 @@ const useDraggableBlockMenu = (
       const target = event.target
       if (!isHTMLElement(target)) {
         setDraggableBlockElem(null)
+
         return
       }
 
@@ -275,6 +277,7 @@ const useDraggableBlockMenu = (
       setTargetLine(targetLineElem, targetBlockElem, pageY, anchorElem)
       // Prevent default event to be able to trigger onDrop events
       event.preventDefault()
+
       return true
     }
 
@@ -380,5 +383,6 @@ type DraggableBlockPluginProps = {
 
 export const DraggableBlockPlugin = ({ anchorElem = document.body }: DraggableBlockPluginProps) => {
   const [editor] = useLexicalComposerContext()
+
   return useDraggableBlockMenu(editor, anchorElem, editor._editable)
 }

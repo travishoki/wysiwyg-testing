@@ -30,8 +30,10 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
     if (domNode instanceof HTMLElement) {
       const node = $createMergeFieldNode(this.mergeFieldIconUrl, this.mergeFieldId)
+
       return { node }
     }
+
     return null
   }
 
@@ -41,6 +43,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
         if (!domNode.hasAttribute("data-merge-field-component")) {
           return null
         }
+
         return {
           conversion: this.convertMergeFieldElement,
           priority: 1,
@@ -58,6 +61,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   createDOM(): HTMLElement {
     const element = document.createElement("div")
     element.className = "merge-field-component"
+
     return element
   }
 
@@ -65,6 +69,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     const element = document.createElement("span")
     element.setAttribute("data-merge-field-component", "true")
     element.textContent = `{{${this.mergeFieldId}}}`
+
     return { element }
   }
 

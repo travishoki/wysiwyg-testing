@@ -513,6 +513,7 @@ const useMentionLookupService = (mentionString: string | null) => {
 
     if (mentionString == null) {
       setResults([])
+
       return
     }
 
@@ -520,6 +521,7 @@ const useMentionLookupService = (mentionString: string | null) => {
       return
     } else if (cachedResults !== undefined) {
       setResults(cachedResults)
+
       return
     }
 
@@ -552,6 +554,7 @@ const checkForCapitalizedNameMentions = (
       }
     }
   }
+
   return null
 }
 
@@ -575,11 +578,13 @@ const checkForAtSignMentions = (text: string, minMatchLength: number): MenuTextM
       }
     }
   }
+
   return null
 }
 
 const getPossibleQueryMatch = (text: string): MenuTextMatch | null => {
   const match = checkForAtSignMentions(text, 1)
+
   return match === null ? checkForCapitalizedNameMentions(text, 3) : match
 }
 
@@ -626,6 +631,7 @@ export const MentionsPlugin = (): JSX.Element | null => {
       if (slashMatch !== null) {
         return null
       }
+
       return getPossibleQueryMatch(text)
     },
     [checkForSlashTriggerMatch, editor],

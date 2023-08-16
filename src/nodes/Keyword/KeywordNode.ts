@@ -25,6 +25,7 @@ export class KeywordNode extends TextNode {
     node.setDetail(serializedNode.detail)
     node.setMode(serializedNode.mode)
     node.setStyle(serializedNode.style)
+
     return node
   }
 
@@ -40,6 +41,7 @@ export class KeywordNode extends TextNode {
     const dom = super.createDOM(config)
     dom.style.cursor = "default"
     dom.className = "keyword"
+
     return dom
   }
 

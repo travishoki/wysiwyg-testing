@@ -65,6 +65,7 @@ const $search = (
   if (word.length === 0) {
     return [false, ""]
   }
+
   return [true, word.reverse().join("")]
 }
 
@@ -74,6 +75,7 @@ const useQuery = (): ((searchText: string) => SearchPromise) => {
     const server = new AutocompleteServer()
     // console.time("query")
     const response = server.query(searchText)
+
     // console.timeEnd("query")
     return response
   }, [])
@@ -148,6 +150,7 @@ export const AutocompletePlugin = (): JSX.Element | null => {
         const [hasMatch, match] = $search(selection)
         if (!hasMatch) {
           $clearSuggestion()
+
           return
         }
         if (match === lastMatch) {
@@ -180,14 +183,17 @@ export const AutocompletePlugin = (): JSX.Element | null => {
       autocompleteNode.replace(textNode)
       textNode.selectNext()
       $clearSuggestion()
+
       return true
     }
 
     const $handleKeypressCommand = (e: Event) => {
       if ($handleAutocompleteIntent()) {
         e.preventDefault()
+
         return true
       }
+
       return false
     }
 
@@ -261,6 +267,7 @@ class AutocompleteServer {
         if (autocompleteChunk === "") {
           return resolve(null)
         }
+
         return resolve(autocompleteChunk)
       }, this.LATENCY)
     })

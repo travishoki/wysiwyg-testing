@@ -42,6 +42,7 @@ export const TablePlugin = ({
           includeHeaders,
         )
         $insertNodes([tableNode])
+
         return true
       },
       COMMAND_PRIORITY_EDITOR,
