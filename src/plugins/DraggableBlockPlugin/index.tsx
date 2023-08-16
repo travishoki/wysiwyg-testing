@@ -27,14 +27,13 @@ import { Rect } from "../../utils/rect"
 import {
   SPACE,
   TARGET_LINE_HALF_HEIGHT,
-  DRAGGABLE_BLOCK_MENU_CLASSNAME,
   DRAG_DATA_FORMAT,
   TEXT_BOX_HORIZONTAL_PADDING,
   Downward,
   Upward,
   Indeterminate,
 } from "./const"
-import { getCollapsedMargins, getTopLevelNodeKeys } from "./helpers"
+import { getCollapsedMargins, getTopLevelNodeKeys, isOnMenu } from "./helpers"
 import "./index.css"
 
 let prevIndex = Infinity
@@ -133,10 +132,6 @@ const getBlockElement = (
   })
 
   return blockElem
-}
-
-const isOnMenu = (element: HTMLElement): boolean => {
-  return !!element.closest(`.${DRAGGABLE_BLOCK_MENU_CLASSNAME}`)
 }
 
 const setMenuPosition = (

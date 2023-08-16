@@ -1,4 +1,5 @@
 import { $getRoot, LexicalEditor } from "lexical"
+import { DRAGGABLE_BLOCK_MENU_CLASSNAME } from "./const"
 
 export const getTopLevelNodeKeys = (editor: LexicalEditor): string[] => {
   return editor.getEditorState().read(() => $getRoot().getChildrenKeys())
@@ -20,4 +21,8 @@ export const getCollapsedMargins = (
   const collapsedBottomMargin = Math.max(parseFloat(marginBottom), nextElemSiblingMarginTop)
 
   return { marginBottom: collapsedBottomMargin, marginTop: collapsedTopMargin }
+}
+
+export const isOnMenu = (element: HTMLElement): boolean => {
+  return !!element.closest(`.${DRAGGABLE_BLOCK_MENU_CLASSNAME}`)
 }
