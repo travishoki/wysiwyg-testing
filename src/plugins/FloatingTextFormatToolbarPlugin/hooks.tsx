@@ -1,24 +1,14 @@
-/**
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 import * as React from "react"
 import { useCallback, useEffect, useState } from "react"
 import { $isCodeHighlightNode } from "@lexical/code"
 import { $isLinkNode } from "@lexical/link"
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { mergeRegister } from "@lexical/utils"
 import { $getSelection, $isRangeSelection, $isTextNode, LexicalEditor } from "lexical"
 import { createPortal } from "react-dom"
 import { getSelectedNode } from "../../utils/getSelectedNode"
 import { TextFormatFloatingToolbar } from "./TextFormatFloatingToolbar"
-import "./index.css"
 
-const useFloatingTextFormatToolbar = (
+export const useFloatingTextFormatToolbar = (
   editor: LexicalEditor,
   anchorElem: HTMLElement,
 ): JSX.Element | null => {
@@ -128,15 +118,4 @@ const useFloatingTextFormatToolbar = (
     />,
     anchorElem,
   )
-}
-
-type FloatingTextFormatToolbarPluginProps = {
-  anchorElem?: HTMLElement
-}
-
-export const FloatingTextFormatToolbarPlugin = ({
-  anchorElem = document.body,
-}: FloatingTextFormatToolbarPluginProps): JSX.Element | null => {
-  const [editor] = useLexicalComposerContext()
-  return useFloatingTextFormatToolbar(editor, anchorElem)
 }
