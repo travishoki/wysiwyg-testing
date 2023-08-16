@@ -59,7 +59,7 @@ export const canBePrettier = (lang: string): boolean => {
   return LANG_CAN_BE_PRETTIER.includes(lang)
 }
 
-function getPrettierOptions(lang: string): Options {
+const getPrettierOptions = (lang: string): Options => {
   const options = PRETTIER_OPTIONS_BY_LANG[lang]
   if (!options) {
     throw new Error(`CodeActionMenuPlugin: Prettier does not support this language: ${lang}`)

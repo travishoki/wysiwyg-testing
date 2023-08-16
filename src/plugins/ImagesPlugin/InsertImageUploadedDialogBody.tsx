@@ -18,12 +18,13 @@ export const InsertImageUploadedDialogBody = ({ onClick }: InsertImageUploadedDi
 
   const loadImage = (files: FileList | null) => {
     const reader = new FileReader()
-    reader.onload = function () {
+    reader.onload = () => {
       if (typeof reader.result === "string") {
         setSrc(reader.result)
       }
       return ""
     }
+
     if (files !== null) {
       reader.readAsDataURL(files[0])
     }

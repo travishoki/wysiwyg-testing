@@ -107,12 +107,12 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
     }
     let timerId: ReturnType<typeof setTimeout>
 
-    function debounceFunction(func: () => void, delay: number) {
+    const debounceFunction = (func: () => void, delay: number) => {
       clearTimeout(timerId)
       timerId = setTimeout(func, delay)
     }
 
-    function onScroll(): void {
+    const onScroll = (): void => {
       debounceFunction(scrollCallback, 10)
     }
 
