@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import { $isCodeNode, CodeNode, getLanguageFriendlyName, normalizeCodeLang } from "@lexical/code"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $getNearestNodeFromDOMNode } from "lexical"
+import { getMouseInfo } from "./CodeActionMenuContainer.helpers"
 import { CopyButton } from "./components/CopyButton"
 import { canBePrettier, PrettierButton } from "./components/PrettierButton"
 import { useDebounce } from "./utils"
@@ -12,26 +13,6 @@ const CODE_PADDING = 8
 interface Position {
   top: string
   right: string
-}
-
-type getMouseInfoProps = {
-  codeDOMNode: HTMLElement | null
-  isOutside: boolean
-}
-
-const getMouseInfo = (event: MouseEvent): getMouseInfoProps => {
-  const target = event.target
-
-  if (target && target instanceof HTMLElement) {
-    const codeDOMNode = target.closest<HTMLElement>("code.ComposerTheme__code")
-    const isOutside = !(
-      codeDOMNode || target.closest<HTMLElement>("div.code-action-menu-container")
-    )
-
-    return { codeDOMNode, isOutside }
-  } else {
-    return { codeDOMNode: null, isOutside: true }
-  }
 }
 
 type CodeActionMenuContainerProps = {
