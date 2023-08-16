@@ -8,11 +8,11 @@ import { TableCellEditor } from "./TableComponentTableCellEditor"
 import { SortOptions } from "./TableComponentTypes"
 import { Cell, cellHTMLCache, cellTextContentCache, Rows, TableNode } from "./TableNode"
 
-function createEmptyParagraphHTML(theme: EditorThemeClasses): string {
+const createEmptyParagraphHTML = (theme: EditorThemeClasses): string => {
   return `<p class="${theme.paragraph}"><br></p>`
 }
 
-function generateHTMLFromJSON(editorStateJSON: string, cellEditor: LexicalEditor): string {
+const generateHTMLFromJSON = (editorStateJSON: string, cellEditor: LexicalEditor): string => {
   const editorState = cellEditor.parseEditorState(editorStateJSON)
   let html = cellHTMLCache.get(editorStateJSON)
   if (html === undefined) {

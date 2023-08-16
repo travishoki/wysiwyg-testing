@@ -533,10 +533,10 @@ function useMentionLookupService(mentionString: string | null) {
   return results
 }
 
-function checkForCapitalizedNameMentions(
+const checkForCapitalizedNameMentions = (
   text: string,
   minMatchLength: number,
-): MenuTextMatch | null {
+): MenuTextMatch | null => {
   const match = CapitalizedNameMentionsRegex.exec(text)
   if (match !== null) {
     // The strategy ignores leading whitespace but we need to know it's
@@ -555,7 +555,7 @@ function checkForCapitalizedNameMentions(
   return null
 }
 
-function checkForAtSignMentions(text: string, minMatchLength: number): MenuTextMatch | null {
+const checkForAtSignMentions = (text: string, minMatchLength: number): MenuTextMatch | null => {
   let match = AtSignMentionsRegex.exec(text)
 
   if (match === null) {
@@ -578,7 +578,7 @@ function checkForAtSignMentions(text: string, minMatchLength: number): MenuTextM
   return null
 }
 
-function getPossibleQueryMatch(text: string): MenuTextMatch | null {
+const getPossibleQueryMatch = (text: string): MenuTextMatch | null => {
   const match = checkForAtSignMentions(text, 1)
   return match === null ? checkForCapitalizedNameMentions(text, 3) : match
 }

@@ -60,7 +60,7 @@ export const createUID = (): string => {
     .substr(0, 5)
 }
 
-function createCell(type: "normal" | "header"): Cell {
+const createCell = (type: "normal" | "header"): Cell => {
   return {
     colSpan: 1,
     id: createUID(),
@@ -109,7 +109,7 @@ export const extractRowsFromHTML = (tableElem: HTMLTableElement): Rows => {
   return rows
 }
 
-function convertTableElement(domNode: HTMLElement): null | DOMConversionOutput {
+const convertTableElement = (domNode: HTMLElement): null | DOMConversionOutput => {
   const rowElems = domNode.querySelectorAll("tr")
   if (!rowElems || rowElems.length === 0) {
     return null
@@ -390,7 +390,7 @@ export const $isTableNode = (node: LexicalNode | null | undefined): node is Tabl
   return node instanceof TableNode
 }
 
-function $createTableNode(rows: Rows): TableNode {
+const $createTableNode = (rows: Rows): TableNode => {
   return new TableNode(rows)
 }
 

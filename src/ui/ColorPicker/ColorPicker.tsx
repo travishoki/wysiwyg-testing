@@ -160,7 +160,7 @@ interface Color {
   rgb: RGB
 }
 
-function toHex(value: string): string {
+const toHex = (value: string): string => {
   if (!value.startsWith("#")) {
     const ctx = document.createElement("canvas").getContext("2d")
 
@@ -185,7 +185,7 @@ function toHex(value: string): string {
   return "#000000"
 }
 
-function hex2rgb(hex: string): RGB {
+const hex2rgb = (hex: string): RGB => {
   const rbgArr = (
     hex
       .replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => "#" + r + r + g + g + b + b)
@@ -200,7 +200,7 @@ function hex2rgb(hex: string): RGB {
   }
 }
 
-function rgb2hsv({ r, g, b }: RGB): HSV {
+const rgb2hsv = ({ r, g, b }: RGB): HSV => {
   r /= 255
   g /= 255
   b /= 255
@@ -218,7 +218,7 @@ function rgb2hsv({ r, g, b }: RGB): HSV {
   return { h, s, v }
 }
 
-function hsv2rgb({ h, s, v }: HSV): RGB {
+const hsv2rgb = ({ h, s, v }: HSV): RGB => {
   s /= 100
   v /= 100
 
@@ -236,11 +236,11 @@ function hsv2rgb({ h, s, v }: HSV): RGB {
   return { b, g, r }
 }
 
-function rgb2hex({ b, g, r }: RGB): string {
+const rgb2hex = ({ b, g, r }: RGB): string => {
   return "#" + [r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("")
 }
 
-function transformColor<M extends keyof Color, C extends Color[M]>(format: M, color: C): Color {
+const transformColor = <M extends keyof Color, C extends Color[M]>(format: M, color: C): Color => {
   let hex: Color["hex"] = toHex("#121212")
   let rgb: Color["rgb"] = hex2rgb(hex)
   let hsv: Color["hsv"] = rgb2hsv(rgb)

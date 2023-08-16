@@ -8,7 +8,7 @@ import type { NodeKey } from "lexical"
 const MARGIN_ABOVE_EDITOR = 624
 const HEADING_WIDTH = 9
 
-function indent(tagName: HeadingTagType) {
+const indent = (tagName: HeadingTagType) => {
   if (tagName === "h2") {
     return "heading2"
   } else if (tagName === "h3") {
@@ -16,18 +16,20 @@ function indent(tagName: HeadingTagType) {
   }
 }
 
-function isHeadingAtTheTopOfThePage(element: HTMLElement): boolean {
+const isHeadingAtTheTopOfThePage = (element: HTMLElement): boolean => {
   const elementYPosition = element?.getClientRects()[0].y
   return (
     elementYPosition >= MARGIN_ABOVE_EDITOR &&
     elementYPosition <= MARGIN_ABOVE_EDITOR + HEADING_WIDTH
   )
 }
-function isHeadingAboveViewport(element: HTMLElement): boolean {
+
+const isHeadingAboveViewport = (element: HTMLElement): boolean => {
   const elementYPosition = element?.getClientRects()[0].y
   return elementYPosition < MARGIN_ABOVE_EDITOR
 }
-function isHeadingBelowTheTopOfThePage(element: HTMLElement): boolean {
+
+const isHeadingBelowTheTopOfThePage = (element: HTMLElement): boolean => {
   const elementYPosition = element?.getClientRects()[0].y
   return elementYPosition >= MARGIN_ABOVE_EDITOR + HEADING_WIDTH
 }

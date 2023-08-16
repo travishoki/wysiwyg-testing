@@ -66,13 +66,13 @@ import type { RangeSelection, TextFormatType } from "lexical"
 
 const NO_CELLS: [] = []
 
-function $createSelectAll(): RangeSelection {
+const $createSelectAll = (): RangeSelection => {
   const sel = $createRangeSelection()
   sel.focus.set("root", $getRoot().getChildrenSize(), "element")
   return sel
 }
 
-function focusCell(tableElem: HTMLElement, id: string): void {
+const focusCell = (tableElem: HTMLElement, id: string): void => {
   const cellElem = tableElem.querySelector(`[data-id=${id}]`) as HTMLElement
   if (cellElem == null) {
     return
@@ -80,16 +80,21 @@ function focusCell(tableElem: HTMLElement, id: string): void {
   cellElem.focus()
 }
 
-function isStartingResize(target: HTMLElement): boolean {
+const isStartingResize = (target: HTMLElement): boolean => {
   return target.nodeType === 1 && target.hasAttribute("data-table-resize")
 }
 
-function getCurrentDocument(editor: LexicalEditor): Document {
+const getCurrentDocument = (editor: LexicalEditor): Document => {
   const rootElement = editor.getRootElement()
   return rootElement !== null ? rootElement.ownerDocument : document
 }
 
-function isCopy(keyCode: number, shiftKey: boolean, metaKey: boolean, ctrlKey: boolean): boolean {
+const isCopy = (
+  keyCode: number,
+  shiftKey: boolean,
+  metaKey: boolean,
+  ctrlKey: boolean,
+): boolean => {
   if (shiftKey) {
     return false
   }
@@ -100,7 +105,7 @@ function isCopy(keyCode: number, shiftKey: boolean, metaKey: boolean, ctrlKey: b
   return false
 }
 
-function isCut(keyCode: number, shiftKey: boolean, metaKey: boolean, ctrlKey: boolean): boolean {
+const isCut = (keyCode: number, shiftKey: boolean, metaKey: boolean, ctrlKey: boolean): boolean => {
   if (shiftKey) {
     return false
   }
@@ -111,7 +116,12 @@ function isCut(keyCode: number, shiftKey: boolean, metaKey: boolean, ctrlKey: bo
   return false
 }
 
-function isPaste(keyCode: number, shiftKey: boolean, metaKey: boolean, ctrlKey: boolean): boolean {
+const isPaste = (
+  keyCode: number,
+  shiftKey: boolean,
+  metaKey: boolean,
+  ctrlKey: boolean,
+): boolean => {
   if (shiftKey) {
     return false
   }
@@ -122,7 +132,7 @@ function isPaste(keyCode: number, shiftKey: boolean, metaKey: boolean, ctrlKey: 
   return false
 }
 
-function getCellID(domElement: HTMLElement): null | string {
+const getCellID = (domElement: HTMLElement): null | string => {
   let node: null | HTMLElement = domElement
   while (node !== null) {
     const possibleID = node.getAttribute("data-id")
@@ -134,7 +144,7 @@ function getCellID(domElement: HTMLElement): null | string {
   return null
 }
 
-function getTableCellWidth(domElement: HTMLElement): number {
+const getTableCellWidth = (domElement: HTMLElement): number => {
   let node: null | HTMLElement = domElement
   while (node !== null) {
     if (node.nodeName === "TH" || node.nodeName === "TD") {
@@ -145,14 +155,14 @@ function getTableCellWidth(domElement: HTMLElement): number {
   return 0
 }
 
-function $updateCells(
+const $updateCells = (
   rows: Rows,
   ids: Array<string>,
   cellCoordMap: Map<string, [number, number]>,
   cellEditor: null | LexicalEditor,
   updateTableNode: (fn2: (tableNode: TableNode) => void) => void,
   fn: () => void,
-): void {
+): void => {
   for (const id of ids) {
     const cell = getCell(rows, id, cellCoordMap)
     if (cell !== null && cellEditor !== null) {
@@ -171,7 +181,7 @@ function $updateCells(
   }
 }
 
-function isTargetOnPossibleUIControl(target: HTMLElement): boolean {
+const isTargetOnPossibleUIControl = (target: HTMLElement): boolean => {
   let node: HTMLElement | null = target
   while (node !== null) {
     const nodeName = node.nodeName
@@ -183,11 +193,11 @@ function isTargetOnPossibleUIControl(target: HTMLElement): boolean {
   return false
 }
 
-function getSelectedRect(
+const getSelectedRect = (
   startID: string,
   endID: string,
   cellCoordMap: Map<string, [number, number]>,
-): null | { startX: number; endX: number; startY: number; endY: number } {
+): null | { startX: number; endX: number; startY: number; endY: number } => {
   const startCoords = cellCoordMap.get(startID)
   const endCoords = cellCoordMap.get(endID)
   if (startCoords === undefined || endCoords === undefined) {
@@ -206,12 +216,12 @@ function getSelectedRect(
   }
 }
 
-function getSelectedIDs(
+const getSelectedIDs = (
   rows: Rows,
   startID: string,
   endID: string,
   cellCoordMap: Map<string, [number, number]>,
-): Array<string> {
+): Array<string> => {
   const rect = getSelectedRect(startID, endID, cellCoordMap)
   if (rect === null) {
     return []
@@ -227,10 +237,10 @@ function getSelectedIDs(
   return ids
 }
 
-function extractCellsFromRows(
+const extractCellsFromRows = (
   rows: Rows,
   rect: { startX: number; endX: number; startY: number; endY: number },
-): Rows {
+): Rows => {
   const { startX, endY, endX, startY } = rect
   const newRows: Rows = []
 
@@ -247,11 +257,11 @@ function extractCellsFromRows(
   return newRows
 }
 
-function getCell(
+const getCell = (
   rows: Rows,
   cellID: string,
   cellCoordMap: Map<string, [number, number]>,
-): null | Cell {
+): null | Cell => {
   const coords = cellCoordMap.get(cellID)
   if (coords === undefined) {
     return null

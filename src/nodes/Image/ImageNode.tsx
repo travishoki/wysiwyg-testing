@@ -40,7 +40,7 @@ export interface ImagePayload {
   captionsEnabled?: boolean
 }
 
-function convertImageElement(domNode: Node): null | DOMConversionOutput {
+const convertImageElement = (domNode: Node): null | DOMConversionOutput => {
   if (domNode instanceof HTMLImageElement) {
     const { alt: altText, src, width, height } = domNode
     const node = $createImageNode({ altText, height, src, width })

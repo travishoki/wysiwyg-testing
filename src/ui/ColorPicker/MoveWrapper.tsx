@@ -55,6 +55,6 @@ export const MoveWrapper = ({ className, style, onChange, children }: MoveWrappe
   )
 }
 
-function clamp(value: number, max: number, min: number) {
+const clamp = (value: number, max: number, min: number) => {
   return value > max ? max : value < min ? min : value
 }

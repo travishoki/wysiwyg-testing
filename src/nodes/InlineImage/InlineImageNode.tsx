@@ -51,7 +51,7 @@ interface UpdateInlineImagePayload {
   position?: Position
 }
 
-function convertInlineImageElement(domNode: Node): null | DOMConversionOutput {
+const convertInlineImageElement = (domNode: Node): null | DOMConversionOutput => {
   if (domNode instanceof HTMLImageElement) {
     const { alt: altText, src, width, height } = domNode
     const node = $createInlineImageNode({ altText, height, src, width })
