@@ -8,12 +8,7 @@
 
 import * as React from "react"
 import { useCallback, useEffect, useState } from "react"
-import {
-  $isCodeNode,
-  CODE_LANGUAGE_FRIENDLY_NAME_MAP,
-  CODE_LANGUAGE_MAP,
-  getLanguageFriendlyName,
-} from "@lexical/code"
+import { $isCodeNode, CODE_LANGUAGE_MAP, getLanguageFriendlyName } from "@lexical/code"
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link"
 import { $isListNode, ListNode } from "@lexical/list"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
@@ -67,18 +62,8 @@ import { BlockFormatDropDown } from "./BlockFormatDropDown"
 import { Divider } from "./Divider"
 import { FontDropDown } from "./FontDropDown"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"
-import { dropDownActiveClass } from "./helpers"
+import { dropDownActiveClass, getCodeLanguageOptions } from "./helpers"
 import type { NodeKey } from "lexical"
-
-const getCodeLanguageOptions = (): [string, string][] => {
-  const options: [string, string][] = []
-
-  for (const [lang, friendlyName] of Object.entries(CODE_LANGUAGE_FRIENDLY_NAME_MAP)) {
-    options.push([lang, friendlyName])
-  }
-
-  return options
-}
 
 const CODE_LANGUAGE_OPTIONS = getCodeLanguageOptions()
 
