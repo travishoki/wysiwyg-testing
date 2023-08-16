@@ -38,6 +38,7 @@ const convertMentionElement = (domNode: HTMLElement): DOMConversionOutput | null
 }
 
 const mentionStyle = "background-color: rgba(24, 119, 232, 0.2)"
+
 export class MentionNode extends TextNode {
   __mention: string
 
