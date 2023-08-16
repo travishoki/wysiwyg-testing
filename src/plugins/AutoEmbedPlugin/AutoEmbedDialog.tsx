@@ -4,17 +4,8 @@ import { EmbedMatchResult, URL_MATCHER } from "@lexical/react/LexicalAutoEmbedPl
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { Button } from "../../ui/Button/Button"
 import { DialogActions } from "../../ui/Dialog/Dialog"
+import { debounce } from "./AutoEmbedDialog.helpers"
 import { PlaygroundEmbedConfig } from "./PlaygroundEmbedConfig"
-
-const debounce = (callback: (text: string) => void, delay: number) => {
-  let timeoutId: number
-  return (text: string) => {
-    window.clearTimeout(timeoutId)
-    timeoutId = window.setTimeout(() => {
-      callback(text)
-    }, delay)
-  }
-}
 
 type AutoEmbedDialogProps = {
   embedConfig: PlaygroundEmbedConfig
