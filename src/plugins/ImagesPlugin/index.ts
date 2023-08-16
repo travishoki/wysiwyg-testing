@@ -90,7 +90,7 @@ const TRANSPARENT_IMAGE =
 const img = document.createElement("img")
 img.src = TRANSPARENT_IMAGE
 
-function onDragStart(event: DragEvent): boolean {
+const onDragStart = (event: DragEvent): boolean => {
   const node = getImageNodeInSelection()
   if (!node) {
     return false
@@ -121,7 +121,7 @@ function onDragStart(event: DragEvent): boolean {
   return true
 }
 
-function onDragover(event: DragEvent): boolean {
+const onDragover = (event: DragEvent): boolean => {
   const node = getImageNodeInSelection()
   if (!node) {
     return false
@@ -132,7 +132,7 @@ function onDragover(event: DragEvent): boolean {
   return true
 }
 
-function onDrop(event: DragEvent, editor: LexicalEditor): boolean {
+const onDrop = (event: DragEvent, editor: LexicalEditor): boolean => {
   const node = getImageNodeInSelection()
   if (!node) {
     return false
@@ -155,7 +155,7 @@ function onDrop(event: DragEvent, editor: LexicalEditor): boolean {
   return true
 }
 
-function getImageNodeInSelection(): ImageNode | null {
+const getImageNodeInSelection = (): ImageNode | null => {
   const selection = $getSelection()
   if (!$isNodeSelection(selection)) {
     return null
@@ -165,7 +165,7 @@ function getImageNodeInSelection(): ImageNode | null {
   return $isImageNode(node) ? node : null
 }
 
-function getDragImageData(event: DragEvent): null | InsertImagePayload {
+const getDragImageData = (event: DragEvent): null | InsertImagePayload => {
   const dragData = event.dataTransfer?.getData("application/x-lexical-drag")
   if (!dragData) {
     return null
@@ -185,7 +185,7 @@ declare global {
   }
 }
 
-function canDropImage(event: DragEvent): boolean {
+const canDropImage = (event: DragEvent): boolean => {
   const target = event.target
   return !!(
     target &&
@@ -196,7 +196,7 @@ function canDropImage(event: DragEvent): boolean {
   )
 }
 
-function getDragSelection(event: DragEvent): Range | null | undefined {
+const getDragSelection = (event: DragEvent): Range | null | undefined => {
   let range
   const target = event.target as null | Element | Document
   const targetWindow =

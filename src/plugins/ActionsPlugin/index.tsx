@@ -19,7 +19,7 @@ import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
 import { ShowClearDialog } from "./ShowClearDialog"
 import type { LexicalEditor } from "lexical"
 
-async function validateEditorState(editor: LexicalEditor): Promise<void> {
+const validateEditorState = async (editor: LexicalEditor): Promise<void> => {
   const stringifiedEditorState = JSON.stringify(editor.getEditorState())
   let response = null
   try {

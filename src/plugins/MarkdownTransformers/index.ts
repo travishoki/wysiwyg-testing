@@ -228,7 +228,7 @@ const TABLE: ElementTransformer = {
   type: "element",
 }
 
-function getTableColumnsSize(table: TableNode) {
+const getTableColumnsSize = (table: TableNode) => {
   const row = table.getFirstChild()
   return $isTableRowNode(row) ? row.getChildrenSize() : 0
 }

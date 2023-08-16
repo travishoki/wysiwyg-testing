@@ -23,7 +23,7 @@ const emojis: Map<string, [string, string]> = new Map([
   ["❤", ["emoji heart", "❤"]],
 ])
 
-function findAndTransformEmoji(node: TextNode): null | TextNode {
+const findAndTransformEmoji = (node: TextNode): null | TextNode => {
   const text = node.getTextContent()
 
   for (let i = 0; i < text.length; i++) {
@@ -48,7 +48,7 @@ function findAndTransformEmoji(node: TextNode): null | TextNode {
   return null
 }
 
-function textNodeTransform(node: TextNode): void {
+const textNodeTransform = (node: TextNode): void => {
   let targetNode: TextNode | null = node
 
   while (targetNode !== null) {
@@ -60,7 +60,7 @@ function textNodeTransform(node: TextNode): void {
   }
 }
 
-function useEmojis(editor: LexicalEditor): void {
+const useEmojis = (editor: LexicalEditor): void => {
   useEffect(() => {
     if (!editor.hasNodes([EmojiNode])) {
       throw new Error("EmojisPlugin: EmojiNode not registered on editor")

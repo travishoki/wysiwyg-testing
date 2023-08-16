@@ -24,7 +24,7 @@ type SerializedMentionNode = Spread<
   SerializedTextNode
 >
 
-function convertMentionElement(domNode: HTMLElement): DOMConversionOutput | null {
+const convertMentionElement = (domNode: HTMLElement): DOMConversionOutput | null => {
   const textContent = domNode.textContent
 
   if (textContent !== null) {

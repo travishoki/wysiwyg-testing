@@ -17,7 +17,7 @@ type ElementValues = {
 
 const elements = new WeakMap<HTMLElement, ElementValues>()
 
-function readTouch(e: TouchEvent): [number, number] | null {
+const readTouch = (e: TouchEvent): [number, number] | null => {
   const touch = e.changedTouches[0]
   if (touch === undefined) {
     return null
@@ -25,7 +25,7 @@ function readTouch(e: TouchEvent): [number, number] | null {
   return [touch.clientX, touch.clientY]
 }
 
-function addListener(element: HTMLElement, cb: Listener): () => void {
+const addListener = (element: HTMLElement, cb: Listener): (() => void) => {
   let elementValues = elements.get(element)
   if (elementValues === undefined) {
     const listeners = new Set<Listener>()
@@ -64,7 +64,7 @@ function addListener(element: HTMLElement, cb: Listener): () => void {
   return () => deleteListener(element, cb)
 }
 
-function deleteListener(element: HTMLElement, cb: Listener): void {
+const deleteListener = (element: HTMLElement, cb: Listener): void => {
   const elementValues = elements.get(element)
   if (elementValues === undefined) {
     return
