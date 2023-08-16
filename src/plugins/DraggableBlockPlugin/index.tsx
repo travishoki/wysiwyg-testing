@@ -34,7 +34,7 @@ import {
   Upward,
   Indeterminate,
 } from "./const"
-import { getTopLevelNodeKeys } from "./helpers"
+import { getCollapsedMargins, getTopLevelNodeKeys } from "./helpers"
 import "./index.css"
 
 let prevIndex = Infinity
@@ -48,24 +48,6 @@ const getCurrentIndex = (keysLength: number): number => {
   }
 
   return Math.floor(keysLength / 2)
-}
-
-const getCollapsedMargins = (
-  elem: HTMLElement,
-): {
-  marginTop: number
-  marginBottom: number
-} => {
-  const getMargin = (element: Element | null, margin: "marginTop" | "marginBottom"): number =>
-    element ? parseFloat(window.getComputedStyle(element)[margin]) : 0
-
-  const { marginTop, marginBottom } = window.getComputedStyle(elem)
-  const prevElemSiblingMarginBottom = getMargin(elem.previousElementSibling, "marginBottom")
-  const nextElemSiblingMarginTop = getMargin(elem.nextElementSibling, "marginTop")
-  const collapsedTopMargin = Math.max(parseFloat(marginTop), prevElemSiblingMarginBottom)
-  const collapsedBottomMargin = Math.max(parseFloat(marginBottom), nextElemSiblingMarginTop)
-
-  return { marginBottom: collapsedBottomMargin, marginTop: collapsedTopMargin }
 }
 
 const getBlockElement = (
