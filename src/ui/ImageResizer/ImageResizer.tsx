@@ -8,11 +8,8 @@
 
 import * as React from "react"
 import { useRef } from "react"
+import { clamp } from "./helpers"
 import type { LexicalEditor } from "lexical"
-
-const clamp = (value: number, min: number, max: number) => {
-  return Math.min(Math.max(value, min), max)
-}
 
 const Direction = {
   east: 1 << 0,
