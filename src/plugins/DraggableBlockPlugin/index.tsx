@@ -23,18 +23,18 @@ import { createPortal } from "react-dom"
 import { isHTMLElement } from "../../utils/guard"
 import { Point } from "../../utils/point"
 import { Rect } from "../../utils/rect"
+import {
+  SPACE,
+  TARGET_LINE_HALF_HEIGHT,
+  DRAGGABLE_BLOCK_MENU_CLASSNAME,
+  DRAG_DATA_FORMAT,
+  TEXT_BOX_HORIZONTAL_PADDING,
+  Downward,
+  Upward,
+  Indeterminate,
+} from "./const"
 import { getTopLevelNodeKeys } from "./helpers"
 import "./index.css"
-
-const SPACE = 4
-const TARGET_LINE_HALF_HEIGHT = 2
-const DRAGGABLE_BLOCK_MENU_CLASSNAME = "draggable-block-menu"
-const DRAG_DATA_FORMAT = "application/x-lexical-drag-block"
-const TEXT_BOX_HORIZONTAL_PADDING = 28
-
-const Downward = 1
-const Upward = -1
-const Indeterminate = 0
 
 let prevIndex = Infinity
 
