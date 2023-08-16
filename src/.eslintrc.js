@@ -1,6 +1,6 @@
 module.exports = {
   extends: ["react-app"],
-  plugins: ["typescript-sort-keys", "sort-destructure-keys"],
+  plugins: ["no-only-tests", "typescript-sort-keys", "sort-destructure-keys"],
   rules: {
     /** General */
     // "sort-keys": "off", // Hoki Overriden
@@ -9,7 +9,7 @@ module.exports = {
     "no-console": ["error", { allow: ["warn", "error"] }], // Catches console.logs but allows warn and error
     "no-redeclare": "off", // handled by Typescript
     "no-underscore-dangle": "off", // Allow methods prefixed with "_"
-    // "no-only-tests/no-only-tests": "error", // Prevents CI from running only one test because it's marked with test.only
+    "no-only-tests/no-only-tests": "error", // Prevents CI from running only one test because it's marked with test.only
     "no-irregular-whitespace": "off",
     "comma-dangle": ["error", "always-multiline"],
     "consistent-return": "off",
