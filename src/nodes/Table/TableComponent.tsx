@@ -29,7 +29,6 @@ import {
   CLICK_COMMAND,
   COMMAND_PRIORITY_LOW,
   COPY_COMMAND,
-  createEditor,
   CUT_COMMAND,
   EditorThemeClasses,
   FORMAT_TEXT_COMMAND,
@@ -45,6 +44,7 @@ import {
   LexicalEditor,
   NodeKey,
   PASTE_COMMAND,
+  createEditor,
 } from "lexical"
 import { CellContext } from "../../plugins/TablePlugin/const"
 import { IS_APPLE } from "../../shared/environment"
@@ -53,14 +53,14 @@ import { isStartingResize } from "./TableComponent.helpers"
 import {
   $isTableNode,
   Cell,
+  Rows,
+  TableNode,
   cellHTMLCache,
   cellTextContentCache,
   createRow,
   createUID,
   exportTableCellsToHTML,
   extractRowsFromHTML,
-  Rows,
-  TableNode,
 } from "./TableNode"
 import { SortOptions } from "./types"
 import type { RangeSelection, TextFormatType } from "lexical"

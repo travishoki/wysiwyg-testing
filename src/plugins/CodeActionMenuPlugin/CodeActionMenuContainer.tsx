@@ -5,7 +5,7 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { $getNearestNodeFromDOMNode } from "lexical"
 import { getMouseInfo } from "./CodeActionMenuContainer.helpers"
 import { CopyButton } from "./components/CopyButton"
-import { canBePrettier, PrettierButton } from "./components/PrettierButton"
+import { PrettierButton, canBePrettier } from "./components/PrettierButton"
 import { useDebounce } from "./utils"
 
 const CODE_PADDING = 8

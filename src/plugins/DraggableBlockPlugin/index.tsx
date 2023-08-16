@@ -25,13 +25,13 @@ import { isHTMLElement } from "../../utils/guard"
 import { Point } from "../../utils/point"
 import { Rect } from "../../utils/rect"
 import {
+  DRAG_DATA_FORMAT,
+  Downward,
+  Indeterminate,
   SPACE,
   TARGET_LINE_HALF_HEIGHT,
-  DRAG_DATA_FORMAT,
   TEXT_BOX_HORIZONTAL_PADDING,
-  Downward,
   Upward,
-  Indeterminate,
 } from "./const"
 import { getCollapsedMargins, getTopLevelNodeKeys, isOnMenu } from "./helpers"
 import "./index.css"

@@ -1,5 +1,5 @@
 import { createContext } from "react"
-import { createCommand, LexicalCommand } from "lexical"
+import { LexicalCommand, createCommand } from "lexical"
 import { CellEditorConfig, InsertTableCommandPayload } from "./types"
 
 export const INSERT_NEW_TABLE_COMMAND: LexicalCommand<InsertTableCommandPayload> = createCommand(

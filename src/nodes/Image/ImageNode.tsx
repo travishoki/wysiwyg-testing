@@ -8,7 +8,7 @@
 
 import * as React from "react"
 import { Suspense } from "react"
-import { $applyNodeReplacement, createEditor, DecoratorNode } from "lexical"
+import { $applyNodeReplacement, DecoratorNode, createEditor } from "lexical"
 import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFallback"
 import type {
   DOMConversionMap,

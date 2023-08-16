@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import {
   indent,
-  isHeadingAtTheTopOfThePage,
   isHeadingAboveViewport,
+  isHeadingAtTheTopOfThePage,
   isHeadingBelowTheTopOfThePage,
 } from "./TableOfContentsList.helpers"
 import type { TableOfContentsEntry } from "@lexical/react/LexicalTableOfContents"

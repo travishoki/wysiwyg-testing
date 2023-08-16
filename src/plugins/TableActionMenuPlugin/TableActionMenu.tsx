@@ -12,10 +12,10 @@ import {
   $isTableCellNode,
   $isTableRowNode,
   $unmergeCell,
-  getTableSelectionFromTableElement,
   HTMLTableElementWithWithTableSelectionState,
   TableCellHeaderStates,
   TableCellNode,
+  getTableSelectionFromTableElement,
 } from "@lexical/table"
 import {
   $createParagraphNode,
