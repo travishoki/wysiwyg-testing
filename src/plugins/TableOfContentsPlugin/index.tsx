@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
+
 import * as React from "react"
 import LexicalTableOfContents from "@lexical/react/LexicalTableOfContents"
 import { TableOfContentsList } from "./TableOfContentsList"
