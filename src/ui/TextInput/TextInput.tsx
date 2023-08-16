@@ -8,7 +8,6 @@
 
 import * as React from "react"
 import { HTMLInputTypeAttribute } from "react"
-
 import "../Input.css"
 
 type TextInputProps = Readonly<{

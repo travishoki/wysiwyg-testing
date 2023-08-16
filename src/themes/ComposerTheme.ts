@@ -7,7 +7,6 @@
  */
 
 import type { EditorThemeClasses } from "lexical"
-
 import "./ComposerTheme.css"
 
 export const ComposerTheme: EditorThemeClasses = {

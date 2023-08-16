@@ -1,6 +1,6 @@
 import * as React from "react"
-import "./Output.css"
 import { Maybe } from "../types/globals"
+import "./Output.css"
 
 type OutputProps = {
   output: Maybe<string>
