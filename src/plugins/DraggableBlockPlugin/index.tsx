@@ -13,7 +13,6 @@ import { mergeRegister } from "@lexical/utils"
 import {
   $getNearestNodeFromDOMNode,
   $getNodeByKey,
-  $getRoot,
   COMMAND_PRIORITY_HIGH,
   COMMAND_PRIORITY_LOW,
   DRAGOVER_COMMAND,
@@ -24,6 +23,7 @@ import { createPortal } from "react-dom"
 import { isHTMLElement } from "../../utils/guard"
 import { Point } from "../../utils/point"
 import { Rect } from "../../utils/rect"
+import { getTopLevelNodeKeys } from "./helpers"
 import "./index.css"
 
 const SPACE = 4
@@ -47,10 +47,6 @@ const getCurrentIndex = (keysLength: number): number => {
   }
 
   return Math.floor(keysLength / 2)
-}
-
-const getTopLevelNodeKeys = (editor: LexicalEditor): string[] => {
-  return editor.getEditorState().read(() => $getRoot().getChildrenKeys())
 }
 
 const getCollapsedMargins = (
