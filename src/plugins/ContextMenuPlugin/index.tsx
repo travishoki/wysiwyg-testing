@@ -18,6 +18,7 @@ import {
   LexicalNode,
   PASTE_COMMAND,
 } from "lexical"
+import { noop } from "lodash"
 import * as ReactDOM from "react-dom"
 import { ContextMenu } from "./ContextMenu"
 import { ContextMenuOption } from "./ContextMenuOption"
@@ -39,58 +40,64 @@ export const ContextMenuPlugin = () => {
       }),
       new ContextMenuOption(`Paste`, {
         onSelect: (_node) => {
-          navigator.clipboard.read().then(async (..._args) => {
-            const data = new DataTransfer()
+          navigator.clipboard
+            .read()
+            .then(async (..._args) => {
+              const data = new DataTransfer()
 
-            const items = await navigator.clipboard.read()
-            const item = items[0]
+              const items = await navigator.clipboard.read()
+              const item = items[0]
 
-            const permission = await navigator.permissions.query({
-              // @ts-ignore These types are incorrect.
-              name: "clipboard-read",
+              const permission = await navigator.permissions.query({
+                // @ts-ignore These types are incorrect.
+                name: "clipboard-read",
+              })
+              if (permission.state === "denied") {
+                alert("Not allowed to paste from clipboard.")
+
+                return
+              }
+
+              for (const type of item.types) {
+                const dataString = await (await item.getType(type)).text()
+                data.setData(type, dataString)
+              }
+
+              const event = new ClipboardEvent("paste", {
+                clipboardData: data,
+              })
+
+              editor.dispatchCommand(PASTE_COMMAND, event)
             })
-            if (permission.state === "denied") {
-              alert("Not allowed to paste from clipboard.")
-
-              return
-            }
-
-            for (const type of item.types) {
-              const dataString = await (await item.getType(type)).text()
-              data.setData(type, dataString)
-            }
-
-            const event = new ClipboardEvent("paste", {
-              clipboardData: data,
-            })
-
-            editor.dispatchCommand(PASTE_COMMAND, event)
-          })
+            .catch(noop)
         },
       }),
       new ContextMenuOption(`Paste as Plain Text`, {
         onSelect: (_node) => {
-          navigator.clipboard.read().then(async (..._args) => {
-            const permission = await navigator.permissions.query({
-              // @ts-ignore These types are incorrect.
-              name: "clipboard-read",
+          navigator.clipboard
+            .read()
+            .then(async (..._args) => {
+              const permission = await navigator.permissions.query({
+                // @ts-ignore These types are incorrect.
+                name: "clipboard-read",
+              })
+
+              if (permission.state === "denied") {
+                alert("Not allowed to paste from clipboard.")
+
+                return
+              }
+
+              const data = new DataTransfer()
+              const items = await navigator.clipboard.readText()
+              data.setData("text/plain", items)
+
+              const event = new ClipboardEvent("paste", {
+                clipboardData: data,
+              })
+              editor.dispatchCommand(PASTE_COMMAND, event)
             })
-
-            if (permission.state === "denied") {
-              alert("Not allowed to paste from clipboard.")
-
-              return
-            }
-
-            const data = new DataTransfer()
-            const items = await navigator.clipboard.readText()
-            data.setData("text/plain", items)
-
-            const event = new ClipboardEvent("paste", {
-              clipboardData: data,
-            })
-            editor.dispatchCommand(PASTE_COMMAND, event)
-          })
+            .catch(noop)
         },
       }),
       new ContextMenuOption(`Delete Node`, {

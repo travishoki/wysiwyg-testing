@@ -2,6 +2,7 @@ import * as React from "react"
 import { useMemo, useState } from "react"
 import { EmbedMatchResult, URL_MATCHER } from "@lexical/react/LexicalAutoEmbedPlugin"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
+import { noop } from "lodash"
 import { Button } from "../../ui/Button/Button"
 import { DialogActions } from "../../ui/Dialog/Dialog"
 import { debounce } from "./AutoEmbedDialog.helpers"
@@ -22,9 +23,11 @@ export const AutoEmbedDialog = ({ embedConfig, onClose }: AutoEmbedDialogProps) 
       debounce((inputText: string) => {
         const urlMatch = URL_MATCHER.exec(inputText)
         if (embedConfig != null && inputText != null && urlMatch != null) {
-          Promise.resolve(embedConfig.parseUrl(inputText)).then((parseResult) => {
-            setEmbedResult(parseResult)
-          })
+          Promise.resolve(embedConfig.parseUrl(inputText))
+            .then((parseResult) => {
+              setEmbedResult(parseResult)
+            })
+            .catch(noop)
         } else if (embedResult != null) {
           setEmbedResult(null)
         }

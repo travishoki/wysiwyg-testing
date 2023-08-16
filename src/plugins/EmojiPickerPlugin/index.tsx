@@ -14,18 +14,19 @@ import {
   useBasicTypeaheadTriggerMatch,
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
 import { $createTextNode, $getSelection, $isRangeSelection, TextNode } from "lexical"
+import { noop } from "lodash"
 import * as ReactDOM from "react-dom"
 import { EmojiMenuItem } from "./EmojiMenuItem"
 import { EmojiOption } from "./EmojiOption"
 
 type Emoji = {
-  aliases: Array<string>,
-  category: string,
-  description: string,
-  emoji: string,
-  ios_version: string,
-  skin_tones?: boolean,
-  tags: Array<string>,
+  aliases: Array<string>
+  category: string
+  description: string
+  emoji: string
+  ios_version: string
+  skin_tones?: boolean
+  tags: Array<string>
   unicode_version: string
 }
 
@@ -38,7 +39,7 @@ export const EmojiPickerPlugin = () => {
 
   useEffect(() => {
     // @ts-ignore
-    import("../../utils/emoji-list.ts").then((file) => setEmojis(file.default))
+    import("../../utils/emoji-list.ts").then((file) => setEmojis(file.default)).catch(noop)
   }, [])
 
   const emojiOptions = useMemo(

@@ -1,6 +1,6 @@
 module.exports = {
   extends: ["react-app"],
-  plugins: ["no-only-tests", "typescript-sort-keys", "sort-destructure-keys"],
+  plugins: ["no-only-tests", "typescript-sort-keys", "sort-destructure-keys", "promise"],
   rules: {
     /** General */
     // "sort-keys": "off", // Hoki Overriden
@@ -108,20 +108,19 @@ module.exports = {
     "jsx-a11y/control-has-associated-label": "error",
 
     // Extra Syntax
-    "react/no-multi-comp": "error",
-    "sort-keys": "error",
-    "no-else-return": "error",
     "no-duplicate-imports": "error",
+    "no-else-return": "error",
+    "react/no-multi-comp": "error",
+    "promise/catch-or-return": ["error", { allowFinally: true }],
 
-    // Extra Formatting
-    "padding-line-between-statements": [1, { blankLine: "always", prev: "*", next: "return" }],
+    // Extra sorting
     "react/jsx-sort-props": ["error"],
-    "typescript-sort-keys/interface": "error",
     "sort-destructure-keys/sort-destructure-keys": 2,
+    "sort-keys": "error",
+    "typescript-sort-keys/interface": "error",
 
-    // Nice to have eventually
-    // "no-param-reassign": "error",
-    // "no-nested-ternary": "error",
+    // Extra spacing
+    "padding-line-between-statements": [1, { blankLine: "always", prev: "*", next: "return" }],
   },
   overrides: [
     /** Composer */
