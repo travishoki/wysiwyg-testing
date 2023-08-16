@@ -14,7 +14,7 @@ import { Options } from "prettier"
 
 import "./index.css"
 
-interface Props {
+interface PrettierButtonProps {
   lang: string
   editor: LexicalEditor
   getCodeDOMNode: () => HTMLElement | null
@@ -69,7 +69,7 @@ const getPrettierOptions = (lang: string): Options => {
   return options
 }
 
-export const PrettierButton = ({ lang, editor, getCodeDOMNode }: Props) => {
+export const PrettierButton = ({ lang, editor, getCodeDOMNode }: PrettierButtonProps) => {
   const [syntaxError, setSyntaxError] = useState<string>("")
   const [tipsVisible, setTipsVisible] = useState<boolean>(false)
 

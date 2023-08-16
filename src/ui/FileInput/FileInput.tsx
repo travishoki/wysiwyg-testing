@@ -10,14 +10,19 @@ import * as React from "react"
 
 import "../Input.css"
 
-type Props = Readonly<{
+type FileInputProps = Readonly<{
   "data-test-id"?: string
   accept?: string
   label: string
   onChange: (files: FileList | null) => void
 }>
 
-export const FileInput = ({ accept, label, onChange, "data-test-id": dataTestId }: Props) => {
+export const FileInput = ({
+  accept,
+  label,
+  onChange,
+  "data-test-id": dataTestId,
+}: FileInputProps) => {
   return (
     <div className="Input__wrapper">
       <label className="Input__label">{label}</label>
