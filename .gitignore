@@ -24,3 +24,6 @@ yarn-error.log*
 
 # lint
 .eslintcache
+
+# Generated CSS Module types
+**/*css.d.ts
