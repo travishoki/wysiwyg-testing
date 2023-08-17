@@ -1,0 +1,22 @@
+.action-button {
+  background-color: #eee;
+  border: 0;
+  padding: 8px 12px;
+  position: relative;
+  margin-left: 5px;
+  border-radius: 15px;
+  color: #222;
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ddd;
+    color: #000;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    background: #eee;
+    cursor: not-allowed;
+  }
+}

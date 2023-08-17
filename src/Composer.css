@@ -912,31 +912,8 @@ i.chevron-down {
   background-image: url(images/icons/chevron-down.svg);
 }
 
-.action-button {
-  background-color: #eee;
-  border: 0;
-  padding: 8px 12px;
-  position: relative;
-  margin-left: 5px;
-  border-radius: 15px;
-  color: #222;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.action-button:hover {
-  background-color: #ddd;
-  color: #000;
-}
-
 .action-button-mic.active {
   animation: mic-pulsate-color 3s infinite;
-}
-
-button.action-button:disabled {
-  opacity: 0.6;
-  background: #eee;
-  cursor: not-allowed;
 }
 
 @keyframes mic-pulsate-color {
@@ -953,7 +930,7 @@ button.action-button:disabled {
   }
 }
 
-.connecting {
+.composer .connecting {
   font-size: 15px;
   color: #999;
   overflow: hidden;

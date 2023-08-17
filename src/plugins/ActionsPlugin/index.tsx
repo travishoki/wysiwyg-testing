@@ -22,6 +22,8 @@ import {
 import { useModal } from "../../hooks/useModal"
 import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
 import { ShowClearDialog } from "./ShowClearDialog"
+import classNames from "classnames"
+import styles from "./index.module.scss"
 
 const validateEditorState = async (editor: LexicalEditor): Promise<void> => {
   const stringifiedEditorState = JSON.stringify(editor.getEditorState())
@@ -118,7 +120,7 @@ export const ActionsPlugin = () => {
     <div className="actions">
       <button
         aria-label="Clear editor contents"
-        className="action-button clear"
+        className={classNames(styles["action-button"], "clear")}
         disabled={isEditorEmpty}
         onClick={() => {
           showModal("Clear editor", (onClose) => (
@@ -131,7 +133,7 @@ export const ActionsPlugin = () => {
       </button>
       <button
         aria-label="Convert from markdown"
-        className="action-button"
+        className={styles["action-button"]}
         onClick={handleMarkdownToggle}
         title="Convert From Markdown"
       >
