@@ -113,13 +113,13 @@ module.exports = {
     "react/no-multi-comp": "error",
     "promise/catch-or-return": ["error", { allowFinally: true }],
 
-    // Extra sorting
+    // Extra Sorting
     "react/jsx-sort-props": ["error"],
     "sort-destructure-keys/sort-destructure-keys": 2,
     "sort-keys": "error",
     "typescript-sort-keys/interface": "error",
 
-    // Extra spacing
+    // Extra Spacing
     "padding-line-between-statements": [1, { blankLine: "always", prev: "*", next: "return" }],
   },
   overrides: [
