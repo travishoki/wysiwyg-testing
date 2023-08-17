@@ -1,11 +1,11 @@
 .select {
-  min-width: 160px;
-  max-width: 290px;
-  border: 1px solid var(--select-border);
-  border-radius: 0.25em;
-  padding: 0.25em 0.5em;
-  font-size: 1rem;
-  cursor: pointer;
-  line-height: 1.4;
   background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  border-radius: 0.25em;
+  border: 1px solid var(--select-border);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.4;
+  max-width: 290px;
+  min-width: 160px;
+  padding: 0.25em 0.5em;
 }

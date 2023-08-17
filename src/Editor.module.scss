@@ -7,14 +7,14 @@
 }
 
 .editor-scroller {
-  min-height: 150px;
   border: 0;
   display: flex;
-  position: relative;
+  min-height: 150px;
   outline: 0;
-  z-index: 0;
   overflow: auto;
+  position: relative;
   resize: vertical;
+  z-index: 0;
 }
 
 .editor {
@@ -25,16 +25,16 @@
 }
 
 .TableNode__contentEditable {
-  min-height: 20px;
   border: 0px;
-  resize: none;
   cursor: text;
   display: block;
-  position: relative;
+  font-size: 15px;
+  min-height: 20px;
   outline: 0px;
   padding: 0;
+  position: relative;
+  resize: none;
   user-select: text;
-  font-size: 15px;
   white-space: pre-wrap;
   word-break: break-word;
   z-index: 3;

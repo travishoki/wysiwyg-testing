@@ -1,32 +1,32 @@
 .InlineImageNode__contentEditable {
-  min-height: 20px;
   border: 0px;
-  resize: none;
-  cursor: text;
   caret-color: rgb(5, 5, 5);
+  cursor: text;
   display: block;
-  position: relative;
-  tab-size: 1;
-  outline: 0px;
-  padding: 10px;
-  user-select: text;
   font-size: 14px;
   line-height: 1.4em;
-  width: calc(100% - 20px);
+  min-height: 20px;
+  outline: 0px;
+  padding: 10px;
+  position: relative;
+  resize: none;
+  tab-size: 1;
+  user-select: text;
   white-space: pre-wrap;
+  width: calc(100% - 20px);
   word-break: break-word;
 }
 
 .InlineImageNode__placeholder {
-  font-size: 12px;
+  bottom: 10px;
   color: #888;
+  display: inline-block;
+  font-size: 12px;
+  left: 10px;
   overflow: hidden;
+  pointer-events: none;
   position: absolute;
   text-overflow: ellipsis;
-  bottom: 10px;
-  left: 10px;
   user-select: none;
   white-space: nowrap;
-  display: inline-block;
-  pointer-events: none;
 }

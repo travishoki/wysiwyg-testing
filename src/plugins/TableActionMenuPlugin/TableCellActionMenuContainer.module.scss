@@ -1,19 +1,19 @@
 .table-cell-action-button-container {
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   will-change: transform;
 }
 
 .table-cell-action-button {
-  background-color: none;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  border: 0;
-  position: relative;
+  background-color: none;
   border-radius: 15px;
+  border: 0;
   color: #222;
-  display: inline-block;
   cursor: pointer;
+  display: flex;
+  display: inline-block;
+  justify-content: center;
+  position: relative;
 }

@@ -5,24 +5,24 @@
 
 .selected-heading-wrapper {
   &::before {
-    content: " ";
-    position: absolute;
-    display: inline-block;
-    left: -30px;
-    top: 4px;
-    z-index: 10;
-    height: 4px;
-    width: 4px;
     background-color: #3578e5;
-    border: solid 4px white;
     border-radius: 50%;
+    border: solid 4px white;
+    content: " ";
+    display: inline-block;
+    height: 4px;
+    left: -30px;
+    position: absolute;
+    top: 4px;
+    width: 4px;
+    z-index: 10;
   }
 }
 
 .normal-heading {
   cursor: pointer;
-  line-height: 20px;
   font-size: 16px;
+  line-height: 20px;
 }
 
 .normal-heading-wrapper {
@@ -32,16 +32,16 @@
 
 .table-of-contents {
   color: #65676b;
-  position: fixed;
-  top: 200px;
-  right: -35px;
-  padding: 10px;
-  width: 250px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  z-index: 1;
   height: 300px;
+  justify-content: flex-start;
+  padding: 10px;
+  position: fixed;
+  right: -35px;
+  top: 200px;
+  width: 250px;
+  z-index: 1;
 
   .heading2 {
     margin-left: 10px;
@@ -54,22 +54,22 @@
 
 .first-heading {
   color: black;
-  font-weight: bold;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .headings {
-  list-style: none;
-  margin-top: 0;
-  margin-left: 10px;
-  padding: 0;
-  overflow: scroll;
-  width: 200px;
+  -ms-overflow-style: none; /* IE and Edge */
   height: 220px;
+  list-style: none;
+  margin-left: 10px;
+  margin-top: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  -ms-overflow-style: none; /* IE and Edge */
+  overflow: scroll;
+  padding: 0;
   scrollbar-width: none; /* Firefox */
+  width: 200px;
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
@@ -77,13 +77,13 @@
   }
 
   &::before {
-    content: " ";
-    position: absolute;
-    height: 220px;
-    width: 4px;
-    right: 240px;
-    margin-top: 5px;
     background-color: #ccd0d5;
     border-radius: 2px;
+    content: " ";
+    height: 220px;
+    margin-top: 5px;
+    position: absolute;
+    right: 240px;
+    width: 4px;
   }
 }

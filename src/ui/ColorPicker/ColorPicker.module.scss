@@ -14,12 +14,12 @@
   padding: 0;
 
   button {
-    border: 1px solid #ccc;
     border-radius: 4px;
-    height: 16px;
-    width: 16px;
+    border: 1px solid #ccc;
     cursor: pointer;
+    height: 16px;
     list-style-type: none;
+    width: 16px;
 
     &.active {
       box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -32,31 +32,27 @@
 }
 
 .color-picker-saturation {
-  width: 100%;
-  position: relative;
-  margin-top: 15px;
-  height: 150px;
   background-image: linear-gradient(transparent, black),
     linear-gradient(to right, white, transparent);
+  height: 150px;
+  margin-top: 15px;
+  position: relative;
   user-select: none;
+  width: 100%;
 }
 
 .color-picker-saturation_cursor {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #ffffff;
   border-radius: 50%;
+  border: 2px solid #ffffff;
   box-shadow: 0 0 15px #00000026;
   box-sizing: border-box;
+  height: 20px;
+  position: absolute;
   transform: translate(-10px, -10px);
+  width: 20px;
 }
 
 .color-picker-hue {
-  width: 100%;
-  position: relative;
-  margin-top: 15px;
-  height: 12px;
   background-image: linear-gradient(
     to right,
     rgb(255, 0, 0),
@@ -67,24 +63,28 @@
     rgb(255, 0, 255),
     rgb(255, 0, 0)
   );
-  user-select: none;
   border-radius: 12px;
+  height: 12px;
+  margin-top: 15px;
+  position: relative;
+  user-select: none;
+  width: 100%;
 }
 
 .color-picker-hue_cursor {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #ffffff;
   border-radius: 50%;
+  border: 2px solid #ffffff;
   box-shadow: #0003 0 0 0 0.5px;
   box-sizing: border-box;
+  height: 20px;
+  position: absolute;
   transform: translate(-10px, -4px);
+  width: 20px;
 }
 
 .color-picker-color {
   border: 1px solid #ccc;
+  height: 20px;
   margin-top: 15px;
   width: 100%;
-  height: 20px;
 }

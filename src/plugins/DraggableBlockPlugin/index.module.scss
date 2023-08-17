@@ -1,10 +1,10 @@
 .draggable-block-target-line {
-  pointer-events: none;
   background: deepskyblue;
   height: 4px;
-  position: absolute;
   left: 0;
-  top: 0;
   opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
   will-change: transform;
 }

@@ -1,13 +1,13 @@
 .Button__root {
-  padding-top: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  border: 0px;
+  cursor: pointer;
+  font-size: 14px;
   padding-bottom: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  border: 0px;
-  background-color: #eee;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
+  padding-top: 10px;
 
   &:hover {
     background-color: #ddd;
@@ -15,11 +15,11 @@
 }
 
 .Button__small {
-  padding-top: 5px;
+  font-size: 13px;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  font-size: 13px;
+  padding-top: 5px;
 }
 
 .Button__disabled {

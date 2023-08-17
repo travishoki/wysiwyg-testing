@@ -1,27 +1,27 @@
 .floating-text-format-popup {
-  display: flex;
+  background-color: #fff;
   background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  height: 35px;
+  left: 0;
+  opacity: 0;
   padding: 4px;
-  vertical-align: middle;
   position: absolute;
   top: 0;
-  left: 0;
-  z-index: 10;
-  opacity: 0;
-  background-color: #fff;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
   transition: opacity 0.5s;
-  height: 35px;
+  vertical-align: middle;
   will-change: transform;
+  z-index: 10;
 
   button.popup-item {
-    border: 0;
-    display: flex;
     background: none;
     border-radius: 10px;
-    padding: 8px;
+    border: 0;
     cursor: pointer;
+    display: flex;
+    padding: 8px;
     vertical-align: middle;
 
     &:disabled {
@@ -34,13 +34,13 @@
 
     i.format {
       background-size: contain;
+      display: flex;
       display: inline-block;
       height: 18px;
-      width: 18px;
       margin-top: 2px;
-      vertical-align: -0.25em;
-      display: flex;
       opacity: 0.6;
+      vertical-align: -0.25em;
+      width: 18px;
     }
 
     &:disabled i.format {
@@ -82,51 +82,50 @@
 
   .popup-item {
     .text {
-      display: flex;
-      line-height: 20px;
-      width: 200px;
-      vertical-align: middle;
-      font-size: 14px;
       color: #777;
-      text-overflow: ellipsis;
-      width: 70px;
-      overflow: hidden;
+      display: flex;
+      font-size: 14px;
       height: 20px;
+      line-height: 20px;
+      overflow: hidden;
       text-align: left;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+      width: 70px;
     }
 
     .icon {
-      display: flex;
-      width: 20px;
-      height: 20px;
-      user-select: none;
-      margin-right: 8px;
-      line-height: 16px;
       background-size: contain;
+      display: flex;
+      height: 20px;
+      line-height: 16px;
+      margin-right: 8px;
+      user-select: none;
+      width: 20px;
     }
   }
 
   i.chevron-down {
-    margin-top: 3px;
-    width: 16px;
-    height: 16px;
     display: flex;
+    height: 16px;
+    margin-top: 3px;
     user-select: none;
+    width: 16px;
 
     &.inside {
-      width: 16px;
-      height: 16px;
       display: flex;
+      height: 16px;
       margin-left: -25px;
-      margin-top: 11px;
       margin-right: 10px;
+      margin-top: 11px;
       pointer-events: none;
+      width: 16px;
     }
 
     .divider {
-      width: 1px;
       background-color: #eee;
       margin: 0 4px;
+      width: 1px;
     }
   }
 
