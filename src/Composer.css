@@ -952,7 +952,7 @@ i.chevron-down {
   text-align: right;
 }
 
-.toolbar {
+.composer .toolbar {
   display: flex;
   margin-bottom: 1px;
   background: #fff;
@@ -967,7 +967,7 @@ i.chevron-down {
   z-index: 2;
 }
 
-.toolbar button.toolbar-item {
+.composer .toolbar button.toolbar-item {
   border: 0;
   display: flex;
   background: none;
@@ -980,15 +980,15 @@ i.chevron-down {
   justify-content: space-between;
 }
 
-.toolbar button.toolbar-item:disabled {
+.composer .toolbar button.toolbar-item:disabled {
   cursor: not-allowed;
 }
 
-.toolbar button.toolbar-item.spaced {
+.composer .toolbar button.toolbar-item.spaced {
   margin-right: 2px;
 }
 
-.toolbar button.toolbar-item i.format {
+.composer .toolbar button.toolbar-item i.format {
   background-size: contain;
   display: inline-block;
   height: 18px;
@@ -998,35 +998,35 @@ i.chevron-down {
   opacity: 0.6;
 }
 
-.toolbar button.toolbar-item:disabled .icon,
-.toolbar button.toolbar-item:disabled .text,
-.toolbar button.toolbar-item:disabled i.format,
-.toolbar button.toolbar-item:disabled .chevron-down {
+.composer .toolbar button.toolbar-item:disabled .icon,
+.composer .toolbar button.toolbar-item:disabled .text,
+.composer .toolbar button.toolbar-item:disabled i.format,
+.composer .toolbar button.toolbar-item:disabled .chevron-down {
   opacity: 0.2;
 }
 
-.toolbar button.toolbar-item.active {
+.composer .toolbar button.toolbar-item.active {
   background-color: rgba(223, 232, 250, 0.3);
 }
 
-.toolbar button.toolbar-item.active i {
+.composer .toolbar button.toolbar-item.active i {
   opacity: 1;
 }
 
-.toolbar .toolbar-item:hover:not([disabled]) {
+.composer .toolbar .toolbar-item:hover:not([disabled]) {
   background-color: #eee;
 }
 
-.toolbar .toolbar-item.font-family .text {
+.composer .toolbar .toolbar-item.font-family .text {
   display: block;
   max-width: 40px;
 }
 
-.toolbar .code-language {
+.composer .toolbar .code-language {
   width: 150px;
 }
 
-.toolbar .toolbar-item .text {
+.composer .toolbar .toolbar-item .text {
   display: flex;
   line-height: 20px;
   vertical-align: middle;
@@ -1039,7 +1039,7 @@ i.chevron-down {
   padding-right: 10px;
 }
 
-.toolbar .toolbar-item .icon {
+.composer .toolbar .toolbar-item .icon {
   display: flex;
   width: 20px;
   height: 20px;
@@ -1049,7 +1049,7 @@ i.chevron-down {
   background-size: contain;
 }
 
-.toolbar i.chevron-down {
+.composer .toolbar i.chevron-down {
   margin-top: 3px;
   width: 16px;
   height: 16px;
@@ -1057,7 +1057,7 @@ i.chevron-down {
   user-select: none;
 }
 
-.toolbar i.chevron-down.inside {
+.composer .toolbar i.chevron-down.inside {
   width: 16px;
   height: 16px;
   display: flex;
@@ -1067,7 +1067,7 @@ i.chevron-down {
   pointer-events: none;
 }
 
-.toolbar .divider {
+.composer .toolbar .divider {
   width: 1px;
   background-color: #eee;
   margin: 0 4px;
