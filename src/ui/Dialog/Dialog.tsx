@@ -9,10 +9,11 @@
 import React from "react"
 import { DialogProps } from "./types"
 import "./Dialog.css"
+import styles from "./Dialog.module.scss"
 
 export const DialogActions = ({ children, "data-test-id": dataTestId }: DialogProps) => {
   return (
-    <div className="DialogActions" data-test-id={dataTestId}>
+    <div className={styles.DialogActions} data-test-id={dataTestId}>
       {children}
     </div>
   )
