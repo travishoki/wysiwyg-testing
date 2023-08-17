@@ -10,6 +10,7 @@ import React from "react"
 import "./Select.css"
 import { InputLabel } from "../Input/InputLabel"
 import { InputWrapper } from "../Input/InputWrapper"
+import styles from "./Select.module.scss"
 
 type SelectIntrinsicProps = JSX.IntrinsicElements["select"]
 
@@ -21,7 +22,7 @@ export const Select = ({ children, className, label, ...other }: SelectProps) =>
   return (
     <InputWrapper>
       <InputLabel style={{ marginTop: "-1em" }}>{label}</InputLabel>
-      <select {...other} className={className || "select"}>
+      <select {...other} className={className || styles["select"]}>
         {children}
       </select>
     </InputWrapper>
