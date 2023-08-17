@@ -1,4 +1,4 @@
-import { clamp } from "./helpers"
+import { clamp } from "./numbers"
 
 describe("clamp", () => {
   const min = 5

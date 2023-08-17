@@ -8,7 +8,7 @@
 
 import React, { useRef } from "react"
 import { LexicalEditor } from "lexical"
-import { clamp } from "./helpers"
+import { clamp } from "../../helpers/numbers"
 
 const Direction = {
   east: 1 << 0,

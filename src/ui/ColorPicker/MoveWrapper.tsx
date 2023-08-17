@@ -1,4 +1,5 @@
 import React, { useRef } from "react"
+import { clamp } from "../../helpers/numbers"
 
 export interface Position {
   x: number
@@ -52,8 +53,4 @@ export const MoveWrapper = ({ children, className, onChange, style }: MoveWrappe
       {children}
     </div>
   )
-}
-
-const clamp = (value: number, max: number, min: number) => {
-  return value > max ? max : value < min ? min : value
 }
