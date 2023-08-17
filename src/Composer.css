@@ -586,89 +586,32 @@
   }
 }
 
-.switch {
-  display: block;
-  color: #444;
-  margin: 5px 0;
-  background-color: rgba(238, 238, 238, 0.7);
-  padding: 5px 10px;
-  border-radius: 10px;
-}
-
-.switch label {
-  margin-right: 5px;
-  line-height: 24px;
-  width: 100px;
-  font-size: 14px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.switch button {
-  background-color: rgb(206, 208, 212);
-  height: 24px;
-  box-sizing: border-box;
-  border-radius: 12px;
-  width: 44px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  outline: none;
-  cursor: pointer;
-  transition: background-color 0.1s;
-  border: 2px solid transparent;
-}
-
-.switch button:focus-visible {
-  border-color: blue;
-}
-
-.switch button span {
-  top: 0px;
-  left: 0px;
-  display: block;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 12px;
-  background-color: white;
-  transition: transform 0.2s;
-}
-
-.switch button[aria-checked="true"] {
-  background-color: rgb(24, 119, 242);
-}
-
-.switch button[aria-checked="true"] span {
-  transform: translateX(20px);
-}
-
-span.editor-image {
+.compose .editor-image {
   cursor: default;
   display: inline-block;
   position: relative;
   user-select: none;
 }
 
-.editor-image img {
+.compose .editor-image img {
   max-width: 100%;
   cursor: default;
 }
 
-.editor-image img.focused {
+.compose .editor-image img.focused {
   outline: 2px solid rgb(60, 132, 244);
   user-select: none;
 }
 
-.editor-image img.focused.draggable {
+.compose .editor-image img.focused.draggable {
   cursor: grab;
 }
 
-.editor-image img.focused.draggable:active {
+.compose .editor-image img.focused.draggable:active {
   cursor: grabbing;
 }
 
-.editor-image .image-caption-container {
+.compose .editor-image .image-caption-container {
   display: block;
   position: absolute;
   bottom: 4px;
@@ -683,7 +626,7 @@ span.editor-image {
   overflow: hidden;
 }
 
-.editor-image .image-caption-button {
+.compose .editor-image .image-caption-button {
   display: block;
   position: absolute;
   bottom: 20px;
@@ -701,11 +644,11 @@ span.editor-image {
   user-select: none;
 }
 
-.editor-image .image-caption-button:hover {
+.compose .editor-image .image-caption-button:hover {
   background-color: rgba(60, 132, 244, 0.5);
 }
 
-.editor-image .image-edit-button {
+.compose .editor-image .image-edit-button {
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   background-image: url(/src/images/icons/pencil-fill.svg);
@@ -722,11 +665,11 @@ span.editor-image {
   user-select: none;
 }
 
-.editor-image .image-edit-button:hover {
+.compose .editor-image .image-edit-button:hover {
   background-color: rgba(60, 132, 244, 0.1);
 }
 
-.editor-image .image-resizer {
+.compose .editor-image .image-resizer {
   display: block;
   width: 7px;
   height: 7px;
@@ -735,49 +678,49 @@ span.editor-image {
   border: 1px solid #fff;
 }
 
-.editor-image .image-resizer.image-resizer-n {
+.compose .editor-image .image-resizer.image-resizer-n {
   top: -6px;
   left: 48%;
   cursor: n-resize;
 }
 
-.editor-image .image-resizer.image-resizer-ne {
+.compose .editor-image .image-resizer.image-resizer-ne {
   top: -6px;
   right: -6px;
   cursor: ne-resize;
 }
 
-.editor-image .image-resizer.image-resizer-e {
+.compose .editor-image .image-resizer.image-resizer-e {
   bottom: 48%;
   right: -6px;
   cursor: e-resize;
 }
 
-.editor-image .image-resizer.image-resizer-se {
+.compose .editor-image .image-resizer.image-resizer-se {
   bottom: -2px;
   right: -6px;
   cursor: nwse-resize;
 }
 
-.editor-image .image-resizer.image-resizer-s {
+.compose .editor-image .image-resizer.image-resizer-s {
   bottom: -2px;
   left: 48%;
   cursor: s-resize;
 }
 
-.editor-image .image-resizer.image-resizer-sw {
+.compose .editor-image .image-resizer.image-resizer-sw {
   bottom: -2px;
   left: -6px;
   cursor: sw-resize;
 }
 
-.editor-image .image-resizer.image-resizer-w {
+.compose .editor-image .image-resizer.image-resizer-w {
   bottom: 48%;
   left: -6px;
   cursor: w-resize;
 }
 
-.editor-image .image-resizer.image-resizer-nw {
+.compose .editor-image .image-resizer.image-resizer-nw {
   top: -6px;
   left: -6px;
   cursor: nw-resize;
