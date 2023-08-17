@@ -885,32 +885,32 @@ i.prettier-error {
   transform: translateX(20px);
 }
 
-.editor-shell span.editor-image {
+span.editor-image {
   cursor: default;
   display: inline-block;
   position: relative;
   user-select: none;
 }
 
-.editor-shell .editor-image img {
+.editor-image img {
   max-width: 100%;
   cursor: default;
 }
 
-.editor-shell .editor-image img.focused {
+.editor-image img.focused {
   outline: 2px solid rgb(60, 132, 244);
   user-select: none;
 }
 
-.editor-shell .editor-image img.focused.draggable {
+.editor-image img.focused.draggable {
   cursor: grab;
 }
 
-.editor-shell .editor-image img.focused.draggable:active {
+.editor-image img.focused.draggable:active {
   cursor: grabbing;
 }
 
-.editor-shell .editor-image .image-caption-container {
+.editor-image .image-caption-container {
   display: block;
   position: absolute;
   bottom: 4px;
@@ -925,7 +925,7 @@ i.prettier-error {
   overflow: hidden;
 }
 
-.editor-shell .editor-image .image-caption-button {
+.editor-image .image-caption-button {
   display: block;
   position: absolute;
   bottom: 20px;
@@ -943,11 +943,11 @@ i.prettier-error {
   user-select: none;
 }
 
-.editor-shell .editor-image .image-caption-button:hover {
+.editor-image .image-caption-button:hover {
   background-color: rgba(60, 132, 244, 0.5);
 }
 
-.editor-shell .editor-image .image-edit-button {
+.editor-image .image-edit-button {
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   background-image: url(/src/images/icons/pencil-fill.svg);
@@ -964,11 +964,11 @@ i.prettier-error {
   user-select: none;
 }
 
-.editor-shell .editor-image .image-edit-button:hover {
+.editor-image .image-edit-button:hover {
   background-color: rgba(60, 132, 244, 0.1);
 }
 
-.editor-shell .editor-image .image-resizer {
+.editor-image .image-resizer {
   display: block;
   width: 7px;
   height: 7px;
@@ -977,95 +977,95 @@ i.prettier-error {
   border: 1px solid #fff;
 }
 
-.editor-shell .editor-image .image-resizer.image-resizer-n {
+.editor-image .image-resizer.image-resizer-n {
   top: -6px;
   left: 48%;
   cursor: n-resize;
 }
 
-.editor-shell .editor-image .image-resizer.image-resizer-ne {
+.editor-image .image-resizer.image-resizer-ne {
   top: -6px;
   right: -6px;
   cursor: ne-resize;
 }
 
-.editor-shell .editor-image .image-resizer.image-resizer-e {
+.editor-image .image-resizer.image-resizer-e {
   bottom: 48%;
   right: -6px;
   cursor: e-resize;
 }
 
-.editor-shell .editor-image .image-resizer.image-resizer-se {
+.editor-image .image-resizer.image-resizer-se {
   bottom: -2px;
   right: -6px;
   cursor: nwse-resize;
 }
 
-.editor-shell .editor-image .image-resizer.image-resizer-s {
+.editor-image .image-resizer.image-resizer-s {
   bottom: -2px;
   left: 48%;
   cursor: s-resize;
 }
 
-.editor-shell .editor-image .image-resizer.image-resizer-sw {
+.editor-image .image-resizer.image-resizer-sw {
   bottom: -2px;
   left: -6px;
   cursor: sw-resize;
 }
 
-.editor-shell .editor-image .image-resizer.image-resizer-w {
+.editor-image .image-resizer.image-resizer-w {
   bottom: 48%;
   left: -6px;
   cursor: w-resize;
 }
 
-.editor-shell .editor-image .image-resizer.image-resizer-nw {
+.editor-image .image-resizer.image-resizer-nw {
   top: -6px;
   left: -6px;
   cursor: nw-resize;
 }
 
-.editor-shell span.inline-editor-image {
+span.inline-editor-image {
   cursor: default;
   display: inline-block;
   position: relative;
   z-index: 1;
 }
 
-.editor-shell .inline-editor-image img {
+.inline-editor-image img {
   max-width: 100%;
   cursor: default;
 }
 
-.editor-shell .inline-editor-image img.focused {
+.inline-editor-image img.focused {
   outline: 2px solid rgb(60, 132, 244);
 }
 
-.editor-shell .inline-editor-image img.focused.draggable {
+.inline-editor-image img.focused.draggable {
   cursor: grab;
 }
 
-.editor-shell .inline-editor-image img.focused.draggable:active {
+.inline-editor-image img.focused.draggable:active {
   cursor: grabbing;
 }
 
-.editor-shell .inline-editor-image.position-full {
+.inline-editor-image.position-full {
   margin: 1em 0 1em 0;
 }
 
-.editor-shell .inline-editor-image.position-left {
+.inline-editor-image.position-left {
   float: left;
   width: 50%;
   margin: 1em 1em 0 0;
 }
 
-.editor-shell .inline-editor-image.position-right {
+.inline-editor-image.position-right {
   float: right;
   width: 50%;
   margin: 1em 0 0 1em;
 }
 
-.editor-shell .inline-editor-image .image-edit-button {
+.inline-editor-image .image-edit-button {
   display: block;
   position: absolute;
   top: 12px;
@@ -1081,11 +1081,11 @@ i.prettier-error {
   user-select: none;
 }
 
-.editor-shell .inline-editor-image .image-edit-button:hover {
+.inline-editor-image .image-edit-button:hover {
   background-color: rgba(60, 132, 244, 0.5);
 }
 
-.editor-shell .inline-editor-image .image-caption-container {
+.inline-editor-image .image-caption-container {
   display: block;
   background-color: #f4f4f4;
   min-width: 100%;
