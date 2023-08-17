@@ -1,4 +1,4 @@
-pre {
+.composer pre {
   line-height: 1.1;
   background: #222;
   color: #fff;
@@ -9,33 +9,13 @@ pre {
   max-height: 400px;
 }
 
-pre::-webkit-scrollbar {
+.composer pre::-webkit-scrollbar {
   background: transparent;
   width: 10px;
 }
 
-pre::-webkit-scrollbar-thumb {
+.composer pre::-webkit-scrollbar-thumb {
   background: #999;
-}
-
-#options-button {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
-}
-
-#paste-log-button {
-  position: fixed;
-  left: 120px;
-  bottom: 20px;
-}
-
-#options-button::after {
-  background-image: url(images/icons/gear.svg);
-}
-
-#paste-log-button::after {
-  background-image: url(images/icons/clipboard.svg);
 }
 
 .composer .typeahead-popover {
@@ -130,11 +110,11 @@ pre::-webkit-scrollbar-thumb {
   background-position: center;
 }
 
-.mentions-menu {
+.composer .mentions-menu {
   width: 250px;
 }
 
-.auto-embed-menu {
+.composer .auto-embed-menu {
   width: 150px;
 }
 
