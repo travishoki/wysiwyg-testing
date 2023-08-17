@@ -1109,22 +1109,6 @@ i.chevron-down {
   user-select: none;
 }
 
-.TableNode__contentEditable {
-  min-height: 20px;
-  border: 0px;
-  resize: none;
-  cursor: text;
-  display: block;
-  position: relative;
-  outline: 0px;
-  padding: 0;
-  user-select: text;
-  font-size: 15px;
-  white-space: pre-wrap;
-  word-break: break-word;
-  z-index: 3;
-}
-
 .composer .ComposerTheme__blockCursor {
   display: block;
   pointer-events: none;
