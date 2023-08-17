@@ -297,12 +297,12 @@
   background-image: url(images/icons/prettier-error.svg);
 }
 
-.link-editor .button.active,
+.compose .link-editor .button.active,
 .toolbar .button.active {
   background-color: rgb(223, 232, 250);
 }
 
-.link-editor .link-input {
+.compose .link-editor .link-input {
   display: block;
   width: calc(100% - 75px);
   box-sizing: border-box;
@@ -318,7 +318,7 @@
   font-family: inherit;
 }
 
-.link-editor .link-view {
+.compose .link-editor .link-view {
   display: block;
   width: calc(100% - 24px);
   margin: 8px 12px;
@@ -332,7 +332,7 @@
   font-family: inherit;
 }
 
-.link-editor .link-view a {
+.compose .link-editor .link-view a {
   display: block;
   word-break: break-word;
   width: calc(100% - 33px);
@@ -396,7 +396,7 @@
   cursor: pointer;
 }
 
-.link-editor .link-input a {
+.compose .link-editor .link-input a {
   color: rgb(33, 111, 219);
   text-decoration: underline;
   white-space: nowrap;
@@ -405,12 +405,12 @@
   text-overflow: ellipsis;
 }
 
-.link-editor .link-input a:hover {
+.compose .link-editor .link-input a:hover {
   text-decoration: underline;
 }
 
-.link-editor .font-size-wrapper,
-.link-editor .font-family-wrapper {
+.compose .link-editor .font-size-wrapper,
+.compose .link-editor .font-family-wrapper {
   display: flex;
   margin: 0 4px;
 }
