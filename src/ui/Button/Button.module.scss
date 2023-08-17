@@ -21,3 +21,11 @@
   padding-right: 10px;
   font-size: 13px;
 }
+
+.Button__disabled {
+  cursor: not-allowed;
+
+  &:hover {
+    background-color: #eee;
+  }
+}

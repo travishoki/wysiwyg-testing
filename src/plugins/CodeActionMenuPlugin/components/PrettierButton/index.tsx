@@ -10,7 +10,6 @@ import React, { useState } from "react"
 import { $isCodeNode } from "@lexical/code"
 import { $getNearestNodeFromDOMNode, LexicalEditor } from "lexical"
 import { Options } from "prettier"
-import "./index.css"
 import styles from "./index.module.scss"
 
 interface PrettierButtonProps {
