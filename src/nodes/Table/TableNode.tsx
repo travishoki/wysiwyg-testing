@@ -19,34 +19,16 @@ import {
   SerializedLexicalNode,
   Spread,
 } from "lexical"
-import { createRow, createUID } from "./TableNode.helpers"
+import { createCell, createRow, plainTextEditorJSON } from "./TableNode.helpers"
 import { Cell, Row, Rows } from "./types"
 
 export const cellHTMLCache: Map<string, string> = new Map()
 export const cellTextContentCache: Map<string, string> = new Map()
 
-const emptyEditorJSON =
-  '{"root":{"children":[{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1}],"direction":null,"format":"","indent":0,"type":"root","version":1}}'
-
-const plainTextEditorJSON = (text: string) =>
-  text === ""
-    ? emptyEditorJSON
-    : `{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":${text},"type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}`
-
 const TableComponent = React.lazy(
   // @ts-ignore
   () => import("./TableComponent"),
 )
-
-const createCell = (type: "normal" | "header"): Cell => {
-  return {
-    colSpan: 1,
-    id: createUID(),
-    json: emptyEditorJSON,
-    type,
-    width: null,
-  }
-}
 
 type SerializedTableNode = Spread<
   {
