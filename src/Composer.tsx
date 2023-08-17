@@ -28,20 +28,22 @@ const initialConfig = {
 
 export const Composer = ({ composerRef, setOutput }: ComposerProps) => {
   return (
-    <LexicalComposer initialConfig={initialConfig}>
-      <SharedHistoryContext>
-        <TableContext>
-          <SharedAutocompleteContext>
-            <div className={styles["editor-shell"]}>
-              <MergeFieldHandler composerRef={composerRef} />
-              <Editor />
-              <Controls onSubmit={setOutput} />
-              <OnChangePlugin onChange={() => setOutput(null)} />
-            </div>
-          </SharedAutocompleteContext>
-        </TableContext>
-      </SharedHistoryContext>
-    </LexicalComposer>
+    <div className="composer">
+      <LexicalComposer initialConfig={initialConfig}>
+        <SharedHistoryContext>
+          <TableContext>
+            <SharedAutocompleteContext>
+              <div className={styles["editor-shell"]}>
+                <MergeFieldHandler composerRef={composerRef} />
+                <Editor />
+                <Controls onSubmit={setOutput} />
+                <OnChangePlugin onChange={() => setOutput(null)} />
+              </div>
+            </SharedAutocompleteContext>
+          </TableContext>
+        </SharedHistoryContext>
+      </LexicalComposer>
+    </div>
   )
 }
 
