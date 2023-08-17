@@ -1,5 +1,5 @@
 import React from "react"
-import "./ButtonWithIcon.css"
+import styles from "./ButtonWithIcon.module.scss"
 
 type ButtonWithIconProps = {
   iconUrl: string
@@ -8,9 +8,11 @@ type ButtonWithIconProps = {
 }
 
 export const ButtonWithIcon = ({ iconUrl, onClick, title }: ButtonWithIconProps) => (
-  <button className="control-button" onClick={onClick}>
-    <div className="control-button-inner">
-      {iconUrl && <img alt={title} className="icon" height="15" src={iconUrl} width="15" />}
+  <button className={styles["control-button"]} onClick={onClick}>
+    <div className={styles["control-button-inner"]}>
+      {iconUrl && (
+        <img alt={title} className={styles["icon"]} height="15" src={iconUrl} width="15" />
+      )}
       {title}
     </div>
   </button>
