@@ -8,8 +8,8 @@
 
 import React from "react"
 import { DecoratorNode, EditorConfig, NodeKey, SerializedLexicalNode, Spread } from "lexical"
-import { useSharedAutocompleteContext } from "../../context/SharedAutocompleteContext"
 import { uuid as UUID } from "../../plugins/AutocompletePlugin"
+import { AutocompleteComponent } from "./AutocompleteComponent"
 
 declare global {
   interface Navigator {
@@ -77,20 +77,4 @@ export class AutocompleteNode extends DecoratorNode<JSX.Element | null> {
 
 export const $createAutocompleteNode = (uuid: string): AutocompleteNode => {
   return new AutocompleteNode(uuid)
-}
-
-const AutocompleteComponent = () => {
-  const [suggestion] = useSharedAutocompleteContext()
-  const userAgentData = window.navigator.userAgentData
-  const isMobile =
-    userAgentData !== undefined
-      ? userAgentData.mobile
-      : window.innerWidth <= 800 && window.innerHeight <= 600
-
-  // TODO Move to theme
-  return (
-    <span spellCheck="false" style={{ color: "#ccc" }}>
-      {suggestion} {isMobile ? "(SWIPE \u2B95)" : "(TAB)"}
-    </span>
-  )
 }
