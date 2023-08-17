@@ -99,7 +99,7 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
   }, [tableOfContents, editor])
 
   return (
-    <div className="table-of-contents">
+    <div className={styles["table-of-contents"]}>
       <ul className="headings">
         {tableOfContents.map(([key, text, tag], index) => {
           if (index === 0) {
