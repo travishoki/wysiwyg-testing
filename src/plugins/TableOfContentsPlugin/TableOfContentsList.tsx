@@ -9,6 +9,7 @@ import {
   isHeadingBelowTheTopOfThePage,
 } from "./TableOfContentsList.helpers"
 import styles from "./TableOfContentsList.module.scss"
+import classNames from "classnames"
 
 type TableOfContentsListProps = {
   tableOfContents: Array<TableOfContentsEntry>
@@ -103,7 +104,7 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
         {tableOfContents.map(([key, text, tag], index) => {
           if (index === 0) {
             return (
-              <div className="normal-heading-wrapper" key={key}>
+              <div className={styles["normal-heading-wrapper"]} key={key}>
                 <div
                   className="first-heading"
                   onClick={() => scrollToNode(key, index)}
@@ -119,9 +120,10 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
 
           return (
             <div
-              className={`normal-heading-wrapper ${
-                selectedKey === key ? styles["selected-heading-wrapper"] : ""
-              }`}
+              className={classNames(
+                styles["normal-heading-wrapper"],
+                `${selectedKey === key ? styles["selected-heading-wrapper"] : ""}`,
+              )}
               key={key}
             >
               <div

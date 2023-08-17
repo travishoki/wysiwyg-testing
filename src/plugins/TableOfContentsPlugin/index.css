@@ -6,12 +6,6 @@
   margin-left: 20px;
 }
 
-.normal-heading {
-  cursor: pointer;
-  line-height: 20px;
-  font-size: 16px;
-}
-
 .table-of-contents {
   color: #65676b;
   position: fixed;
@@ -60,9 +54,4 @@
   margin-top: 5px;
   background-color: #ccd0d5;
   border-radius: 2px;
-}
-
-.normal-heading-wrapper {
-  margin-left: 32px;
-  position: relative;
 }
