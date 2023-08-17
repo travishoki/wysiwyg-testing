@@ -49,33 +49,6 @@ header h1 {
   margin: 20px 0 0 0;
 }
 
-.editor-shell {
-  margin: 20px auto;
-  border-radius: 2px;
-  max-width: 1100px;
-  color: #000;
-  position: relative;
-  line-height: 1.7;
-  font-weight: 400;
-}
-
-.editor-shell .editor-container {
-  background: #fff;
-  position: relative;
-  display: block;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-.editor-shell .editor-container.tree-view {
-  border-radius: 0;
-}
-
-.editor-shell .editor-container.plain-text {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
 .editor-scroller {
   min-height: 150px;
   border: 0;
@@ -108,19 +81,6 @@ pre {
   font-size: 12px;
   overflow: auto;
   max-height: 400px;
-}
-
-.tree-view-output {
-  display: block;
-  background: #222;
-  color: #fff;
-  padding: 0;
-  font-size: 12px;
-  margin: 1px auto 10px auto;
-  position: relative;
-  overflow: hidden;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 pre::-webkit-scrollbar {
@@ -950,11 +910,6 @@ i.prettier-error {
   cursor: grabbing;
 }
 
-.editor-shell .editor-image .image-caption-container .tree-view-output {
-  margin: 0;
-  border-radius: 0;
-}
-
 .editor-shell .editor-image .image-caption-container {
   display: block;
   position: absolute;
@@ -1094,11 +1049,6 @@ i.prettier-error {
   cursor: grabbing;
 }
 
-.editor-shell .inline-editor-image .image-caption-container .tree-view-output {
-  margin: 0;
-  border-radius: 0;
-}
-
 .editor-shell .inline-editor-image.position-full {
   margin: 1em 0 1em 0;
 }
@@ -1194,11 +1144,6 @@ i.prettier-error {
   margin: 10px;
   bottom: 0;
   right: 0;
-}
-
-.actions.tree-view {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
 }
 
 .actions i {

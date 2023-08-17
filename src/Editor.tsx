@@ -22,6 +22,7 @@ import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
 import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin"
 import { TablePlugin } from "@lexical/react/LexicalTablePlugin"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
+import styles from "./Editor.module.scss"
 import { useSettings } from "./context/SettingsContext"
 import { useSharedHistoryContext } from "./context/SharedHistoryContext"
 import { TableCellNodes } from "./nodes/Table/TableCellNodes"
@@ -114,7 +115,7 @@ export const Editor = () => {
   return (
     <>
       <ToolbarPlugin />
-      <div className="editor-container">
+      <div className={styles["editor-container"]}>
         {isMaxLength && <MaxLengthPlugin maxLength={30} />}
         <DragDropPaste />
         <AutoFocusPlugin />

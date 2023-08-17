@@ -1,6 +1,7 @@
 import React from "react"
 import { LexicalComposer } from "@lexical/react/LexicalComposer"
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
+import styles from "./Composer.module.scss"
 import { Controls } from "./Controls/Controls"
 import { Editor } from "./Editor"
 import { MergeFieldHandler, composerRefProps } from "./MergeFieldHandler/MergeFieldHandler"
@@ -31,7 +32,7 @@ export const Composer = ({ composerRef, setOutput }: ComposerProps) => {
       <SharedHistoryContext>
         <TableContext>
           <SharedAutocompleteContext>
-            <div className="editor-shell">
+            <div className={styles["editor-shell"]}>
               <MergeFieldHandler composerRef={composerRef} />
               <Editor />
               <Controls onSubmit={setOutput} />
