@@ -1,6 +1,6 @@
 import { LexicalEditor } from "lexical"
-import { Cell, Rows, createRow, createUID } from "./TableNode"
 import { IS_APPLE } from "../../shared/environment"
+import { Cell, Rows, createRow, createUID } from "./TableNode"
 
 export const isStartingResize = (target: HTMLElement): boolean => {
   return target.nodeType === 1 && target.hasAttribute("data-table-resize")
