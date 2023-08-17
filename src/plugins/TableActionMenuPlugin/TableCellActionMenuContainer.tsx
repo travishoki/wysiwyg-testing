@@ -4,6 +4,8 @@ import { $getTableCellNodeFromLexicalNode, TableCellNode } from "@lexical/table"
 import { $getSelection, $isRangeSelection } from "lexical"
 import { useModal } from "../../hooks/useModal"
 import { TableActionMenu } from "./TableActionMenu"
+import styles from "./TableCellActionMenuContainer.module.scss"
+import classNames from "classnames"
 
 type TableCellActionMenuContainerProps = {
   anchorElem: HTMLElement
@@ -110,11 +112,11 @@ export const TableCellActionMenuContainer = ({
   }, [prevTableCellDOM, tableCellNode])
 
   return (
-    <div className="table-cell-action-button-container" ref={menuButtonRef}>
+    <div className={styles["table-cell-action-button-container"]} ref={menuButtonRef}>
       {tableCellNode != null && (
         <>
           <button
-            className="table-cell-action-button chevron-down"
+            className={classNames(styles["table-cell-action-button"], "chevron-down")}
             onClick={(e) => {
               e.stopPropagation()
               setIsMenuOpen(!isMenuOpen)
