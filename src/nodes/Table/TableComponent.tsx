@@ -50,14 +50,19 @@ import {
 import { CellContext } from "../../plugins/TablePlugin/const"
 import { TableCell } from "./TableCell"
 import {
+  extractCellsFromRows,
   focusCell,
+  getCell,
   getCellID,
   getCurrentDocument,
+  getSelectedIDs,
+  getSelectedRect,
   getTableCellWidth,
   isCopy,
   isCut,
   isPaste,
   isStartingResize,
+  isTargetOnPossibleUIControl,
 } from "./TableComponent.helpers"
 import {
   $isTableNode,
@@ -66,8 +71,6 @@ import {
   TableNode,
   cellHTMLCache,
   cellTextContentCache,
-  createRow,
-  createUID,
   exportTableCellsToHTML,
   extractRowsFromHTML,
 } from "./TableNode"
@@ -106,100 +109,6 @@ const $updateCells = (
       })
     }
   }
-}
-
-const isTargetOnPossibleUIControl = (target: HTMLElement): boolean => {
-  let node: HTMLElement | null = target
-  while (node !== null) {
-    const nodeName = node.nodeName
-    if (nodeName === "BUTTON" || nodeName === "INPUT" || nodeName === "TEXTAREA") {
-      return true
-    }
-    node = node.parentElement
-  }
-
-  return false
-}
-
-const getSelectedRect = (
-  startID: string,
-  endID: string,
-  cellCoordMap: Map<string, [number, number]>,
-): null | { endX: number; endY: number; startX: number; startY: number } => {
-  const startCoords = cellCoordMap.get(startID)
-  const endCoords = cellCoordMap.get(endID)
-  if (startCoords === undefined || endCoords === undefined) {
-    return null
-  }
-  const startX = Math.min(startCoords[0], endCoords[0])
-  const endX = Math.max(startCoords[0], endCoords[0])
-  const startY = Math.min(startCoords[1], endCoords[1])
-  const endY = Math.max(startCoords[1], endCoords[1])
-
-  return {
-    endX,
-    endY,
-    startX,
-    startY,
-  }
-}
-
-const getSelectedIDs = (
-  rows: Rows,
-  startID: string,
-  endID: string,
-  cellCoordMap: Map<string, [number, number]>,
-): Array<string> => {
-  const rect = getSelectedRect(startID, endID, cellCoordMap)
-  if (rect === null) {
-    return []
-  }
-  const { endX, endY, startX, startY } = rect
-  const ids = []
-
-  for (let x = startX; x <= endX; x++) {
-    for (let y = startY; y <= endY; y++) {
-      ids.push(rows[y].cells[x].id)
-    }
-  }
-
-  return ids
-}
-
-const extractCellsFromRows = (
-  rows: Rows,
-  rect: { endX: number; endY: number; startX: number; startY: number },
-): Rows => {
-  const { endX, endY, startX, startY } = rect
-  const newRows: Rows = []
-
-  for (let y = startY; y <= endY; y++) {
-    const row = rows[y]
-    const newRow = createRow()
-    for (let x = startX; x <= endX; x++) {
-      const cellClone = { ...row.cells[x] }
-      cellClone.id = createUID()
-      newRow.cells.push(cellClone)
-    }
-    newRows.push(newRow)
-  }
-
-  return newRows
-}
-
-const getCell = (
-  rows: Rows,
-  cellID: string,
-  cellCoordMap: Map<string, [number, number]>,
-): null | Cell => {
-  const coords = cellCoordMap.get(cellID)
-  if (coords === undefined) {
-    return null
-  }
-  const [x, y] = coords
-  const row = rows[y]
-
-  return row.cells[x]
 }
 
 type TableComponentProps = {
