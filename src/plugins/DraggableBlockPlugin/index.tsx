@@ -34,6 +34,7 @@ import {
 } from "./const"
 import { getCollapsedMargins, getTopLevelNodeKeys, isOnMenu } from "./helpers"
 import "./index.css"
+import styles from "./index.module.scss"
 
 let prevIndex = Infinity
 
@@ -370,7 +371,7 @@ const useDraggableBlockMenu = (
       >
         <div className={isEditable ? "icon" : ""} />
       </div>
-      <div className="draggable-block-target-line" ref={targetLineRef} />
+      <div className={styles["draggable-block-target-line"]} ref={targetLineRef} />
     </>,
     anchorElem,
   )
