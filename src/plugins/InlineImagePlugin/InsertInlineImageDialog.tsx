@@ -4,6 +4,7 @@ import { Position } from "../../nodes/InlineImage/InlineImageNode"
 import { Button } from "../../ui/Button/Button"
 import { DialogActions } from "../../ui/Dialog/Dialog"
 import { FileInput } from "../../ui/FileInput/FileInput"
+import { InputWrapper } from "../../ui/Input/InputWrapper"
 import { Select } from "../../ui/Select/Select"
 import { TextInput } from "../../ui/TextInput/TextInput"
 import { INSERT_INLINE_IMAGE_COMMAND } from "./const"
@@ -99,7 +100,7 @@ export const InsertInlineImageDialog = ({
         <option value="full">Full Width</option>
       </Select>
 
-      <div className="Input__wrapper">
+      <InputWrapper>
         <input
           aria-label="caption"
           checked={showCaption}
@@ -108,7 +109,7 @@ export const InsertInlineImageDialog = ({
           type="checkbox"
         />
         <label htmlFor="caption">Show Caption</label>
-      </div>
+      </InputWrapper>
 
       <DialogActions>
         <Button

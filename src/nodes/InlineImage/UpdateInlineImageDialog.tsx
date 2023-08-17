@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { $getNodeByKey, LexicalEditor, NodeKey } from "lexical"
 import { Button } from "../../ui/Button/Button"
 import { DialogActions } from "../../ui/Dialog/Dialog"
+import { InputWrapper } from "../../ui/Input/InputWrapper"
 import { Select } from "../../ui/Select/Select"
 import { TextInput } from "../../ui/TextInput/TextInput"
 import { InlineImageNode, Position } from "./InlineImageNode"
@@ -66,7 +67,7 @@ export const UpdateInlineImageDialog = ({
         <option value="full">Full Width</option>
       </Select>
 
-      <div className="Input__wrapper">
+      <InputWrapper>
         <input
           aria-label="caption"
           checked={showCaption}
@@ -75,7 +76,7 @@ export const UpdateInlineImageDialog = ({
           type="checkbox"
         />
         <label htmlFor="caption">Show Caption</label>
-      </div>
+      </InputWrapper>
 
       <DialogActions>
         <Button data-test-id="image-modal-file-upload-btn" onClick={() => handleOnConfirm()}>

@@ -4,6 +4,8 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { noop } from "lodash"
 import { Button } from "../../ui/Button/Button"
 import { DialogActions } from "../../ui/Dialog/Dialog"
+import { InputInput } from "../../ui/Input/InputInput"
+import { InputWrapper } from "../../ui/Input/InputWrapper"
 import { debounce } from "./AutoEmbedDialog.helpers"
 import { PlaygroundEmbedConfig } from "./PlaygroundEmbedConfig"
 
@@ -43,10 +45,9 @@ export const AutoEmbedDialog = ({ embedConfig, onClose }: AutoEmbedDialogProps) 
 
   return (
     <div style={{ width: "600px" }}>
-      <div className="Input__wrapper">
-        <input
+      <InputWrapper>
+        <InputInput
           aria-label="text"
-          className="Input__input"
           data-test-id={`${embedConfig.type}-embed-modal-url`}
           onChange={(e) => {
             const { value } = e.target
@@ -57,7 +58,7 @@ export const AutoEmbedDialog = ({ embedConfig, onClose }: AutoEmbedDialogProps) 
           type="text"
           value={text}
         />
-      </div>
+      </InputWrapper>
       <DialogActions>
         <Button
           data-test-id={`${embedConfig.type}-embed-modal-submit-btn`}

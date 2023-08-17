@@ -7,7 +7,9 @@
  */
 
 import React, { HTMLInputTypeAttribute } from "react"
-import "../Input.css"
+import { InputInput } from "../Input/InputInput"
+import { InputLabel } from "../Input/InputLabel"
+import { InputWrapper } from "../Input/InputWrapper"
 
 type TextInputProps = Readonly<{
   "data-test-id"?: string
@@ -27,11 +29,10 @@ export const TextInput = ({
   value,
 }: TextInputProps) => {
   return (
-    <div className="Input__wrapper">
-      <label className="Input__label">{label}</label>
-      <input
+    <InputWrapper>
+      <InputLabel>{label}</InputLabel>
+      <InputInput
         aria-label="input"
-        className="Input__input"
         data-test-id={dataTestId}
         onChange={(e) => {
           onChange(e.target.value)
@@ -40,6 +41,6 @@ export const TextInput = ({
         type={type}
         value={value}
       />
-    </div>
+    </InputWrapper>
   )
 }

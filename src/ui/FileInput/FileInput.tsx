@@ -7,7 +7,9 @@
  */
 
 import React from "react"
-import "../Input.css"
+import { InputInput } from "../Input/InputInput"
+import { InputLabel } from "../Input/InputLabel"
+import { InputWrapper } from "../Input/InputWrapper"
 
 type FileInputProps = Readonly<{
   accept?: string
@@ -23,16 +25,15 @@ export const FileInput = ({
   onChange,
 }: FileInputProps) => {
   return (
-    <div className="Input__wrapper">
-      <label className="Input__label">{label}</label>
-      <input
+    <InputWrapper>
+      <InputLabel>{label}</InputLabel>
+      <InputInput
         accept={accept}
         aria-label="file"
-        className="Input__input"
         data-test-id={dataTestId}
         onChange={(e) => onChange(e.target.files)}
         type="file"
       />
-    </div>
+    </InputWrapper>
   )
 }
