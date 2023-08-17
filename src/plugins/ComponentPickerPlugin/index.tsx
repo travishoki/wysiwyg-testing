@@ -22,6 +22,7 @@ import {
 import { $createHeadingNode, $createQuoteNode } from "@lexical/rich-text"
 import { $setBlocksType } from "@lexical/selection"
 import { INSERT_TABLE_COMMAND } from "@lexical/table"
+import classNames from "classnames"
 import {
   $createParagraphNode,
   $getSelection,
@@ -37,7 +38,6 @@ import { InsertTableDialog } from "../TablePlugin/InsertTableDialog"
 import { ComponentPickerMenuItem } from "./ComponentPickerMenuItem"
 import { ComponentPickerOption } from "./ComponentPickerOption"
 import styles from "./index.module.scss"
-import classNames from "classnames"
 
 export const ComponentPickerPlugin = () => {
   const [editor] = useLexicalComposerContext()

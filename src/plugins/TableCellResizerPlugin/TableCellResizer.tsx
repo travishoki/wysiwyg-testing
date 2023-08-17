@@ -8,6 +8,7 @@ import {
   Cell,
   getCellFromTarget,
 } from "@lexical/table"
+import classNames from "classnames"
 import {
   $getNearestNodeFromDOMNode,
   $getSelection,
@@ -17,7 +18,6 @@ import {
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
 import styles from "./TableCellResizer.module.scss"
-import classNames from "classnames"
 
 type MousePosition = {
   x: number
