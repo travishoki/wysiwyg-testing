@@ -36,6 +36,8 @@ import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog"
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog"
 import { ComponentPickerMenuItem } from "./ComponentPickerMenuItem"
 import { ComponentPickerOption } from "./ComponentPickerOption"
+import styles from "./index.module.scss"
+import classNames from "classnames"
 
 export const ComponentPickerPlugin = () => {
   const [editor] = useLexicalComposerContext()
@@ -250,7 +252,7 @@ export const ComponentPickerPlugin = () => {
         ) =>
           anchorElementRef.current && options.length
             ? ReactDOM.createPortal(
-                <div className="typeahead-popover component-picker-menu">
+                <div className={classNames("typeahead-popover", styles["component-picker-menu"])}>
                   <ul>
                     {options.map((option, i: number) => (
                       <ComponentPickerMenuItem
