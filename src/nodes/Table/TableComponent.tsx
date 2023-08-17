@@ -48,9 +48,17 @@ import {
   createEditor,
 } from "lexical"
 import { CellContext } from "../../plugins/TablePlugin/const"
-import { IS_APPLE } from "../../shared/environment"
 import { TableCell } from "./TableCell"
-import { isStartingResize } from "./TableComponent.helpers"
+import {
+  focusCell,
+  getCellID,
+  getCurrentDocument,
+  getTableCellWidth,
+  isCopy,
+  isCut,
+  isPaste,
+  isStartingResize,
+} from "./TableComponent.helpers"
 import {
   $isTableNode,
   Cell,
@@ -72,88 +80,6 @@ const $createSelectAll = (): RangeSelection => {
   sel.focus.set("root", $getRoot().getChildrenSize(), "element")
 
   return sel
-}
-
-const focusCell = (tableElem: HTMLElement, id: string): void => {
-  const cellElem = tableElem.querySelector(`[data-id=${id}]`) as HTMLElement
-  if (cellElem == null) {
-    return
-  }
-  cellElem.focus()
-}
-
-const getCurrentDocument = (editor: LexicalEditor): Document => {
-  const rootElement = editor.getRootElement()
-
-  return rootElement !== null ? rootElement.ownerDocument : document
-}
-
-const isCopy = (
-  keyCode: number,
-  shiftKey: boolean,
-  metaKey: boolean,
-  ctrlKey: boolean,
-): boolean => {
-  if (shiftKey) {
-    return false
-  }
-  if (keyCode === 67) {
-    return IS_APPLE ? metaKey : ctrlKey
-  }
-
-  return false
-}
-
-const isCut = (keyCode: number, shiftKey: boolean, metaKey: boolean, ctrlKey: boolean): boolean => {
-  if (shiftKey) {
-    return false
-  }
-  if (keyCode === 88) {
-    return IS_APPLE ? metaKey : ctrlKey
-  }
-
-  return false
-}
-
-const isPaste = (
-  keyCode: number,
-  shiftKey: boolean,
-  metaKey: boolean,
-  ctrlKey: boolean,
-): boolean => {
-  if (shiftKey) {
-    return false
-  }
-  if (keyCode === 86) {
-    return IS_APPLE ? metaKey : ctrlKey
-  }
-
-  return false
-}
-
-const getCellID = (domElement: HTMLElement): null | string => {
-  let node: null | HTMLElement = domElement
-  while (node !== null) {
-    const possibleID = node.getAttribute("data-id")
-    if (possibleID != null) {
-      return possibleID
-    }
-    node = node.parentElement
-  }
-
-  return null
-}
-
-const getTableCellWidth = (domElement: HTMLElement): number => {
-  let node: null | HTMLElement = domElement
-  while (node !== null) {
-    if (node.nodeName === "TH" || node.nodeName === "TD") {
-      return node.getBoundingClientRect().width
-    }
-    node = node.parentElement
-  }
-
-  return 0
 }
 
 const $updateCells = (
