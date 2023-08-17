@@ -6,7 +6,7 @@ import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFal
 import { formatMergeFieldTitle } from "../../MergeFieldControls/MergeFieldButton/helpers"
 import ImageClose from "../../images/icons/close.svg"
 import { $isMergeFieldNode } from "./MergeFieldNode"
-import "./MergeFieldComponent.css"
+import styles from "./MergeFieldComponent.module.scss"
 
 const MergeFieldComponent = ({
   mergeFieldIconUrl,
@@ -27,14 +27,20 @@ const MergeFieldComponent = ({
 
   return (
     <Suspense fallback={<ComposerNodeFallback />}>
-      <div className="merge-field-component-inner">
-        <div className="merge-field-component-content">
-          <img alt="icon" className="svg-icon" height="15" src={mergeFieldIconUrl} width="15" />
-          <p>{formatMergeFieldTitle(mergeFieldId)}</p>
+      <div className={styles["merge-field-component-inner"]}>
+        <div className={styles["merge-field-component-content"]}>
+          <img
+            alt="icon"
+            className={styles["svg-icon"]}
+            height="15"
+            src={mergeFieldIconUrl}
+            width="15"
+          />
+          <p className={styles["title"]}>{formatMergeFieldTitle(mergeFieldId)}</p>
         </div>
 
         {isEditable && (
-          <button className="button-close" onClick={onClickClose}>
+          <button className={styles["button-close"]} onClick={onClickClose}>
             <img alt="close" height="15" src={ImageClose} width="15" />
           </button>
         )}
