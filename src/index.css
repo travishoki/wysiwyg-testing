@@ -861,27 +861,27 @@ span.editor-image {
   cursor: nw-resize;
 }
 
-span.inline-editor-image {
+.composer .inline-editor-image {
   cursor: default;
   display: inline-block;
   position: relative;
   z-index: 1;
 }
 
-.inline-editor-image img {
+.composer .inline-editor-image img {
   max-width: 100%;
   cursor: default;
 }
 
-.inline-editor-image img.focused {
+.composer .inline-editor-image img.focused {
   outline: 2px solid rgb(60, 132, 244);
 }
 
-.inline-editor-image img.focused.draggable {
+.composer .inline-editor-image img.focused.draggable {
   cursor: grab;
 }
 
-.inline-editor-image img.focused.draggable:active {
+.composer .inline-editor-image img.focused.draggable:active {
   cursor: grabbing;
 }
 
@@ -901,7 +901,7 @@ span.inline-editor-image {
   margin: 1em 0 0 1em;
 }
 
-.inline-editor-image .image-edit-button {
+.composer .inline-editor-image .image-edit-button {
   display: block;
   position: absolute;
   top: 12px;
@@ -917,11 +917,11 @@ span.inline-editor-image {
   user-select: none;
 }
 
-.inline-editor-image .image-edit-button:hover {
+.composer .inline-editor-image .image-edit-button:hover {
   background-color: rgba(60, 132, 244, 0.5);
 }
 
-.inline-editor-image .image-caption-container {
+.composer .inline-editor-image .image-caption-container {
   display: block;
   background-color: #f4f4f4;
   min-width: 100%;
@@ -929,7 +929,7 @@ span.inline-editor-image {
   overflow: hidden;
 }
 
-.emoji {
+.composer .emoji {
   color: transparent;
   caret-color: rgb(5, 5, 5);
   background-size: 16px 16px;
@@ -939,33 +939,33 @@ span.inline-editor-image {
   margin: 0 -1px;
 }
 
-.emoji-inner {
+.composer .emoji-inner {
   padding: 0 0.15em;
 }
 
-.emoji-inner::selection {
+.composer .emoji-inner::selection {
   color: transparent;
   background-color: rgba(150, 150, 150, 0.4);
 }
 
-.emoji-inner::moz-selection {
+.composer .emoji-inner::moz-selection {
   color: transparent;
   background-color: rgba(150, 150, 150, 0.4);
 }
 
-.emoji.happysmile {
+.composer .emoji.happysmile {
   background-image: url(images/emoji/1F642.png);
 }
 
-.emoji.veryhappysmile {
+.composer .emoji.veryhappysmile {
   background-image: url(images/emoji/1F600.png);
 }
 
-.emoji.unhappysmile {
+.composer .emoji.unhappysmile {
   background-image: url(images/emoji/1F641.png);
 }
 
-.emoji.heart {
+.composer .emoji.heart {
   background-image: url(images/emoji/2764.png);
 }
 
@@ -1251,7 +1251,7 @@ button.action-button:disabled {
   margin: 0 4px;
 }
 
-.spacer {
+.composer .spacer {
   letter-spacing: -2px;
 }
 
@@ -1267,14 +1267,14 @@ button.item.dropdown-item-active i {
   opacity: 1;
 }
 
-hr {
+.composer hr {
   padding: 2px 2px;
   border: none;
   margin: 1em 0;
   cursor: pointer;
 }
 
-hr:after {
+.composer hr:after {
   content: "";
   display: block;
   height: 2px;
@@ -1282,7 +1282,7 @@ hr:after {
   line-height: 2px;
 }
 
-hr.selected {
+.composer hr.selected {
   outline: 2px solid rgb(60, 132, 244);
   user-select: none;
 }
@@ -1303,13 +1303,13 @@ hr.selected {
   z-index: 3;
 }
 
-.ComposerTheme__blockCursor {
+.composer .ComposerTheme__blockCursor {
   display: block;
   pointer-events: none;
   position: absolute;
 }
 
-.ComposerTheme__blockCursor:after {
+.composer .ComposerTheme__blockCursor:after {
   content: "";
   display: block;
   position: absolute;
