@@ -11,6 +11,7 @@ import { $isCodeNode } from "@lexical/code"
 import { $getNearestNodeFromDOMNode, LexicalEditor } from "lexical"
 import { Options } from "prettier"
 import "./index.css"
+import styles from "./index.module.scss"
 
 interface PrettierButtonProps {
   editor: LexicalEditor
@@ -134,7 +135,7 @@ export const PrettierButton = ({ editor, getCodeDOMNode, lang }: PrettierButtonP
   }
 
   return (
-    <div className="prettier-wrapper">
+    <div className={styles["prettier-wrapper"]}>
       <button
         aria-label="prettier"
         className="menu-item"
@@ -144,7 +145,7 @@ export const PrettierButton = ({ editor, getCodeDOMNode, lang }: PrettierButtonP
       >
         {syntaxError ? <i className="format prettier-error" /> : <i className="format prettier" />}
       </button>
-      {tipsVisible ? <pre className="code-error-tips">{syntaxError}</pre> : null}
+      {tipsVisible ? <pre className={styles["code-error-tips"]}>{syntaxError}</pre> : null}
     </div>
   )
 }
