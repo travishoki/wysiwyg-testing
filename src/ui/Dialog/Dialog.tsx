@@ -7,9 +7,8 @@
  */
 
 import React from "react"
-import { DialogProps } from "./types"
-import "./Dialog.css"
 import styles from "./Dialog.module.scss"
+import { DialogProps } from "./types"
 
 export const DialogActions = ({ children, "data-test-id": dataTestId }: DialogProps) => {
   return (

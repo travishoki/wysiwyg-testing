@@ -33,8 +33,8 @@ import {
   Upward,
 } from "./const"
 import { getCollapsedMargins, getTopLevelNodeKeys, isOnMenu } from "./helpers"
-import "./index.css"
 import styles from "./index.module.scss"
+import "./index.css"
 
 let prevIndex = Infinity
 
