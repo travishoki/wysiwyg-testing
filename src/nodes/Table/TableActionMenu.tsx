@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { useEffect, useRef } from "react"
 import { $addUpdateTag, $createParagraphNode, $getRoot } from "lexical"
 import { Cell, Rows, TableNode } from "./TableNode"
@@ -6,13 +6,13 @@ import { SortOptions } from "./types"
 
 type TableActionMenuProps = {
   cell: Cell
-  cellCoordMap: Map<string, [number, number]>,
-  menuElem: HTMLElement,
+  cellCoordMap: Map<string, [number, number]>
+  menuElem: HTMLElement
   onClose: () => void
-  rows: Rows,
-  setSortingOptions: (options: null | SortOptions) => void,
-  sortingOptions: null | SortOptions,
-  updateCellsByID: (ids: Array<string>, fn: () => void) => void,
+  rows: Rows
+  setSortingOptions: (options: null | SortOptions) => void
+  sortingOptions: null | SortOptions
+  updateCellsByID: (ids: Array<string>, fn: () => void) => void
   updateTableNode: (fn2: (tableNode: TableNode) => void) => void
 }
 

@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { useRef } from "react"
 
 export interface Position {
@@ -7,8 +7,8 @@ export interface Position {
 }
 
 interface MoveWrapperProps {
-  children: JSX.Element,
-  className?: string,
+  children: JSX.Element
+  className?: string
   onChange: (position: Position) => void
   style?: React.CSSProperties
 }

@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import LexicalTableOfContents from "@lexical/react/LexicalTableOfContents"
 import { TableOfContentsList } from "./TableOfContentsList"
 import "./index.css"

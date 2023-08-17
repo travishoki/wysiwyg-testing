@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Maybe } from "../types/globals"
 import styles from "./Output.module.scss"
 

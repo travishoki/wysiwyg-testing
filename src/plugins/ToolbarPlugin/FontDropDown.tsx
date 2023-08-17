@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { useCallback } from "react"
 import { $patchStyleText } from "@lexical/selection"
 import { $getSelection, $isRangeSelection, LexicalEditor } from "lexical"
@@ -30,8 +30,8 @@ const FONT_SIZE_OPTIONS: [string, string][] = [
 ]
 
 type FontDropDownProps = {
-  disabled?: boolean,
-  editor: LexicalEditor,
+  disabled?: boolean
+  editor: LexicalEditor
   styleName: string
   value: string
 }

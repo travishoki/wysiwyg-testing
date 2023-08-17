@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { MergeFieldButton } from "./MergeFieldButton/MergeFieldButton"
 import { mergeFieldIdArray, mergeFieldObject } from "./const"
 import "./MergeFieldControls.css"

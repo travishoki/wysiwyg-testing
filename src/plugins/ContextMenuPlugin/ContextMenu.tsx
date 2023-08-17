@@ -1,11 +1,11 @@
-import * as React from "react"
+import React from "react"
 import { ContextMenuItem } from "./ContextMenuItem"
 import { ContextMenuOption } from "./ContextMenuOption"
 
 type ContextMenuProps = {
-  onOptionClick: (option: ContextMenuOption, index: number) => void,
-  onOptionMouseEnter: (index: number) => void,
-  options: Array<ContextMenuOption>,
+  onOptionClick: (option: ContextMenuOption, index: number) => void
+  onOptionMouseEnter: (index: number) => void
+  options: Array<ContextMenuOption>
   selectedItemIndex: number | null
 }
 

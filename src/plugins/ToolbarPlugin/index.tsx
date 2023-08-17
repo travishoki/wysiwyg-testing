@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { useCallback, useEffect, useState } from "react"
 import { $isCodeNode, CODE_LANGUAGE_MAP, getLanguageFriendlyName } from "@lexical/code"
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link"

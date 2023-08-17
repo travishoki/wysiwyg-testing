@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { useCallback, useMemo, useState } from "react"
 import { $createCodeNode } from "@lexical/code"
 import {

@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 
 type DropDownContextType = {
   registerItem: (ref: React.RefObject<HTMLButtonElement>) => void

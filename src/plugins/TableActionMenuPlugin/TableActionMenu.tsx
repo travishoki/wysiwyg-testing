@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { useCallback, useEffect, useRef, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import {
@@ -40,11 +40,11 @@ import {
 } from "./TableActionMenu.helpers"
 
 type TableCellActionMenuProps = Readonly<{
-  cellMerge: boolean,
-  contextRef: { current: null | HTMLElement },
-  onClose: () => void,
-  setIsMenuOpen: (isOpen: boolean) => void,
-  showColorPickerModal: (title: string, showModal: (onClose: () => void) => JSX.Element) => void,
+  cellMerge: boolean
+  contextRef: { current: null | HTMLElement }
+  onClose: () => void
+  setIsMenuOpen: (isOpen: boolean) => void
+  showColorPickerModal: (title: string, showModal: (onClose: () => void) => JSX.Element) => void
   tableCellNode: TableCellNode
 }>
 

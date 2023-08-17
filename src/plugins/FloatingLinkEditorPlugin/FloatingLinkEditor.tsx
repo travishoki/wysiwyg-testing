@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Dispatch, useCallback, useEffect, useRef, useState } from "react"
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link"
 import { mergeRegister } from "@lexical/utils"
@@ -19,9 +19,9 @@ import { setFloatingElemPositionForLinkEditor } from "../../utils/setFloatingEle
 import { sanitizeUrl } from "../../utils/url"
 
 type FloatingLinkEditorProps = {
-  anchorElem: HTMLElement,
-  editor: LexicalEditor,
-  isLink: boolean,
+  anchorElem: HTMLElement
+  editor: LexicalEditor
+  isLink: boolean
   setIsLink: Dispatch<boolean>
 }
 

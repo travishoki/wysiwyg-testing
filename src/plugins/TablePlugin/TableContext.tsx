@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { useMemo, useState } from "react"
 import { CellContext } from "./const"
 import { CellEditorConfig } from "./types"

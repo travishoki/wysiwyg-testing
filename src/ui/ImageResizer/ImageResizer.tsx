@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { useRef } from "react"
 import { LexicalEditor } from "lexical"
 import { clamp } from "./helpers"
@@ -19,14 +19,14 @@ const Direction = {
 }
 
 type ImageResizerProps = {
-  buttonRef: { current: null | HTMLButtonElement },
-  captionsEnabled: boolean,
-  editor: LexicalEditor,
-  imageRef: { current: null | HTMLElement },
-  maxWidth?: number,
-  onResizeEnd: (width: "inherit" | number, height: "inherit" | number) => void,
-  onResizeStart: () => void,
-  setShowCaption: (show: boolean) => void,
+  buttonRef: { current: null | HTMLButtonElement }
+  captionsEnabled: boolean
+  editor: LexicalEditor
+  imageRef: { current: null | HTMLElement }
+  maxWidth?: number
+  onResizeEnd: (width: "inherit" | number, height: "inherit" | number) => void
+  onResizeStart: () => void
+  setShowCaption: (show: boolean) => void
   showCaption: boolean
 }
 

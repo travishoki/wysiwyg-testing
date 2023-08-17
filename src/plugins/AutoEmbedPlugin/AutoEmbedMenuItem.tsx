@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { AutoEmbedOption } from "@lexical/react/LexicalAutoEmbedPlugin"
 
 type AutoEmbedMenuItemProps = {

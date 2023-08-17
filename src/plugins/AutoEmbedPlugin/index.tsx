@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { AutoEmbedOption, LexicalAutoEmbedPlugin } from "@lexical/react/LexicalAutoEmbedPlugin"
 import * as ReactDOM from "react-dom"
 import { useModal } from "../../hooks/useModal"

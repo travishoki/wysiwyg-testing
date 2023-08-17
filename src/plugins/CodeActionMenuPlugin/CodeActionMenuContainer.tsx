@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { useEffect, useRef, useState } from "react"
 import { $isCodeNode, CodeNode, getLanguageFriendlyName, normalizeCodeLang } from "@lexical/code"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
@@ -11,7 +11,7 @@ import { useDebounce } from "./utils"
 const CODE_PADDING = 8
 
 interface Position {
-  right: string,
+  right: string
   top: string
 }
 

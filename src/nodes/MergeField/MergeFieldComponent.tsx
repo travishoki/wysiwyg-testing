@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Suspense, useCallback } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"

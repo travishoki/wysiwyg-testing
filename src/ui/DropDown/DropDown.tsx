@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { ReactNode, useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import { DropDownItems } from "./DropDownItems"
@@ -14,12 +14,12 @@ import { DropDownItems } from "./DropDownItems"
 const dropDownPadding = 4
 
 type DropDownProps = {
-  buttonAriaLabel?: string,
-  buttonClassName: string,
-  buttonIconClassName?: string,
-  buttonLabel?: string,
-  children: ReactNode,
-  disabled?: boolean,
+  buttonAriaLabel?: string
+  buttonClassName: string
+  buttonIconClassName?: string
+  buttonLabel?: string
+  children: ReactNode
+  disabled?: boolean
   stopCloseOnClickSelf?: boolean
 }
 

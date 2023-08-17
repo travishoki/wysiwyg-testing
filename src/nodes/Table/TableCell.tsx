@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { useEffect, useRef, useState } from "react"
 import { EditorThemeClasses, LexicalEditor } from "lexical"
 import { createPortal } from "react-dom"
@@ -10,16 +10,16 @@ import { SortOptions } from "./types"
 
 type TableCellProps = {
   cell: Cell
-  cellCoordMap: Map<string, [number, number]>,
-  cellEditor: LexicalEditor,
-  isEditing: boolean,
-  isPrimarySelected: boolean,
-  isSelected: boolean,
-  rows: Rows,
-  setSortingOptions: (options: null | SortOptions) => void,
-  sortingOptions: null | SortOptions,
-  theme: EditorThemeClasses,
-  updateCellsByID: (ids: Array<string>, fn: () => void) => void,
+  cellCoordMap: Map<string, [number, number]>
+  cellEditor: LexicalEditor
+  isEditing: boolean
+  isPrimarySelected: boolean
+  isSelected: boolean
+  rows: Rows
+  setSortingOptions: (options: null | SortOptions) => void
+  sortingOptions: null | SortOptions
+  theme: EditorThemeClasses
+  updateCellsByID: (ids: Array<string>, fn: () => void) => void
   updateTableNode: (fn2: (tableNode: TableNode) => void) => void
 }
 

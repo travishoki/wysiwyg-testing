@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { Suspense } from "react"
 import {
   $applyNodeReplacement,
@@ -33,12 +33,12 @@ const ImageComponent = React.lazy(
 export interface ImagePayload {
   altText: string
   caption?: LexicalEditor
-  captionsEnabled?: boolean,
-  height?: number,
-  key?: NodeKey,
-  maxWidth?: number,
-  showCaption?: boolean,
-  src: string,
+  captionsEnabled?: boolean
+  height?: number
+  key?: NodeKey
+  maxWidth?: number
+  showCaption?: boolean
+  src: string
   width?: number
 }
 

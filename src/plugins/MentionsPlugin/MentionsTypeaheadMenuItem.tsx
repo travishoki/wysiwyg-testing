@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { MentionTypeaheadOption } from "./MentionTypeaheadOption"
 
 type MentionsTypeaheadMenuItemProps = {

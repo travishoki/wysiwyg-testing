@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { Suspense, useCallback, useEffect, useRef, useState } from "react"
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
@@ -52,13 +52,13 @@ import "./ImageNode.css"
 type ImageComponentProps = {
   altText: string
   caption: LexicalEditor
-  captionsEnabled: boolean,
-  height: "inherit" | number,
-  maxWidth: number,
-  nodeKey: NodeKey,
-  resizable: boolean,
-  showCaption: boolean,
-  src: string,
+  captionsEnabled: boolean
+  height: "inherit" | number
+  maxWidth: number
+  nodeKey: NodeKey
+  resizable: boolean
+  showCaption: boolean
+  src: string
   width: "inherit" | number
 }
 

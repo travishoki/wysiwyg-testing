@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { MouseEventHandler, useCallback, useEffect, useRef, useState } from "react"
 import {
   $getTableColumnIndexFromTableCellNode,

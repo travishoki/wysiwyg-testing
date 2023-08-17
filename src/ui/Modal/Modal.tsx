@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { ReactNode } from "react"
 import { createPortal } from "react-dom"
 import { PortalImpl } from "./PortalImpl"

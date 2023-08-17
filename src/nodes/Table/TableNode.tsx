@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { Suspense } from "react"
 import {
   DecoratorNode,
@@ -23,9 +23,9 @@ import {
 
 export type Cell = {
   colSpan: number
-  id: string,
-  json: string,
-  type: "normal" | "header",
+  id: string
+  json: string
+  type: "normal" | "header"
   width: number | null
 }
 
@@ -140,7 +140,7 @@ const convertTableElement = (domNode: HTMLElement): null | DOMConversionOutput =
 
 export const exportTableCellsToHTML = (
   rows: Rows,
-  rect?: { endX: number; endY: number, startX: number; startY: number; },
+  rect?: { endX: number; endY: number; startX: number; startY: number },
 ): HTMLElement => {
   const table = document.createElement("table")
   const colGroup = document.createElement("colgroup")

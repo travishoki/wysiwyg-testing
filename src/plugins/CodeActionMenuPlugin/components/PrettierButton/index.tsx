@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { useState } from "react"
 import { $isCodeNode } from "@lexical/code"
 import { $getNearestNodeFromDOMNode, LexicalEditor } from "lexical"
@@ -14,8 +14,8 @@ import { Options } from "prettier"
 import "./index.css"
 
 interface PrettierButtonProps {
-  editor: LexicalEditor,
-  getCodeDOMNode: () => HTMLElement | null,
+  editor: LexicalEditor
+  getCodeDOMNode: () => HTMLElement | null
   lang: string
 }
 

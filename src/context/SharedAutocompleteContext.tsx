@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from "react"
 
 type Suggestion = null | string

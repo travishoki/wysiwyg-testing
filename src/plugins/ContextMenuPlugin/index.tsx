@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { useCallback, useMemo } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { LexicalContextMenuPlugin } from "@lexical/react/LexicalContextMenuPlugin"

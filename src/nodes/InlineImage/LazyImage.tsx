@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Position } from "./InlineImageNode"
 
 const imageCache = new Set()
@@ -21,8 +21,8 @@ type InlineImageComponentLazyImageProps = {
   className: string | null
   height: "inherit" | number
   imageRef: { current: null | HTMLImageElement }
-  position: Position,
-  src: string,
+  position: Position
+  src: string
   width: "inherit" | number
 }
 

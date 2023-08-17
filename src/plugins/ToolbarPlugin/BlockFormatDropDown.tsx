@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { $createCodeNode } from "@lexical/code"
 import {
   INSERT_CHECK_LIST_COMMAND,
@@ -21,9 +21,9 @@ import { blockTypeToBlockName, rootTypeToRootName } from "./const"
 import { dropDownActiveClass } from "./helpers"
 
 type BlockFormatDropDownProps = {
-  _rootType: keyof typeof rootTypeToRootName,
-  blockType: keyof typeof blockTypeToBlockName,
-  disabled?: boolean,
+  _rootType: keyof typeof rootTypeToRootName
+  blockType: keyof typeof blockTypeToBlockName
+  disabled?: boolean
   editor: LexicalEditor
 }
 

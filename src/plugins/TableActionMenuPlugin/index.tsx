@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { ReactPortal } from "react"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
 import { createPortal } from "react-dom"

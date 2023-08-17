@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { DialogProps } from "./types"
 
 export const DialogButtonsList = ({ children }: DialogProps) => {

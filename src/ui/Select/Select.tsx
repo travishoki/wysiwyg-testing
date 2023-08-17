@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import "./Select.css"
 
 type SelectIntrinsicProps = JSX.IntrinsicElements["select"]

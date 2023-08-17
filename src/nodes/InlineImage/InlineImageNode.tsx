@@ -13,7 +13,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { Suspense } from "react"
 import {
   $applyNodeReplacement,
@@ -41,15 +41,15 @@ export interface InlineImagePayload {
   caption?: LexicalEditor
   height?: number
   key?: NodeKey
-  position?: Position,
-  showCaption?: boolean,
-  src: string,
+  position?: Position
+  showCaption?: boolean
+  src: string
   width?: number
 }
 
 interface UpdateInlineImagePayload {
   altText?: string
-  position?: Position,
+  position?: Position
   showCaption?: boolean
 }
 
@@ -69,9 +69,9 @@ type SerializedInlineImageNode = Spread<
     altText: string
     caption: SerializedEditor
     height?: number
-    position?: Position,
-    showCaption: boolean,
-    src: string,
+    position?: Position
+    showCaption: boolean
+    src: string
     width?: number
   },
   SerializedLexicalNode

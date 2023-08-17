@@ -6,12 +6,12 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import "../Input.css"
 
 type FileInputProps = Readonly<{
-  accept?: string,
-  "data-test-id"?: string,
+  accept?: string
+  "data-test-id"?: string
   label: string
   onChange: (files: FileList | null) => void
 }>

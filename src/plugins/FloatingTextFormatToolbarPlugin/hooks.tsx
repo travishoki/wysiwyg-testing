@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { useCallback, useEffect, useState } from "react"
 import { $isCodeHighlightNode } from "@lexical/code"
 import { $isLinkNode } from "@lexical/link"

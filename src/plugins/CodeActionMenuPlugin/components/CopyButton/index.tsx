@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { useState } from "react"
 import { $isCodeNode } from "@lexical/code"
 import { $getNearestNodeFromDOMNode, $getSelection, $setSelection, LexicalEditor } from "lexical"

@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { useEffect, useRef, useState } from "react"
 import { LexicalEditor } from "lexical"
 import { Position } from "../../nodes/InlineImage/InlineImageNode"

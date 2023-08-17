@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react"
 import {
   $generateJSONFromSelectedNodes,
@@ -200,7 +200,7 @@ const getSelectedRect = (
   startID: string,
   endID: string,
   cellCoordMap: Map<string, [number, number]>,
-): null | { endX: number; endY: number, startX: number; startY: number; } => {
+): null | { endX: number; endY: number; startX: number; startY: number } => {
   const startCoords = cellCoordMap.get(startID)
   const endCoords = cellCoordMap.get(endID)
   if (startCoords === undefined || endCoords === undefined) {
@@ -243,7 +243,7 @@ const getSelectedIDs = (
 
 const extractCellsFromRows = (
   rows: Rows,
-  rect: { endX: number; endY: number, startX: number; startY: number; },
+  rect: { endX: number; endY: number; startX: number; startY: number },
 ): Rows => {
   const { endX, endY, startX, startY } = rect
   const newRows: Rows = []
@@ -285,7 +285,7 @@ type TableComponentProps = {
 
 const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) => {
   const [isSelected, setSelected, clearSelection] = useLexicalNodeSelection(nodeKey)
-  const resizeMeasureRef = useRef<{ point: number, size: number; }>({
+  const resizeMeasureRef = useRef<{ point: number; size: number }>({
     point: 0,
     size: 0,
   })

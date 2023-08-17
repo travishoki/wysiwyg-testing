@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { ReactNode, createContext, useContext, useMemo } from "react"
 import { createEmptyHistoryState, HistoryState } from "@lexical/react/LexicalHistoryPlugin"
 

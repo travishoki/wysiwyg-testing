@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { CLEAR_EDITOR_COMMAND, LexicalEditor } from "lexical"
 import { Button } from "../../ui/Button/Button"
 

@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { useCallback, useEffect, useRef } from "react"
 import { TOGGLE_LINK_COMMAND } from "@lexical/link"
 import { mergeRegister } from "@lexical/utils"
@@ -14,8 +14,8 @@ import { setFloatingElemPosition } from "../../utils/setFloatingElemPosition"
 import { INSERT_INLINE_IMAGE_COMMAND } from "../InlineImagePlugin/const"
 
 type TextFormatFloatingToolbarProps = {
-  anchorElem: HTMLElement,
-  editor: LexicalEditor,
+  anchorElem: HTMLElement
+  editor: LexicalEditor
   isBold: boolean
   isCode: boolean
   isItalic: boolean

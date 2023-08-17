@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { HTMLInputTypeAttribute } from "react"
 import "../Input.css"
 
@@ -15,7 +15,7 @@ type TextInputProps = Readonly<{
   label: string
   onChange: (val: string) => void
   placeholder?: string
-  type?: HTMLInputTypeAttribute,
+  type?: HTMLInputTypeAttribute
   value: string
 }>
 

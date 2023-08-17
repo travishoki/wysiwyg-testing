@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { Suspense, useCallback, useEffect, useRef, useState } from "react"
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
@@ -51,9 +51,9 @@ type InlineImageComponentProps = {
   caption: LexicalEditor
   height: "inherit" | number
   nodeKey: NodeKey
-  position: Position,
-  showCaption: boolean,
-  src: string,
+  position: Position
+  showCaption: boolean
+  src: string
   width: "inherit" | number
 }
 

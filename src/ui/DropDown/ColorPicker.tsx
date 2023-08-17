@@ -6,19 +6,19 @@
  *
  */
 
-import * as React from "react"
+import React from "react"
 import { ColorPicker } from "../ColorPicker/ColorPicker"
 import { DropDown } from "./DropDown"
 
 type DropdownColorPickerProps = {
-  buttonAriaLabel?: string,
-  buttonClassName: string,
-  buttonIconClassName?: string,
-  buttonLabel?: string,
-  color: string,
-  disabled?: boolean,
-  onChange?: (color: string) => void,
-  stopCloseOnClickSelf?: boolean,
+  buttonAriaLabel?: string
+  buttonClassName: string
+  buttonIconClassName?: string
+  buttonLabel?: string
+  color: string
+  disabled?: boolean
+  onChange?: (color: string) => void
+  stopCloseOnClickSelf?: boolean
   title?: string
 }
 
