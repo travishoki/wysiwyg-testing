@@ -6,8 +6,7 @@
  *
  */
 
-import React from "react"
-import { Suspense, useCallback, useEffect, useRef, useState } from "react"
+import React, { Suspense, useCallback, useEffect, useRef, useState } from "react"
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary"

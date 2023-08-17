@@ -6,8 +6,7 @@
  *
  */
 
-import React from "react"
-import { ReactNode } from "react"
+import React, { ReactNode } from "react"
 import { joinClasses } from "../../utils/joinClasses"
 import "./Button.css"
 

@@ -1,5 +1,4 @@
-import React from "react"
-import { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { LexicalEditor } from "lexical"
 import landscapeImage from "../../images/landscape.jpg"
 import yellowFlowerImage from "../../images/yellow-flower.jpg"

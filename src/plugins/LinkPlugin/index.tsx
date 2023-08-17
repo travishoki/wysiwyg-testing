@@ -6,8 +6,7 @@
  *
  */
 
-import React from "react"
-import { LinkPlugin as LexicalLinkPlugin } from "@lexical/react/LexicalLinkPlugin"
+import React, { LinkPlugin as LexicalLinkPlugin } from "@lexical/react/LexicalLinkPlugin"
 import { validateUrl } from "../../utils/url"
 
 export const LinkPlugin = () => {

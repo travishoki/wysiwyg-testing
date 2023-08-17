@@ -1,5 +1,4 @@
-import React from "react"
-import { MouseEventHandler, useCallback, useEffect, useRef, useState } from "react"
+import React, { MouseEventHandler, useCallback, useEffect, useRef, useState } from "react"
 import {
   $getTableColumnIndexFromTableCellNode,
   $getTableNodeFromLexicalNodeOrThrow,

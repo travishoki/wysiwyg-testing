@@ -1,5 +1,4 @@
-import React from "react"
-import { useCallback, useEffect, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import { $isAutoLinkNode, $isLinkNode } from "@lexical/link"
 import { $findMatchingParent, mergeRegister } from "@lexical/utils"
 import {

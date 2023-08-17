@@ -1,5 +1,4 @@
-import React from "react"
-import { useRef } from "react"
+import React, { useRef } from "react"
 
 export interface Position {
   x: number

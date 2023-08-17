@@ -6,8 +6,7 @@
  *
  */
 
-import React from "react"
-import { HTMLInputTypeAttribute } from "react"
+import React, { HTMLInputTypeAttribute } from "react"
 import "../Input.css"
 
 type TextInputProps = Readonly<{

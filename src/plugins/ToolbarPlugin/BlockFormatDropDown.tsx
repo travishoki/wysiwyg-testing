@@ -1,5 +1,4 @@
-import React from "react"
-import { $createCodeNode } from "@lexical/code"
+import React, { $createCodeNode } from "@lexical/code"
 import {
   INSERT_CHECK_LIST_COMMAND,
   INSERT_ORDERED_LIST_COMMAND,

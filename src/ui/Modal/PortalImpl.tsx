@@ -1,5 +1,4 @@
-import React from "react"
-import { ReactNode, useEffect, useRef } from "react"
+import React, { ReactNode, useEffect, useRef } from "react"
 
 type PortalImplProps = {
   children: ReactNode

@@ -1,5 +1,4 @@
-import React from "react"
-import { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { $isCodeNode, CodeNode, getLanguageFriendlyName, normalizeCodeLang } from "@lexical/code"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $getNearestNodeFromDOMNode } from "lexical"

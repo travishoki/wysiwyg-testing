@@ -1,5 +1,4 @@
-import React from "react"
-import { useCallback, useEffect, useRef, useState } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $getTableCellNodeFromLexicalNode, TableCellNode } from "@lexical/table"
 import { $getSelection, $isRangeSelection } from "lexical"

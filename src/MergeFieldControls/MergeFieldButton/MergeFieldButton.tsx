@@ -1,5 +1,4 @@
-import React from "react"
-import { useCallback } from "react"
+import React, { useCallback } from "react"
 import { ButtonWithIcon } from "../ButtonWithIcon/ButtonWithIcon"
 import { mergeFieldObject } from "../const"
 import { formatMergeFieldTitle } from "./helpers"

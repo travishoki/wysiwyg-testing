@@ -1,5 +1,4 @@
-import React from "react"
-import { Suspense, useCallback } from "react"
+import React, { Suspense, useCallback } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
 import { $getNodeByKey } from "lexical"

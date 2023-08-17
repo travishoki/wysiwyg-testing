@@ -6,8 +6,7 @@
  *
  */
 
-import React from "react"
-import { ReactNode, useEffect, useRef, useState } from "react"
+import React, { ReactNode, useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import { DropDownItems } from "./DropDownItems"
 

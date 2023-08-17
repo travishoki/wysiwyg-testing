@@ -6,8 +6,7 @@
  *
  */
 
-import React from "react"
-import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react"
+import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react"
 import {
   $generateJSONFromSelectedNodes,
   $generateNodesFromSerializedNodes,

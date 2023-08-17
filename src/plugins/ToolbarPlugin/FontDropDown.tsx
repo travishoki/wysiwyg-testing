@@ -1,5 +1,4 @@
-import React from "react"
-import { useCallback } from "react"
+import React, { useCallback } from "react"
 import { $patchStyleText } from "@lexical/selection"
 import { $getSelection, $isRangeSelection, LexicalEditor } from "lexical"
 import { DropDown } from "../../ui/DropDown/DropDown"

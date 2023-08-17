@@ -6,8 +6,7 @@
  *
  */
 
-import React from "react"
-import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from "react"
+import React, { ReactNode, createContext, useContext, useEffect, useMemo, useState } from "react"
 
 type Suggestion = null | string
 type CallbackFn = (newSuggestion: Suggestion) => void

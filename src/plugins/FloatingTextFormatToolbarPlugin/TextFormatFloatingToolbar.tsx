@@ -1,5 +1,4 @@
-import React from "react"
-import { useCallback, useEffect, useRef } from "react"
+import React, { useCallback, useEffect, useRef } from "react"
 import { TOGGLE_LINK_COMMAND } from "@lexical/link"
 import { mergeRegister } from "@lexical/utils"
 import {

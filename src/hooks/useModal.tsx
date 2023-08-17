@@ -6,8 +6,7 @@
  *
  */
 
-import React from "react"
-import { useCallback, useMemo, useState } from "react"
+import React, { useCallback, useMemo, useState } from "react"
 import { Modal } from "../ui/Modal/Modal"
 
 export const useModal = (): [

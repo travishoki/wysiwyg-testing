@@ -1,5 +1,4 @@
-import React from "react"
-import { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { TableOfContentsEntry } from "@lexical/react/LexicalTableOfContents"
 import { NodeKey } from "lexical"

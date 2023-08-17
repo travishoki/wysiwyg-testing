@@ -6,8 +6,7 @@
  *
  */
 
-import React from "react"
-import { useCallback, useMemo, useState } from "react"
+import React, { useCallback, useMemo, useState } from "react"
 import { $createCodeNode } from "@lexical/code"
 import {
   INSERT_CHECK_LIST_COMMAND,

@@ -6,8 +6,7 @@
  *
  */
 
-import React from "react"
-import { ReactPortal, useMemo } from "react"
+import React, { ReactPortal, useMemo } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
 import { createPortal } from "react-dom"

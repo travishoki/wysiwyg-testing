@@ -6,8 +6,7 @@
  *
  */
 
-import React from "react"
-import { useCallback, useEffect, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import { $createCodeNode, $isCodeNode } from "@lexical/code"
 import { $convertFromMarkdownString, $convertToMarkdownString } from "@lexical/markdown"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"

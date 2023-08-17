@@ -6,8 +6,7 @@
  *
  */
 
-import React from "react"
-import { DragEvent as ReactDragEvent, useEffect, useRef, useState } from "react"
+import React, { DragEvent as ReactDragEvent, useEffect, useRef, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { eventFiles } from "@lexical/rich-text"
 import { mergeRegister } from "@lexical/utils"

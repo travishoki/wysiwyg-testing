@@ -1,5 +1,4 @@
-import React from "react"
-import { useContext } from "react"
+import React, { useContext } from "react"
 import { LexicalNestedComposer } from "@lexical/react/LexicalNestedComposer"
 import { LexicalEditor } from "lexical"
 import { CellContext } from "../../plugins/TablePlugin/const"
