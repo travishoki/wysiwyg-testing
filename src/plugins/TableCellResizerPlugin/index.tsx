@@ -11,7 +11,6 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
 import { createPortal } from "react-dom"
 import { TableCellResizer } from "./TableCellResizer"
-import "./index.css"
 
 export const TableCellResizerPlugin = (): null | ReactPortal => {
   const [editor] = useLexicalComposerContext()

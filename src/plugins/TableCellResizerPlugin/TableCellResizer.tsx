@@ -16,6 +16,7 @@ import {
   LexicalEditor,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
+import styles from "./TableCellResizer.module.scss"
 
 type MousePosition = {
   x: number
@@ -312,13 +313,13 @@ export const TableCellResizer = ({ editor }: TableCellResizerProps) => {
       {activeCell != null && !isSelectingGrid && (
         <>
           <div
-            className="TableCellResizer__resizer TableCellResizer__ui"
+            className={(styles.TableCellResizer__resizer, "TableCellResizer__ui")}
             onMouseDown={toggleResize("right")}
             onMouseUp={toggleResize("right")}
             style={resizerStyles.right || undefined}
           />
           <div
-            className="TableCellResizer__resizer TableCellResizer__ui"
+            className={(styles.TableCellResizer__resizer, "TableCellResizer__ui")}
             onMouseDown={toggleResize("bottom")}
             onMouseUp={toggleResize("bottom")}
             style={resizerStyles.bottom || undefined}
