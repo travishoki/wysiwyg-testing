@@ -25,7 +25,7 @@ import { MentionNode } from "./Mention/MentionNode"
 import { MergeFieldNode } from "./MergeField/MergeFieldNode"
 import { TableNode as NewTableNode } from "./Table/TableNode"
 
-export const PlaygroundNodes: Array<Klass<LexicalNode>> = [
+export const ComposerNodes: Array<Klass<LexicalNode>> = [
   HeadingNode,
   ListNode,
   ListItemNode,

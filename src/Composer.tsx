@@ -7,7 +7,7 @@ import { Editor } from "./Editor"
 import { MergeFieldHandler, composerRefProps } from "./MergeFieldHandler/MergeFieldHandler"
 import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext"
 import { SharedHistoryContext } from "./context/SharedHistoryContext"
-import { PlaygroundNodes } from "./nodes/PlaygroundNodes"
+import { ComposerNodes } from "./nodes/ComposerNodes"
 import { TableContext } from "./plugins/TablePlugin/TableContext"
 import { ComposerTheme } from "./themes/ComposerTheme"
 import { Maybe } from "./types/globals"
@@ -22,7 +22,7 @@ const onError = (error: Error) => {
 
 const initialConfig = {
   namespace: "Composer",
-  nodes: [...PlaygroundNodes],
+  nodes: [...ComposerNodes],
   onError,
   theme: ComposerTheme,
 }
