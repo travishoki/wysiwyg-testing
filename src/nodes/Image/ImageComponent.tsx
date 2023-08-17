@@ -46,6 +46,7 @@ import { ImageResizer } from "../../ui/ImageResizer/ImageResizer"
 import { Placeholder } from "../../ui/Placeholder/Placeholder"
 import { $isImageNode } from "./ImageNode"
 import { LazyImage } from "./LazyImage"
+import styles from "./ImageComponent.module.scss"
 import "./ImageNode.css"
 
 type ImageComponentProps = {
@@ -285,9 +286,13 @@ const ImageComponent = ({
               <HistoryPlugin externalHistoryState={historyState} />
               <RichTextPlugin
                 ErrorBoundary={LexicalErrorBoundary}
-                contentEditable={<ContentEditable className="ImageNode__contentEditable" />}
+                contentEditable={
+                  <ContentEditable className={styles["ImageNode__contentEditable"]} />
+                }
                 placeholder={
-                  <Placeholder className="ImageNode__placeholder">Enter a caption...</Placeholder>
+                  <Placeholder className={styles["ImageNode__placeholder"]}>
+                    Enter a caption...
+                  </Placeholder>
                 }
               />
             </LexicalNestedComposer>
