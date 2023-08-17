@@ -8,7 +8,6 @@
 
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { useFloatingTextFormatToolbar } from "./hooks"
-import "./index.css"
 
 type FloatingTextFormatToolbarPluginProps = {
   anchorElem?: HTMLElement

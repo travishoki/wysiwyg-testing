@@ -11,6 +11,7 @@ import {
 import { getDOMRangeRect } from "../../utils/getDOMRangeRect"
 import { setFloatingElemPosition } from "../../utils/setFloatingElemPosition"
 import { INSERT_INLINE_IMAGE_COMMAND } from "../InlineImagePlugin/const"
+import styles from "./TextFormatFloatingToolbar.module.scss"
 
 type TextFormatFloatingToolbarProps = {
   anchorElem: HTMLElement
@@ -157,7 +158,7 @@ export const TextFormatFloatingToolbar = ({
   }, [editor, updateTextFormatFloatingToolbar])
 
   return (
-    <div className="floating-text-format-popup" ref={popupCharStylesEditorRef}>
+    <div className={styles["floating-text-format-popup"]} ref={popupCharStylesEditorRef}>
       {editor.isEditable() && (
         <>
           <button
