@@ -750,17 +750,17 @@
   cursor: grabbing;
 }
 
-.inline-editor-image.position-full {
+.composer .inline-editor-image.position-full {
   margin: 1em 0 1em 0;
 }
 
-.inline-editor-image.position-left {
+.composer .inline-editor-image.position-left {
   float: left;
   width: 50%;
   margin: 1em 1em 0 0;
 }
 
-.inline-editor-image.position-right {
+.composer .inline-editor-image.position-right {
   float: right;
   width: 50%;
   margin: 1em 0 0 1em;
@@ -834,12 +834,12 @@
   background-image: url(images/emoji/2764.png);
 }
 
-.keyword {
+.composer .keyword {
   color: rgb(241, 118, 94);
   font-weight: bold;
 }
 
-.actions {
+.composer .actions {
   position: absolute;
   text-align: right;
   margin: 10px;
@@ -847,7 +847,7 @@
   right: 0;
 }
 
-.actions i {
+.composer .actions i {
   background-size: contain;
   display: inline-block;
   height: 15px;
@@ -855,51 +855,51 @@
   vertical-align: -0.25em;
 }
 
-.actions i.indent {
+.composer .actions i.indent {
   background-image: url(images/icons/indent.svg);
 }
 
-.actions i.outdent {
+.composer .actions i.outdent {
   background-image: url(images/icons/outdent.svg);
 }
 
-.actions i.lock {
+.composer .actions i.lock {
   background-image: url(images/icons/lock-fill.svg);
 }
 
-.actions i.image {
+.composer .actions i.image {
   background-image: url(images/icons/file-image.svg);
 }
 
-.actions i.table {
+.composer .actions i.table {
   background-image: url(images/icons/table.svg);
 }
 
-.actions i.unlock {
+.composer .actions i.unlock {
   background-image: url(images/icons/lock.svg);
 }
 
-.actions i.left-align {
+.composer .actions i.left-align {
   background-image: url(images/icons/text-left.svg);
 }
 
-.actions i.center-align {
+.composer .actions i.center-align {
   background-image: url(images/icons/text-center.svg);
 }
 
-.actions i.right-align {
+.composer .actions i.right-align {
   background-image: url(images/icons/text-right.svg);
 }
 
-.actions i.justify-align {
+.composer .actions i.justify-align {
   background-image: url(images/icons/justify.svg);
 }
 
-.actions i.disconnect {
+.composer .actions i.disconnect {
   background-image: url(images/icons/plug.svg);
 }
 
-.actions i.connect {
+.composer .actions i.connect {
   background-image: url(images/icons/plug-fill.svg);
 }
 
