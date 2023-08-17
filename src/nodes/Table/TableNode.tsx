@@ -19,22 +19,8 @@ import {
   SerializedLexicalNode,
   Spread,
 } from "lexical"
-
-export type Cell = {
-  colSpan: number
-  id: string
-  json: string
-  type: "normal" | "header"
-  width: number | null
-}
-
-type Row = {
-  cells: Array<Cell>
-  height: null | number
-  id: string
-}
-
-export type Rows = Array<Row>
+import { createRow, createUID } from "./TableNode.helpers"
+import { Cell, Rows } from "./types"
 
 export const cellHTMLCache: Map<string, string> = new Map()
 export const cellTextContentCache: Map<string, string> = new Map()
@@ -52,13 +38,6 @@ const TableComponent = React.lazy(
   () => import("./TableComponent"),
 )
 
-export const createUID = (): string => {
-  return Math.random()
-    .toString(36)
-    .replace(/[^a-z]+/g, "")
-    .substr(0, 5)
-}
-
 const createCell = (type: "normal" | "header"): Cell => {
   return {
     colSpan: 1,
@@ -66,14 +45,6 @@ const createCell = (type: "normal" | "header"): Cell => {
     json: emptyEditorJSON,
     type,
     width: null,
-  }
-}
-
-export const createRow = (): Row => {
-  return {
-    cells: [],
-    height: null,
-    id: createUID(),
   }
 }
 
