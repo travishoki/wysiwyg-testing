@@ -132,7 +132,7 @@ export const Editor = () => {
         <RichTextPlugin
           ErrorBoundary={LexicalErrorBoundary}
           contentEditable={
-            <div className="editor-scroller">
+            <div className={styles["editor-scroller"]}>
               <div className="editor" ref={onRef}>
                 <ContentEditable />
               </div>
