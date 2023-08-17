@@ -40,10 +40,10 @@ import { FloatingTextFormatToolbarPlugin } from "../../plugins/FloatingTextForma
 import { LinkPlugin } from "../../plugins/LinkPlugin"
 import { ContentEditable } from "../../ui/ContentEditable/ContentEditable"
 import { Placeholder } from "../../ui/Placeholder/Placeholder"
+import styles from "./InlineImageComponent.module.scss"
 import { $isInlineImageNode, Position } from "./InlineImageNode"
 import { LazyImage } from "./LazyImage"
 import { UpdateInlineImageDialog } from "./UpdateInlineImageDialog"
-import "./InlineImageNode.css"
 
 type InlineImageComponentProps = {
   altText: string
@@ -247,9 +247,11 @@ const InlineImageComponent = ({
               <FloatingTextFormatToolbarPlugin />
               <RichTextPlugin
                 ErrorBoundary={LexicalErrorBoundary}
-                contentEditable={<ContentEditable className="InlineImageNode__contentEditable" />}
+                contentEditable={
+                  <ContentEditable className={styles["InlineImageNode__contentEditable"]} />
+                }
                 placeholder={
-                  <Placeholder className="InlineImageNode__placeholder">
+                  <Placeholder className={styles["InlineImageNode__placeholder"]}>
                     Enter a caption...
                   </Placeholder>
                 }
