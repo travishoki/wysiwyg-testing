@@ -19,10 +19,14 @@ import {
   SerializedLexicalNode,
   Spread,
 } from "lexical"
-import { createCell, createRow, plainTextEditorJSON } from "./TableNode.helpers"
+import {
+  createCell,
+  createRow,
+  exportTableCellsToHTML,
+  plainTextEditorJSON,
+} from "./TableNode.helpers"
 import { Cell, Row, Rows } from "./types"
 
-export const cellHTMLCache: Map<string, string> = new Map()
 export const cellTextContentCache: Map<string, string> = new Map()
 
 const TableComponent = React.lazy(
@@ -63,52 +67,6 @@ const convertTableElement = (domNode: HTMLElement): null | DOMConversionOutput =
   }
 
   return { node: $createTableNode(rows) }
-}
-
-export const exportTableCellsToHTML = (
-  rows: Rows,
-  rect?: { endX: number; endY: number; startX: number; startY: number },
-): HTMLElement => {
-  const table = document.createElement("table")
-  const colGroup = document.createElement("colgroup")
-  const tBody = document.createElement("tbody")
-  const firstRow = rows[0]
-
-  for (
-    let x = rect != null ? rect.startX : 0;
-    x < (rect != null ? rect.endX + 1 : firstRow.cells.length);
-    x++
-  ) {
-    const col = document.createElement("col")
-    colGroup.append(col)
-  }
-
-  for (
-    let y = rect != null ? rect.startY : 0;
-    y < (rect != null ? rect.endY + 1 : rows.length);
-    y++
-  ) {
-    const row = rows[y]
-    const cells = row.cells
-    const rowElem = document.createElement("tr")
-
-    for (
-      let x = rect != null ? rect.startX : 0;
-      x < (rect != null ? rect.endX + 1 : cells.length);
-      x++
-    ) {
-      const cell = cells[x]
-      const cellElem = document.createElement(cell.type === "header" ? "th" : "td")
-      cellElem.innerHTML = cellHTMLCache.get(cell.json) || ""
-      rowElem.appendChild(cellElem)
-    }
-    tBody.appendChild(rowElem)
-  }
-
-  table.appendChild(colGroup)
-  table.appendChild(tBody)
-
-  return table
 }
 
 export class TableNode extends DecoratorNode<JSX.Element> {

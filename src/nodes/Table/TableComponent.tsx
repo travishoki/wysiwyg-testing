@@ -64,14 +64,9 @@ import {
   isStartingResize,
   isTargetOnPossibleUIControl,
 } from "./TableComponent.helpers"
-import {
-  $isTableNode,
-  TableNode,
-  cellHTMLCache,
-  cellTextContentCache,
-  exportTableCellsToHTML,
-} from "./TableNode"
-import { extractRowsFromHTML } from "./TableNode.helpers"
+import { $isTableNode, TableNode, cellTextContentCache } from "./TableNode"
+import { exportTableCellsToHTML, extractRowsFromHTML } from "./TableNode.helpers"
+import { cellHTMLCache } from "./const"
 import { Cell, Rows, SortOptions } from "./types"
 
 const NO_CELLS: [] = []
