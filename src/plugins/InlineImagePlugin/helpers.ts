@@ -9,6 +9,7 @@ import { $isInlineImageNode, InlineImageNode } from "../../nodes/InlineImage/Inl
 import { CAN_USE_DOM } from "../../shared/canUseDOM"
 import { INSERT_INLINE_IMAGE_COMMAND } from "./const"
 import { InsertInlineImagePayload } from "./types"
+import { canDropImage } from "../ImagesPlugin/helpers"
 
 const getDOMSelection = (targetWindow: Window | null): Selection | null =>
   CAN_USE_DOM ? (targetWindow || window).getSelection() : null
@@ -113,18 +114,6 @@ declare global {
     rangeOffset?: number
     rangeParent?: Node
   }
-}
-
-const canDropImage = (event: DragEvent): boolean => {
-  const target = event.target
-
-  return !!(
-    target &&
-    target instanceof HTMLElement &&
-    !target.closest("code, span.editor-image") &&
-    target.parentElement &&
-    target.parentElement.closest("div.ContentEditable__root")
-  )
 }
 
 const getDragSelection = (event: DragEvent): Range | null | undefined => {

@@ -138,7 +138,7 @@ declare global {
   }
 }
 
-const canDropImage = (event: DragEvent): boolean => {
+export const canDropImage = (event: DragEvent): boolean => {
   const target = event.target
 
   return !!(
