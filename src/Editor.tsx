@@ -133,7 +133,7 @@ export const Editor = () => {
           ErrorBoundary={LexicalErrorBoundary}
           contentEditable={
             <div className={styles["editor-scroller"]}>
-              <div className="editor" ref={onRef}>
+              <div className={styles.editor} ref={onRef}>
                 <ContentEditable />
               </div>
             </div>

@@ -16,3 +16,10 @@
   overflow: auto;
   resize: vertical;
 }
+
+.editor {
+  flex: auto;
+  position: relative;
+  resize: vertical;
+  z-index: -1;
+}
