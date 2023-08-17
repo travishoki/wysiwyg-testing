@@ -8,6 +8,7 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react"
 import { TextInput } from "../TextInput/TextInput"
+import styles from "./ColorPicker.module.scss"
 import { MoveWrapper, Position } from "./MoveWrapper"
 import { transformColor } from "./helpers"
 import "./ColorPicker.css"
@@ -101,7 +102,7 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
   }, [color])
 
   return (
-    <div className="color-picker-wrapper" ref={innerDivRef} style={{ width: WIDTH }}>
+    <div className={styles["color-picker-wrapper"]} ref={innerDivRef} style={{ width: WIDTH }}>
       <TextInput label="Hex" onChange={onSetHex} value={inputColor} />
       <div className="color-picker-basic-color">
         {basicColors.map((basicColor) => (
@@ -118,12 +119,12 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
         ))}
       </div>
       <MoveWrapper
-        className="color-picker-saturation"
+        className={styles["color-picker-saturation"]}
         onChange={onMoveSaturation}
         style={{ backgroundColor: `hsl(${selfColor.hsv.h}, 100%, 50%)` }}
       >
         <div
-          className="color-picker-saturation_cursor"
+          className={styles["color-picker-saturation_cursor"]}
           style={{
             backgroundColor: selfColor.hex,
             left: saturationPosition.x,
@@ -131,16 +132,16 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
           }}
         />
       </MoveWrapper>
-      <MoveWrapper className="color-picker-hue" onChange={onMoveHue}>
+      <MoveWrapper className={styles["color-picker-hue"]} onChange={onMoveHue}>
         <div
-          className="color-picker-hue_cursor"
+          className={styles["color-picker-hue_cursor"]}
           style={{
             backgroundColor: `hsl(${selfColor.hsv.h}, 100%, 50%)`,
             left: huePosition.x,
           }}
         />
       </MoveWrapper>
-      <div className="color-picker-color" style={{ backgroundColor: selfColor.hex }} />
+      <div className={styles["color-picker-color"]} style={{ backgroundColor: selfColor.hex }} />
     </div>
   )
 }
