@@ -7,9 +7,9 @@ import {
 } from "lexical"
 import { $isInlineImageNode, InlineImageNode } from "../../nodes/InlineImage/InlineImageNode"
 import { CAN_USE_DOM } from "../../shared/canUseDOM"
+import { canDropImage } from "../ImagesPlugin/helpers"
 import { INSERT_INLINE_IMAGE_COMMAND } from "./const"
 import { InsertInlineImagePayload } from "./types"
-import { canDropImage } from "../ImagesPlugin/helpers"
 
 const getDOMSelection = (targetWindow: Window | null): Selection | null =>
   CAN_USE_DOM ? (targetWindow || window).getSelection() : null
