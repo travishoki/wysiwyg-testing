@@ -1,19 +1,5 @@
 import React from "react"
-
-const imageCache = new Set()
-
-const useSuspenseImage = (src: string) => {
-  if (!imageCache.has(src)) {
-    throw new Promise((resolve) => {
-      const img = new Image()
-      img.src = src
-      img.onload = () => {
-        imageCache.add(src)
-        resolve(null)
-      }
-    })
-  }
-}
+import { useSuspenseImage } from "./LasyImage.hooks"
 
 type ImageComponentLazyImageProps = {
   altText: string
