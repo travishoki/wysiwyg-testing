@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { TableOfContentsEntry } from "@lexical/react/LexicalTableOfContents"
+import classNames from "classnames"
 import { NodeKey } from "lexical"
 import {
   indent,
@@ -9,7 +10,6 @@ import {
   isHeadingBelowTheTopOfThePage,
 } from "./TableOfContentsList.helpers"
 import styles from "./TableOfContentsList.module.scss"
-import classNames from "classnames"
 
 type TableOfContentsListProps = {
   tableOfContents: Array<TableOfContentsEntry>

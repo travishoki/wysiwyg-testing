@@ -12,6 +12,7 @@ import { $convertFromMarkdownString, $convertToMarkdownString } from "@lexical/m
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { mergeRegister } from "@lexical/utils"
 import { CONNECTED_COMMAND } from "@lexical/yjs"
+import classNames from "classnames"
 import {
   $createTextNode,
   $getRoot,
@@ -22,7 +23,6 @@ import {
 import { useModal } from "../../hooks/useModal"
 import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
 import { ShowClearDialog } from "./ShowClearDialog"
-import classNames from "classnames"
 import styles from "./index.module.scss"
 
 const validateEditorState = async (editor: LexicalEditor): Promise<void> => {

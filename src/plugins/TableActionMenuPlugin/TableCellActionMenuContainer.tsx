@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $getTableCellNodeFromLexicalNode, TableCellNode } from "@lexical/table"
+import classNames from "classnames"
 import { $getSelection, $isRangeSelection } from "lexical"
 import { useModal } from "../../hooks/useModal"
 import { TableActionMenu } from "./TableActionMenu"
 import styles from "./TableCellActionMenuContainer.module.scss"
-import classNames from "classnames"
 
 type TableCellActionMenuContainerProps = {
   anchorElem: HTMLElement
