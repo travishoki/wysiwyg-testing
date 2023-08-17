@@ -4,10 +4,12 @@ import lodash from "lodash"
 
 import { organizeDeadCodeList, trimExecSync, spacer } from "./helpers.mjs"
 
+const ignoredPaths = [".d.ts"]
+
 log(chalk.bold.underline("Find Dead Code"))
 log("Log a list of unused variables, functions, or types")
 
-const cmd = "npx ts-prune"
+const cmd = `npx ts-prune --ignore "${ignoredPaths.join("|")}"`
 const output = trimExecSync(cmd)
 
 const outputArray = lodash.compact(output.split("\n"))
