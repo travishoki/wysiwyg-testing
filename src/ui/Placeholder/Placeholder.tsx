@@ -8,7 +8,7 @@
 
 import * as React from "react"
 import { ReactNode } from "react"
-import "./Placeholder.css"
+import styles from "./Placeholder.module.scss"
 
 type PlaceholderProps = {
   children: ReactNode
@@ -16,5 +16,5 @@ type PlaceholderProps = {
 }
 
 export const Placeholder = ({ children, className }: PlaceholderProps) => {
-  return <div className={className || "Placeholder__root"}>{children}</div>
+  return <div className={className || styles.Placeholder__root}>{children}</div>
 }

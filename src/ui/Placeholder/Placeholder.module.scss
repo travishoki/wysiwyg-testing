@@ -20,9 +20,8 @@
   white-space: nowrap;
   display: inline-block;
   pointer-events: none;
-}
-@media (max-width: 1025px) {
-  .Placeholder__root {
+
+  @media (max-width: 1025px) {
     left: 8px;
   }
 }
