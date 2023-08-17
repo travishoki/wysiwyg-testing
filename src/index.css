@@ -30,25 +30,6 @@ header {
   justify-content: center;
 }
 
-header a {
-  max-width: 220px;
-  margin: 20px 0 0 0;
-  display: block;
-}
-
-header img {
-  display: block;
-  height: 100%;
-  width: 100%;
-}
-
-header h1 {
-  text-align: left;
-  color: #333;
-  display: inline-block;
-  margin: 20px 0 0 0;
-}
-
 .editor {
   flex: auto;
   position: relative;
@@ -196,79 +177,79 @@ pre::-webkit-scrollbar-thumb {
   width: 150px;
 }
 
-i.palette {
+.composer i.palette {
   background-image: url(images/icons/palette.svg);
 }
 
-i.bucket {
+.composer i.bucket {
   background-image: url(images/icons/paint-bucket.svg);
 }
 
-i.bold {
+.composer i.bold {
   background-image: url(images/icons/type-bold.svg);
 }
 
-i.italic {
+.composer i.italic {
   background-image: url(images/icons/type-italic.svg);
 }
 
-i.clear {
+.composer i.clear {
   background-image: url(images/icons/trash.svg);
 }
 
-i.code {
+.composer i.code {
   background-image: url(images/icons/code.svg);
 }
 
-i.underline {
+.composer i.underline {
   background-image: url(images/icons/type-underline.svg);
 }
 
-i.strikethrough {
+.composer i.strikethrough {
   background-image: url(images/icons/type-strikethrough.svg);
 }
 
-i.subscript {
+.composer i.subscript {
   background-image: url(images/icons/type-subscript.svg);
 }
 
-i.superscript {
+.composer i.superscript {
   background-image: url(images/icons/type-superscript.svg);
 }
 
-i.link {
+.composer i.link {
   background-image: url(images/icons/link.svg);
 }
 
-i.horizontal-rule {
+.composer i.horizontal-rule {
   background-image: url(images/icons/horizontal-rule.svg);
 }
 
-.icon.plus {
+.composer .icon.plus {
   background-image: url(images/icons/plus.svg);
 }
 
-.icon.caret-right {
+.composer .icon.caret-right {
   background-image: url(images/icons/caret-right-fill.svg);
 }
 
-.icon.dropdown-more {
+.composer .icon.dropdown-more {
   background-image: url(images/icons/dropdown-more.svg);
 }
 
-.icon.font-color {
+.composer .icon.font-color {
   background-image: url(images/icons/font-color.svg);
 }
 
-.icon.font-family {
+.composer .icon.font-family {
   background-image: url(images/icons/font-family.svg);
 }
 
-.icon.bg-color {
+.composer .icon.bg-color {
   background-image: url(images/icons/bg-color.svg);
 }
 
-.icon.table {
+.composer .icon.table {
   background-color: #6c757d;
   mask-image: url(images/icons/table.svg);
   -webkit-mask-image: url(images/icons/table.svg);
@@ -278,100 +259,100 @@ i.horizontal-rule {
   -webkit-mask-size: contain;
 }
 
-i.image {
+.composer i.image {
   background-image: url(images/icons/file-image.svg);
 }
 
-i.table {
+.composer i.table {
   background-image: url(images/icons/table.svg);
 }
 
-i.close {
+.composer i.close {
   background-image: url(images/icons/close.svg);
 }
 
-i.poll {
+.composer i.poll {
   background-image: url(images/icons/card-checklist.svg);
 }
 
-i.youtube {
+.composer i.youtube {
   background-image: url(images/icons/youtube.svg);
 }
 
-.icon.left-align,
-i.left-align {
+.composer .icon.left-align,
+.composer i.left-align {
   background-image: url(images/icons/text-left.svg);
 }
 
-i.center-align {
+.composer i.center-align {
   background-image: url(images/icons/text-center.svg);
 }
 
-i.right-align {
+.composer i.right-align {
   background-image: url(images/icons/text-right.svg);
 }
 
-i.justify-align {
+.composer i.justify-align {
   background-image: url(images/icons/justify.svg);
 }
 
-i.indent {
+.composer i.indent {
   background-image: url(images/icons/indent.svg);
 }
 
-i.markdown {
+.composer i.markdown {
   background-image: url(images/icons/markdown.svg);
 }
 
-i.outdent {
+.composer i.outdent {
   background-image: url(images/icons/outdent.svg);
 }
 
-i.undo {
+.composer i.undo {
   background-image: url(images/icons/arrow-counterclockwise.svg);
 }
 
-i.redo {
+.composer i.redo {
   background-image: url(images/icons/arrow-clockwise.svg);
 }
 
-i.sticky {
+.composer i.sticky {
   background-image: url(images/icons/sticky.svg);
 }
 
-i.mic {
+.composer i.mic {
   background-image: url(images/icons/mic.svg);
 }
 
-i.import {
+.composer i.import {
   background-image: url(images/icons/upload.svg);
 }
 
-i.export {
+.composer i.export {
   background-image: url(images/icons/download.svg);
 }
 
-i.diagram-2 {
+.composer i.diagram-2 {
   background-image: url(images/icons/diagram-2.svg);
 }
 
-i.user {
+.composer i.user {
   background-image: url(images/icons/user.svg);
 }
 
-i.copy {
+.composer i.copy {
   background-image: url(images/icons/copy.svg);
 }
 
-i.success {
+.composer i.success {
   background-image: url(images/icons/success.svg);
 }
 
-i.prettier {
+.composer i.prettier {
   background-image: url(images/icons/prettier.svg);
 }
 
-i.prettier-error {
+.composer i.prettier-error {
   background-image: url(images/icons/prettier-error.svg);
 }
 
@@ -601,54 +582,54 @@ i.prettier-error {
   }
 }
 
-.icon.paragraph {
+.composer .icon.paragraph {
   background-image: url(images/icons/text-paragraph.svg);
 }
 
-.icon.h1 {
+.composer .icon.h1 {
   background-image: url(images/icons/type-h1.svg);
 }
 
-.icon.h2 {
+.composer .icon.h2 {
   background-image: url(images/icons/type-h2.svg);
 }
 
-.icon.h3 {
+.composer .icon.h3 {
   background-image: url(images/icons/type-h3.svg);
 }
 
-.icon.h4 {
+.composer .icon.h4 {
   background-image: url(images/icons/type-h4.svg);
 }
 
-.icon.h5 {
+.composer .icon.h5 {
   background-image: url(images/icons/type-h5.svg);
 }
 
-.icon.h6 {
+.composer .icon.h6 {
   background-image: url(images/icons/type-h6.svg);
 }
 
-.icon.bullet-list,
-.icon.bullet {
+.composer .icon.bullet-list,
+.composer .icon.bullet {
   background-image: url(images/icons/list-ul.svg);
 }
 
-.icon.check-list,
-.icon.check {
+.composer .icon.check-list,
+.composer .icon.check {
   background-image: url(images/icons/square-check.svg);
 }
 
-.icon.numbered-list,
-.icon.number {
+.composer .icon.numbered-list,
+.composer .icon.number {
   background-image: url(images/icons/list-ol.svg);
 }
 
-.icon.quote {
+.composer .icon.quote {
   background-image: url(images/icons/chat-square-quote.svg);
 }
 
-.icon.code {
+.composer .icon.code {
   background-image: url(images/icons/code.svg);
 }
 
@@ -1122,11 +1103,11 @@ button.action-button:disabled {
   pointer-events: none;
 }
 
-.ltr {
+.composer .ltr {
   text-align: left;
 }
 
-.rtl {
+.composer .rtl {
   text-align: right;
 }
 
@@ -1255,15 +1236,15 @@ button.action-button:disabled {
   letter-spacing: -2px;
 }
 
-button.item i {
+.composer button.item i {
   opacity: 0.6;
 }
 
-button.item.dropdown-item-active {
+.composer button.item.dropdown-item-active {
   background-color: rgba(223, 232, 250, 0.3);
 }
 
-button.item.dropdown-item-active i {
+.composer button.item.dropdown-item-active i {
   opacity: 1;
 }
 
