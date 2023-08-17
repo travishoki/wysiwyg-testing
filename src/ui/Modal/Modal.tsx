@@ -9,7 +9,6 @@
 import React, { ReactNode } from "react"
 import { createPortal } from "react-dom"
 import { PortalImpl } from "./PortalImpl"
-import "./Modal.css"
 
 type ModalProps = {
   children: ReactNode

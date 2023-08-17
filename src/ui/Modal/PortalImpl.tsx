@@ -1,4 +1,5 @@
 import React, { ReactNode, useEffect, useRef } from "react"
+import styles from "./Modal.module.scss"
 
 type PortalImplProps = {
   children: ReactNode
@@ -52,18 +53,18 @@ export const PortalImpl = ({ children, closeOnClickOutside, onClose, title }: Po
   }, [closeOnClickOutside, onClose])
 
   return (
-    <div className="Modal__overlay" role="dialog">
-      <div className="Modal__modal" ref={modalRef} tabIndex={-1}>
-        <h2 className="Modal__title">{title}</h2>
+    <div className={styles["Modal__overlay"]} role="dialog">
+      <div className={styles["Modal__modal"]} ref={modalRef} tabIndex={-1}>
+        <h2 className={styles["Modal__title"]}>{title}</h2>
         <button
           aria-label="Close modal"
-          className="Modal__closeButton"
+          className={styles["Modal__closeButton"]}
           onClick={onClose}
           type="button"
         >
           X
         </button>
-        <div className="Modal__content">{children}</div>
+        <div className={styles["Modal__content"]}>{children}</div>
       </div>
     </div>
   )

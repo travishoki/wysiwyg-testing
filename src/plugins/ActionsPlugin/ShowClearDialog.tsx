@@ -1,6 +1,7 @@
 import React from "react"
 import { CLEAR_EDITOR_COMMAND, LexicalEditor } from "lexical"
 import { Button } from "../../ui/Button/Button"
+import styles from "../../ui/Modal/Modal.module.scss"
 
 type ShowClearDialogProps = {
   editor: LexicalEditor
@@ -11,7 +12,7 @@ export const ShowClearDialog = ({ editor, onClose }: ShowClearDialogProps) => {
   return (
     <>
       Are you sure you want to clear the editor?
-      <div className="Modal__content">
+      <div className={styles["Modal__content"]}>
         <Button
           onClick={() => {
             editor.dispatchCommand(CLEAR_EDITOR_COMMAND, undefined)
