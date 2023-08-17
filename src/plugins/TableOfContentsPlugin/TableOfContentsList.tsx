@@ -106,7 +106,7 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
             return (
               <div className={styles["normal-heading-wrapper"]} key={key}>
                 <div
-                  className="first-heading"
+                  className={styles["first-heading"]}
                   onClick={() => scrollToNode(key, index)}
                   role="button"
                   tabIndex={0}
