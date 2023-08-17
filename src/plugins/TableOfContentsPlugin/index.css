@@ -6,25 +6,6 @@
   margin-left: 20px;
 }
 
-.selected-heading {
-  color: #3578e5;
-  position: relative;
-}
-
-.selected-heading-wrapper::before {
-  content: ' ';
-  position: absolute;
-  display: inline-block;
-  left: -30px;
-  top: 4px;
-  z-index: 10;
-  height: 4px;
-  width: 4px;
-  background-color: #3578e5;
-  border: solid 4px white;
-  border-radius: 50%;
-}
-
 .normal-heading {
   cursor: pointer;
   line-height: 20px;
@@ -71,7 +52,7 @@
 }
 
 .headings::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   height: 220px;
   width: 4px;

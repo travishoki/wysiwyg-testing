@@ -1,0 +1,20 @@
+.selected-heading {
+  color: #3578e5;
+  position: relative;
+}
+
+.selected-heading-wrapper {
+  &::before {
+    content: " ";
+    position: absolute;
+    display: inline-block;
+    left: -30px;
+    top: 4px;
+    z-index: 10;
+    height: 4px;
+    width: 4px;
+    background-color: #3578e5;
+    border: solid 4px white;
+    border-radius: 50%;
+  }
+}

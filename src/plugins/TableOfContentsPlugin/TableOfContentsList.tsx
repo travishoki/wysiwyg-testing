@@ -8,6 +8,7 @@ import {
   isHeadingAtTheTopOfThePage,
   isHeadingBelowTheTopOfThePage,
 } from "./TableOfContentsList.helpers"
+import styles from "./TableOfContentsList.module.scss"
 
 type TableOfContentsListProps = {
   tableOfContents: Array<TableOfContentsEntry>
@@ -119,7 +120,7 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
           return (
             <div
               className={`normal-heading-wrapper ${
-                selectedKey === key ? "selected-heading-wrapper" : ""
+                selectedKey === key ? styles["selected-heading-wrapper"] : ""
               }`}
               key={key}
             >
@@ -130,7 +131,9 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
                 tabIndex={0}
               >
                 <li
-                  className={`normal-heading ${selectedKey === key ? "selected-heading" : ""}
+                  className={`normal-heading ${
+                    selectedKey === key ? styles["selected-heading"] : ""
+                  }
                     `}
                 >
                   {("" + text).length > 27 ? text.substring(0, 27) + "..." : text}
