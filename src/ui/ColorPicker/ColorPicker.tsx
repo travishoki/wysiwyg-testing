@@ -11,7 +11,6 @@ import { TextInput } from "../TextInput/TextInput"
 import styles from "./ColorPicker.module.scss"
 import { MoveWrapper, Position } from "./MoveWrapper"
 import { transformColor } from "./helpers"
-import "./ColorPicker.css"
 
 interface ColorPickerProps {
   color: string
@@ -104,7 +103,7 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
   return (
     <div className={styles["color-picker-wrapper"]} ref={innerDivRef} style={{ width: WIDTH }}>
       <TextInput label="Hex" onChange={onSetHex} value={inputColor} />
-      <div className="color-picker-basic-color">
+      <div className={styles["color-picker-basic-color"]}>
         {basicColors.map((basicColor) => (
           <button
             aria-label="color picker"
