@@ -36,7 +36,7 @@ export const Button = ({
       className={joinClasses(
         styles["Button__root"],
         disabled && "Button__disabled",
-        small && "Button__small",
+        small && styles["Button__small"],
         className,
       )}
       disabled={disabled}
