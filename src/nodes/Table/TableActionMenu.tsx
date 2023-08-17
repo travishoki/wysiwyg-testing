@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import { $addUpdateTag, $createParagraphNode, $getRoot } from "lexical"
-import { Cell, Rows, TableNode } from "./TableNode"
-import { SortOptions } from "./types"
+import { TableNode } from "./TableNode"
+import { Cell, Rows, SortOptions } from "./types"
 
 type TableActionMenuProps = {
   cell: Cell

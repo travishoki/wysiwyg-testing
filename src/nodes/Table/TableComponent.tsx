@@ -66,15 +66,13 @@ import {
 } from "./TableComponent.helpers"
 import {
   $isTableNode,
-  Cell,
-  Rows,
   TableNode,
   cellHTMLCache,
   cellTextContentCache,
   exportTableCellsToHTML,
   extractRowsFromHTML,
 } from "./TableNode"
-import { SortOptions } from "./types"
+import { Cell, Rows, SortOptions } from "./types"
 
 const NO_CELLS: [] = []
 

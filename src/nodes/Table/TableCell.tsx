@@ -4,8 +4,8 @@ import { createPortal } from "react-dom"
 import { TableActionMenu } from "./TableActionMenu"
 import { createEmptyParagraphHTML, generateHTMLFromJSON } from "./TableCell.helpers"
 import { TableCellEditor } from "./TableCellEditor"
-import { Cell, Rows, TableNode } from "./TableNode"
-import { SortOptions } from "./types"
+import { TableNode } from "./TableNode"
+import { Cell, Rows, SortOptions } from "./types"
 
 type TableCellProps = {
   cell: Cell

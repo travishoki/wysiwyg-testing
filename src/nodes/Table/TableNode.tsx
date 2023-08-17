@@ -20,7 +20,7 @@ import {
   Spread,
 } from "lexical"
 import { createRow, createUID } from "./TableNode.helpers"
-import { Cell, Rows } from "./types"
+import { Cell, Row, Rows } from "./types"
 
 export const cellHTMLCache: Map<string, string> = new Map()
 export const cellTextContentCache: Map<string, string> = new Map()
