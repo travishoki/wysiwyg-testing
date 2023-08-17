@@ -70,8 +70,8 @@ import {
   cellHTMLCache,
   cellTextContentCache,
   exportTableCellsToHTML,
-  extractRowsFromHTML,
 } from "./TableNode"
+import { extractRowsFromHTML } from "./TableNode.helpers"
 import { Cell, Rows, SortOptions } from "./types"
 
 const NO_CELLS: [] = []
