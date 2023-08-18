@@ -8,6 +8,7 @@
 
 import React, { ReactNode, useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
+import { IconBare } from "../../Icon/IconBare"
 import { DropDownItems } from "./DropDownItems"
 
 const dropDownPadding = 4
@@ -108,7 +109,7 @@ export const DropDown = ({
       >
         {buttonIconClassName && <span className={buttonIconClassName} />}
         {buttonLabel && <span className="text dropdown-button-text">{buttonLabel}</span>}
-        <i className="chevron-down" />
+        <IconBare type="chevron-down" />
       </button>
 
       {showDropDown &&

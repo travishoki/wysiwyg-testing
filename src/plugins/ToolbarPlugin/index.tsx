@@ -49,6 +49,7 @@ import {
   UNDO_COMMAND,
 } from "lexical"
 import { Icon } from "../../Icon/Icon"
+import { IconFormat } from "../../Icon/IconFormat"
 import { useModal } from "../../hooks/useModal"
 import { IS_APPLE } from "../../shared/environment"
 import { DropdownColorPicker } from "../../ui/DropDown/ColorPicker"
@@ -330,7 +331,7 @@ export const ToolbarPlugin = () => {
         title={IS_APPLE ? "Undo (⌘Z)" : "Undo (Ctrl+Z)"}
         type="button"
       >
-        <i className="format undo" />
+        <IconFormat type="undo" />
       </button>
       <button
         aria-label="Redo"
@@ -342,7 +343,7 @@ export const ToolbarPlugin = () => {
         title={IS_APPLE ? "Redo (⌘Y)" : "Redo (Ctrl+Y)"}
         type="button"
       >
-        <i className="format redo" />
+        <IconFormat type="redo" />
       </button>
       <Divider />
       {blockType in blockTypeToBlockName && activeEditor === editor && (
@@ -400,7 +401,7 @@ export const ToolbarPlugin = () => {
             title={IS_APPLE ? "Bold (⌘B)" : "Bold (Ctrl+B)"}
             type="button"
           >
-            <i className="format bold" />
+            <IconFormat type="bold" />
           </button>
           <button
             aria-label={`Format text as italics. Shortcut: ${IS_APPLE ? "⌘I" : "Ctrl+I"}`}
@@ -412,7 +413,7 @@ export const ToolbarPlugin = () => {
             title={IS_APPLE ? "Italic (⌘I)" : "Italic (Ctrl+I)"}
             type="button"
           >
-            <i className="format italic" />
+            <IconFormat type="italic" />
           </button>
           <button
             aria-label={`Format text to underlined. Shortcut: ${IS_APPLE ? "⌘U" : "Ctrl+U"}`}
@@ -424,7 +425,7 @@ export const ToolbarPlugin = () => {
             title={IS_APPLE ? "Underline (⌘U)" : "Underline (Ctrl+U)"}
             type="button"
           >
-            <i className="format underline" />
+            <IconFormat type="underline" />
           </button>
           <button
             aria-label="Insert code block"
@@ -436,7 +437,7 @@ export const ToolbarPlugin = () => {
             title="Insert code block"
             type="button"
           >
-            <i className="format code" />
+            <IconFormat type="code" />
           </button>
           <button
             aria-label="Insert link"
@@ -446,7 +447,7 @@ export const ToolbarPlugin = () => {
             title="Insert link"
             type="button"
           >
-            <i className="format link" />
+            <IconFormat type="link" />
           </button>
           <DropdownColorPicker
             buttonAriaLabel="Formatting text color"

@@ -20,6 +20,7 @@ import {
   COMMAND_PRIORITY_EDITOR,
   LexicalEditor,
 } from "lexical"
+import { IconBare } from "../../Icon/IconBare"
 import { useModal } from "../../hooks/useModal"
 import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
 import { ShowClearDialog } from "./ShowClearDialog"
@@ -129,7 +130,7 @@ export const ActionsPlugin = () => {
         }}
         title="Clear"
       >
-        <i className="clear" />
+        <IconBare type="clear" />
       </button>
       <button
         aria-label="Convert from markdown"
@@ -137,7 +138,7 @@ export const ActionsPlugin = () => {
         onClick={handleMarkdownToggle}
         title="Convert From Markdown"
       >
-        <i className="markdown" />
+        <IconBare type="markdown" />
       </button>
       {modal}
     </div>

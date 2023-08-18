@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import { EditorThemeClasses, LexicalEditor } from "lexical"
 import { createPortal } from "react-dom"
+import { IconBare } from "../../Icon/IconBare"
 import { TableActionMenu } from "./TableActionMenu"
 import { createEmptyParagraphHTML, generateHTMLFromJSON } from "./TableCell.helpers"
 import { TableCellEditor } from "./TableCellEditor"
@@ -94,7 +95,7 @@ export const TableCell = ({
               e.stopPropagation()
             }}
           >
-            <i className="chevron-down" />
+            <IconBare type="chevron-down" />
           </button>
         </div>
       )}

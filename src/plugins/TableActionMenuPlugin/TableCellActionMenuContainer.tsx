@@ -3,6 +3,7 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { $getTableCellNodeFromLexicalNode, TableCellNode } from "@lexical/table"
 import classNames from "classnames"
 import { $getSelection, $isRangeSelection } from "lexical"
+import { IconBare } from "../../Icon/IconBare"
 import { useModal } from "../../hooks/useModal"
 import { TableActionMenu } from "./TableActionMenu"
 import styles from "./TableCellActionMenuContainer.module.scss"
@@ -123,7 +124,7 @@ export const TableCellActionMenuContainer = ({
             }}
             ref={menuRootRef}
           >
-            <i className="chevron-down" />
+            <IconBare type="chevron-down" />
           </button>
           {colorPickerModal}
           {isMenuOpen && (

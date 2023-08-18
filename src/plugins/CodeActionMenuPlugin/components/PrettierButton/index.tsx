@@ -10,6 +10,7 @@ import React, { useState } from "react"
 import { $isCodeNode } from "@lexical/code"
 import { $getNearestNodeFromDOMNode, LexicalEditor } from "lexical"
 import { Options } from "prettier"
+import { IconFormat } from "../../../../Icon/IconFormat"
 import styles from "./index.module.scss"
 
 interface PrettierButtonProps {
@@ -142,7 +143,7 @@ export const PrettierButton = ({ editor, getCodeDOMNode, lang }: PrettierButtonP
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {syntaxError ? <i className="format prettier-error" /> : <i className="format prettier" />}
+        {syntaxError ? <IconFormat type="prettier-error" /> : <IconFormat type="prettier" />}
       </button>
       {tipsVisible ? <pre className={styles["code-error-tips"]}>{syntaxError}</pre> : null}
     </div>

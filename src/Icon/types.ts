@@ -6,6 +6,7 @@ export type iconType =
   | "center-align"
   | "check"
   | "check-list"
+  | "chevron-down"
   | "clear"
   | "close"
   | "code"

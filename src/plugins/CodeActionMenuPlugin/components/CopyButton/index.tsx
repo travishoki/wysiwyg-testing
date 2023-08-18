@@ -9,6 +9,7 @@
 import React, { useState } from "react"
 import { $isCodeNode } from "@lexical/code"
 import { $getNearestNodeFromDOMNode, $getSelection, $setSelection, LexicalEditor } from "lexical"
+import { IconFormat } from "../../../../Icon/IconFormat"
 import { useDebounce } from "../../utils"
 
 interface CopyButtonProps {
@@ -54,7 +55,7 @@ export const CopyButton = ({ editor, getCodeDOMNode }: CopyButtonProps) => {
 
   return (
     <button aria-label="copy" className="menu-item" onClick={handleClick}>
-      {isCopyCompleted ? <i className="format success" /> : <i className="format copy" />}
+      {isCopyCompleted ? <IconFormat type="success" /> : <IconFormat type="copy" />}
     </button>
   )
 }
