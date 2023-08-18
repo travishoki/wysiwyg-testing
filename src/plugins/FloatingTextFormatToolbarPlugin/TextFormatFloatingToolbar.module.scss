@@ -15,3 +15,44 @@
   will-change: transform;
   z-index: 10;
 }
+
+.popupItem {
+  background: none;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  padding: 8px;
+  vertical-align: middle;
+
+  &:disabled i.format {
+    opacity: 0.2;
+  }
+
+  &:hover:not([disabled]) {
+    background-color: #eee;
+  }
+}
+
+.spaced {
+  margin-right: 2px;
+}
+
+.active {
+  background-color: rgba(223, 232, 250, 0.3);
+
+  i {
+    opacity: 1;
+  }
+}
+
+.format {
+  background-size: contain;
+  display: flex;
+  display: inline-block;
+  height: 18px;
+  margin-top: 2px;
+  opacity: 0.6;
+  vertical-align: -0.25em;
+  width: 18px;
+}
