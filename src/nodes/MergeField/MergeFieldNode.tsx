@@ -58,7 +58,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   createDOM(): HTMLElement {
-    const element = document.createElement("div")
+    const element = document.createElement("span")
 
     return element
   }
