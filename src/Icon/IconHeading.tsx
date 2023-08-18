@@ -7,7 +7,7 @@ type IconHeadingProps = {
 }
 
 export const IconHeading = ({ num }: IconHeadingProps) => {
-  const iconType = getType(num)
+  const type = getType(num)
 
-  return <Icon type={iconType} />
+  return <Icon type={type} />
 }

@@ -1,13 +1,12 @@
 import React from "react"
-import classNames from "classnames"
-import stylesIcon from "./Icon.module.scss"
 import styles from "./IconFormat.module.scss"
 import { iconType } from "./types"
+import { IconBare } from "./IconBare"
 
 type IconFormatProps = {
   type: iconType
 }
 
 export const IconFormat = ({ type }: IconFormatProps) => {
-  return <i className={classNames(styles.format, stylesIcon[type])} />
+  return <IconBare type={type} className={styles.format} />
 }
