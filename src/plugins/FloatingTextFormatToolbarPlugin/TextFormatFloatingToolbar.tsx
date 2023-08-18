@@ -11,7 +11,6 @@ import {
 } from "lexical"
 import { getDOMRangeRect } from "../../utils/getDOMRangeRect"
 import { setFloatingElemPosition } from "../../utils/setFloatingElemPosition"
-import { INSERT_INLINE_IMAGE_COMMAND } from "../InlineImagePlugin/const"
 import styles from "./TextFormatFloatingToolbar.module.scss"
 import "./TextFormatFloatingToolbar.css"
 
@@ -49,10 +48,6 @@ export const TextFormatFloatingToolbar = ({
       editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)
     }
   }, [editor, isLink])
-
-  const insertComment = () => {
-    editor.dispatchCommand(INSERT_INLINE_IMAGE_COMMAND, undefined)
-  }
 
   const mouseMoveListener = (e: MouseEvent) => {
     if (popupCharStylesEditorRef?.current && (e.buttons === 1 || e.buttons === 3)) {
@@ -248,14 +243,6 @@ export const TextFormatFloatingToolbar = ({
           </button>
         </>
       )}
-      <button
-        aria-label="Insert comment"
-        className={"popup-item spaced insert-comment"}
-        onClick={insertComment}
-        type="button"
-      >
-        <i className="format add-comment" />
-      </button>
     </div>
   )
 }
