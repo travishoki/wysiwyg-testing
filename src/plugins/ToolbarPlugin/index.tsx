@@ -652,7 +652,7 @@ export const ToolbarPlugin = () => {
             activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
           }}
         >
-          <i className={"icon " + (isRTL ? "indent" : "outdent")} />
+          <Icon type={isRTL ? "indent" : "outdent"} />
           <span className="text">Outdent</span>
         </DropDownItem>
         <DropDownItem
@@ -661,7 +661,7 @@ export const ToolbarPlugin = () => {
             activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
           }}
         >
-          <i className={"icon " + (isRTL ? "outdent" : "indent")} />
+          <Icon type={isRTL ? "outdent" : "indent"} />
           <span className="text">Indent</span>
         </DropDownItem>
       </DropDown>
