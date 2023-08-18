@@ -952,21 +952,6 @@ i.chevron-down {
   text-align: right;
 }
 
-.toolbar {
-  display: flex;
-  margin-bottom: 1px;
-  background: #fff;
-  padding: 4px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  vertical-align: middle;
-  overflow: auto;
-  height: 36px;
-  position: sticky;
-  top: 0;
-  z-index: 2;
-}
-
 .toolbar button.toolbar-item {
   border: 0;
   display: flex;

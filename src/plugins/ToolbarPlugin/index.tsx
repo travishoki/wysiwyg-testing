@@ -26,6 +26,7 @@ import {
   $getNearestNodeOfType,
   mergeRegister,
 } from "@lexical/utils"
+import classNames from "classnames"
 import {
   $createParagraphNode,
   $getNodeByKey,
@@ -63,6 +64,7 @@ import { Divider } from "./Divider"
 import { FontDropDown } from "./FontDropDown"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"
 import { dropDownActiveClass, getCodeLanguageOptions } from "./helpers"
+import styles from "./index.module.scss"
 
 const CODE_LANGUAGE_OPTIONS = getCodeLanguageOptions()
 
@@ -228,11 +230,11 @@ export const ToolbarPlugin = () => {
   }, [activeEditor, isLink])
 
   const applyStyleText = useCallback(
-    (styles: Record<string, string>) => {
+    (stylesText: Record<string, string>) => {
       activeEditor.update(() => {
         const selection = $getSelection()
         if ($isRangeSelection(selection)) {
-          $patchStyleText(selection, styles)
+          $patchStyleText(selection, stylesText)
         }
       })
     },
@@ -316,7 +318,7 @@ export const ToolbarPlugin = () => {
   )
 
   return (
-    <div className="toolbar">
+    <div className={classNames(styles.toolbar, "toolbar")}>
       <button
         aria-label="Undo"
         className="toolbar-item spaced"
