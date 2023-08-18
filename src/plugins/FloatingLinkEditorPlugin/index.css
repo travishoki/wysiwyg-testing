@@ -1,4 +1,4 @@
-.composer .link-editor {
+.link-editor {
   display: flex;
   position: absolute;
   top: 0;
@@ -14,7 +14,7 @@
   will-change: transform;
 }
 
-.composer .link-editor .button {
+.link-editor .button {
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -24,15 +24,15 @@
   margin: 0 2px;
 }
 
-.composer .link-editor .button.hovered {
+.link-editor .button.hovered {
   width: 20px;
   height: 20px;
   display: inline-block;
   background-color: #eee;
 }
 
-.composer .link-editor .button i,
-.composer .actions i {
+.link-editor .button i,
+.actions i {
   background-size: contain;
   display: inline-block;
   height: 20px;

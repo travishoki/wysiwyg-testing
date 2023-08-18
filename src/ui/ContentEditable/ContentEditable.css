@@ -7,7 +7,7 @@
  *
  */
 
-.composer .ContentEditable__root {
+.ContentEditable__root {
   border: 0;
   font-size: 15px;
   display: block;
@@ -18,7 +18,7 @@
 }
 
 @media (max-width: 1025px) {
-  .composer .ContentEditable__root {
+  .ContentEditable__root {
     padding-left: 20px;
     padding-right: 20px;
   }

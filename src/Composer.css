@@ -1,4 +1,4 @@
-.composer pre {
+pre {
   line-height: 1.1;
   background: #222;
   color: #fff;
@@ -9,23 +9,23 @@
   max-height: 400px;
 }
 
-.composer pre::-webkit-scrollbar {
+pre::-webkit-scrollbar {
   background: transparent;
   width: 10px;
 }
 
-.composer pre::-webkit-scrollbar-thumb {
+pre::-webkit-scrollbar-thumb {
   background: #999;
 }
 
-.composer .typeahead-popover {
+.typeahead-popover {
   background: #fff;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   margin-top: 25px;
 }
 
-.composer .typeahead-popover ul {
+.typeahead-popover ul {
   padding: 0;
   list-style: none;
   margin: 0;
@@ -34,16 +34,16 @@
   overflow-y: scroll;
 }
 
-.composer .typeahead-popover ul::-webkit-scrollbar {
+.typeahead-popover ul::-webkit-scrollbar {
   display: none;
 }
 
-.composer .typeahead-popover ul {
+.typeahead-popover ul {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-.composer .typeahead-popover ul li {
+.typeahead-popover ul li {
   margin: 0;
   min-width: 180px;
   font-size: 14px;
@@ -52,11 +52,11 @@
   border-radius: 8px;
 }
 
-.composer .typeahead-popover ul li.selected {
+.typeahead-popover ul li.selected {
   background: #eee;
 }
 
-.composer .typeahead-popover li {
+.typeahead-popover li {
   margin: 0 8px 0 8px;
   padding: 8px;
   color: #050505;
@@ -72,33 +72,33 @@
   border: 0;
 }
 
-.composer .typeahead-popover li.active {
+.typeahead-popover li.active {
   display: flex;
   width: 20px;
   height: 20px;
   background-size: contain;
 }
 
-.composer .typeahead-popover li:first-child {
+.typeahead-popover li:first-child {
   border-radius: 8px 8px 0px 0px;
 }
 
-.composer .typeahead-popover li:last-child {
+.typeahead-popover li:last-child {
   border-radius: 0px 0px 8px 8px;
 }
 
-.composer .typeahead-popover li:hover {
+.typeahead-popover li:hover {
   background-color: #eee;
 }
 
-.composer .typeahead-popover li .text {
+.typeahead-popover li .text {
   display: flex;
   line-height: 20px;
   flex-grow: 1;
   min-width: 150px;
 }
 
-.composer .typeahead-popover li .icon {
+.typeahead-popover li .icon {
   display: flex;
   width: 20px;
   height: 20px;
@@ -110,87 +110,87 @@
   background-position: center;
 }
 
-.composer .mentions-menu {
+.mentions-menu {
   width: 250px;
 }
 
-.composer .auto-embed-menu {
+.auto-embed-menu {
   width: 150px;
 }
 
-.composer i.palette {
+i.palette {
   background-image: url(images/icons/palette.svg);
 }
 
-.composer i.bucket {
+i.bucket {
   background-image: url(images/icons/paint-bucket.svg);
 }
 
-.composer i.bold {
+i.bold {
   background-image: url(images/icons/type-bold.svg);
 }
 
-.composer i.italic {
+i.italic {
   background-image: url(images/icons/type-italic.svg);
 }
 
-.composer i.clear {
+i.clear {
   background-image: url(images/icons/trash.svg);
 }
 
-.composer i.code {
+i.code {
   background-image: url(images/icons/code.svg);
 }
 
-.composer i.underline {
+i.underline {
   background-image: url(images/icons/type-underline.svg);
 }
 
-.composer i.strikethrough {
+i.strikethrough {
   background-image: url(images/icons/type-strikethrough.svg);
 }
 
-.composer i.subscript {
+i.subscript {
   background-image: url(images/icons/type-subscript.svg);
 }
 
-.composer i.superscript {
+i.superscript {
   background-image: url(images/icons/type-superscript.svg);
 }
 
-.composer i.link {
+i.link {
   background-image: url(images/icons/link.svg);
 }
 
-.composer i.horizontal-rule {
+i.horizontal-rule {
   background-image: url(images/icons/horizontal-rule.svg);
 }
 
-.composer .icon.plus {
+.icon.plus {
   background-image: url(images/icons/plus.svg);
 }
 
-.composer .icon.caret-right {
+.icon.caret-right {
   background-image: url(images/icons/caret-right-fill.svg);
 }
 
-.composer .icon.dropdown-more {
+.icon.dropdown-more {
   background-image: url(images/icons/dropdown-more.svg);
 }
 
-.composer .icon.font-color {
+.icon.font-color {
   background-image: url(images/icons/font-color.svg);
 }
 
-.composer .icon.font-family {
+.icon.font-family {
   background-image: url(images/icons/font-family.svg);
 }
 
-.composer .icon.bg-color {
+.icon.bg-color {
   background-image: url(images/icons/bg-color.svg);
 }
 
-.composer .icon.table {
+.icon.table {
   background-color: #6c757d;
   mask-image: url(images/icons/table.svg);
   -webkit-mask-image: url(images/icons/table.svg);
@@ -200,100 +200,100 @@
   -webkit-mask-size: contain;
 }
 
-.composer i.image {
+i.image {
   background-image: url(images/icons/file-image.svg);
 }
 
-.composer i.table {
+i.table {
   background-image: url(images/icons/table.svg);
 }
 
-.composer i.close {
+i.close {
   background-image: url(images/icons/close.svg);
 }
 
-.composer i.poll {
+i.poll {
   background-image: url(images/icons/card-checklist.svg);
 }
 
-.composer i.youtube {
+i.youtube {
   background-image: url(images/icons/youtube.svg);
 }
 
-.composer .icon.left-align,
-.composer i.left-align {
+.icon.left-align,
+i.left-align {
   background-image: url(images/icons/text-left.svg);
 }
 
-.composer i.center-align {
+i.center-align {
   background-image: url(images/icons/text-center.svg);
 }
 
-.composer i.right-align {
+i.right-align {
   background-image: url(images/icons/text-right.svg);
 }
 
-.composer i.justify-align {
+i.justify-align {
   background-image: url(images/icons/justify.svg);
 }
 
-.composer i.indent {
+i.indent {
   background-image: url(images/icons/indent.svg);
 }
 
-.composer i.markdown {
+i.markdown {
   background-image: url(images/icons/markdown.svg);
 }
 
-.composer i.outdent {
+i.outdent {
   background-image: url(images/icons/outdent.svg);
 }
 
-.composer i.undo {
+i.undo {
   background-image: url(images/icons/arrow-counterclockwise.svg);
 }
 
-.composer i.redo {
+i.redo {
   background-image: url(images/icons/arrow-clockwise.svg);
 }
 
-.composer i.sticky {
+i.sticky {
   background-image: url(images/icons/sticky.svg);
 }
 
-.composer i.mic {
+i.mic {
   background-image: url(images/icons/mic.svg);
 }
 
-.composer i.import {
+i.import {
   background-image: url(images/icons/upload.svg);
 }
 
-.composer i.export {
+i.export {
   background-image: url(images/icons/download.svg);
 }
 
-.composer i.diagram-2 {
+i.diagram-2 {
   background-image: url(images/icons/diagram-2.svg);
 }
 
-.composer i.user {
+i.user {
   background-image: url(images/icons/user.svg);
 }
 
-.composer i.copy {
+i.copy {
   background-image: url(images/icons/copy.svg);
 }
 
-.composer i.success {
+i.success {
   background-image: url(images/icons/success.svg);
 }
 
-.composer i.prettier {
+i.prettier {
   background-image: url(images/icons/prettier.svg);
 }
 
-.composer i.prettier-error {
+i.prettier-error {
   background-image: url(images/icons/prettier-error.svg);
 }
 
@@ -523,54 +523,54 @@
   }
 }
 
-.composer .icon.paragraph {
+.icon.paragraph {
   background-image: url(images/icons/text-paragraph.svg);
 }
 
-.composer .icon.h1 {
+.icon.h1 {
   background-image: url(images/icons/type-h1.svg);
 }
 
-.composer .icon.h2 {
+.icon.h2 {
   background-image: url(images/icons/type-h2.svg);
 }
 
-.composer .icon.h3 {
+.icon.h3 {
   background-image: url(images/icons/type-h3.svg);
 }
 
-.composer .icon.h4 {
+.icon.h4 {
   background-image: url(images/icons/type-h4.svg);
 }
 
-.composer .icon.h5 {
+.icon.h5 {
   background-image: url(images/icons/type-h5.svg);
 }
 
-.composer .icon.h6 {
+.icon.h6 {
   background-image: url(images/icons/type-h6.svg);
 }
 
-.composer .icon.bullet-list,
-.composer .icon.bullet {
+.icon.bullet-list,
+.icon.bullet {
   background-image: url(images/icons/list-ul.svg);
 }
 
-.composer .icon.check-list,
-.composer .icon.check {
+.icon.check-list,
+.icon.check {
   background-image: url(images/icons/square-check.svg);
 }
 
-.composer .icon.numbered-list,
-.composer .icon.number {
+.icon.numbered-list,
+.icon.number {
   background-image: url(images/icons/list-ol.svg);
 }
 
-.composer .icon.quote {
+.icon.quote {
   background-image: url(images/icons/chat-square-quote.svg);
 }
 
-.composer .icon.code {
+.icon.code {
   background-image: url(images/icons/code.svg);
 }
 
@@ -726,47 +726,47 @@
   cursor: nw-resize;
 }
 
-.composer .inline-editor-image {
+.inline-editor-image {
   cursor: default;
   display: inline-block;
   position: relative;
   z-index: 1;
 }
 
-.composer .inline-editor-image img {
+.inline-editor-image img {
   max-width: 100%;
   cursor: default;
 }
 
-.composer .inline-editor-image img.focused {
+.inline-editor-image img.focused {
   outline: 2px solid rgb(60, 132, 244);
 }
 
-.composer .inline-editor-image img.focused.draggable {
+.inline-editor-image img.focused.draggable {
   cursor: grab;
 }
 
-.composer .inline-editor-image img.focused.draggable:active {
+.inline-editor-image img.focused.draggable:active {
   cursor: grabbing;
 }
 
-.composer .inline-editor-image.position-full {
+.inline-editor-image.position-full {
   margin: 1em 0 1em 0;
 }
 
-.composer .inline-editor-image.position-left {
+.inline-editor-image.position-left {
   float: left;
   width: 50%;
   margin: 1em 1em 0 0;
 }
 
-.composer .inline-editor-image.position-right {
+.inline-editor-image.position-right {
   float: right;
   width: 50%;
   margin: 1em 0 0 1em;
 }
 
-.composer .inline-editor-image .image-edit-button {
+.inline-editor-image .image-edit-button {
   display: block;
   position: absolute;
   top: 12px;
@@ -782,11 +782,11 @@
   user-select: none;
 }
 
-.composer .inline-editor-image .image-edit-button:hover {
+.inline-editor-image .image-edit-button:hover {
   background-color: rgba(60, 132, 244, 0.5);
 }
 
-.composer .inline-editor-image .image-caption-container {
+.inline-editor-image .image-caption-container {
   display: block;
   background-color: #f4f4f4;
   min-width: 100%;
@@ -794,7 +794,7 @@
   overflow: hidden;
 }
 
-.composer .emoji {
+.emoji {
   color: transparent;
   caret-color: rgb(5, 5, 5);
   background-size: 16px 16px;
@@ -804,42 +804,42 @@
   margin: 0 -1px;
 }
 
-.composer .emoji-inner {
+.emoji-inner {
   padding: 0 0.15em;
 }
 
-.composer .emoji-inner::selection {
+.emoji-inner::selection {
   color: transparent;
   background-color: rgba(150, 150, 150, 0.4);
 }
 
-.composer .emoji-inner::moz-selection {
+.emoji-inner::moz-selection {
   color: transparent;
   background-color: rgba(150, 150, 150, 0.4);
 }
 
-.composer .emoji.happysmile {
+.emoji.happysmile {
   background-image: url(images/emoji/1F642.png);
 }
 
-.composer .emoji.veryhappysmile {
+.emoji.veryhappysmile {
   background-image: url(images/emoji/1F600.png);
 }
 
-.composer .emoji.unhappysmile {
+.emoji.unhappysmile {
   background-image: url(images/emoji/1F641.png);
 }
 
-.composer .emoji.heart {
+.emoji.heart {
   background-image: url(images/emoji/2764.png);
 }
 
-.composer .keyword {
+.keyword {
   color: rgb(241, 118, 94);
   font-weight: bold;
 }
 
-.composer .actions {
+.actions {
   position: absolute;
   text-align: right;
   margin: 10px;
@@ -847,7 +847,7 @@
   right: 0;
 }
 
-.composer .actions i {
+.actions i {
   background-size: contain;
   display: inline-block;
   height: 15px;
@@ -855,51 +855,51 @@
   vertical-align: -0.25em;
 }
 
-.composer .actions i.indent {
+.actions i.indent {
   background-image: url(images/icons/indent.svg);
 }
 
-.composer .actions i.outdent {
+.actions i.outdent {
   background-image: url(images/icons/outdent.svg);
 }
 
-.composer .actions i.lock {
+.actions i.lock {
   background-image: url(images/icons/lock-fill.svg);
 }
 
-.composer .actions i.image {
+.actions i.image {
   background-image: url(images/icons/file-image.svg);
 }
 
-.composer .actions i.table {
+.actions i.table {
   background-image: url(images/icons/table.svg);
 }
 
-.composer .actions i.unlock {
+.actions i.unlock {
   background-image: url(images/icons/lock.svg);
 }
 
-.composer .actions i.left-align {
+.actions i.left-align {
   background-image: url(images/icons/text-left.svg);
 }
 
-.composer .actions i.center-align {
+.actions i.center-align {
   background-image: url(images/icons/text-center.svg);
 }
 
-.composer .actions i.right-align {
+.actions i.right-align {
   background-image: url(images/icons/text-right.svg);
 }
 
-.composer .actions i.justify-align {
+.actions i.justify-align {
   background-image: url(images/icons/justify.svg);
 }
 
-.composer .actions i.disconnect {
+.actions i.disconnect {
   background-image: url(images/icons/plug.svg);
 }
 
-.composer .actions i.connect {
+.actions i.connect {
   background-image: url(images/icons/plug-fill.svg);
 }
 
@@ -930,7 +930,7 @@ i.chevron-down {
   }
 }
 
-.composer .connecting {
+.connecting {
   font-size: 15px;
   color: #999;
   overflow: hidden;
@@ -944,15 +944,15 @@ i.chevron-down {
   pointer-events: none;
 }
 
-.composer .ltr {
+.ltr {
   text-align: left;
 }
 
-.composer .rtl {
+.rtl {
   text-align: right;
 }
 
-.composer .toolbar {
+.toolbar {
   display: flex;
   margin-bottom: 1px;
   background: #fff;
@@ -967,7 +967,7 @@ i.chevron-down {
   z-index: 2;
 }
 
-.composer .toolbar button.toolbar-item {
+.toolbar button.toolbar-item {
   border: 0;
   display: flex;
   background: none;
@@ -980,15 +980,15 @@ i.chevron-down {
   justify-content: space-between;
 }
 
-.composer .toolbar button.toolbar-item:disabled {
+.toolbar button.toolbar-item:disabled {
   cursor: not-allowed;
 }
 
-.composer .toolbar button.toolbar-item.spaced {
+.toolbar button.toolbar-item.spaced {
   margin-right: 2px;
 }
 
-.composer .toolbar button.toolbar-item i.format {
+.toolbar button.toolbar-item i.format {
   background-size: contain;
   display: inline-block;
   height: 18px;
@@ -998,35 +998,35 @@ i.chevron-down {
   opacity: 0.6;
 }
 
-.composer .toolbar button.toolbar-item:disabled .icon,
-.composer .toolbar button.toolbar-item:disabled .text,
-.composer .toolbar button.toolbar-item:disabled i.format,
-.composer .toolbar button.toolbar-item:disabled .chevron-down {
+.toolbar button.toolbar-item:disabled .icon,
+.toolbar button.toolbar-item:disabled .text,
+.toolbar button.toolbar-item:disabled i.format,
+.toolbar button.toolbar-item:disabled .chevron-down {
   opacity: 0.2;
 }
 
-.composer .toolbar button.toolbar-item.active {
+.toolbar button.toolbar-item.active {
   background-color: rgba(223, 232, 250, 0.3);
 }
 
-.composer .toolbar button.toolbar-item.active i {
+.toolbar button.toolbar-item.active i {
   opacity: 1;
 }
 
-.composer .toolbar .toolbar-item:hover:not([disabled]) {
+.toolbar .toolbar-item:hover:not([disabled]) {
   background-color: #eee;
 }
 
-.composer .toolbar .toolbar-item.font-family .text {
+.toolbar .toolbar-item.font-family .text {
   display: block;
   max-width: 40px;
 }
 
-.composer .toolbar .code-language {
+.toolbar .code-language {
   width: 150px;
 }
 
-.composer .toolbar .toolbar-item .text {
+.toolbar .toolbar-item .text {
   display: flex;
   line-height: 20px;
   vertical-align: middle;
@@ -1039,7 +1039,7 @@ i.chevron-down {
   padding-right: 10px;
 }
 
-.composer .toolbar .toolbar-item .icon {
+.toolbar .toolbar-item .icon {
   display: flex;
   width: 20px;
   height: 20px;
@@ -1049,7 +1049,7 @@ i.chevron-down {
   background-size: contain;
 }
 
-.composer .toolbar i.chevron-down {
+.toolbar i.chevron-down {
   margin-top: 3px;
   width: 16px;
   height: 16px;
@@ -1057,7 +1057,7 @@ i.chevron-down {
   user-select: none;
 }
 
-.composer .toolbar i.chevron-down.inside {
+.toolbar i.chevron-down.inside {
   width: 16px;
   height: 16px;
   display: flex;
@@ -1067,36 +1067,36 @@ i.chevron-down {
   pointer-events: none;
 }
 
-.composer .toolbar .divider {
+.toolbar .divider {
   width: 1px;
   background-color: #eee;
   margin: 0 4px;
 }
 
-.composer .spacer {
+.spacer {
   letter-spacing: -2px;
 }
 
-.composer button.item i {
+button.item i {
   opacity: 0.6;
 }
 
-.composer button.item.dropdown-item-active {
+button.item.dropdown-item-active {
   background-color: rgba(223, 232, 250, 0.3);
 }
 
-.composer button.item.dropdown-item-active i {
+button.item.dropdown-item-active i {
   opacity: 1;
 }
 
-.composer hr {
+hr {
   padding: 2px 2px;
   border: none;
   margin: 1em 0;
   cursor: pointer;
 }
 
-.composer hr:after {
+hr:after {
   content: "";
   display: block;
   height: 2px;
@@ -1104,18 +1104,18 @@ i.chevron-down {
   line-height: 2px;
 }
 
-.composer hr.selected {
+hr.selected {
   outline: 2px solid rgb(60, 132, 244);
   user-select: none;
 }
 
-.composer .ComposerTheme__blockCursor {
+.ComposerTheme__blockCursor {
   display: block;
   pointer-events: none;
   position: absolute;
 }
 
-.composer .ComposerTheme__blockCursor:after {
+.ComposerTheme__blockCursor:after {
   content: "";
   display: block;
   position: absolute;

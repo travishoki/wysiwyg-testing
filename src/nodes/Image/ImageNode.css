@@ -7,6 +7,6 @@
  *
  */
 
-.composer .image-control-wrapper--resizing {
+.image-control-wrapper--resizing {
   touch-action: none;
 }

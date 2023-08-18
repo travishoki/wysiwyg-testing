@@ -1,4 +1,4 @@
-.composer .draggable-block-menu {
+.draggable-block-menu {
   border-radius: 4px;
   padding: 2px 1px;
   cursor: grab;
@@ -9,17 +9,17 @@
   will-change: transform;
 }
 
-.composer .draggable-block-menu .icon {
+.draggable-block-menu .icon {
   width: 16px;
   height: 16px;
   opacity: 0.3;
   background-image: url(../../images/icons/draggable-block-menu.svg);
 }
 
-.composer .draggable-block-menu:active {
+.draggable-block-menu:active {
   cursor: grabbing;
 }
 
-.composer .draggable-block-menu:hover {
+.draggable-block-menu:hover {
   background-color: #efefef;
 }
