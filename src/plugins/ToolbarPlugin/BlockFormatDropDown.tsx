@@ -7,6 +7,7 @@ import {
 } from "@lexical/list"
 import { $createHeadingNode, $createQuoteNode, HeadingTagType } from "@lexical/rich-text"
 import { $setBlocksType } from "@lexical/selection"
+import classNames from "classnames"
 import {
   $createParagraphNode,
   $getSelection,
@@ -19,6 +20,7 @@ import { DropDown } from "../../ui/DropDown/DropDown"
 import { DropDownItem } from "../../ui/DropDown/DropDownItem"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"
 import { dropDownActiveClass } from "./helpers"
+import stylesToolbar from "./index.module.scss"
 
 type BlockFormatDropDownProps = {
   _rootType: keyof typeof rootTypeToRootName
@@ -111,7 +113,7 @@ export const BlockFormatDropDown = ({
   return (
     <DropDown
       buttonAriaLabel="Formatting options for text style"
-      buttonClassName="toolbar-item block-controls"
+      buttonClassName={classNames(stylesToolbar["toolbar-item"], "block-controls")}
       buttonIconClassName={"icon block-type " + blockType}
       buttonLabel={blockTypeToBlockName[blockType]}
       disabled={disabled}

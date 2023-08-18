@@ -1,9 +1,11 @@
 import React, { useCallback } from "react"
 import { $patchStyleText } from "@lexical/selection"
+import classNames from "classnames"
 import { $getSelection, $isRangeSelection, LexicalEditor } from "lexical"
 import { DropDown } from "../../ui/DropDown/DropDown"
 import { DropDownItem } from "../../ui/DropDown/DropDownItem"
 import { dropDownActiveClass } from "./helpers"
+import stylesToolbar from "./index.module.scss"
 
 const FONT_FAMILY_OPTIONS: [string, string][] = [
   ["Arial", "Arial"],
@@ -58,7 +60,7 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
   return (
     <DropDown
       buttonAriaLabel={buttonAriaLabel}
-      buttonClassName={"toolbar-item " + styleName}
+      buttonClassName={classNames(stylesToolbar["toolbar-item"], styleName)}
       buttonIconClassName={styleName === "font-family" ? "icon block-type font-family" : ""}
       buttonLabel={value}
       disabled={disabled}
