@@ -59,7 +59,6 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
   createDOM(): HTMLElement {
     const element = document.createElement("div")
-    element.className = "merge-field-component"
 
     return element
   }

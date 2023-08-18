@@ -27,23 +27,25 @@ const MergeFieldComponent = ({
 
   return (
     <Suspense fallback={<ComposerNodeFallback />}>
-      <div className={styles["merge-field-component-inner"]}>
-        <div className={styles["merge-field-component-content"]}>
-          <img
-            alt="icon"
-            className={styles["svg-icon"]}
-            height="15"
-            src={mergeFieldIconUrl}
-            width="15"
-          />
-          <p className={styles["title"]}>{formatMergeFieldTitle(mergeFieldId)}</p>
-        </div>
+      <div className={styles["merge-field"]}>
+        <div className={styles["inner"]}>
+          <div className={styles["content"]}>
+            <img
+              alt="icon"
+              className={styles["svg-icon"]}
+              height="15"
+              src={mergeFieldIconUrl}
+              width="15"
+            />
+            <p className={styles["title"]}>{formatMergeFieldTitle(mergeFieldId)}</p>
+          </div>
 
-        {isEditable && (
-          <button className={styles["button-close"]} onClick={onClickClose}>
-            <img alt="close" height="15" src={ImageClose} width="15" />
-          </button>
-        )}
+          {isEditable && (
+            <button className={styles["button-close"]} onClick={onClickClose}>
+              <img alt="close" height="15" src={ImageClose} width="15" />
+            </button>
+          )}
+        </div>
       </div>
     </Suspense>
   )
