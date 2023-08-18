@@ -43,26 +43,6 @@
   background-color: #eee;
 }
 
-.floating-text-format-popup select.popup-item {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  background: none;
-  border-radius: 10px;
-  border: 0;
-  color: #777;
-  display: flex;
-  font-size: 14px;
-  padding: 8px;
-  text-overflow: ellipsis;
-  vertical-align: middle;
-  width: 70px;
-}
-
-.floating-text-format-popup select.code-language {
-  text-transform: capitalize;
-  width: 130px;
-}
-
 .floating-text-format-popup .popup-item .text {
   color: #777;
   display: flex;
@@ -109,10 +89,4 @@
   background-color: #eee;
   margin: 0 4px;
   width: 1px;
-}
-
-@media (max-width: 1024px) {
-  .floating-text-format-popup button.insert-comment {
-    display: none;
-  }
 }
