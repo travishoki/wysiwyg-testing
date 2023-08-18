@@ -12,10 +12,10 @@ import {
   LexicalTypeaheadMenuPlugin,
   useBasicTypeaheadTriggerMatch,
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
-import classNames from "classnames"
 import { $createTextNode, $getSelection, $isRangeSelection, TextNode } from "lexical"
 import { noop } from "lodash"
 import * as ReactDOM from "react-dom"
+import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { EmojiMenuItem } from "./EmojiMenuItem"
 import { EmojiOption } from "./EmojiOption"
 import styles from "./index.module.scss"
@@ -105,7 +105,7 @@ export const EmojiPickerPlugin = () => {
 
         return anchorElementRef.current && options.length
           ? ReactDOM.createPortal(
-              <div className={classNames("typeahead-popover", styles["emoji-menu"])}>
+              <TypeaheadPopover className={styles["emoji-menu"]}>
                 <ul>
                   {options.map((option: EmojiOption, index) => (
                     <div key={option.key}>
@@ -124,7 +124,7 @@ export const EmojiPickerPlugin = () => {
                     </div>
                   ))}
                 </ul>
-              </div>,
+              </TypeaheadPopover>,
               anchorElementRef.current,
             )
           : null

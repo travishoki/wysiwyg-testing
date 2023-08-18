@@ -22,7 +22,6 @@ import {
 import { $createHeadingNode, $createQuoteNode } from "@lexical/rich-text"
 import { $setBlocksType } from "@lexical/selection"
 import { INSERT_TABLE_COMMAND } from "@lexical/table"
-import classNames from "classnames"
 import {
   $createParagraphNode,
   $getSelection,
@@ -31,6 +30,11 @@ import {
   TextNode,
 } from "lexical"
 import * as ReactDOM from "react-dom"
+import { Icon } from "../../Icon/Icon"
+import { IconAlignment } from "../../Icon/IconAlignment"
+import { IconHeading } from "../../Icon/IconHeading"
+import { alignmentTypes } from "../../Icon/types"
+import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { useModal } from "../../hooks/useModal"
 import { InsertImageDialog } from "../ImagesPlugin/InsertImageDialog"
 import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog"
@@ -38,6 +42,8 @@ import { InsertTableDialog } from "../TablePlugin/InsertTableDialog"
 import { ComponentPickerMenuItem } from "./ComponentPickerMenuItem"
 import { ComponentPickerOption } from "./ComponentPickerOption"
 import styles from "./index.module.scss"
+
+const alignmentList: alignmentTypes[] = ["left", "center", "right", "justify"]
 
 export const ComponentPickerPlugin = () => {
   const [editor] = useLexicalComposerContext()
@@ -66,7 +72,7 @@ export const ComponentPickerPlugin = () => {
 
       options.push(
         new ComponentPickerOption(`${rows}x${columns} Table`, {
-          icon: <i className="icon table" />,
+          icon: <Icon type="table" />,
           keywords: ["table"],
           onSelect: () =>
             // @ts-ignore Correct types, but since they're dynamic TS doesn't like it.
@@ -80,7 +86,7 @@ export const ComponentPickerPlugin = () => {
         ...Array.from({ length: 5 }, (_, i) => i + 1).map(
           (columns) =>
             new ComponentPickerOption(`${rows}x${columns} Table`, {
-              icon: <i className="icon table" />,
+              icon: <Icon type="table" />,
               keywords: ["table"],
               onSelect: () =>
                 // @ts-ignore Correct types, but since they're dynamic TS doesn't like it.
@@ -96,7 +102,7 @@ export const ComponentPickerPlugin = () => {
   const options = useMemo(() => {
     const baseOptions = [
       new ComponentPickerOption("Paragraph", {
-        icon: <i className="icon paragraph" />,
+        icon: <Icon type="paragraph" />,
         keywords: ["normal", "paragraph", "p", "text"],
         onSelect: () =>
           editor.update(() => {
@@ -109,7 +115,7 @@ export const ComponentPickerPlugin = () => {
       ...Array.from({ length: 3 }, (_, i) => i + 1).map(
         (n) =>
           new ComponentPickerOption(`Heading ${n}`, {
-            icon: <i className={`icon h${n}`} />,
+            icon: <IconHeading num={n} />,
             keywords: ["heading", "header", `h${n}`],
             onSelect: () =>
               editor.update(() => {
@@ -124,7 +130,7 @@ export const ComponentPickerPlugin = () => {
           }),
       ),
       new ComponentPickerOption("Table", {
-        icon: <i className="icon table" />,
+        icon: <Icon type="table" />,
         keywords: ["table", "grid", "spreadsheet", "rows", "columns"],
         onSelect: () =>
           showModal("Insert Table", (onClose) => (
@@ -132,7 +138,7 @@ export const ComponentPickerPlugin = () => {
           )),
       }),
       new ComponentPickerOption("Table (Experimental)", {
-        icon: <i className="icon table" />,
+        icon: <Icon type="table" />,
         keywords: ["table", "grid", "spreadsheet", "rows", "columns"],
         onSelect: () =>
           showModal("Insert Table", (onClose) => (
@@ -140,22 +146,22 @@ export const ComponentPickerPlugin = () => {
           )),
       }),
       new ComponentPickerOption("Numbered List", {
-        icon: <i className="icon number" />,
+        icon: <Icon type="number" />,
         keywords: ["numbered list", "ordered list", "ol"],
         onSelect: () => editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined),
       }),
       new ComponentPickerOption("Bulleted List", {
-        icon: <i className="icon bullet" />,
+        icon: <Icon type="bullet" />,
         keywords: ["bulleted list", "unordered list", "ul"],
         onSelect: () => editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined),
       }),
       new ComponentPickerOption("Check List", {
-        icon: <i className="icon check" />,
+        icon: <Icon type="check" />,
         keywords: ["check list", "todo list"],
         onSelect: () => editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined),
       }),
       new ComponentPickerOption("Quote", {
-        icon: <i className="icon quote" />,
+        icon: <Icon type="quote" />,
         keywords: ["block quote"],
         onSelect: () =>
           editor.update(() => {
@@ -166,7 +172,7 @@ export const ComponentPickerPlugin = () => {
           }),
       }),
       new ComponentPickerOption("Code", {
-        icon: <i className="icon code" />,
+        icon: <Icon type="code" />,
         keywords: ["javascript", "python", "js", "codeblock"],
         onSelect: () =>
           editor.update(() => {
@@ -186,22 +192,22 @@ export const ComponentPickerPlugin = () => {
           }),
       }),
       new ComponentPickerOption("Divider", {
-        icon: <i className="icon horizontal-rule" />,
+        icon: <Icon type="horizontal-rule" />,
         keywords: ["horizontal rule", "divider", "hr"],
         onSelect: () => editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined),
       }),
       new ComponentPickerOption("Image", {
-        icon: <i className="icon image" />,
+        icon: <Icon type="image" />,
         keywords: ["image", "photo", "picture", "file"],
         onSelect: () =>
           showModal("Insert Image", (onClose) => (
             <InsertImageDialog activeEditor={editor} onClose={onClose} />
           )),
       }),
-      ...["left", "center", "right", "justify"].map(
+      ...alignmentList.map(
         (alignment) =>
           new ComponentPickerOption(`Align ${alignment}`, {
-            icon: <i className={`icon ${alignment}-align`} />,
+            icon: <IconAlignment type={alignment} />,
             keywords: ["align", "justify", alignment],
             onSelect: () =>
               // @ts-ignore Correct types, but since they're dynamic TS doesn't like it.
@@ -252,7 +258,7 @@ export const ComponentPickerPlugin = () => {
         ) =>
           anchorElementRef.current && options.length
             ? ReactDOM.createPortal(
-                <div className={classNames("typeahead-popover", styles["component-picker-menu"])}>
+                <TypeaheadPopover className={styles["component-picker-menu"]}>
                   <ul>
                     {options.map((option, i: number) => (
                       <ComponentPickerMenuItem
@@ -270,7 +276,7 @@ export const ComponentPickerPlugin = () => {
                       />
                     ))}
                   </ul>
-                </div>,
+                </TypeaheadPopover>,
                 anchorElementRef.current,
               )
             : null

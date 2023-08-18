@@ -1,5 +1,6 @@
 import React from "react"
 import { AutoEmbedOption } from "@lexical/react/LexicalAutoEmbedPlugin"
+import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { AutoEmbedMenuItem } from "./AutoEmbedMenuItem"
 
 type AutoEmbedMenuProps = {
@@ -16,7 +17,7 @@ export const AutoEmbedMenu = ({
   selectedItemIndex,
 }: AutoEmbedMenuProps) => {
   return (
-    <div className="typeahead-popover">
+    <TypeaheadPopover>
       <ul>
         {options.map((option: AutoEmbedOption, i: number) => (
           <AutoEmbedMenuItem
@@ -29,6 +30,6 @@ export const AutoEmbedMenu = ({
           />
         ))}
       </ul>
-    </div>
+    </TypeaheadPopover>
   )
 }

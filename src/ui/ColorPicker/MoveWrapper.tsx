@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { CSSProperties, useRef } from "react"
 import { clamp } from "../../helpers/numbers"
 
 export interface Position {
@@ -10,7 +10,7 @@ interface MoveWrapperProps {
   children: JSX.Element
   className?: string
   onChange: (position: Position) => void
-  style?: React.CSSProperties
+  style?: CSSProperties
 }
 
 export const MoveWrapper = ({ children, className, onChange, style }: MoveWrapperProps) => {

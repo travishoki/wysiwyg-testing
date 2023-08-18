@@ -9,6 +9,7 @@
 import React from "react"
 import { AutoEmbedOption, LexicalAutoEmbedPlugin } from "@lexical/react/LexicalAutoEmbedPlugin"
 import * as ReactDOM from "react-dom"
+import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { useModal } from "../../hooks/useModal"
 import { AutoEmbedDialog } from "./AutoEmbedDialog"
 import { AutoEmbedMenu } from "./AutoEmbedMenu"
@@ -52,8 +53,8 @@ export const AutoEmbedPlugin = () => {
         ) =>
           anchorElementRef.current
             ? ReactDOM.createPortal(
-                <div
-                  className="typeahead-popover auto-embed-menu"
+                <TypeaheadPopover
+                  className="auto-embed-menu"
                   style={{
                     marginLeft: anchorElementRef.current.style.width,
                     width: 200,
@@ -70,7 +71,7 @@ export const AutoEmbedPlugin = () => {
                     options={options}
                     selectedItemIndex={selectedIndex}
                   />
-                </div>,
+                </TypeaheadPopover>,
                 anchorElementRef.current,
               )
             : null

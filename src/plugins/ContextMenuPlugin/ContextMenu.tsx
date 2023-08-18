@@ -1,4 +1,5 @@
 import React from "react"
+import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { ContextMenuItem } from "./ContextMenuItem"
 import { ContextMenuOption } from "./ContextMenuOption"
 
@@ -16,7 +17,7 @@ export const ContextMenu = ({
   selectedItemIndex,
 }: ContextMenuProps) => {
   return (
-    <div className="typeahead-popover">
+    <TypeaheadPopover>
       <ul>
         {options.map((option: ContextMenuOption, i: number) => (
           <ContextMenuItem
@@ -29,6 +30,6 @@ export const ContextMenu = ({
           />
         ))}
       </ul>
-    </div>
+    </TypeaheadPopover>
   )
 }

@@ -15,6 +15,7 @@ import {
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
 import { TextNode } from "lexical"
 import * as ReactDOM from "react-dom"
+import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { $createMentionNode } from "../../nodes/Mention/MentionNode"
 import { MentionTypeaheadOption } from "./MentionTypeaheadOption"
 import { MentionsTypeaheadMenuItem } from "./MentionsTypeaheadMenuItem"
@@ -644,7 +645,7 @@ export const MentionsPlugin = (): JSX.Element | null => {
       ) =>
         anchorElementRef.current && results.length
           ? ReactDOM.createPortal(
-              <div className="typeahead-popover mentions-menu">
+              <TypeaheadPopover className="mentions-menu">
                 <ul>
                   {options.map((option, i: number) => (
                     <MentionsTypeaheadMenuItem
@@ -662,7 +663,7 @@ export const MentionsPlugin = (): JSX.Element | null => {
                     />
                   ))}
                 </ul>
-              </div>,
+              </TypeaheadPopover>,
               anchorElementRef.current,
             )
           : null
