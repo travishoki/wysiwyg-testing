@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef } from "react"
 import { TOGGLE_LINK_COMMAND } from "@lexical/link"
 import { mergeRegister } from "@lexical/utils"
+import classNames from "classnames"
 import {
   $getSelection,
   COMMAND_PRIORITY_LOW,
@@ -12,6 +13,7 @@ import { getDOMRangeRect } from "../../utils/getDOMRangeRect"
 import { setFloatingElemPosition } from "../../utils/setFloatingElemPosition"
 import { INSERT_INLINE_IMAGE_COMMAND } from "../InlineImagePlugin/const"
 import styles from "./TextFormatFloatingToolbar.module.scss"
+import "./TextFormatFloatingToolbar.css"
 
 type TextFormatFloatingToolbarProps = {
   anchorElem: HTMLElement
@@ -158,7 +160,10 @@ export const TextFormatFloatingToolbar = ({
   }, [editor, updateTextFormatFloatingToolbar])
 
   return (
-    <div className={styles["floating-text-format-popup"]} ref={popupCharStylesEditorRef}>
+    <div
+      className={classNames(styles["floating-text-format-popup"], "floating-text-format-popup")}
+      ref={popupCharStylesEditorRef}
+    >
       {editor.isEditable() && (
         <>
           <button
