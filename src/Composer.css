@@ -297,12 +297,12 @@ i.prettier-error {
   background-image: url(images/icons/prettier-error.svg);
 }
 
-.compose .link-editor .button.active,
+.link-editor .button.active,
 .toolbar .button.active {
   background-color: rgb(223, 232, 250);
 }
 
-.compose .link-editor .link-input {
+.link-editor .link-input {
   display: block;
   width: calc(100% - 75px);
   box-sizing: border-box;
@@ -318,7 +318,7 @@ i.prettier-error {
   font-family: inherit;
 }
 
-.compose .link-editor .link-view {
+.link-editor .link-view {
   display: block;
   width: calc(100% - 24px);
   margin: 8px 12px;
@@ -332,13 +332,13 @@ i.prettier-error {
   font-family: inherit;
 }
 
-.compose .link-editor .link-view a {
+.link-editor .link-view a {
   display: block;
   word-break: break-word;
   width: calc(100% - 33px);
 }
 
-.compose .link-editor div.link-edit {
+.link-editor div.link-edit {
   background-image: url(images/icons/pencil-fill.svg);
   background-size: 16px;
   background-position: center;
@@ -352,7 +352,7 @@ i.prettier-error {
   cursor: pointer;
 }
 
-.compose .link-editor div.link-trash {
+.link-editor div.link-trash {
   background-image: url(images/icons/trash.svg);
   background-size: 16px;
   background-position: center;
@@ -366,7 +366,7 @@ i.prettier-error {
   cursor: pointer;
 }
 
-.compose .link-editor div.link-cancel {
+.link-editor div.link-cancel {
   background-image: url(images/icons/close.svg);
   background-size: 16px;
   background-position: center;
@@ -381,7 +381,7 @@ i.prettier-error {
   cursor: pointer;
 }
 
-.compose .link-editor div.link-confirm {
+.link-editor div.link-confirm {
   background-image: url(images/icons/success-alt.svg);
   background-size: 16px;
   background-position: center;
@@ -396,7 +396,7 @@ i.prettier-error {
   cursor: pointer;
 }
 
-.compose .link-editor .link-input a {
+.link-editor .link-input a {
   color: rgb(33, 111, 219);
   text-decoration: underline;
   white-space: nowrap;
@@ -405,12 +405,12 @@ i.prettier-error {
   text-overflow: ellipsis;
 }
 
-.compose .link-editor .link-input a:hover {
+.link-editor .link-input a:hover {
   text-decoration: underline;
 }
 
-.compose .link-editor .font-size-wrapper,
-.compose .link-editor .font-family-wrapper {
+.link-editor .font-size-wrapper,
+.link-editor .font-family-wrapper {
   display: flex;
   margin: 0 4px;
 }
@@ -586,32 +586,32 @@ i.prettier-error {
   }
 }
 
-.compose .editor-image {
+.editor-image {
   cursor: default;
   display: inline-block;
   position: relative;
   user-select: none;
 }
 
-.compose .editor-image img {
+.editor-image img {
   max-width: 100%;
   cursor: default;
 }
 
-.compose .editor-image img.focused {
+.editor-image img.focused {
   outline: 2px solid rgb(60, 132, 244);
   user-select: none;
 }
 
-.compose .editor-image img.focused.draggable {
+.editor-image img.focused.draggable {
   cursor: grab;
 }
 
-.compose .editor-image img.focused.draggable:active {
+.editor-image img.focused.draggable:active {
   cursor: grabbing;
 }
 
-.compose .editor-image .image-caption-container {
+.editor-image .image-caption-container {
   display: block;
   position: absolute;
   bottom: 4px;
@@ -626,7 +626,7 @@ i.prettier-error {
   overflow: hidden;
 }
 
-.compose .editor-image .image-caption-button {
+.editor-image .image-caption-button {
   display: block;
   position: absolute;
   bottom: 20px;
@@ -644,11 +644,11 @@ i.prettier-error {
   user-select: none;
 }
 
-.compose .editor-image .image-caption-button:hover {
+.editor-image .image-caption-button:hover {
   background-color: rgba(60, 132, 244, 0.5);
 }
 
-.compose .editor-image .image-edit-button {
+.editor-image .image-edit-button {
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   background-image: url(/src/images/icons/pencil-fill.svg);
@@ -665,11 +665,11 @@ i.prettier-error {
   user-select: none;
 }
 
-.compose .editor-image .image-edit-button:hover {
+.editor-image .image-edit-button:hover {
   background-color: rgba(60, 132, 244, 0.1);
 }
 
-.compose .editor-image .image-resizer {
+.editor-image .image-resizer {
   display: block;
   width: 7px;
   height: 7px;
@@ -678,49 +678,49 @@ i.prettier-error {
   border: 1px solid #fff;
 }
 
-.compose .editor-image .image-resizer.image-resizer-n {
+.editor-image .image-resizer.image-resizer-n {
   top: -6px;
   left: 48%;
   cursor: n-resize;
 }
 
-.compose .editor-image .image-resizer.image-resizer-ne {
+.editor-image .image-resizer.image-resizer-ne {
   top: -6px;
   right: -6px;
   cursor: ne-resize;
 }
 
-.compose .editor-image .image-resizer.image-resizer-e {
+.editor-image .image-resizer.image-resizer-e {
   bottom: 48%;
   right: -6px;
   cursor: e-resize;
 }
 
-.compose .editor-image .image-resizer.image-resizer-se {
+.editor-image .image-resizer.image-resizer-se {
   bottom: -2px;
   right: -6px;
   cursor: nwse-resize;
 }
 
-.compose .editor-image .image-resizer.image-resizer-s {
+.editor-image .image-resizer.image-resizer-s {
   bottom: -2px;
   left: 48%;
   cursor: s-resize;
 }
 
-.compose .editor-image .image-resizer.image-resizer-sw {
+.editor-image .image-resizer.image-resizer-sw {
   bottom: -2px;
   left: -6px;
   cursor: sw-resize;
 }
 
-.compose .editor-image .image-resizer.image-resizer-w {
+.editor-image .image-resizer.image-resizer-w {
   bottom: 48%;
   left: -6px;
   cursor: w-resize;
 }
 
-.compose .editor-image .image-resizer.image-resizer-nw {
+.editor-image .image-resizer.image-resizer-nw {
   top: -6px;
   left: -6px;
   cursor: nw-resize;
