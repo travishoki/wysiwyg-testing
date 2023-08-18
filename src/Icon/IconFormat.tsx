@@ -1,6 +1,7 @@
 import React from "react"
 import classNames from "classnames"
-import styles from "./Icon.module.scss"
+import stylesIcon from "./Icon.module.scss"
+import styles from "./IconFormat.module.scss"
 import { iconType } from "./types"
 
 type IconFormatProps = {
@@ -8,5 +9,5 @@ type IconFormatProps = {
 }
 
 export const IconFormat = ({ type }: IconFormatProps) => {
-  return <i className={classNames("format", styles[type])} />
+  return <i className={classNames(styles.format, stylesIcon[type])} />
 }
