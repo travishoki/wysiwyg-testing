@@ -324,7 +324,7 @@ export const ToolbarPlugin = () => {
     <div className={styles.toolbar}>
       <button
         aria-label="Undo"
-        className={classNames(styles["toolbar-item"], "spaced")}
+        className={classNames(styles["toolbar-item"], styles.spaced)}
         disabled={!canUndo || !isEditable}
         onClick={() => {
           activeEditor.dispatchCommand(UNDO_COMMAND, undefined)
@@ -394,7 +394,7 @@ export const ToolbarPlugin = () => {
           <Divider />
           <button
             aria-label={`Format text as bold. Shortcut: ${IS_APPLE ? "⌘B" : "Ctrl+B"}`}
-            className={classNames(styles["toolbar-item"], "spaced " + (isBold ? "active" : ""))}
+            className={classNames(styles["toolbar-item"], styles.spaced, isBold ? "active" : "")}
             disabled={!isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")
@@ -406,7 +406,7 @@ export const ToolbarPlugin = () => {
           </button>
           <button
             aria-label={`Format text as italics. Shortcut: ${IS_APPLE ? "⌘I" : "Ctrl+I"}`}
-            className={classNames(styles["toolbar-item"], "spaced " + (isItalic ? "active" : ""))}
+            className={classNames(styles["toolbar-item"], styles.spaced, isItalic ? "active" : "")}
             disabled={!isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic")
@@ -420,7 +420,8 @@ export const ToolbarPlugin = () => {
             aria-label={`Format text to underlined. Shortcut: ${IS_APPLE ? "⌘U" : "Ctrl+U"}`}
             className={classNames(
               styles["toolbar-item"],
-              "spaced " + (isUnderline ? "active" : ""),
+              styles.spaced,
+              isUnderline ? "active" : "",
             )}
             disabled={!isEditable}
             onClick={() => {
@@ -433,7 +434,7 @@ export const ToolbarPlugin = () => {
           </button>
           <button
             aria-label="Insert code block"
-            className={classNames(styles["toolbar-item"], "spaced " + (isCode ? "active" : ""))}
+            className={classNames(styles["toolbar-item"], styles.spaced, isCode ? "active" : "")}
             disabled={!isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "code")
@@ -445,7 +446,7 @@ export const ToolbarPlugin = () => {
           </button>
           <button
             aria-label="Insert link"
-            className={classNames(styles["toolbar-item"], "spaced " + (isLink ? "active" : ""))}
+            className={classNames(styles["toolbar-item"], styles.spaced, isLink ? "active" : "")}
             disabled={!isEditable}
             onClick={insertLink}
             title="Insert link"
@@ -473,7 +474,7 @@ export const ToolbarPlugin = () => {
           />
           <DropDown
             buttonAriaLabel="Formatting options for additional text styles"
-            buttonClassName={classNames(styles["toolbar-item"], "spaced")}
+            buttonClassName={classNames(styles["toolbar-item"], styles.spaced)}
             buttonIconClassName={classNames("icon", iconStyles["dropdown-more"])}
             buttonLabel=""
             disabled={!isEditable}
@@ -526,7 +527,7 @@ export const ToolbarPlugin = () => {
             <>
               <DropDown
                 buttonAriaLabel="Open table toolkit"
-                buttonClassName={classNames(styles["toolbar-item"], "spaced")}
+                buttonClassName={classNames(styles["toolbar-item"], styles.spaced)}
                 buttonIconClassName={classNames("icon", iconStyles["table"], "secondary")}
                 buttonLabel="Table"
                 disabled={!isEditable}
@@ -545,7 +546,7 @@ export const ToolbarPlugin = () => {
           )}
           <DropDown
             buttonAriaLabel="Insert specialized editor node"
-            buttonClassName={classNames(styles["toolbar-item"], "spaced")}
+            buttonClassName={classNames(styles["toolbar-item"], styles.spaced)}
             buttonIconClassName={classNames("icon", iconStyles["plus"])}
             buttonLabel="Insert"
             disabled={!isEditable}
@@ -609,7 +610,7 @@ export const ToolbarPlugin = () => {
       <Divider />
       <DropDown
         buttonAriaLabel="Formatting options for text alignment"
-        buttonClassName={classNames(styles["toolbar-item"], "spaced alignment")}
+        buttonClassName={classNames(styles["toolbar-item"], styles.spaced, "alignment")}
         buttonIconClassName={classNames("icon", iconStyles["left-align"])}
         buttonLabel="Align"
         disabled={!isEditable}

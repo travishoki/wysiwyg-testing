@@ -39,10 +39,6 @@
     cursor: not-allowed;
   }
 
-  &.spaced {
-    margin-right: 2px;
-  }
-
   &:disabled {
     .icon,
     .text,
@@ -118,4 +114,8 @@
       pointer-events: none;
     }
   }
+}
+
+.spaced {
+  margin-right: 2px;
 }
