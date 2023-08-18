@@ -22,6 +22,7 @@ import * as ReactDOM from "react-dom"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { ContextMenu } from "./ContextMenu"
 import { ContextMenuOption } from "./ContextMenuOption"
+import styles from "./index.module.scss"
 
 export const ContextMenuPlugin = () => {
   const [editor] = useLexicalComposerContext()
@@ -134,7 +135,7 @@ export const ContextMenuPlugin = () => {
         anchorElementRef.current
           ? ReactDOM.createPortal(
               <TypeaheadPopover
-                className="auto-embed-menu"
+                className={styles["auto-embed-menu"]}
                 ref={setMenuRef}
                 style={{
                   marginLeft: anchorElementRef.current.style.width,

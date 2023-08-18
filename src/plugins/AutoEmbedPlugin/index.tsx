@@ -14,6 +14,7 @@ import { useModal } from "../../hooks/useModal"
 import { AutoEmbedDialog } from "./AutoEmbedDialog"
 import { AutoEmbedMenu } from "./AutoEmbedMenu"
 import { PlaygroundEmbedConfig } from "./PlaygroundEmbedConfig"
+import styles from "./index.module.scss"
 
 const EmbedConfigs: PlaygroundEmbedConfig[] = []
 
@@ -54,7 +55,7 @@ export const AutoEmbedPlugin = () => {
           anchorElementRef.current
             ? ReactDOM.createPortal(
                 <TypeaheadPopover
-                  className="auto-embed-menu"
+                  className={styles["auto-embed-menu"]}
                   style={{
                     marginLeft: anchorElementRef.current.style.width,
                     width: 200,

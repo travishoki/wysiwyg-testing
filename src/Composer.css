@@ -22,10 +22,6 @@ pre::-webkit-scrollbar-thumb {
   width: 250px;
 }
 
-.auto-embed-menu {
-  width: 150px;
-}
-
 .link-editor .button.active,
 .toolbar .button.active {
   background-color: rgb(223, 232, 250);
