@@ -15,6 +15,7 @@ import {
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
 import { TextNode } from "lexical"
 import * as ReactDOM from "react-dom"
+import { Icon } from "../../Icon/Icon"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { $createMentionNode } from "../../nodes/Mention/MentionNode"
 import { MentionTypeaheadOption } from "./MentionTypeaheadOption"
@@ -602,7 +603,7 @@ export const MentionsPlugin = (): JSX.Element | null => {
   const options = useMemo(
     () =>
       results
-        .map((result) => new MentionTypeaheadOption(result, <i className="icon user" />))
+        .map((result) => new MentionTypeaheadOption(result, <Icon type="user" />))
         .slice(0, SUGGESTION_LIST_LENGTH_LIMIT),
     [results],
   )

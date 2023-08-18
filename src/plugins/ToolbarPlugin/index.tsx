@@ -48,6 +48,7 @@ import {
   SELECTION_CHANGE_COMMAND,
   UNDO_COMMAND,
 } from "lexical"
+import { Icon } from "../../Icon/Icon"
 import { useModal } from "../../hooks/useModal"
 import { IS_APPLE } from "../../shared/environment"
 import { DropdownColorPicker } from "../../ui/DropDown/ColorPicker"
@@ -480,7 +481,7 @@ export const ToolbarPlugin = () => {
               }}
               title="Strikethrough"
             >
-              <i className="icon strikethrough" />
+              <Icon type="strikethrough" />
               <span className="text">Strikethrough</span>
             </DropDownItem>
             <DropDownItem
@@ -491,7 +492,7 @@ export const ToolbarPlugin = () => {
               }}
               title="Subscript"
             >
-              <i className="icon subscript" />
+              <Icon type="subscript" />
               <span className="text">Subscript</span>
             </DropDownItem>
             <DropDownItem
@@ -502,7 +503,7 @@ export const ToolbarPlugin = () => {
               }}
               title="Superscript"
             >
-              <i className="icon superscript" />
+              <Icon type="superscript" />
               <span className="text">Superscript</span>
             </DropDownItem>
             <DropDownItem
@@ -511,7 +512,7 @@ export const ToolbarPlugin = () => {
               onClick={clearFormatting}
               title="Clear text formatting"
             >
-              <i className="icon clear" />
+              <Icon type="clear" />
               <span className="text">Clear Formatting</span>
             </DropDownItem>
           </DropDown>
@@ -550,7 +551,7 @@ export const ToolbarPlugin = () => {
                 activeEditor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined)
               }}
             >
-              <i className="icon horizontal-rule" />
+              <Icon type="horizontal-rule" />
               <span className="text">Horizontal Rule</span>
             </DropDownItem>
             <DropDownItem
@@ -561,7 +562,7 @@ export const ToolbarPlugin = () => {
                 ))
               }}
             >
-              <i className="icon image" />
+              <Icon type="image" />
               <span className="text">Image</span>
             </DropDownItem>
             <DropDownItem
@@ -572,7 +573,7 @@ export const ToolbarPlugin = () => {
                 ))
               }}
             >
-              <i className="icon image" />
+              <Icon type="image" />
               <span className="text">Inline Image</span>
             </DropDownItem>
             <DropDownItem
@@ -583,7 +584,7 @@ export const ToolbarPlugin = () => {
                 ))
               }}
             >
-              <i className="icon table" />
+              <Icon type="table" />
               <span className="text">Table</span>
             </DropDownItem>
             <DropDownItem
@@ -594,7 +595,7 @@ export const ToolbarPlugin = () => {
                 ))
               }}
             >
-              <i className="icon table" />
+              <Icon type="table" />
               <span className="text">Table (Experimental)</span>
             </DropDownItem>
           </DropDown>
@@ -614,7 +615,7 @@ export const ToolbarPlugin = () => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "left")
           }}
         >
-          <i className="icon left-align" />
+          <Icon type="left-align" />
           <span className="text">Left Align</span>
         </DropDownItem>
         <DropDownItem
@@ -623,7 +624,7 @@ export const ToolbarPlugin = () => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "center")
           }}
         >
-          <i className="icon center-align" />
+          <Icon type="center-align" />
           <span className="text">Center Align</span>
         </DropDownItem>
         <DropDownItem
@@ -632,7 +633,7 @@ export const ToolbarPlugin = () => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "right")
           }}
         >
-          <i className="icon right-align" />
+          <Icon type="right-align" />
           <span className="text">Right Align</span>
         </DropDownItem>
         <DropDownItem
@@ -641,7 +642,7 @@ export const ToolbarPlugin = () => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "justify")
           }}
         >
-          <i className="icon justify-align" />
+          <Icon type="justify-align" />
           <span className="text">Justify Align</span>
         </DropDownItem>
         <Divider />

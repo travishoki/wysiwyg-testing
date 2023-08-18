@@ -14,6 +14,7 @@ import {
   DEPRECATED_$isGridSelection,
   LexicalEditor,
 } from "lexical"
+import { Icon } from "../../Icon/Icon"
 import { DropDown } from "../../ui/DropDown/DropDown"
 import { DropDownItem } from "../../ui/DropDown/DropDownItem"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"
@@ -119,63 +120,63 @@ export const BlockFormatDropDown = ({
         className={"item " + dropDownActiveClass(blockType === "paragraph")}
         onClick={formatParagraph}
       >
-        <i className="icon paragraph" />
+        <Icon type="paragraph" />
         <span className="text">Normal</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "h1")}
         onClick={() => formatHeading("h1")}
       >
-        <i className="icon h1" />
+        <Icon type="h1" />
         <span className="text">Heading 1</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "h2")}
         onClick={() => formatHeading("h2")}
       >
-        <i className="icon h2" />
+        <Icon type="h2" />
         <span className="text">Heading 2</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "h3")}
         onClick={() => formatHeading("h3")}
       >
-        <i className="icon h3" />
+        <Icon type="h3" />
         <span className="text">Heading 3</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "bullet")}
         onClick={formatBulletList}
       >
-        <i className="icon bullet-list" />
+        <Icon type="bullet-list" />
         <span className="text">Bullet List</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "number")}
         onClick={formatNumberedList}
       >
-        <i className="icon numbered-list" />
+        <Icon type="numbered-list" />
         <span className="text">Numbered List</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "check")}
         onClick={formatCheckList}
       >
-        <i className="icon check-list" />
+        <Icon type="check-list" />
         <span className="text">Check List</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "quote")}
         onClick={formatQuote}
       >
-        <i className="icon quote" />
+        <Icon type="quote" />
         <span className="text">Quote</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "code")}
         onClick={formatCode}
       >
-        <i className="icon code" />
+        <Icon type="code" />
         <span className="text">Code Block</span>
       </DropDownItem>
     </DropDown>
