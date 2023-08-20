@@ -1,13 +1,77 @@
 .link-trash {
   background-image: url(../../images/icons/trash.svg);
-  background-size: 16px;
   background-position: center;
   background-repeat: no-repeat;
-  width: 35px;
-  vertical-align: -0.25em;
+  background-size: 16px;
+  bottom: 0;
+  cursor: pointer;
   position: absolute;
   right: 0;
   top: 0;
+  vertical-align: -0.25em;
+  width: 35px;
+}
+
+.link-cancel {
+  background-image: url(../../images/icons/close.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px;
   bottom: 0;
   cursor: pointer;
+  margin-right: 28px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  vertical-align: -0.25em;
+  width: 35px;
+}
+
+.link-edit {
+  background-image: url(../../images/icons/pencil-fill.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  bottom: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 0;
+  vertical-align: -0.25em;
+  width: 35px;
+}
+
+.link-confirm {
+  background-image: url(../../images/icons/success-alt.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  bottom: 0;
+  cursor: pointer;
+  margin-right: 2px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  vertical-align: -0.25em;
+  width: 35px;
+}
+
+.link-editor .link-view {
+  border-radius: 15px;
+  border: 0;
+  color: rgb(5, 5, 5);
+  display: block;
+  font-family: inherit;
+  font-size: 15px;
+  margin: 8px 12px;
+  outline: 0;
+  padding: 8px 12px;
+  position: relative;
+  width: calc(100% - 24px);
+
+  a {
+    display: block;
+    width: calc(100% - 33px);
+    word-break: break-word;
+  }
 }
