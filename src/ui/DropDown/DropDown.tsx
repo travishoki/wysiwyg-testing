@@ -11,6 +11,7 @@ import classNames from "classnames"
 import { createPortal } from "react-dom"
 import { IconBare } from "../../Icon/IconBare"
 import stylesToolbar from "../../plugins/ToolbarPlugin/index.module.scss"
+import styles from "./DropDown.module.scss"
 import { DropDownItems } from "./DropDownItems"
 
 const dropDownPadding = 4
@@ -111,7 +112,13 @@ export const DropDown = ({
       >
         {buttonIconClassName && <span className={buttonIconClassName} />}
         {buttonLabel && (
-          <span className={classNames(stylesToolbar["text"], "dropdown-button-text")}>
+          <span
+            className={classNames(
+              stylesToolbar["text"],
+              "dropdown-button-text",
+              styles["dropdown-button-text"],
+            )}
+          >
             {buttonLabel}
           </span>
         )}
