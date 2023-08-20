@@ -342,21 +342,21 @@ hr.selected {
 }
 
 /* Emoji */
-.composer__emoji-inner {
+.composer__emojiInner {
   padding: 0 0.15em;
 }
 
-.composer__emoji-inner::selection {
+.composer__emojiInner::selection {
   background-color: rgba(150, 150, 150, 0.4);
   color: transparent;
 }
 
-.composer__emoji-inner::moz-selection {
+.composer__emojiInner::moz-selection {
   background-color: rgba(150, 150, 150, 0.4);
   color: transparent;
 }
 
 /* ImageNode */
-.composer__image-resizer {
+.composer__imageResizer {
   touch-action: none;
 }
