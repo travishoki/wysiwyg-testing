@@ -140,7 +140,7 @@ export const ImageResizer = ({
       setStartCursor(direction)
       onResizeStart()
 
-      controlWrapper.classList.add("composer-image-resizer")
+      controlWrapper.classList.add("composer__image-resizer")
       image.style.height = `${height}px`
       image.style.width = `${width}px`
 
@@ -203,7 +203,7 @@ export const ImageResizer = ({
       positioning.currentHeight = 0
       positioning.isResizing = false
 
-      controlWrapper.classList.remove("composer-image-resizer")
+      controlWrapper.classList.remove("composer__image-resizer")
 
       setEndCursor()
       onResizeEnd(width, height)

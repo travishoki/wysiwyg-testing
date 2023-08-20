@@ -42,7 +42,7 @@ export class EmojiNode extends TextNode {
     const dom = document.createElement("span")
     const inner = super.createDOM(config)
     dom.className = this.__className
-    inner.className = "composer-emoji-inner"
+    inner.className = "composer__emoji-inner"
     dom.appendChild(inner)
 
     return dom

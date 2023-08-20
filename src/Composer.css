@@ -162,7 +162,7 @@ pre::-webkit-scrollbar-thumb {
   width: 7px;
 }
 
-.composer-inline-editor-image {
+.composer__inline-editor-image {
   border: solid 1px red;
   cursor: default;
   display: inline-block;
@@ -170,34 +170,34 @@ pre::-webkit-scrollbar-thumb {
   z-index: 1;
 }
 
-.composer-inline-editor-image img {
+.composer__inline-editor-image img {
   cursor: default;
   max-width: 100%;
 }
 
-.composer-inline-editor-image img.focused {
+.composer__inline-editor-image img.focused {
   outline: 2px solid rgb(60, 132, 244);
 }
 
-.composer-inline-editor-image img.focused.draggable {
+.composer__inline-editor-image img.focused.draggable {
   cursor: grab;
 }
 
-.composer-inline-editor-image img.focused.draggable:active {
+.composer__inline-editor-image img.focused.draggable:active {
   cursor: grabbing;
 }
 
-.composer-inline-editor-image.position-full {
+.composer__inline-editor-image.position-full {
   margin: 1em 0 1em 0;
 }
 
-.composer-inline-editor-image.position-left {
+.composer__inline-editor-image.position-left {
   float: left;
   margin: 1em 1em 0 0;
   width: 50%;
 }
 
-.composer-inline-editor-image.position-right {
+.composer__inline-editor-image.position-right {
   float: right;
   margin: 1em 0 0 1em;
   width: 50%;
@@ -359,21 +359,21 @@ hr.selected {
 /* Styles that need to stay in css */
 
 /* ImageNode */
-.composer-image-resizer {
+.composer__image-resizer {
   touch-action: none;
 }
 
 /* Emoji */
-.composer-emoji-inner {
+.composer__emoji-inner {
   padding: 0 0.15em;
 }
 
-.composer-emoji-inner::selection {
+.composer__emoji-inner::selection {
   background-color: rgba(150, 150, 150, 0.4);
   color: transparent;
 }
 
-.composer-emoji-inner::moz-selection {
+.composer__emoji-inner::moz-selection {
   background-color: rgba(150, 150, 150, 0.4);
   color: transparent;
 }
