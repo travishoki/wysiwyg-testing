@@ -10,6 +10,7 @@ import React, { DragEvent as ReactDragEvent, useEffect, useRef, useState } from 
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { eventFiles } from "@lexical/rich-text"
 import { mergeRegister } from "@lexical/utils"
+import classNames from "classnames"
 import {
   $getNearestNodeFromDOMNode,
   $getNodeByKey,
@@ -34,8 +35,6 @@ import {
 } from "./const"
 import { getCollapsedMargins, getTopLevelNodeKeys, isOnMenu } from "./helpers"
 import styles from "./index.module.scss"
-import "./index.css"
-import classNames from "classnames"
 
 let prevIndex = Infinity
 
