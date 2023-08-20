@@ -258,10 +258,6 @@ i.chevron-down {
   width: 8px;
 }
 
-.action-button-mic.active {
-  animation: mic-pulsate-color 3s infinite;
-}
-
 @keyframes mic-pulsate-color {
   0% {
     background-color: #ffdcdc;
