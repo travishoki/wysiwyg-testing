@@ -316,6 +316,15 @@ hr.selected {
   user-select: none;
 }
 
+@keyframes CursorBlink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* Styles that need to stay in css */
+
+/* blockCursor */
 .composer__blockCursor {
   display: block;
   pointer-events: none;
@@ -332,19 +341,6 @@ hr.selected {
   width: 20px;
 }
 
-@keyframes CursorBlink {
-  to {
-    visibility: hidden;
-  }
-}
-
-/* Styles that need to stay in css */
-
-/* ImageNode */
-.composer__image-resizer {
-  touch-action: none;
-}
-
 /* Emoji */
 .composer__emoji-inner {
   padding: 0 0.15em;
@@ -358,4 +354,9 @@ hr.selected {
 .composer__emoji-inner::moz-selection {
   background-color: rgba(150, 150, 150, 0.4);
   color: transparent;
+}
+
+/* ImageNode */
+.composer__image-resizer {
+  touch-action: none;
 }
