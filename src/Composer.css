@@ -272,20 +272,6 @@ i.chevron-down {
   }
 }
 
-.connecting {
-  color: #999;
-  display: inline-block;
-  font-size: 15px;
-  left: 10px;
-  overflow: hidden;
-  pointer-events: none;
-  position: absolute;
-  text-overflow: ellipsis;
-  top: 10px;
-  user-select: none;
-  white-space: nowrap;
-}
-
 .ltr {
   text-align: left;
 }
