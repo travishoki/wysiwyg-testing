@@ -16,6 +16,7 @@ import {
   LexicalEditor,
 } from "lexical"
 import { Icon } from "../../Icon/Icon"
+import styleIcon from "../../Icon/Icon.module.scss"
 import { DropDown } from "../../ui/DropDown/DropDown"
 import { DropDownItem } from "../../ui/DropDown/DropDownItem"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"
@@ -114,7 +115,7 @@ export const BlockFormatDropDown = ({
     <DropDown
       buttonAriaLabel="Formatting options for text style"
       buttonClassName={classNames(stylesToolbar["toolbar-item"], "block-controls")}
-      buttonIconClassName={classNames(stylesToolbar.icon, "block-type", blockType)}
+      buttonIconClassName={classNames(stylesToolbar.icon, "block-type", styleIcon[blockType])}
       buttonLabel={blockTypeToBlockName[blockType]}
       disabled={disabled}
     >
