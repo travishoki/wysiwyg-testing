@@ -16,6 +16,7 @@ import {
 import { getSelectedNode } from "../../utils/getSelectedNode"
 import { setFloatingElemPositionForLinkEditor } from "../../utils/setFloatingElemPositionForLinkEditor"
 import { sanitizeUrl } from "../../utils/url"
+import styles from "./FloatingLinkEditor.module.scss"
 
 type FloatingLinkEditorProps = {
   anchorElem: HTMLElement
@@ -232,7 +233,7 @@ export const FloatingLinkEditor = ({
           />
           <div
             aria-label="trash"
-            className="link-trash"
+            className={styles["link-trash"]}
             onClick={() => {
               editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)
             }}
