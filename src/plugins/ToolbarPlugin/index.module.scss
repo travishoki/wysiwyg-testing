@@ -77,16 +77,6 @@
     padding-right: 10px;
   }
 
-  .icon {
-    display: flex;
-    width: 20px;
-    height: 20px;
-    user-select: none;
-    margin-right: 8px;
-    line-height: 16px;
-    background-size: contain;
-  }
-
   i.format {
     background-size: contain;
     display: inline-block;
@@ -118,4 +108,14 @@
 
 .spaced {
   margin-right: 2px;
+}
+
+.icon {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  user-select: none;
+  margin-right: 8px;
+  line-height: 16px;
+  background-size: contain;
 }

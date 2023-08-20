@@ -481,7 +481,7 @@ export const ToolbarPlugin = () => {
           >
             <DropDownItem
               aria-label="Format text with a strikethrough"
-              className={classNames("item ", dropDownActiveClass(isStrikethrough))}
+              className={classNames("item", dropDownActiveClass(isStrikethrough))}
               onClick={() => {
                 activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "strikethrough")
               }}
