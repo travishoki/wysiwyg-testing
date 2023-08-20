@@ -219,20 +219,6 @@ pre::-webkit-scrollbar-thumb {
   vertical-align: middle;
 }
 
-.composer-emoji-inner {
-  padding: 0 0.15em;
-}
-
-.composer-emoji-inner::selection {
-  background-color: rgba(150, 150, 150, 0.4);
-  color: transparent;
-}
-
-.composer-emoji-inner::moz-selection {
-  background-color: rgba(150, 150, 150, 0.4);
-  color: transparent;
-}
-
 .emoji.happysmile {
   background-image: url(images/emoji/1F642.png);
 }
@@ -381,4 +367,19 @@ hr.selected {
 /* ImageNode */
 .composer-image-resizer {
   touch-action: none;
+}
+
+/* Emoji */
+.composer-emoji-inner {
+  padding: 0 0.15em;
+}
+
+.composer-emoji-inner::selection {
+  background-color: rgba(150, 150, 150, 0.4);
+  color: transparent;
+}
+
+.composer-emoji-inner::moz-selection {
+  background-color: rgba(150, 150, 150, 0.4);
+  color: transparent;
 }
