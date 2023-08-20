@@ -217,7 +217,7 @@ export const ImageResizer = ({
     <div ref={controlWrapperRef}>
       {!showCaption && captionsEnabled && (
         <button
-          className={styles["image-caption-button"]}
+          className={styles.imageCaptionButton}
           onClick={() => {
             setShowCaption(!showCaption)
           }}

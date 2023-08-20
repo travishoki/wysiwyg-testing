@@ -8,7 +8,7 @@ type InputLabelProps = {
 
 export const InputLabel = ({ children, style }: InputLabelProps) => {
   return (
-    <div className={styles["Input__label"]} style={style}>
+    <div className={styles.inputLabel} style={style}>
       {children}
     </div>
   )

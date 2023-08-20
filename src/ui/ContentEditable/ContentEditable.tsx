@@ -19,9 +19,7 @@ type ContentEditableProps = {
 export const ContentEditable = ({ className }: ContentEditableProps) => {
   return (
     <LexicalContentEditable
-      className={
-        className || classNames("composer__ContentEditable__root", styles["contentEditable"])
-      }
+      className={className || classNames("composer__ContentEditable__root", styles.contentEditable)}
     />
   )
 }

@@ -6,5 +6,5 @@ type InputWrapperProps = {
 }
 
 export const InputWrapper = ({ children }: InputWrapperProps) => {
-  return <div className={styles["Input__wrapper"]}>{children}</div>
+  return <div className={styles.inputWrapper}>{children}</div>
 }

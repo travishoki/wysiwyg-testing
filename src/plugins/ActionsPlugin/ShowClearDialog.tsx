@@ -12,7 +12,7 @@ export const ShowClearDialog = ({ editor, onClose }: ShowClearDialogProps) => {
   return (
     <>
       Are you sure you want to clear the editor?
-      <div className={styles["Modal__content"]}>
+      <div className={styles.modalContent}>
         <Button
           onClick={() => {
             editor.dispatchCommand(CLEAR_EDITOR_COMMAND, undefined)
