@@ -4,10 +4,10 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import classNames from "classnames"
 import { $getNearestNodeFromDOMNode } from "lexical"
 import { getMouseInfo } from "./CodeActionMenuContainer.helpers"
+import styles from "./CodeActionMenuContainer.module.scss"
 import { CopyButton } from "./components/CopyButton"
 import { PrettierButton, canBePrettier } from "./components/PrettierButton"
 import { useDebounce } from "./utils"
-import styles from "./CodeActionMenuContainer.module.scss"
 
 const CODE_PADDING = 8
 

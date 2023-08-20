@@ -9,12 +9,19 @@
 import React, {
   ContentEditable as LexicalContentEditable,
 } from "@lexical/react/LexicalContentEditable"
-import "./ContentEditable.css"
+import classNames from "classnames"
+import styles from "./ContentEditable.module.scss"
 
 type ContentEditableProps = {
   className?: string
 }
 
 export const ContentEditable = ({ className }: ContentEditableProps) => {
-  return <LexicalContentEditable className={className || "ContentEditable__root"} />
+  return (
+    <LexicalContentEditable
+      className={
+        className || classNames("composer-ContentEditable__root", styles["contentEditable"])
+      }
+    />
+  )
 }
