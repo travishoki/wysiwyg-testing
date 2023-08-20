@@ -30,3 +30,11 @@
   user-select: none;
   white-space: nowrap;
 }
+
+.image-caption-container {
+  display: block;
+  background-color: #f4f4f4;
+  min-width: 100%;
+  color: #000;
+  overflow: hidden;
+}

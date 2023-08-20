@@ -275,7 +275,7 @@ const ImageComponent = ({
           />
         </div>
         {showCaption && (
-          <div className="image-caption-container">
+          <div className={styles["image-caption-container"]}>
             <LexicalNestedComposer initialEditor={caption}>
               <AutoFocusPlugin />
               <MentionsPlugin />
