@@ -114,7 +114,7 @@ export const Editor = () => {
   return (
     <>
       <ToolbarPlugin />
-      <div className={styles["editor-container"]}>
+      <div className={styles.editorContainer}>
         {isMaxLength && <MaxLengthPlugin maxLength={30} />}
         <DragDropPaste />
         <AutoFocusPlugin />
@@ -131,7 +131,7 @@ export const Editor = () => {
         <RichTextPlugin
           ErrorBoundary={LexicalErrorBoundary}
           contentEditable={
-            <div className={styles["editor-scroller"]}>
+            <div className={styles.editorScroller}>
               <div className={styles.editor} ref={onRef}>
                 <ContentEditable />
               </div>

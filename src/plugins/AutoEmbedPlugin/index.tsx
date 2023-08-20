@@ -55,7 +55,7 @@ export const AutoEmbedPlugin = () => {
           anchorElementRef.current
             ? ReactDOM.createPortal(
                 <TypeaheadPopover
-                  className={styles["auto-embed-menu"]}
+                  className={styles.autoEmbedMenu}
                   style={{
                     marginLeft: anchorElementRef.current.style.width,
                     width: 200,

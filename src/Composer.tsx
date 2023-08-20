@@ -34,7 +34,7 @@ export const Composer = ({ composerRef, setOutput }: ComposerProps) => {
         <SharedHistoryContext>
           <TableContext>
             <SharedAutocompleteContext>
-              <div className={styles["editor-shell"]}>
+              <div className={styles.editorShell}>
                 <MergeFieldHandler composerRef={composerRef} />
                 <Editor />
                 <Controls onSubmit={setOutput} />
