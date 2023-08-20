@@ -1,12 +1,12 @@
 pre {
-  line-height: 1.1;
   background: #222;
   color: #fff;
-  margin: 0;
-  padding: 10px;
   font-size: 12px;
-  overflow: auto;
+  line-height: 1.1;
+  margin: 0;
   max-height: 400px;
+  overflow: auto;
+  padding: 10px;
 }
 
 pre::-webkit-scrollbar {
@@ -18,34 +18,37 @@ pre::-webkit-scrollbar-thumb {
   background: #999;
 }
 
-.link-editor .button.active,
+.link-editor .button.active {
+  background-color: rgb(223, 232, 250);
+}
+
 .toolbar .button.active {
   background-color: rgb(223, 232, 250);
 }
 
 .link-editor .link-input {
-  display: block;
-  width: calc(100% - 75px);
-  box-sizing: border-box;
-  margin: 12px 12px;
-  padding: 8px 12px;
-  border-radius: 15px;
   background-color: #eee;
-  font-size: 15px;
-  color: rgb(5, 5, 5);
+  border-radius: 15px;
   border: 0;
-  outline: 0;
-  position: relative;
+  box-sizing: border-box;
+  color: rgb(5, 5, 5);
+  display: block;
   font-family: inherit;
+  font-size: 15px;
+  margin: 12px 12px;
+  outline: 0;
+  padding: 8px 12px;
+  position: relative;
+  width: calc(100% - 75px);
 }
 
 .link-editor .link-input a {
   color: rgb(33, 111, 219);
-  text-decoration: underline;
-  white-space: nowrap;
-  overflow: hidden;
   margin-right: 30px;
+  overflow: hidden;
+  text-decoration: underline;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .link-editor .link-input a:hover {
@@ -59,10 +62,10 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .link-editor select {
-  padding: 6px;
-  border: none;
   background-color: rgba(0, 0, 0, 0.075);
   border-radius: 4px;
+  border: none;
+  padding: 6px;
 }
 
 .mention:focus {
@@ -71,35 +74,35 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .dropdown {
-  z-index: 10;
-  display: block;
-  position: fixed;
+  background-color: #fff;
+  border-radius: 8px;
   box-shadow:
     0 12px 28px 0 rgba(0, 0, 0, 0.2),
     0 2px 4px 0 rgba(0, 0, 0, 0.1),
     inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
+  display: block;
   min-height: 40px;
-  background-color: #fff;
+  position: fixed;
+  z-index: 10;
 }
 
 .dropdown .item {
-  margin: 0 8px 0 8px;
-  padding: 8px;
-  color: #050505;
-  cursor: pointer;
-  line-height: 16px;
-  font-size: 15px;
-  display: flex;
   align-content: center;
-  flex-direction: row;
-  flex-shrink: 0;
-  justify-content: space-between;
   background-color: #fff;
   border-radius: 8px;
   border: 0;
+  color: #050505;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-size: 15px;
+  justify-content: space-between;
+  line-height: 16px;
+  margin: 0 8px 0 8px;
   max-width: 250px;
   min-width: 100px;
+  padding: 8px;
 }
 
 .dropdown .item.fontsize-item,
@@ -108,10 +111,10 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .dropdown .item .active {
-  display: flex;
-  width: 20px;
-  height: 20px;
   background-size: contain;
+  display: flex;
+  height: 20px;
+  width: 20px;
 }
 
 .dropdown .item:first-child {
@@ -128,28 +131,28 @@ pre::-webkit-scrollbar-thumb {
 
 .dropdown .item .text {
   display: flex;
-  line-height: 20px;
   flex-grow: 1;
+  line-height: 20px;
   min-width: 150px;
 }
 
 .dropdown .item .icon {
-  display: flex;
-  width: 20px;
-  height: 20px;
-  user-select: none;
-  margin-right: 12px;
-  line-height: 16px;
-  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  height: 20px;
+  line-height: 16px;
+  margin-right: 12px;
+  user-select: none;
+  width: 20px;
 }
 
 .dropdown .divider {
-  width: auto;
   background-color: #eee;
-  margin: 4px 8px;
   height: 1px;
+  margin: 4px 8px;
+  width: auto;
 }
 
 @media screen and (max-width: 1100px) {
@@ -186,8 +189,8 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .editor-image img {
-  max-width: 100%;
   cursor: default;
+  max-width: 100%;
 }
 
 .editor-image img.focused {
@@ -204,12 +207,12 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .editor-image .image-resizer {
-  display: block;
-  width: 7px;
-  height: 7px;
-  position: absolute;
   background-color: rgb(60, 132, 244);
   border: 1px solid #fff;
+  display: block;
+  height: 7px;
+  position: absolute;
+  width: 7px;
 }
 
 .inline-editor-image {
@@ -220,8 +223,8 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .inline-editor-image img {
-  max-width: 100%;
   cursor: default;
+  max-width: 100%;
 }
 
 .inline-editor-image img.focused {
@@ -242,24 +245,24 @@ pre::-webkit-scrollbar-thumb {
 
 .inline-editor-image.position-left {
   float: left;
-  width: 50%;
   margin: 1em 1em 0 0;
+  width: 50%;
 }
 
 .inline-editor-image.position-right {
   float: right;
-  width: 50%;
   margin: 1em 0 0 1em;
+  width: 50%;
 }
 
 .emoji {
-  color: transparent;
-  caret-color: rgb(5, 5, 5);
-  background-size: 16px 16px;
   background-position: center;
   background-repeat: no-repeat;
-  vertical-align: middle;
+  background-size: 16px 16px;
+  caret-color: rgb(5, 5, 5);
+  color: transparent;
   margin: 0 -1px;
+  vertical-align: middle;
 }
 
 .emoji-inner {
@@ -267,13 +270,13 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .emoji-inner::selection {
-  color: transparent;
   background-color: rgba(150, 150, 150, 0.4);
+  color: transparent;
 }
 
 .emoji-inner::moz-selection {
-  color: transparent;
   background-color: rgba(150, 150, 150, 0.4);
+  color: transparent;
 }
 
 .emoji.happysmile {
@@ -298,19 +301,19 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .actions {
-  position: absolute;
-  text-align: right;
-  margin: 10px;
   bottom: 0;
+  margin: 10px;
+  position: absolute;
   right: 0;
+  text-align: right;
 }
 
 .actions i {
   background-size: contain;
   display: inline-block;
   height: 15px;
-  width: 15px;
   vertical-align: -0.25em;
+  width: 15px;
 }
 
 i.chevron-down {
@@ -340,17 +343,17 @@ i.chevron-down {
 }
 
 .connecting {
-  font-size: 15px;
   color: #999;
+  display: inline-block;
+  font-size: 15px;
+  left: 10px;
   overflow: hidden;
+  pointer-events: none;
   position: absolute;
   text-overflow: ellipsis;
   top: 10px;
-  left: 10px;
   user-select: none;
   white-space: nowrap;
-  display: inline-block;
-  pointer-events: none;
 }
 
 .ltr {
@@ -378,17 +381,17 @@ button.item.dropdown-item-active i {
 }
 
 hr {
-  padding: 2px 2px;
   border: none;
-  margin: 1em 0;
   cursor: pointer;
+  margin: 1em 0;
+  padding: 2px 2px;
 }
 
 hr:after {
+  background-color: #ccc;
   content: "";
   display: block;
   height: 2px;
-  background-color: #ccc;
   line-height: 2px;
 }
 
@@ -404,13 +407,13 @@ hr.selected {
 }
 
 .ComposerTheme__blockCursor:after {
+  animation: CursorBlink 1.1s steps(2, start) infinite;
+  border-top: 1px solid black;
   content: "";
   display: block;
   position: absolute;
   top: -2px;
   width: 20px;
-  border-top: 1px solid black;
-  animation: CursorBlink 1.1s steps(2, start) infinite;
 }
 
 @keyframes CursorBlink {
