@@ -7,6 +7,7 @@
  */
 
 import React from "react"
+import classNames from "classnames"
 import "./Select.css"
 import { InputLabel } from "../Input/InputLabel"
 import { InputWrapper } from "../Input/InputWrapper"
@@ -22,7 +23,10 @@ export const Select = ({ children, className, label, ...other }: SelectProps) =>
   return (
     <InputWrapper>
       <InputLabel style={{ marginTop: "-1em" }}>{label}</InputLabel>
-      <select {...other} className={className || styles["select"]}>
+      <select
+        {...other}
+        className={classNames(styles["select"], className || styles["select-general"])}
+      >
         {children}
       </select>
     </InputWrapper>

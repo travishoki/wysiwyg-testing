@@ -1,4 +1,20 @@
 .select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  outline: none;
+  padding: 0 1em 0 0;
+  z-index: 1;
+}
+
+.select-general {
   background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
   border-radius: 0.25em;
   border: 1px solid var(--select-border);
