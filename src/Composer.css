@@ -162,7 +162,7 @@ pre::-webkit-scrollbar-thumb {
   width: 7px;
 }
 
-.composer__inline-editor-image {
+.composer__inlineEditorImage {
   border: solid 1px red;
   cursor: default;
   display: inline-block;
@@ -170,34 +170,34 @@ pre::-webkit-scrollbar-thumb {
   z-index: 1;
 }
 
-.composer__inline-editor-image img {
+.composer__inlineEditorImage img {
   cursor: default;
   max-width: 100%;
 }
 
-.composer__inline-editor-image img.focused {
+.composer__inlineEditorImage img.focused {
   outline: 2px solid rgb(60, 132, 244);
 }
 
-.composer__inline-editor-image img.focused.draggable {
+.composer__inlineEditorImage img.focused.draggable {
   cursor: grab;
 }
 
-.composer__inline-editor-image img.focused.draggable:active {
+.composer__inlineEditorImage img.focused.draggable:active {
   cursor: grabbing;
 }
 
-.composer__inline-editor-image.position-full {
+.composer__inlineEditorImage.position-full {
   margin: 1em 0 1em 0;
 }
 
-.composer__inline-editor-image.position-left {
+.composer__inlineEditorImage.position-left {
   float: left;
   margin: 1em 1em 0 0;
   width: 50%;
 }
 
-.composer__inline-editor-image.position-right {
+.composer__inlineEditorImage.position-right {
   float: right;
   margin: 1em 0 0 1em;
   width: 50%;
