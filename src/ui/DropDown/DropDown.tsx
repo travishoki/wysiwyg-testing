@@ -7,9 +7,10 @@
  */
 
 import React, { ReactNode, useEffect, useRef, useState } from "react"
+import classNames from "classnames"
 import { createPortal } from "react-dom"
 import { IconBare } from "../../Icon/IconBare"
-import toolbarStyles from "../../plugins/ToolbarPlugin/index.module.scss"
+import stylesToolbar from "../../plugins/ToolbarPlugin/index.module.scss"
 import { DropDownItems } from "./DropDownItems"
 
 const dropDownPadding = 4
@@ -109,8 +110,12 @@ export const DropDown = ({
         type="button"
       >
         {buttonIconClassName && <span className={buttonIconClassName} />}
-        {buttonLabel && <span className="text dropdown-button-text">{buttonLabel}</span>}
-        <IconBare className={toolbarStyles["chevron-down"]} type="chevron-down" />
+        {buttonLabel && (
+          <span className={classNames(stylesToolbar["text"], "dropdown-button-text")}>
+            {buttonLabel}
+          </span>
+        )}
+        <IconBare className={stylesToolbar["chevron-down"]} type="chevron-down" />
       </button>
 
       {showDropDown &&
