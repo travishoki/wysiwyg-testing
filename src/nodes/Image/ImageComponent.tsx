@@ -47,7 +47,6 @@ import { Placeholder } from "../../ui/Placeholder/Placeholder"
 import styles from "./ImageComponent.module.scss"
 import { $isImageNode } from "./ImageNode"
 import { LazyImage } from "./LazyImage"
-import "./ImageNode.css"
 
 type ImageComponentProps = {
   altText: string

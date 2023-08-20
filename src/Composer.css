@@ -375,3 +375,10 @@ hr.selected {
     visibility: hidden;
   }
 }
+
+/* Styles that need to stay in css */
+
+/* ImageNode */
+.composer-image-resizer {
+  touch-action: none;
+}
