@@ -29,6 +29,7 @@ import {
 } from "lexical"
 import { createPortal } from "react-dom"
 import { ColorPicker } from "../../ui/ColorPicker/ColorPicker"
+import stylesDropdown from "../../ui/DropDown/DropDown.module.scss"
 import {
   $canUnmerge,
   $cellContainsEmptyParagraph,
@@ -347,7 +348,7 @@ export const TableActionMenu = ({
     if (canMergeCells) {
       mergeCellButton = (
         <button
-          className="item"
+          className={stylesDropdown["dropdownItem"]}
           data-test-id="table-merge-cells"
           onClick={() => mergeTableCellsAtSelection()}
         >
@@ -357,7 +358,7 @@ export const TableActionMenu = ({
     } else if (canUnmergeCell) {
       mergeCellButton = (
         <button
-          className="item"
+          className={stylesDropdown["dropdownItem"]}
           data-test-id="table-unmerge-cells"
           onClick={() => unmergeTableCellsAtSelection()}
         >
@@ -370,7 +371,7 @@ export const TableActionMenu = ({
   return createPortal(
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      className="dropdown"
+      className={stylesDropdown["dropdown"]}
       onClick={(e) => {
         e.stopPropagation()
       }}
@@ -378,7 +379,7 @@ export const TableActionMenu = ({
     >
       {mergeCellButton}
       <button
-        className="item"
+        className={stylesDropdown["dropdownItem"]}
         data-test-id="table-background-color"
         onClick={() =>
           showColorPickerModal("Cell background color", () => (
@@ -390,7 +391,7 @@ export const TableActionMenu = ({
       </button>
       <hr />
       <button
-        className="item"
+        className={stylesDropdown["dropdownItem"]}
         data-test-id="table-insert-row-above"
         onClick={() => insertTableRowAtSelection(false)}
       >
@@ -399,7 +400,7 @@ export const TableActionMenu = ({
         </span>
       </button>
       <button
-        className="item"
+        className={stylesDropdown["dropdownItem"]}
         data-test-id="table-insert-row-below"
         onClick={() => insertTableRowAtSelection(true)}
       >
@@ -409,7 +410,7 @@ export const TableActionMenu = ({
       </button>
       <hr />
       <button
-        className="item"
+        className={stylesDropdown["dropdownItem"]}
         data-test-id="table-insert-column-before"
         onClick={() => insertTableColumnAtSelection(false)}
       >
@@ -419,7 +420,7 @@ export const TableActionMenu = ({
         </span>
       </button>
       <button
-        className="item"
+        className={stylesDropdown["dropdownItem"]}
         data-test-id="table-insert-column-after"
         onClick={() => insertTableColumnAtSelection(true)}
       >
@@ -430,14 +431,14 @@ export const TableActionMenu = ({
       </button>
       <hr />
       <button
-        className="item"
+        className={stylesDropdown["dropdownItem"]}
         data-test-id="table-delete-columns"
         onClick={() => deleteTableColumnAtSelection()}
       >
         <span className="text">Delete column</span>
       </button>
       <button
-        className="item"
+        className={stylesDropdown["dropdownItem"]}
         data-test-id="table-delete-rows"
         onClick={() => deleteTableRowAtSelection()}
       >

@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react"
+import stylesDropdown from "./DropDown.module.scss"
 import { DropDownContext } from "./types"
 
 type DropDownItemsProps = {
@@ -64,7 +65,7 @@ export const DropDownItems = ({ children, dropDownRef, onClose }: DropDownItemsP
 
   return (
     <DropDownContext.Provider value={contextValue}>
-      <div className="dropdown" onKeyDown={handleKeyDown} ref={dropDownRef}>
+      <div className={stylesDropdown["dropdown"]} onKeyDown={handleKeyDown} ref={dropDownRef}>
         {children}
       </div>
     </DropDownContext.Provider>

@@ -18,6 +18,7 @@ import {
 import { Icon } from "../../Icon/Icon"
 import styleIcon from "../../Icon/Icon.module.scss"
 import { DropDown } from "../../ui/DropDown/DropDown"
+import stylesDropdown from "../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../ui/DropDown/DropDownItem"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"
 import { dropDownActiveClass } from "./helpers"
@@ -120,63 +121,90 @@ export const BlockFormatDropDown = ({
       disabled={disabled}
     >
       <DropDownItem
-        className={classNames("item", dropDownActiveClass(blockType === "paragraph"))}
+        className={classNames(
+          stylesDropdown["dropdownItem"],
+          dropDownActiveClass(blockType === "paragraph"),
+        )}
         onClick={formatParagraph}
       >
         <Icon type="paragraph" />
         <span className={stylesToolbar.text}>Normal</span>
       </DropDownItem>
       <DropDownItem
-        className={classNames("item", dropDownActiveClass(blockType === "h1"))}
+        className={classNames(
+          stylesDropdown["dropdownItem"],
+          dropDownActiveClass(blockType === "h1"),
+        )}
         onClick={() => formatHeading("h1")}
       >
         <Icon type="h1" />
         <span className={stylesToolbar.text}>Heading 1</span>
       </DropDownItem>
       <DropDownItem
-        className={classNames("item", dropDownActiveClass(blockType === "h2"))}
+        className={classNames(
+          stylesDropdown["dropdownItem"],
+          dropDownActiveClass(blockType === "h2"),
+        )}
         onClick={() => formatHeading("h2")}
       >
         <Icon type="h2" />
         <span className={stylesToolbar.text}>Heading 2</span>
       </DropDownItem>
       <DropDownItem
-        className={classNames("item", dropDownActiveClass(blockType === "h3"))}
+        className={classNames(
+          stylesDropdown["dropdownItem"],
+          dropDownActiveClass(blockType === "h3"),
+        )}
         onClick={() => formatHeading("h3")}
       >
         <Icon type="h3" />
         <span className={stylesToolbar.text}>Heading 3</span>
       </DropDownItem>
       <DropDownItem
-        className={classNames("item", dropDownActiveClass(blockType === "bullet"))}
+        className={classNames(
+          stylesDropdown["dropdownItem"],
+          dropDownActiveClass(blockType === "bullet"),
+        )}
         onClick={formatBulletList}
       >
         <Icon type="bullet-list" />
         <span className={stylesToolbar.text}>Bullet List</span>
       </DropDownItem>
       <DropDownItem
-        className={classNames("item", dropDownActiveClass(blockType === "number"))}
+        className={classNames(
+          stylesDropdown["dropdownItem"],
+          dropDownActiveClass(blockType === "number"),
+        )}
         onClick={formatNumberedList}
       >
         <Icon type="numbered-list" />
         <span className={stylesToolbar.text}>Numbered List</span>
       </DropDownItem>
       <DropDownItem
-        className={classNames("item", dropDownActiveClass(blockType === "check"))}
+        className={classNames(
+          stylesDropdown["dropdownItem"],
+          dropDownActiveClass(blockType === "check"),
+        )}
         onClick={formatCheckList}
       >
         <Icon type="check-list" />
         <span className={stylesToolbar.text}>Check List</span>
       </DropDownItem>
       <DropDownItem
-        className={classNames("item", dropDownActiveClass(blockType === "quote"))}
+        className={classNames(
+          stylesDropdown["dropdownItem"],
+          dropDownActiveClass(blockType === "quote"),
+        )}
         onClick={formatQuote}
       >
         <Icon type="quote" />
         <span className={stylesToolbar.text}>Quote</span>
       </DropDownItem>
       <DropDownItem
-        className={classNames("item", dropDownActiveClass(blockType === "code"))}
+        className={classNames(
+          stylesDropdown["dropdownItem"],
+          dropDownActiveClass(blockType === "code"),
+        )}
         onClick={formatCode}
       >
         <Icon type="code" />

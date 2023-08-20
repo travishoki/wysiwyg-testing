@@ -4,6 +4,7 @@ import classNames from "classnames"
 import { $getSelection, $isRangeSelection, LexicalEditor } from "lexical"
 import styleIicon from "../../Icon/Icon.module.scss"
 import { DropDown } from "../../ui/DropDown/DropDown"
+import stylesDropdown from "../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../ui/DropDown/DropDownItem"
 import { dropDownActiveClass } from "./helpers"
 import stylesToolbar from "./index.module.scss"
@@ -73,9 +74,11 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
       {(styleName === "font-family" ? FONT_FAMILY_OPTIONS : FONT_SIZE_OPTIONS).map(
         ([option, text]) => (
           <DropDownItem
-            className={`item ${dropDownActiveClass(value === option)} ${
-              styleName === "font-size" ? "fontsize-item" : ""
-            }`}
+            className={classNames(
+              stylesDropdown["dropdownItem"],
+              dropDownActiveClass(value === option),
+              `${styleName === "font-size" ? "fontsize-item" : ""}`,
+            )}
             key={option}
             onClick={() => handleClick(option)}
           >

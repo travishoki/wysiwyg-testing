@@ -55,6 +55,7 @@ import { useModal } from "../../hooks/useModal"
 import { IS_APPLE } from "../../shared/environment"
 import { DropdownColorPicker } from "../../ui/DropDown/ColorPicker"
 import { DropDown } from "../../ui/DropDown/DropDown"
+import stylesDropdown from "../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../ui/DropDown/DropDownItem"
 import { getSelectedNode } from "../../utils/getSelectedNode"
 import { sanitizeUrl } from "../../utils/url"
@@ -482,7 +483,10 @@ export const ToolbarPlugin = () => {
           >
             <DropDownItem
               aria-label="Format text with a strikethrough"
-              className={classNames("item", dropDownActiveClass(isStrikethrough))}
+              className={classNames(
+                stylesDropdown["dropdownItem"],
+                dropDownActiveClass(isStrikethrough),
+              )}
               onClick={() => {
                 activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "strikethrough")
               }}
@@ -493,7 +497,10 @@ export const ToolbarPlugin = () => {
             </DropDownItem>
             <DropDownItem
               aria-label="Format text with a subscript"
-              className={classNames("item", dropDownActiveClass(isSubscript))}
+              className={classNames(
+                stylesDropdown["dropdownItem"],
+                dropDownActiveClass(isSubscript),
+              )}
               onClick={() => {
                 activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "subscript")
               }}
@@ -504,7 +511,10 @@ export const ToolbarPlugin = () => {
             </DropDownItem>
             <DropDownItem
               aria-label="Format text with a superscript"
-              className={classNames("item", dropDownActiveClass(isSuperscript))}
+              className={classNames(
+                stylesDropdown["dropdownItem"],
+                dropDownActiveClass(isSuperscript),
+              )}
               onClick={() => {
                 activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "superscript")
               }}
@@ -515,7 +525,7 @@ export const ToolbarPlugin = () => {
             </DropDownItem>
             <DropDownItem
               aria-label="Clear all text formatting"
-              className="item"
+              className={stylesDropdown["dropdownItem"]}
               onClick={clearFormatting}
               title="Clear text formatting"
             >
@@ -534,7 +544,7 @@ export const ToolbarPlugin = () => {
                 disabled={!isEditable}
               >
                 <DropDownItem
-                  className="item"
+                  className={stylesDropdown["dropdownItem"]}
                   onClick={() => {
                     /**/
                   }}
@@ -553,7 +563,7 @@ export const ToolbarPlugin = () => {
             disabled={!isEditable}
           >
             <DropDownItem
-              className="item"
+              className={stylesDropdown["dropdownItem"]}
               onClick={() => {
                 activeEditor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined)
               }}
@@ -562,7 +572,7 @@ export const ToolbarPlugin = () => {
               <span className="text">Horizontal Rule</span>
             </DropDownItem>
             <DropDownItem
-              className="item"
+              className={stylesDropdown["dropdownItem"]}
               onClick={() => {
                 showModal("Insert Image", (onClose) => (
                   <InsertImageDialog activeEditor={activeEditor} onClose={onClose} />
@@ -573,7 +583,7 @@ export const ToolbarPlugin = () => {
               <span className="text">Image</span>
             </DropDownItem>
             <DropDownItem
-              className="item"
+              className={stylesDropdown["dropdownItem"]}
               onClick={() => {
                 showModal("Insert Inline Image", (onClose) => (
                   <InsertInlineImageDialog activeEditor={activeEditor} onClose={onClose} />
@@ -584,7 +594,7 @@ export const ToolbarPlugin = () => {
               <span className="text">Inline Image</span>
             </DropDownItem>
             <DropDownItem
-              className="item"
+              className={stylesDropdown["dropdownItem"]}
               onClick={() => {
                 showModal("Insert Table", (onClose) => (
                   <InsertTableDialog activeEditor={activeEditor} onClose={onClose} />
@@ -595,7 +605,7 @@ export const ToolbarPlugin = () => {
               <span className="text">Table</span>
             </DropDownItem>
             <DropDownItem
-              className="item"
+              className={stylesDropdown["dropdownItem"]}
               onClick={() => {
                 showModal("Insert Table", (onClose) => (
                   <InsertNewTableDialog activeEditor={activeEditor} onClose={onClose} />
@@ -617,7 +627,7 @@ export const ToolbarPlugin = () => {
         disabled={!isEditable}
       >
         <DropDownItem
-          className="item"
+          className={stylesDropdown["dropdownItem"]}
           onClick={() => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "left")
           }}
@@ -626,7 +636,7 @@ export const ToolbarPlugin = () => {
           <span className="text">Left Align</span>
         </DropDownItem>
         <DropDownItem
-          className="item"
+          className={stylesDropdown["dropdownItem"]}
           onClick={() => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "center")
           }}
@@ -635,7 +645,7 @@ export const ToolbarPlugin = () => {
           <span className="text">Center Align</span>
         </DropDownItem>
         <DropDownItem
-          className="item"
+          className={stylesDropdown["dropdownItem"]}
           onClick={() => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "right")
           }}
@@ -644,7 +654,7 @@ export const ToolbarPlugin = () => {
           <span className="text">Right Align</span>
         </DropDownItem>
         <DropDownItem
-          className="item"
+          className={stylesDropdown["dropdownItem"]}
           onClick={() => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "justify")
           }}
@@ -654,7 +664,7 @@ export const ToolbarPlugin = () => {
         </DropDownItem>
         <DividerDropdown />
         <DropDownItem
-          className="item"
+          className={stylesDropdown["dropdownItem"]}
           onClick={() => {
             activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
           }}
@@ -663,7 +673,7 @@ export const ToolbarPlugin = () => {
           <span className="text">Outdent</span>
         </DropDownItem>
         <DropDownItem
-          className="item"
+          className={stylesDropdown["dropdownItem"]}
           onClick={() => {
             activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
           }}
