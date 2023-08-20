@@ -387,7 +387,7 @@ export const TableActionMenu = ({
           ))
         }
       >
-        <span className="text">Background color</span>
+        <span className={stylesDropdown["dropdownText"]}>Background color</span>
       </button>
       <hr />
       <button
@@ -395,7 +395,7 @@ export const TableActionMenu = ({
         data-test-id="table-insert-row-above"
         onClick={() => insertTableRowAtSelection(false)}
       >
-        <span className="text">
+        <span className={stylesDropdown["dropdownText"]}>
           Insert {selectionCounts.rows === 1 ? "row" : `${selectionCounts.rows} rows`} above
         </span>
       </button>
@@ -404,7 +404,7 @@ export const TableActionMenu = ({
         data-test-id="table-insert-row-below"
         onClick={() => insertTableRowAtSelection(true)}
       >
-        <span className="text">
+        <span className={stylesDropdown["dropdownText"]}>
           Insert {selectionCounts.rows === 1 ? "row" : `${selectionCounts.rows} rows`} below
         </span>
       </button>
@@ -414,7 +414,7 @@ export const TableActionMenu = ({
         data-test-id="table-insert-column-before"
         onClick={() => insertTableColumnAtSelection(false)}
       >
-        <span className="text">
+        <span className={stylesDropdown["dropdownText"]}>
           Insert {selectionCounts.columns === 1 ? "column" : `${selectionCounts.columns} columns`}{" "}
           left
         </span>
@@ -424,7 +424,7 @@ export const TableActionMenu = ({
         data-test-id="table-insert-column-after"
         onClick={() => insertTableColumnAtSelection(true)}
       >
-        <span className="text">
+        <span className={stylesDropdown["dropdownText"]}>
           Insert {selectionCounts.columns === 1 ? "column" : `${selectionCounts.columns} columns`}{" "}
           right
         </span>
@@ -435,21 +435,21 @@ export const TableActionMenu = ({
         data-test-id="table-delete-columns"
         onClick={() => deleteTableColumnAtSelection()}
       >
-        <span className="text">Delete column</span>
+        <span className={stylesDropdown["dropdownText"]}>Delete column</span>
       </button>
       <button
         className={stylesDropdown["dropdownItem"]}
         data-test-id="table-delete-rows"
         onClick={() => deleteTableRowAtSelection()}
       >
-        <span className="text">Delete row</span>
+        <span className={stylesDropdown["dropdownText"]}>Delete row</span>
       </button>
       <button className="item" data-test-id="table-delete" onClick={() => deleteTableAtSelection()}>
-        <span className="text">Delete table</span>
+        <span className={stylesDropdown["dropdownText"]}>Delete table</span>
       </button>
       <hr />
       <button className="item" onClick={() => toggleTableRowIsHeader()}>
-        <span className="text">
+        <span className={stylesDropdown["dropdownText"]}>
           {(tableCellNode.__headerState & TableCellHeaderStates.ROW) === TableCellHeaderStates.ROW
             ? "Remove"
             : "Add"}{" "}
@@ -457,7 +457,7 @@ export const TableActionMenu = ({
         </span>
       </button>
       <button className="item" onClick={() => toggleTableColumnIsHeader()}>
-        <span className="text">
+        <span className={stylesDropdown["dropdownText"]}>
           {(tableCellNode.__headerState & TableCellHeaderStates.COLUMN) ===
           TableCellHeaderStates.COLUMN
             ? "Remove"

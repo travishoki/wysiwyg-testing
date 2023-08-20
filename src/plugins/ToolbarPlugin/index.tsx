@@ -374,7 +374,7 @@ export const ToolbarPlugin = () => {
                 key={value}
                 onClick={() => onCodeLanguageSelect(value)}
               >
-                <span className="text">{name}</span>
+                <span className={stylesDropdown["dropdownText"]}>{name}</span>
               </DropDownItem>
             )
           })}
@@ -493,7 +493,7 @@ export const ToolbarPlugin = () => {
               title="Strikethrough"
             >
               <Icon type="strikethrough" />
-              <span className="text">Strikethrough</span>
+              <span className={stylesDropdown["dropdownText"]}>Strikethrough</span>
             </DropDownItem>
             <DropDownItem
               aria-label="Format text with a subscript"
@@ -507,7 +507,7 @@ export const ToolbarPlugin = () => {
               title="Subscript"
             >
               <Icon type="subscript" />
-              <span className="text">Subscript</span>
+              <span className={stylesDropdown["dropdownText"]}>Subscript</span>
             </DropDownItem>
             <DropDownItem
               aria-label="Format text with a superscript"
@@ -521,7 +521,7 @@ export const ToolbarPlugin = () => {
               title="Superscript"
             >
               <Icon type="superscript" />
-              <span className="text">Superscript</span>
+              <span className={stylesDropdown["dropdownText"]}>Superscript</span>
             </DropDownItem>
             <DropDownItem
               aria-label="Clear all text formatting"
@@ -530,7 +530,7 @@ export const ToolbarPlugin = () => {
               title="Clear text formatting"
             >
               <Icon type="clear" />
-              <span className="text">Clear Formatting</span>
+              <span className={stylesDropdown["dropdownText"]}>Clear Formatting</span>
             </DropDownItem>
           </DropDown>
           <Divider />
@@ -549,7 +549,7 @@ export const ToolbarPlugin = () => {
                     /**/
                   }}
                 >
-                  <span className="text">TODO</span>
+                  <span className={stylesDropdown["dropdownText"]}>TODO</span>
                 </DropDownItem>
               </DropDown>
               <Divider />
@@ -569,7 +569,7 @@ export const ToolbarPlugin = () => {
               }}
             >
               <Icon type="horizontal-rule" />
-              <span className="text">Horizontal Rule</span>
+              <span className={stylesDropdown["dropdownText"]}>Horizontal Rule</span>
             </DropDownItem>
             <DropDownItem
               className={stylesDropdown["dropdownItem"]}
@@ -580,7 +580,7 @@ export const ToolbarPlugin = () => {
               }}
             >
               <Icon type="image" />
-              <span className="text">Image</span>
+              <span className={stylesDropdown["dropdownText"]}>Image</span>
             </DropDownItem>
             <DropDownItem
               className={stylesDropdown["dropdownItem"]}
@@ -591,7 +591,7 @@ export const ToolbarPlugin = () => {
               }}
             >
               <Icon type="image" />
-              <span className="text">Inline Image</span>
+              <span className={stylesDropdown["dropdownText"]}>Inline Image</span>
             </DropDownItem>
             <DropDownItem
               className={stylesDropdown["dropdownItem"]}
@@ -602,7 +602,7 @@ export const ToolbarPlugin = () => {
               }}
             >
               <Icon type="table" />
-              <span className="text">Table</span>
+              <span className={stylesDropdown["dropdownText"]}>Table</span>
             </DropDownItem>
             <DropDownItem
               className={stylesDropdown["dropdownItem"]}
@@ -613,7 +613,7 @@ export const ToolbarPlugin = () => {
               }}
             >
               <Icon type="table" />
-              <span className="text">Table (Experimental)</span>
+              <span className={stylesDropdown["dropdownText"]}>Table (Experimental)</span>
             </DropDownItem>
           </DropDown>
         </>
@@ -633,7 +633,7 @@ export const ToolbarPlugin = () => {
           }}
         >
           <Icon type="left-align" />
-          <span className="text">Left Align</span>
+          <span className={stylesDropdown["dropdownText"]}>Left Align</span>
         </DropDownItem>
         <DropDownItem
           className={stylesDropdown["dropdownItem"]}
@@ -642,7 +642,7 @@ export const ToolbarPlugin = () => {
           }}
         >
           <Icon type="center-align" />
-          <span className="text">Center Align</span>
+          <span className={stylesDropdown["dropdownText"]}>Center Align</span>
         </DropDownItem>
         <DropDownItem
           className={stylesDropdown["dropdownItem"]}
@@ -651,7 +651,7 @@ export const ToolbarPlugin = () => {
           }}
         >
           <Icon type="right-align" />
-          <span className="text">Right Align</span>
+          <span className={stylesDropdown["dropdownText"]}>Right Align</span>
         </DropDownItem>
         <DropDownItem
           className={stylesDropdown["dropdownItem"]}
@@ -660,7 +660,7 @@ export const ToolbarPlugin = () => {
           }}
         >
           <Icon type="justify-align" />
-          <span className="text">Justify Align</span>
+          <span className={stylesDropdown["dropdownText"]}>Justify Align</span>
         </DropDownItem>
         <DividerDropdown />
         <DropDownItem
@@ -670,7 +670,7 @@ export const ToolbarPlugin = () => {
           }}
         >
           <Icon type={isRTL ? "indent" : "outdent"} />
-          <span className="text">Outdent</span>
+          <span className={stylesDropdown["dropdownText"]}>Outdent</span>
         </DropDownItem>
         <DropDownItem
           className={stylesDropdown["dropdownItem"]}
@@ -679,7 +679,7 @@ export const ToolbarPlugin = () => {
           }}
         >
           <Icon type={isRTL ? "outdent" : "indent"} />
-          <span className="text">Indent</span>
+          <span className={stylesDropdown["dropdownText"]}>Indent</span>
         </DropDownItem>
       </DropDown>
 

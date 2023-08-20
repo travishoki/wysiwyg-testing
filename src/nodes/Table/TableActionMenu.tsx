@@ -85,7 +85,9 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className="text">{cell.type === "normal" ? "Make header" : "Remove header"}</span>
+        <span className={stylesDropdown["dropdownText"]}>
+          {cell.type === "normal" ? "Make header" : "Remove header"}
+        </span>
       </button>
       <button
         className={stylesDropdown["dropdownItem"]}
@@ -98,7 +100,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className="text">Clear cell</span>
+        <span className={stylesDropdown["dropdownText"]}>Clear cell</span>
       </button>
       <hr />
       {cell.type === "header" && y === 0 && (
@@ -111,7 +113,7 @@ export const TableActionMenu = ({
                 onClose()
               }}
             >
-              <span className="text">Remove sorting</span>
+              <span className={stylesDropdown["dropdownText"]}>Remove sorting</span>
             </button>
           )}
           {(sortingOptions === null ||
@@ -124,7 +126,7 @@ export const TableActionMenu = ({
                 onClose()
               }}
             >
-              <span className="text">Sort ascending</span>
+              <span className={stylesDropdown["dropdownText"]}>Sort ascending</span>
             </button>
           )}
           {(sortingOptions === null ||
@@ -137,7 +139,7 @@ export const TableActionMenu = ({
                 onClose()
               }}
             >
-              <span className="text">Sort descending</span>
+              <span className={stylesDropdown["dropdownText"]}>Sort descending</span>
             </button>
           )}
           <hr />
@@ -153,7 +155,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className="text">Insert row above</span>
+        <span className={stylesDropdown["dropdownText"]}>Insert row above</span>
       </button>
       <button
         className={stylesDropdown["dropdownItem"]}
@@ -165,7 +167,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className="text">Insert row below</span>
+        <span className={stylesDropdown["dropdownText"]}>Insert row below</span>
       </button>
       <hr />
       <button
@@ -178,7 +180,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className="text">Insert column left</span>
+        <span className={stylesDropdown["dropdownText"]}>Insert column left</span>
       </button>
       <button
         className={stylesDropdown["dropdownItem"]}
@@ -190,7 +192,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className="text">Insert column right</span>
+        <span className={stylesDropdown["dropdownText"]}>Insert column right</span>
       </button>
       <hr />
       {rows[0].cells.length !== 1 && (
@@ -204,7 +206,7 @@ export const TableActionMenu = ({
             onClose()
           }}
         >
-          <span className="text">Delete column</span>
+          <span className={stylesDropdown["dropdownText"]}>Delete column</span>
         </button>
       )}
       {rows.length !== 1 && (
@@ -218,7 +220,7 @@ export const TableActionMenu = ({
             onClose()
           }}
         >
-          <span className="text">Delete row</span>
+          <span className={stylesDropdown["dropdownText"]}>Delete row</span>
         </button>
       )}
       <button
@@ -232,7 +234,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className="text">Delete table</span>
+        <span className={stylesDropdown["dropdownText"]}>Delete table</span>
       </button>
     </div>
   )
