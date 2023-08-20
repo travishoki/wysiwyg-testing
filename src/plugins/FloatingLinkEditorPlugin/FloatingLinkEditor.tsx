@@ -178,7 +178,7 @@ export const FloatingLinkEditor = ({
   }
 
   return (
-    <div className="link-editor" ref={editorRef}>
+    <div className={styles["link-editor"]} ref={editorRef}>
       {!isLink ? null : isEditMode ? (
         <>
           <input

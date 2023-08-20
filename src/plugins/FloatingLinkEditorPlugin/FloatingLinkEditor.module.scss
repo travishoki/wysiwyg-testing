@@ -56,18 +56,105 @@
   width: 35px;
 }
 
-.link-editor .link-view {
-  border-radius: 15px;
-  border: 0;
-  color: rgb(5, 5, 5);
-  display: block;
-  font-family: inherit;
-  font-size: 15px;
-  margin: 8px 12px;
-  outline: 0;
-  padding: 8px 12px;
-  position: relative;
-  width: calc(100% - 24px);
+.link-editor {
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  left: 0;
+  max-width: 400px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.5s;
+  width: 100%;
+  will-change: transform;
+  z-index: 10;
+
+  .button {
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin: 0 2px;
+    padding: 6px;
+    width: 20px;
+
+    &.hovered {
+      background-color: #eee;
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+    }
+
+    &.active {
+      background-color: rgb(223, 232, 250);
+    }
+
+    i {
+      background-size: contain;
+      display: inline-block;
+      height: 20px;
+      vertical-align: -0.25em;
+      width: 20px;
+    }
+  }
+
+  &.link-input {
+    background-color: #eee;
+    border-radius: 15px;
+    border: 0;
+    box-sizing: border-box;
+    color: rgb(5, 5, 5);
+    display: block;
+    font-family: inherit;
+    font-size: 15px;
+    margin: 12px 12px;
+    outline: 0;
+    padding: 8px 12px;
+    position: relative;
+    width: calc(100% - 75px);
+
+    a {
+      color: rgb(33, 111, 219);
+      margin-right: 30px;
+      overflow: hidden;
+      text-decoration: underline;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &.font-size-wrapper,
+  &.font-family-wrapper {
+    display: flex;
+    margin: 0 4px;
+  }
+
+  select {
+    background-color: rgba(0, 0, 0, 0.075);
+    border-radius: 4px;
+    border: none;
+    padding: 6px;
+  }
+
+  .link-view {
+    border-radius: 15px;
+    border: 0;
+    color: rgb(5, 5, 5);
+    display: block;
+    font-family: inherit;
+    font-size: 15px;
+    margin: 8px 12px;
+    outline: 0;
+    padding: 8px 12px;
+    position: relative;
+    width: calc(100% - 24px);
+  }
 
   a {
     display: block;
