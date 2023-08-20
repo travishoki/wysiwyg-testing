@@ -60,7 +60,7 @@ export const ComposerTheme: EditorThemeClasses = {
   },
   image: "editor-image",
   indent: "ComposerTheme__indent",
-  inlineImage: "inline-editor-image",
+  inlineImage: "composer-inline-editor-image",
   link: "ComposerTheme__link",
   list: {
     listitem: "ComposerTheme__listItem",

@@ -162,41 +162,42 @@ pre::-webkit-scrollbar-thumb {
   width: 7px;
 }
 
-.inline-editor-image {
+.composer-inline-editor-image {
+  border: solid 1px red;
   cursor: default;
   display: inline-block;
   position: relative;
   z-index: 1;
 }
 
-.inline-editor-image img {
+.composer-inline-editor-image img {
   cursor: default;
   max-width: 100%;
 }
 
-.inline-editor-image img.focused {
+.composer-inline-editor-image img.focused {
   outline: 2px solid rgb(60, 132, 244);
 }
 
-.inline-editor-image img.focused.draggable {
+.composer-inline-editor-image img.focused.draggable {
   cursor: grab;
 }
 
-.inline-editor-image img.focused.draggable:active {
+.composer-inline-editor-image img.focused.draggable:active {
   cursor: grabbing;
 }
 
-.inline-editor-image.position-full {
+.composer-inline-editor-image.position-full {
   margin: 1em 0 1em 0;
 }
 
-.inline-editor-image.position-left {
+.composer-inline-editor-image.position-left {
   float: left;
   margin: 1em 1em 0 0;
   width: 50%;
 }
 
-.inline-editor-image.position-right {
+.composer-inline-editor-image.position-right {
   float: right;
   margin: 1em 0 0 1em;
   width: 50%;
