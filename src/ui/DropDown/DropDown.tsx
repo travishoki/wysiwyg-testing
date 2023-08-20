@@ -9,6 +9,7 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import { IconBare } from "../../Icon/IconBare"
+import toolbarStyles from "../../plugins/ToolbarPlugin/index.module.scss"
 import { DropDownItems } from "./DropDownItems"
 
 const dropDownPadding = 4
@@ -109,7 +110,7 @@ export const DropDown = ({
       >
         {buttonIconClassName && <span className={buttonIconClassName} />}
         {buttonLabel && <span className="text dropdown-button-text">{buttonLabel}</span>}
-        <IconBare type="chevron-down" />
+        <IconBare className={toolbarStyles["chevron-down"]} type="chevron-down" />
       </button>
 
       {showDropDown &&
