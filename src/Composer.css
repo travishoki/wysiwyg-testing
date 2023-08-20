@@ -18,10 +18,6 @@ pre::-webkit-scrollbar-thumb {
   background: #999;
 }
 
-.mentions-menu {
-  width: 250px;
-}
-
 .link-editor .button.active,
 .toolbar .button.active {
   background-color: rgb(223, 232, 250);

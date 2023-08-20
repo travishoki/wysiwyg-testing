@@ -20,6 +20,7 @@ import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { $createMentionNode } from "../../nodes/Mention/MentionNode"
 import { MentionTypeaheadOption } from "./MentionTypeaheadOption"
 import { MentionsTypeaheadMenuItem } from "./MentionsTypeaheadMenuItem"
+import styles from "./index.module.scss"
 
 const PUNCTUATION = "\\.,\\+\\*\\?\\$\\@\\|#{}\\(\\)\\^\\-\\[\\]\\\\/!%'\"~=<>_:;"
 const NAME = "\\b[A-Z][^\\s" + PUNCTUATION + "]"
@@ -646,7 +647,7 @@ export const MentionsPlugin = (): JSX.Element | null => {
       ) =>
         anchorElementRef.current && results.length
           ? ReactDOM.createPortal(
-              <TypeaheadPopover className="mentions-menu">
+              <TypeaheadPopover className={styles["mentions-menu"]}>
                 <ul>
                   {options.map((option, i: number) => (
                     <MentionsTypeaheadMenuItem
