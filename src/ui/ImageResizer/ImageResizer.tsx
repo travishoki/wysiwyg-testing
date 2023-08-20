@@ -9,6 +9,7 @@
 import React, { useRef } from "react"
 import { LexicalEditor } from "lexical"
 import { clamp } from "../../helpers/numbers"
+import styles from "./ImageResizer.module.scss"
 
 const Direction = {
   east: 1 << 0,
@@ -215,7 +216,7 @@ export const ImageResizer = ({
     <div ref={controlWrapperRef}>
       {!showCaption && captionsEnabled && (
         <button
-          className="image-caption-button"
+          className={styles["image-caption-button"]}
           onClick={() => {
             setShowCaption(!showCaption)
           }}
