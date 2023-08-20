@@ -7,5 +7,5 @@ type InputInputProps = React.DetailedHTMLProps<
 >
 
 export const InputInput = (props: InputInputProps) => {
-  return <input className={styles["inputInput"]} {...props} />
+  return <input className={styles.inputInput} {...props} />
 }

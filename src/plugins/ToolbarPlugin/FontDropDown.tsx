@@ -75,14 +75,14 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
         ([option, text]) => (
           <DropDownItem
             className={classNames(
-              stylesDropdown["dropdownItem"],
+              stylesDropdown.dropdownItem,
               dropDownActiveClass(value === option),
               `${styleName === "font-size" ? "fontsize-item" : ""}`,
             )}
             key={option}
             onClick={() => handleClick(option)}
           >
-            <span className={stylesToolbar["text"]}>{text}</span>
+            <span className={stylesToolbar.text}>{text}</span>
           </DropDownItem>
         ),
       )}

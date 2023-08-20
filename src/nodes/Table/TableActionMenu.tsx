@@ -60,7 +60,7 @@ export const TableActionMenu = ({
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      className={stylesDropdown["dropdown"]}
+      className={stylesDropdown.dropdown}
       onClick={(e) => {
         e.stopPropagation()
       }}
@@ -76,7 +76,7 @@ export const TableActionMenu = ({
       ref={dropDownRef}
     >
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         onClick={() => {
           updateTableNode((tableNode) => {
             $addUpdateTag("history-push")
@@ -85,12 +85,12 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown["dropdownText"]}>
+        <span className={stylesDropdown.dropdownText}>
           {cell.type === "normal" ? "Make header" : "Remove header"}
         </span>
       </button>
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         onClick={() => {
           updateCellsByID([cell.id], () => {
             const root = $getRoot()
@@ -100,53 +100,53 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown["dropdownText"]}>Clear cell</span>
+        <span className={stylesDropdown.dropdownText}>Clear cell</span>
       </button>
       <hr />
       {cell.type === "header" && y === 0 && (
         <>
           {sortingOptions !== null && sortingOptions.x === x && (
             <button
-              className={stylesDropdown["dropdownItem"]}
+              className={stylesDropdown.dropdownItem}
               onClick={() => {
                 setSortingOptions(null)
                 onClose()
               }}
             >
-              <span className={stylesDropdown["dropdownText"]}>Remove sorting</span>
+              <span className={stylesDropdown.dropdownText}>Remove sorting</span>
             </button>
           )}
           {(sortingOptions === null ||
             sortingOptions.x !== x ||
             sortingOptions.type === "descending") && (
             <button
-              className={stylesDropdown["dropdownItem"]}
+              className={stylesDropdown.dropdownItem}
               onClick={() => {
                 setSortingOptions({ type: "ascending", x })
                 onClose()
               }}
             >
-              <span className={stylesDropdown["dropdownText"]}>Sort ascending</span>
+              <span className={stylesDropdown.dropdownText}>Sort ascending</span>
             </button>
           )}
           {(sortingOptions === null ||
             sortingOptions.x !== x ||
             sortingOptions.type === "ascending") && (
             <button
-              className={stylesDropdown["dropdownItem"]}
+              className={stylesDropdown.dropdownItem}
               onClick={() => {
                 setSortingOptions({ type: "descending", x })
                 onClose()
               }}
             >
-              <span className={stylesDropdown["dropdownText"]}>Sort descending</span>
+              <span className={stylesDropdown.dropdownText}>Sort descending</span>
             </button>
           )}
           <hr />
         </>
       )}
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         onClick={() => {
           updateTableNode((tableNode) => {
             $addUpdateTag("history-push")
@@ -155,10 +155,10 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown["dropdownText"]}>Insert row above</span>
+        <span className={stylesDropdown.dropdownText}>Insert row above</span>
       </button>
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         onClick={() => {
           updateTableNode((tableNode) => {
             $addUpdateTag("history-push")
@@ -167,11 +167,11 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown["dropdownText"]}>Insert row below</span>
+        <span className={stylesDropdown.dropdownText}>Insert row below</span>
       </button>
       <hr />
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         onClick={() => {
           updateTableNode((tableNode) => {
             $addUpdateTag("history-push")
@@ -180,10 +180,10 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown["dropdownText"]}>Insert column left</span>
+        <span className={stylesDropdown.dropdownText}>Insert column left</span>
       </button>
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         onClick={() => {
           updateTableNode((tableNode) => {
             $addUpdateTag("history-push")
@@ -192,12 +192,12 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown["dropdownText"]}>Insert column right</span>
+        <span className={stylesDropdown.dropdownText}>Insert column right</span>
       </button>
       <hr />
       {rows[0].cells.length !== 1 && (
         <button
-          className={stylesDropdown["dropdownItem"]}
+          className={stylesDropdown.dropdownItem}
           onClick={() => {
             updateTableNode((tableNode) => {
               $addUpdateTag("history-push")
@@ -206,12 +206,12 @@ export const TableActionMenu = ({
             onClose()
           }}
         >
-          <span className={stylesDropdown["dropdownText"]}>Delete column</span>
+          <span className={stylesDropdown.dropdownText}>Delete column</span>
         </button>
       )}
       {rows.length !== 1 && (
         <button
-          className={stylesDropdown["dropdownItem"]}
+          className={stylesDropdown.dropdownItem}
           onClick={() => {
             updateTableNode((tableNode) => {
               $addUpdateTag("history-push")
@@ -220,11 +220,11 @@ export const TableActionMenu = ({
             onClose()
           }}
         >
-          <span className={stylesDropdown["dropdownText"]}>Delete row</span>
+          <span className={stylesDropdown.dropdownText}>Delete row</span>
         </button>
       )}
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         onClick={() => {
           updateTableNode((tableNode) => {
             $addUpdateTag("history-push")
@@ -234,7 +234,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown["dropdownText"]}>Delete table</span>
+        <span className={stylesDropdown.dropdownText}>Delete table</span>
       </button>
     </div>
   )

@@ -122,93 +122,84 @@ export const BlockFormatDropDown = ({
     >
       <DropDownItem
         className={classNames(
-          stylesDropdown["dropdownItem"],
+          stylesDropdown.dropdownItem,
           dropDownActiveClass(blockType === "paragraph"),
         )}
         onClick={formatParagraph}
       >
         <Icon type="paragraph" />
-        <span className={stylesDropdown["dropdownText"]}>Normal</span>
+        <span className={stylesDropdown.dropdownText}>Normal</span>
       </DropDownItem>
       <DropDownItem
-        className={classNames(
-          stylesDropdown["dropdownItem"],
-          dropDownActiveClass(blockType === "h1"),
-        )}
+        className={classNames(stylesDropdown.dropdownItem, dropDownActiveClass(blockType === "h1"))}
         onClick={() => formatHeading("h1")}
       >
         <Icon type="h1" />
-        <span className={stylesDropdown["dropdownText"]}>Heading 1</span>
+        <span className={stylesDropdown.dropdownText}>Heading 1</span>
       </DropDownItem>
       <DropDownItem
-        className={classNames(
-          stylesDropdown["dropdownItem"],
-          dropDownActiveClass(blockType === "h2"),
-        )}
+        className={classNames(stylesDropdown.dropdownItem, dropDownActiveClass(blockType === "h2"))}
         onClick={() => formatHeading("h2")}
       >
         <Icon type="h2" />
-        <span className={stylesDropdown["dropdownText"]}>Heading 2</span>
+        <span className={stylesDropdown.dropdownText}>Heading 2</span>
       </DropDownItem>
       <DropDownItem
-        className={classNames(
-          stylesDropdown["dropdownItem"],
-          dropDownActiveClass(blockType === "h3"),
-        )}
+        className={classNames(stylesDropdown.dropdownItem, dropDownActiveClass(blockType === "h3"))}
         onClick={() => formatHeading("h3")}
       >
         <Icon type="h3" />
-        <span className={stylesDropdown["dropdownText"]}>Heading 3</span>
+        <span className={stylesDropdown.dropdownText}>Heading 3</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(
-          stylesDropdown["dropdownItem"],
+          stylesDropdown.dropdownItem,
           dropDownActiveClass(blockType === "bullet"),
         )}
         onClick={formatBulletList}
       >
         <Icon type="bullet-list" />
-        <span className={stylesDropdown["dropdownText"]}>Bullet List</span>
+        <span className={stylesDropdown.dropdownText}>Bullet List</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(
-          stylesDropdown["dropdownItem"],
+          stylesDropdown.dropdownItem,
           dropDownActiveClass(blockType === "number"),
         )}
         onClick={formatNumberedList}
       >
         <Icon type="numbered-list" />
-        <span className={stylesDropdown["dropdownText"]}>Numbered List</span>
+        <span className={stylesDropdown.dropdownText}>Numbered List</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(
-          stylesDropdown["dropdownItem"],
+          stylesDropdown.dropdownItem,
           dropDownActiveClass(blockType === "check"),
         )}
         onClick={formatCheckList}
       >
         <Icon type="check-list" />
-        <span className={stylesDropdown["dropdownText"]}>Check List</span>
+        <span className={stylesDropdown.dropdownText}>Check List</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(
-          stylesDropdown["dropdownItem"],
+          stylesDropdown.dropdownItem,
           dropDownActiveClass(blockType === "quote"),
         )}
         onClick={formatQuote}
       >
         <Icon type="quote" />
-        <span className={stylesDropdown["dropdownText"]}>Quote</span>
+        <span className={stylesDropdown.dropdownText}>Quote</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(
-          stylesDropdown["dropdownItem"],
+          stylesDropdown.dropdownItem,
           dropDownActiveClass(blockType === "code"),
         )}
         onClick={formatCode}
       >
         <Icon type="code" />
-        <span className={stylesDropdown["dropdownText"]}>Code Block</span>
+        <span className={stylesDropdown.dropdownText}>Code Block</span>
       </DropDownItem>
     </DropDown>
   )

@@ -374,7 +374,7 @@ export const ToolbarPlugin = () => {
                 key={value}
                 onClick={() => onCodeLanguageSelect(value)}
               >
-                <span className={stylesDropdown["dropdownText"]}>{name}</span>
+                <span className={stylesDropdown.dropdownText}>{name}</span>
               </DropDownItem>
             )
           })}
@@ -484,7 +484,7 @@ export const ToolbarPlugin = () => {
             <DropDownItem
               aria-label="Format text with a strikethrough"
               className={classNames(
-                stylesDropdown["dropdownItem"],
+                stylesDropdown.dropdownItem,
                 dropDownActiveClass(isStrikethrough),
               )}
               onClick={() => {
@@ -493,26 +493,23 @@ export const ToolbarPlugin = () => {
               title="Strikethrough"
             >
               <Icon type="strikethrough" />
-              <span className={stylesDropdown["dropdownText"]}>Strikethrough</span>
+              <span className={stylesDropdown.dropdownText}>Strikethrough</span>
             </DropDownItem>
             <DropDownItem
               aria-label="Format text with a subscript"
-              className={classNames(
-                stylesDropdown["dropdownItem"],
-                dropDownActiveClass(isSubscript),
-              )}
+              className={classNames(stylesDropdown.dropdownItem, dropDownActiveClass(isSubscript))}
               onClick={() => {
                 activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "subscript")
               }}
               title="Subscript"
             >
               <Icon type="subscript" />
-              <span className={stylesDropdown["dropdownText"]}>Subscript</span>
+              <span className={stylesDropdown.dropdownText}>Subscript</span>
             </DropDownItem>
             <DropDownItem
               aria-label="Format text with a superscript"
               className={classNames(
-                stylesDropdown["dropdownItem"],
+                stylesDropdown.dropdownItem,
                 dropDownActiveClass(isSuperscript),
               )}
               onClick={() => {
@@ -521,16 +518,16 @@ export const ToolbarPlugin = () => {
               title="Superscript"
             >
               <Icon type="superscript" />
-              <span className={stylesDropdown["dropdownText"]}>Superscript</span>
+              <span className={stylesDropdown.dropdownText}>Superscript</span>
             </DropDownItem>
             <DropDownItem
               aria-label="Clear all text formatting"
-              className={stylesDropdown["dropdownItem"]}
+              className={stylesDropdown.dropdownItem}
               onClick={clearFormatting}
               title="Clear text formatting"
             >
               <Icon type="clear" />
-              <span className={stylesDropdown["dropdownText"]}>Clear Formatting</span>
+              <span className={stylesDropdown.dropdownText}>Clear Formatting</span>
             </DropDownItem>
           </DropDown>
           <Divider />
@@ -544,12 +541,12 @@ export const ToolbarPlugin = () => {
                 disabled={!isEditable}
               >
                 <DropDownItem
-                  className={stylesDropdown["dropdownItem"]}
+                  className={stylesDropdown.dropdownItem}
                   onClick={() => {
                     /**/
                   }}
                 >
-                  <span className={stylesDropdown["dropdownText"]}>TODO</span>
+                  <span className={stylesDropdown.dropdownText}>TODO</span>
                 </DropDownItem>
               </DropDown>
               <Divider />
@@ -563,16 +560,16 @@ export const ToolbarPlugin = () => {
             disabled={!isEditable}
           >
             <DropDownItem
-              className={stylesDropdown["dropdownItem"]}
+              className={stylesDropdown.dropdownItem}
               onClick={() => {
                 activeEditor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined)
               }}
             >
               <Icon type="horizontal-rule" />
-              <span className={stylesDropdown["dropdownText"]}>Horizontal Rule</span>
+              <span className={stylesDropdown.dropdownText}>Horizontal Rule</span>
             </DropDownItem>
             <DropDownItem
-              className={stylesDropdown["dropdownItem"]}
+              className={stylesDropdown.dropdownItem}
               onClick={() => {
                 showModal("Insert Image", (onClose) => (
                   <InsertImageDialog activeEditor={activeEditor} onClose={onClose} />
@@ -580,10 +577,10 @@ export const ToolbarPlugin = () => {
               }}
             >
               <Icon type="image" />
-              <span className={stylesDropdown["dropdownText"]}>Image</span>
+              <span className={stylesDropdown.dropdownText}>Image</span>
             </DropDownItem>
             <DropDownItem
-              className={stylesDropdown["dropdownItem"]}
+              className={stylesDropdown.dropdownItem}
               onClick={() => {
                 showModal("Insert Inline Image", (onClose) => (
                   <InsertInlineImageDialog activeEditor={activeEditor} onClose={onClose} />
@@ -591,10 +588,10 @@ export const ToolbarPlugin = () => {
               }}
             >
               <Icon type="image" />
-              <span className={stylesDropdown["dropdownText"]}>Inline Image</span>
+              <span className={stylesDropdown.dropdownText}>Inline Image</span>
             </DropDownItem>
             <DropDownItem
-              className={stylesDropdown["dropdownItem"]}
+              className={stylesDropdown.dropdownItem}
               onClick={() => {
                 showModal("Insert Table", (onClose) => (
                   <InsertTableDialog activeEditor={activeEditor} onClose={onClose} />
@@ -602,10 +599,10 @@ export const ToolbarPlugin = () => {
               }}
             >
               <Icon type="table" />
-              <span className={stylesDropdown["dropdownText"]}>Table</span>
+              <span className={stylesDropdown.dropdownText}>Table</span>
             </DropDownItem>
             <DropDownItem
-              className={stylesDropdown["dropdownItem"]}
+              className={stylesDropdown.dropdownItem}
               onClick={() => {
                 showModal("Insert Table", (onClose) => (
                   <InsertNewTableDialog activeEditor={activeEditor} onClose={onClose} />
@@ -613,7 +610,7 @@ export const ToolbarPlugin = () => {
               }}
             >
               <Icon type="table" />
-              <span className={stylesDropdown["dropdownText"]}>Table (Experimental)</span>
+              <span className={stylesDropdown.dropdownText}>Table (Experimental)</span>
             </DropDownItem>
           </DropDown>
         </>
@@ -627,59 +624,59 @@ export const ToolbarPlugin = () => {
         disabled={!isEditable}
       >
         <DropDownItem
-          className={stylesDropdown["dropdownItem"]}
+          className={stylesDropdown.dropdownItem}
           onClick={() => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "left")
           }}
         >
           <Icon type="left-align" />
-          <span className={stylesDropdown["dropdownText"]}>Left Align</span>
+          <span className={stylesDropdown.dropdownText}>Left Align</span>
         </DropDownItem>
         <DropDownItem
-          className={stylesDropdown["dropdownItem"]}
+          className={stylesDropdown.dropdownItem}
           onClick={() => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "center")
           }}
         >
           <Icon type="center-align" />
-          <span className={stylesDropdown["dropdownText"]}>Center Align</span>
+          <span className={stylesDropdown.dropdownText}>Center Align</span>
         </DropDownItem>
         <DropDownItem
-          className={stylesDropdown["dropdownItem"]}
+          className={stylesDropdown.dropdownItem}
           onClick={() => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "right")
           }}
         >
           <Icon type="right-align" />
-          <span className={stylesDropdown["dropdownText"]}>Right Align</span>
+          <span className={stylesDropdown.dropdownText}>Right Align</span>
         </DropDownItem>
         <DropDownItem
-          className={stylesDropdown["dropdownItem"]}
+          className={stylesDropdown.dropdownItem}
           onClick={() => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "justify")
           }}
         >
           <Icon type="justify-align" />
-          <span className={stylesDropdown["dropdownText"]}>Justify Align</span>
+          <span className={stylesDropdown.dropdownText}>Justify Align</span>
         </DropDownItem>
         <DividerDropdown />
         <DropDownItem
-          className={stylesDropdown["dropdownItem"]}
+          className={stylesDropdown.dropdownItem}
           onClick={() => {
             activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
           }}
         >
           <Icon type={isRTL ? "indent" : "outdent"} />
-          <span className={stylesDropdown["dropdownText"]}>Outdent</span>
+          <span className={stylesDropdown.dropdownText}>Outdent</span>
         </DropDownItem>
         <DropDownItem
-          className={stylesDropdown["dropdownItem"]}
+          className={stylesDropdown.dropdownItem}
           onClick={() => {
             activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
           }}
         >
           <Icon type={isRTL ? "outdent" : "indent"} />
-          <span className={stylesDropdown["dropdownText"]}>Indent</span>
+          <span className={stylesDropdown.dropdownText}>Indent</span>
         </DropDownItem>
       </DropDown>
 

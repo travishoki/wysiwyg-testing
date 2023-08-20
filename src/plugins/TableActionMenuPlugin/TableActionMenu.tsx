@@ -348,7 +348,7 @@ export const TableActionMenu = ({
     if (canMergeCells) {
       mergeCellButton = (
         <button
-          className={stylesDropdown["dropdownItem"]}
+          className={stylesDropdown.dropdownItem}
           data-test-id="table-merge-cells"
           onClick={() => mergeTableCellsAtSelection()}
         >
@@ -358,7 +358,7 @@ export const TableActionMenu = ({
     } else if (canUnmergeCell) {
       mergeCellButton = (
         <button
-          className={stylesDropdown["dropdownItem"]}
+          className={stylesDropdown.dropdownItem}
           data-test-id="table-unmerge-cells"
           onClick={() => unmergeTableCellsAtSelection()}
         >
@@ -371,7 +371,7 @@ export const TableActionMenu = ({
   return createPortal(
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      className={stylesDropdown["dropdown"]}
+      className={stylesDropdown.dropdown}
       onClick={(e) => {
         e.stopPropagation()
       }}
@@ -379,7 +379,7 @@ export const TableActionMenu = ({
     >
       {mergeCellButton}
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         data-test-id="table-background-color"
         onClick={() =>
           showColorPickerModal("Cell background color", () => (
@@ -387,69 +387,69 @@ export const TableActionMenu = ({
           ))
         }
       >
-        <span className={stylesDropdown["dropdownText"]}>Background color</span>
+        <span className={stylesDropdown.dropdownText}>Background color</span>
       </button>
       <hr />
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         data-test-id="table-insert-row-above"
         onClick={() => insertTableRowAtSelection(false)}
       >
-        <span className={stylesDropdown["dropdownText"]}>
+        <span className={stylesDropdown.dropdownText}>
           Insert {selectionCounts.rows === 1 ? "row" : `${selectionCounts.rows} rows`} above
         </span>
       </button>
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         data-test-id="table-insert-row-below"
         onClick={() => insertTableRowAtSelection(true)}
       >
-        <span className={stylesDropdown["dropdownText"]}>
+        <span className={stylesDropdown.dropdownText}>
           Insert {selectionCounts.rows === 1 ? "row" : `${selectionCounts.rows} rows`} below
         </span>
       </button>
       <hr />
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         data-test-id="table-insert-column-before"
         onClick={() => insertTableColumnAtSelection(false)}
       >
-        <span className={stylesDropdown["dropdownText"]}>
+        <span className={stylesDropdown.dropdownText}>
           Insert {selectionCounts.columns === 1 ? "column" : `${selectionCounts.columns} columns`}{" "}
           left
         </span>
       </button>
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         data-test-id="table-insert-column-after"
         onClick={() => insertTableColumnAtSelection(true)}
       >
-        <span className={stylesDropdown["dropdownText"]}>
+        <span className={stylesDropdown.dropdownText}>
           Insert {selectionCounts.columns === 1 ? "column" : `${selectionCounts.columns} columns`}{" "}
           right
         </span>
       </button>
       <hr />
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         data-test-id="table-delete-columns"
         onClick={() => deleteTableColumnAtSelection()}
       >
-        <span className={stylesDropdown["dropdownText"]}>Delete column</span>
+        <span className={stylesDropdown.dropdownText}>Delete column</span>
       </button>
       <button
-        className={stylesDropdown["dropdownItem"]}
+        className={stylesDropdown.dropdownItem}
         data-test-id="table-delete-rows"
         onClick={() => deleteTableRowAtSelection()}
       >
-        <span className={stylesDropdown["dropdownText"]}>Delete row</span>
+        <span className={stylesDropdown.dropdownText}>Delete row</span>
       </button>
       <button className="item" data-test-id="table-delete" onClick={() => deleteTableAtSelection()}>
-        <span className={stylesDropdown["dropdownText"]}>Delete table</span>
+        <span className={stylesDropdown.dropdownText}>Delete table</span>
       </button>
       <hr />
       <button className="item" onClick={() => toggleTableRowIsHeader()}>
-        <span className={stylesDropdown["dropdownText"]}>
+        <span className={stylesDropdown.dropdownText}>
           {(tableCellNode.__headerState & TableCellHeaderStates.ROW) === TableCellHeaderStates.ROW
             ? "Remove"
             : "Add"}{" "}
@@ -457,7 +457,7 @@ export const TableActionMenu = ({
         </span>
       </button>
       <button className="item" onClick={() => toggleTableColumnIsHeader()}>
-        <span className={stylesDropdown["dropdownText"]}>
+        <span className={stylesDropdown.dropdownText}>
           {(tableCellNode.__headerState & TableCellHeaderStates.COLUMN) ===
           TableCellHeaderStates.COLUMN
             ? "Remove"

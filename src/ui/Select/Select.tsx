@@ -25,7 +25,7 @@ export const Select = ({ children, className, label, ...other }: SelectProps) =>
       <InputLabel style={{ marginTop: "-1em" }}>{label}</InputLabel>
       <select
         {...other}
-        className={classNames(styles["select"], className || styles["select-general"])}
+        className={classNames(styles.select, className || styles["select-general"])}
       >
         {children}
       </select>

@@ -114,9 +114,9 @@ export const DropDown = ({
         {buttonLabel && (
           <span
             className={classNames(
-              stylesToolbar["text"],
+              stylesToolbar.text,
               "dropdown-button-text",
-              styles["dropdown-button-text"],
+              styles.dropdownButtonText,
             )}
           >
             {buttonLabel}

@@ -65,7 +65,7 @@ export const DropDownItems = ({ children, dropDownRef, onClose }: DropDownItemsP
 
   return (
     <DropDownContext.Provider value={contextValue}>
-      <div className={stylesDropdown["dropdown"]} onKeyDown={handleKeyDown} ref={dropDownRef}>
+      <div className={stylesDropdown.dropdown} onKeyDown={handleKeyDown} ref={dropDownRef}>
         {children}
       </div>
     </DropDownContext.Provider>
