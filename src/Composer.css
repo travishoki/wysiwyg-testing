@@ -334,13 +334,13 @@ hr.selected {
   user-select: none;
 }
 
-.ComposerTheme__blockCursor {
+.composer__blockCursor {
   display: block;
   pointer-events: none;
   position: absolute;
 }
 
-.ComposerTheme__blockCursor:after {
+.composer__blockCursor:after {
   animation: CursorBlink 1.1s steps(2, start) infinite;
   border-top: 1px solid black;
   content: "";
