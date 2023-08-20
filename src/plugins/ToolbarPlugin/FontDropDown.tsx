@@ -60,7 +60,7 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
   return (
     <DropDown
       buttonAriaLabel={buttonAriaLabel}
-      buttonClassName={classNames(stylesToolbar.toolbarItem, styleName)}
+      buttonClassName={classNames(stylesToolbar["toolbar-item"], styleName)}
       buttonIconClassName={styleName === "font-family" ? "icon block-type font-family" : ""}
       buttonLabel={value}
       disabled={disabled}
