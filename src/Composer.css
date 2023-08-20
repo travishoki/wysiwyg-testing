@@ -219,16 +219,16 @@ pre::-webkit-scrollbar-thumb {
   vertical-align: middle;
 }
 
-.emoji-inner {
+.composer-emoji-inner {
   padding: 0 0.15em;
 }
 
-.emoji-inner::selection {
+.composer-emoji-inner::selection {
   background-color: rgba(150, 150, 150, 0.4);
   color: transparent;
 }
 
-.emoji-inner::moz-selection {
+.composer-emoji-inner::moz-selection {
   background-color: rgba(150, 150, 150, 0.4);
   color: transparent;
 }
