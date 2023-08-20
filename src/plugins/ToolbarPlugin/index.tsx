@@ -64,6 +64,7 @@ import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog"
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog"
 import { BlockFormatDropDown } from "./BlockFormatDropDown"
 import { Divider } from "./Divider"
+import { DividerDropdown } from "./DividerDropdown"
 import { FontDropDown } from "./FontDropDown"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"
 import { dropDownActiveClass, getCodeLanguageOptions } from "./helpers"
@@ -651,7 +652,7 @@ export const ToolbarPlugin = () => {
           <Icon type="justify-align" />
           <span className="text">Justify Align</span>
         </DropDownItem>
-        <Divider />
+        <DividerDropdown />
         <DropDownItem
           className="item"
           onClick={() => {

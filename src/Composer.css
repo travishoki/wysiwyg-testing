@@ -102,13 +102,6 @@ pre::-webkit-scrollbar-thumb {
   width: 20px;
 }
 
-.dropdown .divider {
-  background-color: #eee;
-  height: 1px;
-  margin: 4px 8px;
-  width: auto;
-}
-
 @media screen and (max-width: 1100px) {
   .dropdown-button-text {
     display: none !important;

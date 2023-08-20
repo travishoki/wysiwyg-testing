@@ -1,6 +1,6 @@
 import React from "react"
-import stylesToolbar from "./index.module.scss"
+import styles from "./Divider.module.scss"
 
 export const Divider = () => {
-  return <div className={stylesToolbar.divider} />
+  return <div className={styles.divider} />
 }
