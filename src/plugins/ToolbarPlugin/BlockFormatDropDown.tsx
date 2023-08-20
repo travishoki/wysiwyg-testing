@@ -113,8 +113,8 @@ export const BlockFormatDropDown = ({
   return (
     <DropDown
       buttonAriaLabel="Formatting options for text style"
-      buttonClassName={classNames(stylesToolbar["toolbar-item"], "block-controls")}
-      buttonIconClassName={"icon block-type " + blockType}
+      buttonClassName={classNames(stylesToolbar.toolbarItem, "block-controls")}
+      buttonIconClassName={classNames(stylesToolbar.icon, "block-type " + blockType)}
       buttonLabel={blockTypeToBlockName[blockType]}
       disabled={disabled}
     >
@@ -123,63 +123,63 @@ export const BlockFormatDropDown = ({
         onClick={formatParagraph}
       >
         <Icon type="paragraph" />
-        <span className="text">Normal</span>
+        <span className={stylesToolbar.text}>Normal</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "h1")}
         onClick={() => formatHeading("h1")}
       >
         <Icon type="h1" />
-        <span className="text">Heading 1</span>
+        <span className={stylesToolbar.text}>Heading 1</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "h2")}
         onClick={() => formatHeading("h2")}
       >
         <Icon type="h2" />
-        <span className="text">Heading 2</span>
+        <span className={stylesToolbar.text}>Heading 2</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "h3")}
         onClick={() => formatHeading("h3")}
       >
         <Icon type="h3" />
-        <span className="text">Heading 3</span>
+        <span className={stylesToolbar.text}>Heading 3</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "bullet")}
         onClick={formatBulletList}
       >
         <Icon type="bullet-list" />
-        <span className="text">Bullet List</span>
+        <span className={stylesToolbar.text}>Bullet List</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "number")}
         onClick={formatNumberedList}
       >
         <Icon type="numbered-list" />
-        <span className="text">Numbered List</span>
+        <span className={stylesToolbar.text}>Numbered List</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "check")}
         onClick={formatCheckList}
       >
         <Icon type="check-list" />
-        <span className="text">Check List</span>
+        <span className={stylesToolbar.text}>Check List</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "quote")}
         onClick={formatQuote}
       >
         <Icon type="quote" />
-        <span className="text">Quote</span>
+        <span className={stylesToolbar.text}>Quote</span>
       </DropDownItem>
       <DropDownItem
         className={"item " + dropDownActiveClass(blockType === "code")}
         onClick={formatCode}
       >
         <Icon type="code" />
-        <span className="text">Code Block</span>
+        <span className={stylesToolbar.text}>Code Block</span>
       </DropDownItem>
     </DropDown>
   )

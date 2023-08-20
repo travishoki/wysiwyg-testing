@@ -15,15 +15,15 @@
   .code-language {
     width: 150px;
   }
-
-  .divider {
-    width: 1px;
-    background-color: #eee;
-    margin: 0 4px;
-  }
 }
 
-.toolbar-item {
+.divider {
+  width: 1px;
+  background-color: #eee;
+  margin: 0 4px;
+}
+
+.toolbarItem {
   border: 0;
   display: flex;
   background: none;
