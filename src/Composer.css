@@ -128,32 +128,32 @@ pre::-webkit-scrollbar-thumb {
   }
 }
 
-.editor-image {
+.composer__editorImage {
   cursor: default;
   display: inline-block;
   position: relative;
   user-select: none;
 }
 
-.editor-image img {
+.composer__editorImage img {
   cursor: default;
   max-width: 100%;
 }
 
-.editor-image img.focused {
+.composer__editorImage img.focused {
   outline: 2px solid rgb(60, 132, 244);
   user-select: none;
 }
 
-.editor-image img.focused.draggable {
+.composer__editorImage img.focused.draggable {
   cursor: grab;
 }
 
-.editor-image img.focused.draggable:active {
+.composer__editorImage img.focused.draggable:active {
   cursor: grabbing;
 }
 
-.editor-image .image-resizer {
+.composer__editorImage .image-resizer {
   background-color: rgb(60, 132, 244);
   border: 1px solid #fff;
   display: block;

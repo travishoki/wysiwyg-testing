@@ -144,7 +144,7 @@ export const canDropImage = (event: DragEvent): boolean => {
   return !!(
     target &&
     target instanceof HTMLElement &&
-    !target.closest("code, span.editor-image") &&
+    !target.closest("code, span.composer__editorImage") &&
     target.parentElement &&
     target.parentElement.closest("div.composer__ContentEditable__root")
   )

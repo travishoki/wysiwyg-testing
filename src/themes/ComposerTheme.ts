@@ -58,7 +58,7 @@ export const ComposerTheme: EditorThemeClasses = {
     h5: "composer__h5",
     h6: "composer__h6",
   },
-  image: "editor-image",
+  image: "composer__editorImage",
   indent: "composer__indent",
   inlineImage: "composer__inlineEditorImage",
   link: "composer__link",
