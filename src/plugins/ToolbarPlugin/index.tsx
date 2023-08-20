@@ -477,7 +477,7 @@ export const ToolbarPlugin = () => {
           >
             <DropDownItem
               aria-label="Format text with a strikethrough"
-              className={"item " + dropDownActiveClass(isStrikethrough)}
+              className={classNames("item ", dropDownActiveClass(isStrikethrough))}
               onClick={() => {
                 activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "strikethrough")
               }}
@@ -488,7 +488,7 @@ export const ToolbarPlugin = () => {
             </DropDownItem>
             <DropDownItem
               aria-label="Format text with a subscript"
-              className={"item " + dropDownActiveClass(isSubscript)}
+              className={classNames("item", dropDownActiveClass(isSubscript))}
               onClick={() => {
                 activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "subscript")
               }}
@@ -499,7 +499,7 @@ export const ToolbarPlugin = () => {
             </DropDownItem>
             <DropDownItem
               aria-label="Format text with a superscript"
-              className={"item " + dropDownActiveClass(isSuperscript)}
+              className={classNames("item", dropDownActiveClass(isSuperscript))}
               onClick={() => {
                 activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "superscript")
               }}
@@ -524,7 +524,7 @@ export const ToolbarPlugin = () => {
               <DropDown
                 buttonAriaLabel="Open table toolkit"
                 buttonClassName={classNames(styles.toolbarItem, styles.spaced)}
-                buttonIconClassName={classNames("icon", iconStyles["table"], "secondary")}
+                buttonIconClassName={classNames("icon", iconStyles.table, "secondary")}
                 buttonLabel="Table"
                 disabled={!isEditable}
               >
