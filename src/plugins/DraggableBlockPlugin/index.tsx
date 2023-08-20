@@ -35,6 +35,7 @@ import {
 import { getCollapsedMargins, getTopLevelNodeKeys, isOnMenu } from "./helpers"
 import styles from "./index.module.scss"
 import "./index.css"
+import classNames from "classnames"
 
 let prevIndex = Infinity
 
@@ -363,7 +364,7 @@ const useDraggableBlockMenu = (
   return createPortal(
     <>
       <div
-        className="icon draggable-block-menu"
+        className={classNames("icon", "draggable-block-menu", styles["draggable-block-menu"])}
         draggable={true}
         onDragEnd={onDragEnd}
         onDragStart={onDragStart}
