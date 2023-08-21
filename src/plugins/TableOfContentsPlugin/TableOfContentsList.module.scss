@@ -1,9 +1,9 @@
-.selected-heading {
+.selectedHeading {
   color: #3578e5;
   position: relative;
 }
 
-.selected-heading-wrapper {
+.selectedHeadingWrapper {
   &::before {
     background-color: #3578e5;
     border-radius: 50%;
@@ -25,12 +25,12 @@
   line-height: 20px;
 }
 
-.normal-heading-wrapper {
+.normalHeadingWrapper {
   margin-left: 32px;
   position: relative;
 }
 
-.table-of-contents {
+.tableOfContents {
   color: #65676b;
   display: flex;
   flex-direction: row;
@@ -52,7 +52,7 @@
   }
 }
 
-.first-heading {
+.firstHeading {
   color: black;
   cursor: pointer;
   font-weight: bold;

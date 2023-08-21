@@ -122,7 +122,7 @@ export const DropDown = ({
             {buttonLabel}
           </span>
         )}
-        <IconBare className={stylesToolbar["chevron-down"]} type="chevron-down" />
+        <IconBare className={stylesToolbar.chevronDown} type="chevron-down" />
       </button>
 
       {showDropDown &&

@@ -99,14 +99,14 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
   }, [tableOfContents, editor])
 
   return (
-    <div className={styles["table-of-contents"]}>
+    <div className={styles.tableOfContents}>
       <ul className={styles.headings}>
         {tableOfContents.map(([key, text, tag], index) => {
           if (index === 0) {
             return (
-              <div className={styles["normal-heading-wrapper"]} key={key}>
+              <div className={styles.normalHeadingWrapper} key={key}>
                 <div
-                  className={styles["first-heading"]}
+                  className={styles.firstHeading}
                   onClick={() => scrollToNode(key, index)}
                   role="button"
                   tabIndex={0}
@@ -121,8 +121,8 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
           return (
             <div
               className={classNames(
-                styles["normal-heading-wrapper"],
-                `${selectedKey === key ? styles["selected-heading-wrapper"] : ""}`,
+                styles.normalHeadingWrapper,
+                `${selectedKey === key ? styles.selectedHeadingWrapper : ""}`,
               )}
               key={key}
             >
@@ -133,9 +133,7 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
                 tabIndex={0}
               >
                 <li
-                  className={`normal-heading ${
-                    selectedKey === key ? styles["selected-heading"] : ""
-                  }
+                  className={`normal-heading ${selectedKey === key ? styles.selectedHeading : ""}
                     `}
                 >
                   {("" + text).length > 27 ? text.substring(0, 27) + "..." : text}
