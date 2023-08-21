@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $getTableCellNodeFromLexicalNode, TableCellNode } from "@lexical/table"
-import classNames from "classnames"
 import { $getSelection, $isRangeSelection } from "lexical"
+import stylesComposer from "../../Composer.module.scss"
 import { IconBare } from "../../Icon/IconBare"
 import { useModal } from "../../hooks/useModal"
 import { TableActionMenu } from "./TableActionMenu"
@@ -117,14 +117,14 @@ export const TableCellActionMenuContainer = ({
       {tableCellNode != null && (
         <>
           <button
-            className={classNames(styles["table-cell-action-button"], "chevron-down")}
+            className={styles["table-cell-action-button"]}
             onClick={(e) => {
               e.stopPropagation()
               setIsMenuOpen(!isMenuOpen)
             }}
             ref={menuRootRef}
           >
-            <IconBare type="chevron-down" />
+            <IconBare className={stylesComposer.chevronDown} type="chevron-down" />
           </button>
           {colorPickerModal}
           {isMenuOpen && (

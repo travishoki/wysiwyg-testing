@@ -1,0 +1,19 @@
+.horizontalRule {
+  border: none;
+  cursor: pointer;
+  margin: 1em 0;
+  padding: 2px 2px;
+
+  &:after {
+    background-color: #ccc;
+    content: "";
+    display: block;
+    height: 2px;
+    line-height: 2px;
+  }
+
+  &.selected {
+    outline: 2px solid rgb(60, 132, 244);
+    user-select: none;
+  }
+}

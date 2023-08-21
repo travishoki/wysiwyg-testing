@@ -149,14 +149,6 @@ pre::-webkit-scrollbar-thumb {
   width: 15px;
 }
 
-i.chevron-down {
-  background-color: transparent;
-  background-size: contain;
-  display: inline-block;
-  height: 8px;
-  width: 8px;
-}
-
 .ltr {
   text-align: left;
 }
@@ -167,26 +159,6 @@ i.chevron-down {
 
 button.item i {
   opacity: 0.6;
-}
-
-hr {
-  border: none;
-  cursor: pointer;
-  margin: 1em 0;
-  padding: 2px 2px;
-}
-
-hr:after {
-  background-color: #ccc;
-  content: "";
-  display: block;
-  height: 2px;
-  line-height: 2px;
-}
-
-hr.selected {
-  outline: 2px solid rgb(60, 132, 244);
-  user-select: none;
 }
 
 /* Styles that need to stay in css */
