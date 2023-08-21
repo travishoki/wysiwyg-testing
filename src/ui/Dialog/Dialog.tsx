@@ -12,7 +12,7 @@ import { DialogProps } from "./types"
 
 export const DialogActions = ({ children, "data-test-id": dataTestId }: DialogProps) => {
   return (
-    <div className={styles.DialogActions} data-test-id={dataTestId}>
+    <div className={styles.dialogActions} data-test-id={dataTestId}>
       {children}
     </div>
   )
