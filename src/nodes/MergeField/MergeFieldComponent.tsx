@@ -32,7 +32,7 @@ const MergeFieldComponent = ({
           <div className={styles.content}>
             <img
               alt="icon"
-              className={styles["svgIcon"]}
+              className={styles.svgIcon}
               height="15"
               src={mergeFieldIconUrl}
               width="15"
