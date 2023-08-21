@@ -6,7 +6,7 @@
  *
  */
 
-.color-picker-basic-color {
+.colorPickerBasicColor {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -27,11 +27,11 @@
   }
 }
 
-.color-picker-wrapper {
+.colorPickerWrapper {
   padding: 20px;
 }
 
-.color-picker-saturation {
+.colorPickerSaturation {
   background-image: linear-gradient(transparent, black),
     linear-gradient(to right, white, transparent);
   height: 150px;
@@ -41,7 +41,7 @@
   width: 100%;
 }
 
-.color-picker-saturation_cursor {
+.colorPickerSaturationCursor {
   border-radius: 50%;
   border: 2px solid #ffffff;
   box-shadow: 0 0 15px #00000026;
@@ -52,7 +52,7 @@
   width: 20px;
 }
 
-.color-picker-hue {
+.colorPickerHue {
   background-image: linear-gradient(
     to right,
     rgb(255, 0, 0),
@@ -71,7 +71,7 @@
   width: 100%;
 }
 
-.color-picker-hue_cursor {
+.colorPickerHueCursor {
   border-radius: 50%;
   border: 2px solid #ffffff;
   box-shadow: #0003 0 0 0 0.5px;

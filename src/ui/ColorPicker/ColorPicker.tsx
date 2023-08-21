@@ -101,9 +101,9 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
   }, [color])
 
   return (
-    <div className={styles["color-picker-wrapper"]} ref={innerDivRef} style={{ width: WIDTH }}>
+    <div className={styles.colorPickerWrapper} ref={innerDivRef} style={{ width: WIDTH }}>
       <TextInput label="Hex" onChange={onSetHex} value={inputColor} />
-      <div className={styles["color-picker-basic-color"]}>
+      <div className={styles.colorPickerBasicColor}>
         {basicColors.map((basicColor) => (
           <button
             aria-label="color picker"
@@ -118,12 +118,12 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
         ))}
       </div>
       <MoveWrapper
-        className={styles["color-picker-saturation"]}
+        className={styles.colorPickerSaturation}
         onChange={onMoveSaturation}
         style={{ backgroundColor: `hsl(${selfColor.hsv.h}, 100%, 50%)` }}
       >
         <div
-          className={styles["color-picker-saturation_cursor"]}
+          className={styles.colorPickerSaturationCursor}
           style={{
             backgroundColor: selfColor.hex,
             left: saturationPosition.x,
@@ -131,9 +131,9 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
           }}
         />
       </MoveWrapper>
-      <MoveWrapper className={styles["color-picker-hue"]} onChange={onMoveHue}>
+      <MoveWrapper className={styles.colorPickerHue} onChange={onMoveHue}>
         <div
-          className={styles["color-picker-hue_cursor"]}
+          className={styles.colorPickerHueCursor}
           style={{
             backgroundColor: `hsl(${selfColor.hsv.h}, 100%, 50%)`,
             left: huePosition.x,
