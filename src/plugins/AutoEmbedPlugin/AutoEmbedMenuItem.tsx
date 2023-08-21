@@ -21,7 +21,7 @@ export const AutoEmbedMenuItem = ({
   return (
     <li
       aria-selected={isSelected}
-      className={classNames("item", isSelected ? stylesTypeaheadPopover.selected : "")}
+      className={classNames(isSelected ? stylesTypeaheadPopover.selected : "")}
       id={"typeahead-item-" + index}
       key={option.key}
       onClick={onClick}
