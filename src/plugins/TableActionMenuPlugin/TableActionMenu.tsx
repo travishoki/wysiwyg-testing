@@ -445,11 +445,15 @@ export const TableActionMenu = ({
       >
         <span className={stylesDropdown.dropdownText}>Delete row</span>
       </button>
-      <button className="item" data-test-id="table-delete" onClick={() => deleteTableAtSelection()}>
+      <button
+        className={stylesDropdown.dropdownItem}
+        data-test-id="table-delete"
+        onClick={() => deleteTableAtSelection()}
+      >
         <span className={stylesDropdown.dropdownText}>Delete table</span>
       </button>
       <HorizontalRule />
-      <button className="item" onClick={() => toggleTableRowIsHeader()}>
+      <button className={stylesDropdown.dropdownItem} onClick={() => toggleTableRowIsHeader()}>
         <span className={stylesDropdown.dropdownText}>
           {(tableCellNode.__headerState & TableCellHeaderStates.ROW) === TableCellHeaderStates.ROW
             ? "Remove"
@@ -457,7 +461,7 @@ export const TableActionMenu = ({
           row header
         </span>
       </button>
-      <button className="item" onClick={() => toggleTableColumnIsHeader()}>
+      <button className={stylesDropdown.dropdownItem} onClick={() => toggleTableColumnIsHeader()}>
         <span className={stylesDropdown.dropdownText}>
           {(tableCellNode.__headerState & TableCellHeaderStates.COLUMN) ===
           TableCellHeaderStates.COLUMN
