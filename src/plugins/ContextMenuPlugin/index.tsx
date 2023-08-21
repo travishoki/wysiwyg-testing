@@ -132,32 +132,31 @@ export const ContextMenuPlugin = () => {
         { options: _options, selectOptionAndCleanUp, selectedIndex, setHighlightedIndex },
         { setMenuRef },
       ) =>
-        anchorElementRef.current
-          ? ReactDOM.createPortal(
-              <TypeaheadPopover
-                className={styles.autoEmbedMenu}
-                ref={setMenuRef}
-                style={{
-                  marginLeft: anchorElementRef.current.style.width,
-                  userSelect: "none",
-                  width: 200,
-                }}
-              >
-                <ContextMenu
-                  onOptionClick={(option: ContextMenuOption, index: number) => {
-                    setHighlightedIndex(index)
-                    selectOptionAndCleanUp(option)
-                  }}
-                  onOptionMouseEnter={(index: number) => {
-                    setHighlightedIndex(index)
-                  }}
-                  options={options}
-                  selectedItemIndex={selectedIndex}
-                />
-              </TypeaheadPopover>,
-              anchorElementRef.current,
-            )
-          : null
+        anchorElementRef.current &&
+        ReactDOM.createPortal(
+          <TypeaheadPopover
+            className={styles.autoEmbedMenu}
+            ref={setMenuRef}
+            style={{
+              marginLeft: anchorElementRef.current.style.width,
+              userSelect: "none",
+              width: 200,
+            }}
+          >
+            <ContextMenu
+              onOptionClick={(option: ContextMenuOption, index: number) => {
+                setHighlightedIndex(index)
+                selectOptionAndCleanUp(option)
+              }}
+              onOptionMouseEnter={(index: number) => {
+                setHighlightedIndex(index)
+              }}
+              options={options}
+              selectedItemIndex={selectedIndex}
+            />
+          </TypeaheadPopover>,
+          anchorElementRef.current,
+        )
       }
       onSelectOption={onSelectOption}
       options={options}
