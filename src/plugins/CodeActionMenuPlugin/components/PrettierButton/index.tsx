@@ -12,6 +12,7 @@ import { $getNearestNodeFromDOMNode, LexicalEditor } from "lexical"
 import { Options } from "prettier"
 import { IconFormat } from "../../../../Icon/IconFormat"
 import styles from "./index.module.scss"
+import classNames from "classnames"
 
 interface PrettierButtonProps {
   editor: LexicalEditor
@@ -145,7 +146,9 @@ export const PrettierButton = ({ editor, getCodeDOMNode, lang }: PrettierButtonP
       >
         {syntaxError ? <IconFormat type="prettier-error" /> : <IconFormat type="prettier" />}
       </button>
-      {tipsVisible ? <pre className={styles.codeErrorTips}>{syntaxError}</pre> : null}
+      {tipsVisible && (
+        <pre className={classNames(styles.codeErrorTips, styles.pre)}>{syntaxError}</pre>
+      )}
     </div>
   )
 }
