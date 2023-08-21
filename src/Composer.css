@@ -133,22 +133,6 @@ pre::-webkit-scrollbar-thumb {
   font-weight: bold;
 }
 
-.actions {
-  bottom: 0;
-  margin: 10px;
-  position: absolute;
-  right: 0;
-  text-align: right;
-}
-
-.actions i {
-  background-size: contain;
-  display: inline-block;
-  height: 15px;
-  vertical-align: -0.25em;
-  width: 15px;
-}
-
 .ltr {
   text-align: left;
 }

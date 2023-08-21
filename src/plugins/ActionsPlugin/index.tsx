@@ -118,10 +118,10 @@ export const ActionsPlugin = () => {
   }, [editor])
 
   return (
-    <div className="actions">
+    <div className={styles.actions}>
       <button
         aria-label="Clear editor contents"
-        className={classNames(styles["action-button"], "clear")}
+        className={classNames(styles.actionButton, "clear")}
         disabled={isEditorEmpty}
         onClick={() => {
           showModal("Clear editor", (onClose) => (
@@ -134,7 +134,7 @@ export const ActionsPlugin = () => {
       </button>
       <button
         aria-label="Convert from markdown"
-        className={styles["action-button"]}
+        className={styles.actionButton}
         onClick={handleMarkdownToggle}
         title="Convert From Markdown"
       >

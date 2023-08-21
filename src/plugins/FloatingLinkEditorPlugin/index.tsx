@@ -8,7 +8,6 @@
 
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { useFloatingLinkEditorToolbar } from "./hooks"
-import "./index.css"
 
 type FloatingLinkEditorPluginProps = {
   anchorElem?: HTMLElement
