@@ -8,7 +8,6 @@
 
 import React from "react"
 import classNames from "classnames"
-import "./Select.css"
 import { InputLabel } from "../Input/InputLabel"
 import { InputWrapper } from "../Input/InputWrapper"
 import styles from "./Select.module.scss"
