@@ -17,6 +17,7 @@ import { getSelectedNode } from "../../utils/getSelectedNode"
 import { setFloatingElemPositionForLinkEditor } from "../../utils/setFloatingElemPositionForLinkEditor"
 import { sanitizeUrl } from "../../utils/url"
 import styles from "./FloatingLinkEditor.module.scss"
+import classNames from "classnames"
 
 type FloatingLinkEditorProps = {
   anchorElem: HTMLElement
@@ -77,7 +78,7 @@ export const FloatingLinkEditor = ({
         setFloatingElemPositionForLinkEditor(domRect, editorElem, anchorElem)
       }
       setLastSelection(selection)
-    } else if (!activeElement || activeElement.className !== "link-input") {
+    } else if (!activeElement || activeElement.className !== "composer-link-input") {
       if (rootElement !== null) {
         setFloatingElemPositionForLinkEditor(null, editorElem, anchorElem)
       }
@@ -183,7 +184,7 @@ export const FloatingLinkEditor = ({
         <>
           <input
             aria-label="input"
-            className="link-input"
+            className={classNames("composer-link-input", styles.linkInput)}
             onChange={(event) => {
               setEditedLinkUrl(event.target.value)
             }}
