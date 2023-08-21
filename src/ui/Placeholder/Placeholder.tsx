@@ -15,5 +15,5 @@ type PlaceholderProps = {
 }
 
 export const Placeholder = ({ children, className }: PlaceholderProps) => {
-  return <div className={className || styles.Placeholder__root}>{children}</div>
+  return <div className={className || styles.placeholder}>{children}</div>
 }
