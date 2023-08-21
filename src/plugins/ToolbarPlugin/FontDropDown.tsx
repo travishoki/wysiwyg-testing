@@ -82,7 +82,7 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
             key={option}
             onClick={() => handleClick(option)}
           >
-            <span className={stylesToolbar.text}>{text}</span>
+            <span className={stylesDropdown.dropdownText}>{text}</span>
           </DropDownItem>
         ),
       )}
