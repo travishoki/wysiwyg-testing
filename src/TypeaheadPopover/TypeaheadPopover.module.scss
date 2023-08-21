@@ -57,13 +57,13 @@
       &:hover {
         background-color: #eee;
       }
-
-      &.text {
-        display: flex;
-        line-height: 20px;
-        flex-grow: 1;
-        min-width: 150px;
-      }
     }
   }
+}
+
+.text {
+  display: flex;
+  line-height: 20px;
+  flex-grow: 1;
+  min-width: 150px;
 }

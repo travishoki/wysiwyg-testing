@@ -1,4 +1,5 @@
 import React from "react"
+import stylesTypeaheadPopover from "../../TypeaheadPopover/TypeaheadPopover.module.scss"
 import { ComponentPickerOption } from "./ComponentPickerOption"
 
 type ComponentPickerMenuItemProps = {
@@ -34,7 +35,7 @@ export const ComponentPickerMenuItem = ({
       tabIndex={-1}
     >
       {option.icon}
-      <span className="text">{option.title}</span>
+      <span className={stylesTypeaheadPopover.text}>{option.title}</span>
     </li>
   )
 }
