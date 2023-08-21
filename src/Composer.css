@@ -1,4 +1,4 @@
-/* editorImage */
+/* Editor Image */
 
 .composer__editorImage {
   cursor: default;
@@ -25,7 +25,7 @@
   cursor: grabbing;
 }
 
-/* inlineEditorImage */
+/* Inline Editor Image */
 
 .composer__inlineEditorImage {
   cursor: default;
@@ -133,7 +133,7 @@
   color: transparent;
 }
 
-/* ImageNode */
+/* Image Node */
 .composer__imageResizer {
   touch-action: none;
 }
