@@ -8,11 +8,11 @@
 
 import React, { useState } from "react"
 import { $isCodeNode } from "@lexical/code"
+import classNames from "classnames"
 import { $getNearestNodeFromDOMNode, LexicalEditor } from "lexical"
 import { Options } from "prettier"
 import { IconFormat } from "../../../../Icon/IconFormat"
 import styles from "./index.module.scss"
-import classNames from "classnames"
 
 interface PrettierButtonProps {
   editor: LexicalEditor
