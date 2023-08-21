@@ -137,3 +137,25 @@
 .composer__imageResizer {
   touch-action: none;
 }
+
+/* Horizontal Rule */
+
+.composer hr {
+  border: none;
+  cursor: pointer;
+  margin: 1em 0;
+  padding: 2px 2px;
+}
+
+.composer hr.selected {
+  outline: 2px solid #3c84f4;
+  user-select: none;
+}
+
+.composer hr:after {
+  background-color: #ccc;
+  content: "";
+  display: block;
+  height: 2px;
+  line-height: 2px;
+}
