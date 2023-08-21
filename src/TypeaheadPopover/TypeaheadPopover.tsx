@@ -5,12 +5,12 @@ import styles from "./TypeaheadPopover.module.scss"
 type TypeaheadPopoverProps = {
   children: ReactNode
   className?: string
-  ref?: (element: HTMLElement) => void,
+  ref?: (element: HTMLElement) => void
   style?: CSSProperties
 }
 export const TypeaheadPopover = ({ children, className, ref }: TypeaheadPopoverProps) => {
   return (
-    <div className={classNames(styles["typeahead-popover"], className)} ref={ref}>
+    <div className={classNames(styles.typeaheadPopover, className)} ref={ref}>
       {children}
     </div>
   )
