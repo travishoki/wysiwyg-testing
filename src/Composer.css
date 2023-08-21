@@ -84,7 +84,6 @@ pre::-webkit-scrollbar-thumb {
 }
 
 .composer__inlineEditorImage {
-  border: solid 1px red;
   cursor: default;
   display: inline-block;
   position: relative;
