@@ -22,10 +22,7 @@ export const Select = ({ children, className, label, ...other }: SelectProps) =>
   return (
     <InputWrapper>
       <InputLabel style={{ marginTop: "-1em" }}>{label}</InputLabel>
-      <select
-        {...other}
-        className={classNames(styles.select, className || styles["select-general"])}
-      >
+      <select {...other} className={classNames(styles.select, className || styles.selectGeneral)}>
         {children}
       </select>
     </InputWrapper>

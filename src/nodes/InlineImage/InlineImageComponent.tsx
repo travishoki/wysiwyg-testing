@@ -212,7 +212,7 @@ const InlineImageComponent = ({
       <>
         <div draggable={draggable}>
           <button
-            className={styles["image-edit-button"]}
+            className={styles.imageEditButton}
             onClick={() => {
               showModal("Update Inline Image", (onClose) => (
                 <UpdateInlineImageDialog

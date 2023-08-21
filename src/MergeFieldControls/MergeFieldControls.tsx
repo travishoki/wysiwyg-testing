@@ -9,7 +9,7 @@ type MergeFieldControlsProps = {
 
 export const MergeFieldControls = ({ onClick }: MergeFieldControlsProps) => {
   return (
-    <div className={styles["merge-field-controls"]}>
+    <div className={styles.mergeFieldControls}>
       {mergeFieldIdArray.map((mergeField) => (
         <MergeFieldButton
           key={mergeField.id}

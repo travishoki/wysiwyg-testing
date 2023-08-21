@@ -145,7 +145,7 @@ export const PrettierButton = ({ editor, getCodeDOMNode, lang }: PrettierButtonP
       >
         {syntaxError ? <IconFormat type="prettier-error" /> : <IconFormat type="prettier" />}
       </button>
-      {tipsVisible ? <pre className={styles["code-error-tips"]}>{syntaxError}</pre> : null}
+      {tipsVisible ? <pre className={styles.codeErrorTips}>{syntaxError}</pre> : null}
     </div>
   )
 }
