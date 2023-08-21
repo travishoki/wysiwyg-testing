@@ -37,18 +37,6 @@ pre::-webkit-scrollbar-thumb {
   }
 }
 
-@keyframes slide-in {
-  0% {
-    opacity: 0;
-    transform: translateX(-200px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 .composer__editorImage {
   cursor: default;
   display: inline-block;
@@ -169,30 +157,12 @@ i.chevron-down {
   width: 8px;
 }
 
-@keyframes mic-pulsate-color {
-  0% {
-    background-color: #ffdcdc;
-  }
-
-  50% {
-    background-color: #ff8585;
-  }
-
-  100% {
-    background-color: #ffdcdc;
-  }
-}
-
 .ltr {
   text-align: left;
 }
 
 .rtl {
   text-align: right;
-}
-
-.spacer {
-  letter-spacing: -2px;
 }
 
 button.item i {
