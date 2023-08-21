@@ -32,7 +32,7 @@ export const ContextMenuItem = ({
       role="option"
       tabIndex={-1}
     >
-      <span className="text">{option.title}</span>
+      <span className={stylesTypeaheadPopover.text}>{option.title}</span>
     </li>
   )
 }

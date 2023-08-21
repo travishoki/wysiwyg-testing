@@ -33,7 +33,7 @@ export const MentionsTypeaheadMenuItem = ({
       tabIndex={-1}
     >
       {option.picture}
-      <span className="text">{option.name}</span>
+      <span className={stylesTypeaheadPopover.text}>{option.name}</span>
     </li>
   )
 }

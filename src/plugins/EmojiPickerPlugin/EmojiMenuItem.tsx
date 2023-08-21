@@ -32,7 +32,7 @@ export const EmojiMenuItem = ({
       role="option"
       tabIndex={-1}
     >
-      <span className="text">
+      <span className={stylesTypeaheadPopover.text}>
         {option.emoji} {option.title}
       </span>
     </li>
