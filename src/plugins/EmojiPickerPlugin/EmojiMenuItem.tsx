@@ -1,4 +1,6 @@
 import React from "react"
+import classNames from "classnames"
+import stylesTypeaheadPopover from "../../TypeaheadPopover/TypeaheadPopover.module.scss"
 import { EmojiOption } from "./EmojiOption"
 
 type EmojiMenuItemProps = {
@@ -17,14 +19,11 @@ export const EmojiMenuItem = ({
   option,
 }: EmojiMenuItemProps) => {
   let className = "item"
-  if (isSelected) {
-    className += " selected"
-  }
 
   return (
     <li
       aria-selected={isSelected}
-      className={className}
+      className={classNames(className, isSelected ? stylesTypeaheadPopover.selected : "")}
       id={"typeahead-item-" + index}
       key={option.key}
       onClick={onClick}
