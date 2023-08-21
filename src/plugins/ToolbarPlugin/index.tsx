@@ -454,7 +454,7 @@ export const ToolbarPlugin = () => {
           </button>
           <DropdownColorPicker
             buttonAriaLabel="Formatting text color"
-            buttonClassName={classNames(styles.toolbarItem)}
+            buttonClassName={styles.toolbarItem}
             buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["font-color"])}
             color={fontColor}
             disabled={!isEditable}
@@ -463,7 +463,7 @@ export const ToolbarPlugin = () => {
           />
           <DropdownColorPicker
             buttonAriaLabel="Formatting background color"
-            buttonClassName={classNames(styles.toolbarItem)}
+            buttonClassName={styles.toolbarItem}
             buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["bg-color"])}
             color={bgColor}
             disabled={!isEditable}

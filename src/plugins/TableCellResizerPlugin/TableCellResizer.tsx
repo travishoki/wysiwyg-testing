@@ -8,7 +8,6 @@ import {
   Cell,
   getCellFromTarget,
 } from "@lexical/table"
-import classNames from "classnames"
 import {
   $getNearestNodeFromDOMNode,
   $getSelection,
@@ -314,13 +313,13 @@ export const TableCellResizer = ({ editor }: TableCellResizerProps) => {
       {activeCell != null && !isSelectingGrid && (
         <>
           <div
-            className={classNames(styles.tableCellResizer)}
+            className={styles.tableCellResizer}
             onMouseDown={toggleResize("right")}
             onMouseUp={toggleResize("right")}
             style={resizerStyles.right || undefined}
           />
           <div
-            className={classNames(styles.tableCellResizer)}
+            className={styles.tableCellResizer}
             onMouseDown={toggleResize("bottom")}
             onMouseUp={toggleResize("bottom")}
             style={resizerStyles.bottom || undefined}
