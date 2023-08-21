@@ -18,12 +18,10 @@ export const ComponentPickerMenuItem = ({
   onMouseEnter,
   option,
 }: ComponentPickerMenuItemProps) => {
-  let className = "item"
-
   return (
     <li
       aria-selected={isSelected}
-      className={classNames(className, isSelected ? stylesTypeaheadPopover.selected : "")}
+      className={classNames("item", isSelected ? stylesTypeaheadPopover.selected : "")}
       id={"typeahead-item-" + index}
       key={option.key}
       onClick={onClick}

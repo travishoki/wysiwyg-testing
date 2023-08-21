@@ -121,7 +121,7 @@ export const ActionsPlugin = () => {
     <div className={styles.actions}>
       <button
         aria-label="Clear editor contents"
-        className={classNames(styles.actionButton)}
+        className={styles.actionButton}
         disabled={isEditorEmpty}
         onClick={() => {
           showModal("Clear editor", (onClose) => (
