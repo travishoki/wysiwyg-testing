@@ -1,6 +1,7 @@
 import React, { Dispatch, useCallback, useEffect, useRef, useState } from "react"
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link"
 import { mergeRegister } from "@lexical/utils"
+import classNames from "classnames"
 import {
   $getSelection,
   $isRangeSelection,
@@ -17,7 +18,6 @@ import { getSelectedNode } from "../../utils/getSelectedNode"
 import { setFloatingElemPositionForLinkEditor } from "../../utils/setFloatingElemPositionForLinkEditor"
 import { sanitizeUrl } from "../../utils/url"
 import styles from "./FloatingLinkEditor.module.scss"
-import classNames from "classnames"
 
 type FloatingLinkEditorProps = {
   anchorElem: HTMLElement

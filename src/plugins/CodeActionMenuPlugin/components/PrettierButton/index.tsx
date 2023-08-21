@@ -12,6 +12,7 @@ import classNames from "classnames"
 import { $getNearestNodeFromDOMNode, LexicalEditor } from "lexical"
 import { Options } from "prettier"
 import { IconFormat } from "../../../../Icon/IconFormat"
+import stylesCodeActionMenu from "../../CodeActionMenuContainer.module.scss"
 import styles from "./index.module.scss"
 
 interface PrettierButtonProps {
@@ -139,7 +140,7 @@ export const PrettierButton = ({ editor, getCodeDOMNode, lang }: PrettierButtonP
     <div className={styles.prettierWrapper}>
       <button
         aria-label="prettier"
-        className="menu-item"
+        className={stylesCodeActionMenu.menuItem}
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
