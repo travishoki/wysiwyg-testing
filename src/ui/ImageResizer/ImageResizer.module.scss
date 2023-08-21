@@ -1,23 +1,10 @@
-.imageCaptionButton {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  bottom: 20px;
-  color: #fff;
-  cursor: pointer;
+.imageResizer {
+  background-color: rgb(60, 132, 244);
+  border: 1px solid #fff;
   display: block;
-  left: 0;
-  margin: 0 auto;
-  min-width: 100px;
-  padding: 10px;
+  height: 7px;
   position: absolute;
-  right: 0;
-  user-select: none;
-  width: 30%;
-
-  &:hover {
-    background-color: rgba(60, 132, 244, 0.5);
-  }
+  width: 7px;
 }
 
 .imageResizerN {
@@ -66,4 +53,26 @@
   top: -6px;
   left: -6px;
   cursor: nw-resize;
+}
+
+.imageCaptionButton {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  bottom: 20px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  left: 0;
+  margin: 0 auto;
+  min-width: 100px;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  user-select: none;
+  width: 30%;
+
+  &:hover {
+    background-color: rgba(60, 132, 244, 0.5);
+  }
 }

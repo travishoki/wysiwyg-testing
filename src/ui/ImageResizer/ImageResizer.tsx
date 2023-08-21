@@ -227,49 +227,49 @@ export const ImageResizer = ({
         </button>
       )}
       <div
-        className={classNames("image-resizer", styles.imageResizerN)}
+        className={classNames(styles.imageResizer, styles.imageResizerN)}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.north)
         }}
       />
       <div
-        className={classNames("image-resizer", styles.imageResizerNe)}
+        className={classNames(styles.imageResizer, styles.imageResizerNe)}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.north | Direction.east)
         }}
       />
       <div
-        className={classNames("image-resizer", styles.imageResizerE)}
+        className={classNames(styles.imageResizer, styles.imageResizerE)}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.east)
         }}
       />
       <div
-        className={classNames("image-resizer", styles.imageResizerSe)}
+        className={classNames(styles.imageResizer, styles.imageResizerSe)}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.south | Direction.east)
         }}
       />
       <div
-        className={classNames("image-resizer", styles.imageResizerS)}
+        className={classNames(styles.imageResizer, styles.imageResizerS)}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.south)
         }}
       />
       <div
-        className={classNames("image-resizer", styles.imageResizerSw)}
+        className={classNames(styles.imageResizer, styles.imageResizerSw)}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.south | Direction.west)
         }}
       />
       <div
-        className={classNames("image-resizer", styles.imageResizerW)}
+        className={classNames(styles.imageResizer, styles.imageResizerW)}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.west)
         }}
       />
       <div
-        className={classNames("image-resizer", styles.imageResizerNw)}
+        className={classNames(styles.imageResizer, styles.imageResizerNw)}
         onPointerDown={(event) => {
           handlePointerDown(event, Direction.north | Direction.west)
         }}

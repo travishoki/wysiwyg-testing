@@ -74,15 +74,6 @@ pre::-webkit-scrollbar-thumb {
   cursor: grabbing;
 }
 
-.composer__editorImage .image-resizer {
-  background-color: rgb(60, 132, 244);
-  border: 1px solid #fff;
-  display: block;
-  height: 7px;
-  position: absolute;
-  width: 7px;
-}
-
 .composer__inlineEditorImage {
   cursor: default;
   display: inline-block;
