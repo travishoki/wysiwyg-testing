@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { $getNodeByKey, LexicalEditor, NodeKey } from "lexical"
 import { Button } from "../../ui/Button/Button"
+import stylesCheckbox from "../../ui/Checkbox.module.scss"
 import { DialogActions } from "../../ui/Dialog/Dialog"
 import { InputWrapper } from "../../ui/Input/InputWrapper"
 import { Select } from "../../ui/Select/Select"
@@ -71,6 +72,7 @@ export const UpdateInlineImageDialog = ({
         <input
           aria-label="caption"
           checked={showCaption}
+          className={stylesCheckbox.checkbox}
           id="caption"
           onChange={handleShowCaptionChange}
           type="checkbox"

@@ -24,7 +24,6 @@ import { $createInlineImageNode, InlineImageNode } from "../../nodes/InlineImage
 import { INSERT_INLINE_IMAGE_COMMAND } from "./const"
 import { onDragStart, onDragover, onDrop } from "./helpers"
 import { InsertInlineImagePayload } from "./types"
-import "../../ui/Checkbox.css"
 
 export const InlineImagePlugin = (): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()

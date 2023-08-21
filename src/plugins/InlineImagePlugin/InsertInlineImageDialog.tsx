@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react"
 import { LexicalEditor } from "lexical"
 import { Position } from "../../nodes/InlineImage/InlineImageNode"
 import { Button } from "../../ui/Button/Button"
+import stylesCheckbox from "../../ui/Checkbox.module.scss"
 import { DialogActions } from "../../ui/Dialog/Dialog"
 import { FileInput } from "../../ui/FileInput/FileInput"
 import { InputWrapper } from "../../ui/Input/InputWrapper"
@@ -104,6 +105,7 @@ export const InsertInlineImageDialog = ({
         <input
           aria-label="caption"
           checked={showCaption}
+          className={stylesCheckbox.checkbox}
           id="caption"
           onChange={handleShowCaptionChange}
           type="checkbox"
