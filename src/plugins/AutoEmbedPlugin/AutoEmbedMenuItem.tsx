@@ -1,5 +1,7 @@
 import React from "react"
 import { AutoEmbedOption } from "@lexical/react/LexicalAutoEmbedPlugin"
+import classNames from "classnames"
+import stylesTypeaheadPopover from "../../TypeaheadPopover/TypeaheadPopover.module.scss"
 
 type AutoEmbedMenuItemProps = {
   index: number
@@ -17,14 +19,11 @@ export const AutoEmbedMenuItem = ({
   option,
 }: AutoEmbedMenuItemProps) => {
   let className = "item"
-  if (isSelected) {
-    className += " selected"
-  }
 
   return (
     <li
       aria-selected={isSelected}
-      className={className}
+      className={classNames(className, isSelected ? stylesTypeaheadPopover.selected : "")}
       id={"typeahead-item-" + index}
       key={option.key}
       onClick={onClick}
