@@ -647,7 +647,7 @@ export const MentionsPlugin = (): JSX.Element | null => {
       ) =>
         anchorElementRef.current && results.length
           ? ReactDOM.createPortal(
-              <TypeaheadPopover className={styles["mentions-menu"]}>
+              <TypeaheadPopover className={styles.mentionsMenu}>
                 <ul>
                   {options.map((option, i: number) => (
                     <MentionsTypeaheadMenuItem
