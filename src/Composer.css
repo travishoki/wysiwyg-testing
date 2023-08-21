@@ -133,14 +133,6 @@ pre::-webkit-scrollbar-thumb {
   font-weight: bold;
 }
 
-.ltr {
-  text-align: left;
-}
-
-.rtl {
-  text-align: right;
-}
-
 button.item i {
   opacity: 0.6;
 }
