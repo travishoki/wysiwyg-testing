@@ -11,7 +11,6 @@ import { ComposerNodes } from "./nodes/ComposerNodes"
 import { TableContext } from "./plugins/TablePlugin/TableContext"
 import { ComposerTheme } from "./themes/ComposerTheme"
 import { Maybe } from "./types/globals"
-import "./Composer.css"
 
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
