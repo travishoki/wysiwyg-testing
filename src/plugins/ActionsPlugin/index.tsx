@@ -12,7 +12,6 @@ import { $convertFromMarkdownString, $convertToMarkdownString } from "@lexical/m
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { mergeRegister } from "@lexical/utils"
 import { CONNECTED_COMMAND } from "@lexical/yjs"
-import classNames from "classnames"
 import {
   $createTextNode,
   $getRoot,
