@@ -32,7 +32,7 @@ const MergeFieldComponent = ({
           <div className={styles.content}>
             <img
               alt="icon"
-              className={styles["svg-icon"]}
+              className={styles["svgIcon"]}
               height="15"
               src={mergeFieldIconUrl}
               width="15"
@@ -41,7 +41,7 @@ const MergeFieldComponent = ({
           </div>
 
           {isEditable && (
-            <button className={styles["button-close"]} onClick={onClickClose}>
+            <button className={styles.buttonClose} onClick={onClickClose}>
               <img alt="close" height="15" src={ImageClose} width="15" />
             </button>
           )}

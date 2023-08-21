@@ -285,11 +285,9 @@ const ImageComponent = ({
               <HistoryPlugin externalHistoryState={historyState} />
               <RichTextPlugin
                 ErrorBoundary={LexicalErrorBoundary}
-                contentEditable={
-                  <ContentEditable className={styles["ImageNode__contentEditable"]} />
-                }
+                contentEditable={<ContentEditable className={styles.imageNodeContentEditable} />}
                 placeholder={
-                  <Placeholder className={styles["ImageNode__placeholder"]}>
+                  <Placeholder className={styles.imageNodePlaceholder}>
                     Enter a caption...
                   </Placeholder>
                 }

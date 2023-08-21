@@ -155,7 +155,7 @@ export const TextFormatFloatingToolbar = ({
   }, [editor, updateTextFormatFloatingToolbar])
 
   return (
-    <div className={styles["floating-text-format-popup"]} ref={popupCharStylesEditorRef}>
+    <div className={styles.floatingTextFormatPopup} ref={popupCharStylesEditorRef}>
       {editor.isEditable() && (
         <>
           <button

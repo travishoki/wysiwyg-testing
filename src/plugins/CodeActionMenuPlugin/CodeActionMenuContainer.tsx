@@ -123,7 +123,7 @@ export const CodeActionMenuContainer = ({ anchorElem }: CodeActionMenuContainerP
           className={classNames("code-action-menu-container", styles.codeActionMenuContainer)}
           style={{ ...position }}
         >
-          <div className={styles["code-highlight-language"]}>{codeFriendlyName}</div>
+          <div className={styles.codeHighlightLanguage}>{codeFriendlyName}</div>
           <CopyButton editor={editor} getCodeDOMNode={getCodeDOMNode} />
           {canBePrettier(normalizedLang) ? (
             <PrettierButton editor={editor} getCodeDOMNode={getCodeDOMNode} lang={normalizedLang} />

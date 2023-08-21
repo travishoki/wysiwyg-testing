@@ -33,9 +33,9 @@ export const Button = ({
     <button
       aria-label={title}
       className={joinClasses(
-        styles["Button__root"],
-        disabled && styles["Button__disabled"],
-        small && styles["Button__small"],
+        styles.buttonRoot,
+        disabled && styles.buttonDisabled,
+        small && styles.buttonSmall,
         className,
       )}
       disabled={disabled}

@@ -135,7 +135,7 @@ export const PrettierButton = ({ editor, getCodeDOMNode, lang }: PrettierButtonP
   }
 
   return (
-    <div className={styles["prettier-wrapper"]}>
+    <div className={styles.prettierWrapper}>
       <button
         aria-label="prettier"
         className="menu-item"

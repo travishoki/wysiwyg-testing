@@ -140,7 +140,7 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
           }}
         />
       </MoveWrapper>
-      <div className={styles["color-picker-color"]} style={{ backgroundColor: selfColor.hex }} />
+      <div className={styles.colorPickerColor} style={{ backgroundColor: selfColor.hex }} />
     </div>
   )
 }

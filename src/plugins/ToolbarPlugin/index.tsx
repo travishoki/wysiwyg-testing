@@ -49,7 +49,7 @@ import {
   UNDO_COMMAND,
 } from "lexical"
 import { Icon } from "../../Icon/Icon"
-import iconStyles from "../../Icon/Icon.module.scss"
+import stylesIcon from "../../Icon/Icon.module.scss"
 import { IconFormat } from "../../Icon/IconFormat"
 import { useModal } from "../../hooks/useModal"
 import { IS_APPLE } from "../../shared/environment"
@@ -455,7 +455,7 @@ export const ToolbarPlugin = () => {
           <DropdownColorPicker
             buttonAriaLabel="Formatting text color"
             buttonClassName={classNames(styles.toolbarItem, "color-picker")}
-            buttonIconClassName={classNames(iconStyles.icon, iconStyles["font-color"])}
+            buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["font-color"])}
             color={fontColor}
             disabled={!isEditable}
             onChange={onFontColorSelect}
@@ -464,7 +464,7 @@ export const ToolbarPlugin = () => {
           <DropdownColorPicker
             buttonAriaLabel="Formatting background color"
             buttonClassName={classNames(styles.toolbarItem, "color-picker")}
-            buttonIconClassName={classNames(iconStyles.icon, iconStyles["bg-color"])}
+            buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["bg-color"])}
             color={bgColor}
             disabled={!isEditable}
             onChange={onBgColorSelect}
@@ -473,7 +473,7 @@ export const ToolbarPlugin = () => {
           <DropDown
             buttonAriaLabel="Formatting options for additional text styles"
             buttonClassName={classNames(styles.toolbarItem, styles.spaced)}
-            buttonIconClassName={classNames(iconStyles.icon, iconStyles["dropdown-more"])}
+            buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["dropdown-more"])}
             buttonLabel=""
             disabled={!isEditable}
           >
@@ -532,7 +532,7 @@ export const ToolbarPlugin = () => {
               <DropDown
                 buttonAriaLabel="Open table toolkit"
                 buttonClassName={classNames(styles.toolbarItem, styles.spaced)}
-                buttonIconClassName={classNames(iconStyles.icon, iconStyles.table, "secondary")}
+                buttonIconClassName={classNames(stylesIcon.icon, stylesIcon.table, "secondary")}
                 buttonLabel="Table"
                 disabled={!isEditable}
               >
@@ -551,7 +551,7 @@ export const ToolbarPlugin = () => {
           <DropDown
             buttonAriaLabel="Insert specialized editor node"
             buttonClassName={classNames(styles.toolbarItem, styles.spaced)}
-            buttonIconClassName={classNames(iconStyles.icon, iconStyles["plus"])}
+            buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["plus"])}
             buttonLabel="Insert"
             disabled={!isEditable}
           >
@@ -615,7 +615,7 @@ export const ToolbarPlugin = () => {
       <DropDown
         buttonAriaLabel="Formatting options for text alignment"
         buttonClassName={classNames(styles.toolbarItem, styles.spaced, "alignment")}
-        buttonIconClassName={classNames(iconStyles.icon, iconStyles["left-align"])}
+        buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["left-align"])}
         buttonLabel="Align"
         disabled={!isEditable}
       >
