@@ -133,10 +133,6 @@ pre::-webkit-scrollbar-thumb {
   font-weight: bold;
 }
 
-button.item i {
-  opacity: 0.6;
-}
-
 /* Styles that need to stay in css */
 
 /* blockCursor */
