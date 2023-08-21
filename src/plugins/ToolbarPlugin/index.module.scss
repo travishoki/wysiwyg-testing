@@ -42,13 +42,6 @@
     }
   }
 
-  &.active {
-    background-color: rgba(223, 232, 250, 0.3);
-    i {
-      opacity: 1;
-    }
-  }
-
   &:hover:not([disabled]) {
     background-color: #eee;
   }
@@ -102,4 +95,12 @@
   margin-right: 8px;
   user-select: none;
   width: 20px;
+}
+
+.activeButton {
+  background-color: #dfe8fa;
+
+  i {
+    opacity: 1;
+  }
 }

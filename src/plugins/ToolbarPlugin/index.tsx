@@ -396,7 +396,11 @@ export const ToolbarPlugin = () => {
           <Divider />
           <button
             aria-label={`Format text as bold. Shortcut: ${IS_APPLE ? "⌘B" : "Ctrl+B"}`}
-            className={classNames(styles.toolbarItem, styles.spaced, isBold ? "active" : "")}
+            className={classNames(
+              styles.toolbarItem,
+              styles.spaced,
+              isBold ? styles.activeButton : "",
+            )}
             disabled={!isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")
@@ -408,7 +412,11 @@ export const ToolbarPlugin = () => {
           </button>
           <button
             aria-label={`Format text as italics. Shortcut: ${IS_APPLE ? "⌘I" : "Ctrl+I"}`}
-            className={classNames(styles.toolbarItem, styles.spaced, isItalic ? "active" : "")}
+            className={classNames(
+              styles.toolbarItem,
+              styles.spaced,
+              isItalic ? styles.activeButton : "",
+            )}
             disabled={!isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic")
@@ -420,7 +428,11 @@ export const ToolbarPlugin = () => {
           </button>
           <button
             aria-label={`Format text to underlined. Shortcut: ${IS_APPLE ? "⌘U" : "Ctrl+U"}`}
-            className={classNames(styles.toolbarItem, styles.spaced, isUnderline ? "active" : "")}
+            className={classNames(
+              styles.toolbarItem,
+              styles.spaced,
+              isUnderline ? styles.activeButton : "",
+            )}
             disabled={!isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "underline")
@@ -432,7 +444,11 @@ export const ToolbarPlugin = () => {
           </button>
           <button
             aria-label="Insert code block"
-            className={classNames(styles.toolbarItem, styles.spaced, isCode ? "active" : "")}
+            className={classNames(
+              styles.toolbarItem,
+              styles.spaced,
+              isCode ? styles.activeButton : "",
+            )}
             disabled={!isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "code")
@@ -444,7 +460,11 @@ export const ToolbarPlugin = () => {
           </button>
           <button
             aria-label="Insert link"
-            className={classNames(styles.toolbarItem, styles.spaced, isLink ? "active" : "")}
+            className={classNames(
+              styles.toolbarItem,
+              styles.spaced,
+              isLink ? styles.activeButton : "",
+            )}
             disabled={!isEditable}
             onClick={insertLink}
             title="Insert link"
