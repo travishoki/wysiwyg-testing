@@ -113,11 +113,11 @@ export const TableCellActionMenuContainer = ({
   }, [prevTableCellDOM, tableCellNode])
 
   return (
-    <div className={styles["table-cell-action-button-container"]} ref={menuButtonRef}>
+    <div className={styles.tableCellActionButtonContainer} ref={menuButtonRef}>
       {tableCellNode != null && (
         <>
           <button
-            className={styles["table-cell-action-button"]}
+            className={styles.tableCellActionButton}
             onClick={(e) => {
               e.stopPropagation()
               setIsMenuOpen(!isMenuOpen)

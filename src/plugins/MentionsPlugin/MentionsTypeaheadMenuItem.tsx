@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
-import { MentionTypeaheadOption } from "./MentionTypeaheadOption"
 import stylesTypeaheadPopover from "../../TypeaheadPopover/TypeaheadPopover.module.scss"
+import { MentionTypeaheadOption } from "./MentionTypeaheadOption"
 
 type MentionsTypeaheadMenuItemProps = {
   index: number
