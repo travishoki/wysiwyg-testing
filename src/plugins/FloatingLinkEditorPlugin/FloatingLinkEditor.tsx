@@ -196,7 +196,7 @@ export const FloatingLinkEditor = ({
           <div>
             <div
               aria-label="cancel"
-              className={styles["link-cancel"]}
+              className={styles.linkCancel}
               onClick={() => {
                 setEditMode(false)
               }}
@@ -207,7 +207,7 @@ export const FloatingLinkEditor = ({
 
             <div
               aria-label="confim"
-              className={styles["link-confirm"]}
+              className={styles.linkConfirm}
               onClick={handleLinkSubmission}
               onMouseDown={(event) => event.preventDefault()}
               role="button"
@@ -216,13 +216,13 @@ export const FloatingLinkEditor = ({
           </div>
         </>
       ) : (
-        <div className={styles["link-view"]}>
+        <div className={styles.linkView}>
           <a href={sanitizeUrl(linkUrl)} rel="noopener noreferrer" target="_blank">
             {linkUrl}
           </a>
           <div
             aria-label="edit"
-            className={styles["link-edit"]}
+            className={styles.linkEdit}
             onClick={() => {
               setEditedLinkUrl(linkUrl)
               setEditMode(true)
@@ -233,7 +233,7 @@ export const FloatingLinkEditor = ({
           />
           <div
             aria-label="trash"
-            className={styles["link-trash"]}
+            className={styles.linkTrash}
             onClick={() => {
               editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)
             }}

@@ -105,7 +105,7 @@ export const EmojiPickerPlugin = () => {
 
         return anchorElementRef.current && options.length
           ? ReactDOM.createPortal(
-              <TypeaheadPopover className={styles["emoji-menu"]}>
+              <TypeaheadPopover className={styles.emojiMenu}>
                 <ul>
                   {options.map((option: EmojiOption, index) => (
                     <div key={option.key}>

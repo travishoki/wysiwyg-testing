@@ -1,4 +1,4 @@
-.link-trash {
+.linkTrash {
   background-image: url(../../images/icons/trash.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@
   width: 35px;
 }
 
-.link-cancel {
+.linkCancel {
   background-image: url(../../images/icons/close.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@
   width: 35px;
 }
 
-.link-edit {
+.linkEdit {
   background-image: url(../../images/icons/pencil-fill.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -41,7 +41,7 @@
   width: 35px;
 }
 
-.link-confirm {
+.linkConfirm {
   background-image: url(../../images/icons/success-alt.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -142,7 +142,7 @@
     padding: 6px;
   }
 
-  .link-view {
+  .linkView {
     border-radius: 15px;
     border: 0;
     color: rgb(5, 5, 5);

@@ -248,10 +248,10 @@ const InlineImageComponent = ({
               <RichTextPlugin
                 ErrorBoundary={LexicalErrorBoundary}
                 contentEditable={
-                  <ContentEditable className={styles["InlineImageNode__contentEditable"]} />
+                  <ContentEditable className={styles.inlineImageNodeContentEditable} />
                 }
                 placeholder={
-                  <Placeholder className={styles["InlineImageNode__placeholder"]}>
+                  <Placeholder className={styles.inlineImageNodePlaceholder}>
                     Enter a caption...
                   </Placeholder>
                 }

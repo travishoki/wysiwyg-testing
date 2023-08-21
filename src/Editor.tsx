@@ -153,7 +153,7 @@ export const Editor = () => {
           <AutoFocusPlugin />
           <RichTextPlugin
             ErrorBoundary={LexicalErrorBoundary}
-            contentEditable={<ContentEditable className={styles["TableNode__contentEditable"]} />}
+            contentEditable={<ContentEditable className={styles.tableNodeContentEditable} />}
             placeholder={null}
           />
           <MentionsPlugin />
