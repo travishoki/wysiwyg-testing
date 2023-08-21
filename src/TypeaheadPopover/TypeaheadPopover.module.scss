@@ -20,7 +20,7 @@
 
     li {
       align-content: center;
-      background-color: #fff;
+      background: #fff;
       border-radius: 8px;
       border: 0;
       color: #050505;
@@ -35,17 +35,6 @@
       outline: none;
       padding: 8px;
 
-      &.selected {
-        background: #eee;
-      }
-
-      &.active {
-        display: flex;
-        width: 20px;
-        height: 20px;
-        background-size: contain;
-      }
-
       &:first-child {
         border-radius: 8px 8px 0px 0px;
       }
@@ -55,7 +44,7 @@
       }
 
       &:hover {
-        background-color: #eee;
+        background: #eee;
       }
     }
   }
@@ -66,4 +55,15 @@
   line-height: 20px;
   flex-grow: 1;
   min-width: 150px;
+}
+
+.selected {
+  background: #eee;
+}
+
+.active {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
 }

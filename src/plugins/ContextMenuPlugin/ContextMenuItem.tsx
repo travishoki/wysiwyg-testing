@@ -1,5 +1,7 @@
 import React from "react"
+import classNames from "classnames"
 import { ContextMenuOption } from "./ContextMenuOption"
+import stylesTypeaheadPopover from "../../TypeaheadPopover/TypeaheadPopover.module.scss"
 
 type ContextMenuItemProps = {
   index: number
@@ -17,14 +19,11 @@ export const ContextMenuItem = ({
   option,
 }: ContextMenuItemProps) => {
   let className = "item"
-  if (isSelected) {
-    className += " selected"
-  }
 
   return (
     <li
       aria-selected={isSelected}
-      className={className}
+      className={classNames(className, isSelected ? stylesTypeaheadPopover.selected : "")}
       id={"typeahead-item-" + index}
       key={option.key}
       onClick={onClick}
