@@ -1,4 +1,6 @@
 import { CODE_LANGUAGE_FRIENDLY_NAME_MAP } from "@lexical/code"
+import classNames from "classnames"
+import styles from "./helpers.module.scss"
 
 export const getCodeLanguageOptions = (): [string, string][] => {
   const options: [string, string][] = []
@@ -11,7 +13,7 @@ export const getCodeLanguageOptions = (): [string, string][] => {
 }
 
 export const dropDownActiveClass = (active: boolean) => {
-  if (active) return "active dropdown-item-active"
+  if (active) return classNames("active", styles.dropdownItemActive)
 
   return ""
 }
