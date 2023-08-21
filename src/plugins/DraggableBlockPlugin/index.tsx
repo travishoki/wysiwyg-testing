@@ -363,15 +363,15 @@ const useDraggableBlockMenu = (
   return createPortal(
     <>
       <div
-        className={classNames("icon", "draggable-block-menu", styles["draggable-block-menu"])}
+        className={classNames("draggable-block-menu", styles.draggableBlockMenu)}
         draggable={true}
         onDragEnd={onDragEnd}
         onDragStart={onDragStart}
         ref={menuRef}
       >
-        <div className={isEditable ? "icon" : ""} />
+        <div className={isEditable ? styles.icon : ""} />
       </div>
-      <div className={styles["draggable-block-target-line"]} ref={targetLineRef} />
+      <div className={styles.draggableBlockTargetLine} ref={targetLineRef} />
     </>,
     anchorElem,
   )
