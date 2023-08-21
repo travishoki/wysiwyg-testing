@@ -120,7 +120,10 @@ export const CodeActionMenuContainer = ({ anchorElem }: CodeActionMenuContainerP
     <>
       {isShown ? (
         <div
-          className={classNames("code-action-menu-container", styles.codeActionMenuContainer)}
+          className={classNames(
+            "composer-code-action-menu-container",
+            styles.codeActionMenuContainer,
+          )}
           style={{ ...position }}
         >
           <div className={styles.codeHighlightLanguage}>{codeFriendlyName}</div>

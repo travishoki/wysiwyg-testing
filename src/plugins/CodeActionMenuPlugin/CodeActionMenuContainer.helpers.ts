@@ -9,7 +9,7 @@ export const getMouseInfo = (event: MouseEvent): getMouseInfoProps => {
   if (target && target instanceof HTMLElement) {
     const codeDOMNode = target.closest<HTMLElement>("code.composer__code")
     const isOutside = !(
-      codeDOMNode || target.closest<HTMLElement>("div.code-action-menu-container")
+      codeDOMNode || target.closest<HTMLElement>("div.composer-code-action-menu-container")
     )
 
     return { codeDOMNode, isOutside }

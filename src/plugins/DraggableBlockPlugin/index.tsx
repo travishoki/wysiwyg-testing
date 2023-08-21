@@ -363,7 +363,7 @@ const useDraggableBlockMenu = (
   return createPortal(
     <>
       <div
-        className={classNames("draggable-block-menu", styles.draggableBlockMenu)}
+        className={classNames("composer-draggable-block-menu", styles.draggableBlockMenu)}
         draggable={true}
         onDragEnd={onDragEnd}
         onDragStart={onDragStart}
