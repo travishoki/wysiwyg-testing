@@ -77,19 +77,19 @@
   vertical-align: middle;
 }
 
-.emoji.happySmile {
+.emoji.composer__happySmile {
   background-image: url(images/emoji/1F642.png);
 }
 
-.emoji.veryHappySmile {
+.emoji.composer__veryHappySmile {
   background-image: url(images/emoji/1F600.png);
 }
 
-.emoji.unhappySmile {
+.emoji.composer__unhappySmile {
   background-image: url(images/emoji/1F641.png);
 }
 
-.emoji.heart {
+.emoji.composer__heart {
   background-image: url(images/emoji/2764.png);
 }
 

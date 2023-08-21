@@ -2,14 +2,14 @@ import { TextNode } from "lexical"
 import { $createEmojiNode } from "../../nodes/Emoji/EmojiNode"
 
 const emojis: Map<string, [string, string]> = new Map([
-  [":)", ["emoji happySmile", "🙂"]],
-  [":D", ["emoji veryHappySmile", "😀"]],
-  [":(", ["emoji unhappySmile", "🙁"]],
-  ["<3", ["emoji heart", "❤"]],
-  ["🙂", ["emoji happySmile", "🙂"]],
-  ["😀", ["emoji veryHappySmile", "😀"]],
-  ["🙁", ["emoji unhappySmile", "🙁"]],
-  ["❤", ["emoji heart", "❤"]],
+  [":)", ["emoji composer__happySmile", "🙂"]],
+  [":D", ["emoji composer__veryHappySmile", "😀"]],
+  [":(", ["emoji composer__unhappySmile", "🙁"]],
+  ["<3", ["emoji composer__heart", "❤"]],
+  ["🙂", ["emoji composer__happySmile", "🙂"]],
+  ["😀", ["emoji composer__veryHappySmile", "😀"]],
+  ["🙁", ["emoji composer__unhappySmile", "🙁"]],
+  ["❤", ["emoji composer__heart", "❤"]],
 ])
 
 export const findAndTransformEmoji = (node: TextNode): null | TextNode => {
