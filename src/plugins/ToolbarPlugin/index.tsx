@@ -363,7 +363,7 @@ export const ToolbarPlugin = () => {
       {blockType === "code" ? (
         <DropDown
           buttonAriaLabel="Select language"
-          buttonClassName={classNames(styles.toolbarItem, "code-language")}
+          buttonClassName={classNames(styles.toolbarItem, styles.codeLanguage)}
           buttonLabel={getLanguageFriendlyName(codeLanguage)}
           disabled={!isEditable}
         >
