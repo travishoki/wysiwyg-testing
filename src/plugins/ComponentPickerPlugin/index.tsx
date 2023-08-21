@@ -258,7 +258,7 @@ export const ComponentPickerPlugin = () => {
         ) =>
           anchorElementRef.current && options.length
             ? ReactDOM.createPortal(
-                <TypeaheadPopover className={styles["component-picker-menu"]}>
+                <TypeaheadPopover className={styles.componentPickerMenu}>
                   <ul>
                     {options.map((option, i: number) => (
                       <ComponentPickerMenuItem
