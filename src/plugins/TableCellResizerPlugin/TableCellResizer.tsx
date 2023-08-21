@@ -314,13 +314,13 @@ export const TableCellResizer = ({ editor }: TableCellResizerProps) => {
       {activeCell != null && !isSelectingGrid && (
         <>
           <div
-            className={classNames(styles.TableCellResizer__resizer, "TableCellResizer__ui")}
+            className={classNames(styles.tableCellResizer)}
             onMouseDown={toggleResize("right")}
             onMouseUp={toggleResize("right")}
             style={resizerStyles.right || undefined}
           />
           <div
-            className={classNames(styles.TableCellResizer__resizer, "TableCellResizer__ui")}
+            className={classNames(styles.tableCellResizer)}
             onMouseDown={toggleResize("bottom")}
             onMouseUp={toggleResize("bottom")}
             style={resizerStyles.bottom || undefined}
