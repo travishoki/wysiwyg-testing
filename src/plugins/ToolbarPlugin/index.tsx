@@ -532,7 +532,7 @@ export const ToolbarPlugin = () => {
               <DropDown
                 buttonAriaLabel="Open table toolkit"
                 buttonClassName={classNames(styles.toolbarItem, styles.spaced)}
-                buttonIconClassName={classNames(stylesIcon.icon, stylesIcon.table, "secondary")}
+                buttonIconClassName={classNames(stylesIcon.icon, stylesIcon.table)}
                 buttonLabel="Table"
                 disabled={!isEditable}
               >
