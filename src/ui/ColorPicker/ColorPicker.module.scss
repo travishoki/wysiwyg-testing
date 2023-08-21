@@ -55,13 +55,13 @@
 .colorPickerHue {
   background-image: linear-gradient(
     to right,
-    rgb(255, 0, 0),
-    rgb(255, 255, 0),
-    rgb(0, 255, 0),
-    rgb(0, 255, 255),
-    rgb(0, 0, 255),
-    rgb(255, 0, 255),
-    rgb(255, 0, 0)
+    #ff0000,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #ff00ff,
+    #ff0000
   );
   border-radius: 12px;
   height: 12px;
@@ -83,7 +83,7 @@
 }
 
 .colorPickerColor {
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   height: 20px;
   margin-top: 15px;
   width: 100%;

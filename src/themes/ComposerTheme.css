@@ -25,8 +25,8 @@
   margin-left: 20px;
   margin-bottom: 10px;
   font-size: 15px;
-  color: rgb(101, 103, 107);
-  border-left-color: rgb(206, 208, 212);
+  color: #65676b;
+  border-left-color: #ced0d4;
   border-left-width: 4px;
   border-left-style: solid;
   padding-left: 16px;
@@ -34,14 +34,14 @@
 
 .composer__h1 {
   font-size: 24px;
-  color: rgb(5, 5, 5);
+  color: #050505;
   font-weight: 400;
   margin: 0;
 }
 
 .composer__h2 {
   font-size: 15px;
-  color: rgb(101, 103, 107);
+  color: #65676b;
   font-weight: 700;
   margin: 0;
   text-transform: uppercase;
@@ -88,7 +88,7 @@
 }
 
 .composer__textCode {
-  background-color: rgb(240, 242, 245);
+  background-color: #f0f2f5;
   padding: 1px 0.25rem;
   font-family: Menlo, Consolas, Monaco, monospace;
   font-size: 94%;
@@ -100,7 +100,7 @@
 }
 
 .composer__link {
-  color: rgb(33, 111, 219);
+  color: #216fdb;
   text-decoration: none;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .composer__code {
-  background-color: rgb(240, 242, 245);
+  background-color: #f0f2f5;
   font-family: Menlo, Consolas, Monaco, monospace;
   display: block;
   padding: 8px 8px 8px 52px;
@@ -153,7 +153,7 @@
 }
 
 .composer__tableSelected {
-  outline: 2px solid rgb(60, 132, 244);
+  outline: 2px solid #3c84f4;
 }
 
 .composer__tableCell {
@@ -198,7 +198,7 @@
 }
 
 .composer__tableCellPrimarySelected {
-  border: 2px solid rgb(60, 132, 244);
+  border: 2px solid #3c84f4;
   display: block;
   height: calc(100% - 2px);
   position: absolute;
@@ -287,7 +287,7 @@
   display: block;
   position: absolute;
   width: 1px;
-  background-color: rgb(60, 132, 244);
+  background-color: #3c84f4;
   height: 100%;
   top: 0;
 }
@@ -412,7 +412,7 @@
 }
 
 .composer__listItemChecked:before {
-  border: 1px solid rgb(61, 135, 245);
+  border: 1px solid #3d87f5;
   border-radius: 2px;
   background-color: #3d87f5;
   background-repeat: no-repeat;
@@ -501,5 +501,5 @@
 }
 
 .composer__embedBlockFocus {
-  outline: 2px solid rgb(60, 132, 244);
+  outline: 2px solid #3c84f4;
 }

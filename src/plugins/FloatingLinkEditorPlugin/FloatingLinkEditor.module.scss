@@ -88,7 +88,7 @@
     }
 
     &.active {
-      background-color: rgb(223, 232, 250);
+      background-color: #dfe8fa;
     }
 
     i {
@@ -105,7 +105,7 @@
     border-radius: 15px;
     border: 0;
     box-sizing: border-box;
-    color: rgb(5, 5, 5);
+    color: #050505;
     display: block;
     font-family: inherit;
     font-size: 15px;
@@ -116,7 +116,7 @@
     width: calc(100% - 75px);
 
     a {
-      color: rgb(33, 111, 219);
+      color: #216fdb;
       margin-right: 30px;
       overflow: hidden;
       text-decoration: underline;
@@ -145,7 +145,7 @@
   .linkView {
     border-radius: 15px;
     border: 0;
-    color: rgb(5, 5, 5);
+    color: #050505;
     display: block;
     font-family: inherit;
     font-size: 15px;
