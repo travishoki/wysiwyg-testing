@@ -19,7 +19,7 @@ import {
   COMMAND_PRIORITY_EDITOR,
   LexicalEditor,
 } from "lexical"
-import { IconBare } from "../../Icon/IconBare"
+import { IconBare } from "../../Icon/IconBare/IconBare"
 import { useModal } from "../../hooks/useModal"
 import { COMPOSER_TRANSFORMERS } from "../MarkdownTransformers"
 import { ShowClearDialog } from "./ShowClearDialog/ShowClearDialog"

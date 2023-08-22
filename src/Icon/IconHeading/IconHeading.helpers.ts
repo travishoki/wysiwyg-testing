@@ -1,4 +1,4 @@
-import { iconType } from "./types"
+import { iconType } from "../types"
 
 export const getType = (num: number): iconType => {
   switch (num) {

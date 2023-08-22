@@ -50,7 +50,7 @@ import {
 } from "lexical"
 import { Icon } from "../../Icon/Icon"
 import stylesIcon from "../../Icon/Icon.module.scss"
-import { IconFormat } from "../../Icon/IconFormat"
+import { IconFormat } from "../../Icon/IconFormat/IconFormat"
 import { useModal } from "../../hooks/useModal"
 import { IS_APPLE } from "../../shared/environment"
 import { DropdownColorPicker } from "../../ui/DropDown/ColorPicker"

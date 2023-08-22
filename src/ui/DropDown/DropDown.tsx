@@ -9,7 +9,7 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react"
 import classNames from "classnames"
 import { createPortal } from "react-dom"
-import { IconBare } from "../../Icon/IconBare"
+import { IconBare } from "../../Icon/IconBare/IconBare"
 import stylesToolbar from "../../plugins/ToolbarPlugin/index.module.scss"
 import styles from "./DropDown.module.scss"
 import { DropDownItems } from "./DropDownItems"

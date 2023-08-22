@@ -11,7 +11,7 @@ import { $isCodeNode } from "@lexical/code"
 import classNames from "classnames"
 import { $getNearestNodeFromDOMNode, LexicalEditor } from "lexical"
 import { Options } from "prettier"
-import { IconFormat } from "../../../Icon/IconFormat"
+import { IconFormat } from "../../../Icon/IconFormat/IconFormat"
 import stylesCodeActionMenu from "../CodeActionMenuContainer.module.scss"
 import styles from "./index.module.scss"
 

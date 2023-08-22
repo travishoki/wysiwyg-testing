@@ -9,7 +9,7 @@ import {
   LexicalEditor,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-import { IconFormat } from "../../Icon/IconFormat"
+import { IconFormat } from "../../Icon/IconFormat/IconFormat"
 import { getDOMRangeRect } from "../../utils/getDOMRangeRect"
 import { setFloatingElemPosition } from "../../utils/setFloatingElemPosition"
 import styles from "./TextFormatFloatingToolbar.module.scss"

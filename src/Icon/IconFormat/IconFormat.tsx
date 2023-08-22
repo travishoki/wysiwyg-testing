@@ -1,7 +1,7 @@
 import React from "react"
-import { IconBare } from "./IconBare"
+import { IconBare } from "../IconBare/IconBare"
+import { iconType } from "../types"
 import styles from "./IconFormat.module.scss"
-import { iconType } from "./types"
 
 type IconFormatProps = {
   type: iconType
