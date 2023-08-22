@@ -2,12 +2,12 @@ import React, { useCallback } from "react"
 import { $patchStyleText } from "@lexical/selection"
 import classNames from "classnames"
 import { $getSelection, $isRangeSelection, LexicalEditor } from "lexical"
-import styleIicon from "../../Icon/Icon.module.scss"
-import { DropDown } from "../../ui/DropDown/DropDown"
-import stylesDropdown from "../../ui/DropDown/DropDown.module.scss"
-import { DropDownItem } from "../../ui/DropDown/DropDownItem"
-import { dropDownActiveClass } from "./helpers"
-import stylesToolbar from "./index.module.scss"
+import styleIicon from "../../../Icon/Icon.module.scss"
+import { DropDown } from "../../../ui/DropDown/DropDown"
+import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
+import { DropDownItem } from "../../../ui/DropDown/DropDownItem"
+import { dropDownActiveClass } from "../helpers"
+import stylesToolbar from "../index.module.scss"
 
 const FONT_FAMILY_OPTIONS: [string, string][] = [
   ["Arial", "Arial"],
