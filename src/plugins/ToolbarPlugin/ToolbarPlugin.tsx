@@ -67,9 +67,9 @@ import { BlockFormatDropDown } from "./BlockFormatDropDown/BlockFormatDropDown"
 import { Divider } from "./Divider/Divider"
 import { DividerDropdown } from "./DividerDropdown/DividerDropdown"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
+import { dropDownActiveClass, getCodeLanguageOptions } from "./ToolbarPlugin.helpers"
 import styles from "./ToolbarPlugin.module.scss"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"
-import { dropDownActiveClass, getCodeLanguageOptions } from "./helpers"
 
 const CODE_LANGUAGE_OPTIONS = getCodeLanguageOptions()
 

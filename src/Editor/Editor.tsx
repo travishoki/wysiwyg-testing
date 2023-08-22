@@ -38,7 +38,7 @@ import { EmojiPickerPlugin } from "../plugins/EmojiPickerPlugin/EmojiPickerPlugi
 import { EmojisPlugin } from "../plugins/EmojisPlugin/EmojisPlugin"
 import { FloatingLinkEditorPlugin } from "../plugins/FloatingLinkEditorPlugin/FloatingLinkEditorPlugin"
 import { FloatingTextFormatToolbarPlugin } from "../plugins/FloatingTextFormatToolbarPlugin/FloatingTextFormatToolbarPlugin"
-import { ImagesPlugin } from "../plugins/ImagesPlugin"
+import { ImagesPlugin } from "../plugins/ImagesPlugin/ImagesPlugin"
 import { InlineImagePlugin } from "../plugins/InlineImagePlugin/InlineImagePlugin"
 import { KeywordsPlugin } from "../plugins/KeywordsPlugin/KeywordsPlugin"
 import { LinkPlugin } from "../plugins/LinkPlugin/LinkPlugin"

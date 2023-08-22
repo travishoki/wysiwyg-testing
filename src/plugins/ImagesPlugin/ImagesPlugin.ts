@@ -21,8 +21,8 @@ import {
   DROP_COMMAND,
 } from "lexical"
 import { $createImageNode, ImageNode } from "../../nodes/Image/ImageNode"
+import { onDragStart, onDragover, onDrop } from "./ImagesPlugin.helpers"
 import { INSERT_IMAGE_COMMAND } from "./const"
-import { onDragStart, onDragover, onDrop } from "./helpers"
 import { InsertImagePayload } from "./types"
 
 type ImagesPluginProps = {
