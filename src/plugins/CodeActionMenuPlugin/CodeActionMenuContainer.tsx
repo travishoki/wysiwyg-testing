@@ -118,7 +118,7 @@ export const CodeActionMenuContainer = ({ anchorElem }: CodeActionMenuContainerP
 
   return (
     <>
-      {isShown ? (
+      {isShown && (
         <div
           className={classNames(
             "composer-code-action-menu-container",
@@ -128,11 +128,11 @@ export const CodeActionMenuContainer = ({ anchorElem }: CodeActionMenuContainerP
         >
           <div className={styles.codeHighlightLanguage}>{codeFriendlyName}</div>
           <CopyButton editor={editor} getCodeDOMNode={getCodeDOMNode} />
-          {canBePrettier(normalizedLang) ? (
+          {canBePrettier(normalizedLang) && (
             <PrettierButton editor={editor} getCodeDOMNode={getCodeDOMNode} lang={normalizedLang} />
-          ) : null}
+          )}
         </div>
-      ) : null}
+      )}
     </>
   )
 }
