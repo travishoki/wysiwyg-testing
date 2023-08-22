@@ -1,6 +1,6 @@
 import { CODE_LANGUAGE_FRIENDLY_NAME_MAP } from "@lexical/code"
 import classNames from "classnames"
-import styles from "./helpers.module.scss"
+import styles from "./index.module.scss"
 
 export const getCodeLanguageOptions = (): [string, string][] => {
   const options: [string, string][] = []
