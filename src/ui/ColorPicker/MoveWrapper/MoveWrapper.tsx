@@ -1,5 +1,5 @@
 import React, { CSSProperties, useRef } from "react"
-import { clamp } from "./MoveWrapper.helpers"
+import { clamp } from "./helpers"
 
 export interface Position {
   x: number
