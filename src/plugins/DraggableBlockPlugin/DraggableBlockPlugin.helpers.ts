@@ -1,5 +1,5 @@
 import { $getRoot, LexicalEditor } from "lexical"
-import { DRAGGABLE_BLOCK_MENU_CLASSNAME } from "./DraggableBlockPlugin"
+import { DRAGGABLE_BLOCK_MENU_CLASSNAME } from "./DraggableBlockPlugin.const"
 
 export const getTopLevelNodeKeys = (editor: LexicalEditor): string[] => {
   return editor.getEditorState().read(() => $getRoot().getChildrenKeys())
