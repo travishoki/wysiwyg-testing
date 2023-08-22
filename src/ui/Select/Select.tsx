@@ -8,8 +8,8 @@
 
 import React from "react"
 import classNames from "classnames"
-import { InputLabel } from "../Input/InputLabel"
-import { InputWrapper } from "../Input/InputWrapper"
+import { InputLabel } from "../Input/InputLabel/InputLabel"
+import { InputWrapper } from "../Input/InputWrapper/InputWrapper"
 import styles from "./Select.module.scss"
 
 type SelectIntrinsicProps = JSX.IntrinsicElements["select"]

@@ -8,8 +8,8 @@
 
 import React from "react"
 import { InputInput } from "../Input/InputInput"
-import { InputLabel } from "../Input/InputLabel"
-import { InputWrapper } from "../Input/InputWrapper"
+import { InputLabel } from "../Input/InputLabel/InputLabel"
+import { InputWrapper } from "../Input/InputWrapper/InputWrapper"
 
 type FileInputProps = Readonly<{
   accept?: string
