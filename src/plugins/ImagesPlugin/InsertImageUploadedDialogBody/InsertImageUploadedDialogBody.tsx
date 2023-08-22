@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import { Button } from "../../ui/Button/Button"
-import { DialogActions } from "../../ui/Dialog/Dialog"
-import { FileInput } from "../../ui/FileInput/FileInput"
-import { TextInput } from "../../ui/TextInput/TextInput"
-import { InsertImagePayload } from "./types"
+import { Button } from "../../../ui/Button/Button"
+import { DialogActions } from "../../../ui/Dialog/Dialog"
+import { FileInput } from "../../../ui/FileInput/FileInput"
+import { TextInput } from "../../../ui/TextInput/TextInput"
+import { InsertImagePayload } from "../types"
 
 type InsertImageUploadedDialogBodyProps = {
   onClick: (payload: InsertImagePayload) => void

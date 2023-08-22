@@ -7,7 +7,7 @@ import { getMouseInfo } from "./CodeActionMenuContainer.helpers"
 import styles from "./CodeActionMenuContainer.module.scss"
 import { CopyButton } from "./CopyButton"
 import { PrettierButton, canBePrettier } from "./PrettierButton"
-import { useDebounce } from "./utils"
+import { useDebounce } from "./hooks"
 
 const CODE_PADDING = 8
 

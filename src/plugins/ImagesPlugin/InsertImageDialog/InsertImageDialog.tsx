@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react"
 import { LexicalEditor } from "lexical"
-import landscapeImage from "../../images/landscape.jpg"
-import yellowFlowerImage from "../../images/yellow-flower.jpg"
-import { Button } from "../../ui/Button/Button"
-import { DialogButtonsList } from "../../ui/Dialog/DialogButtonsList"
-import { InsertImageUploadedDialogBody } from "./InsertImageUploadedDialogBody"
-import { InsertImageUriDialogBody } from "./InsertImageUriDialogBody"
-import { INSERT_IMAGE_COMMAND } from "./const"
-import { InsertImagePayload } from "./types"
+import landscapeImage from "../../../images/landscape.jpg"
+import yellowFlowerImage from "../../../images/yellow-flower.jpg"
+import { Button } from "../../../ui/Button/Button"
+import { DialogButtonsList } from "../../../ui/Dialog/DialogButtonsList"
+import { InsertImageUploadedDialogBody } from "../InsertImageUploadedDialogBody/InsertImageUploadedDialogBody"
+import { InsertImageUriDialogBody } from "../InsertImageUriDialogBody/InsertImageUriDialogBody"
+import { INSERT_IMAGE_COMMAND } from "../const"
+import { InsertImagePayload } from "../types"
 
 type InsertImageDialogProps = {
   activeEditor: LexicalEditor
