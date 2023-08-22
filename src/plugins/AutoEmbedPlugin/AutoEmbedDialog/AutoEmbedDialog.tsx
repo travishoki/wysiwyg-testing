@@ -2,12 +2,12 @@ import React, { useMemo, useState } from "react"
 import { EmbedMatchResult, URL_MATCHER } from "@lexical/react/LexicalAutoEmbedPlugin"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { noop } from "lodash"
-import { Button } from "../../ui/Button/Button"
-import { DialogActions } from "../../ui/Dialog/Dialog"
-import { InputInput } from "../../ui/Input/InputInput"
-import { InputWrapper } from "../../ui/Input/InputWrapper"
+import { Button } from "../../../ui/Button/Button"
+import { DialogActions } from "../../../ui/Dialog/Dialog"
+import { InputInput } from "../../../ui/Input/InputInput"
+import { InputWrapper } from "../../../ui/Input/InputWrapper"
+import { ComposerEmbedConfig } from "../ComposerEmbedConfig"
 import { debounce } from "./AutoEmbedDialog.helpers"
-import { ComposerEmbedConfig } from "./ComposerEmbedConfig"
 
 type AutoEmbedDialogProps = {
   embedConfig: ComposerEmbedConfig
