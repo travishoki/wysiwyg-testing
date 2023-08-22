@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react"
-import { CellContext } from "./const"
-import { CellEditorConfig } from "./types"
+import { CellContext } from "../const"
+import { CellEditorConfig } from "../types"
 
 type TableContextProps = { children: JSX.Element }
 

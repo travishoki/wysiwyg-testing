@@ -2,7 +2,7 @@ import { EditorThemeClasses, Klass, LexicalEditor, LexicalNode } from "lexical"
 
 export type InsertTableCommandPayload = Readonly<{
   columns: string
-  includeHeaders?: boolean,
+  includeHeaders?: boolean
   rows: string
 }>
 
