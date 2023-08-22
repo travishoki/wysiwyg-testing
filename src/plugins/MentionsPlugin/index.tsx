@@ -18,8 +18,8 @@ import * as ReactDOM from "react-dom"
 import { Icon } from "../../Icon/Icon"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { $createMentionNode } from "../../nodes/Mention/MentionNode"
-import { MentionTypeaheadOption } from "./MentionTypeaheadOption/MentionTypeaheadOption"
-import { MentionsTypeaheadMenuItem } from "./MentionsTypeaheadMenuItem/MentionsTypeaheadMenuItem"
+import { MentionTypeaheadOption } from "./MentionTypeaheadOption"
+import { MentionsTypeaheadMenuItem } from "./MentionsTypeaheadMenuItem"
 import {
   AtSignMentionsRegex,
   AtSignMentionsRegexAliasRegex,

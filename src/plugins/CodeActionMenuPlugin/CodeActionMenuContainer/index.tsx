@@ -6,8 +6,8 @@ import { $getNearestNodeFromDOMNode } from "lexical"
 import { CopyButton } from "../CopyButton"
 import { PrettierButton, canBePrettier } from "../PrettierButton"
 import { useDebounce } from "../hooks"
-import styles from "./CodeActionMenuContainer.module.scss"
 import { getMouseInfo } from "./helpers"
+import styles from "./index.module.scss"
 
 const CODE_PADDING = 8
 

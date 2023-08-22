@@ -10,7 +10,7 @@ import {
 } from "lexical"
 import { createPortal } from "react-dom"
 import { getSelectedNode } from "../../helpers/getSelectedNode"
-import { FloatingLinkEditor } from "./FloatingLinkEditor/FloatingLinkEditor"
+import { FloatingLinkEditor } from "./FloatingLinkEditor"
 
 export const useFloatingLinkEditorToolbar = (
   editor: LexicalEditor,

@@ -17,7 +17,7 @@ import {
 import { getSelectedNode } from "../../../helpers/getSelectedNode"
 import { setFloatingElemPositionForLinkEditor } from "../../../helpers/setFloatingElemPositionForLinkEditor"
 import { sanitizeUrl } from "../../../helpers/url"
-import styles from "./FloatingLinkEditor.module.scss"
+import styles from "./index.module.scss"
 
 type FloatingLinkEditorProps = {
   anchorElem: HTMLElement

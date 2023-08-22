@@ -7,8 +7,8 @@
  */
 
 import React from "react"
-import { ColorPicker } from "../ColorPicker/ColorPicker"
-import { DropDown } from "./DropDown"
+import { ColorPicker } from "../../ColorPicker/ColorPicker"
+import { DropDown } from "../DropDown"
 
 type DropdownColorPickerProps = {
   buttonAriaLabel?: string

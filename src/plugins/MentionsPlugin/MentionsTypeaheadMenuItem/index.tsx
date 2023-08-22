@@ -1,23 +1,23 @@
 import React from "react"
 import classNames from "classnames"
 import stylesTypeaheadPopover from "../../../TypeaheadPopover/TypeaheadPopover.module.scss"
-import { ComponentPickerOption } from "../ComponentPickerOption/ComponentPickerOption"
+import { MentionTypeaheadOption } from "../MentionTypeaheadOption"
 
-type ComponentPickerMenuItemProps = {
+type MentionsTypeaheadMenuItemProps = {
   index: number
   isSelected: boolean
   onClick: () => void
   onMouseEnter: () => void
-  option: ComponentPickerOption
+  option: MentionTypeaheadOption
 }
 
-export const ComponentPickerMenuItem = ({
+export const MentionsTypeaheadMenuItem = ({
   index,
   isSelected,
   onClick,
   onMouseEnter,
   option,
-}: ComponentPickerMenuItemProps) => {
+}: MentionsTypeaheadMenuItemProps) => {
   return (
     <li
       aria-selected={isSelected}
@@ -30,8 +30,8 @@ export const ComponentPickerMenuItem = ({
       role="option"
       tabIndex={-1}
     >
-      {option.icon}
-      <span className={stylesTypeaheadPopover.text}>{option.title}</span>
+      {option.picture}
+      <span className={stylesTypeaheadPopover.text}>{option.name}</span>
     </li>
   )
 }

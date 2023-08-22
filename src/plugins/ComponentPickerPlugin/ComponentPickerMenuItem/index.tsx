@@ -1,23 +1,23 @@
 import React from "react"
 import classNames from "classnames"
 import stylesTypeaheadPopover from "../../../TypeaheadPopover/TypeaheadPopover.module.scss"
-import { EmojiOption } from "../EmojiOption/EmojiOption"
+import { ComponentPickerOption } from "../ComponentPickerOption"
 
-type EmojiMenuItemProps = {
+type ComponentPickerMenuItemProps = {
   index: number
   isSelected: boolean
   onClick: () => void
   onMouseEnter: () => void
-  option: EmojiOption
+  option: ComponentPickerOption
 }
 
-export const EmojiMenuItem = ({
+export const ComponentPickerMenuItem = ({
   index,
   isSelected,
   onClick,
   onMouseEnter,
   option,
-}: EmojiMenuItemProps) => {
+}: ComponentPickerMenuItemProps) => {
   return (
     <li
       aria-selected={isSelected}
@@ -30,9 +30,8 @@ export const EmojiMenuItem = ({
       role="option"
       tabIndex={-1}
     >
-      <span className={stylesTypeaheadPopover.text}>
-        {option.emoji} {option.title}
-      </span>
+      {option.icon}
+      <span className={stylesTypeaheadPopover.text}>{option.title}</span>
     </li>
   )
 }
