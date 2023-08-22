@@ -9,7 +9,7 @@
 import React, { ReactPortal } from "react"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
 import { createPortal } from "react-dom"
-import { TableCellActionMenuContainer } from "./TableCellActionMenuContainer"
+import { TableCellActionMenuContainer } from "./TableCellActionMenuContainer/TableCellActionMenuContainer"
 
 type TableActionMenuPluginProps = {
   anchorElem?: HTMLElement
