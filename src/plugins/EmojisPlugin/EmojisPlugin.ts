@@ -10,7 +10,7 @@ import { useEffect } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { LexicalEditor, TextNode } from "lexical"
 import { EmojiNode } from "../../nodes/Emoji/EmojiNode"
-import { findAndTransformEmoji } from "./helpers"
+import { findAndTransformEmoji } from "./EmojisPlugin.helpers"
 
 const textNodeTransform = (node: TextNode): void => {
   let targetNode: TextNode | null = node

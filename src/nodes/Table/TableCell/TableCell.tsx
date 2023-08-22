@@ -6,7 +6,7 @@ import { TableActionMenu } from "../TableActionMenu/TableActionMenu"
 import { TableCellEditor } from "../TableCellEditor/TableCellEditor"
 import { TableNode } from "../TableNode"
 import { Cell, Rows, SortOptions } from "../types"
-import { createEmptyParagraphHTML, generateHTMLFromJSON } from "./helpers"
+import { createEmptyParagraphHTML, generateHTMLFromJSON } from "./TableCell.helpers"
 
 type TableCellProps = {
   cell: Cell

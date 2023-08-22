@@ -19,7 +19,12 @@ import {
   SerializedLexicalNode,
   Spread,
 } from "lexical"
-import { createCell, createRow, exportTableCellsToHTML, plainTextEditorJSON } from "./helpers"
+import {
+  createCell,
+  createRow,
+  exportTableCellsToHTML,
+  plainTextEditorJSON,
+} from "./TableNode.helpers"
 import { Cell, Row, Rows } from "./types"
 
 export const cellTextContentCache: Map<string, string> = new Map()

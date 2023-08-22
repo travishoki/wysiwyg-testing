@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import { ButtonWithIcon } from "../ButtonWithIcon/ButtonWithIcon"
 import { mergeFieldObject } from "../const"
-import { formatMergeFieldTitle } from "./helpers"
+import { formatMergeFieldTitle } from "./MergeFieldButton.helpers"
 
 type MergeFieldButtonProps = {
   mergeFieldIconUrl: string

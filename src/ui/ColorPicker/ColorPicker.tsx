@@ -8,9 +8,9 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react"
 import { TextInput } from "../TextInput/TextInput"
+import { transformColor } from "./ColorPicker.helpers"
 import styles from "./ColorPicker.module.scss"
 import { MoveWrapper, Position } from "./MoveWrapper/MoveWrapper"
-import { transformColor } from "./helpers"
 
 interface ColorPickerProps {
   color: string
