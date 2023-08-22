@@ -86,7 +86,7 @@ export const Editor = () => {
   }
 
   const cellEditorConfig = {
-    namespace: "Playground",
+    namespace: "Composer",
     nodes: [...TableCellNodes],
     onError: (error: Error) => {
       throw error
