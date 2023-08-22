@@ -22,7 +22,7 @@ import {
 import { IconBare } from "../../Icon/IconBare"
 import { useModal } from "../../hooks/useModal"
 import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
-import { ShowClearDialog } from "./ShowClearDialog"
+import { ShowClearDialog } from "./ShowClearDialog/ShowClearDialog"
 import styles from "./index.module.scss"
 
 const validateEditorState = async (editor: LexicalEditor): Promise<void> => {

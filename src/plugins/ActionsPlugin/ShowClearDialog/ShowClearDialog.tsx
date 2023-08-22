@@ -1,7 +1,7 @@
 import React from "react"
 import { CLEAR_EDITOR_COMMAND, LexicalEditor } from "lexical"
-import { Button } from "../../ui/Button/Button"
-import styles from "../../ui/Modal/Modal.module.scss"
+import { Button } from "../../../ui/Button/Button"
+import styles from "../../../ui/Modal/Modal.module.scss"
 
 type ShowClearDialogProps = {
   editor: LexicalEditor
