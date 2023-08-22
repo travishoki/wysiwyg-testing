@@ -3,11 +3,11 @@ import { $isCodeNode, CodeNode, getLanguageFriendlyName, normalizeCodeLang } fro
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import classNames from "classnames"
 import { $getNearestNodeFromDOMNode } from "lexical"
-import { getMouseInfo } from "./CodeActionMenuContainer.helpers"
+import { CopyButton } from "../CopyButton"
+import { PrettierButton, canBePrettier } from "../PrettierButton"
+import { useDebounce } from "../hooks"
 import styles from "./CodeActionMenuContainer.module.scss"
-import { CopyButton } from "./CopyButton"
-import { PrettierButton, canBePrettier } from "./PrettierButton"
-import { useDebounce } from "./hooks"
+import { getMouseInfo } from "./helpers"
 
 const CODE_PADDING = 8
 
