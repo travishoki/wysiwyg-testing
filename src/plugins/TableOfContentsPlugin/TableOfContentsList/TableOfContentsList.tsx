@@ -8,7 +8,7 @@ import {
   isHeadingAboveViewport,
   isHeadingAtTheTopOfThePage,
   isHeadingBelowTheTopOfThePage,
-} from "./TableOfContentsList.helpers"
+} from "./helpers"
 import styles from "./TableOfContentsList.module.scss"
 
 type TableOfContentsListProps = {
