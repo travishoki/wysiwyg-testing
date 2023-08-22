@@ -21,7 +21,7 @@ import {
 } from "lexical"
 import { IconBare } from "../../Icon/IconBare"
 import { useModal } from "../../hooks/useModal"
-import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
+import { COMPOSER_TRANSFORMERS } from "../MarkdownTransformers"
 import { ShowClearDialog } from "./ShowClearDialog/ShowClearDialog"
 import styles from "./index.module.scss"
 
@@ -107,9 +107,9 @@ export const ActionsPlugin = () => {
       const root = $getRoot()
       const firstChild = root.getFirstChild()
       if ($isCodeNode(firstChild) && firstChild.getLanguage() === "markdown") {
-        $convertFromMarkdownString(firstChild.getTextContent(), PLAYGROUND_TRANSFORMERS)
+        $convertFromMarkdownString(firstChild.getTextContent(), COMPOSER_TRANSFORMERS)
       } else {
-        const markdown = $convertToMarkdownString(PLAYGROUND_TRANSFORMERS)
+        const markdown = $convertToMarkdownString(COMPOSER_TRANSFORMERS)
         root.clear().append($createCodeNode("markdown").append($createTextNode(markdown)))
       }
       root.selectEnd()

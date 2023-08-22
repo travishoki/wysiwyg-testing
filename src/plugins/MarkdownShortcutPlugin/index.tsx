@@ -9,8 +9,8 @@
 import React, {
   MarkdownShortcutPlugin as LexicalMarkdownShortcutPlugin,
 } from "@lexical/react/LexicalMarkdownShortcutPlugin"
-import { PLAYGROUND_TRANSFORMERS } from "../MarkdownTransformers"
+import { COMPOSER_TRANSFORMERS } from "../MarkdownTransformers"
 
 export const MarkdownShortcutPlugin = () => {
-  return <LexicalMarkdownShortcutPlugin transformers={PLAYGROUND_TRANSFORMERS} />
+  return <LexicalMarkdownShortcutPlugin transformers={COMPOSER_TRANSFORMERS} />
 }
