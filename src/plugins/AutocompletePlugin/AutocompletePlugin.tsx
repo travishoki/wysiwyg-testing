@@ -32,7 +32,7 @@ import {
   AutocompleteNode,
 } from "../../nodes/Autocomplete/AutocompleteNode"
 import { AutocompleteServer } from "./AutocompleteServer/AutocompleteServer"
-import { SearchPromise } from "./type"
+import { SearchPromise } from "./types"
 
 export const uuid = Math.random()
   .toString(36)
