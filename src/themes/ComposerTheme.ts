@@ -7,7 +7,7 @@
  */
 
 import { EditorThemeClasses } from "lexical"
-import "./ComposerTheme.css"
+import "./ComposerTheme.module.scss"
 
 export const ComposerTheme: EditorThemeClasses = {
   blockCursor: "composer__blockCursor",
