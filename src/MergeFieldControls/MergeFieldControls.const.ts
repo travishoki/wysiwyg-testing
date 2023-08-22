@@ -14,6 +14,6 @@ export const mergeFieldIdArray: mergeFieldObject[] = [
 ]
 
 export type mergeFieldObject = {
-  iconUrl: string,
+  iconUrl: string
   id: string
 }

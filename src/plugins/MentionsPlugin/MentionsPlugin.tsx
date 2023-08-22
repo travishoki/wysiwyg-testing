@@ -19,8 +19,6 @@ import { Icon } from "../../Icon/Icon"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { $createMentionNode } from "../../nodes/Mention/MentionNode"
 import { MentionTypeaheadOption } from "./MentionTypeaheadOption/MentionTypeaheadOption"
-import styles from "./MentionsPlugin.module.scss"
-import { MentionsTypeaheadMenuItem } from "./MentionsTypeaheadMenuItem/MentionsTypeaheadMenuItem"
 import {
   AtSignMentionsRegex,
   AtSignMentionsRegexAliasRegex,
@@ -28,7 +26,9 @@ import {
   SUGGESTION_LIST_LENGTH_LIMIT,
   dummyMentionsData,
   mentionsCache,
-} from "./const"
+} from "./MentionsPlugin.const"
+import styles from "./MentionsPlugin.module.scss"
+import { MentionsTypeaheadMenuItem } from "./MentionsTypeaheadMenuItem/MentionsTypeaheadMenuItem"
 
 const dummyLookupService = {
   search(string: string, callback: (results: Array<string>) => void): void {

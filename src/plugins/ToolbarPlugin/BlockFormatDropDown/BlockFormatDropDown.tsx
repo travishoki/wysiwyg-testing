@@ -20,9 +20,9 @@ import styleIcon from "../../../Icon/Icon.module.scss"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
+import { blockTypeToBlockName, rootTypeToRootName } from "../ToolbarPlugin.const"
 import { dropDownActiveClass } from "../ToolbarPlugin.helpers"
 import stylesToolbar from "../ToolbarPlugin.module.scss"
-import { blockTypeToBlockName, rootTypeToRootName } from "../const"
 
 type BlockFormatDropDownProps = {
   _rootType: keyof typeof rootTypeToRootName

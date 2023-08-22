@@ -11,7 +11,7 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { DRAG_DROP_PASTE } from "@lexical/rich-text"
 import { isMimeType, mediaFileReader } from "@lexical/utils"
 import { COMMAND_PRIORITY_LOW } from "lexical"
-import { INSERT_IMAGE_COMMAND } from "../ImagesPlugin/const"
+import { INSERT_IMAGE_COMMAND } from "../ImagesPlugin/ImagesPlugin.const"
 
 const ACCEPTABLE_IMAGE_TYPES = ["image/", "image/heic", "image/heif", "image/gif", "image/webp"]
 

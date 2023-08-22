@@ -16,7 +16,7 @@ import {
   LexicalEditor,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-import { MIN_COLUMN_WIDTH, MIN_ROW_HEIGHT } from "../const"
+import { MIN_COLUMN_WIDTH, MIN_ROW_HEIGHT } from "../TableCellResizerPlugin.const"
 import styles from "./TableCellResizer.module.scss"
 
 type MousePosition = {

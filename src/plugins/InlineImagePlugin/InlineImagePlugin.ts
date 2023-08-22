@@ -21,8 +21,8 @@ import {
   DROP_COMMAND,
 } from "lexical"
 import { $createInlineImageNode, InlineImageNode } from "../../nodes/InlineImage/InlineImageNode"
+import { INSERT_INLINE_IMAGE_COMMAND } from "./InlineImagePlugin.const"
 import { onDragStart, onDragover, onDrop } from "./InlineImagePlugin.helpers"
-import { INSERT_INLINE_IMAGE_COMMAND } from "./const"
 import { InsertInlineImagePayload } from "./types"
 
 export const InlineImagePlugin = (): JSX.Element | null => {

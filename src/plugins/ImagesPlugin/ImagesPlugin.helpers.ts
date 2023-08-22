@@ -7,7 +7,7 @@ import {
 } from "lexical"
 import { $isImageNode, ImageNode } from "../../nodes/Image/ImageNode"
 import { CAN_USE_DOM } from "../../shared/canUseDOM"
-import { INSERT_IMAGE_COMMAND } from "./const"
+import { INSERT_IMAGE_COMMAND } from "./ImagesPlugin.const"
 import { InsertImagePayload } from "./types"
 
 const getDOMSelection = (targetWindow: Window | null): Selection | null =>

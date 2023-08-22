@@ -9,7 +9,7 @@
 import { useEffect } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $getSelection, $isRangeSelection, $setSelection, FOCUS_COMMAND } from "lexical"
-import { COMMAND_PRIORITY_LOW, TAB_TO_FOCUS_INTERVAL } from "./const"
+import { COMMAND_PRIORITY_LOW, TAB_TO_FOCUS_INTERVAL } from "./TabFocusPlugin.const"
 
 let lastTabKeyDownTimestamp = 0
 let hasRegisteredKeyDownListener = false

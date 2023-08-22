@@ -4,9 +4,9 @@ import landscapeImage from "../../../images/landscape.jpg"
 import yellowFlowerImage from "../../../images/yellow-flower.jpg"
 import { Button } from "../../../ui/Button/Button"
 import { DialogButtonsList } from "../../../ui/Dialog/DialogButtonsList/DialogButtonsList"
+import { INSERT_IMAGE_COMMAND } from "../ImagesPlugin.const"
 import { InsertImageUploadedDialogBody } from "../InsertImageUploadedDialogBody/InsertImageUploadedDialogBody"
 import { InsertImageUriDialogBody } from "../InsertImageUriDialogBody/InsertImageUriDialogBody"
-import { INSERT_IMAGE_COMMAND } from "../const"
 import { InsertImagePayload } from "../types"
 
 type InsertImageDialogProps = {

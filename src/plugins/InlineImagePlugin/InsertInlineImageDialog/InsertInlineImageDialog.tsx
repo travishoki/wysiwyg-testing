@@ -8,7 +8,7 @@ import { FileInput } from "../../../ui/FileInput/FileInput"
 import { InputWrapper } from "../../../ui/Input/InputWrapper/InputWrapper"
 import { Select } from "../../../ui/Select/Select"
 import { TextInput } from "../../../ui/TextInput/TextInput"
-import { INSERT_INLINE_IMAGE_COMMAND } from "../const"
+import { INSERT_INLINE_IMAGE_COMMAND } from "../InlineImagePlugin.const"
 
 type InsertInlineImageDialogProps = {
   activeEditor: LexicalEditor

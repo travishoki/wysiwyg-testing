@@ -1,7 +1,7 @@
 import { $generateHtmlFromNodes } from "@lexical/html"
 import { $getRoot, EditorThemeClasses, LexicalEditor } from "lexical"
 import { cellTextContentCache } from "../TableNode"
-import { cellHTMLCache } from "../const"
+import { cellHTMLCache } from "../TableNode.const"
 
 export const createEmptyParagraphHTML = (theme: EditorThemeClasses): string => {
   return `<p class="${theme.paragraph}"><br></p>`

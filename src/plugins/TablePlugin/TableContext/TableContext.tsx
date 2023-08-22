@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react"
-import { CellContext } from "../const"
+import { CellContext } from "../TablePlugin.const"
 import { CellEditorConfig } from "../types"
 
 type TableContextProps = { children: JSX.Element }

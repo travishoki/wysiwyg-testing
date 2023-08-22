@@ -47,11 +47,11 @@ import {
   TextFormatType,
   createEditor,
 } from "lexical"
-import { CellContext } from "../../../plugins/TablePlugin/const"
+import { CellContext } from "../../../plugins/TablePlugin/TablePlugin.const"
 import { TableCell } from "../TableCell/TableCell"
 import { $isTableNode, TableNode, cellTextContentCache } from "../TableNode"
+import { cellHTMLCache } from "../TableNode.const"
 import { exportTableCellsToHTML, extractRowsFromHTML } from "../TableNode.helpers"
-import { cellHTMLCache } from "../const"
 import { Cell, Rows, SortOptions } from "../types"
 import {
   extractCellsFromRows,

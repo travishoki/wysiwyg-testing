@@ -8,7 +8,7 @@ import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
 import { dropDownActiveClass } from "../ToolbarPlugin.helpers"
 import stylesToolbar from "../ToolbarPlugin.module.scss"
-import { FONT_FAMILY_OPTIONS, FONT_SIZE_OPTIONS } from "./const"
+import { FONT_FAMILY_OPTIONS, FONT_SIZE_OPTIONS } from "./FontDropDown.const"
 
 type FontDropDownProps = {
   disabled?: boolean

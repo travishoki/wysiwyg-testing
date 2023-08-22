@@ -1,4 +1,4 @@
-import { cellHTMLCache } from "./const"
+import { cellHTMLCache } from "./TableNode.const"
 import { Cell, Row, Rows } from "./types"
 
 export const createUID = (): string => {

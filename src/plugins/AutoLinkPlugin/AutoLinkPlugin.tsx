@@ -8,7 +8,7 @@
 
 import React from "react"
 import { AutoLinkPlugin as LexicalAutoLinkPlugin } from "@lexical/react/LexicalAutoLinkPlugin"
-import { MATCHERS } from "./const"
+import { MATCHERS } from "./AutoLinkPlugin.const"
 
 export const AutoLinkPlugin = () => {
   return <LexicalAutoLinkPlugin matchers={MATCHERS} />

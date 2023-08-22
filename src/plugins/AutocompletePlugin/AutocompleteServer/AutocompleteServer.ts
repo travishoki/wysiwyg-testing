@@ -1,4 +1,4 @@
-import { DICTIONARY } from "../const"
+import { DICTIONARY } from "../AutocompletePlugin.const"
 import { SearchPromise } from "../type"
 
 /*
