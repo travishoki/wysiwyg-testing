@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 import stylesTypeaheadPopover from "../../../TypeaheadPopover/TypeaheadPopover.module.scss"
-import { ContextMenuOption } from "../ContextMenu/ContextMenuOption"
+import { ContextMenuOption } from "../ContextMenu/ContextMenuOption/ContextMenuOption"
 
 type ContextMenuItemProps = {
   index: number

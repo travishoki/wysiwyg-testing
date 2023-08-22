@@ -12,8 +12,8 @@ import classNames from "classnames"
 import { $getNearestNodeFromDOMNode, LexicalEditor } from "lexical"
 import { Options } from "prettier"
 import { IconFormat } from "../../../Icon/IconFormat/IconFormat"
-import stylesCodeActionMenu from "../CodeActionMenuContainer/index.module.scss"
-import styles from "./index.module.scss"
+import stylesCodeActionMenu from "../CodeActionMenuContainer/CodeActionMenuContainer.module.scss"
+import styles from "./PrettierButton.module.scss"
 
 interface PrettierButtonProps {
   editor: LexicalEditor

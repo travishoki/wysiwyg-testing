@@ -8,7 +8,7 @@
 
 import React from "react"
 import { DecoratorNode, EditorConfig, NodeKey, SerializedLexicalNode, Spread } from "lexical"
-import { uuid as UUID } from "../../plugins/AutocompletePlugin"
+import { uuid as UUID } from "../../plugins/AutocompletePlugin/AutocompletePlugin"
 import { AutocompleteComponent } from "./AutocompleteComponent"
 
 declare global {

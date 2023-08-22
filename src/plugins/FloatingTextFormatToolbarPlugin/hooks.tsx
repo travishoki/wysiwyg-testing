@@ -5,7 +5,7 @@ import { mergeRegister } from "@lexical/utils"
 import { $getSelection, $isRangeSelection, $isTextNode, LexicalEditor } from "lexical"
 import { createPortal } from "react-dom"
 import { getSelectedNode } from "../../helpers/getSelectedNode"
-import { TextFormatFloatingToolbar } from "./TextFormatFloatingToolbar"
+import { TextFormatFloatingToolbar } from "./TextFormatFloatingToolbar/TextFormatFloatingToolbar"
 
 export const useFloatingTextFormatToolbar = (
   editor: LexicalEditor,

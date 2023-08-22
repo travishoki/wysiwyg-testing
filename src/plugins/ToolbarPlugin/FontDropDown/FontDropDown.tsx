@@ -5,9 +5,9 @@ import { $getSelection, $isRangeSelection, LexicalEditor } from "lexical"
 import styleIicon from "../../../Icon/Icon.module.scss"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
-import { DropDownItem } from "../../../ui/DropDown/DropDownItem"
+import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
+import stylesToolbar from "../ToolbarPlugin.module.scss"
 import { dropDownActiveClass } from "../helpers"
-import stylesToolbar from "../index.module.scss"
 import { FONT_FAMILY_OPTIONS, FONT_SIZE_OPTIONS } from "./const"
 
 type FontDropDownProps = {

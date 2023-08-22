@@ -8,7 +8,7 @@
 
 import React, { ReactNode } from "react"
 import { createPortal } from "react-dom"
-import { PortalImpl } from "./PortalImpl"
+import { PortalImpl } from "./PortalImpl/PortalImpl"
 
 type ModalProps = {
   children: ReactNode

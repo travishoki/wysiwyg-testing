@@ -20,9 +20,9 @@ import {
 import { noop } from "lodash"
 import * as ReactDOM from "react-dom"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
-import { ContextMenu } from "./ContextMenu"
-import { ContextMenuOption } from "./ContextMenu/ContextMenuOption"
-import styles from "./index.module.scss"
+import { ContextMenu } from "./ContextMenu/ContextMenu"
+import { ContextMenuOption } from "./ContextMenu/ContextMenuOption/ContextMenuOption"
+import styles from "./ContextMenuPlugin.module.scss"
 
 export const ContextMenuPlugin = () => {
   const [editor] = useLexicalComposerContext()

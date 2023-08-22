@@ -5,8 +5,8 @@ import { $getSelection, $isRangeSelection } from "lexical"
 import stylesComposer from "../../../Composer.module.scss"
 import { IconBare } from "../../../Icon/IconBare/IconBare"
 import { useModal } from "../../../hooks/useModal"
-import { TableActionMenu } from "../TableActionMenu"
-import styles from "./index.module.scss"
+import { TableActionMenu } from "../TableActionMenu/TableActionMenu"
+import styles from "./TableCellActionMenuContainer.module.scss"
 
 type TableCellActionMenuContainerProps = {
   anchorElem: HTMLElement

@@ -1,5 +1,5 @@
 import React, { ReactNode, useEffect, useRef } from "react"
-import styles from "./Modal.module.scss"
+import styles from "../Modal.module.scss"
 
 type PortalImplProps = {
   children: ReactNode

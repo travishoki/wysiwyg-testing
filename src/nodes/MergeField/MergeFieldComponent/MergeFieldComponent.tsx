@@ -2,11 +2,11 @@ import React, { Suspense, useCallback } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
 import { $getNodeByKey } from "lexical"
-import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFallback"
-import { formatMergeFieldTitle } from "../../MergeFieldControls/MergeFieldButton/helpers"
-import ImageClose from "../../images/icons/close.svg"
+import { ComposerNodeFallback } from "../../../ComposerNodeFallback/ComposerNodeFallback"
+import { formatMergeFieldTitle } from "../../../MergeFieldControls/MergeFieldButton/helpers"
+import ImageClose from "../../../images/icons/close.svg"
+import { $isMergeFieldNode } from "../MergeFieldNode"
 import styles from "./MergeFieldComponent.module.scss"
-import { $isMergeFieldNode } from "./MergeFieldNode"
 
 const MergeFieldComponent = ({
   mergeFieldIconUrl,

@@ -18,8 +18,9 @@ import * as ReactDOM from "react-dom"
 import { Icon } from "../../Icon/Icon"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { $createMentionNode } from "../../nodes/Mention/MentionNode"
-import { MentionTypeaheadOption } from "./MentionTypeaheadOption"
-import { MentionsTypeaheadMenuItem } from "./MentionsTypeaheadMenuItem"
+import { MentionTypeaheadOption } from "./MentionTypeaheadOption/MentionTypeaheadOption"
+import styles from "./MentionsPlugin.module.scss"
+import { MentionsTypeaheadMenuItem } from "./MentionsTypeaheadMenuItem/MentionsTypeaheadMenuItem"
 import {
   AtSignMentionsRegex,
   AtSignMentionsRegexAliasRegex,
@@ -28,7 +29,6 @@ import {
   dummyMentionsData,
   mentionsCache,
 } from "./const"
-import styles from "./index.module.scss"
 
 const dummyLookupService = {
   search(string: string, callback: (results: Array<string>) => void): void {

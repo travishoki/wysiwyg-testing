@@ -24,6 +24,7 @@ import { createPortal } from "react-dom"
 import { isHTMLElement } from "../../helpers/guard"
 import { Point } from "../../helpers/point"
 import { Rect } from "../../helpers/rect"
+import styles from "./DraggableBlockPlugin.module.scss"
 import {
   DRAG_DATA_FORMAT,
   Downward,
@@ -34,7 +35,6 @@ import {
   Upward,
 } from "./const"
 import { getCollapsedMargins, getTopLevelNodeKeys, isOnMenu } from "./helpers"
-import styles from "./index.module.scss"
 
 let prevIndex = Infinity
 

@@ -35,18 +35,18 @@ import {
   RangeSelection,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFallback"
-import { useSharedHistoryContext } from "../../context/SharedHistoryContext"
-import { EmojisPlugin } from "../../plugins/EmojisPlugin"
-import { KeywordsPlugin } from "../../plugins/KeywordsPlugin"
-import { LinkPlugin } from "../../plugins/LinkPlugin"
-import { MentionsPlugin } from "../../plugins/MentionsPlugin"
-import { ContentEditable } from "../../ui/ContentEditable/ContentEditable"
-import { ImageResizer } from "../../ui/ImageResizer/ImageResizer"
-import { Placeholder } from "../../ui/Placeholder/Placeholder"
+import { ComposerNodeFallback } from "../../../ComposerNodeFallback/ComposerNodeFallback"
+import { useSharedHistoryContext } from "../../../context/SharedHistoryContext"
+import { EmojisPlugin } from "../../../plugins/EmojisPlugin/EmojisPlugin"
+import { KeywordsPlugin } from "../../../plugins/KeywordsPlugin/KeywordsPlugin"
+import { LinkPlugin } from "../../../plugins/LinkPlugin/LinkPlugin"
+import { MentionsPlugin } from "../../../plugins/MentionsPlugin/MentionsPlugin"
+import { ContentEditable } from "../../../ui/ContentEditable/ContentEditable"
+import { ImageResizer } from "../../../ui/ImageResizer/ImageResizer"
+import { Placeholder } from "../../../ui/Placeholder/Placeholder"
+import { $isImageNode } from "../ImageNode"
+import { LazyImage } from "../LazyImage/LazyImage"
 import styles from "./ImageComponent.module.scss"
-import { $isImageNode } from "./ImageNode"
-import { LazyImage } from "./LazyImage/LazyImage"
 
 type ImageComponentProps = {
   altText: string

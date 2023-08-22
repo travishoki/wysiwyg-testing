@@ -12,7 +12,7 @@ import {
 import { IconFormat } from "../../../Icon/IconFormat/IconFormat"
 import { getDOMRangeRect } from "../../../helpers/getDOMRangeRect"
 import { setFloatingElemPosition } from "../../../helpers/setFloatingElemPosition"
-import styles from "./index.module.scss"
+import styles from "./TextFormatFloatingToolbar.module.scss"
 
 type TextFormatFloatingToolbarProps = {
   anchorElem: HTMLElement

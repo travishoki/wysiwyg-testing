@@ -21,9 +21,9 @@ import {
 } from "lexical"
 import { IconBare } from "../../Icon/IconBare/IconBare"
 import { useModal } from "../../hooks/useModal"
-import { COMPOSER_TRANSFORMERS } from "../MarkdownTransformers"
+import { COMPOSER_TRANSFORMERS } from "../MarkdownTransformers/MarkdownTransformers"
+import styles from "./ActionsPlugin.module.scss"
 import { ShowClearDialog } from "./ShowClearDialog/ShowClearDialog"
-import styles from "./index.module.scss"
 
 const validateEditorState = async (editor: LexicalEditor): Promise<void> => {
   const stringifiedEditorState = JSON.stringify(editor.getEditorState())

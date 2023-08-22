@@ -9,7 +9,7 @@
 import React, {
   MarkdownShortcutPlugin as LexicalMarkdownShortcutPlugin,
 } from "@lexical/react/LexicalMarkdownShortcutPlugin"
-import { COMPOSER_TRANSFORMERS } from "../MarkdownTransformers"
+import { COMPOSER_TRANSFORMERS } from "../MarkdownTransformers/MarkdownTransformers"
 
 export const MarkdownShortcutPlugin = () => {
   return <LexicalMarkdownShortcutPlugin transformers={COMPOSER_TRANSFORMERS} />

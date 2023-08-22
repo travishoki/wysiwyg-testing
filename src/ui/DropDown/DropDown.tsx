@@ -10,9 +10,9 @@ import React, { ReactNode, useEffect, useRef, useState } from "react"
 import classNames from "classnames"
 import { createPortal } from "react-dom"
 import { IconBare } from "../../Icon/IconBare/IconBare"
-import stylesToolbar from "../../plugins/ToolbarPlugin/index.module.scss"
+import stylesToolbar from "../../plugins/ToolbarPlugin/ToolbarPlugin.module.scss"
 import styles from "./DropDown.module.scss"
-import { DropDownItems } from "./DropDownItems"
+import { DropDownItems } from "./DropDownItems/DropDownItems"
 
 const dropDownPadding = 4
 

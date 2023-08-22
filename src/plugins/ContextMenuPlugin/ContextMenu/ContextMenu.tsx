@@ -1,7 +1,7 @@
 import React from "react"
 import { TypeaheadPopover } from "../../../TypeaheadPopover/TypeaheadPopover"
-import { ContextMenuItem } from "../ContextMenuItem"
-import { ContextMenuOption } from "./ContextMenuOption"
+import { ContextMenuItem } from "../ContextMenuItem/ContextMenuItem"
+import { ContextMenuOption } from "./ContextMenuOption/ContextMenuOption"
 
 type ContextMenuProps = {
   onOptionClick: (option: ContextMenuOption, index: number) => void

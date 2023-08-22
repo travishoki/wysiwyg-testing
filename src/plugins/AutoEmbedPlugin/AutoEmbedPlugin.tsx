@@ -13,8 +13,8 @@ import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { useModal } from "../../hooks/useModal"
 import { AutoEmbedDialog } from "./AutoEmbedDialog/AutoEmbedDialog"
 import { AutoEmbedMenu } from "./AutoEmbedMenu/AutoEmbedMenu"
+import styles from "./AutoEmbedPlugin.module.scss"
 import { ComposerEmbedConfig } from "./ComposerEmbedConfig"
-import styles from "./index.module.scss"
 
 const EmbedConfigs: ComposerEmbedConfig[] = []
 

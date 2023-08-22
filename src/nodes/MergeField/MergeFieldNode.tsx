@@ -11,7 +11,7 @@ import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFal
 
 const MergeFieldComponent = React.lazy(
   // @ts-ignore
-  () => import("./MergeFieldComponent"),
+  () => import("./MergeFieldComponent/MergeFieldComponent"),
 )
 
 export class MergeFieldNode extends DecoratorNode<JSX.Element> {

@@ -26,7 +26,7 @@ import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFal
 
 const ImageComponent = React.lazy(
   // @ts-ignore
-  () => import("./ImageComponent"),
+  () => import("./ImageComponent/ImageComponent"),
 )
 
 export interface ImagePayload {

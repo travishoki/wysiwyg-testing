@@ -8,7 +8,7 @@
 
 import React from "react"
 import { createPortal } from "react-dom"
-import { CodeActionMenuContainer } from "./CodeActionMenuContainer"
+import { CodeActionMenuContainer } from "./CodeActionMenuContainer/CodeActionMenuContainer"
 
 type CodeActionMenuPluginProps = {
   anchorElem?: HTMLElement
