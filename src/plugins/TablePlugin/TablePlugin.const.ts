@@ -1,6 +1,6 @@
 import { createContext } from "react"
 import { LexicalCommand, createCommand } from "lexical"
-import { CellEditorConfig, InsertTableCommandPayload } from "./types"
+import { CellEditorConfig, InsertTableCommandPayload } from "./TablePlugin.types"
 
 export const INSERT_NEW_TABLE_COMMAND: LexicalCommand<InsertTableCommandPayload> = createCommand(
   "INSERT_NEW_TABLE_COMMAND",

@@ -1,5 +1,5 @@
 import { cellHTMLCache } from "./TableNode.const"
-import { Cell, Row, Rows } from "./types"
+import { Cell, Row, Rows } from "./TableNode.types"
 
 export const createUID = (): string => {
   return Math.random()

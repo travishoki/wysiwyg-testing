@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
 export type DialogProps = Readonly<{
-  children: ReactNode,
+  children: ReactNode
   "data-test-id"?: string
 }>

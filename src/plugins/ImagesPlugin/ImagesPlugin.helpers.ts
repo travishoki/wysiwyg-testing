@@ -8,7 +8,7 @@ import {
 import { $isImageNode, ImageNode } from "../../nodes/Image/ImageNode"
 import { CAN_USE_DOM } from "../../shared/canUseDOM"
 import { INSERT_IMAGE_COMMAND } from "./ImagesPlugin.const"
-import { InsertImagePayload } from "./types"
+import { InsertImagePayload } from "./ImagesPlugin.types"
 
 const getDOMSelection = (targetWindow: Window | null): Selection | null =>
   CAN_USE_DOM ? (targetWindow || window).getSelection() : null

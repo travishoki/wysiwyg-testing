@@ -31,8 +31,8 @@ import {
   $createAutocompleteNode,
   AutocompleteNode,
 } from "../../nodes/Autocomplete/AutocompleteNode"
+import { SearchPromise } from "./AutocompletePlugin.types"
 import { AutocompleteServer } from "./AutocompleteServer/AutocompleteServer"
-import { SearchPromise } from "./types"
 
 export const uuid = Math.random()
   .toString(36)

@@ -23,7 +23,7 @@ import {
 import { $createImageNode, ImageNode } from "../../nodes/Image/ImageNode"
 import { INSERT_IMAGE_COMMAND } from "./ImagesPlugin.const"
 import { onDragStart, onDragover, onDrop } from "./ImagesPlugin.helpers"
-import { InsertImagePayload } from "./types"
+import { InsertImagePayload } from "./ImagesPlugin.types"
 
 type ImagesPluginProps = {
   captionsEnabled?: boolean

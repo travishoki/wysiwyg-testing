@@ -5,7 +5,7 @@ import { IconBare } from "../../../Icon/IconBare/IconBare"
 import { TableActionMenu } from "../TableActionMenu/TableActionMenu"
 import { TableCellEditor } from "../TableCellEditor/TableCellEditor"
 import { TableNode } from "../TableNode"
-import { Cell, Rows, SortOptions } from "../types"
+import { Cell, Rows, SortOptions } from "../TableNode.types"
 import { createEmptyParagraphHTML, generateHTMLFromJSON } from "./TableCell.helpers"
 
 type TableCellProps = {

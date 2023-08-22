@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react"
 import stylesDropdown from "../DropDown.module.scss"
-import { DropDownContext } from "../types"
+import { DropDownContext } from "../DropDown.types"
 
 type DropDownItemsProps = {
   children: React.ReactNode

@@ -9,7 +9,7 @@ import { $isInlineImageNode, InlineImageNode } from "../../nodes/InlineImage/Inl
 import { CAN_USE_DOM } from "../../shared/canUseDOM"
 import { canDropImage } from "../ImagesPlugin/ImagesPlugin.helpers"
 import { INSERT_INLINE_IMAGE_COMMAND } from "./InlineImagePlugin.const"
-import { InsertInlineImagePayload } from "./types"
+import { InsertInlineImagePayload } from "./InlineImagePlugin.types"
 
 const getDOMSelection = (targetWindow: Window | null): Selection | null =>
   CAN_USE_DOM ? (targetWindow || window).getSelection() : null

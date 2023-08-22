@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Button } from "../../../ui/Button/Button"
 import { DialogActions } from "../../../ui/Dialog/Dialog"
 import { TextInput } from "../../../ui/TextInput/TextInput"
-import { InsertImagePayload } from "../types"
+import { InsertImagePayload } from "../ImagesPlugin.types"
 
 type InsertImageUriDialogBodyProps = {
   onClick: (payload: InsertImagePayload) => void

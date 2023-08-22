@@ -25,7 +25,7 @@ import {
   exportTableCellsToHTML,
   plainTextEditorJSON,
 } from "./TableNode.helpers"
-import { Cell, Row, Rows } from "./types"
+import { Cell, Row, Rows } from "./TableNode.types"
 
 export const cellTextContentCache: Map<string, string> = new Map()
 

@@ -52,7 +52,7 @@ import { TableCell } from "../TableCell/TableCell"
 import { $isTableNode, TableNode, cellTextContentCache } from "../TableNode"
 import { cellHTMLCache } from "../TableNode.const"
 import { exportTableCellsToHTML, extractRowsFromHTML } from "../TableNode.helpers"
-import { Cell, Rows, SortOptions } from "../types"
+import { Cell, Rows, SortOptions } from "../TableNode.types"
 import {
   extractCellsFromRows,
   focusCell,

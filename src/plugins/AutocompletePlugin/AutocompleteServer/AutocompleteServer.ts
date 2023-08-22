@@ -1,5 +1,5 @@
 import { DICTIONARY } from "../AutocompletePlugin.const"
-import { SearchPromise } from "../types"
+import { SearchPromise } from "../AutocompletePlugin.types"
 
 /*
  * Simulate an asynchronous autocomplete server (typical in more common use cases like GMail where

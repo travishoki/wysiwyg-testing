@@ -23,7 +23,7 @@ import {
 import { $createInlineImageNode, InlineImageNode } from "../../nodes/InlineImage/InlineImageNode"
 import { INSERT_INLINE_IMAGE_COMMAND } from "./InlineImagePlugin.const"
 import { onDragStart, onDragover, onDrop } from "./InlineImagePlugin.helpers"
-import { InsertInlineImagePayload } from "./types"
+import { InsertInlineImagePayload } from "./InlineImagePlugin.types"
 
 export const InlineImagePlugin = (): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
