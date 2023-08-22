@@ -14,9 +14,9 @@ import {
   RangeSelection,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-import { getSelectedNode } from "../../utils/getSelectedNode"
-import { setFloatingElemPositionForLinkEditor } from "../../utils/setFloatingElemPositionForLinkEditor"
-import { sanitizeUrl } from "../../utils/url"
+import { getSelectedNode } from "../../helpers/getSelectedNode"
+import { setFloatingElemPositionForLinkEditor } from "../../helpers/setFloatingElemPositionForLinkEditor"
+import { sanitizeUrl } from "../../helpers/url"
 import styles from "./FloatingLinkEditor.module.scss"
 
 type FloatingLinkEditorProps = {

@@ -30,7 +30,7 @@ import {
   $createAutocompleteNode,
   AutocompleteNode,
 } from "../../nodes/Autocomplete/AutocompleteNode"
-import { addSwipeRightListener } from "../../utils/swipe"
+import { addSwipeRightListener } from "../../helpers/swipe"
 
 type SearchPromise = {
   dismiss: () => void

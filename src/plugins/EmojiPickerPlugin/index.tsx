@@ -40,7 +40,7 @@ export const EmojiPickerPlugin = () => {
 
   useEffect(() => {
     // @ts-ignore
-    import("../../utils/emoji-list.ts").then((file) => setEmojis(file.default)).catch(noop)
+    import("../../helpers/emoji-list").then((file) => setEmojis(file.default)).catch(noop)
   }, [])
 
   const emojiOptions = useMemo(
