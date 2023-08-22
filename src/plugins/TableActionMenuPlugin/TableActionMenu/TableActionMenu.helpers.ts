@@ -12,7 +12,7 @@ import {
   GridSelection,
   LexicalEditor,
 } from "lexical"
-import { invariant } from "../../shared/invariant"
+import { invariant } from "../../../shared/invariant"
 
 export const $canUnmerge = (): boolean => {
   const selection = $getSelection()

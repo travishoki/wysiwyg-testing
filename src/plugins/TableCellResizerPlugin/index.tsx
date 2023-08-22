@@ -10,7 +10,7 @@ import React, { ReactPortal, useMemo } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
 import { createPortal } from "react-dom"
-import { TableCellResizer } from "./TableCellResizer"
+import { TableCellResizer } from "./TableCellResizer/TableCellResizer"
 
 export const TableCellResizerPlugin = (): null | ReactPortal => {
   const [editor] = useLexicalComposerContext()

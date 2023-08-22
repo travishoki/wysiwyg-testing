@@ -28,8 +28,8 @@ import {
   DEPRECATED_GridCellNode,
 } from "lexical"
 import { createPortal } from "react-dom"
-import { ColorPicker } from "../../ui/ColorPicker/ColorPicker"
-import stylesDropdown from "../../ui/DropDown/DropDown.module.scss"
+import { ColorPicker } from "../../../ui/ColorPicker/ColorPicker"
+import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import {
   $canUnmerge,
   $cellContainsEmptyParagraph,
