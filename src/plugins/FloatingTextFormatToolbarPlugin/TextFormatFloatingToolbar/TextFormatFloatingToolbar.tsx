@@ -9,9 +9,9 @@ import {
   LexicalEditor,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-import { IconFormat } from "../../Icon/IconFormat/IconFormat"
-import { getDOMRangeRect } from "../../helpers/getDOMRangeRect"
-import { setFloatingElemPosition } from "../../helpers/setFloatingElemPosition"
+import { IconFormat } from "../../../Icon/IconFormat/IconFormat"
+import { getDOMRangeRect } from "../../../helpers/getDOMRangeRect"
+import { setFloatingElemPosition } from "../../../helpers/setFloatingElemPosition"
 import styles from "./TextFormatFloatingToolbar.module.scss"
 
 type TextFormatFloatingToolbarProps = {

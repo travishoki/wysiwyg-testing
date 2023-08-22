@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from "react"
 import { LexicalEditor } from "lexical"
-import { Position } from "../../nodes/InlineImage/InlineImageNode"
-import { Button } from "../../ui/Button/Button"
-import stylesCheckbox from "../../ui/Checkbox.module.scss"
-import { DialogActions } from "../../ui/Dialog/Dialog"
-import { FileInput } from "../../ui/FileInput/FileInput"
-import { InputWrapper } from "../../ui/Input/InputWrapper/InputWrapper"
-import { Select } from "../../ui/Select/Select"
-import { TextInput } from "../../ui/TextInput/TextInput"
-import { INSERT_INLINE_IMAGE_COMMAND } from "./const"
+import { Position } from "../../../nodes/InlineImage/InlineImageNode"
+import { Button } from "../../../ui/Button/Button"
+import stylesCheckbox from "../../../ui/Checkbox.module.scss"
+import { DialogActions } from "../../../ui/Dialog/Dialog"
+import { FileInput } from "../../../ui/FileInput/FileInput"
+import { InputWrapper } from "../../../ui/Input/InputWrapper/InputWrapper"
+import { Select } from "../../../ui/Select/Select"
+import { TextInput } from "../../../ui/TextInput/TextInput"
+import { INSERT_INLINE_IMAGE_COMMAND } from "../const"
 
 type InsertInlineImageDialogProps = {
   activeEditor: LexicalEditor
