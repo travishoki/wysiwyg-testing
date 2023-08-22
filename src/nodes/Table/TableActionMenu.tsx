@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react"
 import { $addUpdateTag, $createParagraphNode, $getRoot } from "lexical"
-import { HorizontalRule } from "../../HorizontalRule/HorizontalRule"
 import stylesDropdown from "../../ui/DropDown/DropDown.module.scss"
 import { TableNode } from "./TableNode"
 import { Cell, Rows, SortOptions } from "./types"
@@ -103,7 +102,7 @@ export const TableActionMenu = ({
       >
         <span className={stylesDropdown.dropdownText}>Clear cell</span>
       </button>
-      <HorizontalRule />
+      <hr />
       {cell.type === "header" && y === 0 && (
         <>
           {sortingOptions !== null && sortingOptions.x === x && (
@@ -143,7 +142,7 @@ export const TableActionMenu = ({
               <span className={stylesDropdown.dropdownText}>Sort descending</span>
             </button>
           )}
-          <HorizontalRule />
+          <hr />
         </>
       )}
       <button
@@ -170,7 +169,7 @@ export const TableActionMenu = ({
       >
         <span className={stylesDropdown.dropdownText}>Insert row below</span>
       </button>
-      <HorizontalRule />
+      <hr />
       <button
         className={stylesDropdown.dropdownItem}
         onClick={() => {
@@ -195,7 +194,7 @@ export const TableActionMenu = ({
       >
         <span className={stylesDropdown.dropdownText}>Insert column right</span>
       </button>
-      <HorizontalRule />
+      <hr />
       {rows[0].cells.length !== 1 && (
         <button
           className={stylesDropdown.dropdownItem}

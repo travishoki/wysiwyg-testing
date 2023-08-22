@@ -28,7 +28,6 @@ import {
   DEPRECATED_GridCellNode,
 } from "lexical"
 import { createPortal } from "react-dom"
-import { HorizontalRule } from "../../HorizontalRule/HorizontalRule"
 import { ColorPicker } from "../../ui/ColorPicker/ColorPicker"
 import stylesDropdown from "../../ui/DropDown/DropDown.module.scss"
 import {
@@ -390,7 +389,7 @@ export const TableActionMenu = ({
       >
         <span className={stylesDropdown.dropdownText}>Background color</span>
       </button>
-      <HorizontalRule />
+      <hr />
       <button
         className={stylesDropdown.dropdownItem}
         data-test-id="table-insert-row-above"
@@ -409,7 +408,7 @@ export const TableActionMenu = ({
           Insert {selectionCounts.rows === 1 ? "row" : `${selectionCounts.rows} rows`} below
         </span>
       </button>
-      <HorizontalRule />
+      <hr />
       <button
         className={stylesDropdown.dropdownItem}
         data-test-id="table-insert-column-before"
@@ -430,7 +429,7 @@ export const TableActionMenu = ({
           right
         </span>
       </button>
-      <HorizontalRule />
+      <hr />
       <button
         className={stylesDropdown.dropdownItem}
         data-test-id="table-delete-columns"
@@ -452,7 +451,7 @@ export const TableActionMenu = ({
       >
         <span className={stylesDropdown.dropdownText}>Delete table</span>
       </button>
-      <HorizontalRule />
+      <hr />
       <button className={stylesDropdown.dropdownItem} onClick={() => toggleTableRowIsHeader()}>
         <span className={stylesDropdown.dropdownText}>
           {(tableCellNode.__headerState & TableCellHeaderStates.ROW) === TableCellHeaderStates.ROW
