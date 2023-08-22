@@ -1,0 +1,2 @@
+export const COMMAND_PRIORITY_LOW = 1
+export const TAB_TO_FOCUS_INTERVAL = 100

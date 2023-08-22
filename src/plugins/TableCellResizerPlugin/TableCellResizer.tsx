@@ -17,6 +17,7 @@ import {
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
 import styles from "./TableCellResizer.module.scss"
+import { MIN_COLUMN_WIDTH, MIN_ROW_HEIGHT } from "./const"
 
 type MousePosition = {
   x: number
@@ -24,9 +25,6 @@ type MousePosition = {
 }
 
 type MouseDraggingDirection = "right" | "bottom"
-
-const MIN_ROW_HEIGHT = 33
-const MIN_COLUMN_WIDTH = 50
 
 type TableCellResizerProps = { editor: LexicalEditor }
 
