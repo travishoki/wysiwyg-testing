@@ -13,22 +13,22 @@ import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { useModal } from "../../hooks/useModal"
 import { AutoEmbedDialog } from "./AutoEmbedDialog/AutoEmbedDialog"
 import { AutoEmbedMenu } from "./AutoEmbedMenu/AutoEmbedMenu"
-import { PlaygroundEmbedConfig } from "./PlaygroundEmbedConfig"
+import { ComposerEmbedConfig } from "./ComposerEmbedConfig"
 import styles from "./index.module.scss"
 
-const EmbedConfigs: PlaygroundEmbedConfig[] = []
+const EmbedConfigs: ComposerEmbedConfig[] = []
 
 export const AutoEmbedPlugin = () => {
   const [modal, showModal] = useModal()
 
-  const openEmbedModal = (embedConfig: PlaygroundEmbedConfig) => {
+  const openEmbedModal = (embedConfig: ComposerEmbedConfig) => {
     showModal(`Embed ${embedConfig.contentName}`, (onClose) => (
       <AutoEmbedDialog embedConfig={embedConfig} onClose={onClose} />
     ))
   }
 
   const getMenuOptions = (
-    activeEmbedConfig: PlaygroundEmbedConfig,
+    activeEmbedConfig: ComposerEmbedConfig,
     embedFn: () => void,
     dismissFn: () => void,
   ) => {
@@ -45,7 +45,7 @@ export const AutoEmbedPlugin = () => {
   return (
     <>
       {modal}
-      <LexicalAutoEmbedPlugin<PlaygroundEmbedConfig>
+      <LexicalAutoEmbedPlugin<ComposerEmbedConfig>
         embedConfigs={EmbedConfigs}
         getMenuOptions={getMenuOptions}
         menuRenderFn={(

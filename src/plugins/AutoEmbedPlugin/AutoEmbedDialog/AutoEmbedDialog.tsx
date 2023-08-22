@@ -7,10 +7,10 @@ import { DialogActions } from "../../ui/Dialog/Dialog"
 import { InputInput } from "../../ui/Input/InputInput"
 import { InputWrapper } from "../../ui/Input/InputWrapper"
 import { debounce } from "./AutoEmbedDialog.helpers"
-import { PlaygroundEmbedConfig } from "./PlaygroundEmbedConfig"
+import { ComposerEmbedConfig } from "./ComposerEmbedConfig"
 
 type AutoEmbedDialogProps = {
-  embedConfig: PlaygroundEmbedConfig
+  embedConfig: ComposerEmbedConfig
   onClose: () => void
 }
 
