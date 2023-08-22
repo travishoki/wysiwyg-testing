@@ -1,27 +1,12 @@
 import React from "react"
-import { Position } from "./InlineImageNode"
+import { useSuspenseImage } from "./LazyImage.hooks"
 
-const imageCache = new Set()
-
-const useSuspenseImage = (src: string) => {
-  if (!imageCache.has(src)) {
-    throw new Promise((resolve) => {
-      const img = new Image()
-      img.src = src
-      img.onload = () => {
-        imageCache.add(src)
-        resolve(null)
-      }
-    })
-  }
-}
-
-type InlineImageComponentLazyImageProps = {
+type ImageComponentLazyImageProps = {
   altText: string
   className: string | null
   height: "inherit" | number
   imageRef: { current: null | HTMLImageElement }
-  position: Position
+  maxWidth: number
   src: string
   width: "inherit" | number
 }
@@ -31,23 +16,22 @@ export const LazyImage = ({
   className,
   height,
   imageRef,
-  position,
+  maxWidth,
   src,
   width,
-}: InlineImageComponentLazyImageProps) => {
+}: ImageComponentLazyImageProps) => {
   useSuspenseImage(src)
 
   return (
     <img
       alt={altText}
       className={className || undefined}
-      data-position={position}
       draggable="false"
       ref={imageRef}
       src={src}
       style={{
-        display: "block",
         height,
+        maxWidth,
         width,
       }}
     />

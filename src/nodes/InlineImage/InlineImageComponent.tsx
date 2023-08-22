@@ -42,8 +42,8 @@ import { ContentEditable } from "../../ui/ContentEditable/ContentEditable"
 import { Placeholder } from "../../ui/Placeholder/Placeholder"
 import styles from "./InlineImageComponent.module.scss"
 import { $isInlineImageNode, Position } from "./InlineImageNode"
-import { LazyImage } from "./LazyImage"
-import { UpdateInlineImageDialog } from "./UpdateInlineImageDialog"
+import { LazyImage } from "./LazyImage/LazyImage"
+import { UpdateInlineImageDialog } from "./UpdateInlineImageDialog/UpdateInlineImageDialog"
 
 type InlineImageComponentProps = {
   altText: string

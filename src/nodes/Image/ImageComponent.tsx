@@ -46,7 +46,7 @@ import { ImageResizer } from "../../ui/ImageResizer/ImageResizer"
 import { Placeholder } from "../../ui/Placeholder/Placeholder"
 import styles from "./ImageComponent.module.scss"
 import { $isImageNode } from "./ImageNode"
-import { LazyImage } from "./LazyImage"
+import { LazyImage } from "./LazyImage/LazyImage"
 
 type ImageComponentProps = {
   altText: string

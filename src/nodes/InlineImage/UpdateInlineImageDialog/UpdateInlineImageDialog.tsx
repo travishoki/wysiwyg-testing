@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import { $getNodeByKey, LexicalEditor, NodeKey } from "lexical"
-import { Button } from "../../ui/Button/Button"
-import stylesCheckbox from "../../ui/Checkbox.module.scss"
-import { DialogActions } from "../../ui/Dialog/Dialog"
-import { InputWrapper } from "../../ui/Input/InputWrapper/InputWrapper"
-import { Select } from "../../ui/Select/Select"
-import { TextInput } from "../../ui/TextInput/TextInput"
-import { InlineImageNode, Position } from "./InlineImageNode"
+import { Button } from "../../../ui/Button/Button"
+import stylesCheckbox from "../../../ui/Checkbox.module.scss"
+import { DialogActions } from "../../../ui/Dialog/Dialog"
+import { InputWrapper } from "../../../ui/Input/InputWrapper/InputWrapper"
+import { Select } from "../../../ui/Select/Select"
+import { TextInput } from "../../../ui/TextInput/TextInput"
+import { InlineImageNode, Position } from "../InlineImageNode"
 
 type UpdateInlineImageDialogProps = {
   activeEditor: LexicalEditor
