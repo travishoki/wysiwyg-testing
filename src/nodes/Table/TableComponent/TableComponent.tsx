@@ -49,9 +49,9 @@ import {
 } from "lexical"
 import { CellContext } from "../../../plugins/TablePlugin/const"
 import { TableCell } from "../TableCell/TableCell"
-import { $isTableNode, TableNode, cellTextContentCache } from "../TableNode/TableNode"
-import { exportTableCellsToHTML, extractRowsFromHTML } from "../TableNode/helpers"
+import { $isTableNode, TableNode, cellTextContentCache } from "../TableNode"
 import { cellHTMLCache } from "../const"
+import { exportTableCellsToHTML, extractRowsFromHTML } from "../helpers"
 import { Cell, Rows, SortOptions } from "../types"
 import {
   extractCellsFromRows,

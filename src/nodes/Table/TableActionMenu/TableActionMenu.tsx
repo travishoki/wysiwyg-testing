@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react"
 import { $addUpdateTag, $createParagraphNode, $getRoot } from "lexical"
-import stylesDropdown from "../../ui/DropDown/DropDown.module.scss"
-import { TableNode } from "./TableNode/TableNode"
-import { Cell, Rows, SortOptions } from "./types"
+import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
+import { TableNode } from "../TableNode"
+import { Cell, Rows, SortOptions } from "../types"
 
 type TableActionMenuProps = {
   cell: Cell

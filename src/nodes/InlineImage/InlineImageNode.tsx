@@ -31,7 +31,7 @@ import {
 } from "lexical"
 import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFallback"
 
-const InlineImageComponent = React.lazy(() => import("./InlineImageComponent"))
+const InlineImageComponent = React.lazy(() => import("./InlineImageComponent/InlineImageComponent"))
 
 export type Position = "left" | "right" | "full" | undefined
 

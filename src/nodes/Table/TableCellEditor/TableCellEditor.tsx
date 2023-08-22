@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { LexicalNestedComposer } from "@lexical/react/LexicalNestedComposer"
 import { LexicalEditor } from "lexical"
-import { CellContext } from "../../plugins/TablePlugin/const"
+import { CellContext } from "../../../plugins/TablePlugin/const"
 
 type TableCellEditorProps = {
   cellEditor: LexicalEditor
