@@ -3,13 +3,13 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { TableOfContentsEntry } from "@lexical/react/LexicalTableOfContents"
 import classNames from "classnames"
 import { NodeKey } from "lexical"
+import styles from "./TableOfContentsList.module.scss"
 import {
   indent,
   isHeadingAboveViewport,
   isHeadingAtTheTopOfThePage,
   isHeadingBelowTheTopOfThePage,
 } from "./helpers"
-import styles from "./TableOfContentsList.module.scss"
 
 type TableOfContentsListProps = {
   tableOfContents: Array<TableOfContentsEntry>

@@ -47,8 +47,12 @@ import {
   TextFormatType,
   createEditor,
 } from "lexical"
-import { CellContext } from "../../plugins/TablePlugin/const"
-import { TableCell } from "./TableCell"
+import { CellContext } from "../../../plugins/TablePlugin/const"
+import { TableCell } from "../TableCell/TableCell"
+import { $isTableNode, TableNode, cellTextContentCache } from "../TableNode/TableNode"
+import { exportTableCellsToHTML, extractRowsFromHTML } from "../TableNode/helpers"
+import { cellHTMLCache } from "../const"
+import { Cell, Rows, SortOptions } from "../types"
 import {
   extractCellsFromRows,
   focusCell,
@@ -63,11 +67,7 @@ import {
   isPaste,
   isStartingResize,
   isTargetOnPossibleUIControl,
-} from "./TableComponent.helpers"
-import { $isTableNode, TableNode, cellTextContentCache } from "./TableNode"
-import { exportTableCellsToHTML, extractRowsFromHTML } from "./TableNode.helpers"
-import { cellHTMLCache } from "./const"
-import { Cell, Rows, SortOptions } from "./types"
+} from "./helpers"
 
 const NO_CELLS: [] = []
 

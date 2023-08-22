@@ -1,5 +1,5 @@
-import { cellHTMLCache } from "./const"
-import { Cell, Row, Rows } from "./types"
+import { cellHTMLCache } from "../const"
+import { Cell, Row, Rows } from "../types"
 
 export const createUID = (): string => {
   return Math.random()

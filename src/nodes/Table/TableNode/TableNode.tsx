@@ -19,19 +19,14 @@ import {
   SerializedLexicalNode,
   Spread,
 } from "lexical"
-import {
-  createCell,
-  createRow,
-  exportTableCellsToHTML,
-  plainTextEditorJSON,
-} from "./TableNode.helpers"
-import { Cell, Row, Rows } from "./types"
+import { Cell, Row, Rows } from "../types"
+import { createCell, createRow, exportTableCellsToHTML, plainTextEditorJSON } from "./helpers"
 
 export const cellTextContentCache: Map<string, string> = new Map()
 
 const TableComponent = React.lazy(
   // @ts-ignore
-  () => import("./TableComponent"),
+  () => import("../TableComponent/TableComponent"),
 )
 
 type SerializedTableNode = Spread<
