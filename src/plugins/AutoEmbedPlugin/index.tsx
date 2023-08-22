@@ -12,7 +12,7 @@ import * as ReactDOM from "react-dom"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { useModal } from "../../hooks/useModal"
 import { AutoEmbedDialog } from "./AutoEmbedDialog/AutoEmbedDialog"
-import { AutoEmbedMenu } from "./AutoEmbedMenu"
+import { AutoEmbedMenu } from "./AutoEmbedMenu/AutoEmbedMenu"
 import { PlaygroundEmbedConfig } from "./PlaygroundEmbedConfig"
 import styles from "./index.module.scss"
 
