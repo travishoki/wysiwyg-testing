@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { INSERT_TABLE_COMMAND } from "@lexical/table"
 import { LexicalEditor } from "lexical"
-import { Button } from "../../ui/Button/Button"
-import { DialogActions } from "../../ui/Dialog/Dialog"
-import { TextInput } from "../../ui/TextInput/TextInput"
+import { Button } from "../../../ui/Button/Button"
+import { DialogActions } from "../../../ui/Dialog/Dialog"
+import { TextInput } from "../../../ui/TextInput/TextInput"
 
 type InsertTableDialogProps = {
   activeEditor: LexicalEditor
