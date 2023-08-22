@@ -37,7 +37,7 @@ import {
   computeSelectionCount,
   currentCellBackgroundColor,
   isGridSelectionRectangular,
-} from "./TableActionMenu.helpers"
+} from "./helpers"
 
 type TableCellActionMenuProps = Readonly<{
   cellMerge: boolean

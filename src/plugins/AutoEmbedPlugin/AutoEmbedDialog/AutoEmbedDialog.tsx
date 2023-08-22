@@ -7,7 +7,7 @@ import { DialogActions } from "../../../ui/Dialog/Dialog"
 import { InputInput } from "../../../ui/Input/InputInput"
 import { InputWrapper } from "../../../ui/Input/InputWrapper/InputWrapper"
 import { ComposerEmbedConfig } from "../ComposerEmbedConfig"
-import { debounce } from "./AutoEmbedDialog.helpers"
+import { debounce } from "./helpers"
 
 type AutoEmbedDialogProps = {
   embedConfig: ComposerEmbedConfig

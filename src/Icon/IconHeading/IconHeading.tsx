@@ -1,6 +1,6 @@
 import React from "react"
 import { Icon } from "../Icon"
-import { getType } from "./IconHeading.helpers"
+import { getType } from "./helpers"
 
 type IconHeadingProps = {
   num: number

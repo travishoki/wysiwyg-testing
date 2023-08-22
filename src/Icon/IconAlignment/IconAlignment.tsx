@@ -1,7 +1,7 @@
 import React from "react"
 import { Icon } from "../Icon"
 import { alignmentTypes } from "../types"
-import { getType } from "./IconAlignment.helpers"
+import { getType } from "./helpers"
 
 type IconAlignmentProps = {
   type: alignmentTypes
