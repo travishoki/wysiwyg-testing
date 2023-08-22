@@ -11,7 +11,7 @@ import { AutoEmbedOption, LexicalAutoEmbedPlugin } from "@lexical/react/LexicalA
 import * as ReactDOM from "react-dom"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { useModal } from "../../hooks/useModal"
-import { AutoEmbedDialog } from "./AutoEmbedDialog"
+import { AutoEmbedDialog } from "./AutoEmbedDialog/AutoEmbedDialog"
 import { AutoEmbedMenu } from "./AutoEmbedMenu"
 import { PlaygroundEmbedConfig } from "./PlaygroundEmbedConfig"
 import styles from "./index.module.scss"

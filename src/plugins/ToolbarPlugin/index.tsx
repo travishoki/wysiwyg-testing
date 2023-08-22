@@ -64,7 +64,7 @@ import { InsertInlineImageDialog } from "../InlineImagePlugin/InsertInlineImageD
 import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog"
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog"
 import { BlockFormatDropDown } from "./BlockFormatDropDown"
-import { Divider } from "./Divider"
+import { Divider } from "./Divider/Divider"
 import { DividerDropdown } from "./DividerDropdown"
 import { FontDropDown } from "./FontDropDown"
 import { blockTypeToBlockName, rootTypeToRootName } from "./const"

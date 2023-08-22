@@ -9,9 +9,9 @@
 import React, { useState } from "react"
 import { $isCodeNode } from "@lexical/code"
 import { $getNearestNodeFromDOMNode, $getSelection, $setSelection, LexicalEditor } from "lexical"
-import { IconFormat } from "../../../../Icon/IconFormat"
-import stylesCodeActionMenu from "../../CodeActionMenuContainer.module.scss"
-import { useDebounce } from "../../utils"
+import { IconFormat } from "../../../Icon/IconFormat"
+import stylesCodeActionMenu from "../CodeActionMenuContainer.module.scss"
+import { useDebounce } from "../utils"
 
 interface CopyButtonProps {
   editor: LexicalEditor
