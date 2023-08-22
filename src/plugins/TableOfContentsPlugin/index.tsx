@@ -8,7 +8,7 @@
 
 import React from "react"
 import LexicalTableOfContents from "@lexical/react/LexicalTableOfContents"
-import { TableOfContentsList } from "./TableOfContentsList"
+import { TableOfContentsList } from "./TableOfContentsList/TableOfContentsList"
 
 export const TableOfContentsPlugin = () => {
   return (
