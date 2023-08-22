@@ -35,8 +35,8 @@ import {
   TableRowNode,
 } from "@lexical/table"
 import { $createTextNode, $isParagraphNode, $isTextNode, LexicalNode } from "lexical"
-import { $createImageNode, $isImageNode, ImageNode } from "../../nodes/Image/ImageNode"
 import emojiList from "../../helpers/emoji-list"
+import { $createImageNode, $isImageNode, ImageNode } from "../../nodes/Image/ImageNode"
 
 const HR: ElementTransformer = {
   dependencies: [HorizontalRuleNode],

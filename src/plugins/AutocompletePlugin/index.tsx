@@ -26,11 +26,11 @@ import {
   RangeSelection,
 } from "lexical"
 import { useSharedAutocompleteContext } from "../../context/SharedAutocompleteContext"
+import { addSwipeRightListener } from "../../helpers/swipe"
 import {
   $createAutocompleteNode,
   AutocompleteNode,
 } from "../../nodes/Autocomplete/AutocompleteNode"
-import { addSwipeRightListener } from "../../helpers/swipe"
 
 type SearchPromise = {
   dismiss: () => void
