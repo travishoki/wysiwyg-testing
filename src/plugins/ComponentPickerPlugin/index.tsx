@@ -39,8 +39,8 @@ import { useModal } from "../../hooks/useModal"
 import { InsertImageDialog } from "../ImagesPlugin/InsertImageDialog/InsertImageDialog"
 import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog/InsertNewTableDialog"
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog/InsertTableDialog"
-import { ComponentPickerMenuItem } from "./ComponentPickerMenuItem"
-import { ComponentPickerOption } from "./ComponentPickerOption"
+import { ComponentPickerMenuItem } from "./ComponentPickerMenuItem/ComponentPickerMenuItem"
+import { ComponentPickerOption } from "./ComponentPickerOption/ComponentPickerOption"
 import styles from "./index.module.scss"
 
 const alignmentList: alignmentTypes[] = ["left", "center", "right", "justify"]

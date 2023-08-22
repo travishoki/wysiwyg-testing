@@ -1,5 +1,5 @@
-import { DICTIONARY } from "./const"
-import { SearchPromise } from "./type"
+import { DICTIONARY } from "../const"
+import { SearchPromise } from "../type"
 
 /*
  * Simulate an asynchronous autocomplete server (typical in more common use cases like GMail where

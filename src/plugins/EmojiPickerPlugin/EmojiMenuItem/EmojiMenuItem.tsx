@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
-import stylesTypeaheadPopover from "../../TypeaheadPopover/TypeaheadPopover.module.scss"
-import { EmojiOption } from "./EmojiOption"
+import stylesTypeaheadPopover from "../../../TypeaheadPopover/TypeaheadPopover.module.scss"
+import { EmojiOption } from "../EmojiOption/EmojiOption"
 
 type EmojiMenuItemProps = {
   index: number
