@@ -602,30 +602,32 @@
 
   /* Emoji */
 
-  .emoji {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 16px 16px;
-    caret-color: #050505;
-    color: transparent;
-    margin: 0 -1px;
-    vertical-align: middle;
-  }
+  .composer {
+    .emoji {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 16px 16px;
+      caret-color: #050505;
+      color: transparent;
+      margin: 0 -1px;
+      vertical-align: middle;
 
-  .emoji.composer__happySmile {
-    background-image: url(../images/emoji/1F642.png);
-  }
+      &.composer__happySmile {
+        background-image: url(../images/emoji/1F642.png);
+      }
 
-  .emoji.composer__veryHappySmile {
-    background-image: url(../images/emoji/1F600.png);
-  }
+      &.composer__veryHappySmile {
+        background-image: url(../images/emoji/1F600.png);
+      }
 
-  .emoji.composer__unhappySmile {
-    background-image: url(../images/emoji/1F641.png);
-  }
+      &.composer__unhappySmile {
+        background-image: url(../images/emoji/1F641.png);
+      }
 
-  .emoji.composer__heart {
-    background-image: url(../images/emoji/2764.png);
+      &.composer__heart {
+        background-image: url(../images/emoji/2764.png);
+      }
+    }
   }
 
   .composer__emojiInner {
@@ -649,23 +651,25 @@
 
   /* Horizontal Rule */
 
-  .composer hr {
-    border: none;
-    cursor: pointer;
-    margin: 1em 0;
-    padding: 2px 2px;
-  }
+  .composer {
+    hr {
+      border: none;
+      cursor: pointer;
+      margin: 1em 0;
+      padding: 2px 2px;
 
-  .composer hr.selected {
-    outline: 2px solid #3c84f4;
-    user-select: none;
-  }
+      &.selected {
+        outline: 2px solid #3c84f4;
+        user-select: none;
+      }
 
-  .composer hr:after {
-    background-color: #ccc;
-    content: "";
-    display: block;
-    height: 2px;
-    line-height: 2px;
+      &:after {
+        background-color: #ccc;
+        content: "";
+        display: block;
+        height: 2px;
+        line-height: 2px;
+      }
+    }
   }
 }
