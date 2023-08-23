@@ -30,12 +30,12 @@ import {
   TextNode,
 } from "lexical"
 import * as ReactDOM from "react-dom"
+import { useModal } from "../../Composer/hooks/useModal"
 import { Icon } from "../../Icon/Icon"
 import { IconAlignment } from "../../Icon/IconAlignment/IconAlignment"
 import { IconHeading } from "../../Icon/IconHeading/IconHeading"
 import { alignmentTypes } from "../../Icon/types"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
-import { useModal } from "../../hooks/useModal"
 import { InsertImageDialog } from "../ImagesPlugin/InsertImageDialog/InsertImageDialog"
 import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog/InsertNewTableDialog"
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog/InsertTableDialog"

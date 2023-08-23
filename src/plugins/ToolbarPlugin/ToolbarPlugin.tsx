@@ -48,12 +48,12 @@ import {
   SELECTION_CHANGE_COMMAND,
   UNDO_COMMAND,
 } from "lexical"
+import { useModal } from "../../Composer/hooks/useModal"
 import { Icon } from "../../Icon/Icon"
 import stylesIcon from "../../Icon/Icon.module.scss"
 import { IconFormat } from "../../Icon/IconFormat/IconFormat"
 import { getSelectedNode } from "../../helpers/getSelectedNode"
 import { sanitizeUrl } from "../../helpers/url"
-import { useModal } from "../../hooks/useModal"
 import { IS_APPLE } from "../../shared/environment"
 import { DropdownColorPicker } from "../../ui/DropDown/ColorPicker/ColorPicker"
 import { DropDown } from "../../ui/DropDown/DropDown"

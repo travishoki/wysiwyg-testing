@@ -19,8 +19,8 @@ import {
   COMMAND_PRIORITY_EDITOR,
   LexicalEditor,
 } from "lexical"
+import { useModal } from "../../Composer/hooks/useModal"
 import { IconBare } from "../../Icon/IconBare/IconBare"
-import { useModal } from "../../hooks/useModal"
 import { COMPOSER_TRANSFORMERS } from "../MarkdownTransformers/MarkdownTransformers"
 import styles from "./ActionsPlugin.module.scss"
 import { ShowClearDialog } from "./ShowClearDialog/ShowClearDialog"

@@ -33,8 +33,8 @@ import {
   RangeSelection,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
+import { useModal } from "../../../Composer/hooks/useModal"
 import { ComposerNodeFallback } from "../../../ComposerNodeFallback/ComposerNodeFallback"
-import { useModal } from "../../../hooks/useModal"
 import { FloatingLinkEditorPlugin } from "../../../plugins/FloatingLinkEditorPlugin/FloatingLinkEditorPlugin"
 import { FloatingTextFormatToolbarPlugin } from "../../../plugins/FloatingTextFormatToolbarPlugin/FloatingTextFormatToolbarPlugin"
 import { LinkPlugin } from "../../../plugins/LinkPlugin/LinkPlugin"
