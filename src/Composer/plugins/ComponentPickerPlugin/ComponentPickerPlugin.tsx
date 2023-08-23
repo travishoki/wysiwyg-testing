@@ -31,7 +31,6 @@ import {
 } from "lexical"
 import * as ReactDOM from "react-dom"
 import { Icon } from "../../Icon/Icon"
-import { IconAlignment } from "../../Icon/IconAlignment/IconAlignment"
 import { IconHeading } from "../../Icon/IconHeading/IconHeading"
 import { alignmentTypes } from "../../Icon/types"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
@@ -41,6 +40,7 @@ import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog/Insert
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog/InsertTableDialog"
 import { ComponentPickerMenuItem } from "./ComponentPickerMenuItem/ComponentPickerMenuItem"
 import { ComponentPickerOption } from "./ComponentPickerOption/ComponentPickerOption"
+import { getAlignmentType } from "./ComponentPickerPlugin.helpers"
 import styles from "./ComponentPickerPlugin.module.scss"
 
 const alignmentList: alignmentTypes[] = ["left", "center", "right", "justify"]
@@ -207,7 +207,7 @@ export const ComponentPickerPlugin = () => {
       ...alignmentList.map(
         (alignment) =>
           new ComponentPickerOption(`Align ${alignment}`, {
-            icon: <IconAlignment type={alignment} />,
+            icon: <Icon type={getAlignmentType(alignment)} />,
             keywords: ["align", "justify", alignment],
             onSelect: () =>
               // @ts-ignore Correct types, but since they're dynamic TS doesn't like it.
