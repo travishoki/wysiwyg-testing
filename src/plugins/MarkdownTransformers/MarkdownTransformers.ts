@@ -35,7 +35,7 @@ import {
   TableRowNode,
 } from "@lexical/table"
 import { $createTextNode, $isParagraphNode, $isTextNode, LexicalNode } from "lexical"
-import emojiList from "../../helpers/emoji-list"
+import emojiList from "../../Composer/helpers/emoji-list"
 import { $createImageNode, $isImageNode, ImageNode } from "../../nodes/Image/ImageNode"
 
 const HR: ElementTransformer = {

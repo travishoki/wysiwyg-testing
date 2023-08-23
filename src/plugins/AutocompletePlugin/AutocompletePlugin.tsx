@@ -25,8 +25,8 @@ import {
   NodeSelection,
   RangeSelection,
 } from "lexical"
+import { addSwipeRightListener } from "../../Composer/helpers/swipe"
 import { useSharedAutocompleteContext } from "../../context/SharedAutocompleteContext"
-import { addSwipeRightListener } from "../../helpers/swipe"
 import {
   $createAutocompleteNode,
   AutocompleteNode,

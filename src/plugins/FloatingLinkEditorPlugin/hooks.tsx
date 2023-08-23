@@ -9,7 +9,7 @@ import {
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
 import { createPortal } from "react-dom"
-import { getSelectedNode } from "../../helpers/getSelectedNode"
+import { getSelectedNode } from "../../Composer/helpers/getSelectedNode"
 import { FloatingLinkEditor } from "./FloatingLinkEditor/FloatingLinkEditor"
 
 export const useFloatingLinkEditorToolbar = (

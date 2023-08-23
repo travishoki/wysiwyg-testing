@@ -21,9 +21,9 @@ import {
   LexicalEditor,
 } from "lexical"
 import { createPortal } from "react-dom"
-import { isHTMLElement } from "../../helpers/guard"
-import { Point } from "../../helpers/point"
-import { Rect } from "../../helpers/rect"
+import { isHTMLElement } from "../../Composer/helpers/guard"
+import { Point } from "../../Composer/helpers/point"
+import { Rect } from "../../Composer/helpers/rect"
 import {
   DRAG_DATA_FORMAT,
   Downward,

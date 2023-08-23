@@ -7,7 +7,7 @@
  */
 
 import React, { LinkPlugin as LexicalLinkPlugin } from "@lexical/react/LexicalLinkPlugin"
-import { validateUrl } from "../../helpers/url"
+import { validateUrl } from "../../Composer/helpers/url"
 
 export const LinkPlugin = () => {
   return <LexicalLinkPlugin validateUrl={validateUrl} />

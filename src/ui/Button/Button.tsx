@@ -7,7 +7,7 @@
  */
 
 import React, { ReactNode } from "react"
-import { joinClasses } from "../../helpers/joinClasses"
+import { joinClasses } from "../../Composer/helpers/joinClasses"
 import styles from "./Button.module.scss"
 
 type ButtonProps = {

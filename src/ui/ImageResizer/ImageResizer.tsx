@@ -9,7 +9,7 @@
 import React, { useRef } from "react"
 import classNames from "classnames"
 import { LexicalEditor } from "lexical"
-import { clamp } from "../../helpers/numbers"
+import { clamp } from "../../Composer/helpers/numbers"
 import styles from "./ImageResizer.module.scss"
 
 const Direction = {
