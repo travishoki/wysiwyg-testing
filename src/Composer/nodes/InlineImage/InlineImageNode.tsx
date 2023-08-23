@@ -29,7 +29,7 @@ import {
   Spread,
   createEditor,
 } from "lexical"
-import { ComposerNodeFallback } from "../../ComposerNodeFallback/ComposerNodeFallback"
+import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
 
 const InlineImageComponent = React.lazy(() => import("./InlineImageComponent/InlineImageComponent"))
 

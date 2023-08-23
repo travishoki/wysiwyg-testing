@@ -3,8 +3,8 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
 import { $getNodeByKey } from "lexical"
 import { formatMergeFieldTitle } from "../../../../MergeFieldControls/MergeFieldButton/MergeFieldButton.helpers"
-import { ComposerNodeFallback } from "../../../ComposerNodeFallback/ComposerNodeFallback"
 import ImageClose from "../../../images/icons/close.svg"
+import { ComposerNodeFallback } from "../../../ui/ComposerNodeFallback/ComposerNodeFallback"
 import { $isMergeFieldNode } from "../MergeFieldNode"
 import styles from "./MergeFieldComponent.module.scss"
 

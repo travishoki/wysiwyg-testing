@@ -33,11 +33,11 @@ import {
   RangeSelection,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-import { ComposerNodeFallback } from "../../../ComposerNodeFallback/ComposerNodeFallback"
 import { useModal } from "../../../hooks/useModal"
 import { FloatingLinkEditorPlugin } from "../../../plugins/FloatingLinkEditorPlugin/FloatingLinkEditorPlugin"
 import { FloatingTextFormatToolbarPlugin } from "../../../plugins/FloatingTextFormatToolbarPlugin/FloatingTextFormatToolbarPlugin"
 import { LinkPlugin } from "../../../plugins/LinkPlugin/LinkPlugin"
+import { ComposerNodeFallback } from "../../../ui/ComposerNodeFallback/ComposerNodeFallback"
 import { ContentEditable } from "../../../ui/ContentEditable/ContentEditable"
 import { Placeholder } from "../../../ui/Placeholder/Placeholder"
 import { $isInlineImageNode, Position } from "../InlineImageNode"
