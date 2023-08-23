@@ -7,7 +7,7 @@
  */
 
 import React, { useCallback, useMemo, useState } from "react"
-import { Modal } from "../../ui/Modal/Modal"
+import { Modal } from "../ui/Modal/Modal"
 
 export const useModal = (): [
   JSX.Element | null,

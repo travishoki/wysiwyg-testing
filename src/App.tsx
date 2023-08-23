@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react"
 import styles from "./App.module.scss"
 import { Composer } from "./Composer/Composer"
+import { Maybe } from "./Composer/types/globals"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 import { composerRefProps } from "./MergeFieldHandler/MergeFieldHandler"
 import { Output } from "./Output/Output"
-import { Maybe } from "./types/globals"
 
 // ts-prune-ignore-next
 export const App = () => {
