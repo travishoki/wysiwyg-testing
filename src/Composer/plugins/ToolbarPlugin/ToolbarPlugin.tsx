@@ -37,12 +37,9 @@ import {
   CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_CRITICAL,
   COMMAND_PRIORITY_NORMAL,
-  FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
-  INDENT_CONTENT_COMMAND,
   KEY_MODIFIER_COMMAND,
   NodeKey,
-  OUTDENT_CONTENT_COMMAND,
   REDO_COMMAND,
   SELECTION_CHANGE_COMMAND,
   UNDO_COMMAND,
@@ -65,7 +62,7 @@ import { ButtonLink } from "./ButtonLink/ButtonLink"
 import { ButtonUnderline } from "./ButtonUnderline/ButtonUnderline"
 import { Divider } from "./Divider/Divider"
 import { DropDownBlockFormat } from "./DropDownBlockFormat/DropDownBlockFormat"
-import { DropdownDivider } from "./DropdownDivider/DropdownDivider"
+import { DropDownTextAlignment } from "./DropDownTextAlignment/DropDownTextAlignment"
 import { DropdownInsert } from "./DropdownInsert/DropdownInsert"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
 import { IconButton } from "./IconButton/IconButton"
@@ -532,70 +529,7 @@ export const ToolbarPlugin = () => {
         </>
       )}
       <Divider />
-      <DropDown
-        buttonAriaLabel="Formatting options for text alignment"
-        buttonClassName={classNames(styles.toolbarItem, styles.spaced, "alignment")}
-        buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["left-align"])}
-        buttonLabel="Align"
-        disabled={!isEditable}
-        hideLabelOnMobile
-      >
-        <DropDownItem
-          className={stylesDropdown.dropdownItem}
-          onClick={() => {
-            activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "left")
-          }}
-        >
-          <IconDropdown type="left-align" />
-          <span className={stylesDropdown.dropdownText}>Left Align</span>
-        </DropDownItem>
-        <DropDownItem
-          className={stylesDropdown.dropdownItem}
-          onClick={() => {
-            activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "center")
-          }}
-        >
-          <IconDropdown type="center-align" />
-          <span className={stylesDropdown.dropdownText}>Center Align</span>
-        </DropDownItem>
-        <DropDownItem
-          className={stylesDropdown.dropdownItem}
-          onClick={() => {
-            activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "right")
-          }}
-        >
-          <IconDropdown type="right-align" />
-          <span className={stylesDropdown.dropdownText}>Right Align</span>
-        </DropDownItem>
-        <DropDownItem
-          className={stylesDropdown.dropdownItem}
-          onClick={() => {
-            activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "justify")
-          }}
-        >
-          <IconDropdown type="justify-align" />
-          <span className={stylesDropdown.dropdownText}>Justify Align</span>
-        </DropDownItem>
-        <DropdownDivider />
-        <DropDownItem
-          className={stylesDropdown.dropdownItem}
-          onClick={() => {
-            activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
-          }}
-        >
-          <IconDropdown type={isRTL ? "indent" : "outdent"} />
-          <span className={stylesDropdown.dropdownText}>Outdent</span>
-        </DropDownItem>
-        <DropDownItem
-          className={stylesDropdown.dropdownItem}
-          onClick={() => {
-            activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
-          }}
-        >
-          <IconDropdown type={isRTL ? "outdent" : "indent"} />
-          <span className={stylesDropdown.dropdownText}>Indent</span>
-        </DropDownItem>
-      </DropDown>
+      <DropDownTextAlignment activeEditor={activeEditor} isEditable={isEditable} isRTL={isRTL} />
 
       {modal}
     </div>
