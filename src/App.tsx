@@ -14,11 +14,9 @@ export const App = () => {
   return (
     <div className={styles.app}>
       <Composer composerRef={composerRef} setOutput={setOutput} />
-      {composerRef && (
-        <MergeFieldControls
-          onClick={(mergeFieldObject) => composerRef.current.dispatchMergeField(mergeFieldObject)}
-        />
-      )}
+      <MergeFieldControls
+        onClick={(mergeFieldObject) => composerRef.current.dispatchMergeField(mergeFieldObject)}
+      />
       <Output output={output} />
     </div>
   )
