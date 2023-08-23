@@ -52,7 +52,6 @@ import { DropdownColorPicker } from "../../ui/DropDown/ColorPicker/ColorPicker"
 import { DropDown } from "../../ui/DropDown/DropDown"
 import stylesDropdown from "../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../ui/DropDown/DropDownItem/DropDownItem"
-import { IconDropdown } from "../../ui/DropDown/IconDropdown/IconDropdown"
 import stylesIconDropdown from "../../ui/DropDown/IconDropdown/IconDropdown.module.scss"
 import stylesIcon from "../../ui/Icon/Icon.module.scss"
 import { ButtonBold } from "./ButtonBold/ButtonBold"
@@ -64,6 +63,7 @@ import { Divider } from "./Divider/Divider"
 import { DropDownBlockFormat } from "./DropDownBlockFormat/DropDownBlockFormat"
 import { DropDownTextAlignment } from "./DropDownTextAlignment/DropDownTextAlignment"
 import { DropdownInsert } from "./DropdownInsert/DropdownInsert"
+import { DropdownTextStyle } from "./DropdownTextStyle/DropdownTextStyle"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
 import { IconButton } from "./IconButton/IconButton"
 import { blockTypeToBlockName, rootTypeToRootName } from "./ToolbarPlugin.const"
@@ -443,62 +443,14 @@ export const ToolbarPlugin = () => {
             onChange={onBgColorSelect}
             title="bg color"
           />
-          <DropDown
-            buttonAriaLabel="Formatting options for additional text styles"
-            buttonClassName={classNames(styles.toolbarItem, styles.spaced)}
-            buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["dropdown-more"])}
-            buttonLabel=""
-            disabled={!isEditable}
-          >
-            <DropDownItem
-              aria-label="Format text with a strikethrough"
-              className={classNames(
-                stylesDropdown.dropdownItem,
-                dropDownActiveClass(isStrikethrough),
-              )}
-              onClick={() => {
-                activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "strikethrough")
-              }}
-              title="Strikethrough"
-            >
-              <IconDropdown type="strikethrough" />
-              <span className={stylesDropdown.dropdownText}>Strikethrough</span>
-            </DropDownItem>
-            <DropDownItem
-              aria-label="Format text with a subscript"
-              className={classNames(stylesDropdown.dropdownItem, dropDownActiveClass(isSubscript))}
-              onClick={() => {
-                activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "subscript")
-              }}
-              title="Subscript"
-            >
-              <IconDropdown type="subscript" />
-              <span className={stylesDropdown.dropdownText}>Subscript</span>
-            </DropDownItem>
-            <DropDownItem
-              aria-label="Format text with a superscript"
-              className={classNames(
-                stylesDropdown.dropdownItem,
-                dropDownActiveClass(isSuperscript),
-              )}
-              onClick={() => {
-                activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "superscript")
-              }}
-              title="Superscript"
-            >
-              <IconDropdown type="superscript" />
-              <span className={stylesDropdown.dropdownText}>Superscript</span>
-            </DropDownItem>
-            <DropDownItem
-              aria-label="Clear all text formatting"
-              className={stylesDropdown.dropdownItem}
-              onClick={clearFormatting}
-              title="Clear text formatting"
-            >
-              <IconDropdown type="clear" />
-              <span className={stylesDropdown.dropdownText}>Clear Formatting</span>
-            </DropDownItem>
-          </DropDown>
+          <DropdownTextStyle
+            activeEditor={activeEditor}
+            clearFormatting={clearFormatting}
+            isEditable={isEditable}
+            isStrikethrough={isStrikethrough}
+            isSubscript={isSubscript}
+            isSuperscript={isSuperscript}
+          />
           <Divider />
           {rootType === "table" && (
             <>
