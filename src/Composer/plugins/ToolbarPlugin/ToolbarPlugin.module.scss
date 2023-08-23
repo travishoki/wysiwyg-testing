@@ -32,19 +32,6 @@
   &:disabled {
     cursor: not-allowed;
   }
-
-  &:disabled {
-    .icon,
-    .text,
-    i.format,
-    .chevron-down {
-      opacity: 0.2;
-    }
-  }
-
-  &:hover:not([disabled]) {
-    background-color: #eee;
-  }
 }
 
 .chevronDown {
