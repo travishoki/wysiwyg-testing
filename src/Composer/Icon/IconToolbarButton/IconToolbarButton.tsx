@@ -8,5 +8,5 @@ type IconToolbarButtonProps = {
 }
 
 export const IconToolbarButton = ({ type }: IconToolbarButtonProps) => {
-  return <IconBare className={styles.format} type={type} />
+  return <IconBare className={styles.iconToolbarButton} type={type} />
 }
