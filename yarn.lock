@@ -1663,11 +1663,6 @@
   resolved "https://registry.yarnpkg.com/@lexical/dragon/-/dragon-0.11.3.tgz#b4254953b09a68c20277ba0fb125548dd6630921"
   integrity sha512-S18uwqOOpV2yIAFVWqSvBdhZ5BGadPQO4ejZF15wP8LUuqkxCs+0I/MjLovQ7tx0Cx34KdDaOXtM6XeG74ixYw==
 
-"@lexical/file@^0.11.3":
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/@lexical/file/-/file-0.11.3.tgz#216f184e978d136878e8b6c1d5810fba38f02f20"
-  integrity sha512-NKLT6qFVjOhTOyZh9aN3TSdeT1mjFC3d0IYoQE6NY1qP3W8OLea+11oCqVf7+0oh4g0zgk/YyeA74douXilpcA==
-
 "@lexical/hashtag@0.11.3", "@lexical/hashtag@^0.11.3":
   version "0.11.3"
   resolved "https://registry.yarnpkg.com/@lexical/hashtag/-/hashtag-0.11.3.tgz#9ffb2f7b2bb9a62fa9641355fc06feb9d209273a"
@@ -1732,7 +1727,7 @@
   resolved "https://registry.yarnpkg.com/@lexical/overflow/-/overflow-0.11.3.tgz#a77d72a4fdf8dcc4f558e68a5d0ac210f020472b"
   integrity sha512-ShjCG8lICShOBKwrpP+9PjRFKEBCSUUMjbIGZfLnoL//3hyRtGv5aRgRyfJlRgDhCve0ROt5znLJV88EXzGRyA==
 
-"@lexical/plain-text@0.11.3", "@lexical/plain-text@^0.11.3":
+"@lexical/plain-text@0.11.3":
   version "0.11.3"
   resolved "https://registry.yarnpkg.com/@lexical/plain-text/-/plain-text-0.11.3.tgz#ee56c0f0bc10a6333dc9790fb6f27b8d41887da8"
   integrity sha512-cQ5Us+GNzShyjjgRqWTnYv0rC+jHJ96LvBA1aSieM77H8/Im5BeoLl6TgBK2NqPkp8fGpj8JnDEdT8h9Qh1jtA==
