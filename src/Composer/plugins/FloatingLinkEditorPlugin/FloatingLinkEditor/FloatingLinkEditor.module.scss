@@ -107,25 +107,25 @@
     padding: 6px;
   }
 
-  .linkView {
-    border-radius: 15px;
-    border: 0;
-    color: #050505;
-    display: block;
-    font-family: inherit;
-    font-size: 15px;
-    margin: 8px 12px;
-    outline: 0;
-    padding: 8px 12px;
-    position: relative;
-    width: calc(100% - 24px);
-  }
-
   a {
     display: block;
     width: calc(100% - 33px);
     word-break: break-word;
   }
+}
+
+.linkView {
+  border-radius: 15px;
+  border: 0;
+  color: #050505;
+  display: block;
+  font-family: inherit;
+  font-size: 15px;
+  margin: 8px 12px;
+  outline: 0;
+  padding: 8px 12px;
+  position: relative;
+  width: calc(100% - 24px);
 }
 
 .linkInput {
