@@ -19,7 +19,7 @@ import {
 } from "lexical"
 import { noop } from "lodash"
 import * as ReactDOM from "react-dom"
-import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
+import { TypeaheadPopover } from "../../ui/TypeaheadPopover/TypeaheadPopover"
 import { ContextMenu } from "./ContextMenu/ContextMenu"
 import { ContextMenuOption } from "./ContextMenu/ContextMenuOption/ContextMenuOption"
 import styles from "./ContextMenuPlugin.module.scss"

@@ -1,6 +1,6 @@
 import React from "react"
 import classNames from "classnames"
-import stylesTypeaheadPopover from "../../../TypeaheadPopover/TypeaheadPopover.module.scss"
+import stylesTypeaheadPopover from "../../../ui/TypeaheadPopover/TypeaheadPopover.module.scss"
 import { ComponentPickerOption } from "../ComponentPickerOption/ComponentPickerOption"
 
 type ComponentPickerMenuItemProps = {

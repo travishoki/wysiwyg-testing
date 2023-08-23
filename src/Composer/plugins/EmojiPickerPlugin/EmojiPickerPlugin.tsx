@@ -15,7 +15,7 @@ import {
 import { $createTextNode, $getSelection, $isRangeSelection, TextNode } from "lexical"
 import { noop } from "lodash"
 import * as ReactDOM from "react-dom"
-import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
+import { TypeaheadPopover } from "../../ui/TypeaheadPopover/TypeaheadPopover"
 import { EmojiMenuItem } from "./EmojiMenuItem/EmojiMenuItem"
 import { EmojiOption } from "./EmojiOption/EmojiOption"
 import styles from "./EmojiPickerPlugin.module.scss"

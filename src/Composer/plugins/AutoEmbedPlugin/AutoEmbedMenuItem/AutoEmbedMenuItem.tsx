@@ -1,7 +1,7 @@
 import React from "react"
 import { AutoEmbedOption } from "@lexical/react/LexicalAutoEmbedPlugin"
 import classNames from "classnames"
-import stylesTypeaheadPopover from "../../../TypeaheadPopover/TypeaheadPopover.module.scss"
+import stylesTypeaheadPopover from "../../../ui/TypeaheadPopover/TypeaheadPopover.module.scss"
 
 type AutoEmbedMenuItemProps = {
   index: number

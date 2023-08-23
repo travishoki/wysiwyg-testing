@@ -1,5 +1,5 @@
 import React from "react"
-import { TypeaheadPopover } from "../../../TypeaheadPopover/TypeaheadPopover"
+import { TypeaheadPopover } from "../../../ui/TypeaheadPopover/TypeaheadPopover"
 import { ContextMenuItem } from "../ContextMenuItem/ContextMenuItem"
 import { ContextMenuOption } from "./ContextMenuOption/ContextMenuOption"
 

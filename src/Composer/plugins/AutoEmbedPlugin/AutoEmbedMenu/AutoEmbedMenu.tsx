@@ -1,6 +1,6 @@
 import React from "react"
 import { AutoEmbedOption } from "@lexical/react/LexicalAutoEmbedPlugin"
-import { TypeaheadPopover } from "../../../TypeaheadPopover/TypeaheadPopover"
+import { TypeaheadPopover } from "../../../ui/TypeaheadPopover/TypeaheadPopover"
 import { AutoEmbedMenuItem } from "../AutoEmbedMenuItem/AutoEmbedMenuItem"
 
 type AutoEmbedMenuProps = {
