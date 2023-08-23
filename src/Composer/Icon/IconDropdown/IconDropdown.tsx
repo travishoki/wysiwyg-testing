@@ -2,12 +2,12 @@ import React from "react"
 import classNames from "classnames"
 import stylesIcon from "../Icon.module.scss"
 import { iconType } from "../types"
-import styles from "./IconStyled.module.scss"
+import styles from "./IconDropdown.module.scss"
 
-type IconStyledProps = {
+type IconDropdownProps = {
   type: iconType
 }
 
-export const IconStyled = ({ type }: IconStyledProps) => {
+export const IconDropdown = ({ type }: IconDropdownProps) => {
   return <i className={classNames(styles.icon, stylesIcon[type])} />
 }

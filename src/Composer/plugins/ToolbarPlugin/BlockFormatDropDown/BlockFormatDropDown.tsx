@@ -16,7 +16,7 @@ import {
   LexicalEditor,
 } from "lexical"
 import styleIcon from "../../../Icon/Icon.module.scss"
-import { IconStyled } from "../../../Icon/IconStyled/IconStyled"
+import { IconDropdown } from "../../../Icon/IconDropdown/IconDropdown"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
@@ -128,28 +128,28 @@ export const BlockFormatDropDown = ({
         )}
         onClick={formatParagraph}
       >
-        <IconStyled type="paragraph" />
+        <IconDropdown type="paragraph" />
         <span className={stylesDropdown.dropdownText}>Normal</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(stylesDropdown.dropdownItem, dropDownActiveClass(blockType === "h1"))}
         onClick={() => formatHeading("h1")}
       >
-        <IconStyled type="h1" />
+        <IconDropdown type="h1" />
         <span className={stylesDropdown.dropdownText}>Heading 1</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(stylesDropdown.dropdownItem, dropDownActiveClass(blockType === "h2"))}
         onClick={() => formatHeading("h2")}
       >
-        <IconStyled type="h2" />
+        <IconDropdown type="h2" />
         <span className={stylesDropdown.dropdownText}>Heading 2</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(stylesDropdown.dropdownItem, dropDownActiveClass(blockType === "h3"))}
         onClick={() => formatHeading("h3")}
       >
-        <IconStyled type="h3" />
+        <IconDropdown type="h3" />
         <span className={stylesDropdown.dropdownText}>Heading 3</span>
       </DropDownItem>
       <DropDownItem
@@ -159,7 +159,7 @@ export const BlockFormatDropDown = ({
         )}
         onClick={formatBulletList}
       >
-        <IconStyled type="bullet-list" />
+        <IconDropdown type="bullet-list" />
         <span className={stylesDropdown.dropdownText}>Bullet List</span>
       </DropDownItem>
       <DropDownItem
@@ -169,7 +169,7 @@ export const BlockFormatDropDown = ({
         )}
         onClick={formatNumberedList}
       >
-        <IconStyled type="numbered-list" />
+        <IconDropdown type="numbered-list" />
         <span className={stylesDropdown.dropdownText}>Numbered List</span>
       </DropDownItem>
       <DropDownItem
@@ -179,7 +179,7 @@ export const BlockFormatDropDown = ({
         )}
         onClick={formatCheckList}
       >
-        <IconStyled type="check-list" />
+        <IconDropdown type="check-list" />
         <span className={stylesDropdown.dropdownText}>Check List</span>
       </DropDownItem>
       <DropDownItem
@@ -189,7 +189,7 @@ export const BlockFormatDropDown = ({
         )}
         onClick={formatQuote}
       >
-        <IconStyled type="quote" />
+        <IconDropdown type="quote" />
         <span className={stylesDropdown.dropdownText}>Quote</span>
       </DropDownItem>
       <DropDownItem
@@ -199,7 +199,7 @@ export const BlockFormatDropDown = ({
         )}
         onClick={formatCode}
       >
-        <IconStyled type="code" />
+        <IconDropdown type="code" />
         <span className={stylesDropdown.dropdownText}>Code Block</span>
       </DropDownItem>
     </DropDown>
