@@ -10,6 +10,8 @@ export const getAlignmentType = (type: alignmentTypes): iconType => {
       return "left-align"
     case "right":
       return "right-align"
+    default:
+      return "left-align"
   }
 }
 
@@ -27,5 +29,7 @@ export const getHeadingType = (num: number): iconType => {
       return "h4"
     case 6:
       return "h4"
+    default:
+      return "h1"
   }
 }
