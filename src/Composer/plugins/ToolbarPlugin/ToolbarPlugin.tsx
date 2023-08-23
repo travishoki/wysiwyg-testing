@@ -65,6 +65,7 @@ import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog/Insert
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog/InsertTableDialog"
 import { BlockFormatDropDown } from "./BlockFormatDropDown/BlockFormatDropDown"
 import { ButtonBold } from "./ButtonBold/ButtonBold"
+import { ButtonCode } from "./ButtonCode/ButtonCode"
 import { ButtonItalic } from "./ButtonItalic/ButtonItalic"
 import { ButtonUnderline } from "./ButtonUnderline/ButtonUnderline"
 import { Divider } from "./Divider/Divider"
@@ -422,22 +423,13 @@ export const ToolbarPlugin = () => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "underline")
             }}
           />
-          <button
-            aria-label="Insert code block"
-            className={classNames(
-              styles.toolbarItem,
-              styles.spaced,
-              isCode ? styles.activeButton : "",
-            )}
-            disabled={!isEditable}
+          <ButtonCode
+            isActive={isCode}
+            isEditable={isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "code")
             }}
-            title="Insert code block"
-            type="button"
-          >
-            <IconButton type="code" />
-          </button>
+          />
           <button
             aria-label="Insert link"
             className={classNames(
