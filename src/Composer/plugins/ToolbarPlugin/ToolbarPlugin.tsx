@@ -69,7 +69,7 @@ import { ButtonUnderline } from "./ButtonUnderline/ButtonUnderline"
 import { Divider } from "./Divider/Divider"
 import { DividerDropdown } from "./DividerDropdown/DividerDropdown"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
-import { IconToolbarButton } from "./IconToolbarButton/IconToolbarButton"
+import { IconButton } from "./IconButton/IconButton"
 import { blockTypeToBlockName, rootTypeToRootName } from "./ToolbarPlugin.const"
 import { dropDownActiveClass, getCodeLanguageOptions } from "./ToolbarPlugin.helpers"
 import styles from "./ToolbarPlugin.module.scss"
@@ -337,7 +337,7 @@ export const ToolbarPlugin = () => {
         title={IS_APPLE ? "Undo (⌘Z)" : "Undo (Ctrl+Z)"}
         type="button"
       >
-        <IconToolbarButton type="undo" />
+        <IconButton type="undo" />
       </button>
       <button
         aria-label="Redo"
@@ -349,7 +349,7 @@ export const ToolbarPlugin = () => {
         title={IS_APPLE ? "Redo (⌘Y)" : "Redo (Ctrl+Y)"}
         type="button"
       >
-        <IconToolbarButton type="redo" />
+        <IconButton type="redo" />
       </button>
       <Divider />
       {blockType in blockTypeToBlockName && activeEditor === editor && (
@@ -435,7 +435,7 @@ export const ToolbarPlugin = () => {
             title="Insert code block"
             type="button"
           >
-            <IconToolbarButton type="code" />
+            <IconButton type="code" />
           </button>
           <button
             aria-label="Insert link"
@@ -449,7 +449,7 @@ export const ToolbarPlugin = () => {
             title="Insert link"
             type="button"
           >
-            <IconToolbarButton type="link" />
+            <IconButton type="link" />
           </button>
           <DropdownColorPicker
             buttonAriaLabel="Formatting text color"

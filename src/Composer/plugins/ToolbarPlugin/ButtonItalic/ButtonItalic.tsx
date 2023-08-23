@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 import { IS_APPLE } from "../../../shared/environment"
-import { IconToolbarButton } from "../IconToolbarButton/IconToolbarButton"
+import { IconButton } from "../IconButton/IconButton"
 import stylesToolbarPlugin from "../ToolbarPlugin.module.scss"
 
 type ButtonItalicProps = {
@@ -24,7 +24,7 @@ export const ButtonItalic = ({ isActive, isEditable, onClick }: ButtonItalicProp
       title={IS_APPLE ? "Italic (⌘I)" : "Italic (Ctrl+I)"}
       type="button"
     >
-      <IconToolbarButton type="italic" />
+      <IconButton type="italic" />
     </button>
   )
 }
