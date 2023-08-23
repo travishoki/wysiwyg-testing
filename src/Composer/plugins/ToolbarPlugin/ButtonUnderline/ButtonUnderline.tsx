@@ -5,19 +5,19 @@ import { IS_APPLE } from "../../../shared/environment"
 import stylesToolbarPlugin from "../ToolbarPlugin.module.scss"
 
 type ButtonUnderlineProps = {
+  isActive: boolean
   isEditable: boolean
-  isUnderline: boolean
   onClick: () => void
 }
 
-export const ButtonUnderline = ({ isEditable, isUnderline, onClick }: ButtonUnderlineProps) => {
+export const ButtonUnderline = ({ isActive, isEditable, onClick }: ButtonUnderlineProps) => {
   return (
     <button
       aria-label={`Format text to underlined. Shortcut: ${IS_APPLE ? "⌘U" : "Ctrl+U"}`}
       className={classNames(
         stylesToolbarPlugin.toolbarItem,
         stylesToolbarPlugin.spaced,
-        isUnderline ? stylesToolbarPlugin.activeButton : "",
+        isActive ? stylesToolbarPlugin.activeButton : "",
       )}
       disabled={!isEditable}
       onClick={onClick}

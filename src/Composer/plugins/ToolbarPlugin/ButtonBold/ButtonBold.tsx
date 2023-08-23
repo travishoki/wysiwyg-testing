@@ -5,19 +5,19 @@ import { IS_APPLE } from "../../../shared/environment"
 import stylesToolbarPlugin from "../ToolbarPlugin.module.scss"
 
 type ButtonBoldProps = {
-  isBold: boolean
+  isActive: boolean
   isEditable: boolean
   onClick: () => void
 }
 
-export const ButtonBold = ({ isBold, isEditable, onClick }: ButtonBoldProps) => {
+export const ButtonBold = ({ isActive, isEditable, onClick }: ButtonBoldProps) => {
   return (
     <button
       aria-label={`Format text as bold. Shortcut: ${IS_APPLE ? "⌘B" : "Ctrl+B"}`}
       className={classNames(
         stylesToolbarPlugin.toolbarItem,
         stylesToolbarPlugin.spaced,
-        isBold ? stylesToolbarPlugin.activeButton : "",
+        isActive ? stylesToolbarPlugin.activeButton : "",
       )}
       disabled={!isEditable}
       onClick={onClick}

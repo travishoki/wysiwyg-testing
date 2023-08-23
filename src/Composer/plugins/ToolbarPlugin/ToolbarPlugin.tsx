@@ -401,22 +401,22 @@ export const ToolbarPlugin = () => {
           />
           <Divider />
           <ButtonBold
-            isBold={isBold}
+            isActive={isBold}
             isEditable={isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")
             }}
           />
           <ButtonItalic
+            isActive={isItalic}
             isEditable={isEditable}
-            isItalic={isItalic}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic")
             }}
           />
           <ButtonUnderline
+            isActive={isUnderline}
             isEditable={isEditable}
-            isUnderline={isUnderline}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "underline")
             }}
