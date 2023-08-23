@@ -2,7 +2,7 @@ import React, { useCallback } from "react"
 import { $patchStyleText } from "@lexical/selection"
 import classNames from "classnames"
 import { $getSelection, $isRangeSelection, LexicalEditor } from "lexical"
-import stylesStyledIcon from "../../../Icon/IconStyled/IconStyled.module.scss"
+import stylesIcon from "../../../Icon/Icon.module.scss"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
@@ -43,9 +43,7 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
       buttonAriaLabel={buttonAriaLabel}
       buttonClassName={classNames(stylesToolbar.toolbarItem, styleName)}
       buttonIconClassName={
-        styleName === "font-family"
-          ? classNames(stylesToolbar.icon, stylesStyledIcon["font-family"])
-          : ""
+        styleName === "font-family" ? classNames(stylesToolbar.icon, stylesIcon["font-family"]) : ""
       }
       buttonLabel={value}
       disabled={disabled}

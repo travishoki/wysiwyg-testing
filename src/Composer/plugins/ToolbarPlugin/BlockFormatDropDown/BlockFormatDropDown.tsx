@@ -15,8 +15,8 @@ import {
   DEPRECATED_$isGridSelection,
   LexicalEditor,
 } from "lexical"
+import styleIcon from "../../../Icon/Icon.module.scss"
 import { IconStyled } from "../../../Icon/IconStyled/IconStyled"
-import styleIcon from "../../../Icon/IconStyled/IconStyled.module.scss"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
