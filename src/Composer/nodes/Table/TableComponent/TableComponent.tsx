@@ -1051,7 +1051,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
       ),
       editor.registerCommand<KeyboardEvent>(
         KEY_ESCAPE_COMMAND,
-        (event, targetEditor) => {
+        (_event, targetEditor) => {
           const selection = $getSelection()
           if (!isEditing && selection === null && targetEditor === editor) {
             setSelected(true)
