@@ -22,7 +22,7 @@ export const MentionsTypeaheadMenuItem = ({
     <li
       aria-selected={isSelected}
       className={classNames(isSelected ? stylesTypeaheadPopover.selected : "")}
-      id={"typeahead-item-" + index}
+      id={`typeahead-item-${  index}`}
       key={option.key}
       onClick={onClick}
       onMouseEnter={onMouseEnter}

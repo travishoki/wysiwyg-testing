@@ -106,6 +106,7 @@ module.exports = {
     "prefer-promise-reject-errors": "error",
     "no-restricted-syntax": "error",
     "jsx-a11y/control-has-associated-label": "error",
+    "prefer-template": "error",
 
     // Extra Syntax
     "no-duplicate-imports": "error",
