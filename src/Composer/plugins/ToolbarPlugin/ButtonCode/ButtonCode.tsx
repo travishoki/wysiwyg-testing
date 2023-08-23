@@ -23,7 +23,7 @@ export const ButtonCode = ({ isActive, isEditable, onClick }: ButtonCodeProps) =
       title="Insert code block"
       type="button"
     >
-      <IconButton type="code" />
+      <IconButton disabled={!isEditable} type="code" />
     </button>
   )
 }

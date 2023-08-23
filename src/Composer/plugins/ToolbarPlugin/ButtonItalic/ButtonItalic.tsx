@@ -24,7 +24,7 @@ export const ButtonItalic = ({ isActive, isEditable, onClick }: ButtonItalicProp
       title={IS_APPLE ? "Italic (⌘I)" : "Italic (Ctrl+I)"}
       type="button"
     >
-      <IconButton type="italic" />
+      <IconButton disabled={!isEditable} type="italic" />
     </button>
   )
 }

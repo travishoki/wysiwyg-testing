@@ -23,7 +23,7 @@ export const ButtonLink = ({ isActive, isEditable, onClick }: ButtonLinkProps) =
       title="Insert link"
       type="button"
     >
-      <IconButton type="link" />
+      <IconButton disabled={!isEditable} type="link" />
     </button>
   )
 }

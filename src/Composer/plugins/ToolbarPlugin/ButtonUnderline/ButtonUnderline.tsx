@@ -24,7 +24,7 @@ export const ButtonUnderline = ({ isActive, isEditable, onClick }: ButtonUnderli
       title={IS_APPLE ? "Underline (⌘U)" : "Underline (Ctrl+U)"}
       type="button"
     >
-      <IconButton type="underline" />
+      <IconButton disabled={!isEditable} type="underline" />
     </button>
   )
 }

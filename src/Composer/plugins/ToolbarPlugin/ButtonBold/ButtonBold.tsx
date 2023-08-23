@@ -24,7 +24,7 @@ export const ButtonBold = ({ isActive, isEditable, onClick }: ButtonBoldProps) =
       title={IS_APPLE ? "Bold (⌘B)" : "Bold (Ctrl+B)"}
       type="button"
     >
-      <IconButton type="bold" />
+      <IconButton disabled={!isEditable} type="bold" />
     </button>
   )
 }
