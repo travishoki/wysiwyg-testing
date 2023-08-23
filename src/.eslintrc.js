@@ -113,6 +113,8 @@ module.exports = {
     camelcase: "error",
 
     /** Syncronizing Rules (Warnings) */
+    "no-dupe-class-members": "warn", // TODO: change to error
+    "no-continue": "warn", // TODO: change to error
     "jsx-a11y/click-events-have-key-events": "warn",
 
     // Extra Syntax
