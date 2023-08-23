@@ -103,16 +103,16 @@ module.exports = {
 
     /** Syncronizing Rules */
     "class-methods-use-this": "error",
-    "prefer-promise-reject-errors": "error",
-    "no-restricted-syntax": "error",
     "jsx-a11y/control-has-associated-label": "error",
+    "no-restricted-syntax": "error",
+    "prefer-promise-reject-errors": "error",
     "prefer-template": "error",
 
     // Extra Syntax
     "no-duplicate-imports": "error",
     "no-else-return": "error",
-    "react/no-multi-comp": "error",
     "promise/catch-or-return": ["error", { allowFinally: true }],
+    "react/no-multi-comp": "error",
 
     // Extra Sorting
     "react/jsx-sort-props": ["error"],
