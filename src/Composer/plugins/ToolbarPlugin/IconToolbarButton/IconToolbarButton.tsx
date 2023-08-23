@@ -1,6 +1,6 @@
 import React from "react"
-import { IconBare } from "../IconBare/IconBare"
-import { iconType } from "../types"
+import { IconBare } from "../../../Icon/IconBare/IconBare"
+import { iconType } from "../../../Icon/types"
 import styles from "./IconToolbarButton.module.scss"
 
 type IconToolbarButtonProps = {

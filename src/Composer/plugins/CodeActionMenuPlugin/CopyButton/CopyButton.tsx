@@ -9,7 +9,7 @@
 import React, { useState } from "react"
 import { $isCodeNode } from "@lexical/code"
 import { $getNearestNodeFromDOMNode, $getSelection, $setSelection, LexicalEditor } from "lexical"
-import { IconToolbarButton } from "../../../Icon/IconToolbarButton/IconToolbarButton"
+import { IconToolbarButton } from "../../ToolbarPlugin/IconToolbarButton/IconToolbarButton"
 import stylesCodeActionMenu from "../CodeActionMenuContainer/CodeActionMenuContainer.module.scss"
 import { useDebounce } from "../hooks"
 

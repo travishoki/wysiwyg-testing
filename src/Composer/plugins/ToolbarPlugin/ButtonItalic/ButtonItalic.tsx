@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
-import { IconToolbarButton } from "../../../Icon/IconToolbarButton/IconToolbarButton"
 import { IS_APPLE } from "../../../shared/environment"
+import { IconToolbarButton } from "../IconToolbarButton/IconToolbarButton"
 import stylesToolbarPlugin from "../ToolbarPlugin.module.scss"
 
 type ButtonItalicProps = {

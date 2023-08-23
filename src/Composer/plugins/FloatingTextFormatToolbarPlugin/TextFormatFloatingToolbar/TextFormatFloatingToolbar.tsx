@@ -9,9 +9,9 @@ import {
   LexicalEditor,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-import { IconToolbarButton } from "../../../Icon/IconToolbarButton/IconToolbarButton"
 import { getDOMRangeRect } from "../../../helpers/getDOMRangeRect"
 import { setFloatingElemPosition } from "../../../helpers/setFloatingElemPosition"
+import { IconToolbarButton } from "../../ToolbarPlugin/IconToolbarButton/IconToolbarButton"
 import styles from "./TextFormatFloatingToolbar.module.scss"
 
 type TextFormatFloatingToolbarProps = {
