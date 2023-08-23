@@ -3,7 +3,9 @@ import { LexicalNode } from "lexical"
 
 export class ContextMenuOption extends MenuOption {
   title: string
+
   onSelect: (targetNode: LexicalNode | null) => void
+
   constructor(
     title: string,
     options: {

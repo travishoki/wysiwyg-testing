@@ -67,12 +67,19 @@ type SerializedImageNode = Spread<
 
 export class ImageNode extends DecoratorNode<JSX.Element> {
   __src: string
+
   __altText: string
+
   __width: "inherit" | number
+
   __height: "inherit" | number
+
   __maxWidth: number
+
   __showCaption: boolean
+
   __caption: LexicalEditor
+
   // Captions cannot yet be used within editor cells
   __captionsEnabled: boolean
 

@@ -2,7 +2,9 @@ import { MenuOption } from "@lexical/react/LexicalTypeaheadMenuPlugin"
 
 export class EmojiOption extends MenuOption {
   title: string
+
   emoji: string
+
   keywords: Array<string>
 
   constructor(

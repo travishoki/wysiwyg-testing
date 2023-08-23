@@ -16,6 +16,7 @@ const MergeFieldComponent = React.lazy(
 
 export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   mergeFieldIconUrl: string
+
   mergeFieldId: string
 
   static getType(): string {

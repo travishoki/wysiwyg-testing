@@ -7,6 +7,7 @@ import { SearchPromise } from "../AutocompletePlugin.types"
  */
 export class AutocompleteServer {
   DATABASE = DICTIONARY
+
   LATENCY = 200
 
   query = (searchText: string): SearchPromise => {

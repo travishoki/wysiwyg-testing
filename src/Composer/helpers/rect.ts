@@ -19,8 +19,11 @@ type ContainsPointReturn = {
 
 export class Rect {
   private readonly _left: number
+
   private readonly _top: number
+
   private readonly _right: number
+
   private readonly _bottom: number
 
   constructor(left: number, top: number, right: number, bottom: number) {
@@ -65,7 +68,9 @@ export class Rect {
   }
 
   public contains({ x, y }: Point): ContainsPointReturn
+
   public contains({ bottom, left, right, top }: Rect): boolean
+
   public contains(target: Point | Rect): boolean | ContainsPointReturn {
     if (isPoint(target)) {
       const { x, y } = target

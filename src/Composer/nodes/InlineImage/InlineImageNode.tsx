@@ -78,11 +78,17 @@ type SerializedInlineImageNode = Spread<
 
 export class InlineImageNode extends DecoratorNode<JSX.Element> {
   __src: string
+
   __altText: string
+
   __width: "inherit" | number
+
   __height: "inherit" | number
+
   __showCaption: boolean
+
   __caption: LexicalEditor
+
   __position: Position
 
   static getType(): string {

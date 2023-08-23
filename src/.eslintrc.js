@@ -104,6 +104,7 @@ module.exports = {
     /** Syncronizing Rules */
     "class-methods-use-this": "error",
     "jsx-a11y/control-has-associated-label": "error",
+    "lines-between-class-members": "error",
     "no-restricted-syntax": "error",
     "prefer-promise-reject-errors": "error",
     "prefer-template": "error",
