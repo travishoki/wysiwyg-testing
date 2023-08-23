@@ -119,6 +119,7 @@ export const BlockFormatDropDown = ({
       buttonIconClassName={classNames(stylesToolbar.icon, styleIcon[blockType])}
       buttonLabel={blockTypeToBlockName[blockType]}
       disabled={disabled}
+      hideLabelOnMobile
     >
       <DropDownItem
         className={classNames(

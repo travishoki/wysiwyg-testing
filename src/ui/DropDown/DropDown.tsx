@@ -23,6 +23,7 @@ type DropDownProps = {
   buttonLabel?: string
   children: ReactNode
   disabled?: boolean
+  hideLabelOnMobile?: boolean
   stopCloseOnClickSelf?: boolean
 }
 
@@ -33,6 +34,7 @@ export const DropDown = ({
   buttonLabel,
   children,
   disabled = false,
+  hideLabelOnMobile = false,
   stopCloseOnClickSelf,
 }: DropDownProps) => {
   const dropDownRef = useRef<HTMLDivElement>(null)
@@ -112,7 +114,9 @@ export const DropDown = ({
       >
         {buttonIconClassName && <span className={buttonIconClassName} />}
         {buttonLabel && (
-          <span className={classNames(stylesToolbar.text, styles.hideSmallScreenSizes)}>
+          <span
+            className={classNames(stylesToolbar.text, hideLabelOnMobile ? styles.hideOnMobile : "")}
+          >
             {buttonLabel}
           </span>
         )}

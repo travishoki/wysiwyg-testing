@@ -46,6 +46,7 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
       }
       buttonLabel={value}
       disabled={disabled}
+      hideLabelOnMobile={styleName === "font-family"}
     >
       {(styleName === "font-family" ? FONT_FAMILY_OPTIONS : FONT_SIZE_OPTIONS).map(
         ([option, text]) => (

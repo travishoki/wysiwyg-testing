@@ -574,6 +574,7 @@ export const ToolbarPlugin = () => {
             buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["plus"])}
             buttonLabel="Insert"
             disabled={!isEditable}
+            hideLabelOnMobile
           >
             <DropDownItem
               className={stylesDropdown.dropdownItem}
@@ -638,6 +639,7 @@ export const ToolbarPlugin = () => {
         buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["left-align"])}
         buttonLabel="Align"
         disabled={!isEditable}
+        hideLabelOnMobile
       >
         <DropDownItem
           className={stylesDropdown.dropdownItem}
