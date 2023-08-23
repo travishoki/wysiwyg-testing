@@ -329,7 +329,7 @@ export const ToolbarPlugin = () => {
         title={IS_APPLE ? "Undo (⌘Z)" : "Undo (Ctrl+Z)"}
         type="button"
       >
-        <IconButton type="undo" />
+        <IconButton disabled={!canUndo || !isEditable} type="undo" />
       </button>
       <button
         aria-label="Redo"
@@ -341,7 +341,7 @@ export const ToolbarPlugin = () => {
         title={IS_APPLE ? "Redo (⌘Y)" : "Redo (Ctrl+Y)"}
         type="button"
       >
-        <IconButton type="redo" />
+        <IconButton disabled={!canRedo || !isEditable} type="redo" />
       </button>
       <Divider />
       {blockType in blockTypeToBlockName && activeEditor === editor && (
