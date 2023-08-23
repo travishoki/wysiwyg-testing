@@ -11,9 +11,13 @@ export const App = () => {
   const composerRef = useRef<composerRefProps>()
   const [output, setOutput] = useState<Maybe<string>>()
 
+  const onChange = () => {
+    setOutput(null)
+  }
+
   return (
     <div className={styles.app}>
-      <Composer composerRef={composerRef} onSubmit={setOutput} />
+      <Composer composerRef={composerRef} onChange={onChange} onSubmit={setOutput} />
       <MergeFieldControls
         onClick={(mergeFieldObject) => composerRef.current.dispatchMergeField(mergeFieldObject)}
       />
