@@ -64,8 +64,8 @@ import { ButtonItalic } from "./ButtonItalic/ButtonItalic"
 import { ButtonLink } from "./ButtonLink/ButtonLink"
 import { ButtonUnderline } from "./ButtonUnderline/ButtonUnderline"
 import { Divider } from "./Divider/Divider"
-import { DividerDropdown } from "./DividerDropdown/DividerDropdown"
 import { DropDownBlockFormat } from "./DropDownBlockFormat/DropDownBlockFormat"
+import { DropdownDivider } from "./DropdownDivider/DropdownDivider"
 import { DropdownInsert } from "./DropdownInsert/DropdownInsert"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
 import { IconButton } from "./IconButton/IconButton"
@@ -576,7 +576,7 @@ export const ToolbarPlugin = () => {
           <IconDropdown type="justify-align" />
           <span className={stylesDropdown.dropdownText}>Justify Align</span>
         </DropDownItem>
-        <DividerDropdown />
+        <DropdownDivider />
         <DropDownItem
           className={stylesDropdown.dropdownItem}
           onClick={() => {
