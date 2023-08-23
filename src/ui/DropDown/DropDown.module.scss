@@ -73,7 +73,7 @@
   min-width: 150px;
 }
 
-.dropdownButtonText {
+.hideSmallScreenSizes {
   @media screen and (max-width: 1100px) {
     display: none !important;
   }
