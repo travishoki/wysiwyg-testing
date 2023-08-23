@@ -71,35 +71,6 @@
   will-change: transform;
   z-index: 10;
 
-  .button {
-    border-radius: 8px;
-    cursor: pointer;
-    display: inline-block;
-    height: 20px;
-    margin: 0 2px;
-    padding: 6px;
-    width: 20px;
-
-    &.hovered {
-      background-color: #eee;
-      display: inline-block;
-      height: 20px;
-      width: 20px;
-    }
-
-    &.active {
-      background-color: #dfe8fa;
-    }
-
-    i {
-      background-size: contain;
-      display: inline-block;
-      height: 20px;
-      vertical-align: -0.25em;
-      width: 20px;
-    }
-  }
-
   select {
     background-color: rgba(0, 0, 0, 0.075);
     border-radius: 4px;
