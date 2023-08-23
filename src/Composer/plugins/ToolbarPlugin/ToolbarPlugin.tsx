@@ -67,6 +67,7 @@ import { BlockFormatDropDown } from "./BlockFormatDropDown/BlockFormatDropDown"
 import { ButtonBold } from "./ButtonBold/ButtonBold"
 import { ButtonCode } from "./ButtonCode/ButtonCode"
 import { ButtonItalic } from "./ButtonItalic/ButtonItalic"
+import { ButtonLink } from "./ButtonLink/ButtonLink"
 import { ButtonUnderline } from "./ButtonUnderline/ButtonUnderline"
 import { Divider } from "./Divider/Divider"
 import { DividerDropdown } from "./DividerDropdown/DividerDropdown"
@@ -430,20 +431,7 @@ export const ToolbarPlugin = () => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "code")
             }}
           />
-          <button
-            aria-label="Insert link"
-            className={classNames(
-              styles.toolbarItem,
-              styles.spaced,
-              isLink ? styles.activeButton : "",
-            )}
-            disabled={!isEditable}
-            onClick={insertLink}
-            title="Insert link"
-            type="button"
-          >
-            <IconButton type="link" />
-          </button>
+          <ButtonLink isActive={isLink} isEditable={isEditable} onClick={insertLink} />
           <DropdownColorPicker
             buttonAriaLabel="Formatting text color"
             buttonClassName={styles.toolbarItem}
