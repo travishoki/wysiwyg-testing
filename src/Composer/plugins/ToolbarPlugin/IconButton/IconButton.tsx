@@ -1,5 +1,5 @@
 import React from "react"
-import { IconBare } from "../../../Icon/IconBare"
+import { Icon } from "../../../Icon/Icon"
 import { iconType } from "../../../Icon/types"
 import styles from "./IconButton.module.scss"
 
@@ -8,5 +8,5 @@ type IconButtonProps = {
 }
 
 export const IconButton = ({ type }: IconButtonProps) => {
-  return <IconBare className={styles.iconButton} type={type} />
+  return <Icon className={styles.iconButton} type={type} />
 }

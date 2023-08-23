@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import { EditorThemeClasses, LexicalEditor } from "lexical"
 import { createPortal } from "react-dom"
-import { IconBare } from "../../../Icon/IconBare"
+import { Icon } from "../../../Icon/Icon"
 import { TableActionMenu } from "../TableActionMenu/TableActionMenu"
 import { TableCellEditor } from "../TableCellEditor/TableCellEditor"
 import { TableNode } from "../TableNode"
@@ -95,7 +95,7 @@ export const TableCell = ({
               e.stopPropagation()
             }}
           >
-            <IconBare type="chevron-down" />
+            <Icon type="chevron-down" />
           </button>
         </div>
       )}

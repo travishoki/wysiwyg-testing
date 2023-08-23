@@ -9,7 +9,7 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react"
 import classNames from "classnames"
 import { createPortal } from "react-dom"
-import { IconBare } from "../../Icon/IconBare"
+import { Icon } from "../../Icon/Icon"
 import stylesToolbar from "../../plugins/ToolbarPlugin/ToolbarPlugin.module.scss"
 import styles from "./DropDown.module.scss"
 import { DropDownItems } from "./DropDownItems/DropDownItems"
@@ -120,7 +120,7 @@ export const DropDown = ({
             {buttonLabel}
           </span>
         )}
-        <IconBare className={stylesToolbar.chevronDown} type="chevron-down" />
+        <Icon className={stylesToolbar.chevronDown} type="chevron-down" />
       </button>
 
       {showDropDown &&
