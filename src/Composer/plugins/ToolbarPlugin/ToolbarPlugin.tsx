@@ -64,6 +64,9 @@ import { InsertInlineImageDialog } from "../InlineImagePlugin/InsertInlineImageD
 import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog/InsertNewTableDialog"
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog/InsertTableDialog"
 import { BlockFormatDropDown } from "./BlockFormatDropDown/BlockFormatDropDown"
+import { ButtonBold } from "./ButtonBold/ButtonBold"
+import { ButtonItalic } from "./ButtonItalic/ButtonItalic"
+import { ButtonUnderline } from "./ButtonUnderline/ButtonUnderline"
 import { Divider } from "./Divider/Divider"
 import { DividerDropdown } from "./DividerDropdown/DividerDropdown"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
@@ -397,54 +400,27 @@ export const ToolbarPlugin = () => {
             value={fontSize}
           />
           <Divider />
-          <button
-            aria-label={`Format text as bold. Shortcut: ${IS_APPLE ? "⌘B" : "Ctrl+B"}`}
-            className={classNames(
-              styles.toolbarItem,
-              styles.spaced,
-              isBold ? styles.activeButton : "",
-            )}
-            disabled={!isEditable}
+          <ButtonBold
+            isBold={isBold}
+            isEditable={isEditable}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")
             }}
-            title={IS_APPLE ? "Bold (⌘B)" : "Bold (Ctrl+B)"}
-            type="button"
-          >
-            <IconFormat type="bold" />
-          </button>
-          <button
-            aria-label={`Format text as italics. Shortcut: ${IS_APPLE ? "⌘I" : "Ctrl+I"}`}
-            className={classNames(
-              styles.toolbarItem,
-              styles.spaced,
-              isItalic ? styles.activeButton : "",
-            )}
-            disabled={!isEditable}
+          />
+          <ButtonItalic
+            isEditable={isEditable}
+            isItalic={isItalic}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic")
             }}
-            title={IS_APPLE ? "Italic (⌘I)" : "Italic (Ctrl+I)"}
-            type="button"
-          >
-            <IconFormat type="italic" />
-          </button>
-          <button
-            aria-label={`Format text to underlined. Shortcut: ${IS_APPLE ? "⌘U" : "Ctrl+U"}`}
-            className={classNames(
-              styles.toolbarItem,
-              styles.spaced,
-              isUnderline ? styles.activeButton : "",
-            )}
-            disabled={!isEditable}
+          />
+          <ButtonUnderline
+            isEditable={isEditable}
+            isUnderline={isUnderline}
             onClick={() => {
               activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "underline")
             }}
-            title={IS_APPLE ? "Underline (⌘U)" : "Underline (Ctrl+U)"}
-            type="button"
-          >
-            <IconFormat type="underline" />
-          </button>
+          />
           <button
             aria-label="Insert code block"
             className={classNames(
