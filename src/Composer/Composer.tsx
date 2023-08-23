@@ -26,7 +26,13 @@ const initialConfig = {
   theme: ComposerTheme,
 }
 
-export const Composer = ({ composerRef, setOutput }: ComposerProps) => {
+type ComposerProps = {
+  composerRef: React.MutableRefObject<composerRefProps>
+  onSubmit: (output: Maybe<string>) => void
+  setOutput?: (output: Maybe<string>) => void
+}
+
+export const Composer = ({ composerRef, onSubmit, setOutput }: ComposerProps) => {
   return (
     <div className="composer">
       <LexicalComposer initialConfig={initialConfig}>
@@ -36,8 +42,8 @@ export const Composer = ({ composerRef, setOutput }: ComposerProps) => {
               <div className={styles.editorShell}>
                 <MergeFieldHandler composerRef={composerRef} />
                 <Editor />
-                <Controls onSubmit={setOutput} />
-                <OnChangePlugin onChange={() => setOutput(null)} />
+                <Controls onSubmit={onSubmit} />
+                <OnChangePlugin onChange={() => setOutput && setOutput(null)} />
               </div>
             </SharedAutocompleteContext>
           </TableContext>
@@ -45,9 +51,4 @@ export const Composer = ({ composerRef, setOutput }: ComposerProps) => {
       </LexicalComposer>
     </div>
   )
-}
-
-type ComposerProps = {
-  composerRef: React.MutableRefObject<composerRefProps>
-  setOutput: (output: Maybe<string>) => void
 }
