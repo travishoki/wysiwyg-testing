@@ -120,7 +120,7 @@ export const DropDown = ({
             {buttonLabel}
           </span>
         )}
-        <Icon className={stylesToolbar.chevronDown} type="chevron-down" />
+        <Icon className={stylesToolbar.chevronDown} disabled={disabled} type="chevron-down" />
       </button>
 
       {showDropDown &&
