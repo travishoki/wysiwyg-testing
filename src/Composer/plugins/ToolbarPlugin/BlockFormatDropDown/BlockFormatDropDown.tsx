@@ -16,10 +16,10 @@ import {
   LexicalEditor,
 } from "lexical"
 import styleIcon from "../../../Icon/Icon.module.scss"
-import { IconDropdown } from "../../../Icon/IconDropdown/IconDropdown"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
+import { IconDropdown } from "../../../ui/DropDown/IconDropdown/IconDropdown"
 import { blockTypeToBlockName, rootTypeToRootName } from "../ToolbarPlugin.const"
 import { dropDownActiveClass } from "../ToolbarPlugin.helpers"
 import stylesToolbar from "../ToolbarPlugin.module.scss"

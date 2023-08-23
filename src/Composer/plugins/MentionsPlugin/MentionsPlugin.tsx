@@ -15,9 +15,9 @@ import {
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
 import { TextNode } from "lexical"
 import * as ReactDOM from "react-dom"
-import { IconDropdown } from "../../Icon/IconDropdown/IconDropdown"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { $createMentionNode } from "../../nodes/Mention/MentionNode"
+import { IconDropdown } from "../../ui/DropDown/IconDropdown/IconDropdown"
 import { MentionTypeaheadOption } from "./MentionTypeaheadOption/MentionTypeaheadOption"
 import {
   AtSignMentionsRegex,

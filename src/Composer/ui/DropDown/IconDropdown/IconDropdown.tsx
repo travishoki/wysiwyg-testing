@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
-import stylesIcon from "../Icon.module.scss"
-import { iconType } from "../types"
+import stylesIcon from "../../../Icon/Icon.module.scss"
+import { iconType } from "../../../Icon/types"
 import styles from "./IconDropdown.module.scss"
 
 type IconDropdownProps = {
