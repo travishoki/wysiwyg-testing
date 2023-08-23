@@ -2,7 +2,6 @@ import React from "react"
 import { LexicalComposer } from "@lexical/react/LexicalComposer"
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
 import styles from "./Composer.module.scss"
-import { Controls } from "./Controls/Controls"
 import { Editor } from "./Editor/Editor"
 import { MergeFieldHandler, composerRefProps } from "./MergeFieldHandler/MergeFieldHandler"
 import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext"
@@ -11,6 +10,7 @@ import { ComposerNodes } from "./nodes/ComposerNodes"
 import { TableContext } from "./plugins/TablePlugin/TableContext/TableContext"
 import { ComposerTheme } from "./themes/ComposerTheme"
 import { Maybe } from "./types/globals"
+import { Controls } from "./ui/Controls/Controls"
 
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
