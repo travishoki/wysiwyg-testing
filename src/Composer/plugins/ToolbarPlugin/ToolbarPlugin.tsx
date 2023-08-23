@@ -50,7 +50,7 @@ import {
 } from "lexical"
 import { Icon } from "../../Icon/Icon"
 import stylesIcon from "../../Icon/Icon.module.scss"
-import { IconFormat } from "../../Icon/IconFormat/IconFormat"
+import { IconToolbarButton } from "../../Icon/IconToolbarButton/IconToolbarButton"
 import { getSelectedNode } from "../../helpers/getSelectedNode"
 import { sanitizeUrl } from "../../helpers/url"
 import { useModal } from "../../hooks/useModal"
@@ -337,7 +337,7 @@ export const ToolbarPlugin = () => {
         title={IS_APPLE ? "Undo (⌘Z)" : "Undo (Ctrl+Z)"}
         type="button"
       >
-        <IconFormat type="undo" />
+        <IconToolbarButton type="undo" />
       </button>
       <button
         aria-label="Redo"
@@ -349,7 +349,7 @@ export const ToolbarPlugin = () => {
         title={IS_APPLE ? "Redo (⌘Y)" : "Redo (Ctrl+Y)"}
         type="button"
       >
-        <IconFormat type="redo" />
+        <IconToolbarButton type="redo" />
       </button>
       <Divider />
       {blockType in blockTypeToBlockName && activeEditor === editor && (
@@ -435,7 +435,7 @@ export const ToolbarPlugin = () => {
             title="Insert code block"
             type="button"
           >
-            <IconFormat type="code" />
+            <IconToolbarButton type="code" />
           </button>
           <button
             aria-label="Insert link"
@@ -449,7 +449,7 @@ export const ToolbarPlugin = () => {
             title="Insert link"
             type="button"
           >
-            <IconFormat type="link" />
+            <IconToolbarButton type="link" />
           </button>
           <DropdownColorPicker
             buttonAriaLabel="Formatting text color"

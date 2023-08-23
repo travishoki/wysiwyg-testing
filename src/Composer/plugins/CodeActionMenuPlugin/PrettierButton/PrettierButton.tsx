@@ -11,7 +11,7 @@ import { $isCodeNode } from "@lexical/code"
 import classNames from "classnames"
 import { $getNearestNodeFromDOMNode, LexicalEditor } from "lexical"
 import { Options } from "prettier"
-import { IconFormat } from "../../../Icon/IconFormat/IconFormat"
+import { IconToolbarButton } from "../../../Icon/IconToolbarButton/IconToolbarButton"
 import stylesCodeActionMenu from "../CodeActionMenuContainer/CodeActionMenuContainer.module.scss"
 import styles from "./PrettierButton.module.scss"
 
@@ -145,7 +145,11 @@ export const PrettierButton = ({ editor, getCodeDOMNode, lang }: PrettierButtonP
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {syntaxError ? <IconFormat type="prettier-error" /> : <IconFormat type="prettier" />}
+        {syntaxError ? (
+          <IconToolbarButton type="prettier-error" />
+        ) : (
+          <IconToolbarButton type="prettier" />
+        )}
       </button>
       {tipsVisible && (
         <pre className={classNames(styles.codeErrorTips, styles.pre)}>{syntaxError}</pre>

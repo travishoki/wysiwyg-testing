@@ -9,7 +9,7 @@
 import React, { useState } from "react"
 import { $isCodeNode } from "@lexical/code"
 import { $getNearestNodeFromDOMNode, $getSelection, $setSelection, LexicalEditor } from "lexical"
-import { IconFormat } from "../../../Icon/IconFormat/IconFormat"
+import { IconToolbarButton } from "../../../Icon/IconToolbarButton/IconToolbarButton"
 import stylesCodeActionMenu from "../CodeActionMenuContainer/CodeActionMenuContainer.module.scss"
 import { useDebounce } from "../hooks"
 
@@ -56,7 +56,7 @@ export const CopyButton = ({ editor, getCodeDOMNode }: CopyButtonProps) => {
 
   return (
     <button aria-label="copy" className={stylesCodeActionMenu.menuItem} onClick={handleClick}>
-      {isCopyCompleted ? <IconFormat type="success" /> : <IconFormat type="copy" />}
+      {isCopyCompleted ? <IconToolbarButton type="success" /> : <IconToolbarButton type="copy" />}
     </button>
   )
 }

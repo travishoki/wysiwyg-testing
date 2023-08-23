@@ -1,6 +1,6 @@
 import React from "react"
 import classNames from "classnames"
-import { IconFormat } from "../../../Icon/IconFormat/IconFormat"
+import { IconToolbarButton } from "../../../Icon/IconToolbarButton/IconToolbarButton"
 import { IS_APPLE } from "../../../shared/environment"
 import stylesToolbarPlugin from "../ToolbarPlugin.module.scss"
 
@@ -24,7 +24,7 @@ export const ButtonUnderline = ({ isActive, isEditable, onClick }: ButtonUnderli
       title={IS_APPLE ? "Underline (⌘U)" : "Underline (Ctrl+U)"}
       type="button"
     >
-      <IconFormat type="underline" />
+      <IconToolbarButton type="underline" />
     </button>
   )
 }

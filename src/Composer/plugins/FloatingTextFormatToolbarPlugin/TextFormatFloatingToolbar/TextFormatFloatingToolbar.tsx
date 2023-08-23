@@ -9,7 +9,7 @@ import {
   LexicalEditor,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
-import { IconFormat } from "../../../Icon/IconFormat/IconFormat"
+import { IconToolbarButton } from "../../../Icon/IconToolbarButton/IconToolbarButton"
 import { getDOMRangeRect } from "../../../helpers/getDOMRangeRect"
 import { setFloatingElemPosition } from "../../../helpers/setFloatingElemPosition"
 import styles from "./TextFormatFloatingToolbar.module.scss"
@@ -166,7 +166,7 @@ export const TextFormatFloatingToolbar = ({
             }}
             type="button"
           >
-            <IconFormat type="bold" />
+            <IconToolbarButton type="bold" />
           </button>
           <button
             aria-label="Format text as italics"
@@ -179,7 +179,7 @@ export const TextFormatFloatingToolbar = ({
             }}
             type="button"
           >
-            <IconFormat type="italic" />
+            <IconToolbarButton type="italic" />
           </button>
           <button
             aria-label="Format text to underlined"
@@ -192,7 +192,7 @@ export const TextFormatFloatingToolbar = ({
             }}
             type="button"
           >
-            <IconFormat type="underline" />
+            <IconToolbarButton type="underline" />
           </button>
           <button
             aria-label="Format text with a strikethrough"
@@ -205,7 +205,7 @@ export const TextFormatFloatingToolbar = ({
             }}
             type="button"
           >
-            <IconFormat type="strikethrough" />
+            <IconToolbarButton type="strikethrough" />
           </button>
           <button
             aria-label="Format Subscript"
@@ -219,7 +219,7 @@ export const TextFormatFloatingToolbar = ({
             title="Subscript"
             type="button"
           >
-            <IconFormat type="subscript" />
+            <IconToolbarButton type="subscript" />
           </button>
           <button
             aria-label="Format Superscript"
@@ -233,7 +233,7 @@ export const TextFormatFloatingToolbar = ({
             title="Superscript"
             type="button"
           >
-            <IconFormat type="superscript" />
+            <IconToolbarButton type="superscript" />
           </button>
           <button
             aria-label="Insert code block"
@@ -243,7 +243,7 @@ export const TextFormatFloatingToolbar = ({
             }}
             type="button"
           >
-            <IconFormat type="code" />
+            <IconToolbarButton type="code" />
           </button>
           <button
             aria-label="Insert link"
@@ -251,7 +251,7 @@ export const TextFormatFloatingToolbar = ({
             onClick={insertLink}
             type="button"
           >
-            <IconFormat type="link" />
+            <IconToolbarButton type="link" />
           </button>
         </>
       )}

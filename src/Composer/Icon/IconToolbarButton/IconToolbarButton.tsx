@@ -1,12 +1,12 @@
 import React from "react"
 import { IconBare } from "../IconBare/IconBare"
 import { iconType } from "../types"
-import styles from "./IconFormat.module.scss"
+import styles from "./IconToolbarButton.module.scss"
 
-type IconFormatProps = {
+type IconToolbarButtonProps = {
   type: iconType
 }
 
-export const IconFormat = ({ type }: IconFormatProps) => {
+export const IconToolbarButton = ({ type }: IconToolbarButtonProps) => {
   return <IconBare className={styles.format} type={type} />
 }

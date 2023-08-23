@@ -1,6 +1,6 @@
 import React from "react"
 import classNames from "classnames"
-import { IconFormat } from "../../../Icon/IconFormat/IconFormat"
+import { IconToolbarButton } from "../../../Icon/IconToolbarButton/IconToolbarButton"
 import { IS_APPLE } from "../../../shared/environment"
 import stylesToolbarPlugin from "../ToolbarPlugin.module.scss"
 
@@ -24,7 +24,7 @@ export const ButtonBold = ({ isActive, isEditable, onClick }: ButtonBoldProps) =
       title={IS_APPLE ? "Bold (⌘B)" : "Bold (Ctrl+B)"}
       type="button"
     >
-      <IconFormat type="bold" />
+      <IconToolbarButton type="bold" />
     </button>
   )
 }
