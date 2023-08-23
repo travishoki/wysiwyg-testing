@@ -16,12 +16,8 @@ type ContextShape = [SubscribeFn, PublishFn]
 type HookShape = [suggestion: Suggestion, setSuggestion: PublishFn]
 
 const Context: React.Context<ContextShape> = createContext([
-  (_cb) => () => {
-    
-  },
-  (_newSuggestion: Suggestion) => {
-    
-  },
+  (_cb) => () => {},
+  (_newSuggestion: Suggestion) => {},
 ])
 
 type SharedAutocompleteContextProps = {

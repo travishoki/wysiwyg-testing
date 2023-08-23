@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["react-app"],
+  extends: ["react-app", "plugin:prettier/recommended"],
   plugins: ["no-only-tests", "typescript-sort-keys", "sort-destructure-keys", "promise"],
   rules: {
     /** General */

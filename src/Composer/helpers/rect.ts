@@ -9,11 +9,11 @@ import { Point, isPoint } from "./point"
 
 type ContainsPointReturn = {
   reason: {
-    isOnBottomSide: boolean,
-    isOnLeftSide: boolean,
-    isOnRightSide: boolean,
+    isOnBottomSide: boolean
+    isOnLeftSide: boolean
+    isOnRightSide: boolean
     isOnTopSide: boolean
-  },
+  }
   result: boolean
 }
 

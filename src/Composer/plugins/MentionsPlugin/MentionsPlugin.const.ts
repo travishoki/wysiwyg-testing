@@ -1,5 +1,5 @@
 const PUNCTUATION = "\\.,\\+\\*\\?\\$\\@\\|#{}\\(\\)\\^\\-\\[\\]\\\\/!%'\"~=<>_:;"
-const NAME = `\\b[A-Z][^\\s${  PUNCTUATION  }]`
+const NAME = `\\b[A-Z][^\\s${PUNCTUATION}]`
 
 const DocumentMentionsRegex = {
   NAME,
@@ -7,7 +7,7 @@ const DocumentMentionsRegex = {
 }
 
 export const CapitalizedNameMentionsRegex = new RegExp(
-  `(^|[^#])((?:${  DocumentMentionsRegex.NAME  }{${  1  },})$)`,
+  `(^|[^#])((?:${DocumentMentionsRegex.NAME}{${1},})$)`,
 )
 
 const PUNC = DocumentMentionsRegex.PUNCTUATION
@@ -15,7 +15,7 @@ const PUNC = DocumentMentionsRegex.PUNCTUATION
 const TRIGGERS = ["@"].join("")
 
 // Chars we expect to see in a mention (non-space, non-punctuation).
-const VALID_CHARS = `[^${  TRIGGERS  }${PUNC  }\\s]`
+const VALID_CHARS = `[^${TRIGGERS}${PUNC}\\s]`
 
 // Non-standard series of chars. Each series must be preceded and followed by
 // a valid char.
@@ -23,25 +23,13 @@ const VALID_JOINS =
   `(?:` +
   `\\.[ |$]|` + // E.g. "r. " in "Mr. Smith"
   ` |` + // E.g. " " in "Josh Duck"
-  `[${ 
-  PUNC 
-  }]|` + // E.g. "-' in "Salier-Hellendag"
+  `[${PUNC}]|` + // E.g. "-' in "Salier-Hellendag"
   `)`
 
 const LENGTH_LIMIT = 75
 
 export const AtSignMentionsRegex = new RegExp(
-  `(^|\\s|\\()(` +
-    `[${ 
-    TRIGGERS 
-    }]` +
-    `((?:${ 
-    VALID_CHARS 
-    }${VALID_JOINS 
-    }){0,${ 
-    LENGTH_LIMIT 
-    }})` +
-    `)$`,
+  `(^|\\s|\\()(` + `[${TRIGGERS}]` + `((?:${VALID_CHARS}${VALID_JOINS}){0,${LENGTH_LIMIT}})` + `)$`,
 )
 
 // 50 is the longest alias length limit.
@@ -49,16 +37,7 @@ const ALIAS_LENGTH_LIMIT = 50
 
 // Regex used to match alias.
 export const AtSignMentionsRegexAliasRegex = new RegExp(
-  `(^|\\s|\\()(` +
-    `[${ 
-    TRIGGERS 
-    }]` +
-    `((?:${ 
-    VALID_CHARS 
-    }){0,${ 
-    ALIAS_LENGTH_LIMIT 
-    }})` +
-    `)$`,
+  `(^|\\s|\\()(` + `[${TRIGGERS}]` + `((?:${VALID_CHARS}){0,${ALIAS_LENGTH_LIMIT}})` + `)$`,
 )
 
 // At most, 5 suggestions are shown in the popup.

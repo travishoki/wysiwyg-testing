@@ -111,7 +111,7 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
                   role="button"
                   tabIndex={0}
                 >
-                  {(`${  text}`).length > 20 ? `${text.substring(0, 20)  }...` : text}
+                  {`${text}`.length > 20 ? `${text.substring(0, 20)}...` : text}
                 </div>
                 <br />
               </div>
@@ -136,7 +136,7 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
                   className={`normal-heading ${selectedKey === key ? styles.selectedHeading : ""}
                     `}
                 >
-                  {(`${  text}`).length > 27 ? `${text.substring(0, 27)  }...` : text}
+                  {`${text}`.length > 27 ? `${text.substring(0, 27)}...` : text}
                 </li>
               </div>
             </div>
