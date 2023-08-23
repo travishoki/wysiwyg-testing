@@ -1,4 +1,4 @@
-import React, { useImperativeHandle } from "react"
+import { useImperativeHandle, MutableRefObject } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { mergeFieldObject } from "../../MergeFieldControls/MergeFieldControls.const"
 import { INSERT_MERGE_FIELD_COMMAND } from "../const"
@@ -8,7 +8,7 @@ export type composerRefProps = {
 }
 
 type MergeFieldHandlerProps = {
-  composerRef: React.MutableRefObject<composerRefProps>
+  composerRef: MutableRefObject<composerRefProps>
 }
 
 export const MergeFieldHandler = ({ composerRef }: MergeFieldHandlerProps): null => {

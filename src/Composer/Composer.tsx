@@ -1,4 +1,4 @@
-import React from "react"
+import React, { MutableRefObject } from "react"
 import { LexicalComposer } from "@lexical/react/LexicalComposer"
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
 import styles from "./Composer.module.scss"
@@ -27,7 +27,7 @@ const initialConfig = {
 }
 
 type ComposerProps = {
-  composerRef: React.MutableRefObject<composerRefProps>
+  composerRef: MutableRefObject<composerRefProps>
   onChange?: () => void
   onSubmit: (output: Maybe<string>) => void
 }

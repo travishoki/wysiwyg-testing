@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react"
+import React, { useCallback, useEffect, useMemo, useState, ReactNode } from "react"
 import stylesDropdown from "../DropDown.module.scss"
 import { DropDownContext } from "../DropDown.types"
 
 type DropDownItemsProps = {
-  children: React.ReactNode
+  children: ReactNode
   dropDownRef: React.Ref<HTMLDivElement>
   onClose: () => void
 }
