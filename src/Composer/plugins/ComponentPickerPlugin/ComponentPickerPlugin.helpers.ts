@@ -1,4 +1,4 @@
-import { alignmentTypes, iconType } from "../../Icon/types"
+import { alignmentTypes, iconType } from "../../ui/Icon/types"
 
 export const getAlignmentType = (type: alignmentTypes): iconType => {
   switch (type) {

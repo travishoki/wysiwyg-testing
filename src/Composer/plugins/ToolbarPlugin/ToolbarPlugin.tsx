@@ -48,7 +48,6 @@ import {
   SELECTION_CHANGE_COMMAND,
   UNDO_COMMAND,
 } from "lexical"
-import stylesIcon from "../../Icon/Icon.module.scss"
 import { getSelectedNode } from "../../helpers/getSelectedNode"
 import { sanitizeUrl } from "../../helpers/url"
 import { useModal } from "../../hooks/useModal"
@@ -59,6 +58,7 @@ import stylesDropdown from "../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../ui/DropDown/DropDownItem/DropDownItem"
 import { IconDropdown } from "../../ui/DropDown/IconDropdown/IconDropdown"
 import stylesIconDropdown from "../../ui/DropDown/IconDropdown/IconDropdown.module.scss"
+import stylesIcon from "../../ui/Icon/Icon.module.scss"
 import { InsertImageDialog } from "../ImagesPlugin/InsertImageDialog/InsertImageDialog"
 import { InsertInlineImageDialog } from "../InlineImagePlugin/InsertInlineImageDialog/InsertInlineImageDialog"
 import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog/InsertNewTableDialog"

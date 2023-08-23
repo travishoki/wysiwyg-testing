@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import { EditorThemeClasses, LexicalEditor } from "lexical"
 import { createPortal } from "react-dom"
-import { Icon } from "../../../Icon/Icon"
+import { Icon } from "../../../ui/Icon/Icon"
 import { TableActionMenu } from "../TableActionMenu/TableActionMenu"
 import { TableCellEditor } from "../TableCellEditor/TableCellEditor"
 import { TableNode } from "../TableNode"

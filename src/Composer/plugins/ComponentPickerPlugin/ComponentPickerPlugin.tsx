@@ -30,10 +30,10 @@ import {
   TextNode,
 } from "lexical"
 import * as ReactDOM from "react-dom"
-import { alignmentTypes } from "../../Icon/types"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { useModal } from "../../hooks/useModal"
 import { IconDropdown } from "../../ui/DropDown/IconDropdown/IconDropdown"
+import { alignmentTypes } from "../../ui/Icon/types"
 import { InsertImageDialog } from "../ImagesPlugin/InsertImageDialog/InsertImageDialog"
 import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog/InsertNewTableDialog"
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog/InsertTableDialog"

@@ -1,6 +1,6 @@
 import React from "react"
-import { Icon } from "../../../Icon/Icon"
-import { iconType } from "../../../Icon/types"
+import { Icon } from "../../../ui/Icon/Icon"
+import { iconType } from "../../../ui/Icon/types"
 import styles from "./IconButton.module.scss"
 
 type IconButtonProps = {
