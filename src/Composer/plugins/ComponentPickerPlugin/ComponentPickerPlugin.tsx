@@ -31,7 +31,6 @@ import {
 } from "lexical"
 import * as ReactDOM from "react-dom"
 import { Icon } from "../../Icon/Icon"
-import { IconHeading } from "../../Icon/IconHeading/IconHeading"
 import { alignmentTypes } from "../../Icon/types"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { useModal } from "../../hooks/useModal"
@@ -40,7 +39,7 @@ import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog/Insert
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog/InsertTableDialog"
 import { ComponentPickerMenuItem } from "./ComponentPickerMenuItem/ComponentPickerMenuItem"
 import { ComponentPickerOption } from "./ComponentPickerOption/ComponentPickerOption"
-import { getAlignmentType } from "./ComponentPickerPlugin.helpers"
+import { getAlignmentType, getHeadingType } from "./ComponentPickerPlugin.helpers"
 import styles from "./ComponentPickerPlugin.module.scss"
 
 const alignmentList: alignmentTypes[] = ["left", "center", "right", "justify"]
@@ -115,7 +114,7 @@ export const ComponentPickerPlugin = () => {
       ...Array.from({ length: 3 }, (_, i) => i + 1).map(
         (n) =>
           new ComponentPickerOption(`Heading ${n}`, {
-            icon: <IconHeading num={n} />,
+            icon: <Icon type={getHeadingType(n)} />,
             keywords: ["heading", "header", `h${n}`],
             onSelect: () =>
               editor.update(() => {
