@@ -369,7 +369,6 @@ export const TableActionMenu = ({
   }
 
   return createPortal(
-    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       className={stylesDropdown.dropdown}
       onClick={(e) => {
