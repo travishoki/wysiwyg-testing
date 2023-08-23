@@ -110,6 +110,7 @@ module.exports = {
     "prefer-promise-reject-errors": "error",
     "prefer-template": "error",
     "react/jsx-boolean-value": "error",
+    camelcase: "error",
 
     /** Syncronizing Rules (Warnings) */
     "jsx-a11y/click-events-have-key-events": "warn",

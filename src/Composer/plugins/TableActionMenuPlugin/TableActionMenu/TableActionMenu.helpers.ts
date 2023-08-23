@@ -5,9 +5,9 @@ import {
   $isParagraphNode,
   $isRangeSelection,
   $isTextNode,
-  DEPRECATED_$getNodeTriplet,
-  DEPRECATED_$isGridSelection,
-  DEPRECATED_GridCellNode,
+  DEPRECATED_$getNodeTriplet as $getNodeTriplet,
+  DEPRECATED_$isGridSelection as $isGridSelection,
+  DEPRECATED_GridCellNode as GridCellNode,
   ElementNode,
   GridSelection,
   LexicalEditor,
@@ -18,17 +18,17 @@ export const $canUnmerge = (): boolean => {
   const selection = $getSelection()
   if (
     ($isRangeSelection(selection) && !selection.isCollapsed()) ||
-    (DEPRECATED_$isGridSelection(selection) && !selection.anchor.is(selection.focus)) ||
-    (!$isRangeSelection(selection) && !DEPRECATED_$isGridSelection(selection))
+    ($isGridSelection(selection) && !selection.anchor.is(selection.focus)) ||
+    (!$isRangeSelection(selection) && !$isGridSelection(selection))
   ) {
     return false
   }
-  const [cell] = DEPRECATED_$getNodeTriplet(selection.anchor)
+  const [cell] = $getNodeTriplet(selection.anchor)
 
   return cell.__colSpan > 1 || cell.__rowSpan > 1
 }
 
-export const $cellContainsEmptyParagraph = (cell: DEPRECATED_GridCellNode): boolean => {
+export const $cellContainsEmptyParagraph = (cell: GridCellNode): boolean => {
   if (cell.getChildrenSize() !== 1) {
     return false
   }
@@ -68,8 +68,8 @@ export const computeSelectionCount = (selection: GridSelection): computeSelectio
 export const currentCellBackgroundColor = (editor: LexicalEditor): null | string => {
   return editor.getEditorState().read(() => {
     const selection = $getSelection()
-    if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
-      const [cell] = DEPRECATED_$getNodeTriplet(selection.anchor)
+    if ($isRangeSelection(selection) || $isGridSelection(selection)) {
+      const [cell] = $getNodeTriplet(selection.anchor)
       if ($isTableCellNode(cell)) {
         return cell.getBackgroundColor()
       }

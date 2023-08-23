@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import {
-  $deleteTableColumn__EXPERIMENTAL,
-  $deleteTableRow__EXPERIMENTAL,
+  $deleteTableColumn__EXPERIMENTAL as $deleteTableColumn,
+  $deleteTableRow__EXPERIMENTAL as $deleteTableRow,
   $getTableColumnIndexFromTableCellNode,
   $getTableNodeFromLexicalNodeOrThrow,
   $getTableRowIndexFromTableCellNode,
-  $insertTableColumn__EXPERIMENTAL,
-  $insertTableRow__EXPERIMENTAL,
+  $insertTableColumn__EXPERIMENTAL as $insertTableColumn,
+  $insertTableRow__EXPERIMENTAL as $insertTableRow,
   $isTableCellNode,
   $isTableRowNode,
   $unmergeCell,
@@ -22,10 +22,10 @@ import {
   $getSelection,
   $isParagraphNode,
   $isRangeSelection,
-  DEPRECATED_$getNodeTriplet,
-  DEPRECATED_$isGridCellNode,
-  DEPRECATED_$isGridSelection,
-  DEPRECATED_GridCellNode,
+  DEPRECATED_$getNodeTriplet as $getNodeTriplet,
+  DEPRECATED_$isGridCellNode as $isGridCellNode,
+  DEPRECATED_$isGridSelection as $isGridSelection,
+  DEPRECATED_GridCellNode as GridCellNode,
 } from "lexical"
 import { createPortal } from "react-dom"
 import { ColorPicker } from "../../../ui/ColorPicker/ColorPicker"
@@ -86,7 +86,7 @@ export const TableActionMenu = ({
     editor.getEditorState().read(() => {
       const selection = $getSelection()
       // Merge cells
-      if (DEPRECATED_$isGridSelection(selection)) {
+      if ($isGridSelection(selection)) {
         const currentSelectionCounts = computeSelectionCount(selection)
         updateSelectionCounts(computeSelectionCount(selection))
         setCanMergeCells(
@@ -175,13 +175,13 @@ export const TableActionMenu = ({
   const mergeTableCellsAtSelection = () => {
     editor.update(() => {
       const selection = $getSelection()
-      if (DEPRECATED_$isGridSelection(selection)) {
+      if ($isGridSelection(selection)) {
         const { columns, rows } = computeSelectionCount(selection)
         const nodes = selection.getNodes()
-        let firstCell: null | DEPRECATED_GridCellNode = null
+        let firstCell: null | GridCellNode = null
         for (let i = 0; i < nodes.length; i++) {
           const node = nodes[i]
-          if (DEPRECATED_$isGridCellNode(node)) {
+          if ($isGridCellNode(node)) {
             if (firstCell === null) {
               node.setColSpan(columns).setRowSpan(rows)
               firstCell = node
@@ -190,7 +190,7 @@ export const TableActionMenu = ({
               if (isEmpty && $isParagraphNode((firstChild = node.getFirstChild()))) {
                 firstChild.remove()
               }
-            } else if (DEPRECATED_$isGridCellNode(firstCell)) {
+            } else if ($isGridCellNode(firstCell)) {
               const isEmpty = $cellContainsEmptyParagraph(node)
               if (!isEmpty) {
                 firstCell.append(...node.getChildren())
@@ -219,7 +219,7 @@ export const TableActionMenu = ({
   const insertTableRowAtSelection = useCallback(
     (shouldInsertAfter: boolean) => {
       editor.update(() => {
-        $insertTableRow__EXPERIMENTAL(shouldInsertAfter)
+        $insertTableRow(shouldInsertAfter)
         onClose()
       })
     },
@@ -230,7 +230,7 @@ export const TableActionMenu = ({
     (shouldInsertAfter: boolean) => {
       editor.update(() => {
         for (let i = 0; i < selectionCounts.columns; i++) {
-          $insertTableColumn__EXPERIMENTAL(shouldInsertAfter)
+          $insertTableColumn(shouldInsertAfter)
         }
         onClose()
       })
@@ -240,7 +240,7 @@ export const TableActionMenu = ({
 
   const deleteTableRowAtSelection = useCallback(() => {
     editor.update(() => {
-      $deleteTableRow__EXPERIMENTAL()
+      $deleteTableRow()
       onClose()
     })
   }, [editor, onClose])
@@ -257,7 +257,7 @@ export const TableActionMenu = ({
 
   const deleteTableColumnAtSelection = useCallback(() => {
     editor.update(() => {
-      $deleteTableColumn__EXPERIMENTAL()
+      $deleteTableColumn()
       onClose()
     })
   }, [editor, onClose])
@@ -332,8 +332,8 @@ export const TableActionMenu = ({
     (value: string) => {
       editor.update(() => {
         const selection = $getSelection()
-        if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
-          const [cell] = DEPRECATED_$getNodeTriplet(selection.anchor)
+        if ($isRangeSelection(selection) || $isGridSelection(selection)) {
+          const [cell] = $getNodeTriplet(selection.anchor)
           if ($isTableCellNode(cell)) {
             cell.setBackgroundColor(value)
           }

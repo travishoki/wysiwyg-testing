@@ -12,7 +12,7 @@ import {
   $createParagraphNode,
   $getSelection,
   $isRangeSelection,
-  DEPRECATED_$isGridSelection,
+  DEPRECATED_$isGridSelection as $isGridSelection,
   LexicalEditor,
 } from "lexical"
 import { DropDown } from "../../../ui/DropDown/DropDown"
@@ -40,7 +40,7 @@ export const DropDownBlockFormat = ({
   const formatParagraph = () => {
     editor.update(() => {
       const selection = $getSelection()
-      if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
+      if ($isRangeSelection(selection) || $isGridSelection(selection)) {
         $setBlocksType(selection, () => $createParagraphNode())
       }
     })
@@ -50,7 +50,7 @@ export const DropDownBlockFormat = ({
     if (blockType !== headingSize) {
       editor.update(() => {
         const selection = $getSelection()
-        if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
+        if ($isRangeSelection(selection) || $isGridSelection(selection)) {
           $setBlocksType(selection, () => $createHeadingNode(headingSize))
         }
       })
@@ -85,7 +85,7 @@ export const DropDownBlockFormat = ({
     if (blockType !== "quote") {
       editor.update(() => {
         const selection = $getSelection()
-        if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
+        if ($isRangeSelection(selection) || $isGridSelection(selection)) {
           $setBlocksType(selection, () => $createQuoteNode())
         }
       })
@@ -97,7 +97,7 @@ export const DropDownBlockFormat = ({
       editor.update(() => {
         let selection = $getSelection()
 
-        if ($isRangeSelection(selection) || DEPRECATED_$isGridSelection(selection)) {
+        if ($isRangeSelection(selection) || $isGridSelection(selection)) {
           if (selection.isCollapsed()) {
             $setBlocksType(selection, () => $createCodeNode())
           } else {
