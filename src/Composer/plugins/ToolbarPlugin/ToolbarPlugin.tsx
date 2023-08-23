@@ -63,7 +63,6 @@ import { InsertImageDialog } from "../ImagesPlugin/InsertImageDialog/InsertImage
 import { InsertInlineImageDialog } from "../InlineImagePlugin/InsertInlineImageDialog/InsertInlineImageDialog"
 import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog/InsertNewTableDialog"
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog/InsertTableDialog"
-import { BlockFormatDropDown } from "./BlockFormatDropDown/BlockFormatDropDown"
 import { ButtonBold } from "./ButtonBold/ButtonBold"
 import { ButtonCode } from "./ButtonCode/ButtonCode"
 import { ButtonItalic } from "./ButtonItalic/ButtonItalic"
@@ -71,6 +70,7 @@ import { ButtonLink } from "./ButtonLink/ButtonLink"
 import { ButtonUnderline } from "./ButtonUnderline/ButtonUnderline"
 import { Divider } from "./Divider/Divider"
 import { DividerDropdown } from "./DividerDropdown/DividerDropdown"
+import { DropDownBlockFormat } from "./DropDownBlockFormat/DropDownBlockFormat"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
 import { IconButton } from "./IconButton/IconButton"
 import { blockTypeToBlockName, rootTypeToRootName } from "./ToolbarPlugin.const"
@@ -357,7 +357,7 @@ export const ToolbarPlugin = () => {
       <Divider />
       {blockType in blockTypeToBlockName && activeEditor === editor && (
         <>
-          <BlockFormatDropDown
+          <DropDownBlockFormat
             _rootType={rootType}
             blockType={blockType}
             disabled={!isEditable}

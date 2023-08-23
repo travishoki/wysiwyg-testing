@@ -24,19 +24,19 @@ import { blockTypeToBlockName, rootTypeToRootName } from "../ToolbarPlugin.const
 import { dropDownActiveClass } from "../ToolbarPlugin.helpers"
 import stylesToolbar from "../ToolbarPlugin.module.scss"
 
-type BlockFormatDropDownProps = {
+type DropDownBlockFormatProps = {
   _rootType: keyof typeof rootTypeToRootName
   blockType: keyof typeof blockTypeToBlockName
   disabled?: boolean
   editor: LexicalEditor
 }
 
-export const BlockFormatDropDown = ({
+export const DropDownBlockFormat = ({
   _rootType,
   blockType,
   disabled = false,
   editor,
-}: BlockFormatDropDownProps) => {
+}: DropDownBlockFormatProps) => {
   const formatParagraph = () => {
     editor.update(() => {
       const selection = $getSelection()
