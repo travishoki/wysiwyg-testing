@@ -8,19 +8,23 @@ import { Output } from "./Output/Output"
 
 // ts-prune-ignore-next
 export const App = () => {
-  const composerRef = useRef<composerRefProps>()
+  const composerRef = useRef<composerRefProps>(null)
   const [output, setOutput] = useState<Maybe<string>>()
 
   const onChange = () => {
     setOutput(null)
   }
 
+  const composerRefCurrent = composerRef.current
+
   return (
     <div className={styles.app}>
       <Composer composerRef={composerRef} onChange={onChange} onSubmit={setOutput} />
-      <MergeFieldControls
-        onClick={(mergeFieldObject) => composerRef.current.dispatchMergeField(mergeFieldObject)}
-      />
+      {composerRefCurrent !== null && (
+        <MergeFieldControls
+          onClick={(mergeFieldObject) => composerRefCurrent.dispatchMergeField(mergeFieldObject)}
+        />
+      )}
       <Output output={output} />
     </div>
   )
