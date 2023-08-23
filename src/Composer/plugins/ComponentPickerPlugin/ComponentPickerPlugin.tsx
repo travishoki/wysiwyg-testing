@@ -30,7 +30,7 @@ import {
   TextNode,
 } from "lexical"
 import * as ReactDOM from "react-dom"
-import { Icon } from "../../Icon/Icon"
+import { IconStyled } from "../../Icon/IconStyled/IconStyled"
 import { alignmentTypes } from "../../Icon/types"
 import { TypeaheadPopover } from "../../TypeaheadPopover/TypeaheadPopover"
 import { useModal } from "../../hooks/useModal"
@@ -71,7 +71,7 @@ export const ComponentPickerPlugin = () => {
 
       options.push(
         new ComponentPickerOption(`${rows}x${columns} Table`, {
-          icon: <Icon type="table" />,
+          icon: <IconStyled type="table" />,
           keywords: ["table"],
           onSelect: () =>
             // @ts-ignore Correct types, but since they're dynamic TS doesn't like it.
@@ -85,7 +85,7 @@ export const ComponentPickerPlugin = () => {
         ...Array.from({ length: 5 }, (_, i) => i + 1).map(
           (columns) =>
             new ComponentPickerOption(`${rows}x${columns} Table`, {
-              icon: <Icon type="table" />,
+              icon: <IconStyled type="table" />,
               keywords: ["table"],
               onSelect: () =>
                 // @ts-ignore Correct types, but since they're dynamic TS doesn't like it.
@@ -101,7 +101,7 @@ export const ComponentPickerPlugin = () => {
   const options = useMemo(() => {
     const baseOptions = [
       new ComponentPickerOption("Paragraph", {
-        icon: <Icon type="paragraph" />,
+        icon: <IconStyled type="paragraph" />,
         keywords: ["normal", "paragraph", "p", "text"],
         onSelect: () =>
           editor.update(() => {
@@ -114,7 +114,7 @@ export const ComponentPickerPlugin = () => {
       ...Array.from({ length: 3 }, (_, i) => i + 1).map(
         (n) =>
           new ComponentPickerOption(`Heading ${n}`, {
-            icon: <Icon type={getHeadingType(n)} />,
+            icon: <IconStyled type={getHeadingType(n)} />,
             keywords: ["heading", "header", `h${n}`],
             onSelect: () =>
               editor.update(() => {
@@ -129,7 +129,7 @@ export const ComponentPickerPlugin = () => {
           }),
       ),
       new ComponentPickerOption("Table", {
-        icon: <Icon type="table" />,
+        icon: <IconStyled type="table" />,
         keywords: ["table", "grid", "spreadsheet", "rows", "columns"],
         onSelect: () =>
           showModal("Insert Table", (onClose) => (
@@ -137,7 +137,7 @@ export const ComponentPickerPlugin = () => {
           )),
       }),
       new ComponentPickerOption("Table (Experimental)", {
-        icon: <Icon type="table" />,
+        icon: <IconStyled type="table" />,
         keywords: ["table", "grid", "spreadsheet", "rows", "columns"],
         onSelect: () =>
           showModal("Insert Table", (onClose) => (
@@ -145,22 +145,22 @@ export const ComponentPickerPlugin = () => {
           )),
       }),
       new ComponentPickerOption("Numbered List", {
-        icon: <Icon type="number" />,
+        icon: <IconStyled type="number" />,
         keywords: ["numbered list", "ordered list", "ol"],
         onSelect: () => editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined),
       }),
       new ComponentPickerOption("Bulleted List", {
-        icon: <Icon type="bullet" />,
+        icon: <IconStyled type="bullet" />,
         keywords: ["bulleted list", "unordered list", "ul"],
         onSelect: () => editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined),
       }),
       new ComponentPickerOption("Check List", {
-        icon: <Icon type="check" />,
+        icon: <IconStyled type="check" />,
         keywords: ["check list", "todo list"],
         onSelect: () => editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined),
       }),
       new ComponentPickerOption("Quote", {
-        icon: <Icon type="quote" />,
+        icon: <IconStyled type="quote" />,
         keywords: ["block quote"],
         onSelect: () =>
           editor.update(() => {
@@ -171,7 +171,7 @@ export const ComponentPickerPlugin = () => {
           }),
       }),
       new ComponentPickerOption("Code", {
-        icon: <Icon type="code" />,
+        icon: <IconStyled type="code" />,
         keywords: ["javascript", "python", "js", "codeblock"],
         onSelect: () =>
           editor.update(() => {
@@ -191,12 +191,12 @@ export const ComponentPickerPlugin = () => {
           }),
       }),
       new ComponentPickerOption("Divider", {
-        icon: <Icon type="horizontal-rule" />,
+        icon: <IconStyled type="horizontal-rule" />,
         keywords: ["horizontal rule", "divider", "hr"],
         onSelect: () => editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined),
       }),
       new ComponentPickerOption("Image", {
-        icon: <Icon type="image" />,
+        icon: <IconStyled type="image" />,
         keywords: ["image", "photo", "picture", "file"],
         onSelect: () =>
           showModal("Insert Image", (onClose) => (
@@ -206,7 +206,7 @@ export const ComponentPickerPlugin = () => {
       ...alignmentList.map(
         (alignment) =>
           new ComponentPickerOption(`Align ${alignment}`, {
-            icon: <Icon type={getAlignmentType(alignment)} />,
+            icon: <IconStyled type={getAlignmentType(alignment)} />,
             keywords: ["align", "justify", alignment],
             onSelect: () =>
               // @ts-ignore Correct types, but since they're dynamic TS doesn't like it.

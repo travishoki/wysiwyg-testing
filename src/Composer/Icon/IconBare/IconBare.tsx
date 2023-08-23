@@ -1,6 +1,6 @@
 import React from "react"
 import classNames from "classnames"
-import styles from "../Icon.module.scss"
+import styles from "../IconStyled/IconStyled.module.scss"
 import { iconType } from "../types"
 
 type IconBareProps = {

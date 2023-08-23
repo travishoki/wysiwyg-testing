@@ -48,8 +48,8 @@ import {
   SELECTION_CHANGE_COMMAND,
   UNDO_COMMAND,
 } from "lexical"
-import { Icon } from "../../Icon/Icon"
-import stylesIcon from "../../Icon/Icon.module.scss"
+import { IconStyled } from "../../Icon/IconStyled/IconStyled"
+import stylesStyledIcon from "../../Icon/IconStyled/IconStyled.module.scss"
 import { getSelectedNode } from "../../helpers/getSelectedNode"
 import { sanitizeUrl } from "../../helpers/url"
 import { useModal } from "../../hooks/useModal"
@@ -454,7 +454,7 @@ export const ToolbarPlugin = () => {
           <DropdownColorPicker
             buttonAriaLabel="Formatting text color"
             buttonClassName={styles.toolbarItem}
-            buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["font-color"])}
+            buttonIconClassName={classNames(stylesStyledIcon.icon, stylesStyledIcon["font-color"])}
             color={fontColor}
             disabled={!isEditable}
             onChange={onFontColorSelect}
@@ -463,7 +463,7 @@ export const ToolbarPlugin = () => {
           <DropdownColorPicker
             buttonAriaLabel="Formatting background color"
             buttonClassName={styles.toolbarItem}
-            buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["bg-color"])}
+            buttonIconClassName={classNames(stylesStyledIcon.icon, stylesStyledIcon["bg-color"])}
             color={bgColor}
             disabled={!isEditable}
             onChange={onBgColorSelect}
@@ -472,7 +472,10 @@ export const ToolbarPlugin = () => {
           <DropDown
             buttonAriaLabel="Formatting options for additional text styles"
             buttonClassName={classNames(styles.toolbarItem, styles.spaced)}
-            buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["dropdown-more"])}
+            buttonIconClassName={classNames(
+              stylesStyledIcon.icon,
+              stylesStyledIcon["dropdown-more"],
+            )}
             buttonLabel=""
             disabled={!isEditable}
           >
@@ -487,7 +490,7 @@ export const ToolbarPlugin = () => {
               }}
               title="Strikethrough"
             >
-              <Icon type="strikethrough" />
+              <IconStyled type="strikethrough" />
               <span className={stylesDropdown.dropdownText}>Strikethrough</span>
             </DropDownItem>
             <DropDownItem
@@ -498,7 +501,7 @@ export const ToolbarPlugin = () => {
               }}
               title="Subscript"
             >
-              <Icon type="subscript" />
+              <IconStyled type="subscript" />
               <span className={stylesDropdown.dropdownText}>Subscript</span>
             </DropDownItem>
             <DropDownItem
@@ -512,7 +515,7 @@ export const ToolbarPlugin = () => {
               }}
               title="Superscript"
             >
-              <Icon type="superscript" />
+              <IconStyled type="superscript" />
               <span className={stylesDropdown.dropdownText}>Superscript</span>
             </DropDownItem>
             <DropDownItem
@@ -521,7 +524,7 @@ export const ToolbarPlugin = () => {
               onClick={clearFormatting}
               title="Clear text formatting"
             >
-              <Icon type="clear" />
+              <IconStyled type="clear" />
               <span className={stylesDropdown.dropdownText}>Clear Formatting</span>
             </DropDownItem>
           </DropDown>
@@ -531,7 +534,7 @@ export const ToolbarPlugin = () => {
               <DropDown
                 buttonAriaLabel="Open table toolkit"
                 buttonClassName={classNames(styles.toolbarItem, styles.spaced)}
-                buttonIconClassName={classNames(stylesIcon.icon, stylesIcon.table)}
+                buttonIconClassName={classNames(stylesStyledIcon.icon, stylesStyledIcon.table)}
                 buttonLabel="Table"
                 disabled={!isEditable}
               >
@@ -550,7 +553,7 @@ export const ToolbarPlugin = () => {
           <DropDown
             buttonAriaLabel="Insert specialized editor node"
             buttonClassName={classNames(styles.toolbarItem, styles.spaced)}
-            buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["plus"])}
+            buttonIconClassName={classNames(stylesStyledIcon.icon, stylesStyledIcon["plus"])}
             buttonLabel="Insert"
             disabled={!isEditable}
             hideLabelOnMobile
@@ -561,7 +564,7 @@ export const ToolbarPlugin = () => {
                 activeEditor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined)
               }}
             >
-              <Icon type="horizontal-rule" />
+              <IconStyled type="horizontal-rule" />
               <span className={stylesDropdown.dropdownText}>Horizontal Rule</span>
             </DropDownItem>
             <DropDownItem
@@ -572,7 +575,7 @@ export const ToolbarPlugin = () => {
                 ))
               }}
             >
-              <Icon type="image" />
+              <IconStyled type="image" />
               <span className={stylesDropdown.dropdownText}>Image</span>
             </DropDownItem>
             <DropDownItem
@@ -583,7 +586,7 @@ export const ToolbarPlugin = () => {
                 ))
               }}
             >
-              <Icon type="image" />
+              <IconStyled type="image" />
               <span className={stylesDropdown.dropdownText}>Inline Image</span>
             </DropDownItem>
             <DropDownItem
@@ -594,7 +597,7 @@ export const ToolbarPlugin = () => {
                 ))
               }}
             >
-              <Icon type="table" />
+              <IconStyled type="table" />
               <span className={stylesDropdown.dropdownText}>Table</span>
             </DropDownItem>
             <DropDownItem
@@ -605,7 +608,7 @@ export const ToolbarPlugin = () => {
                 ))
               }}
             >
-              <Icon type="table" />
+              <IconStyled type="table" />
               <span className={stylesDropdown.dropdownText}>Table (Experimental)</span>
             </DropDownItem>
           </DropDown>
@@ -615,7 +618,7 @@ export const ToolbarPlugin = () => {
       <DropDown
         buttonAriaLabel="Formatting options for text alignment"
         buttonClassName={classNames(styles.toolbarItem, styles.spaced, "alignment")}
-        buttonIconClassName={classNames(stylesIcon.icon, stylesIcon["left-align"])}
+        buttonIconClassName={classNames(stylesStyledIcon.icon, stylesStyledIcon["left-align"])}
         buttonLabel="Align"
         disabled={!isEditable}
         hideLabelOnMobile
@@ -626,7 +629,7 @@ export const ToolbarPlugin = () => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "left")
           }}
         >
-          <Icon type="left-align" />
+          <IconStyled type="left-align" />
           <span className={stylesDropdown.dropdownText}>Left Align</span>
         </DropDownItem>
         <DropDownItem
@@ -635,7 +638,7 @@ export const ToolbarPlugin = () => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "center")
           }}
         >
-          <Icon type="center-align" />
+          <IconStyled type="center-align" />
           <span className={stylesDropdown.dropdownText}>Center Align</span>
         </DropDownItem>
         <DropDownItem
@@ -644,7 +647,7 @@ export const ToolbarPlugin = () => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "right")
           }}
         >
-          <Icon type="right-align" />
+          <IconStyled type="right-align" />
           <span className={stylesDropdown.dropdownText}>Right Align</span>
         </DropDownItem>
         <DropDownItem
@@ -653,7 +656,7 @@ export const ToolbarPlugin = () => {
             activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "justify")
           }}
         >
-          <Icon type="justify-align" />
+          <IconStyled type="justify-align" />
           <span className={stylesDropdown.dropdownText}>Justify Align</span>
         </DropDownItem>
         <DividerDropdown />
@@ -663,7 +666,7 @@ export const ToolbarPlugin = () => {
             activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
           }}
         >
-          <Icon type={isRTL ? "indent" : "outdent"} />
+          <IconStyled type={isRTL ? "indent" : "outdent"} />
           <span className={stylesDropdown.dropdownText}>Outdent</span>
         </DropDownItem>
         <DropDownItem
@@ -672,7 +675,7 @@ export const ToolbarPlugin = () => {
             activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
           }}
         >
-          <Icon type={isRTL ? "outdent" : "indent"} />
+          <IconStyled type={isRTL ? "outdent" : "indent"} />
           <span className={stylesDropdown.dropdownText}>Indent</span>
         </DropDownItem>
       </DropDown>
