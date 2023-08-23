@@ -101,7 +101,7 @@ module.exports = {
     ],
     "import/prefer-default-export": "off",
 
-    /** Syncronizing Rules */
+    /** Syncronizing Rules (Errors) */
     "class-methods-use-this": "error",
     "jsx-a11y/control-has-associated-label": "error",
     "lines-between-class-members": "error",
@@ -110,6 +110,9 @@ module.exports = {
     "prefer-promise-reject-errors": "error",
     "prefer-template": "error",
     "react/jsx-boolean-value": "error",
+
+    /** Syncronizing Rules (Warnings) */
+    "jsx-a11y/click-events-have-key-events": "warn",
 
     // Extra Syntax
     "no-duplicate-imports": "error",
