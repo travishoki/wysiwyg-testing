@@ -1,6 +1,6 @@
 import { alignmentTypes, iconType } from "../types"
 
-export const getType = (type: alignmentTypes): iconType => {
+export const getAlignmentType = (type: alignmentTypes): iconType => {
   switch (type) {
     case "center":
       return "center-align"
