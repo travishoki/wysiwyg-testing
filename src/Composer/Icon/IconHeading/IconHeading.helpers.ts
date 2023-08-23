@@ -1,6 +1,6 @@
 import { iconType } from "../types"
 
-export const getType = (num: number): iconType => {
+export const getHeadingType = (num: number): iconType => {
   switch (num) {
     case 1:
       return "h1"
