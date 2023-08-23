@@ -214,7 +214,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
           height={this.__height}
           maxWidth={this.__maxWidth}
           nodeKey={this.getKey()}
-          resizable={true}
+          resizable
           showCaption={this.__showCaption}
           src={this.__src}
           width={this.__width}

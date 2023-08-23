@@ -364,7 +364,7 @@ const useDraggableBlockMenu = (
     <>
       <div
         className={classNames("composer-draggable-block-menu", styles.draggableBlockMenu)}
-        draggable={true}
+        draggable
         onDragEnd={onDragEnd}
         onDragStart={onDragStart}
         ref={menuRef}

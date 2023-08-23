@@ -107,6 +107,7 @@ module.exports = {
     "no-restricted-syntax": "error",
     "prefer-promise-reject-errors": "error",
     "prefer-template": "error",
+    "react/jsx-boolean-value": "error",
 
     // Extra Syntax
     "no-duplicate-imports": "error",

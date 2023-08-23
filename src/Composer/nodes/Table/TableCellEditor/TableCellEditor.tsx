@@ -19,7 +19,7 @@ export const TableCellEditor = ({ cellEditor }: TableCellEditorProps) => {
       initialEditor={cellEditor}
       initialNodes={cellEditorConfig.nodes}
       initialTheme={cellEditorConfig.theme}
-      skipCollabChecks={true}
+      skipCollabChecks
     >
       {cellEditorPlugins}
     </LexicalNestedComposer>

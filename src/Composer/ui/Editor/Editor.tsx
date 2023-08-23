@@ -176,7 +176,7 @@ export const Editor = () => {
             <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
             <CodeActionMenuPlugin anchorElem={floatingAnchorElem} />
             <FloatingLinkEditorPlugin anchorElem={floatingAnchorElem} />
-            <TableActionMenuPlugin anchorElem={floatingAnchorElem} cellMerge={true} />
+            <TableActionMenuPlugin anchorElem={floatingAnchorElem} cellMerge />
             <FloatingTextFormatToolbarPlugin anchorElem={floatingAnchorElem} />
           </>
         )}
