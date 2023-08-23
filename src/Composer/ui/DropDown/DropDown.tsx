@@ -112,10 +112,16 @@ export const DropDown = ({
         ref={buttonRef}
         type="button"
       >
-        {buttonIconClassName && <span className={buttonIconClassName} />}
+        {buttonIconClassName && (
+          <span className={classNames(buttonIconClassName, disabled ? styles.disabled : "")} />
+        )}
         {buttonLabel && (
           <span
-            className={classNames(stylesToolbar.text, hideLabelOnMobile ? styles.hideOnMobile : "")}
+            className={classNames(
+              stylesToolbar.text,
+              hideLabelOnMobile ? styles.hideOnMobile : "",
+              disabled ? styles.disabled : "",
+            )}
           >
             {buttonLabel}
           </span>
