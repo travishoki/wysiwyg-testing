@@ -1,5 +1,5 @@
 import React from "react"
-import { IconBare } from "../../../Icon/IconBare/IconBare"
+import { IconBare } from "../../../Icon/IconBare"
 import { iconType } from "../../../Icon/types"
 import styles from "./IconButton.module.scss"
 
