@@ -370,7 +370,10 @@ export const ToolbarPlugin = () => {
           {CODE_LANGUAGE_OPTIONS.map(([value, name]) => {
             return (
               <DropDownItem
-                className={`item ${dropDownActiveClass(value === codeLanguage)}`}
+                className={classNames(
+                  stylesDropdown.dropdownItem,
+                  `item ${dropDownActiveClass(value === codeLanguage)}`,
+                )}
                 key={value}
                 onClick={() => onCodeLanguageSelect(value)}
               >
