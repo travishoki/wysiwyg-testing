@@ -7,7 +7,7 @@
  */
 
 import React, { useCallback, useEffect, useState } from "react"
-import { $isCodeNode, CODE_LANGUAGE_MAP, getLanguageFriendlyName } from "@lexical/code"
+import { $isCodeNode, CODE_LANGUAGE_MAP } from "@lexical/code"
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link"
 import { $isListNode, ListNode } from "@lexical/list"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
@@ -62,15 +62,13 @@ import { ButtonUnderline } from "./ButtonUnderline/ButtonUnderline"
 import { Divider } from "./Divider/Divider"
 import { DropDownBlockFormat } from "./DropDownBlockFormat/DropDownBlockFormat"
 import { DropDownTextAlignment } from "./DropDownTextAlignment/DropDownTextAlignment"
+import { DropdownCode } from "./DropdownCode/DropdownCode"
 import { DropdownInsert } from "./DropdownInsert/DropdownInsert"
 import { DropdownTextStyle } from "./DropdownTextStyle/DropdownTextStyle"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
 import { IconButton } from "./IconButton/IconButton"
 import { blockTypeToBlockName, rootTypeToRootName } from "./ToolbarPlugin.const"
-import { dropDownActiveClass, getCodeLanguageOptions } from "./ToolbarPlugin.helpers"
 import styles from "./ToolbarPlugin.module.scss"
-
-const CODE_LANGUAGE_OPTIONS = getCodeLanguageOptions()
 
 export const ToolbarPlugin = () => {
   const [editor] = useLexicalComposerContext()
@@ -360,27 +358,11 @@ export const ToolbarPlugin = () => {
         </>
       )}
       {blockType === "code" ? (
-        <DropDown
-          buttonAriaLabel="Select language"
-          buttonClassName={classNames(styles.toolbarItem, styles.codeLanguage)}
-          buttonLabel={getLanguageFriendlyName(codeLanguage)}
-          disabled={!isEditable}
-        >
-          {CODE_LANGUAGE_OPTIONS.map(([value, name]) => {
-            return (
-              <DropDownItem
-                className={classNames(
-                  stylesDropdown.dropdownItem,
-                  `item ${dropDownActiveClass(value === codeLanguage)}`,
-                )}
-                key={value}
-                onClick={() => onCodeLanguageSelect(value)}
-              >
-                <span className={stylesDropdown.dropdownText}>{name}</span>
-              </DropDownItem>
-            )
-          })}
-        </DropDown>
+        <DropdownCode
+          codeLanguage={codeLanguage}
+          isEditable={isEditable}
+          onCodeLanguageSelect={onCodeLanguageSelect}
+        />
       ) : (
         <>
           <FontDropDown

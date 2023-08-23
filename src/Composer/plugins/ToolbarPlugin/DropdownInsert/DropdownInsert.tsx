@@ -13,7 +13,7 @@ import { InsertImageDialog } from "../../ImagesPlugin/InsertImageDialog/InsertIm
 import { InsertInlineImageDialog } from "../../InlineImagePlugin/InsertInlineImageDialog/InsertInlineImageDialog"
 import { InsertNewTableDialog } from "../../TablePlugin/InsertNewTableDialog/InsertNewTableDialog"
 import { InsertTableDialog } from "../../TablePlugin/InsertTableDialog/InsertTableDialog"
-import styles from "../ToolbarPlugin.module.scss"
+import stylesToolbarPlugin from "../ToolbarPlugin.module.scss"
 
 type DropdownInsertProps = {
   activeEditor: LexicalEditor
@@ -25,7 +25,7 @@ export const DropdownInsert = ({ activeEditor, isEditable, showModal }: Dropdown
   return (
     <DropDown
       buttonAriaLabel="Insert specialized editor node"
-      buttonClassName={classNames(styles.toolbarItem, styles.spaced)}
+      buttonClassName={classNames(stylesToolbarPlugin.toolbarItem, stylesToolbarPlugin.spaced)}
       buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["plus"])}
       buttonLabel="Insert"
       disabled={!isEditable}
