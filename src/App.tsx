@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react"
+import styles from "./App.module.scss"
 import { Composer } from "./Composer"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 import { composerRefProps } from "./MergeFieldHandler/MergeFieldHandler"
@@ -11,12 +12,12 @@ export const App = () => {
   const [output, setOutput] = useState<Maybe<string>>()
 
   return (
-    <>
+    <div className={styles.app}>
       <Composer composerRef={composerRef} setOutput={setOutput} />
       <MergeFieldControls
         onClick={(mergeFieldObject) => composerRef.current.dispatchMergeField(mergeFieldObject)}
       />
       <Output output={output} />
-    </>
+    </div>
   )
 }
