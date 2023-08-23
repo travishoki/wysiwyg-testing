@@ -49,9 +49,6 @@ import { sanitizeUrl } from "../../helpers/url"
 import { useModal } from "../../hooks/useModal"
 import { IS_APPLE } from "../../shared/environment"
 import { DropdownColorPicker } from "../../ui/DropDown/ColorPicker/ColorPicker"
-import { DropDown } from "../../ui/DropDown/DropDown"
-import stylesDropdown from "../../ui/DropDown/DropDown.module.scss"
-import { DropDownItem } from "../../ui/DropDown/DropDownItem/DropDownItem"
 import stylesIconDropdown from "../../ui/DropDown/IconDropdown/IconDropdown.module.scss"
 import stylesIcon from "../../ui/Icon/Icon.module.scss"
 import { ButtonBold } from "./ButtonBold/ButtonBold"
@@ -64,6 +61,7 @@ import { DropDownBlockFormat } from "./DropDownBlockFormat/DropDownBlockFormat"
 import { DropDownTextAlignment } from "./DropDownTextAlignment/DropDownTextAlignment"
 import { DropdownCode } from "./DropdownCode/DropdownCode"
 import { DropdownInsert } from "./DropdownInsert/DropdownInsert"
+import { DropdownTable } from "./DropdownTable/DropdownTable"
 import { DropdownTextStyle } from "./DropdownTextStyle/DropdownTextStyle"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
 import { IconButton } from "./IconButton/IconButton"
@@ -436,22 +434,7 @@ export const ToolbarPlugin = () => {
           <Divider />
           {rootType === "table" && (
             <>
-              <DropDown
-                buttonAriaLabel="Open table toolkit"
-                buttonClassName={classNames(styles.toolbarItem, styles.spaced)}
-                buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon.table)}
-                buttonLabel="Table"
-                disabled={!isEditable}
-              >
-                <DropDownItem
-                  className={stylesDropdown.dropdownItem}
-                  onClick={() => {
-                    /**/
-                  }}
-                >
-                  <span className={stylesDropdown.dropdownText}>TODO</span>
-                </DropDownItem>
-              </DropDown>
+              <DropdownTable isEditable={isEditable} />
               <Divider />
             </>
           )}
