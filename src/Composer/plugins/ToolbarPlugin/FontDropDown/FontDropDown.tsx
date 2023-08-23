@@ -9,6 +9,7 @@ import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
 import { dropDownActiveClass } from "../ToolbarPlugin.helpers"
 import stylesToolbar from "../ToolbarPlugin.module.scss"
 import { FONT_FAMILY_OPTIONS, FONT_SIZE_OPTIONS } from "./FontDropDown.const"
+import styles from "./FontDropDown.module.scss"
 
 type FontDropDownProps = {
   disabled?: boolean
@@ -54,12 +55,19 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
             className={classNames(
               stylesDropdown.dropdownItem,
               dropDownActiveClass(value === option),
-              `${styleName === "font-size" ? "fontsize-item" : ""}`,
+              `${styleName === "font-size" ? styles.fontsizeItem : ""}`,
             )}
             key={option}
             onClick={() => handleClick(option)}
           >
-            <span className={stylesDropdown.dropdownText}>{text}</span>
+            <span
+              className={classNames(
+                stylesDropdown.dropdownText,
+                `${styleName === "font-size" ? styles.fontsizeItemText : ""}`,
+              )}
+            >
+              {text}
+            </span>
           </DropDownItem>
         ),
       )}

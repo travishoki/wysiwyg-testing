@@ -41,11 +41,6 @@
     background-color: #eee;
   }
 
-  &.fontsize-item,
-  &.fontsize-item .text {
-    min-width: unset;
-  }
-
   .active {
     background-size: contain;
     display: flex;
