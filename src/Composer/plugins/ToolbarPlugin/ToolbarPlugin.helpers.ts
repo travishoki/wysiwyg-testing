@@ -1,5 +1,4 @@
 import { CODE_LANGUAGE_FRIENDLY_NAME_MAP } from "@lexical/code"
-import classNames from "classnames"
 import styles from "./ToolbarPlugin.module.scss"
 
 export const getCodeLanguageOptions = (): [string, string][] => {
@@ -13,7 +12,7 @@ export const getCodeLanguageOptions = (): [string, string][] => {
 }
 
 export const dropDownActiveClass = (active: boolean) => {
-  if (active) return classNames("active", styles.dropdownItemActive)
+  if (active) return styles.dropdownItemActive
 
   return ""
 }
