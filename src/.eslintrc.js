@@ -106,6 +106,7 @@ module.exports = {
     "jsx-a11y/control-has-associated-label": "error",
     "lines-between-class-members": "error",
     "no-restricted-syntax": "error",
+    "no-useless-return": "error",
     "prefer-promise-reject-errors": "error",
     "prefer-template": "error",
     "react/jsx-boolean-value": "error",

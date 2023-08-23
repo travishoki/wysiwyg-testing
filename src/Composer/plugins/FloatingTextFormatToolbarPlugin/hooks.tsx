@@ -75,7 +75,7 @@ export const useFloatingTextFormatToolbar = (
       if (!selection.isCollapsed() && rawTextContent === "") {
         setIsText(false)
 
-        return
+        
       }
     })
   }, [editor])
