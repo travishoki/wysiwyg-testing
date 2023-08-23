@@ -9,6 +9,8 @@
 import React, { useCallback, useMemo, useState } from "react"
 import { Modal } from "../ui/Modal/Modal"
 
+export type showModalType = (title: string, showModal: (onClose: () => void) => JSX.Element) => void
+
 export const useModal = (): [
   JSX.Element | null,
   (title: string, showModal: (onClose: () => void) => JSX.Element) => void,
@@ -36,7 +38,7 @@ export const useModal = (): [
     )
   }, [modalContent, onClose])
 
-  const showModal = useCallback(
+  const showModal: showModalType = useCallback(
     (
       title: string,
       // eslint-disable-next-line no-shadow

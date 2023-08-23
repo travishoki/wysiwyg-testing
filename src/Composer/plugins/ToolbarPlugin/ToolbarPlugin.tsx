@@ -12,7 +12,6 @@ import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link"
 import { $isListNode, ListNode } from "@lexical/list"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $isDecoratorBlockNode } from "@lexical/react/LexicalDecoratorBlockNode"
-import { INSERT_HORIZONTAL_RULE_COMMAND } from "@lexical/react/LexicalHorizontalRuleNode"
 import { $isHeadingNode, $isQuoteNode } from "@lexical/rich-text"
 import {
   $getSelectionStyleValueForProperty,
@@ -59,10 +58,6 @@ import { DropDownItem } from "../../ui/DropDown/DropDownItem/DropDownItem"
 import { IconDropdown } from "../../ui/DropDown/IconDropdown/IconDropdown"
 import stylesIconDropdown from "../../ui/DropDown/IconDropdown/IconDropdown.module.scss"
 import stylesIcon from "../../ui/Icon/Icon.module.scss"
-import { InsertImageDialog } from "../ImagesPlugin/InsertImageDialog/InsertImageDialog"
-import { InsertInlineImageDialog } from "../InlineImagePlugin/InsertInlineImageDialog/InsertInlineImageDialog"
-import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog/InsertNewTableDialog"
-import { InsertTableDialog } from "../TablePlugin/InsertTableDialog/InsertTableDialog"
 import { ButtonBold } from "./ButtonBold/ButtonBold"
 import { ButtonCode } from "./ButtonCode/ButtonCode"
 import { ButtonItalic } from "./ButtonItalic/ButtonItalic"
@@ -71,6 +66,7 @@ import { ButtonUnderline } from "./ButtonUnderline/ButtonUnderline"
 import { Divider } from "./Divider/Divider"
 import { DividerDropdown } from "./DividerDropdown/DividerDropdown"
 import { DropDownBlockFormat } from "./DropDownBlockFormat/DropDownBlockFormat"
+import { DropdownInsert } from "./DropdownInsert/DropdownInsert"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
 import { IconButton } from "./IconButton/IconButton"
 import { blockTypeToBlockName, rootTypeToRootName } from "./ToolbarPlugin.const"
@@ -528,68 +524,11 @@ export const ToolbarPlugin = () => {
               <Divider />
             </>
           )}
-          <DropDown
-            buttonAriaLabel="Insert specialized editor node"
-            buttonClassName={classNames(styles.toolbarItem, styles.spaced)}
-            buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["plus"])}
-            buttonLabel="Insert"
-            disabled={!isEditable}
-            hideLabelOnMobile
-          >
-            <DropDownItem
-              className={stylesDropdown.dropdownItem}
-              onClick={() => {
-                activeEditor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined)
-              }}
-            >
-              <IconDropdown type="horizontal-rule" />
-              <span className={stylesDropdown.dropdownText}>Horizontal Rule</span>
-            </DropDownItem>
-            <DropDownItem
-              className={stylesDropdown.dropdownItem}
-              onClick={() => {
-                showModal("Insert Image", (onClose) => (
-                  <InsertImageDialog activeEditor={activeEditor} onClose={onClose} />
-                ))
-              }}
-            >
-              <IconDropdown type="image" />
-              <span className={stylesDropdown.dropdownText}>Image</span>
-            </DropDownItem>
-            <DropDownItem
-              className={stylesDropdown.dropdownItem}
-              onClick={() => {
-                showModal("Insert Inline Image", (onClose) => (
-                  <InsertInlineImageDialog activeEditor={activeEditor} onClose={onClose} />
-                ))
-              }}
-            >
-              <IconDropdown type="image" />
-              <span className={stylesDropdown.dropdownText}>Inline Image</span>
-            </DropDownItem>
-            <DropDownItem
-              className={stylesDropdown.dropdownItem}
-              onClick={() => {
-                showModal("Insert Table", (onClose) => (
-                  <InsertTableDialog activeEditor={activeEditor} onClose={onClose} />
-                ))
-              }}
-            >
-              <IconDropdown type="table" />
-              <span className={stylesDropdown.dropdownText}>Table</span>
-            </DropDownItem>
-            <DropDownItem
-              className={stylesDropdown.dropdownItem}
-              onClick={() => {
-                showModal("Insert Table", (onClose) => (
-                  <InsertNewTableDialog activeEditor={activeEditor} onClose={onClose} />
-                ))
-              }}
-            >
-              <IconDropdown type="table" />
-              <span className={stylesDropdown.dropdownText}>Table (Experimental)</span>
-            </DropDownItem>
-          </DropDown>
+          <DropdownInsert
+            activeEditor={activeEditor}
+            isEditable={isEditable}
+            showModal={showModal}
+          />
         </>
       )}
       <Divider />
