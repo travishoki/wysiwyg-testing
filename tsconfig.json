@@ -13,7 +13,8 @@
     "esModuleInterop": true,
     "baseUrl": "./src",
     "paths": {
-      "test/*": ["./test/*"]
+      "test": ["./test"],
+      "types/*": ["./types/*"]
     }
   },
   "include": ["src", "index.d.ts"], // *** The files TypeScript should type check ***
