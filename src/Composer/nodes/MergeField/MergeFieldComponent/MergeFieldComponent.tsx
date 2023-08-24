@@ -10,7 +10,7 @@ import styles from "./MergeFieldComponent.module.scss"
 
 const MergeFieldComponent = ({
   mergeFieldIconUrl,
-  mergeFieldId,
+  mergeFieldName,
   nodeKey,
 }: MergeFieldComponentProps) => {
   const [editor] = useLexicalComposerContext()
@@ -37,7 +37,7 @@ const MergeFieldComponent = ({
               src={mergeFieldIconUrl}
               width="15"
             />
-            <p className={styles.title}>{formatMergeFieldTitle(mergeFieldId)}</p>
+            <p className={styles.title}>{formatMergeFieldTitle(mergeFieldName)}</p>
           </div>
 
           {isEditable && (
@@ -53,7 +53,7 @@ const MergeFieldComponent = ({
 
 type MergeFieldComponentProps = {
   mergeFieldIconUrl: string
-  mergeFieldId: string
+  mergeFieldName: string
   nodeKey: string
 }
 

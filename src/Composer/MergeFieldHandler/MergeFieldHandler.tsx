@@ -18,7 +18,7 @@ export const MergeFieldHandler = ({ composerRef }: MergeFieldHandlerProps): null
     dispatchMergeField(mergeFieldObject: mergeFieldObject) {
       const payload = {
         mergeFieldIconUrl: mergeFieldObject.iconUrl,
-        mergeFieldId: mergeFieldObject.id,
+        mergeFieldName: mergeFieldObject.name,
       }
       editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, payload)
     },

@@ -1,4 +1,4 @@
-export const mergeFieldIdArray: mergeFieldObject[] = [
+export const mergeFieldNameArray: mergeFieldObject[] = [
   {
     iconUrl: "https://cdn0.iconfinder.com/data/icons/typicons-2/24/star-512.png",
     id: "1",
