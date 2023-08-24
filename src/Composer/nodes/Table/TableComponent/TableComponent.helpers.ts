@@ -1,4 +1,5 @@
 import { LexicalEditor } from "lexical"
+import { createUID } from "../../../helpers/uid"
 import { IS_APPLE } from "../../../shared/environment"
 import { createRow } from "../TableNode.helpers"
 import { Cell, Rows } from "../TableNode.types"
