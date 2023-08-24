@@ -2,7 +2,6 @@ import React, { useImperativeHandle } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { mergeFieldObject } from "../../MergeFieldControls/MergeFieldControls.const"
 import { INSERT_MERGE_FIELD_COMMAND } from "../const"
-import { Maybe } from "../types/globals"
 
 export type composerRefProps = Maybe<{
   dispatchMergeField: (mergeFieldObject: mergeFieldObject) => void

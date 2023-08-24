@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react"
 import styles from "./App.module.scss"
 import { Composer } from "./Composer/Composer"
 import { composerRefProps } from "./Composer/MergeFieldHandler/MergeFieldHandler"
-import { Maybe } from "./Composer/types/globals"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 import { Output } from "./Output/Output"
 

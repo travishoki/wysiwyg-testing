@@ -1,5 +1,4 @@
 import React from "react"
-import { Maybe } from "../Composer/types/globals"
 import styles from "./Output.module.scss"
 
 type OutputProps = {

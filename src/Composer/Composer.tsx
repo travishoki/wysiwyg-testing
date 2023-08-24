@@ -8,7 +8,6 @@ import { SharedHistoryContext } from "./context/SharedHistoryContext"
 import { ComposerNodes } from "./nodes/ComposerNodes"
 import { TableContext } from "./plugins/TablePlugin/TableContext/TableContext"
 import { ComposerTheme } from "./themes/ComposerTheme"
-import { Maybe } from "./types/globals"
 import { Controls } from "./ui/Controls/Controls"
 import { Editor } from "./ui/Editor/Editor"
 

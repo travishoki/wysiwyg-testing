@@ -1,6 +1,5 @@
 import { asMock } from "test/utils/mock"
 import { createUID } from "../../helpers/uid"
-import { Maybe } from "../../types/globals"
 import { extractRowsFromHTML } from "./TableNode.helpers"
 
 jest.mock("../../helpers/uid")
