@@ -111,6 +111,7 @@ module.exports = {
     "prefer-promise-reject-errors": "error",
     "prefer-template": "error",
     "react/jsx-boolean-value": "error",
+    "spaced-comment": "error",
     camelcase: "error",
 
     /** Syncronizing Rules (Warnings) */

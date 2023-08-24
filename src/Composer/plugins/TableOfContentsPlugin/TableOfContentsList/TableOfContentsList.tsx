@@ -37,7 +37,7 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
         let currentHeading = editor.getElementByKey(tableOfContents[selectedIndex.current][0])
         if (currentHeading !== null) {
           if (isHeadingBelowTheTopOfThePage(currentHeading)) {
-            //On natural scroll, user is scrolling up
+            // On natural scroll, user is scrolling up
             while (
               currentHeading !== null &&
               isHeadingBelowTheTopOfThePage(currentHeading) &&
@@ -57,7 +57,7 @@ export const TableOfContentsList = ({ tableOfContents }: TableOfContentsListProp
             const prevHeadingKey = tableOfContents[selectedIndex.current][0]
             setSelectedKey(prevHeadingKey)
           } else if (isHeadingAboveViewport(currentHeading)) {
-            //On natural scroll, user is scrolling down
+            // On natural scroll, user is scrolling down
             while (
               currentHeading !== null &&
               isHeadingAboveViewport(currentHeading) &&
