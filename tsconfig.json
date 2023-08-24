@@ -10,7 +10,11 @@
     "jsx": "react",
     "target": "es2015",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "paths": {
+      "test/*": ["./test/*"]
+    }
   },
   "include": ["src", "index.d.ts"], // *** The files TypeScript should type check ***
   "exclude": ["node_modules"] // *** The files to not type check ***
