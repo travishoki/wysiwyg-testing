@@ -366,13 +366,13 @@ export const ToolbarPlugin = () => {
           <FontDropDown
             disabled={!isEditable}
             editor={editor}
-            styleName={"font-family"}
+            styleName="font-family"
             value={fontFamily}
           />
           <FontDropDown
             disabled={!isEditable}
             editor={editor}
-            styleName={"font-size"}
+            styleName="font-size"
             value={fontSize}
           />
           <Divider />

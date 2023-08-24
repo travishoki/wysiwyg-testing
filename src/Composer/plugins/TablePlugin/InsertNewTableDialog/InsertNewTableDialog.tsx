@@ -36,7 +36,7 @@ export const InsertNewTableDialog = ({ activeEditor, onClose }: InsertNewTableDi
         data-test-id="table-modal-rows"
         label="Rows"
         onChange={setRows}
-        placeholder={"# of rows (1-500)"}
+        placeholder="# of rows (1-500)"
         type="number"
         value={rows}
       />
@@ -44,7 +44,7 @@ export const InsertNewTableDialog = ({ activeEditor, onClose }: InsertNewTableDi
         data-test-id="table-modal-columns"
         label="Columns"
         onChange={setColumns}
-        placeholder={"# of columns (1-50)"}
+        placeholder="# of columns (1-50)"
         type="number"
         value={columns}
       />
