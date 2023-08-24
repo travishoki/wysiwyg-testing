@@ -113,26 +113,24 @@ const TABLE: ElementTransformer = {
 
     for (const row of node.getChildren()) {
       const rowOutput = []
-      if (!$isTableRowNode(row)) {
-        continue
-      }
-
-      let isHeaderRow = false
-      for (const cell of row.getChildren()) {
-        // It's TableCellNode so it's just to make flow happy
-        if ($isTableCellNode(cell)) {
-          rowOutput.push(
-            $convertToMarkdownString(COMPOSER_TRANSFORMERS, cell).replace(/\n/g, "\\n"),
-          )
-          if (cell.__headerState === TableCellHeaderStates.ROW) {
-            isHeaderRow = true
+      if ($isTableRowNode(row)) {
+        let isHeaderRow = false
+        for (const cell of row.getChildren()) {
+          // It's TableCellNode so it's just to make flow happy
+          if ($isTableCellNode(cell)) {
+            rowOutput.push(
+              $convertToMarkdownString(COMPOSER_TRANSFORMERS, cell).replace(/\n/g, "\\n"),
+            )
+            if (cell.__headerState === TableCellHeaderStates.ROW) {
+              isHeaderRow = true
+            }
           }
         }
-      }
 
-      output.push(`| ${rowOutput.join(" | ")} |`)
-      if (isHeaderRow) {
-        output.push(`| ${rowOutput.map((_) => "---").join(" | ")} |`)
+        output.push(`| ${rowOutput.join(" | ")} |`)
+        if (isHeaderRow) {
+          output.push(`| ${rowOutput.map((_) => "---").join(" | ")} |`)
+        }
       }
     }
 
