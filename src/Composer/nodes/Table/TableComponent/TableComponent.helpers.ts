@@ -1,6 +1,6 @@
 import { LexicalEditor } from "lexical"
 import { IS_APPLE } from "../../../shared/environment"
-import { createRow, createUID } from "../TableNode.helpers"
+import { createRow } from "../TableNode.helpers"
 import { Cell, Rows } from "../TableNode.types"
 
 export const isStartingResize = (target: HTMLElement): boolean => {
