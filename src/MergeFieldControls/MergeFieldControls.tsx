@@ -15,6 +15,7 @@ export const MergeFieldControls = ({ onClick }: MergeFieldControlsProps) => {
           key={mergeField.id}
           mergeFieldIconUrl={mergeField.iconUrl}
           mergeFieldId={mergeField.id}
+          mergeFieldName={mergeField.name}
           onClick={onClick}
         />
       ))}
