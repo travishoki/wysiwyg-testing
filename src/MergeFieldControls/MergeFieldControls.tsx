@@ -1,6 +1,7 @@
 import React from "react"
+import { MergeField } from "types"
 import { MergeFieldButton } from "./MergeFieldButton/MergeFieldButton"
-import { mergeFieldNameArray, MergeField } from "./MergeFieldControls.const"
+import { mergeFieldNameArray } from "./MergeFieldControls.const"
 import styles from "./MergeFieldControls.module.scss"
 
 type MergeFieldControlsProps = {

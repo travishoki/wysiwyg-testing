@@ -1,6 +1,6 @@
 import React, { useImperativeHandle } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
-import { MergeField } from "../../MergeFieldControls/MergeFieldControls.const"
+import { MergeField } from "types"
 import { INSERT_MERGE_FIELD_COMMAND } from "../const"
 
 export type composerRefProps = Maybe<{
@@ -17,7 +17,7 @@ export const MergeFieldHandler = ({ composerRef }: MergeFieldHandlerProps): null
   useImperativeHandle(composerRef, () => ({
     dispatchMergeField(mergeField: MergeField) {
       const payload = {
-        mergeFieldIconUrl: mergeField.iconUrl,
+        // mergeFieldIconUrl: mergeField.iconUrl,
         mergeFieldName: mergeField.name,
       }
       editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, payload)

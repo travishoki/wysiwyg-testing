@@ -9,7 +9,7 @@ import { $isMergeFieldNode } from "../MergeFieldNode"
 import styles from "./MergeFieldComponent.module.scss"
 
 const MergeFieldComponent = ({
-  mergeFieldIconUrl,
+  // mergeFieldIconUrl,
   mergeFieldName,
   nodeKey,
 }: MergeFieldComponentProps) => {
@@ -30,6 +30,7 @@ const MergeFieldComponent = ({
       <div className={styles["merge-field"]}>
         <div className={styles.inner}>
           <div className={styles.content}>
+            {/*
             <img
               alt="icon"
               className={styles.svgIcon}
@@ -37,6 +38,7 @@ const MergeFieldComponent = ({
               src={mergeFieldIconUrl}
               width="15"
             />
+            */}
             <p className={styles.title}>{formatMergeFieldTitle(mergeFieldName)}</p>
           </div>
 
@@ -52,7 +54,7 @@ const MergeFieldComponent = ({
 }
 
 type MergeFieldComponentProps = {
-  mergeFieldIconUrl: string
+  // mergeFieldIconUrl: string
   mergeFieldName: string
   nodeKey: string
 }

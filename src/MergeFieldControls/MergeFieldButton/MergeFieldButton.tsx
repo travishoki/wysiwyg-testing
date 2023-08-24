@@ -1,6 +1,6 @@
 import React, { useCallback } from "react"
+import { MergeField } from "types"
 import { ButtonWithIcon } from "../ButtonWithIcon/ButtonWithIcon"
-import { MergeField } from "../MergeFieldControls.const"
 import { formatMergeFieldTitle } from "./MergeFieldButton.helpers"
 
 type MergeFieldButtonProps = {
@@ -15,5 +15,11 @@ export const MergeFieldButton = ({ mergeField, onClick }: MergeFieldButtonProps)
 
   const title = formatMergeFieldTitle(mergeField.name)
 
-  return <ButtonWithIcon iconUrl={mergeField.iconUrl} onClick={onClickButton} title={title} />
+  return (
+    <ButtonWithIcon
+      // iconUrl={mergeField.iconUrl}
+      onClick={onClickButton}
+      title={title}
+    />
+  )
 }
