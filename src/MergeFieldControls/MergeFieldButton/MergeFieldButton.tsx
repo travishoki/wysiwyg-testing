@@ -5,7 +5,7 @@ import { formatMergeFieldTitle } from "./MergeFieldButton.helpers"
 
 type MergeFieldButtonProps = {
   mergeField: MergeField
-  onClick: (mergeFieldObject: MergeField) => void
+  onClick: (mergeField: MergeField) => void
 }
 
 export const MergeFieldButton = ({ mergeField, onClick }: MergeFieldButtonProps) => {

@@ -4,7 +4,7 @@ import { MergeField } from "../../MergeFieldControls/MergeFieldControls.const"
 import { INSERT_MERGE_FIELD_COMMAND } from "../const"
 
 export type composerRefProps = Maybe<{
-  dispatchMergeField: (mergeFieldObject: MergeField) => void
+  dispatchMergeField: (mergeField: MergeField) => void
 }>
 
 type MergeFieldHandlerProps = {
@@ -15,10 +15,10 @@ export const MergeFieldHandler = ({ composerRef }: MergeFieldHandlerProps): null
   const [editor] = useLexicalComposerContext()
 
   useImperativeHandle(composerRef, () => ({
-    dispatchMergeField(mergeFieldObject: MergeField) {
+    dispatchMergeField(mergeField: MergeField) {
       const payload = {
-        mergeFieldIconUrl: mergeFieldObject.iconUrl,
-        mergeFieldName: mergeFieldObject.name,
+        mergeFieldIconUrl: mergeField.iconUrl,
+        mergeFieldName: mergeField.name,
       }
       editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, payload)
     },

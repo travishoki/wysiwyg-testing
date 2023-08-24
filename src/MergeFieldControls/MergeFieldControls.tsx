@@ -4,7 +4,7 @@ import { mergeFieldNameArray, MergeField } from "./MergeFieldControls.const"
 import styles from "./MergeFieldControls.module.scss"
 
 type MergeFieldControlsProps = {
-  onClick: (mergeFieldObject: MergeField) => void
+  onClick: (mergeField: MergeField) => void
 }
 
 export const MergeFieldControls = ({ onClick }: MergeFieldControlsProps) => {
