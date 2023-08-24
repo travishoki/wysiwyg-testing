@@ -1,10 +1,10 @@
 import React from "react"
 import { MergeFieldButton } from "./MergeFieldButton/MergeFieldButton"
-import { mergeFieldNameArray, mergeFieldObject } from "./MergeFieldControls.const"
+import { mergeFieldNameArray, MergeField } from "./MergeFieldControls.const"
 import styles from "./MergeFieldControls.module.scss"
 
 type MergeFieldControlsProps = {
-  onClick: (mergeFieldObject: mergeFieldObject) => void
+  onClick: (mergeFieldObject: MergeField) => void
 }
 
 export const MergeFieldControls = ({ onClick }: MergeFieldControlsProps) => {
