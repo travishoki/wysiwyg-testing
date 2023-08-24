@@ -1,5 +1,6 @@
 import { asMock } from "test/utils/mock"
 import { createUID } from "../../helpers/uid"
+import { Maybe } from "../../types/globals"
 import { extractRowsFromHTML } from "./TableNode.helpers"
 
 jest.mock("../../helpers/uid")
@@ -40,6 +41,7 @@ describe("extractRowsFromHTML", () => {
     table.appendChild(tbody)
 
     const result = extractRowsFromHTML(table)
+    const nullNum: Maybe<number> = null
     const expectedResult = [
       {
         cells: [
@@ -76,10 +78,10 @@ describe("extractRowsFromHTML", () => {
               },
             }),
             type: "header",
-            width: null as number,
+            width: nullNum,
           },
         ],
-        height: null as number,
+        height: nullNum,
         id: id2,
       },
     ]
