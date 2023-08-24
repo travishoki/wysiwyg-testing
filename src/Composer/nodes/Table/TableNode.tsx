@@ -50,20 +50,19 @@ const convertTableElement = (domNode: HTMLElement): null | DOMConversionOutput =
   for (let y = 0; y < rowElems.length; y++) {
     const rowElem = rowElems[y]
     const cellElems = rowElem.querySelectorAll("td,th")
-    if (!cellElems || cellElems.length === 0) {
-      continue
+    if (!!cellElems && cellElems.length !== 0) {
+      const cells: Array<Cell> = []
+      for (let x = 0; x < cellElems.length; x++) {
+        const cellElem = cellElems[x] as HTMLElement
+        const isHeader = cellElem.nodeName === "TH"
+        const cell = createCell(isHeader ? "header" : "normal")
+        cell.json = plainTextEditorJSON(JSON.stringify(cellElem.innerText.replace(/\n/g, " ")))
+        cells.push(cell)
+      }
+      const row = createRow()
+      row.cells = cells
+      rows.push(row)
     }
-    const cells: Array<Cell> = []
-    for (let x = 0; x < cellElems.length; x++) {
-      const cellElem = cellElems[x] as HTMLElement
-      const isHeader = cellElem.nodeName === "TH"
-      const cell = createCell(isHeader ? "header" : "normal")
-      cell.json = plainTextEditorJSON(JSON.stringify(cellElem.innerText.replace(/\n/g, " ")))
-      cells.push(cell)
-    }
-    const row = createRow()
-    row.cells = cells
-    rows.push(row)
   }
 
   return { node: $createTableNode(rows) }
