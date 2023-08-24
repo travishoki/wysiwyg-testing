@@ -11,13 +11,7 @@ export const MergeFieldControls = ({ onClick }: MergeFieldControlsProps) => {
   return (
     <div className={styles.mergeFieldControls}>
       {mergeFieldIdArray.map((mergeField) => (
-        <MergeFieldButton
-          key={mergeField.id}
-          mergeFieldIconUrl={mergeField.iconUrl}
-          mergeFieldId={mergeField.id}
-          mergeFieldName={mergeField.name}
-          onClick={onClick}
-        />
+        <MergeFieldButton key={mergeField.id} mergeField={mergeField} onClick={onClick} />
       ))}
     </div>
   )
