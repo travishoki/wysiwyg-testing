@@ -1,4 +1,4 @@
-import { capitalizeWord, formatMergeFieldTitle } from "./MergeFieldButton.helpers"
+import { capitalizeWord, formatMergeFieldTitle } from "./mergeFields.helpers"
 
 describe("capitalizeWord", () => {
   it("capitalizeWord", () => {
