@@ -2,11 +2,11 @@ import React, { MutableRefObject } from "react"
 import { LexicalComposer } from "@lexical/react/LexicalComposer"
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
 import styles from "./Composer.module.scss"
-import { Controls } from "./Controls/Controls"
 import {
   ComposerCustomFunctionHandler,
   composerRefProps,
 } from "./ComposerCustomFunctionHandler/ComposerCustomFunctionHandler"
+import { Controls } from "./Controls/Controls"
 import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext"
 import { SharedHistoryContext } from "./context/SharedHistoryContext"
 import { ComposerNodes } from "./nodes/ComposerNodes"
