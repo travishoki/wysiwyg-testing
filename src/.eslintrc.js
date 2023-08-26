@@ -103,6 +103,7 @@ module.exports = {
 
     /** Syncronizing Rules (Errors) */
     "class-methods-use-this": "error",
+    "class-methods-use-this": "error",
     "jsx-a11y/control-has-associated-label": "error",
     "lines-between-class-members": "error",
     "no-continue": "error",
@@ -134,13 +135,4 @@ module.exports = {
     // Extra Spacing
     "padding-line-between-statements": [1, { blankLine: "always", prev: "*", next: "return" }],
   },
-  overrides: [
-    /** Composer */
-    {
-      files: ["**/nodes/**/*", "**/plugins/**/*"],
-      rules: {
-        "class-methods-use-this": 0,
-      },
-    },
-  ],
 }

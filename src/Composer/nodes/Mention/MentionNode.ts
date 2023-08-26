@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /**
  * Copyright (c) Meta Platforms, Inc. and affiliates.
  *
