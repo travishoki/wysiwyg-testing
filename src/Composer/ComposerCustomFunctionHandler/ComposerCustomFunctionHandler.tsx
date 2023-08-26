@@ -1,17 +1,19 @@
 import { MutableRefObject, useImperativeHandle } from "react"
+import { $generateHtmlFromNodes } from "@lexical/html"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { MergeField } from "types"
 import { INSERT_MERGE_FIELD_COMMAND } from "../const"
 
 export type composerRefProps = Maybe<{
   dispatchMergeField: (mergeField: MergeField) => void
+  onSubmit: () => string
 }>
 
 type MergeFieldHandlerProps = {
   composerRef: MutableRefObject<composerRefProps>
 }
 
-export const MergeFieldHandler = ({ composerRef }: MergeFieldHandlerProps): null => {
+export const ComposerCustomFunctionHandler = ({ composerRef }: MergeFieldHandlerProps): null => {
   const [editor] = useLexicalComposerContext()
 
   useImperativeHandle(composerRef, () => ({
@@ -21,6 +23,15 @@ export const MergeFieldHandler = ({ composerRef }: MergeFieldHandlerProps): null
         mergeFieldName: mergeField.name ?? "",
       }
       editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, payload)
+    },
+    onSubmit(): string {
+      let htmlString = ""
+
+      editor.update(() => {
+        htmlString = $generateHtmlFromNodes(editor, null)
+      })
+
+      return htmlString
     },
   }))
 

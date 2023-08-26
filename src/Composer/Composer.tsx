@@ -2,13 +2,16 @@ import React, { MutableRefObject } from "react"
 import { LexicalComposer } from "@lexical/react/LexicalComposer"
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
 import styles from "./Composer.module.scss"
-import { MergeFieldHandler, composerRefProps } from "./MergeFieldHandler/MergeFieldHandler"
+import { Controls } from "./Controls/Controls"
+import {
+  ComposerCustomFunctionHandler,
+  composerRefProps,
+} from "./ComposerCustomFunctionHandler/ComposerCustomFunctionHandler"
 import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext"
 import { SharedHistoryContext } from "./context/SharedHistoryContext"
 import { ComposerNodes } from "./nodes/ComposerNodes"
 import { TableContext } from "./plugins/TablePlugin/TableContext/TableContext"
 import { ComposerTheme } from "./themes/ComposerTheme"
-import { Controls } from "./ui/Controls/Controls"
 import { Editor } from "./ui/Editor/Editor"
 
 // Catch any errors that occur during Lexical updates and log them
@@ -31,7 +34,7 @@ type ComposerProps = {
   onSubmit: (output: Maybe<string>) => void
 }
 
-export const Composer = ({ composerRef, onChange, onSubmit }: ComposerProps) => {
+export const Composer = ({ composerRef, onChange }: ComposerProps) => {
   return (
     <div className="composer">
       <LexicalComposer initialConfig={initialConfig}>
@@ -39,9 +42,9 @@ export const Composer = ({ composerRef, onChange, onSubmit }: ComposerProps) => 
           <TableContext>
             <SharedAutocompleteContext>
               <div className={styles.editorShell}>
-                <MergeFieldHandler composerRef={composerRef} />
+                <ComposerCustomFunctionHandler composerRef={composerRef} />
                 <Editor />
-                <Controls onSubmit={onSubmit} />
+                <Controls />
                 <OnChangePlugin onChange={() => onChange && onChange()} />
               </div>
             </SharedAutocompleteContext>

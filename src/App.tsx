@@ -1,9 +1,11 @@
 import React, { useRef, useState } from "react"
+import { SubmitButton } from "SubmitButton/SubmitButton"
 import styles from "./App.module.scss"
 import { Composer } from "./Composer/Composer"
-import { composerRefProps } from "./Composer/MergeFieldHandler/MergeFieldHandler"
+import { composerRefProps } from "./Composer/ComposerCustomFunctionHandler/ComposerCustomFunctionHandler"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 import { Output } from "./Output/Output"
+import { MergeField } from "./types"
 
 // ts-prune-ignore-next
 export const App = () => {
@@ -14,16 +16,24 @@ export const App = () => {
     setOutput(null)
   }
 
+  const onClickMergeField = (mergeField: MergeField) => {
+    if (composerRef.current) {
+      composerRef.current.dispatchMergeField(mergeField)
+    }
+  }
+
+  const onSubmit = () => {
+    if (composerRef.current) {
+      const output = composerRef.current.onSubmit()
+      alert(output)
+    }
+  }
+
   return (
     <div className={styles.app}>
       <Composer composerRef={composerRef} onChange={onChange} onSubmit={setOutput} />
-      <MergeFieldControls
-        onClick={(mergeField) => {
-          if (composerRef.current) {
-            composerRef.current.dispatchMergeField(mergeField)
-          }
-        }}
-      />
+      <MergeFieldControls onClick={onClickMergeField} />
+      <SubmitButton onClick={onSubmit} />
       <Output output={output} />
     </div>
   )
