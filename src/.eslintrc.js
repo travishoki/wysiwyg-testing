@@ -103,7 +103,6 @@ module.exports = {
 
     /** Syncronizing Rules (Errors) */
     "class-methods-use-this": "error",
-    "class-methods-use-this": "error",
     "jsx-a11y/control-has-associated-label": "error",
     "lines-between-class-members": "error",
     "no-continue": "error",
