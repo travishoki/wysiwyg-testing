@@ -17,7 +17,6 @@ import {
   $isParentElementRTL,
   $patchStyleText,
 } from "@lexical/selection"
-import { $isTableNode } from "@lexical/table"
 import {
   $findMatchingParent,
   $getNearestBlockElementAncestorOrThrow,
@@ -59,14 +58,13 @@ import { DropdownInsert } from "./DropdownInsert/DropdownInsert"
 import { DropdownTextStyle } from "./DropdownTextStyle/DropdownTextStyle"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
 import { IconButton } from "./IconButton/IconButton"
-import { blockTypeToBlockName, rootTypeToRootName } from "./ToolbarPlugin.const"
+import { blockTypeToBlockName } from "./ToolbarPlugin.const"
 import styles from "./ToolbarPlugin.module.scss"
 
 export const ToolbarPlugin = () => {
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
   const [blockType, setBlockType] = useState<keyof typeof blockTypeToBlockName>("paragraph")
-  const [rootType, setRootType] = useState<keyof typeof rootTypeToRootName>("root")
   const [fontSize, setFontSize] = useState<string>("15px")
   const [fontColor, setFontColor] = useState<string>("#000")
   const [bgColor, setBgColor] = useState<string>("#fff")
@@ -120,13 +118,6 @@ export const ToolbarPlugin = () => {
         setIsLink(true)
       } else {
         setIsLink(false)
-      }
-
-      const tableNode = $findMatchingParent(node, $isTableNode)
-      if ($isTableNode(tableNode)) {
-        setRootType("table")
-      } else {
-        setRootType("root")
       }
 
       if (elementDOM !== null) {
@@ -315,12 +306,7 @@ export const ToolbarPlugin = () => {
       <Divider />
       {blockType in blockTypeToBlockName && activeEditor === editor && (
         <>
-          <DropDownBlockFormat
-            _rootType={rootType}
-            blockType={blockType}
-            disabled={!isEditable}
-            editor={editor}
-          />
+          <DropDownBlockFormat blockType={blockType} disabled={!isEditable} editor={editor} />
           <Divider />
         </>
       )}

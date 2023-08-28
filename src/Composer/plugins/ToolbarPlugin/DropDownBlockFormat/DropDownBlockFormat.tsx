@@ -20,19 +20,17 @@ import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
 import { IconDropdown } from "../../../ui/DropDown/IconDropdown/IconDropdown"
 import styleIcon from "../../../ui/Icon/Icon.module.scss"
-import { blockTypeToBlockName, rootTypeToRootName } from "../ToolbarPlugin.const"
+import { blockTypeToBlockName } from "../ToolbarPlugin.const"
 import { dropDownActiveClass } from "../ToolbarPlugin.helpers"
 import stylesToolbar from "../ToolbarPlugin.module.scss"
 
 type DropDownBlockFormatProps = {
-  _rootType: keyof typeof rootTypeToRootName
   blockType: keyof typeof blockTypeToBlockName
   disabled?: boolean
   editor: LexicalEditor
 }
 
 export const DropDownBlockFormat = ({
-  _rootType,
   blockType,
   disabled = false,
   editor,

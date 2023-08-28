@@ -1,8 +1,3 @@
-export const rootTypeToRootName = {
-  root: "Root",
-  table: "Table",
-}
-
 export const blockTypeToBlockName = {
   bullet: "Bulleted List",
   check: "Check List",
