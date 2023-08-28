@@ -7,7 +7,6 @@
  */
 
 import React, { useCallback, useEffect, useState } from "react"
-import { $isCodeNode, CODE_LANGUAGE_MAP } from "@lexical/code"
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link"
 import { $isListNode, ListNode } from "@lexical/list"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
@@ -28,7 +27,6 @@ import {
 import classNames from "classnames"
 import {
   $createParagraphNode,
-  $getNodeByKey,
   $getSelection,
   $isRangeSelection,
   $isRootOrShadowRoot,
@@ -39,7 +37,6 @@ import {
   COMMAND_PRIORITY_NORMAL,
   FORMAT_TEXT_COMMAND,
   KEY_MODIFIER_COMMAND,
-  NodeKey,
   REDO_COMMAND,
   SELECTION_CHANGE_COMMAND,
   UNDO_COMMAND,
@@ -52,14 +49,12 @@ import { DropdownColorPicker } from "../../ui/DropDown/ColorPicker/ColorPicker"
 import stylesIconDropdown from "../../ui/DropDown/IconDropdown/IconDropdown.module.scss"
 import stylesIcon from "../../ui/Icon/Icon.module.scss"
 import { ButtonBold } from "./ButtonBold/ButtonBold"
-import { ButtonCode } from "./ButtonCode/ButtonCode"
 import { ButtonItalic } from "./ButtonItalic/ButtonItalic"
 import { ButtonLink } from "./ButtonLink/ButtonLink"
 import { ButtonUnderline } from "./ButtonUnderline/ButtonUnderline"
 import { Divider } from "./Divider/Divider"
 import { DropDownBlockFormat } from "./DropDownBlockFormat/DropDownBlockFormat"
 import { DropDownTextAlignment } from "./DropDownTextAlignment/DropDownTextAlignment"
-import { DropdownCode } from "./DropdownCode/DropdownCode"
 import { DropdownInsert } from "./DropdownInsert/DropdownInsert"
 import { DropdownTextStyle } from "./DropdownTextStyle/DropdownTextStyle"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
@@ -72,7 +67,6 @@ export const ToolbarPlugin = () => {
   const [activeEditor, setActiveEditor] = useState(editor)
   const [blockType, setBlockType] = useState<keyof typeof blockTypeToBlockName>("paragraph")
   const [rootType, setRootType] = useState<keyof typeof rootTypeToRootName>("root")
-  const [selectedElementKey, setSelectedElementKey] = useState<NodeKey | null>(null)
   const [fontSize, setFontSize] = useState<string>("15px")
   const [fontColor, setFontColor] = useState<string>("#000")
   const [bgColor, setBgColor] = useState<string>("#fff")
@@ -84,12 +78,10 @@ export const ToolbarPlugin = () => {
   const [isStrikethrough, setIsStrikethrough] = useState(false)
   const [isSubscript, setIsSubscript] = useState(false)
   const [isSuperscript, setIsSuperscript] = useState(false)
-  const [isCode, setIsCode] = useState(false)
   const [canUndo, setCanUndo] = useState(false)
   const [canRedo, setCanRedo] = useState(false)
   const [modal, showModal] = useModal()
   const [isRTL, setIsRTL] = useState(false)
-  const [codeLanguage, setCodeLanguage] = useState<string>("")
   const [isEditable, setIsEditable] = useState(() => editor.isEditable())
 
   const $updateToolbar = useCallback(() => {
@@ -119,7 +111,6 @@ export const ToolbarPlugin = () => {
       setIsStrikethrough(selection.hasFormat("strikethrough"))
       setIsSubscript(selection.hasFormat("subscript"))
       setIsSuperscript(selection.hasFormat("superscript"))
-      setIsCode(selection.hasFormat("code"))
       setIsRTL($isParentElementRTL(selection))
 
       // Update links
@@ -139,7 +130,6 @@ export const ToolbarPlugin = () => {
       }
 
       if (elementDOM !== null) {
-        setSelectedElementKey(elementKey)
         if ($isListNode(element)) {
           const parentList = $getNearestNodeOfType<ListNode>(anchorNode, ListNode)
           const type = parentList ? parentList.getListType() : element.getListType()
@@ -148,12 +138,6 @@ export const ToolbarPlugin = () => {
           const type = $isHeadingNode(element) ? element.getTag() : element.getType()
           if (type in blockTypeToBlockName) {
             setBlockType(type as keyof typeof blockTypeToBlockName)
-          }
-          if ($isCodeNode(element)) {
-            const language = element.getLanguage() as keyof typeof CODE_LANGUAGE_MAP
-            setCodeLanguage(language ? CODE_LANGUAGE_MAP[language] || language : "")
-
-            return
           }
         }
       }
@@ -302,20 +286,6 @@ export const ToolbarPlugin = () => {
     }
   }, [editor, isLink])
 
-  const onCodeLanguageSelect = useCallback(
-    (value: string) => {
-      activeEditor.update(() => {
-        if (selectedElementKey !== null) {
-          const node = $getNodeByKey(selectedElementKey)
-          if ($isCodeNode(node)) {
-            node.setLanguage(value)
-          }
-        }
-      })
-    },
-    [activeEditor, selectedElementKey],
-  )
-
   return (
     <div className={styles.toolbar}>
       <button
@@ -354,90 +324,64 @@ export const ToolbarPlugin = () => {
           <Divider />
         </>
       )}
-      {blockType === "code" ? (
-        <DropdownCode
-          codeLanguage={codeLanguage}
-          isEditable={isEditable}
-          onCodeLanguageSelect={onCodeLanguageSelect}
-        />
-      ) : (
-        <>
-          <FontDropDown
-            disabled={!isEditable}
-            editor={editor}
-            styleName="font-family"
-            value={fontFamily}
-          />
-          <FontDropDown
-            disabled={!isEditable}
-            editor={editor}
-            styleName="font-size"
-            value={fontSize}
-          />
-          <Divider />
-          <ButtonBold
-            isActive={isBold}
-            isEditable={isEditable}
-            onClick={() => {
-              activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")
-            }}
-          />
-          <ButtonItalic
-            isActive={isItalic}
-            isEditable={isEditable}
-            onClick={() => {
-              activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic")
-            }}
-          />
-          <ButtonUnderline
-            isActive={isUnderline}
-            isEditable={isEditable}
-            onClick={() => {
-              activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "underline")
-            }}
-          />
-          <ButtonCode
-            isActive={isCode}
-            isEditable={isEditable}
-            onClick={() => {
-              activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "code")
-            }}
-          />
-          <ButtonLink isActive={isLink} isEditable={isEditable} onClick={insertLink} />
-          <DropdownColorPicker
-            buttonAriaLabel="Formatting text color"
-            buttonClassName={styles.toolbarItem}
-            buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["font-color"])}
-            color={fontColor}
-            disabled={!isEditable}
-            onChange={onFontColorSelect}
-            title="text color"
-          />
-          <DropdownColorPicker
-            buttonAriaLabel="Formatting background color"
-            buttonClassName={styles.toolbarItem}
-            buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["bg-color"])}
-            color={bgColor}
-            disabled={!isEditable}
-            onChange={onBgColorSelect}
-            title="bg color"
-          />
-          <DropdownTextStyle
-            activeEditor={activeEditor}
-            clearFormatting={clearFormatting}
-            isEditable={isEditable}
-            isStrikethrough={isStrikethrough}
-            isSubscript={isSubscript}
-            isSuperscript={isSuperscript}
-          />
-          <Divider />
-          <DropdownInsert
-            activeEditor={activeEditor}
-            isEditable={isEditable}
-            showModal={showModal}
-          />
-        </>
-      )}
+      <FontDropDown
+        disabled={!isEditable}
+        editor={editor}
+        styleName="font-family"
+        value={fontFamily}
+      />
+      <FontDropDown disabled={!isEditable} editor={editor} styleName="font-size" value={fontSize} />
+      <Divider />
+      <ButtonBold
+        isActive={isBold}
+        isEditable={isEditable}
+        onClick={() => {
+          activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")
+        }}
+      />
+      <ButtonItalic
+        isActive={isItalic}
+        isEditable={isEditable}
+        onClick={() => {
+          activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic")
+        }}
+      />
+      <ButtonUnderline
+        isActive={isUnderline}
+        isEditable={isEditable}
+        onClick={() => {
+          activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "underline")
+        }}
+      />
+      <ButtonLink isActive={isLink} isEditable={isEditable} onClick={insertLink} />
+      <DropdownColorPicker
+        buttonAriaLabel="Formatting text color"
+        buttonClassName={styles.toolbarItem}
+        buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["font-color"])}
+        color={fontColor}
+        disabled={!isEditable}
+        onChange={onFontColorSelect}
+        title="text color"
+      />
+      <DropdownColorPicker
+        buttonAriaLabel="Formatting background color"
+        buttonClassName={styles.toolbarItem}
+        buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["bg-color"])}
+        color={bgColor}
+        disabled={!isEditable}
+        onChange={onBgColorSelect}
+        title="bg color"
+      />
+      <DropdownTextStyle
+        activeEditor={activeEditor}
+        clearFormatting={clearFormatting}
+        isEditable={isEditable}
+        isStrikethrough={isStrikethrough}
+        isSubscript={isSubscript}
+        isSuperscript={isSuperscript}
+      />
+      <Divider />
+      <DropdownInsert activeEditor={activeEditor} isEditable={isEditable} showModal={showModal} />
       <Divider />
       <DropDownTextAlignment activeEditor={activeEditor} isEditable={isEditable} isRTL={isRTL} />
 

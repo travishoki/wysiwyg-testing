@@ -1,4 +1,4 @@
-import React, { $createCodeNode } from "@lexical/code"
+import React from "@lexical/code"
 import {
   INSERT_CHECK_LIST_COMMAND,
   INSERT_ORDERED_LIST_COMMAND,
@@ -92,26 +92,6 @@ export const DropDownBlockFormat = ({
     }
   }
 
-  const formatCode = () => {
-    if (blockType !== "code") {
-      editor.update(() => {
-        let selection = $getSelection()
-
-        if ($isRangeSelection(selection) || $isGridSelection(selection)) {
-          if (selection.isCollapsed()) {
-            $setBlocksType(selection, () => $createCodeNode())
-          } else {
-            const textContent = selection.getTextContent()
-            const codeNode = $createCodeNode()
-            selection.insertNodes([codeNode])
-            selection = $getSelection()
-            if ($isRangeSelection(selection)) selection.insertRawText(textContent)
-          }
-        }
-      })
-    }
-  }
-
   return (
     <DropDown
       buttonAriaLabel="Formatting options for text style"
@@ -191,16 +171,6 @@ export const DropDownBlockFormat = ({
       >
         <IconDropdown type="quote" />
         <span className={stylesDropdown.dropdownText}>Quote</span>
-      </DropDownItem>
-      <DropDownItem
-        className={classNames(
-          stylesDropdown.dropdownItem,
-          dropDownActiveClass(blockType === "code"),
-        )}
-        onClick={formatCode}
-      >
-        <IconDropdown type="code" />
-        <span className={stylesDropdown.dropdownText}>Code Block</span>
       </DropDownItem>
     </DropDown>
   )

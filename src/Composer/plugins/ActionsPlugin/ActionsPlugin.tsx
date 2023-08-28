@@ -6,22 +6,13 @@
  *
  */
 
-import React, { useCallback, useEffect, useState } from "react"
-import { $createCodeNode, $isCodeNode } from "@lexical/code"
-import { $convertFromMarkdownString, $convertToMarkdownString } from "@lexical/markdown"
+import React, { useEffect, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { mergeRegister } from "@lexical/utils"
 import { CONNECTED_COMMAND } from "@lexical/yjs"
-import {
-  $createTextNode,
-  $getRoot,
-  $isParagraphNode,
-  COMMAND_PRIORITY_EDITOR,
-  LexicalEditor,
-} from "lexical"
+import { $getRoot, $isParagraphNode, COMMAND_PRIORITY_EDITOR, LexicalEditor } from "lexical"
 import { useModal } from "../../hooks/useModal"
 import { Icon } from "../../ui/Icon/Icon"
-import { COMPOSER_TRANSFORMERS } from "../MarkdownTransformers/MarkdownTransformers"
 import styles from "./ActionsPlugin.module.scss"
 import { ShowClearDialog } from "./ShowClearDialog/ShowClearDialog"
 
@@ -102,20 +93,6 @@ export const ActionsPlugin = () => {
     )
   }, [editor, isEditable])
 
-  const handleMarkdownToggle = useCallback(() => {
-    editor.update(() => {
-      const root = $getRoot()
-      const firstChild = root.getFirstChild()
-      if ($isCodeNode(firstChild) && firstChild.getLanguage() === "markdown") {
-        $convertFromMarkdownString(firstChild.getTextContent(), COMPOSER_TRANSFORMERS)
-      } else {
-        const markdown = $convertToMarkdownString(COMPOSER_TRANSFORMERS)
-        root.clear().append($createCodeNode("markdown").append($createTextNode(markdown)))
-      }
-      root.selectEnd()
-    })
-  }, [editor])
-
   return (
     <div className={styles.actions}>
       <button
@@ -130,14 +107,6 @@ export const ActionsPlugin = () => {
         title="Clear"
       >
         <Icon type="clear" />
-      </button>
-      <button
-        aria-label="Convert from markdown"
-        className={styles.actionButton}
-        onClick={handleMarkdownToggle}
-        title="Convert From Markdown"
-      >
-        <Icon type="markdown" />
       </button>
       {modal}
     </div>

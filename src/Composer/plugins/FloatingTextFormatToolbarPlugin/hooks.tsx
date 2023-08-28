@@ -19,7 +19,6 @@ export const useFloatingTextFormatToolbar = (
   const [isStrikethrough, setIsStrikethrough] = useState(false)
   const [isSubscript, setIsSubscript] = useState(false)
   const [isSuperscript, setIsSuperscript] = useState(false)
-  const [isCode, setIsCode] = useState(false)
 
   const updatePopup = useCallback(() => {
     editor.getEditorState().read(() => {
@@ -55,7 +54,6 @@ export const useFloatingTextFormatToolbar = (
       setIsStrikethrough(selection.hasFormat("strikethrough"))
       setIsSubscript(selection.hasFormat("subscript"))
       setIsSuperscript(selection.hasFormat("superscript"))
-      setIsCode(selection.hasFormat("code"))
 
       // Update links
       const parent = node.getParent()
@@ -108,7 +106,6 @@ export const useFloatingTextFormatToolbar = (
       anchorElem={anchorElem}
       editor={editor}
       isBold={isBold}
-      isCode={isCode}
       isItalic={isItalic}
       isLink={isLink}
       isStrikethrough={isStrikethrough}

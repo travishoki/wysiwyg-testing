@@ -18,7 +18,6 @@ type TextFormatFloatingToolbarProps = {
   anchorElem: HTMLElement
   editor: LexicalEditor
   isBold: boolean
-  isCode: boolean
   isItalic: boolean
   isLink: boolean
   isStrikethrough: boolean
@@ -31,7 +30,6 @@ export const TextFormatFloatingToolbar = ({
   anchorElem,
   editor,
   isBold,
-  isCode,
   isItalic,
   isLink,
   isStrikethrough,
@@ -234,16 +232,6 @@ export const TextFormatFloatingToolbar = ({
             type="button"
           >
             <IconButton type="superscript" />
-          </button>
-          <button
-            aria-label="Insert code block"
-            className={classNames(styles.popupItem, styles.spaced + (isCode ? styles.active : ""))}
-            onClick={() => {
-              editor.dispatchCommand(FORMAT_TEXT_COMMAND, "code")
-            }}
-            type="button"
-          >
-            <IconButton type="code" />
           </button>
           <button
             aria-label="Insert link"

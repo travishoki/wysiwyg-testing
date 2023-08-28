@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from "react"
-import { $isCodeNode, CodeNode, getLanguageFriendlyName, normalizeCodeLang } from "@lexical/code"
+import { $isCodeNode, CodeNode, getLanguageFriendlyName } from "@lexical/code"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import classNames from "classnames"
 import { $getNearestNodeFromDOMNode } from "lexical"
 import { CopyButton } from "../CopyButton/CopyButton"
-import { PrettierButton, canBePrettier } from "../PrettierButton/PrettierButton"
 import { useDebounce } from "../hooks"
 import { getMouseInfo } from "./CodeActionMenuContainer.helpers"
 import styles from "./CodeActionMenuContainer.module.scss"
@@ -113,7 +112,6 @@ export const CodeActionMenuContainer = ({ anchorElem }: CodeActionMenuContainerP
       }
     })
   })
-  const normalizedLang = normalizeCodeLang(lang)
   const codeFriendlyName = getLanguageFriendlyName(lang)
 
   return (
@@ -128,9 +126,6 @@ export const CodeActionMenuContainer = ({ anchorElem }: CodeActionMenuContainerP
         >
           <div className={styles.codeHighlightLanguage}>{codeFriendlyName}</div>
           <CopyButton editor={editor} getCodeDOMNode={getCodeDOMNode} />
-          {canBePrettier(normalizedLang) && (
-            <PrettierButton editor={editor} getCodeDOMNode={getCodeDOMNode} lang={normalizedLang} />
-          )}
         </div>
       )}
     </>

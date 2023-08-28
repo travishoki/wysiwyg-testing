@@ -7,7 +7,6 @@
  */
 
 import React, { useCallback, useMemo, useState } from "react"
-import { $createCodeNode } from "@lexical/code"
 import {
   INSERT_CHECK_LIST_COMMAND,
   INSERT_ORDERED_LIST_COMMAND,
@@ -158,26 +157,6 @@ export const ComponentPickerPlugin = () => {
             const selection = $getSelection()
             if ($isRangeSelection(selection)) {
               $setBlocksType(selection, () => $createQuoteNode())
-            }
-          }),
-      }),
-      new ComponentPickerOption("Code", {
-        icon: <IconDropdown type="code" />,
-        keywords: ["javascript", "python", "js", "codeblock"],
-        onSelect: () =>
-          editor.update(() => {
-            const selection = $getSelection()
-
-            if ($isRangeSelection(selection)) {
-              if (selection.isCollapsed()) {
-                $setBlocksType(selection, () => $createCodeNode())
-              } else {
-                // Will this ever happen?
-                const textContent = selection.getTextContent()
-                const codeNode = $createCodeNode()
-                selection.insertNodes([codeNode])
-                selection.insertRawText(textContent)
-              }
             }
           }),
       }),
