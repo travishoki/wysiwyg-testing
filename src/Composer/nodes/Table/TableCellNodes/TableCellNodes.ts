@@ -6,7 +6,6 @@
  *
  */
 
-import { CodeHighlightNode, CodeNode } from "@lexical/code"
 import { HashtagNode } from "@lexical/hashtag"
 import { AutoLinkNode, LinkNode } from "@lexical/link"
 import { ListItemNode, ListNode } from "@lexical/list"
@@ -23,9 +22,7 @@ export const TableCellNodes: Array<Klass<LexicalNode>> = [
   ListNode,
   ListItemNode,
   QuoteNode,
-  CodeNode,
   HashtagNode,
-  CodeHighlightNode,
   AutoLinkNode,
   LinkNode,
   ImageNode,
