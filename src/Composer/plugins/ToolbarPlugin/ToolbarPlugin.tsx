@@ -61,7 +61,6 @@ import { DropDownBlockFormat } from "./DropDownBlockFormat/DropDownBlockFormat"
 import { DropDownTextAlignment } from "./DropDownTextAlignment/DropDownTextAlignment"
 import { DropdownCode } from "./DropdownCode/DropdownCode"
 import { DropdownInsert } from "./DropdownInsert/DropdownInsert"
-import { DropdownTable } from "./DropdownTable/DropdownTable"
 import { DropdownTextStyle } from "./DropdownTextStyle/DropdownTextStyle"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
 import { IconButton } from "./IconButton/IconButton"
@@ -432,12 +431,6 @@ export const ToolbarPlugin = () => {
             isSuperscript={isSuperscript}
           />
           <Divider />
-          {rootType === "table" && (
-            <>
-              <DropdownTable isEditable={isEditable} />
-              <Divider />
-            </>
-          )}
           <DropdownInsert
             activeEditor={activeEditor}
             isEditable={isEditable}
