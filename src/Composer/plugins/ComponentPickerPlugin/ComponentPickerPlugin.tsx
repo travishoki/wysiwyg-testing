@@ -35,7 +35,6 @@ import { IconDropdown } from "../../ui/DropDown/IconDropdown/IconDropdown"
 import { alignmentTypes } from "../../ui/Icon/types"
 import { TypeaheadPopover } from "../../ui/TypeaheadPopover/TypeaheadPopover"
 import { InsertImageDialog } from "../ImagesPlugin/InsertImageDialog/InsertImageDialog"
-import { InsertNewTableDialog } from "../TablePlugin/InsertNewTableDialog/InsertNewTableDialog"
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog/InsertTableDialog"
 import { ComponentPickerMenuItem } from "./ComponentPickerMenuItem/ComponentPickerMenuItem"
 import { ComponentPickerOption } from "./ComponentPickerOption/ComponentPickerOption"
@@ -134,14 +133,6 @@ export const ComponentPickerPlugin = () => {
         onSelect: () =>
           showModal("Insert Table", (onClose) => (
             <InsertTableDialog activeEditor={editor} onClose={onClose} />
-          )),
-      }),
-      new ComponentPickerOption("Table (Experimental)", {
-        icon: <IconDropdown type="table" />,
-        keywords: ["table", "grid", "spreadsheet", "rows", "columns"],
-        onSelect: () =>
-          showModal("Insert Table", (onClose) => (
-            <InsertNewTableDialog activeEditor={editor} onClose={onClose} />
           )),
       }),
       new ComponentPickerOption("Numbered List", {

@@ -11,7 +11,6 @@ import stylesIconDropdown from "../../../ui/DropDown/IconDropdown/IconDropdown.m
 import stylesIcon from "../../../ui/Icon/Icon.module.scss"
 import { InsertImageDialog } from "../../ImagesPlugin/InsertImageDialog/InsertImageDialog"
 import { InsertInlineImageDialog } from "../../InlineImagePlugin/InsertInlineImageDialog/InsertInlineImageDialog"
-import { InsertNewTableDialog } from "../../TablePlugin/InsertNewTableDialog/InsertNewTableDialog"
 import { InsertTableDialog } from "../../TablePlugin/InsertTableDialog/InsertTableDialog"
 import stylesToolbarPlugin from "../ToolbarPlugin.module.scss"
 
@@ -72,17 +71,6 @@ export const DropdownInsert = ({ activeEditor, isEditable, showModal }: Dropdown
       >
         <IconDropdown type="table" />
         <span className={stylesDropdown.dropdownText}>Table</span>
-      </DropDownItem>
-      <DropDownItem
-        className={stylesDropdown.dropdownItem}
-        onClick={() => {
-          showModal("Insert Table", (onClose) => (
-            <InsertNewTableDialog activeEditor={activeEditor} onClose={onClose} />
-          ))
-        }}
-      >
-        <IconDropdown type="table" />
-        <span className={stylesDropdown.dropdownText}>Table (Experimental)</span>
       </DropDownItem>
     </DropDown>
   )
