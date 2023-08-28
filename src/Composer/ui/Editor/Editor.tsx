@@ -28,8 +28,6 @@ import { ActionsPlugin } from "../../plugins/ActionsPlugin/ActionsPlugin"
 import { AutoEmbedPlugin } from "../../plugins/AutoEmbedPlugin/AutoEmbedPlugin"
 import { AutoLinkPlugin } from "../../plugins/AutoLinkPlugin/AutoLinkPlugin"
 import { AutocompletePlugin } from "../../plugins/AutocompletePlugin/AutocompletePlugin"
-import { CodeActionMenuPlugin } from "../../plugins/CodeActionMenuPlugin/CodeActionMenuPlugin"
-import { CodeHighlightPlugin } from "../../plugins/CodeHighlightPlugin/CodeHighlightPlugin"
 import { ComponentPickerPlugin } from "../../plugins/ComponentPickerPlugin/ComponentPickerPlugin"
 import { ContextMenuPlugin } from "../../plugins/ContextMenuPlugin/ContextMenuPlugin"
 import { DragDropPaste } from "../../plugins/DragDropPastePlugin/DragDropPastePlugin"
@@ -140,7 +138,6 @@ export const Editor = () => {
           placeholder={placeholder}
         />
         <MarkdownShortcutPlugin />
-        <CodeHighlightPlugin />
         <ListPlugin />
         <CheckListPlugin />
         <ListMaxIndentLevelPlugin maxDepth={7} />
@@ -174,7 +171,6 @@ export const Editor = () => {
         {floatingAnchorElem && !isSmallWidthViewport && (
           <>
             <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
-            <CodeActionMenuPlugin anchorElem={floatingAnchorElem} />
             <FloatingLinkEditorPlugin anchorElem={floatingAnchorElem} />
             <TableActionMenuPlugin anchorElem={floatingAnchorElem} cellMerge />
             <FloatingTextFormatToolbarPlugin anchorElem={floatingAnchorElem} />
