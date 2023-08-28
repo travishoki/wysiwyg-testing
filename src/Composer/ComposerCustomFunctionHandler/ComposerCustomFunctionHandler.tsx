@@ -6,6 +6,7 @@ import { INSERT_MERGE_FIELD_COMMAND } from "../const"
 
 export type composerRefProps = Maybe<{
   dispatchMergeField: (mergeField: MergeField) => void
+  onLock: () => void
   onSubmit: () => string
 }>
 
@@ -23,6 +24,11 @@ export const ComposerCustomFunctionHandler = ({ composerRef }: MergeFieldHandler
         mergeFieldName: mergeField.name ?? "",
       }
       editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, payload)
+    },
+    onLock() {
+      editor.update(() => {
+        editor.setEditable(!editor.isEditable())
+      })
     },
     onSubmit(): string {
       let htmlString = ""

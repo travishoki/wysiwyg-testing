@@ -1,5 +1,5 @@
 import React from "react"
-import { Button } from "../Composer/Controls/Button/Button"
+import { Button } from "../Button/Button"
 
 type SubmitButtonProps = {
   onClick: () => void

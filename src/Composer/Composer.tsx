@@ -6,7 +6,6 @@ import {
   ComposerCustomFunctionHandler,
   composerRefProps,
 } from "./ComposerCustomFunctionHandler/ComposerCustomFunctionHandler"
-import { Controls } from "./Controls/Controls"
 import { SharedAutocompleteContext } from "./context/SharedAutocompleteContext"
 import { SharedHistoryContext } from "./context/SharedHistoryContext"
 import { ComposerNodes } from "./nodes/ComposerNodes"
@@ -44,7 +43,6 @@ export const Composer = ({ composerRef, onChange }: ComposerProps) => {
               <div className={styles.editorShell}>
                 <ComposerCustomFunctionHandler composerRef={composerRef} />
                 <Editor />
-                <Controls />
                 <OnChangePlugin onChange={() => onChange && onChange()} />
               </div>
             </SharedAutocompleteContext>

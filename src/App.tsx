@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react"
-import { SubmitButton } from "SubmitButton/SubmitButton"
 import styles from "./App.module.scss"
 import { Composer } from "./Composer/Composer"
 import { composerRefProps } from "./Composer/ComposerCustomFunctionHandler/ComposerCustomFunctionHandler"
+import { Controls } from "./Controls/Controls"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 import { Output } from "./Output/Output"
 import { MergeField } from "./types"
@@ -29,11 +29,17 @@ export const App = () => {
     }
   }
 
+  const onLock = () => {
+    if (composerRef.current) {
+      composerRef.current.onLock()
+    }
+  }
+
   return (
     <div className={styles.app}>
       <Composer composerRef={composerRef} onChange={onChange} onSubmit={setOutput} />
       <MergeFieldControls onClick={onClickMergeField} />
-      <SubmitButton onClick={onSubmit} />
+      <Controls onLock={onLock} onSubmit={onSubmit} />
       <Output output={output} />
     </div>
   )
