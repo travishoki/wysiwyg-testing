@@ -52,6 +52,5 @@ export type iconType =
   | "undo"
   | "unlock"
   | "user"
-  | "youtube"
 
 export type alignmentTypes = "left" | "center" | "right" | "justify"
