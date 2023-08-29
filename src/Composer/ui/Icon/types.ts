@@ -26,7 +26,6 @@ export type iconType =
   | "justify-align"
   | "left-align"
   | "link"
-  | "lock"
   | "number"
   | "numbered-list"
   | "outdent"
@@ -44,7 +43,6 @@ export type iconType =
   | "table"
   | "underline"
   | "undo"
-  | "unlock"
   | "user"
 
 export type alignmentTypes = "left" | "center" | "right" | "justify"
