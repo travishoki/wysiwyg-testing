@@ -86,7 +86,7 @@ const $updateCells = (
   updateTableNode: (fn2: (tableNode: TableNode) => void) => void,
   fn: () => void,
 ): void => {
-  for (const id of ids) {
+  ids.forEach((id) => {
     const cell = getCell(rows, id, cellCoordMap)
     if (cell !== null && cellEditor !== null) {
       const editorState = cellEditor.parseEditorState(cell.json)
@@ -101,7 +101,7 @@ const $updateCells = (
         tableNode.updateCellJSON(x, y, newJSON)
       })
     }
-  }
+  })
 }
 
 type TableComponentProps = {
