@@ -44,7 +44,10 @@ export class Point {
   }
 
   public calcDistanceTo(point: Point): number {
-    return Math.sqrt(Math.pow(this.calcDeltaXTo(point), 2) + Math.pow(this.calcDeltaYTo(point), 2))
+    const deltaX = this.calcDeltaXTo(point)
+    const deltaY = this.calcDeltaYTo(point)
+
+    return Math.sqrt(deltaX ** 2 + deltaY ** 2)
   }
 }
 
