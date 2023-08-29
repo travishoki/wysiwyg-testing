@@ -2,8 +2,82 @@
   opacity: 0.2 !important;
 }
 
-.paragraph {
-  background-image: url(../../images/icons/text-paragraph.svg);
+.bg-color {
+  background-image: url(../../images/icons/bg-color.svg);
+}
+
+.bold {
+  background-image: url(../../images/icons/type-bold.svg);
+}
+
+.bullet,
+.bullet-list {
+  background-image: url(../../images/icons/list-ul.svg);
+}
+
+.bucket {
+  background-image: url(../../images/icons/paint-bucket.svg);
+}
+
+.caret-right {
+  background-image: url(../../images/icons/caret-right-fill.svg);
+}
+
+.center-align {
+  background-image: url(../../images/icons/text-center.svg);
+}
+
+.center-align {
+  background-image: url(../../images/icons/text-center.svg);
+}
+
+.check,
+.check-list {
+  background-image: url(../../images/icons/square-check.svg);
+}
+
+.chevron-down {
+  background-image: url(../../images/icons/chevron-down.svg);
+}
+
+.clear {
+  background-image: url(../../images/icons/trash.svg);
+}
+
+.close {
+  background-image: url(../../images/icons/close.svg);
+}
+
+.connect {
+  background-image: url(../../images/icons/plug-fill.svg);
+}
+
+.copy {
+  background-image: url(../../images/icons/copy.svg);
+}
+
+.diagram-2 {
+  background-image: url(../../images/icons/diagram-2.svg);
+}
+
+.disconnect {
+  background-image: url(../../images/icons/plug.svg);
+}
+
+.dropdown-more {
+  background-image: url(../../images/icons/dropdown-more.svg);
+}
+
+.export {
+  background-image: url(../../images/icons/download.svg);
+}
+
+.font-color {
+  background-image: url(../../images/icons/font-color.svg);
+}
+
+.font-family {
+  background-image: url(../../images/icons/font-family.svg);
 }
 
 .h1 {
@@ -30,95 +104,101 @@
   background-image: url(../../images/icons/type-h6.svg);
 }
 
-.bullet,
-.bullet-list {
-  background-image: url(../../images/icons/list-ul.svg);
-}
-
-.check-list,
-.check {
-  background-image: url(../../images/icons/square-check.svg);
-}
-
-.numbered-list,
-.number {
-  background-image: url(../../images/icons/list-ol.svg);
-}
-
-.quote {
-  background-image: url(../../images/icons/chat-square-quote.svg);
-}
-
-.indent {
-  background-image: url(../../images/icons/indent.svg);
-}
-
-.outdent {
-  background-image: url(../../images/icons/outdent.svg);
-}
-
-.lock {
-  background-image: url(../../images/icons/lock-fill.svg);
+.horizontal-rule {
+  background-image: url(../../images/icons/horizontal-rule.svg);
 }
 
 .image {
   background-image: url(../../images/icons/file-image.svg);
 }
 
-.table {
-  background-image: url(../../images/icons/table.svg);
+.image {
+  background-image: url(../../images/icons/file-image.svg);
 }
 
-.unlock {
-  background-image: url(../../images/icons/lock.svg);
+.indent {
+  background-image: url(../../images/icons/indent.svg);
 }
 
-.left-align {
-  background-image: url(../../images/icons/text-left.svg);
-}
-
-.center-align {
-  background-image: url(../../images/icons/text-center.svg);
-}
-
-.right-align {
-  background-image: url(../../images/icons/text-right.svg);
-}
-
-.justify-align {
-  background-image: url(../../images/icons/justify.svg);
-}
-
-.disconnect {
-  background-image: url(../../images/icons/plug.svg);
-}
-
-.connect {
-  background-image: url(../../images/icons/plug-fill.svg);
-}
-
-.palette {
-  background-image: url(../../images/icons/palette.svg);
-}
-
-.bucket {
-  background-image: url(../../images/icons/paint-bucket.svg);
-}
-
-.bold {
-  background-image: url(../../images/icons/type-bold.svg);
+.indent {
+  background-image: url(../../images/icons/indent.svg);
 }
 
 .italic {
   background-image: url(../../images/icons/type-italic.svg);
 }
 
-.clear {
-  background-image: url(../../images/icons/trash.svg);
+.justify-align {
+  background-image: url(../../images/icons/justify.svg);
 }
 
-.underline {
-  background-image: url(../../images/icons/type-underline.svg);
+.justify-align {
+  background-image: url(../../images/icons/justify.svg);
+}
+
+.left-align {
+  background-image: url(../../images/icons/text-left.svg);
+}
+
+.link {
+  background-image: url(../../images/icons/link.svg);
+}
+
+.lock {
+  background-image: url(../../images/icons/lock-fill.svg);
+}
+
+.markdown {
+  background-image: url(../../images/icons/markdown.svg);
+}
+
+.number,
+.numbered-list {
+  background-image: url(../../images/icons/list-ol.svg);
+}
+
+.outdent {
+  background-image: url(../../images/icons/outdent.svg);
+}
+
+.outdent {
+  background-image: url(../../images/icons/outdent.svg);
+}
+
+.palette {
+  background-image: url(../../images/icons/palette.svg);
+}
+
+.paragraph {
+  background-image: url(../../images/icons/text-paragraph.svg);
+}
+
+.plus {
+  background-image: url(../../images/icons/plus.svg);
+}
+
+.poll {
+  background-image: url(../../images/icons/card-checklist.svg);
+}
+
+.quote {
+  background-image: url(../../images/icons/chat-square-quote.svg);
+}
+
+.redo {
+  background-image: url(../../images/icons/arrow-clockwise.svg);
+}
+
+.right-align {
+  background-image: url(../../images/icons/text-right.svg);
+}
+
+.right-align {
+  background-image: url(../../images/icons/text-right.svg);
+}
+
+.sticky {
+  background-image: url(../../images/icons/sticky.svg);
 }
 
 .strikethrough {
@@ -129,115 +209,30 @@
   background-image: url(../../images/icons/type-subscript.svg);
 }
 
+.success {
+  background-image: url(../../images/icons/success.svg);
+}
+
 .superscript {
   background-image: url(../../images/icons/type-superscript.svg);
 }
 
-.link {
-  background-image: url(../../images/icons/link.svg);
+.table {
+  background-image: url(../../images/icons/table.svg);
 }
 
-.horizontal-rule {
-  background-image: url(../../images/icons/horizontal-rule.svg);
-}
-
-.plus {
-  background-image: url(../../images/icons/plus.svg);
-}
-
-.caret-right {
-  background-image: url(../../images/icons/caret-right-fill.svg);
-}
-
-.dropdown-more {
-  background-image: url(../../images/icons/dropdown-more.svg);
-}
-
-.font-color {
-  background-image: url(../../images/icons/font-color.svg);
-}
-
-.font-family {
-  background-image: url(../../images/icons/font-family.svg);
-}
-
-.bg-color {
-  background-image: url(../../images/icons/bg-color.svg);
-}
-
-.image {
-  background-image: url(../../images/icons/file-image.svg);
-}
-
-.close {
-  background-image: url(../../images/icons/close.svg);
-}
-
-.poll {
-  background-image: url(../../images/icons/card-checklist.svg);
-}
-
-.left-align,
-.left-align {
-  background-image: url(../../images/icons/text-left.svg);
-}
-
-.center-align {
-  background-image: url(../../images/icons/text-center.svg);
-}
-
-.right-align {
-  background-image: url(../../images/icons/text-right.svg);
-}
-
-.justify-align {
-  background-image: url(../../images/icons/justify.svg);
-}
-
-.indent {
-  background-image: url(../../images/icons/indent.svg);
-}
-
-.markdown {
-  background-image: url(../../images/icons/markdown.svg);
-}
-
-.outdent {
-  background-image: url(../../images/icons/outdent.svg);
+.underline {
+  background-image: url(../../images/icons/type-underline.svg);
 }
 
 .undo {
   background-image: url(../../images/icons/arrow-counterclockwise.svg);
 }
 
-.redo {
-  background-image: url(../../images/icons/arrow-clockwise.svg);
-}
-
-.sticky {
-  background-image: url(../../images/icons/sticky.svg);
-}
-
-.export {
-  background-image: url(../../images/icons/download.svg);
-}
-
-.diagram-2 {
-  background-image: url(../../images/icons/diagram-2.svg);
+.unlock {
+  background-image: url(../../images/icons/lock.svg);
 }
 
 .user {
   background-image: url(../../images/icons/user.svg);
-}
-
-.copy {
-  background-image: url(../../images/icons/copy.svg);
-}
-
-.success {
-  background-image: url(../../images/icons/success.svg);
-}
-
-.chevron-down {
-  background-image: url(../../images/icons/chevron-down.svg);
 }
