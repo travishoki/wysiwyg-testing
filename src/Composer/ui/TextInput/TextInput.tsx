@@ -6,10 +6,11 @@
  *
  */
 
-import React, { HTMLInputTypeAttribute } from "react"
+import React from "react"
 import { InputInput } from "../Input/InputInput"
 import { InputLabel } from "../Input/InputLabel/InputLabel"
 import { InputWrapper } from "../Input/InputWrapper/InputWrapper"
+import { HTMLInputTypeAttribute } from "./types"
 
 type TextInputProps = Readonly<{
   "data-test-id"?: string
