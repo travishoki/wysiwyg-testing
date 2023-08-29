@@ -40,9 +40,9 @@ export const SharedAutocompleteContext = ({ children }: SharedAutocompleteContex
       },
       (newSuggestion: Suggestion) => {
         suggestion = newSuggestion
-        for (const listener of listeners) {
+        listeners.forEach((listener) => {
           listener(newSuggestion)
-        }
+        })
       },
     ]
   }, [])
