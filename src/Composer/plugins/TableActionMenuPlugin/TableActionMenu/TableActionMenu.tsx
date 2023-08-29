@@ -186,8 +186,8 @@ export const TableActionMenu = ({
               node.setColSpan(columns).setRowSpan(rows)
               firstCell = node
               const isEmpty = $cellContainsEmptyParagraph(node)
-              let firstChild
-              if (isEmpty && $isParagraphNode((firstChild = node.getFirstChild()))) {
+              const firstChild = node.getFirstChild()
+              if (isEmpty && $isParagraphNode(firstChild)) {
                 firstChild.remove()
               }
             } else if ($isGridCellNode(firstCell)) {
