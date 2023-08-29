@@ -13,7 +13,8 @@
     "lint": "eslint --cache --ext .js,.ts,.tsx src",
     "prepare": "husky install",
     "ts-check": "yarn tsc",
-    "generate:scss-types": "typed-scss-modules \"src/**/*.module.scss\" --exportType default --nameFormat all --includePaths src"
+    "scss": "typed-scss-modules \"src/**/*.module.scss\" --exportType default --nameFormat all --includePaths src",
+    "validate": "yarn lint && yarn ts-check && yarn deadcode"
   },
   "dependencies": {
     "@lexical/clipboard": "^0.11.3",
