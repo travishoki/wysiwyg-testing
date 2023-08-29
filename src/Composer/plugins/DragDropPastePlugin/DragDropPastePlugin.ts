@@ -26,14 +26,16 @@ export const DragDropPaste = (): null => {
             files,
             [ACCEPTABLE_IMAGE_TYPES].flatMap((x) => x),
           )
-          for (const { file, result } of filesResult) {
+
+          filesResult.forEach((fileResult) => {
+            const { file, result } = fileResult
             if (isMimeType(file, ACCEPTABLE_IMAGE_TYPES)) {
               editor.dispatchCommand(INSERT_IMAGE_COMMAND, {
                 altText: file.name,
                 src: result,
               })
             }
-          }
+          })
         })()
 
         return true
