@@ -59,10 +59,10 @@ export const ContextMenuPlugin = () => {
                 return
               }
 
-              for (const type of item.types) {
+              item.types.forEach(async (type) => {
                 const dataString = await (await item.getType(type)).text()
                 data.setData(type, dataString)
-              }
+              })
 
               const event = new ClipboardEvent("paste", {
                 clipboardData: data,
