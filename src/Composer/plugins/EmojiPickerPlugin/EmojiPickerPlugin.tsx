@@ -25,10 +25,10 @@ type Emoji = {
   category: string
   description: string
   emoji: string
-  ios_version: string
-  skin_tones?: boolean
+  iosVersion: string
+  skinTones?: boolean
   tags: Array<string>
-  unicode_version: string
+  unicodeVersion: string
 }
 
 const MAX_EMOJI_SUGGESTION_COUNT = 10
