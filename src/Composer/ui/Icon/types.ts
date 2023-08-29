@@ -31,7 +31,6 @@ export type iconType =
   | "outdent"
   | "palette"
   | "paragraph"
-  | "poll"
   | "quote"
   | "redo"
   | "right-align"
