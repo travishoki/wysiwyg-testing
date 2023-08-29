@@ -44,11 +44,12 @@ const addListener = (element: HTMLElement, cb: Listener): (() => void) => {
         return
       }
       const end = readTouch(e)
-      for (const listener of listeners) {
+
+      listeners.forEach((listener) => {
         if (end !== null) {
           listener([end[0] - start[0], end[1] - start[1]], e)
         }
-      }
+      })
     }
     element.addEventListener("touchstart", handleTouchstart)
     element.addEventListener("touchend", handleTouchend)

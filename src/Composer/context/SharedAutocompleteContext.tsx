@@ -40,6 +40,7 @@ export const SharedAutocompleteContext = ({ children }: SharedAutocompleteContex
       },
       (newSuggestion: Suggestion) => {
         suggestion = newSuggestion
+
         listeners.forEach((listener) => {
           listener(newSuggestion)
         })
