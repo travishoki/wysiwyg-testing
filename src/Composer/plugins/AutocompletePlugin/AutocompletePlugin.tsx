@@ -54,10 +54,14 @@ const $search = (
   }
   const word = []
   const text = node.getTextContent()
-  let i = node.getTextContentSize()
-  let c
-  while (i-- && i >= 0 && (c = text[i]) !== " ") {
-    word.push(c)
+  let size = node.getTextContentSize()
+  for (let i = size - 1; i >= 0; i--) {
+    const c = text[i]
+    if (c === " ") {
+      break
+    } else {
+      word.push(c)
+    }
   }
   if (word.length === 0) {
     return [false, ""]
