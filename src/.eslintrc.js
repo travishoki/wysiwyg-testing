@@ -118,6 +118,10 @@ module.exports = {
 
     /** Syncronizing Rules (Warnings) */
     "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "no-alert": "warn",
+    "no-cond-assign": "warn", // TODO: Add Error
+    "react/no-danger": "warn",
 
     // Extra Syntax
     "no-duplicate-imports": "error",
