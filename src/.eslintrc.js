@@ -106,6 +106,7 @@ module.exports = {
     "jsx-a11y/control-has-associated-label": "error",
     "lines-between-class-members": "error",
     "no-continue": "error",
+    "no-dupe-class-members": "error",
     "no-restricted-syntax": "error",
     "no-useless-return": "error",
     "prefer-promise-reject-errors": "error",
@@ -116,7 +117,6 @@ module.exports = {
     camelcase: "error",
 
     /** Syncronizing Rules (Warnings) */
-    "no-dupe-class-members": "warn", // TODO: change to error
     "jsx-a11y/click-events-have-key-events": "warn",
 
     // Extra Syntax
