@@ -270,6 +270,7 @@ export class TableNode extends DecoratorNode<JSX.Element> {
     )
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   isInline(): false {
     return false
   }
