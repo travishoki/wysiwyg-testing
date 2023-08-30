@@ -14,7 +14,6 @@ export type SettingName =
   | "isCharLimitUtf8"
   | "isAutocomplete"
   | "shouldUseLexicalContextMenu"
-  | "showTreeView"
   | "showNestedEditorTreeView"
   | "emptyEditor"
   | "showTableOfContents"
@@ -34,7 +33,6 @@ export const DEFAULT_SETTINGS: Settings = {
   shouldUseLexicalContextMenu: false,
   showNestedEditorTreeView: false,
   showTableOfContents: false,
-  showTreeView: true,
   tableCellBackgroundColor: true,
   tableCellMerge: true,
 }
