@@ -7,8 +7,6 @@
  */
 
 export type SettingName =
-  | "disableBeforeInput"
-  | "measureTypingPerf"
   | "isAutocomplete"
   | "shouldUseLexicalContextMenu"
   | "emptyEditor"
@@ -19,10 +17,8 @@ export type SettingName =
 type Settings = Record<SettingName, boolean>
 
 export const DEFAULT_SETTINGS: Settings = {
-  disableBeforeInput: false,
   emptyEditor: false,
   isAutocomplete: false,
-  measureTypingPerf: false,
   shouldUseLexicalContextMenu: false,
   showTableOfContents: false,
   tableCellBackgroundColor: true,
