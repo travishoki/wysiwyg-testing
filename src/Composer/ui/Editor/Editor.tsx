@@ -41,7 +41,6 @@ import { InlineImagePlugin } from "../../plugins/InlineImagePlugin/InlineImagePl
 import { KeywordsPlugin } from "../../plugins/KeywordsPlugin/KeywordsPlugin"
 import { LinkPlugin } from "../../plugins/LinkPlugin/LinkPlugin"
 import { ListMaxIndentLevelPlugin } from "../../plugins/ListMaxIndentLevelPlugin/ListMaxIndentLevelPlugin"
-import { MaxLengthPlugin } from "../../plugins/MaxLengthPlugin/MaxLengthPlugin"
 import { MentionsPlugin } from "../../plugins/MentionsPlugin/MentionsPlugin"
 import { MergeFieldPlugin } from "../../plugins/MergeFieldPlugin/MergeFieldPlugin"
 import { TabFocusPlugin } from "../../plugins/TabFocusPlugin/TabFocusPlugin"
@@ -63,7 +62,6 @@ export const Editor = () => {
       isAutocomplete,
       isCharLimit,
       isCharLimitUtf8,
-      isMaxLength,
       shouldUseLexicalContextMenu,
       showTableOfContents,
       tableCellBackgroundColor,
@@ -112,7 +110,6 @@ export const Editor = () => {
     <>
       <ToolbarPlugin />
       <div className={styles.editorContainer}>
-        {isMaxLength && <MaxLengthPlugin maxLength={30} />}
         <DragDropPaste />
         <AutoFocusPlugin />
         <ClearEditorPlugin />
