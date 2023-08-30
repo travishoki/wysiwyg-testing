@@ -11,7 +11,6 @@ export type SettingName =
   | "measureTypingPerf"
   | "isAutocomplete"
   | "shouldUseLexicalContextMenu"
-  | "showNestedEditorTreeView"
   | "emptyEditor"
   | "showTableOfContents"
   | "tableCellMerge"
@@ -25,7 +24,6 @@ export const DEFAULT_SETTINGS: Settings = {
   isAutocomplete: false,
   measureTypingPerf: false,
   shouldUseLexicalContextMenu: false,
-  showNestedEditorTreeView: false,
   showTableOfContents: false,
   tableCellBackgroundColor: true,
   tableCellMerge: true,
