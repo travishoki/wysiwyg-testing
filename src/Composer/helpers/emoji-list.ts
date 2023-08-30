@@ -9,7 +9,7 @@
 // This list was sourced from Github (MIT License)
 // https://github.com/github/gemoji/blob/master/db/emoji.json
 
-export default [
+const emojiList = [
   {
     aliases: ["grinning"],
     category: "Smileys & Emotion",
@@ -16611,3 +16611,5 @@ export default [
     unicodeVersion: "11.0",
   },
 ]
+
+export default emojiList
