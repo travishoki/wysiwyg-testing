@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 /**
  * Copyright (c) Meta Platforms, Inc. and affiliates.
  *
@@ -46,14 +45,17 @@ export class KeywordNode extends TextNode {
     return dom
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   canInsertTextBefore(): boolean {
     return false
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   canInsertTextAfter(): boolean {
     return false
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   isTextEntity(): true {
     return true
   }

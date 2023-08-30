@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 /**
  * Copyright (c) Meta Platforms, Inc. and affiliates.
  *
@@ -110,10 +109,12 @@ export class TableNode extends DecoratorNode<JSX.Element> {
     this.__rows = rows || []
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   createDOM(): HTMLElement {
     return document.createElement("div")
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   updateDOM(): false {
     return false
   }

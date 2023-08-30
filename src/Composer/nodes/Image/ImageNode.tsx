@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 /**
  * Copyright (c) Meta Platforms, Inc. and affiliates.
  *
@@ -189,6 +188,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
 
   // View
 
+  /* eslint-disable-next-line class-methods-use-this */
   createDOM(config: EditorConfig): HTMLElement {
     const span = document.createElement("span")
     const theme = config.theme
@@ -200,6 +200,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
     return span
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   updateDOM(): false {
     return false
   }

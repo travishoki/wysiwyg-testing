@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 /**
  * Copyright (c) Meta Platforms, Inc. and affiliates.
  *
@@ -59,10 +58,12 @@ export class AutocompleteNode extends DecoratorNode<JSX.Element | null> {
     this.__uuid = uuid
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   updateDOM(_prevNode: unknown, _dom: HTMLElement, _config: EditorConfig): boolean {
     return false
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   createDOM(_config: EditorConfig): HTMLElement {
     return document.createElement("span")
   }

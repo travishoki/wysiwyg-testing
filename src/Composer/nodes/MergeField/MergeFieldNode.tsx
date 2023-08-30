@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 import React, { Suspense } from "react"
 import {
   $applyNodeReplacement,
@@ -68,6 +67,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     this.mergeFieldName = mergeFieldName
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   createDOM(): HTMLElement {
     const element = document.createElement("span")
 
@@ -82,6 +82,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return { element }
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   updateDOM(): false {
     return false
   }

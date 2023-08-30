@@ -69,8 +69,10 @@ export class Rect {
 
   public contains({ x, y }: Point): ContainsPointReturn
 
+  /* eslint-disable-next-line no-dupe-class-members */
   public contains({ bottom, left, right, top }: Rect): boolean
 
+  /* eslint-disable-next-line no-dupe-class-members */
   public contains(target: Point | Rect): boolean | ContainsPointReturn {
     if (isPoint(target)) {
       const { x, y } = target
