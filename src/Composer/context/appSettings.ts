@@ -10,7 +10,6 @@ export type SettingName =
   | "isAutocomplete"
   | "shouldUseLexicalContextMenu"
   | "emptyEditor"
-  | "showTableOfContents"
   | "tableCellMerge"
   | "tableCellBackgroundColor"
 
@@ -20,7 +19,6 @@ export const DEFAULT_SETTINGS: Settings = {
   emptyEditor: false,
   isAutocomplete: false,
   shouldUseLexicalContextMenu: true,
-  showTableOfContents: false,
   tableCellBackgroundColor: true,
   tableCellMerge: true,
 }

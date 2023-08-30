@@ -45,7 +45,6 @@ import { MergeFieldPlugin } from "../../plugins/MergeFieldPlugin/MergeFieldPlugi
 import { TabFocusPlugin } from "../../plugins/TabFocusPlugin/TabFocusPlugin"
 import { TableActionMenuPlugin } from "../../plugins/TableActionMenuPlugin/TableActionMenuPlugin"
 import { TableCellResizerPlugin } from "../../plugins/TableCellResizerPlugin/TableCellResizerPlugin"
-import { TableOfContentsPlugin } from "../../plugins/TableOfContentsPlugin/TableOfContentsPlugin"
 import { TablePlugin as NewTablePlugin } from "../../plugins/TablePlugin/TablePlugin"
 import { ToolbarPlugin } from "../../plugins/ToolbarPlugin/ToolbarPlugin"
 import { CAN_USE_DOM } from "../../shared/canUseDOM"
@@ -60,7 +59,6 @@ export const Editor = () => {
     settings: {
       isAutocomplete,
       shouldUseLexicalContextMenu,
-      showTableOfContents,
       tableCellBackgroundColor,
       tableCellMerge,
     },
@@ -169,7 +167,6 @@ export const Editor = () => {
           </>
         )}
         {isAutocomplete && <AutocompletePlugin />}
-        <div>{showTableOfContents && <TableOfContentsPlugin />}</div>
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
         <ActionsPlugin />
       </div>
