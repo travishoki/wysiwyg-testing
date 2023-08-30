@@ -105,6 +105,7 @@ module.exports = {
     "class-methods-use-this": "error",
     "jsx-a11y/control-has-associated-label": "error",
     "lines-between-class-members": "error",
+    "no-cond-assign": "error",
     "no-continue": "error",
     "no-dupe-class-members": "error",
     "no-restricted-syntax": "error",
@@ -120,7 +121,6 @@ module.exports = {
     "jsx-a11y/click-events-have-key-events": "warn",
     "jsx-a11y/no-static-element-interactions": "warn",
     "no-alert": "warn",
-    "no-cond-assign": "warn", // TODO: Add Error
     "react/no-danger": "warn",
 
     // Extra Syntax
