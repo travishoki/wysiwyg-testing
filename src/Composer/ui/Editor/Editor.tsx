@@ -8,7 +8,6 @@
 
 import React, { useEffect, useState } from "react"
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin"
-import { CharacterLimitPlugin } from "@lexical/react/LexicalCharacterLimitPlugin"
 import { CheckListPlugin } from "@lexical/react/LexicalCheckListPlugin"
 import { ClearEditorPlugin } from "@lexical/react/LexicalClearEditorPlugin"
 import LexicalClickableLinkPlugin from "@lexical/react/LexicalClickableLinkPlugin"
@@ -60,8 +59,6 @@ export const Editor = () => {
   const {
     settings: {
       isAutocomplete,
-      isCharLimit,
-      isCharLimitUtf8,
       shouldUseLexicalContextMenu,
       showTableOfContents,
       tableCellBackgroundColor,
@@ -170,9 +167,6 @@ export const Editor = () => {
             <TableActionMenuPlugin anchorElem={floatingAnchorElem} cellMerge />
             <FloatingTextFormatToolbarPlugin anchorElem={floatingAnchorElem} />
           </>
-        )}
-        {(isCharLimit || isCharLimitUtf8) && (
-          <CharacterLimitPlugin charset={isCharLimit ? "UTF-16" : "UTF-8"} maxLength={5} />
         )}
         {isAutocomplete && <AutocompletePlugin />}
         <div>{showTableOfContents && <TableOfContentsPlugin />}</div>

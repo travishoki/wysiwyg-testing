@@ -9,8 +9,6 @@
 export type SettingName =
   | "disableBeforeInput"
   | "measureTypingPerf"
-  | "isCharLimit"
-  | "isCharLimitUtf8"
   | "isAutocomplete"
   | "shouldUseLexicalContextMenu"
   | "showNestedEditorTreeView"
@@ -25,8 +23,6 @@ export const DEFAULT_SETTINGS: Settings = {
   disableBeforeInput: false,
   emptyEditor: false,
   isAutocomplete: false,
-  isCharLimit: false,
-  isCharLimitUtf8: false,
   measureTypingPerf: false,
   shouldUseLexicalContextMenu: false,
   showNestedEditorTreeView: false,
