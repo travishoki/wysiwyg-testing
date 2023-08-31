@@ -19,7 +19,7 @@ import {
 } from "lexical"
 import { noop } from "lodash"
 import * as ReactDOM from "react-dom"
-import { TypeaheadPopover } from "../../ui/TypeaheadPopover/TypeaheadPopover"
+import { TypeaheadPopoverWithRef } from "../../ui/TypeaheadPopover/TypeaheadPopoverWithRef"
 import { ContextMenu } from "./ContextMenu/ContextMenu"
 import { ContextMenuOption } from "./ContextMenu/ContextMenuOption/ContextMenuOption"
 import styles from "./ContextMenuPlugin.module.scss"
@@ -134,7 +134,7 @@ export const ContextMenuPlugin = () => {
       ) =>
         anchorElementRef.current &&
         ReactDOM.createPortal(
-          <TypeaheadPopover
+          <TypeaheadPopoverWithRef
             className={styles.autoEmbedMenu}
             ref={setMenuRef}
             style={{
@@ -154,7 +154,7 @@ export const ContextMenuPlugin = () => {
               options={options}
               selectedItemIndex={selectedIndex}
             />
-          </TypeaheadPopover>,
+          </TypeaheadPopoverWithRef>,
           anchorElementRef.current,
         )
       }
