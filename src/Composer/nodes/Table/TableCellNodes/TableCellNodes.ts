@@ -11,7 +11,6 @@ import { AutoLinkNode, LinkNode } from "@lexical/link"
 import { ListItemNode, ListNode } from "@lexical/list"
 import { HeadingNode, QuoteNode } from "@lexical/rich-text"
 import { Klass, LexicalNode } from "lexical"
-import { AutocompleteNode } from "../../Autocomplete/AutocompleteNode"
 import { EmojiNode } from "../../Emoji/EmojiNode"
 import { ImageNode } from "../../Image/ImageNode"
 import { KeywordNode } from "../../Keyword/KeywordNode"
@@ -28,6 +27,5 @@ export const TableCellNodes: Array<Klass<LexicalNode>> = [
   ImageNode,
   MentionNode,
   EmojiNode,
-  AutocompleteNode,
   KeywordNode,
 ]

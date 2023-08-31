@@ -26,7 +26,6 @@ import { TableCellNodes } from "../../nodes/Table/TableCellNodes/TableCellNodes"
 import { ActionsPlugin } from "../../plugins/ActionsPlugin/ActionsPlugin"
 import { AutoEmbedPlugin } from "../../plugins/AutoEmbedPlugin/AutoEmbedPlugin"
 import { AutoLinkPlugin } from "../../plugins/AutoLinkPlugin/AutoLinkPlugin"
-import { AutocompletePlugin } from "../../plugins/AutocompletePlugin/AutocompletePlugin"
 import { ComponentPickerPlugin } from "../../plugins/ComponentPickerPlugin/ComponentPickerPlugin"
 import { ContextMenuPlugin } from "../../plugins/ContextMenuPlugin/ContextMenuPlugin"
 import { DragDropPaste } from "../../plugins/DragDropPastePlugin/DragDropPastePlugin"
@@ -56,12 +55,7 @@ import styles from "./Editor.module.scss"
 export const Editor = () => {
   const { historyState } = useSharedHistoryContext()
   const {
-    settings: {
-      isAutocomplete,
-      shouldUseLexicalContextMenu,
-      tableCellBackgroundColor,
-      tableCellMerge,
-    },
+    settings: { shouldUseLexicalContextMenu, tableCellBackgroundColor, tableCellMerge },
   } = useSettings()
   const isEditable = useLexicalEditable()
   const text = "Enter some rich text..."
@@ -166,7 +160,6 @@ export const Editor = () => {
             <FloatingTextFormatToolbarPlugin anchorElem={floatingAnchorElem} />
           </>
         )}
-        {isAutocomplete && <AutocompletePlugin />}
         {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
         <ActionsPlugin />
       </div>

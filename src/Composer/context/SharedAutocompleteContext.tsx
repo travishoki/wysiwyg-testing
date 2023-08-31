@@ -6,14 +6,13 @@
  *
  */
 
-import React, { ReactNode, createContext, useContext, useEffect, useMemo, useState } from "react"
+import React, { ReactNode, createContext, useMemo } from "react"
 
 type Suggestion = null | string
 type CallbackFn = (newSuggestion: Suggestion) => void
 type SubscribeFn = (callbackFn: CallbackFn) => () => void
 type PublishFn = (newSuggestion: Suggestion) => void
 type ContextShape = [SubscribeFn, PublishFn]
-type HookShape = [suggestion: Suggestion, setSuggestion: PublishFn]
 
 const Context: React.Context<ContextShape> = createContext([
   (_cb) => () => {},
@@ -49,16 +48,4 @@ export const SharedAutocompleteContext = ({ children }: SharedAutocompleteContex
   }, [])
 
   return <Context.Provider value={context}>{children}</Context.Provider>
-}
-
-export const useSharedAutocompleteContext = (): HookShape => {
-  const [subscribe, publish]: ContextShape = useContext(Context)
-  const [suggestion, setSuggestion] = useState<Suggestion>(null)
-  useEffect(() => {
-    return subscribe((newSuggestion: Suggestion) => {
-      setSuggestion(newSuggestion)
-    })
-  }, [subscribe])
-
-  return [suggestion, publish]
 }

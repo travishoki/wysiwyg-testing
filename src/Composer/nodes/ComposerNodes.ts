@@ -16,7 +16,6 @@ import { HorizontalRuleNode } from "@lexical/react/LexicalHorizontalRuleNode"
 import { HeadingNode, QuoteNode } from "@lexical/rich-text"
 import { TableCellNode, TableNode, TableRowNode } from "@lexical/table"
 import { Klass, LexicalNode } from "lexical"
-import { AutocompleteNode } from "./Autocomplete/AutocompleteNode"
 import { EmojiNode } from "./Emoji/EmojiNode"
 import { ImageNode } from "./Image/ImageNode"
 import { InlineImageNode } from "./InlineImage/InlineImageNode"
@@ -45,7 +44,6 @@ export const ComposerNodes: Array<Klass<LexicalNode>> = [
   InlineImageNode,
   MentionNode,
   EmojiNode,
-  AutocompleteNode,
   KeywordNode,
   HorizontalRuleNode,
   MarkNode,

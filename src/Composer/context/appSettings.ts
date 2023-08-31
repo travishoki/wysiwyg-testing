@@ -7,7 +7,6 @@
  */
 
 export type SettingName =
-  | "isAutocomplete"
   | "shouldUseLexicalContextMenu"
   | "tableCellMerge"
   | "tableCellBackgroundColor"
@@ -15,7 +14,6 @@ export type SettingName =
 type Settings = Record<SettingName, boolean>
 
 export const DEFAULT_SETTINGS: Settings = {
-  isAutocomplete: true,
   shouldUseLexicalContextMenu: true,
   tableCellBackgroundColor: true,
   tableCellMerge: true,
