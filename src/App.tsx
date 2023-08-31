@@ -4,6 +4,7 @@ import { Composer } from "./Composer/Composer"
 import { composerRefProps } from "./Composer/ComposerCustomFunctionHandler/ComposerCustomFunctionHandler"
 import { Controls } from "./Controls/Controls"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
+import { mergeFieldNameArray } from "./MergeFieldControls/MergeFieldControls.const"
 import { Output } from "./Output/Output"
 import { MergeField } from "./types"
 
@@ -37,7 +38,12 @@ export const App = () => {
 
   return (
     <div className={styles.app}>
-      <Composer composerRef={composerRef} onChange={onChange} onSubmit={setOutput} />
+      <Composer
+        composerRef={composerRef}
+        mergeFields={mergeFieldNameArray}
+        onChange={onChange}
+        onSubmit={setOutput}
+      />
       <MergeFieldControls onClick={onClickMergeField} />
       <Controls onLock={onLock} onSubmit={onSubmit} />
       <Output output={output} />

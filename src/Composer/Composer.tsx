@@ -1,6 +1,7 @@
 import React, { MutableRefObject } from "react"
 import { LexicalComposer } from "@lexical/react/LexicalComposer"
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
+import { MergeField } from "types"
 import styles from "./Composer.module.scss"
 import {
   ComposerCustomFunctionHandler,
@@ -29,11 +30,12 @@ const initialConfig = {
 
 type ComposerProps = {
   composerRef: MutableRefObject<composerRefProps>
+  mergeFields: MergeField[]
   onChange?: () => void
   onSubmit: (output: Maybe<string>) => void
 }
 
-export const Composer = ({ composerRef, onChange }: ComposerProps) => {
+export const Composer = ({ composerRef, mergeFields, onChange }: ComposerProps) => {
   return (
     <div className="composer">
       <LexicalComposer initialConfig={initialConfig}>
@@ -42,7 +44,7 @@ export const Composer = ({ composerRef, onChange }: ComposerProps) => {
             <SharedAutocompleteContext>
               <div className={styles.editorShell}>
                 <ComposerCustomFunctionHandler composerRef={composerRef} />
-                <Editor />
+                <Editor mergeFields={mergeFields} />
                 <OnChangePlugin onChange={() => onChange && onChange()} />
               </div>
             </SharedAutocompleteContext>

@@ -20,6 +20,7 @@ import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
 import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin"
 import { TablePlugin } from "@lexical/react/LexicalTablePlugin"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
+import { MergeField } from "types"
 import { useSettings } from "../../context/SettingsContext"
 import { useSharedHistoryContext } from "../../context/SharedHistoryContext"
 import { TableCellNodes } from "../../nodes/Table/TableCellNodes/TableCellNodes"
@@ -51,7 +52,11 @@ import { ContentEditable } from "../ContentEditable/ContentEditable"
 import { Placeholder } from "../Placeholder/Placeholder"
 import styles from "./Editor.module.scss"
 
-export const Editor = () => {
+type EditorProps = {
+  mergeFields: MergeField[]
+}
+
+export const Editor = ({ mergeFields }: EditorProps) => {
   const { historyState } = useSharedHistoryContext()
   const {
     settings: { tableCellBackgroundColor, tableCellMerge },
@@ -101,7 +106,7 @@ export const Editor = () => {
         <DragDropPaste />
         <AutoFocusPlugin />
         <ClearEditorPlugin />
-        <ComponentPickerPlugin />
+        <ComponentPickerPlugin mergeFields={mergeFields} />
         <EmojiPickerPlugin />
         <AutoEmbedPlugin />
         <MentionsPlugin />
