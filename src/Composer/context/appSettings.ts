@@ -6,15 +6,11 @@
  *
  */
 
-export type SettingName =
-  | "shouldUseLexicalContextMenu"
-  | "tableCellMerge"
-  | "tableCellBackgroundColor"
+export type SettingName = "tableCellMerge" | "tableCellBackgroundColor"
 
 type Settings = Record<SettingName, boolean>
 
 export const DEFAULT_SETTINGS: Settings = {
-  shouldUseLexicalContextMenu: true,
   tableCellBackgroundColor: true,
   tableCellMerge: true,
 }

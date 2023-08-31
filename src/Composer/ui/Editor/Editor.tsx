@@ -27,7 +27,6 @@ import { ActionsPlugin } from "../../plugins/ActionsPlugin/ActionsPlugin"
 import { AutoEmbedPlugin } from "../../plugins/AutoEmbedPlugin/AutoEmbedPlugin"
 import { AutoLinkPlugin } from "../../plugins/AutoLinkPlugin/AutoLinkPlugin"
 import { ComponentPickerPlugin } from "../../plugins/ComponentPickerPlugin/ComponentPickerPlugin"
-import { ContextMenuPlugin } from "../../plugins/ContextMenuPlugin/ContextMenuPlugin"
 import { DragDropPaste } from "../../plugins/DragDropPastePlugin/DragDropPastePlugin"
 import { DraggableBlockPlugin } from "../../plugins/DraggableBlockPlugin/DraggableBlockPlugin"
 import { EmojiPickerPlugin } from "../../plugins/EmojiPickerPlugin/EmojiPickerPlugin"
@@ -55,7 +54,7 @@ import styles from "./Editor.module.scss"
 export const Editor = () => {
   const { historyState } = useSharedHistoryContext()
   const {
-    settings: { shouldUseLexicalContextMenu, tableCellBackgroundColor, tableCellMerge },
+    settings: { tableCellBackgroundColor, tableCellMerge },
   } = useSettings()
   const isEditable = useLexicalEditable()
   const text = "Enter some rich text..."
@@ -160,7 +159,6 @@ export const Editor = () => {
             <FloatingTextFormatToolbarPlugin anchorElem={floatingAnchorElem} />
           </>
         )}
-        {shouldUseLexicalContextMenu && <ContextMenuPlugin />}
         <ActionsPlugin />
       </div>
     </>
