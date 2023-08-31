@@ -8,14 +8,18 @@ type TypeaheadPopoverProps = {
   ref?: (element: HTMLDivElement) => void
   style?: CSSProperties
 }
-export const TypeaheadPopover = ({ children, className, ref }: TypeaheadPopoverProps) => {
+export const TypeaheadPopover = ({ children, className, ref, style }: TypeaheadPopoverProps) => {
   if (ref) {
     return (
-      <div className={classNames(styles.typeaheadPopover, className)} ref={ref}>
+      <div className={classNames(styles.typeaheadPopover, className)} ref={ref} style={style}>
         {children}
       </div>
     )
   }
 
-  return <div className={classNames(styles.typeaheadPopover, className)}>{children}</div>
+  return (
+    <div className={classNames(styles.typeaheadPopover, className)} style={style}>
+      {children}
+    </div>
+  )
 }
