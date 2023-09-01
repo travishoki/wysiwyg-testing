@@ -191,7 +191,7 @@ export const ComponentPickerPlugin = ({ mergeFields }: ComponentPickerPluginProp
       ),
       ...mergeFields.map(
         (mergeField) =>
-          new ComponentPickerOption(mergeField.name, {
+          new ComponentPickerOption(mergeField.name ?? "Merge Field", {
             icon: <IconDropdown type="paragraph" />,
             keywords: ["merge-field"],
             onSelect: () => {
@@ -216,7 +216,7 @@ export const ComponentPickerPlugin = ({ mergeFields }: ComponentPickerPluginProp
           }),
         ]
       : baseOptions
-  }, [editor, getDynamicOptions, queryString, showModal])
+  }, [editor, getDynamicOptions, mergeFields, queryString, showModal])
 
   const onSelectOption = useCallback(
     (
