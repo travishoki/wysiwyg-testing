@@ -41,7 +41,6 @@ export const useModal = (): [
   const showModal: showModalType = useCallback(
     (
       title: string,
-      // eslint-disable-next-line no-shadow
       getContent: (onClose: () => void) => JSX.Element,
       closeOnClickOutside = false,
     ) => {
