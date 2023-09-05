@@ -19,11 +19,13 @@ export const PortalImpl = ({ children, closeOnClickOutside, onClose, title }: Po
 
   useEffect(() => {
     let modalOverlayElement: HTMLElement | null = null
+
     const handler = (event: KeyboardEvent) => {
       if (event.keyCode === 27) {
         onClose()
       }
     }
+
     const clickOutsideHandler = (event: MouseEvent) => {
       const target = event.target
       if (
@@ -34,6 +36,7 @@ export const PortalImpl = ({ children, closeOnClickOutside, onClose, title }: Po
         onClose()
       }
     }
+
     const modelElement = modalRef.current
     if (modelElement !== null) {
       modalOverlayElement = modelElement.parentElement
