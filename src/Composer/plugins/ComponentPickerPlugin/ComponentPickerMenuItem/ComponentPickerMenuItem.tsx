@@ -20,18 +20,19 @@ export const ComponentPickerMenuItem = ({
 }: ComponentPickerMenuItemProps) => {
   return (
     <li
-      aria-selected={isSelected}
       className={classNames(isSelected ? stylesTypeaheadPopover.selected : "")}
       id={`typeahead-item-${index}`}
-      key={option.key}
-      onClick={onClick}
-      onMouseEnter={onMouseEnter}
-      ref={option.setRefElement}
-      role="option"
-      tabIndex={-1}
     >
-      {option.icon}
-      <span className={stylesTypeaheadPopover.text}>{option.title}</span>
+      <button
+        aria-selected={isSelected}
+        onClick={onClick}
+        onMouseEnter={onMouseEnter}
+        ref={option.setRefElement}
+        role="option"
+      >
+        {option.icon}
+        <span className={stylesTypeaheadPopover.text}>{option.title}</span>
+      </button>
     </li>
   )
 }

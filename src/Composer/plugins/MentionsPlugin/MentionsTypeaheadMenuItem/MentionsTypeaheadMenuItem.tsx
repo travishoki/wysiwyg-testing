@@ -20,18 +20,19 @@ export const MentionsTypeaheadMenuItem = ({
 }: MentionsTypeaheadMenuItemProps) => {
   return (
     <li
-      aria-selected={isSelected}
       className={classNames(isSelected ? stylesTypeaheadPopover.selected : "")}
       id={`typeahead-item-${index}`}
-      key={option.key}
-      onClick={onClick}
-      onMouseEnter={onMouseEnter}
-      ref={option.setRefElement}
-      role="option"
-      tabIndex={-1}
     >
-      {option.picture}
-      <span className={stylesTypeaheadPopover.text}>{option.name}</span>
+      <button
+        aria-selected={isSelected}
+        onClick={onClick}
+        onMouseEnter={onMouseEnter}
+        ref={option.setRefElement}
+        role="option"
+      >
+        {option.picture}
+        <span className={stylesTypeaheadPopover.text}>{option.name}</span>
+      </button>
     </li>
   )
 }

@@ -6,7 +6,7 @@
  *
  */
 
-import React, { useCallback, useEffect, useMemo, useState } from "react"
+import React, { Fragment, useCallback, useEffect, useMemo, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import {
   LexicalTypeaheadMenuPlugin,
@@ -108,7 +108,7 @@ export const EmojiPickerPlugin = () => {
               <TypeaheadPopover className={styles.emojiMenu}>
                 <ul>
                   {options.map((option: EmojiOption, index) => (
-                    <div key={option.key}>
+                    <Fragment key={option.key}>
                       <EmojiMenuItem
                         index={index}
                         isSelected={selectedIndex === index}
@@ -121,7 +121,7 @@ export const EmojiPickerPlugin = () => {
                         }}
                         option={option}
                       />
-                    </div>
+                    </Fragment>
                   ))}
                 </ul>
               </TypeaheadPopover>,
