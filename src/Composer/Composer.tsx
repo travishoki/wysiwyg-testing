@@ -30,7 +30,7 @@ const initialConfig = {
 
 type ComposerProps = {
   composerRef: MutableRefObject<composerRefProps>
-  initialState?: string
+  initialState: Maybe<string>
   mergeFields: MergeField[]
   onChange?: () => void
   onSubmit: (output: Maybe<string>) => void

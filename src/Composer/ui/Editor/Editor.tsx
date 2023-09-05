@@ -54,7 +54,7 @@ import { Placeholder } from "../Placeholder/Placeholder"
 import styles from "./Editor.module.scss"
 
 type EditorProps = {
-  initialState?: string
+  initialState: Maybe<string>
   mergeFields: MergeField[]
 }
 
