@@ -30,12 +30,13 @@ const initialConfig = {
 
 type ComposerProps = {
   composerRef: MutableRefObject<composerRefProps>
+  initialState?: string
   mergeFields: MergeField[]
   onChange?: () => void
   onSubmit: (output: Maybe<string>) => void
 }
 
-export const Composer = ({ composerRef, mergeFields, onChange }: ComposerProps) => {
+export const Composer = ({ composerRef, initialState, mergeFields, onChange }: ComposerProps) => {
   return (
     <div className="composer">
       <LexicalComposer initialConfig={initialConfig}>
@@ -44,7 +45,7 @@ export const Composer = ({ composerRef, mergeFields, onChange }: ComposerProps) 
             <SharedAutocompleteContext>
               <div className={styles.editorShell}>
                 <ComposerCustomFunctionHandler composerRef={composerRef} />
-                <Editor mergeFields={mergeFields} />
+                <Editor initialState={initialState} mergeFields={mergeFields} />
                 <OnChangePlugin onChange={() => onChange && onChange()} />
               </div>
             </SharedAutocompleteContext>

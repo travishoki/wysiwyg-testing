@@ -8,6 +8,8 @@ import { mergeFieldNameArray } from "./MergeFieldControls/MergeFieldControls.con
 import { Output } from "./Output/Output"
 import { MergeField } from "./types"
 
+const initialState: Maybe<string> = null
+
 // ts-prune-ignore-next
 export const App = () => {
   const composerRef = useRef<composerRefProps>()
@@ -40,6 +42,7 @@ export const App = () => {
     <div className={styles.app}>
       <Composer
         composerRef={composerRef}
+        initialState={initialState}
         mergeFields={mergeFieldNameArray}
         onChange={onChange}
         onSubmit={setOutput}

@@ -35,6 +35,7 @@ import { EmojisPlugin } from "../../plugins/EmojisPlugin/EmojisPlugin"
 import { FloatingLinkEditorPlugin } from "../../plugins/FloatingLinkEditorPlugin/FloatingLinkEditorPlugin"
 import { FloatingTextFormatToolbarPlugin } from "../../plugins/FloatingTextFormatToolbarPlugin/FloatingTextFormatToolbarPlugin"
 import { ImagesPlugin } from "../../plugins/ImagesPlugin/ImagesPlugin"
+import { InitialStatePlugin } from "../../plugins/InitialStatePlugin/InitialStatePlugin"
 import { InlineImagePlugin } from "../../plugins/InlineImagePlugin/InlineImagePlugin"
 import { KeywordsPlugin } from "../../plugins/KeywordsPlugin/KeywordsPlugin"
 import { LinkPlugin } from "../../plugins/LinkPlugin/LinkPlugin"
@@ -53,10 +54,11 @@ import { Placeholder } from "../Placeholder/Placeholder"
 import styles from "./Editor.module.scss"
 
 type EditorProps = {
+  initialState?: string
   mergeFields: MergeField[]
 }
 
-export const Editor = ({ mergeFields }: EditorProps) => {
+export const Editor = ({ initialState, mergeFields }: EditorProps) => {
   const { historyState } = useSharedHistoryContext()
   const {
     settings: { tableCellBackgroundColor, tableCellMerge },
@@ -102,6 +104,7 @@ export const Editor = ({ mergeFields }: EditorProps) => {
   return (
     <>
       <ToolbarPlugin />
+      {initialState && <InitialStatePlugin initialState={initialState} />}
       <div className={styles.editorContainer}>
         <DragDropPaste />
         <AutoFocusPlugin />
