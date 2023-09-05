@@ -20,7 +20,6 @@ export const ComposerCustomFunctionHandler = ({ composerRef }: MergeFieldHandler
   useImperativeHandle(composerRef, () => ({
     dispatchMergeField(mergeField: MergeField) {
       const payload = {
-        // mergeFieldIconUrl: mergeField.iconUrl,
         mergeFieldName: mergeField.name ?? "",
       }
       editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, payload)

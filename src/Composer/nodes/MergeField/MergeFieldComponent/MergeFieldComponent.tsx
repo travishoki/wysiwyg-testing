@@ -8,11 +8,7 @@ import { ComposerNodeFallback } from "../../../ui/ComposerNodeFallback/ComposerN
 import { $isMergeFieldNode } from "../MergeFieldNode"
 import styles from "./MergeFieldComponent.module.scss"
 
-const MergeFieldComponent = ({
-  // mergeFieldIconUrl,
-  mergeFieldName,
-  nodeKey,
-}: MergeFieldComponentProps) => {
+const MergeFieldComponent = ({ mergeFieldName, nodeKey }: MergeFieldComponentProps) => {
   const [editor] = useLexicalComposerContext()
   const isEditable = useLexicalEditable()
 
@@ -30,15 +26,6 @@ const MergeFieldComponent = ({
       <div className={styles["merge-field"]}>
         <div className={styles.inner}>
           <div className={styles.content}>
-            {/*
-            <img
-              alt="icon"
-              className={styles.svgIcon}
-              height="15"
-              src={mergeFieldIconUrl}
-              width="15"
-            />
-            */}
             <p className={styles.title}>{formatMergeFieldTitle(mergeFieldName)}</p>
           </div>
 
@@ -54,7 +41,6 @@ const MergeFieldComponent = ({
 }
 
 type MergeFieldComponentProps = {
-  // mergeFieldIconUrl: string
   mergeFieldName: string
   nodeKey: string
 }
