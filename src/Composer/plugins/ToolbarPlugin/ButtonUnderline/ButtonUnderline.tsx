@@ -1,5 +1,6 @@
 import React from "react"
 import classNames from "classnames"
+import { useTranslation } from "src/i18n"
 import { IS_APPLE } from "../../../shared/environment"
 import { IconButton } from "../IconButton/IconButton"
 import stylesToolbarPlugin from "../ToolbarPlugin.module.scss"
@@ -11,9 +12,13 @@ type ButtonUnderlineProps = {
 }
 
 export const ButtonUnderline = ({ isActive, isEditable, onClick }: ButtonUnderlineProps) => {
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
+
+  const shortcut = IS_APPLE ? "⌘U" : "Ctrl+U"
+
   return (
     <button
-      aria-label={`Format text to underlined. Shortcut: ${IS_APPLE ? "⌘U" : "Ctrl+U"}`}
+      aria-label={`${t("Format text to underlined.")} ${t("Shortcut")}: ${shortcut}}`}
       className={classNames(
         stylesToolbarPlugin.toolbarItem,
         stylesToolbarPlugin.spaced,
@@ -21,7 +26,7 @@ export const ButtonUnderline = ({ isActive, isEditable, onClick }: ButtonUnderli
       )}
       disabled={!isEditable}
       onClick={onClick}
-      title={IS_APPLE ? "Underline (⌘U)" : "Underline (Ctrl+U)"}
+      title={`${t("Underline")} (${shortcut})`}
       type="button"
     >
       <IconButton disabled={!isEditable} type="underline" />

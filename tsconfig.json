@@ -14,7 +14,8 @@
     "baseUrl": "./src",
     "paths": {
       "test": ["./test"],
-      "types/*": ["./types/*"]
+      "types/*": ["./types/*"],
+      "src/*": ["./*"]
     }
   },
   "include": ["src", "index.d.ts"], // *** The files TypeScript should type check ***

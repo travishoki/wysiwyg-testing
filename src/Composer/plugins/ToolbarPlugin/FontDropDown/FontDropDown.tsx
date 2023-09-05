@@ -2,6 +2,7 @@ import React, { useCallback } from "react"
 import { $patchStyleText } from "@lexical/selection"
 import classNames from "classnames"
 import { $getSelection, $isRangeSelection, LexicalEditor } from "lexical"
+import { useTranslation } from "src/i18n"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
@@ -19,6 +20,8 @@ type FontDropDownProps = {
 }
 
 export const FontDropDown = ({ disabled = false, editor, styleName, value }: FontDropDownProps) => {
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
+
   const handleClick = useCallback(
     (option: string) => {
       editor.update(() => {
@@ -35,8 +38,8 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
 
   const buttonAriaLabel =
     styleName === "font-family"
-      ? "Formatting options for font family"
-      : "Formatting options for font size"
+      ? t("Formatting options for font family")
+      : t("Formatting options for font size")
 
   return (
     <DropDown
