@@ -11,11 +11,11 @@
     "target": "es2015",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "test": ["./test"],
-      "types/*": ["./types/*"],
-      "i18n/*": ["./i18n/*"]
+      "test/*": ["./src/test/*"],
+      "types": ["./src/types/index.ts"],
+      "src/i18n/*": ["./src/i18n/*"]
     }
   },
   "include": ["src", "index.d.ts"], // *** The files TypeScript should type check ***

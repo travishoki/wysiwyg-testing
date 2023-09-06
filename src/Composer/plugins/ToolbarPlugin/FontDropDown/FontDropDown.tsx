@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import { $patchStyleText } from "@lexical/selection"
 import classNames from "classnames"
-import { useTranslation } from "i18n"
+import { useTranslation } from "src/i18n"
 import { $getSelection, $isRangeSelection, LexicalEditor } from "lexical"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
