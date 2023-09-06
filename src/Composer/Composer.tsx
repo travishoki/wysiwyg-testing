@@ -33,7 +33,6 @@ type ComposerProps = {
   initialState: Maybe<string>
   mergeFields: MergeField[]
   onChange?: () => void
-  onSubmit: (output: Maybe<string>) => void
 }
 
 export const Composer = ({ composerRef, initialState, mergeFields, onChange }: ComposerProps) => {

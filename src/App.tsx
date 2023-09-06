@@ -1,11 +1,10 @@
-import React, { useRef, useState } from "react"
+import React, { useRef } from "react"
 import styles from "./App.module.scss"
 import { Composer } from "./Composer/Composer"
 import { composerRefProps } from "./Composer/ComposerCustomFunctionHandler/ComposerCustomFunctionHandler"
 import { Controls } from "./Controls/Controls"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 import { mergeFieldNameArray } from "./MergeFieldControls/MergeFieldControls.const"
-import { Output } from "./Output/Output"
 import { MergeField } from "./types"
 
 const initialState: Maybe<string> = null
@@ -13,11 +12,6 @@ const initialState: Maybe<string> = null
 // ts-prune-ignore-next
 export const App = () => {
   const composerRef = useRef<composerRefProps>()
-  const [output, setOutput] = useState<Maybe<string>>()
-
-  const onChange = () => {
-    setOutput(null)
-  }
 
   const onClickMergeField = (mergeField: MergeField) => {
     if (composerRef.current) {
@@ -44,12 +38,9 @@ export const App = () => {
         composerRef={composerRef}
         initialState={initialState}
         mergeFields={mergeFieldNameArray}
-        onChange={onChange}
-        onSubmit={setOutput}
       />
       <MergeFieldControls onClick={onClickMergeField} />
       <Controls onLock={onLock} onSubmit={onSubmit} />
-      <Output output={output} />
     </div>
   )
 }
