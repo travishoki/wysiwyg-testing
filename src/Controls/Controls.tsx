@@ -1,6 +1,6 @@
 import React from "react"
-import { SubmitButton } from "Controls/SubmitButton/SubmitButton"
 import { LockButton } from "./LockButton/LockButton"
+import { SubmitButton } from "./SubmitButton/SubmitButton"
 
 type ControlsProps = {
   onLock: () => void
