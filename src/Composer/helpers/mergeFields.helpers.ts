@@ -4,4 +4,5 @@ export const formatMergeFieldTitle = (title: Maybe<string>) => {
   return title.replace(/_/g, "-").split("-").map(capitalizeWord).join(" ")
 }
 
-export const capitalizeWord = (word: string) => word.charAt(0).toUpperCase() + word.slice(1)
+export const capitalizeWord = (word: string) =>
+  word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
