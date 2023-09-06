@@ -15,7 +15,7 @@
     "paths": {
       "test": ["./test"],
       "types/*": ["./types/*"],
-      "src/*": ["./*"]
+      "i18n/*": ["./i18n/*"]
     }
   },
   "include": ["src", "index.d.ts"], // *** The files TypeScript should type check ***
