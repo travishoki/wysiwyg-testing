@@ -15,11 +15,5 @@ export const MergeFieldButton = ({ mergeField, onClick }: MergeFieldButtonProps)
 
   const title = formatMergeFieldTitle(mergeField.name)
 
-  return (
-    <ButtonWithIcon
-      // iconUrl={mergeField.iconUrl}
-      onClick={onClickButton}
-      title={title}
-    />
-  )
+  return <ButtonWithIcon onClick={onClickButton} title={title} />
 }
