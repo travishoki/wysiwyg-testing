@@ -1,26 +1,9 @@
-import React, { Suspense, useCallback } from "react"
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
-import useLexicalEditable from "@lexical/react/useLexicalEditable"
-import { $getNodeByKey } from "lexical"
+import React, { Suspense } from "react"
 import { formatMergeFieldTitle } from "../../../helpers/mergeFields.helpers"
-import ImageClose from "../../../images/icons/close.svg"
 import { ComposerNodeFallback } from "../../../ui/ComposerNodeFallback/ComposerNodeFallback"
-import { $isMergeFieldNode } from "../MergeFieldNode"
 import styles from "./MergeFieldComponent.module.scss"
 
-const MergeFieldComponent = ({ mergeFieldName, nodeKey }: MergeFieldComponentProps) => {
-  const [editor] = useLexicalComposerContext()
-  const isEditable = useLexicalEditable()
-
-  const onClickClose = useCallback(() => {
-    editor.update(() => {
-      const node = $getNodeByKey(nodeKey)
-      if ($isMergeFieldNode(node)) {
-        node.remove()
-      }
-    })
-  }, [editor, nodeKey])
-
+const MergeFieldComponent = ({ mergeFieldName }: MergeFieldComponentProps) => {
   return (
     <Suspense fallback={<ComposerNodeFallback />}>
       <div className={styles["merge-field"]}>
@@ -28,12 +11,6 @@ const MergeFieldComponent = ({ mergeFieldName, nodeKey }: MergeFieldComponentPro
           <div className={styles.content}>
             <p className={styles.title}>{formatMergeFieldTitle(mergeFieldName)}</p>
           </div>
-
-          {isEditable && (
-            <button className={styles.buttonClose} onClick={onClickClose}>
-              <img alt="close" height="15" src={ImageClose} width="15" />
-            </button>
-          )}
         </div>
       </div>
     </Suspense>
