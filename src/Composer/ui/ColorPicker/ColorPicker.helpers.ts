@@ -14,7 +14,7 @@ interface Color {
   rgb: RGB
 }
 
-const toHex = (value: string): string => {
+export const toHex = (value: string): string => {
   if (!value.startsWith("#")) {
     const ctx = document.createElement("canvas").getContext("2d")
 

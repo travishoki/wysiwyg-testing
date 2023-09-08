@@ -1,7 +1,7 @@
-import { hex2rgb, hsv2rgb, rgb2hex, rgb2hsv, transformColor } from "./ColorPicker.helpers"
+import { hex2rgb, hsv2rgb, rgb2hex, rgb2hsv, toHex, transformColor } from "./ColorPicker.helpers"
 
 describe("hex2rgb", () => {
-  test("hex2rgb", () => {
+  test("should convert hex -> rgb", () => {
     const hex = "#ff0000"
     const result = hex2rgb(hex)
     const exectedResult = { b: 0, g: 0, r: 255 }
@@ -10,7 +10,7 @@ describe("hex2rgb", () => {
 })
 
 describe("rgb2hsv", () => {
-  test("rgb2hsv", () => {
+  test("should convert rgb -> hsv", () => {
     const rgb = { b: 0, g: 0, r: 255 }
     const result = rgb2hsv(rgb)
     const exectedResult = { h: 0, s: 100, v: 100 }
@@ -19,7 +19,7 @@ describe("rgb2hsv", () => {
 })
 
 describe("hsv2rgb", () => {
-  test("hsv2rgb", () => {
+  test("should convert hsv -> rgb", () => {
     const hsv = { h: 0, s: 100, v: 100 }
     const result = hsv2rgb(hsv)
     const exectedResult = { b: 0, g: 0, r: 255 }
@@ -28,7 +28,7 @@ describe("hsv2rgb", () => {
 })
 
 describe("rgb2hex", () => {
-  test("rgb2hex", () => {
+  test("should convert rgb -> hex", () => {
     const rgb = { b: 0, g: 0, r: 255 }
     const result = rgb2hex(rgb)
     const exectedResult = "#ff0000"
@@ -36,8 +36,24 @@ describe("rgb2hex", () => {
   })
 })
 
+describe("toHex", () => {
+  test("should return value, if given a 6 digit hex", () => {
+    const value = "#ff0000"
+    const result = toHex(value)
+    const exectedResult = value
+    expect(result).toEqual(exectedResult)
+  })
+
+  test("should return value, if given a 3 digit hex", () => {
+    const value = "#f00"
+    const result = toHex(value)
+    const exectedResult = "#ff0000"
+    expect(result).toEqual(exectedResult)
+  })
+})
+
 describe("transformColor", () => {
-  test("hex", () => {
+  test("should return all value for a given hex", () => {
     const format = "hex"
     const color = "#ff0000"
     const result = transformColor(format, color)
@@ -49,7 +65,7 @@ describe("transformColor", () => {
     expect(result).toEqual(exectedResult)
   })
 
-  test("rgb", () => {
+  test("should return all value for a given rgb", () => {
     const format = "rgb"
     const color = { b: 0, g: 0, r: 255 }
     const result = transformColor(format, color)
@@ -61,7 +77,7 @@ describe("transformColor", () => {
     expect(result).toEqual(exectedResult)
   })
 
-  test("hsv", () => {
+  test("should return all value for a given hsv", () => {
     const format = "hsv"
     const color = { h: 0, s: 100, v: 100 }
     const result = transformColor(format, color)
