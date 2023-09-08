@@ -35,6 +35,7 @@ export const App = () => {
   return (
     <div className={styles.app}>
       <Composer
+        className={styles.composer}
         composerRef={composerRef}
         initialState={initialState}
         mergeFields={mergeFieldNameArray}
