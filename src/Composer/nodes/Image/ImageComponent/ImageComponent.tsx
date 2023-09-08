@@ -39,7 +39,6 @@ import { useSharedHistoryContext } from "../../../context/SharedHistoryContext"
 import { EmojisPlugin } from "../../../plugins/EmojisPlugin/EmojisPlugin"
 import { KeywordsPlugin } from "../../../plugins/KeywordsPlugin/KeywordsPlugin"
 import { LinkPlugin } from "../../../plugins/LinkPlugin/LinkPlugin"
-import { MentionsPlugin } from "../../../plugins/MentionsPlugin/MentionsPlugin"
 import { ComposerNodeFallback } from "../../../ui/ComposerNodeFallback/ComposerNodeFallback"
 import { ContentEditable } from "../../../ui/ContentEditable/ContentEditable"
 import { ImageResizer } from "../../../ui/ImageResizer/ImageResizer"
@@ -277,7 +276,6 @@ const ImageComponent = ({
           <div className={styles.imageCaptionContainer}>
             <LexicalNestedComposer initialEditor={caption}>
               <AutoFocusPlugin />
-              <MentionsPlugin />
               <LinkPlugin />
               <EmojisPlugin />
               <HashtagPlugin />

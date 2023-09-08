@@ -40,7 +40,6 @@ import { InlineImagePlugin } from "../../plugins/InlineImagePlugin/InlineImagePl
 import { KeywordsPlugin } from "../../plugins/KeywordsPlugin/KeywordsPlugin"
 import { LinkPlugin } from "../../plugins/LinkPlugin/LinkPlugin"
 import { ListMaxIndentLevelPlugin } from "../../plugins/ListMaxIndentLevelPlugin/ListMaxIndentLevelPlugin"
-import { MentionsPlugin } from "../../plugins/MentionsPlugin/MentionsPlugin"
 import { MergeFieldPickerPlugin } from "../../plugins/MergeFieldPickerPlugin/MergeFieldPickerPlugin"
 import { MergeFieldPlugin } from "../../plugins/MergeFieldPlugin/MergeFieldPlugin"
 import { TabFocusPlugin } from "../../plugins/TabFocusPlugin/TabFocusPlugin"
@@ -114,7 +113,6 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
         <MergeFieldPickerPlugin mergeFields={mergeFields} />
         <EmojiPickerPlugin />
         <AutoEmbedPlugin />
-        <MentionsPlugin />
         <EmojisPlugin />
         <HashtagPlugin />
         <KeywordsPlugin />
@@ -146,7 +144,6 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
             contentEditable={<ContentEditable className={styles.tableNodeContentEditable} />}
             placeholder={null}
           />
-          <MentionsPlugin />
           <HistoryPlugin />
           <ImagesPlugin captionsEnabled={false} />
           <LinkPlugin />
