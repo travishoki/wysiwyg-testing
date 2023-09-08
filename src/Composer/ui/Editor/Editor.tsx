@@ -110,7 +110,7 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
         <DragDropPaste />
         <AutoFocusPlugin />
         <ClearEditorPlugin />
-        <ComponentPickerPlugin mergeFields={mergeFields} />
+        <ComponentPickerPlugin />
         <MergeFieldPickerPlugin mergeFields={mergeFields} />
         <EmojiPickerPlugin />
         <AutoEmbedPlugin />

@@ -29,9 +29,6 @@ import {
   TextNode,
 } from "lexical"
 import * as ReactDOM from "react-dom"
-import { MergeField } from "types"
-import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
-import { formatMergeFieldTitle } from "../../helpers/mergeFields.helpers"
 import { useModal } from "../../hooks/useModal"
 import { IconDropdown } from "../../ui/DropDown/IconDropdown/IconDropdown"
 import { alignmentTypes } from "../../ui/Icon/types"
@@ -45,11 +42,7 @@ import styles from "./ComponentPickerPlugin.module.scss"
 
 const alignmentList: alignmentTypes[] = ["left", "center", "right", "justify"]
 
-type ComponentPickerPluginProps = {
-  mergeFields: MergeField[]
-}
-
-export const ComponentPickerPlugin = ({ mergeFields }: ComponentPickerPluginProps) => {
+export const ComponentPickerPlugin = () => {
   const [editor] = useLexicalComposerContext()
   const [modal, showModal] = useModal()
   const [queryString, setQueryString] = useState<string | null>(null)
@@ -190,19 +183,6 @@ export const ComponentPickerPlugin = ({ mergeFields }: ComponentPickerPluginProp
               editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, alignment),
           }),
       ),
-      ...mergeFields.map(
-        (mergeField) =>
-          new ComponentPickerOption(formatMergeFieldTitle(mergeField.name) ?? "Merge Field", {
-            icon: <IconDropdown type="paragraph" />,
-            keywords: ["merge-field"],
-            onSelect: () => {
-              const payload = {
-                mergeFieldName: mergeField.name ?? "",
-              }
-              editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, payload)
-            },
-          }),
-      ),
     ]
 
     const dynamicOptions = getDynamicOptions()
@@ -217,7 +197,7 @@ export const ComponentPickerPlugin = ({ mergeFields }: ComponentPickerPluginProp
           }),
         ]
       : baseOptions
-  }, [editor, getDynamicOptions, mergeFields, queryString, showModal])
+  }, [editor, getDynamicOptions, queryString, showModal])
 
   const onSelectOption = useCallback(
     (
