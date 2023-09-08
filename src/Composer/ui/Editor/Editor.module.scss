@@ -13,14 +13,12 @@
   outline: 0;
   overflow: auto;
   position: relative;
-  resize: vertical;
   z-index: 0;
 }
 
 .editor {
   flex: auto;
   position: relative;
-  resize: vertical;
   z-index: -1;
 }
 
