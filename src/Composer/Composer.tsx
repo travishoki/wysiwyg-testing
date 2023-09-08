@@ -1,6 +1,7 @@
 import React, { MutableRefObject } from "react"
 import { LexicalComposer } from "@lexical/react/LexicalComposer"
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
+import classNames from "classnames"
 import { MergeField } from "types"
 import styles from "./Composer.module.scss"
 import {
@@ -29,15 +30,22 @@ const initialConfig = {
 }
 
 type ComposerProps = {
+  className?: string
   composerRef: MutableRefObject<composerRefProps>
   initialState: Maybe<string>
   mergeFields: MergeField[]
   onChange?: () => void
 }
 
-export const Composer = ({ composerRef, initialState, mergeFields, onChange }: ComposerProps) => {
+export const Composer = ({
+  className,
+  composerRef,
+  initialState,
+  mergeFields,
+  onChange,
+}: ComposerProps) => {
   return (
-    <div className="composer">
+    <div className={classNames("composer", className)}>
       <LexicalComposer initialConfig={initialConfig}>
         <SharedHistoryContext>
           <TableContext>
