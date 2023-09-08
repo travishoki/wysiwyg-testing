@@ -7,7 +7,7 @@
  */
 
 import React, { ReactNode } from "react"
-import { joinClasses } from "../../helpers/joinClasses"
+import classNames from "classnames"
 import styles from "./Button.module.scss"
 
 type ButtonProps = {
@@ -32,7 +32,7 @@ export const Button = ({
   return (
     <button
       aria-label={title}
-      className={joinClasses(
+      className={classNames(
         styles.buttonRoot,
         disabled && styles.buttonDisabled,
         small && styles.buttonSmall,
