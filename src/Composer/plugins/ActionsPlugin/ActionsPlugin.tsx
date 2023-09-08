@@ -10,31 +10,12 @@ import React, { useEffect, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { mergeRegister } from "@lexical/utils"
 import { CONNECTED_COMMAND } from "@lexical/yjs"
-import { $getRoot, $isParagraphNode, COMMAND_PRIORITY_EDITOR, LexicalEditor } from "lexical"
+import { $getRoot, $isParagraphNode, COMMAND_PRIORITY_EDITOR } from "lexical"
 import { useModal } from "../../hooks/useModal"
 import { Icon } from "../../ui/Icon/Icon"
+import { validateEditorState } from "./ActionsPlugin.helpers"
 import styles from "./ActionsPlugin.module.scss"
 import { ShowClearDialog } from "./ShowClearDialog/ShowClearDialog"
-
-const validateEditorState = async (editor: LexicalEditor): Promise<void> => {
-  const stringifiedEditorState = JSON.stringify(editor.getEditorState())
-  let response = null
-  try {
-    response = await fetch("http://localhost:1235/validateEditorState", {
-      body: stringifiedEditorState,
-      headers: {
-        Accept: "application/json",
-        "Content-type": "application/json",
-      },
-      method: "POST",
-    })
-  } catch {
-    // NO-OP
-  }
-  if (response !== null && response.status === 403) {
-    throw new Error("Editor state validation failed! Server did not accept changes.")
-  }
-}
 
 export const ActionsPlugin = () => {
   const [editor] = useLexicalComposerContext()
