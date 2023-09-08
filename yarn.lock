@@ -1787,7 +1787,7 @@
     "@lexical/selection" "0.11.3"
     "@lexical/table" "0.11.3"
 
-"@lexical/yjs@0.11.3", "@lexical/yjs@^0.11.3":
+"@lexical/yjs@0.11.3":
   version "0.11.3"
   resolved "https://registry.yarnpkg.com/@lexical/yjs/-/yjs-0.11.3.tgz#b7049c0be85945fe0766b614256df8121bb05499"
   integrity sha512-TLDQG2FSEw/aOfppEBb0wRlIuzJ57W//8ImfzyZvckSC12tvU0YKQQX8nQz/rybXdyfRy5eN+8gX5K2EyZx+pQ==
