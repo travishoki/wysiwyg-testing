@@ -10,7 +10,6 @@ import React, { Suspense, useCallback, useEffect, useRef, useState } from "react
 import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary"
-import { HashtagPlugin } from "@lexical/react/LexicalHashtagPlugin"
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin"
 import { LexicalNestedComposer } from "@lexical/react/LexicalNestedComposer"
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
@@ -278,7 +277,6 @@ const ImageComponent = ({
               <AutoFocusPlugin />
               <LinkPlugin />
               <EmojisPlugin />
-              <HashtagPlugin />
               <KeywordsPlugin />
               <HistoryPlugin externalHistoryState={historyState} />
               <RichTextPlugin
