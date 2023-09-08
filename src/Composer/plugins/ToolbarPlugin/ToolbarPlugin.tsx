@@ -40,6 +40,7 @@ import {
   SELECTION_CHANGE_COMMAND,
   UNDO_COMMAND,
 } from "lexical"
+import { useTranslation } from "src/i18n"
 import { getSelectedNode } from "../../helpers/getSelectedNode"
 import { sanitizeUrl } from "../../helpers/url"
 import { useModal } from "../../hooks/useModal"
@@ -81,6 +82,8 @@ export const ToolbarPlugin = () => {
   const [modal, showModal] = useModal()
   const [isRTL, setIsRTL] = useState(false)
   const [isEditable, setIsEditable] = useState(() => editor.isEditable())
+
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
 
   const $updateToolbar = useCallback(() => {
     const selection = $getSelection()
@@ -341,22 +344,22 @@ export const ToolbarPlugin = () => {
       />
       <ButtonLink isActive={isLink} isEditable={isEditable} onClick={insertLink} />
       <DropdownColorPicker
-        buttonAriaLabel="Formatting text color"
+        buttonAriaLabel={t("Formatting text color")}
         buttonClassName={styles.toolbarItem}
         buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["font-color"])}
         color={fontColor}
         disabled={!isEditable}
         onChange={onFontColorSelect}
-        title="text color"
+        title={t("Text Color")}
       />
       <DropdownColorPicker
-        buttonAriaLabel="Formatting background color"
+        buttonAriaLabel={t("Formatting background color")}
         buttonClassName={styles.toolbarItem}
         buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["bg-color"])}
         color={bgColor}
         disabled={!isEditable}
         onChange={onBgColorSelect}
-        title="bg color"
+        title={t("Background Color")}
       />
       <DropdownTextStyle
         activeEditor={activeEditor}
