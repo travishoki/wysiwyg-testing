@@ -105,7 +105,7 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
 
   return (
     <div className={styles.colorPickerWrapper} ref={innerDivRef} style={{ width: WIDTH }}>
-      <TextInput label="Hex" onChange={onSetHex} value={inputColor} />
+      <TextInput label={t("Hex")} onChange={onSetHex} value={inputColor} />
       <div className={styles.colorPickerBasicColor}>
         {basicColors.map((basicColor) => (
           <button
