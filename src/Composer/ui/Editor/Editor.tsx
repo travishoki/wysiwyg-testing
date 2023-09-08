@@ -41,6 +41,7 @@ import { KeywordsPlugin } from "../../plugins/KeywordsPlugin/KeywordsPlugin"
 import { LinkPlugin } from "../../plugins/LinkPlugin/LinkPlugin"
 import { ListMaxIndentLevelPlugin } from "../../plugins/ListMaxIndentLevelPlugin/ListMaxIndentLevelPlugin"
 import { MentionsPlugin } from "../../plugins/MentionsPlugin/MentionsPlugin"
+import { MergeFieldPickerPlugin } from "../../plugins/MergeFieldPickerPlugin/MergeFieldPickerPlugin"
 import { MergeFieldPlugin } from "../../plugins/MergeFieldPlugin/MergeFieldPlugin"
 import { TabFocusPlugin } from "../../plugins/TabFocusPlugin/TabFocusPlugin"
 import { TableActionMenuPlugin } from "../../plugins/TableActionMenuPlugin/TableActionMenuPlugin"
@@ -110,6 +111,7 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
         <AutoFocusPlugin />
         <ClearEditorPlugin />
         <ComponentPickerPlugin mergeFields={mergeFields} />
+        <MergeFieldPickerPlugin mergeFields={mergeFields} />
         <EmojiPickerPlugin />
         <AutoEmbedPlugin />
         <MentionsPlugin />
