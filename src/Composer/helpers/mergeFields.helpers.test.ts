@@ -10,10 +10,10 @@ describe("capitalizeWord", () => {
 })
 
 describe("formatMergeFieldTitle", () => {
-  it("should return a formatted string, given cabob case", () => {
-    const str = "one-two-three"
+  it("should return a formatted string", () => {
+    const str = "one_two-Three FOUR"
     const result = formatMergeFieldTitle(str)
-    const expectedResult = "One Two Three"
+    const expectedResult = "One Two Three Four"
     expect(result).toEqual(expectedResult)
   })
 
@@ -21,13 +21,6 @@ describe("formatMergeFieldTitle", () => {
     const str: Maybe<string> = null
     const result = formatMergeFieldTitle(str)
     const expectedResult = ""
-    expect(result).toEqual(expectedResult)
-  })
-
-  it("should return a formatted string, given snake case", () => {
-    const str = "SNAKE_CASE"
-    const result = formatMergeFieldTitle(str)
-    const expectedResult = "Snake Case"
     expect(result).toEqual(expectedResult)
   })
 })
