@@ -1,4 +1,4 @@
-import { hex2rgb, hsv2rgb, rgb2hex, rgb2hsv } from "./ColorPicker.helpers"
+import { hex2rgb, hsv2rgb, rgb2hex, rgb2hsv, transformColor } from "./ColorPicker.helpers"
 
 describe("hex2rgb", () => {
   test("hex2rgb", () => {
@@ -32,6 +32,44 @@ describe("rgb2hex", () => {
     const rgb = { b: 0, g: 0, r: 255 }
     const result = rgb2hex(rgb)
     const exectedResult = "#ff0000"
+    expect(result).toEqual(exectedResult)
+  })
+})
+
+describe("transformColor", () => {
+  test("hex", () => {
+    const format = "hex"
+    const color = "#ff0000"
+    const result = transformColor(format, color)
+    const exectedResult = {
+      hex: color,
+      hsv: rgb2hsv(hex2rgb(color)),
+      rgb: hex2rgb(color),
+    }
+    expect(result).toEqual(exectedResult)
+  })
+
+  test("rgb", () => {
+    const format = "rgb"
+    const color = { b: 0, g: 0, r: 255 }
+    const result = transformColor(format, color)
+    const exectedResult = {
+      hex: rgb2hex(color),
+      hsv: rgb2hsv(color),
+      rgb: color,
+    }
+    expect(result).toEqual(exectedResult)
+  })
+
+  test("hsv", () => {
+    const format = "hsv"
+    const color = { h: 0, s: 100, v: 100 }
+    const result = transformColor(format, color)
+    const exectedResult = {
+      hex: rgb2hex(hsv2rgb(color)),
+      hsv: color,
+      rgb: hsv2rgb(color),
+    }
     expect(result).toEqual(exectedResult)
   })
 })
