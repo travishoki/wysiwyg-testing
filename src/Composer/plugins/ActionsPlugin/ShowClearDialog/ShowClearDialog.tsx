@@ -10,11 +10,12 @@ type ShowClearDialogProps = {
 }
 
 export const ShowClearDialog = ({ editor, onClose }: ShowClearDialogProps) => {
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
   const { t: tCommon } = useTranslation("common")
 
   return (
     <>
-      Are you sure you want to clear the editor?
+      {t("Are you sure you want to clear the editor?")}
       <div className={styles.modalContent}>
         <Button
           onClick={() => {
