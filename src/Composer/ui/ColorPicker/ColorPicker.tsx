@@ -7,6 +7,7 @@
  */
 
 import React, { useEffect, useMemo, useRef, useState } from "react"
+import { useTranslation } from "src/i18n"
 import { TextInput } from "../TextInput/TextInput"
 import { transformColor } from "./ColorPicker.helpers"
 import styles from "./ColorPicker.module.scss"
@@ -42,6 +43,8 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
   const [selfColor, setSelfColor] = useState(transformColor("hex", color))
   const [inputColor, setInputColor] = useState(color)
   const innerDivRef = useRef(null)
+
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
 
   const saturationPosition = useMemo(
     () => ({
@@ -106,7 +109,7 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
       <div className={styles.colorPickerBasicColor}>
         {basicColors.map((basicColor) => (
           <button
-            aria-label="color picker"
+            aria-label={t("Color Picker")}
             className={basicColor === selfColor.hex ? styles.activeColor : ""}
             key={basicColor}
             onClick={() => {
