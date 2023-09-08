@@ -37,7 +37,7 @@ const toHex = (value: string): string => {
   return "#000000"
 }
 
-const hex2rgb = (hex: string): RGB => {
+export const hex2rgb = (hex: string): RGB => {
   const rbgArr = (
     hex
       .replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (_m, r, g, b) => `#${r}${r}${g}${g}${b}${b}`)
@@ -88,7 +88,7 @@ const hsv2rgb = ({ h, s, v }: HSV): RGB => {
   return { b, g, r }
 }
 
-const rgb2hex = ({ b, g, r }: RGB): string => {
+export const rgb2hex = ({ b, g, r }: RGB): string => {
   return `#${[r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("")}`
 }
 
