@@ -52,7 +52,7 @@ export const hex2rgb = (hex: string): RGB => {
   }
 }
 
-const rgb2hsv = ({ b, g, r }: RGB): HSV => {
+export const rgb2hsv = ({ b, g, r }: RGB): HSV => {
   r /= 255
   g /= 255
   b /= 255
@@ -70,7 +70,7 @@ const rgb2hsv = ({ b, g, r }: RGB): HSV => {
   return { h, s, v }
 }
 
-const hsv2rgb = ({ h, s, v }: HSV): RGB => {
+export const hsv2rgb = ({ h, s, v }: HSV): RGB => {
   s /= 100
   v /= 100
 
