@@ -31,6 +31,7 @@ import {
 import * as ReactDOM from "react-dom"
 import { MergeField } from "types"
 import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
+import { formatMergeFieldTitle } from "../../helpers/mergeFields.helpers"
 import { useModal } from "../../hooks/useModal"
 import { IconDropdown } from "../../ui/DropDown/IconDropdown/IconDropdown"
 import { alignmentTypes } from "../../ui/Icon/types"
@@ -191,7 +192,7 @@ export const ComponentPickerPlugin = ({ mergeFields }: ComponentPickerPluginProp
       ),
       ...mergeFields.map(
         (mergeField) =>
-          new ComponentPickerOption(mergeField.name ?? "Merge Field", {
+          new ComponentPickerOption(formatMergeFieldTitle(mergeField.name) ?? "Merge Field", {
             icon: <IconDropdown type="paragraph" />,
             keywords: ["merge-field"],
             onSelect: () => {
