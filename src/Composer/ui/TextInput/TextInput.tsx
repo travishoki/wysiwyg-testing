@@ -7,6 +7,7 @@
  */
 
 import React from "react"
+import { useTranslation } from "src/i18n"
 import { InputInput } from "../Input/InputInput"
 import { InputLabel } from "../Input/InputLabel/InputLabel"
 import { InputWrapper } from "../Input/InputWrapper/InputWrapper"
@@ -29,11 +30,13 @@ export const TextInput = ({
   type = "text",
   value,
 }: TextInputProps) => {
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
+
   return (
     <InputWrapper>
       <InputLabel>{label}</InputLabel>
       <InputInput
-        aria-label="input"
+        aria-label={t("Input")}
         data-test-id={dataTestId}
         onChange={(e) => {
           onChange(e.target.value)
