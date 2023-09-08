@@ -11,6 +11,7 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { mergeRegister } from "@lexical/utils"
 import { CONNECTED_COMMAND } from "@lexical/yjs"
 import { $getRoot, $isParagraphNode, COMMAND_PRIORITY_EDITOR } from "lexical"
+import { useTranslation } from "src/i18n"
 import { useModal } from "../../hooks/useModal"
 import { Icon } from "../../ui/Icon/Icon"
 import { validateEditorState } from "./ActionsPlugin.helpers"
@@ -22,6 +23,9 @@ export const ActionsPlugin = () => {
   const [isEditable, setIsEditable] = useState(() => editor.isEditable())
   const [isEditorEmpty, setIsEditorEmpty] = useState(true)
   const [modal, showModal] = useModal()
+
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
+  const { t: tCommon } = useTranslation("common")
 
   useEffect(() => {
     return mergeRegister(
@@ -77,15 +81,15 @@ export const ActionsPlugin = () => {
   return (
     <div className={styles.actions}>
       <button
-        aria-label="Clear editor contents"
+        aria-label={t("Clear editor")}
         className={styles.actionButton}
         disabled={isEditorEmpty}
         onClick={() => {
-          showModal("Clear editor", (onClose) => (
+          showModal(t("Clear editor"), (onClose) => (
             <ShowClearDialog editor={editor} onClose={onClose} />
           ))
         }}
-        title="Clear"
+        title={tCommon("Clear")}
       >
         <Icon type="clear" />
       </button>
