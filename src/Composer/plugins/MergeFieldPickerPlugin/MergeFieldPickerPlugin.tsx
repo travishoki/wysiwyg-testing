@@ -12,7 +12,6 @@ import {
   LexicalTypeaheadMenuPlugin,
   useBasicTypeaheadTriggerMatch,
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
-import { INSERT_TABLE_COMMAND } from "@lexical/table"
 import { TextNode } from "lexical"
 import * as ReactDOM from "react-dom"
 import { MergeField } from "types"
@@ -29,56 +28,11 @@ type MergeFieldPickerPluginProps = {
 
 export const MergeFieldPickerPlugin = ({ mergeFields }: MergeFieldPickerPluginProps) => {
   const [editor] = useLexicalComposerContext()
-  const [queryString, setQueryString] = useState<string | null>(null)
+  const [_queryString, setQueryString] = useState<string | null>(null)
 
   const checkForTriggerMatch = useBasicTypeaheadTriggerMatch("{", {
     minLength: 0,
   })
-
-  const getDynamicOptions = useCallback(() => {
-    const options: Array<ComponentPickerOption> = []
-
-    if (queryString == null) {
-      return options
-    }
-
-    const fullTableRegex = new RegExp(/^([1-9]|10)x([1-9]|10)$/)
-    const partialTableRegex = new RegExp(/^([1-9]|10)x?$/)
-
-    const fullTableMatch = fullTableRegex.exec(queryString)
-    const partialTableMatch = partialTableRegex.exec(queryString)
-
-    if (fullTableMatch) {
-      const [rows, columns] = fullTableMatch[0].split("x").map((n: string) => parseInt(n, 10))
-
-      options.push(
-        new ComponentPickerOption(`${rows}x${columns} Table`, {
-          icon: <IconDropdown type="table" />,
-          keywords: ["table"],
-          onSelect: () =>
-            // @ts-ignore Correct types, but since they're dynamic TS doesn't like it.
-            editor.dispatchCommand(INSERT_TABLE_COMMAND, { columns, rows }),
-        }),
-      )
-    } else if (partialTableMatch) {
-      const rows = parseInt(partialTableMatch[0], 10)
-
-      options.push(
-        ...Array.from({ length: 5 }, (_, i) => i + 1).map(
-          (columns) =>
-            new ComponentPickerOption(`${rows}x${columns} Table`, {
-              icon: <IconDropdown type="table" />,
-              keywords: ["table"],
-              onSelect: () =>
-                // @ts-ignore Correct types, but since they're dynamic TS doesn't like it.
-                editor.dispatchCommand(INSERT_TABLE_COMMAND, { columns, rows }),
-            }),
-        ),
-      )
-    }
-
-    return options
-  }, [editor, queryString])
 
   const options = useMemo(() => {
     const baseOptions = [
@@ -97,19 +51,8 @@ export const MergeFieldPickerPlugin = ({ mergeFields }: MergeFieldPickerPluginPr
       ),
     ]
 
-    const dynamicOptions = getDynamicOptions()
-
-    return queryString
-      ? [
-          ...dynamicOptions,
-          ...baseOptions.filter((option) => {
-            return new RegExp(queryString, "gi").exec(option.title) || option.keywords != null
-              ? option.keywords.some((keyword) => new RegExp(queryString, "gi").exec(keyword))
-              : false
-          }),
-        ]
-      : baseOptions
-  }, [editor, getDynamicOptions, mergeFields, queryString])
+    return baseOptions
+  }, [editor, mergeFields])
 
   const onSelectOption = useCallback(
     (
