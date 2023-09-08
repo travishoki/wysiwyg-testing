@@ -1,5 +1,6 @@
 import React from "react"
 import { CLEAR_EDITOR_COMMAND, LexicalEditor } from "lexical"
+import { useTranslation } from "src/i18n"
 import { Button } from "../../../ui/Button/Button"
 import styles from "../../../ui/Modal/Modal.module.scss"
 
@@ -9,6 +10,8 @@ type ShowClearDialogProps = {
 }
 
 export const ShowClearDialog = ({ editor, onClose }: ShowClearDialogProps) => {
+  const { t: tCommon } = useTranslation("common")
+
   return (
     <>
       Are you sure you want to clear the editor?
@@ -20,7 +23,7 @@ export const ShowClearDialog = ({ editor, onClose }: ShowClearDialogProps) => {
             onClose()
           }}
         >
-          Clear
+          {tCommon("Clear")}
         </Button>{" "}
         <Button
           onClick={() => {
@@ -28,7 +31,7 @@ export const ShowClearDialog = ({ editor, onClose }: ShowClearDialogProps) => {
             onClose()
           }}
         >
-          Cancel
+          {tCommon("Cancel")}
         </Button>
       </div>
     </>
