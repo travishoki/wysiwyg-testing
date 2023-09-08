@@ -1,21 +1,16 @@
 .merge-field {
-  border: dashed 2px #545cff;
-  border-radius: 4px;
   display: inline-block;
-  padding: 4px 8px;
-  width: 200px;
-}
-
-.inner {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
 }
 
 .content {
   align-items: center;
   display: flex;
   justify-content: center;
+
+  span {
+    color: #545cff;
+    font-size: 20px;
+  }
 }
 
 .svgIcon {
@@ -33,6 +28,7 @@
 }
 
 .title {
+  color: #777d80;
   margin: 0;
   user-select: none;
 }
