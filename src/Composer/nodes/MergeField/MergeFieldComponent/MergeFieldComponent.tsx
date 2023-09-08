@@ -7,13 +7,11 @@ const MergeFieldComponent = ({ mergeFieldName }: MergeFieldComponentProps) => {
   return (
     <Suspense fallback={<ComposerNodeFallback />}>
       <div className={styles["merge-field"]}>
-        <div className={styles.content}>
-          <p className={styles.title}>
-            <span>{"{ "}</span>
-            {formatMergeFieldTitle(mergeFieldName)}
-            <span>{" }"}</span>
-          </p>
-        </div>
+        <p className={styles.title}>
+          <span>{"{ "}</span>
+          {formatMergeFieldTitle(mergeFieldName)}
+          <span>{" }"}</span>
+        </p>
       </div>
     </Suspense>
   )
