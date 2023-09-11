@@ -20,7 +20,6 @@ import { EmojiNode } from "./Emoji/EmojiNode"
 import { ImageNode } from "./Image/ImageNode"
 import { InlineImageNode } from "./InlineImage/InlineImageNode"
 import { KeywordNode } from "./Keyword/KeywordNode"
-import { MentionNode } from "./Mention/MentionNode"
 import { MergeFieldNode } from "./MergeField/MergeFieldNode"
 import { TableNode as NewTableNode } from "./Table/TableNode"
 
@@ -42,7 +41,6 @@ export const ComposerNodes: Array<Klass<LexicalNode>> = [
   MergeFieldNode,
   ImageNode,
   InlineImageNode,
-  MentionNode,
   EmojiNode,
   KeywordNode,
   HorizontalRuleNode,

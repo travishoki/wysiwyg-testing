@@ -14,7 +14,6 @@ import { Klass, LexicalNode } from "lexical"
 import { EmojiNode } from "../../Emoji/EmojiNode"
 import { ImageNode } from "../../Image/ImageNode"
 import { KeywordNode } from "../../Keyword/KeywordNode"
-import { MentionNode } from "../../Mention/MentionNode"
 
 export const TableCellNodes: Array<Klass<LexicalNode>> = [
   HeadingNode,
@@ -25,7 +24,6 @@ export const TableCellNodes: Array<Klass<LexicalNode>> = [
   AutoLinkNode,
   LinkNode,
   ImageNode,
-  MentionNode,
   EmojiNode,
   KeywordNode,
 ]
