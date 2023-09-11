@@ -44,21 +44,21 @@ import { useTranslation } from "src/i18n"
 import { getSelectedNode } from "../../helpers/getSelectedNode"
 import { sanitizeUrl } from "../../helpers/url"
 import { useModal } from "../../hooks/useModal"
-import { IS_APPLE } from "../../shared/environment"
 import { DropdownColorPicker } from "../../ui/DropDown/ColorPicker/ColorPicker"
 import stylesIconDropdown from "../../ui/DropDown/IconDropdown/IconDropdown.module.scss"
 import stylesIcon from "../../ui/Icon/Icon.module.scss"
 import { ButtonBold } from "./ButtonBold/ButtonBold"
 import { ButtonItalic } from "./ButtonItalic/ButtonItalic"
 import { ButtonLink } from "./ButtonLink/ButtonLink"
+import { ButtonRedo } from "./ButtonRedo/ButtonRedo"
 import { ButtonUnderline } from "./ButtonUnderline/ButtonUnderline"
+import { ButtonUndo } from "./ButtonUndo/ButtonUndo"
 import { Divider } from "./Divider/Divider"
 import { DropDownBlockFormat } from "./DropDownBlockFormat/DropDownBlockFormat"
 import { DropDownTextAlignment } from "./DropDownTextAlignment/DropDownTextAlignment"
 import { DropdownInsert } from "./DropdownInsert/DropdownInsert"
 import { DropdownTextStyle } from "./DropdownTextStyle/DropdownTextStyle"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
-import { IconButton } from "./IconButton/IconButton"
 import { blockTypeToBlockName } from "./ToolbarPlugin.const"
 import styles from "./ToolbarPlugin.module.scss"
 
@@ -282,30 +282,20 @@ export const ToolbarPlugin = () => {
 
   return (
     <div className={styles.toolbar}>
-      <button
-        aria-label="Undo"
-        className={classNames(styles.toolbarItem, styles.spaced)}
-        disabled={!canUndo || !isEditable}
+      <ButtonUndo
+        canUndo={canUndo}
+        isEditable={isEditable}
         onClick={() => {
           activeEditor.dispatchCommand(UNDO_COMMAND, undefined)
         }}
-        title={IS_APPLE ? "Undo (⌘Z)" : "Undo (Ctrl+Z)"}
-        type="button"
-      >
-        <IconButton disabled={!canUndo || !isEditable} type="undo" />
-      </button>
-      <button
-        aria-label="Redo"
-        className={classNames(styles.toolbarItem)}
-        disabled={!canRedo || !isEditable}
+      />
+      <ButtonRedo
+        canRedo={canRedo}
+        isEditable={isEditable}
         onClick={() => {
           activeEditor.dispatchCommand(REDO_COMMAND, undefined)
         }}
-        title={IS_APPLE ? "Redo (⌘Y)" : "Redo (Ctrl+Y)"}
-        type="button"
-      >
-        <IconButton disabled={!canRedo || !isEditable} type="redo" />
-      </button>
+      />
       <Divider />
       {blockType in blockTypeToBlockName && activeEditor === editor && (
         <>
