@@ -363,7 +363,6 @@ export const ToolbarPlugin = () => {
       <DropdownInsert activeEditor={activeEditor} isEditable={isEditable} showModal={showModal} />
       <Divider />
       <DropDownTextAlignment activeEditor={activeEditor} isEditable={isEditable} isRTL={isRTL} />
-
       {modal}
     </div>
   )
