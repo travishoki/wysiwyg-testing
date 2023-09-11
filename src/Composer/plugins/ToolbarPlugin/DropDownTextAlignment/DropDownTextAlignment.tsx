@@ -34,7 +34,7 @@ export const DropDownTextAlignment = ({ activeEditor, isEditable, isRTL }: Dropd
         "alignment",
       )}
       buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["left-align"])}
-      buttonLabel="Align"
+      buttonLabel={t("Align")}
       disabled={!isEditable}
       hideLabelOnMobile
     >
