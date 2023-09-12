@@ -7,10 +7,8 @@
  */
 
 import { CodeHighlightNode, CodeNode } from "@lexical/code"
-import { HashtagNode } from "@lexical/hashtag"
 import { AutoLinkNode, LinkNode } from "@lexical/link"
 import { ListItemNode, ListNode } from "@lexical/list"
-import { MarkNode } from "@lexical/mark"
 import { OverflowNode } from "@lexical/overflow"
 import { HorizontalRuleNode } from "@lexical/react/LexicalHorizontalRuleNode"
 import { HeadingNode, QuoteNode } from "@lexical/rich-text"
@@ -33,7 +31,6 @@ export const ComposerNodes: Array<Klass<LexicalNode>> = [
   TableNode,
   TableCellNode,
   TableRowNode,
-  HashtagNode,
   CodeHighlightNode,
   AutoLinkNode,
   LinkNode,
@@ -44,5 +41,4 @@ export const ComposerNodes: Array<Klass<LexicalNode>> = [
   EmojiNode,
   KeywordNode,
   HorizontalRuleNode,
-  MarkNode,
 ]
