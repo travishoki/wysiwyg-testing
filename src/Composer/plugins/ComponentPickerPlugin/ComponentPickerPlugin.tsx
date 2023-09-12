@@ -114,7 +114,7 @@ export const ComponentPickerPlugin = () => {
       }),
       ...Array.from({ length: 3 }, (_, i) => i + 1).map(
         (n) =>
-          new ComponentPickerOption(`Heading ${n}`, {
+          new ComponentPickerOption(`${t("Heading")} ${n}`, {
             icon: <IconDropdown type={getHeadingType(n)} />,
             keywords: ["heading", "header", `h${n}`],
             onSelect: () =>
