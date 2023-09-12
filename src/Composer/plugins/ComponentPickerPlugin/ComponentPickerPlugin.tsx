@@ -29,6 +29,7 @@ import {
   TextNode,
 } from "lexical"
 import * as ReactDOM from "react-dom"
+import { useTranslation } from "src/i18n"
 import { useModal } from "../../hooks/useModal"
 import { IconDropdown } from "../../ui/DropDown/IconDropdown/IconDropdown"
 import { alignmentTypes } from "../../ui/Icon/types"
@@ -46,6 +47,8 @@ export const ComponentPickerPlugin = () => {
   const [editor] = useLexicalComposerContext()
   const [modal, showModal] = useModal()
   const [queryString, setQueryString] = useState<string | null>(null)
+
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
 
   const checkForTriggerMatch = useBasicTypeaheadTriggerMatch("/", {
     minLength: 0,
@@ -98,7 +101,7 @@ export const ComponentPickerPlugin = () => {
 
   const options = useMemo(() => {
     const baseOptions = [
-      new ComponentPickerOption("Paragraph", {
+      new ComponentPickerOption(t("Paragraph"), {
         icon: <IconDropdown type="paragraph" />,
         keywords: ["normal", "paragraph", "p", "text"],
         onSelect: () =>
