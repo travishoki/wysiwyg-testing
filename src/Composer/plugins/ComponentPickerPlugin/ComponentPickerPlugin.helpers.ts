@@ -26,9 +26,9 @@ export const getHeadingType = (num: number): iconType => {
     case 4:
       return "h4"
     case 5:
-      return "h4"
+      return "h5"
     case 6:
-      return "h4"
+      return "h6"
     default:
       return "h1"
   }
