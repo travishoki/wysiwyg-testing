@@ -9,6 +9,7 @@ import {
   LexicalEditor,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
+import { useTranslation } from "src/i18n"
 import { getDOMRangeRect } from "../../../helpers/getDOMRangeRect"
 import { setFloatingElemPosition } from "../../../helpers/setFloatingElemPosition"
 import { IconButton } from "../../ToolbarPlugin/IconButton/IconButton"
@@ -38,6 +39,8 @@ export const TextFormatFloatingToolbar = ({
   isUnderline,
 }: TextFormatFloatingToolbarProps) => {
   const popupCharStylesEditorRef = useRef<HTMLDivElement | null>(null)
+
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
 
   const insertLink = useCallback(() => {
     if (!isLink) {
@@ -157,7 +160,7 @@ export const TextFormatFloatingToolbar = ({
       {editor.isEditable() && (
         <>
           <button
-            aria-label="Format text as bold"
+            aria-label={t("Format text as bold.")}
             className={classNames(styles.popupItem, styles.spaced + (isBold ? styles.active : ""))}
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")
@@ -167,7 +170,7 @@ export const TextFormatFloatingToolbar = ({
             <IconButton type="bold" />
           </button>
           <button
-            aria-label="Format text as italics"
+            aria-label={t("Format text as italics.")}
             className={classNames(
               styles.popupItem,
               styles.spaced + (isItalic ? styles.active : ""),
@@ -180,7 +183,7 @@ export const TextFormatFloatingToolbar = ({
             <IconButton type="italic" />
           </button>
           <button
-            aria-label="Format text to underlined"
+            aria-label={t("Format text to underlined.")}
             className={classNames(
               styles.popupItem,
               styles.spaced + (isUnderline ? styles.active : ""),
