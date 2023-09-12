@@ -10,7 +10,6 @@ export type iconType =
   | "clear"
   | "close"
   | "copy"
-  | "disconnect"
   | "h1"
   | "h2"
   | "h3"
