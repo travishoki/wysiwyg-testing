@@ -135,6 +135,7 @@ export const ToolbarPlugin = () => {
           }
         }
       }
+
       // Handle buttons
       setFontSize($getSelectionStyleValueForProperty(selection, "font-size", "15px"))
       setFontColor($getSelectionStyleValueForProperty(selection, "color", "#000"))
