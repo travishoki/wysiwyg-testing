@@ -15,6 +15,7 @@ import {
   DEPRECATED_$isGridSelection as $isGridSelection,
   LexicalEditor,
 } from "lexical"
+import { useTranslation } from "src/i18n"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
@@ -35,6 +36,8 @@ export const DropDownBlockFormat = ({
   disabled = false,
   editor,
 }: DropDownBlockFormatProps) => {
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
+
   const formatParagraph = () => {
     editor.update(() => {
       const selection = $getSelection()
@@ -107,28 +110,28 @@ export const DropDownBlockFormat = ({
         onClick={formatParagraph}
       >
         <IconDropdown type="paragraph" />
-        <span className={stylesDropdown.dropdownText}>Normal</span>
+        <span className={stylesDropdown.dropdownText}>{t("Normal")}</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(stylesDropdown.dropdownItem, dropDownActiveClass(blockType === "h1"))}
         onClick={() => formatHeading("h1")}
       >
         <IconDropdown type="h1" />
-        <span className={stylesDropdown.dropdownText}>Heading 1</span>
+        <span className={stylesDropdown.dropdownText}>{t("Heading 1")}</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(stylesDropdown.dropdownItem, dropDownActiveClass(blockType === "h2"))}
         onClick={() => formatHeading("h2")}
       >
         <IconDropdown type="h2" />
-        <span className={stylesDropdown.dropdownText}>Heading 2</span>
+        <span className={stylesDropdown.dropdownText}>{t("Heading 2")}</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(stylesDropdown.dropdownItem, dropDownActiveClass(blockType === "h3"))}
         onClick={() => formatHeading("h3")}
       >
         <IconDropdown type="h3" />
-        <span className={stylesDropdown.dropdownText}>Heading 3</span>
+        <span className={stylesDropdown.dropdownText}>{t("Heading 3")}</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(
@@ -138,7 +141,7 @@ export const DropDownBlockFormat = ({
         onClick={formatBulletList}
       >
         <IconDropdown type="bullet-list" />
-        <span className={stylesDropdown.dropdownText}>Bullet List</span>
+        <span className={stylesDropdown.dropdownText}>{t("Bullet List")}</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(
