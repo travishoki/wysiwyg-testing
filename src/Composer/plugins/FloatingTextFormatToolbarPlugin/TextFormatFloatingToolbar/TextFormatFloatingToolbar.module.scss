@@ -17,11 +17,14 @@
 }
 
 .popupItem {
+  align-items: center;
   background: none;
   border-radius: 10px;
   border: 0;
   cursor: pointer;
   display: flex;
+  display: flex;
+  justify-content: center;
   padding: 8px;
   vertical-align: middle;
 
