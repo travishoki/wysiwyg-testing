@@ -29,7 +29,7 @@ export const DropdownInsert = ({ activeEditor, isEditable, showModal }: Dropdown
       buttonAriaLabel={t("Insert specialized editor node")}
       buttonClassName={classNames(stylesToolbarPlugin.toolbarItem, stylesToolbarPlugin.spaced)}
       buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["plus"])}
-      buttonLabel="Insert"
+      buttonLabel={t("Insert")}
       disabled={!isEditable}
       hideLabelOnMobile
     >
