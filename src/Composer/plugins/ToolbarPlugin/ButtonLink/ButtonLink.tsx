@@ -1,5 +1,6 @@
 import React from "react"
 import classNames from "classnames"
+import { useTranslation } from "src/i18n"
 import { IconButton } from "../IconButton/IconButton"
 import stylesToolbarPlugin from "../ToolbarPlugin.module.scss"
 
@@ -10,9 +11,11 @@ type ButtonLinkProps = {
 }
 
 export const ButtonLink = ({ isActive, isEditable, onClick }: ButtonLinkProps) => {
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
+
   return (
     <button
-      aria-label="Insert link"
+      aria-label={t("Insert link")}
       className={classNames(
         stylesToolbarPlugin.toolbarItem,
         stylesToolbarPlugin.spaced,
@@ -20,7 +23,7 @@ export const ButtonLink = ({ isActive, isEditable, onClick }: ButtonLinkProps) =
       )}
       disabled={!isEditable}
       onClick={onClick}
-      title="Insert link"
+      title={t("Insert link")}
       type="button"
     >
       <IconButton disabled={!isEditable} type="link" />
