@@ -1,3 +1,4 @@
+import { TFunction } from "react-i18next"
 import { alignmentTypes, iconType } from "../../ui/Icon/types"
 
 export const getAlignmentType = (type: alignmentTypes): iconType => {
@@ -31,5 +32,24 @@ export const getHeadingType = (num: number): iconType => {
       return "h6"
     default:
       return "h1"
+  }
+}
+
+export const getHeadingTitle = (num: number, t: TFunction<"scenes", "composer">): string => {
+  switch (num) {
+    case 1:
+      return t("Heading 1")
+    case 2:
+      return t("Heading 2")
+    case 3:
+      return t("Heading 3")
+    case 4:
+      return t("Heading 4")
+    case 5:
+      return t("Heading 5")
+    case 6:
+      return t("Heading 6")
+    default:
+      return t("Heading 1")
   }
 }

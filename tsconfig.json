@@ -13,6 +13,8 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
+      "i18next": ["./src/i18next/index.ts"],
+      "react-i18next": ["./src/react-i18next/index.ts"],
       "src/i18n/*": ["./src/i18n/*"],
       "test/*": ["./src/test/*"],
       "types": ["./src/types/index.ts"]
