@@ -200,7 +200,7 @@ export const ComponentPickerPlugin = () => {
           }),
         ]
       : baseOptions
-  }, [editor, getDynamicOptions, queryString, showModal])
+  }, [editor, getDynamicOptions, queryString, showModal, t])
 
   const onSelectOption = useCallback(
     (
