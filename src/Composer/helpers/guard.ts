@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
+
 export const isHTMLElement = (x: unknown): x is HTMLElement => {
   return x instanceof HTMLElement
 }
