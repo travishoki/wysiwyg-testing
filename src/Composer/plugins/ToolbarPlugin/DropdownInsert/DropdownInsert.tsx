@@ -2,6 +2,7 @@ import React from "react"
 import { INSERT_HORIZONTAL_RULE_COMMAND } from "@lexical/react/LexicalHorizontalRuleNode"
 import classNames from "classnames"
 import { LexicalEditor } from "lexical"
+import { useTranslation } from "src/i18n"
 import { showModalType } from "../../../hooks/useModal"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
@@ -21,9 +22,11 @@ type DropdownInsertProps = {
 }
 
 export const DropdownInsert = ({ activeEditor, isEditable, showModal }: DropdownInsertProps) => {
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
+
   return (
     <DropDown
-      buttonAriaLabel="Insert specialized editor node"
+      buttonAriaLabel={t("Insert specialized editor node")}
       buttonClassName={classNames(stylesToolbarPlugin.toolbarItem, stylesToolbarPlugin.spaced)}
       buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["plus"])}
       buttonLabel="Insert"
@@ -37,7 +40,7 @@ export const DropdownInsert = ({ activeEditor, isEditable, showModal }: Dropdown
         }}
       >
         <IconDropdown type="horizontal-rule" />
-        <span className={stylesDropdown.dropdownText}>Horizontal Rule</span>
+        <span className={stylesDropdown.dropdownText}>{t("Horizontal Rule")}</span>
       </DropDownItem>
       <DropDownItem
         className={stylesDropdown.dropdownItem}
