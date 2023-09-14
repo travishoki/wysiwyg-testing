@@ -22,6 +22,7 @@ export const App = () => {
   const onSubmit = () => {
     if (composerRef.current) {
       const output = composerRef.current.onSubmit()
+      /* eslint-disable-next-line no-alert */
       alert(output)
     }
   }
