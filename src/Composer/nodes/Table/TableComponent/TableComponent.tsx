@@ -1111,19 +1111,19 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
       >
         <tbody>
           {rows.map((row) => (
-            <tr className={theme.tableRow} key={row.id}>
+            <tr key={row.id} className={theme.tableRow}>
               {row.cells.map((cell) => {
                 const { id } = cell
 
                 return (
                   <TableCell
+                    key={id}
                     cell={cell}
                     cellCoordMap={cellCoordMap}
                     cellEditor={cellEditor}
                     isEditing={isEditing}
                     isPrimarySelected={primarySelectedCellID === id}
                     isSelected={selectedCellSet.has(id)}
-                    key={id}
                     rows={rows}
                     setSortingOptions={setSortingOptions}
                     sortingOptions={sortingOptions}

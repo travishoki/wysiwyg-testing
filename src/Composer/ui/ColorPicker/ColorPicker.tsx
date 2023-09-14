@@ -109,9 +109,9 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
       <div className={styles.colorPickerBasicColor}>
         {basicColors.map((basicColor) => (
           <button
+            key={basicColor}
             aria-label={t("Color Picker")}
             className={basicColor === selfColor.hex ? styles.activeColor : ""}
-            key={basicColor}
             onClick={() => {
               setInputColor(basicColor)
               setSelfColor(transformColor("hex", basicColor))

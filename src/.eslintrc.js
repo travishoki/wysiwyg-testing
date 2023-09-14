@@ -130,7 +130,7 @@ module.exports = {
     "react/no-multi-comp": "error",
 
     // Extra Sorting
-    "react/jsx-sort-props": ["error"],
+    "react/jsx-sort-props": ["error", { reservedFirst: ["key"] }],
     "sort-destructure-keys/sort-destructure-keys": 2,
     "sort-keys": "error",
     "typescript-sort-keys/interface": "error",

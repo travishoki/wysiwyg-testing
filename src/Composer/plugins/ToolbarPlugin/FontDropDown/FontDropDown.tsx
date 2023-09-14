@@ -55,12 +55,12 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
       {(styleName === "font-family" ? FONT_FAMILY_OPTIONS : FONT_SIZE_OPTIONS).map(
         ([option, text]) => (
           <DropDownItem
+            key={option}
             className={classNames(
               stylesDropdown.dropdownItem,
               dropDownActiveClass(value === option),
               `${styleName === "font-size" ? styles.fontsizeItem : ""}`,
             )}
-            key={option}
             onClick={() => handleClick(option)}
           >
             <span

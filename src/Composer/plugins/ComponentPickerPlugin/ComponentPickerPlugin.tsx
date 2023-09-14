@@ -234,9 +234,9 @@ export const ComponentPickerPlugin = () => {
                   <ul>
                     {options.map((option, i: number) => (
                       <ComponentPickerMenuItem
+                        key={option.key}
                         index={i}
                         isSelected={selectedIndex === i}
-                        key={option.key}
                         onClick={() => {
                           setHighlightedIndex(i)
                           selectOptionAndCleanUp(option)
