@@ -21,6 +21,7 @@ import { ButtonEdit } from "./ButtonEdit/ButtonEdit"
 import styles from "./FloatingLinkEditor.module.scss"
 import { ButtonTrash } from "./ButtonTrash/ButtonTrash"
 import { ButtonCancel } from "./ButtonCancel/ButtonCancel"
+import { ButtonConfirm } from "./ButtonConfirm/ButtonConfirm"
 
 type FloatingLinkEditorProps = {
   anchorElem: HTMLElement
@@ -203,14 +204,7 @@ export const FloatingLinkEditor = ({
                 setEditMode(false)
               }}
             />
-            <div
-              aria-label="confim"
-              className={styles.linkConfirm}
-              onClick={handleLinkSubmission}
-              onMouseDown={(event) => event.preventDefault()}
-              role="button"
-              tabIndex={0}
-            />
+            <ButtonConfirm onClick={handleLinkSubmission} />
           </div>
         </>
       ) : (
