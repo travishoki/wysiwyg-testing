@@ -229,7 +229,7 @@ export const FloatingLinkEditor = ({
               setEditMode(true)
             }}
           />
-          <ButtonTrash onClick={editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)} />
+          <ButtonTrash onClick={() => editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)} />
         </div>
       )}
     </div>
