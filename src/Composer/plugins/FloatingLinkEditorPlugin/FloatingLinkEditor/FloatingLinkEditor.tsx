@@ -20,6 +20,7 @@ import { sanitizeUrl } from "../../../helpers/url"
 import { ButtonEdit } from "./ButtonEdit/ButtonEdit"
 import styles from "./FloatingLinkEditor.module.scss"
 import { ButtonTrash } from "./ButtonTrash/ButtonTrash"
+import { ButtonCancel } from "./ButtonCancel/ButtonCancel"
 
 type FloatingLinkEditorProps = {
   anchorElem: HTMLElement
@@ -197,17 +198,11 @@ export const FloatingLinkEditor = ({
             value={editedLinkUrl}
           />
           <div>
-            <div
-              aria-label="cancel"
-              className={styles.linkCancel}
+            <ButtonCancel
               onClick={() => {
                 setEditMode(false)
               }}
-              onMouseDown={(event) => event.preventDefault()}
-              role="button"
-              tabIndex={0}
             />
-
             <div
               aria-label="confim"
               className={styles.linkConfirm}
