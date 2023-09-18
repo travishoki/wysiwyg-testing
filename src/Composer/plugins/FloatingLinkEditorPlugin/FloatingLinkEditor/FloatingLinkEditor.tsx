@@ -17,6 +17,7 @@ import {
 import { getSelectedNode } from "../../../helpers/getSelectedNode"
 import { setFloatingElemPositionForLinkEditor } from "../../../helpers/setFloatingElemPositionForLinkEditor"
 import { sanitizeUrl } from "../../../helpers/url"
+import { ButtonEdit } from "./ButtonEdit/ButtonEdit"
 import styles from "./FloatingLinkEditor.module.scss"
 
 type FloatingLinkEditorProps = {
@@ -221,16 +222,11 @@ export const FloatingLinkEditor = ({
           <a href={sanitizeUrl(linkUrl)} rel="noopener noreferrer" target="_blank">
             {linkUrl}
           </a>
-          <div
-            aria-label="edit"
-            className={styles.linkEdit}
+          <ButtonEdit
             onClick={() => {
               setEditedLinkUrl(linkUrl)
               setEditMode(true)
             }}
-            onMouseDown={(event) => event.preventDefault()}
-            role="button"
-            tabIndex={0}
           />
           <div
             aria-label="trash"
