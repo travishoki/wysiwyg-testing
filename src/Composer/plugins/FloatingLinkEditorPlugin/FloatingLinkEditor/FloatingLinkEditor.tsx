@@ -19,6 +19,7 @@ import { setFloatingElemPositionForLinkEditor } from "../../../helpers/setFloati
 import { sanitizeUrl } from "../../../helpers/url"
 import { ButtonEdit } from "./ButtonEdit/ButtonEdit"
 import styles from "./FloatingLinkEditor.module.scss"
+import { ButtonTrash } from "./ButtonTrash/ButtonTrash"
 
 type FloatingLinkEditorProps = {
   anchorElem: HTMLElement
@@ -228,16 +229,7 @@ export const FloatingLinkEditor = ({
               setEditMode(true)
             }}
           />
-          <div
-            aria-label="trash"
-            className={styles.linkTrash}
-            onClick={() => {
-              editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)
-            }}
-            onMouseDown={(event) => event.preventDefault()}
-            role="button"
-            tabIndex={0}
-          />
+          <ButtonTrash onClick={editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)} />
         </div>
       )}
     </div>
