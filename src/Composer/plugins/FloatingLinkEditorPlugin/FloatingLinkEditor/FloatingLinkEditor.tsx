@@ -17,11 +17,11 @@ import {
 import { getSelectedNode } from "../../../helpers/getSelectedNode"
 import { setFloatingElemPositionForLinkEditor } from "../../../helpers/setFloatingElemPositionForLinkEditor"
 import { sanitizeUrl } from "../../../helpers/url"
-import { ButtonEdit } from "./ButtonEdit/ButtonEdit"
-import styles from "./FloatingLinkEditor.module.scss"
-import { ButtonTrash } from "./ButtonTrash/ButtonTrash"
 import { ButtonCancel } from "./ButtonCancel/ButtonCancel"
 import { ButtonConfirm } from "./ButtonConfirm/ButtonConfirm"
+import { ButtonEdit } from "./ButtonEdit/ButtonEdit"
+import { ButtonTrash } from "./ButtonTrash/ButtonTrash"
+import styles from "./FloatingLinkEditor.module.scss"
 
 type FloatingLinkEditorProps = {
   anchorElem: HTMLElement
