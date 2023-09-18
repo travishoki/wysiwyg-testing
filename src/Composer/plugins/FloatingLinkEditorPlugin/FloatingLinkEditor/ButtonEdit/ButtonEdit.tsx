@@ -1,4 +1,5 @@
 import React from "react"
+import { ButtonIcon } from "../ButtonIcon/ButtonIcon"
 import styles from "./ButtonEdit.module.scss"
 
 type ButtonEditProps = {
@@ -7,13 +8,11 @@ type ButtonEditProps = {
 
 export const ButtonEdit = ({ onClick }: ButtonEditProps) => {
   return (
-    <div
+    <ButtonIcon
       aria-label="edit"
       className={styles.linkEdit}
       onClick={onClick}
       onMouseDown={(event) => event.preventDefault()}
-      role="button"
-      tabIndex={0}
     />
   )
 }

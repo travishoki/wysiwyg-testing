@@ -1,4 +1,5 @@
 import React from "react"
+import { ButtonIcon } from "../ButtonIcon/ButtonIcon"
 import styles from "./ButtonConfirm.module.scss"
 
 type ButtonConfirmProps = {
@@ -7,7 +8,7 @@ type ButtonConfirmProps = {
 
 export const ButtonConfirm = ({ onClick }: ButtonConfirmProps) => {
   return (
-    <div
+    <ButtonIcon
       aria-label="confim"
       className={styles.linkConfirm}
       onClick={onClick}

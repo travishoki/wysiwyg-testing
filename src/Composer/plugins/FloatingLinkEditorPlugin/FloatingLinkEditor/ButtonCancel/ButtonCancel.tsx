@@ -1,4 +1,5 @@
 import React from "react"
+import { ButtonIcon } from "../ButtonIcon/ButtonIcon"
 import styles from "./ButtonCancel.module.scss"
 
 type ButtonCancelProps = {
@@ -7,7 +8,7 @@ type ButtonCancelProps = {
 
 export const ButtonCancel = ({ onClick }: ButtonCancelProps) => {
   return (
-    <div
+    <ButtonIcon
       aria-label="cancel"
       className={styles.linkCancel}
       onClick={onClick}
