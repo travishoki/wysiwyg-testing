@@ -19,6 +19,7 @@ import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin"
 import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin"
 import { TablePlugin } from "@lexical/react/LexicalTablePlugin"
 import useLexicalEditable from "@lexical/react/useLexicalEditable"
+import { useTranslation } from "src/i18n"
 import { MergeField } from "types"
 import { useSettings } from "../../context/SettingsContext"
 import { useSharedHistoryContext } from "../../context/SharedHistoryContext"
@@ -63,10 +64,10 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
     settings: { tableCellBackgroundColor, tableCellMerge },
   } = useSettings()
   const isEditable = useLexicalEditable()
-  const text = "Enter some rich text..."
-  const placeholder = <Placeholder>{text}</Placeholder>
   const [floatingAnchorElem, setFloatingAnchorElem] = useState<HTMLDivElement | null>(null)
   const [isSmallWidthViewport, setIsSmallWidthViewport] = useState<boolean>(false)
+
+  const { t } = useTranslation("scenes", { keyPrefix: "documents" })
 
   const onRef = (_floatingAnchorElem: HTMLDivElement) => {
     if (_floatingAnchorElem !== null) {
@@ -125,7 +126,9 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
               </div>
             </div>
           }
-          placeholder={placeholder}
+          placeholder={
+            <Placeholder>{t("Begin typing or copy and paste your text here...")}</Placeholder>
+          }
         />
         <ListPlugin />
         <CheckListPlugin />
