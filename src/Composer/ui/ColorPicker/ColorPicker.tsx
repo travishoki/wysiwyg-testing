@@ -123,7 +123,7 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
       <MoveWrapper
         className={styles.colorPickerSaturation}
         onChange={onMoveSaturation}
-        style={{ backgroundColor: `hsl(${selfColor.hsv.h}, 100%, 50%)` }}
+        style={{ backgroundColor: selfColor.hex }}
       >
         <div
           className={styles.colorPickerSaturationCursor}
@@ -138,7 +138,7 @@ export const ColorPicker = ({ color, onChange }: Readonly<ColorPickerProps>) => 
         <div
           className={styles.colorPickerHueCursor}
           style={{
-            backgroundColor: `hsl(${selfColor.hsv.h}, 100%, 50%)`,
+            backgroundColor: selfColor.hex,
             left: huePosition.x,
           }}
         />
