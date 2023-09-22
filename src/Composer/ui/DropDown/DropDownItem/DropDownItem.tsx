@@ -26,7 +26,14 @@ export const DropDownItem = ({ children, className, onClick, title }: DropDownIt
   }, [ref, registerItem])
 
   return (
-    <button className={className} onClick={onClick} ref={ref} title={title} type="button">
+    <button
+      className={className}
+      onClick={onClick}
+      ref={ref}
+      role="listitem"
+      title={title}
+      type="button"
+    >
       {children}
     </button>
   )
