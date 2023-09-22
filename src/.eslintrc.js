@@ -121,6 +121,7 @@ module.exports = {
     "jsx-a11y/click-events-have-key-events": "warn",
     "jsx-a11y/no-static-element-interactions": "warn",
     "no-alert": "warn",
+    "react-hooks/exhaustive-deps": "warn",
     "react/no-danger": "warn",
 
     // Extra Syntax
