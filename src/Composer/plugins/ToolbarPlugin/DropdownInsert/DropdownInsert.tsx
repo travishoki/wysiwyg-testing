@@ -73,7 +73,7 @@ export const DropdownInsert = ({ activeEditor, isEditable, showModal }: Dropdown
         }}
       >
         <IconDropdown type="table" />
-        <span className={stylesDropdown.dropdownText}>Table</span>
+        <span className={stylesDropdown.dropdownText}>{t("Table")}</span>
       </DropDownItem>
     </DropDown>
   )
