@@ -115,7 +115,7 @@ export const TableActionMenu = ({
                 onClose()
               }}
             >
-              <span className={stylesDropdown.dropdownText}>Remove sorting</span>
+              <span className={stylesDropdown.dropdownText}>{t("Remove sorting")}</span>
             </button>
           )}
           {(sortingOptions === null ||
