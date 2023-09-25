@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react"
 import { $addUpdateTag, $createParagraphNode, $getRoot } from "lexical"
+import { useTranslation } from "src/i18n"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { TableNode } from "../TableNode"
 import { Cell, Rows, SortOptions } from "../TableNode.types"
@@ -28,6 +29,8 @@ export const TableActionMenu = ({
   updateTableNode,
 }: TableActionMenuProps) => {
   const dropDownRef = useRef<null | HTMLDivElement>(null)
+
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
 
   useEffect(() => {
     const dropdownElem = dropDownRef.current
@@ -99,7 +102,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown.dropdownText}>Clear cell</span>
+        <span className={stylesDropdown.dropdownText}>{t("Clear cell")}</span>
       </button>
       <hr />
       {cell.type === "header" && y === 0 && (
@@ -125,7 +128,7 @@ export const TableActionMenu = ({
                 onClose()
               }}
             >
-              <span className={stylesDropdown.dropdownText}>Sort ascending</span>
+              <span className={stylesDropdown.dropdownText}>{t("Sort ascending")}</span>
             </button>
           )}
           {(sortingOptions === null ||
@@ -138,7 +141,7 @@ export const TableActionMenu = ({
                 onClose()
               }}
             >
-              <span className={stylesDropdown.dropdownText}>Sort descending</span>
+              <span className={stylesDropdown.dropdownText}>{t("Sort descending")}</span>
             </button>
           )}
           <hr />
@@ -154,7 +157,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown.dropdownText}>Insert row above</span>
+        <span className={stylesDropdown.dropdownText}>{t("Insert row above")}</span>
       </button>
       <button
         className={stylesDropdown.dropdownItem}
@@ -166,7 +169,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown.dropdownText}>Insert row below</span>
+        <span className={stylesDropdown.dropdownText}>{t("Insert row below")}</span>
       </button>
       <hr />
       <button
@@ -179,7 +182,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown.dropdownText}>Insert column left</span>
+        <span className={stylesDropdown.dropdownText}>{t("Insert column left")}</span>
       </button>
       <button
         className={stylesDropdown.dropdownItem}
@@ -191,7 +194,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown.dropdownText}>Insert column right</span>
+        <span className={stylesDropdown.dropdownText}>{t("Insert column right")}</span>
       </button>
       <hr />
       {rows[0].cells.length !== 1 && (
@@ -205,7 +208,7 @@ export const TableActionMenu = ({
             onClose()
           }}
         >
-          <span className={stylesDropdown.dropdownText}>Delete column</span>
+          <span className={stylesDropdown.dropdownText}>{t("Delete column")}</span>
         </button>
       )}
       {rows.length !== 1 && (
@@ -219,7 +222,7 @@ export const TableActionMenu = ({
             onClose()
           }}
         >
-          <span className={stylesDropdown.dropdownText}>Delete row</span>
+          <span className={stylesDropdown.dropdownText}>{t("Delete row")}</span>
         </button>
       )}
       <button
@@ -233,7 +236,7 @@ export const TableActionMenu = ({
           onClose()
         }}
       >
-        <span className={stylesDropdown.dropdownText}>Delete table</span>
+        <span className={stylesDropdown.dropdownText}>{t("Delete table")}</span>
       </button>
     </div>
   )
