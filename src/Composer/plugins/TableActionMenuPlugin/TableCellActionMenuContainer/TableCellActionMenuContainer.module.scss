@@ -7,15 +7,16 @@
 
 .tableCellActionButton {
   align-items: center;
-  background-color: none;
+  background-color: #efefef;
   border-radius: 15px;
   border: 0;
   color: #222;
   cursor: pointer;
   display: flex;
-  display: inline-block;
   justify-content: center;
   position: relative;
+  height: 20px;
+  width: 20px;
 
   i {
     background-color: transparent;
