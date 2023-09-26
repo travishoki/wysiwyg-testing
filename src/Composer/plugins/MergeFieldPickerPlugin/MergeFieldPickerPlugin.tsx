@@ -17,7 +17,7 @@ import * as ReactDOM from "react-dom"
 import { MergeField } from "types"
 import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
 import { formatMergeFieldTitle } from "../../helpers/mergeFields.helpers"
-import { IconDropdown } from "../../ui/DropDown/IconDropdown/IconDropdown"
+import { MergeFieldIcon } from "../../ui/MergeFieldIcon/MergeFieldIcon"
 import { TypeaheadPopover } from "../../ui/TypeaheadPopover/TypeaheadPopover"
 import { ComponentPickerMenuItem } from "../ComponentPickerPlugin/ComponentPickerMenuItem/ComponentPickerMenuItem"
 import { ComponentPickerOption } from "../ComponentPickerPlugin/ComponentPickerOption/ComponentPickerOption"
@@ -40,7 +40,7 @@ export const MergeFieldPickerPlugin = ({ mergeFields }: MergeFieldPickerPluginPr
       ...mergeFields.map(
         (mergeField) =>
           new ComponentPickerOption(formatMergeFieldTitle(mergeField.name) ?? "Merge Field", {
-            icon: <IconDropdown type="paragraph" />,
+            icon: <MergeFieldIcon name={mergeField.name} />,
             keywords: ["merge-field"],
             onSelect: () => {
               const payload = {
