@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { INSERT_TABLE_COMMAND } from "@lexical/table"
 import { LexicalEditor } from "lexical"
+import { useTranslation } from "src/i18n"
 import { Button } from "../../../ui/Button/Button"
 import { DialogActions } from "../../../ui/Dialog/Dialog"
 import { TextInput } from "../../../ui/TextInput/TextInput"
@@ -14,6 +15,8 @@ export const InsertTableDialog = ({ activeEditor, onClose }: InsertTableDialogPr
   const [rows, setRows] = useState("5")
   const [columns, setColumns] = useState("5")
   const [isDisabled, setIsDisabled] = useState(true)
+
+  const { t: tCommon } = useTranslation("common")
 
   useEffect(() => {
     const row = Number(rows)
@@ -54,7 +57,7 @@ export const InsertTableDialog = ({ activeEditor, onClose }: InsertTableDialogPr
       />
       <DialogActions data-test-id="table-model-confirm-insert">
         <Button disabled={isDisabled} onClick={onClick}>
-          Confirm
+          {tCommon("Confirm")}
         </Button>
       </DialogActions>
     </>
