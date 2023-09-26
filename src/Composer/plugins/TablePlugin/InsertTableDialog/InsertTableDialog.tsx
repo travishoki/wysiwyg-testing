@@ -41,7 +41,7 @@ export const InsertTableDialog = ({ activeEditor, onClose }: InsertTableDialogPr
     <>
       <TextInput
         data-test-id="table-modal-rows"
-        label="Rows"
+        label={tCommon("Rows")}
         onChange={setRows}
         placeholder="# of rows (1-500)"
         type="number"
@@ -49,7 +49,7 @@ export const InsertTableDialog = ({ activeEditor, onClose }: InsertTableDialogPr
       />
       <TextInput
         data-test-id="table-modal-columns"
-        label="Columns"
+        label={tCommon("Columns")}
         onChange={setColumns}
         placeholder="# of columns (1-50)"
         type="number"
