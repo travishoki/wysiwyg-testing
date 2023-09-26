@@ -124,7 +124,7 @@ export const TableCellActionMenuContainer = ({
             }}
             ref={menuRootRef}
           >
-            <Icon className={stylesComposer.chevronDown} type="chevron-down" />
+            <Icon type="chevron-down" />
           </button>
           {colorPickerModal}
           {isMenuOpen && (
