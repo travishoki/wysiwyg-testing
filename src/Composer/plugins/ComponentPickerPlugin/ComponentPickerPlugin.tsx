@@ -133,7 +133,7 @@ export const ComponentPickerPlugin = () => {
         icon: <IconDropdown type="table" />,
         keywords: ["table", "grid", "spreadsheet", "rows", "columns"],
         onSelect: () =>
-          showModal("Insert Table", (onClose) => (
+          showModal(t("Insert Table"), (onClose) => (
             <InsertTableDialog activeEditor={editor} onClose={onClose} />
           )),
       }),

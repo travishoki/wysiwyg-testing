@@ -67,7 +67,7 @@ export const DropdownInsert = ({ activeEditor, isEditable, showModal }: Dropdown
       <DropDownItem
         className={stylesDropdown.dropdownItem}
         onClick={() => {
-          showModal("Insert Table", (onClose) => (
+          showModal(t("Insert Table"), (onClose) => (
             <InsertTableDialog activeEditor={activeEditor} onClose={onClose} />
           ))
         }}
