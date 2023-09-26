@@ -16,4 +16,12 @@
   display: inline-block;
   justify-content: center;
   position: relative;
+
+  i {
+    background-color: transparent;
+    background-size: contain;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+  }
 }
