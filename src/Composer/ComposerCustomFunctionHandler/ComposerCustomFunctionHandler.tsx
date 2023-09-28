@@ -27,10 +27,16 @@ export const ComposerCustomFunctionHandler = ({ composerRef }: MergeFieldHandler
       editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, payload)
     },
     getIsEmpty(): boolean {
-      const root = $getRoot()
-      const children = root.getChildren()
+      let isEmpty = true
 
-      return children.length === 0
+      editor.getEditorState().read(() => {
+        const root = $getRoot()
+        const children = root.getChildren()
+
+        isEmpty = children.length === 0
+      })
+
+      return isEmpty
     },
     onLock() {
       editor.update(() => {
