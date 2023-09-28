@@ -7,6 +7,7 @@ import { INSERT_MERGE_FIELD_COMMAND } from "../const"
 
 export type composerRefProps = Maybe<{
   dispatchMergeField: (mergeField: MergeField) => void
+  getIsEmpty: () => boolean
   onLock: () => void
   onSubmit: () => string
 }>
