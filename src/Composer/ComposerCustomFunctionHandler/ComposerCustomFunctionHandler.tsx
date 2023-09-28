@@ -31,9 +31,9 @@ export const ComposerCustomFunctionHandler = ({ composerRef }: MergeFieldHandler
 
       editor.getEditorState().read(() => {
         const root = $getRoot()
-        const children = root.getChildren()
-
-        isEmpty = children.length === 0
+        if (root) {
+          isEmpty = root.getFirstChild()?.isEmpty() && root.getChildrenSize() === 1
+        }
       })
 
       return isEmpty

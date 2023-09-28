@@ -20,6 +20,15 @@ export const App = () => {
   }
 
   const onSubmit = () => {
+    const isEmpty = composerRef.current.getIsEmpty()
+
+    if (isEmpty) {
+      /* eslint-disable-next-line no-alert */
+      alert("Empty")
+
+      return
+    }
+
     if (composerRef.current) {
       const output = composerRef.current.onSubmit()
       /* eslint-disable-next-line no-alert */
