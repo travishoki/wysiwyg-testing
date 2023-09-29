@@ -88,7 +88,7 @@ export const TableActionMenu = ({
         }}
       >
         <span className={stylesDropdown.dropdownText}>
-          {cell.type === "normal" ? "Make header" : "Remove header"}
+          {cell.type === "normal" ? t("Make header") : t("Remove header")}
         </span>
       </button>
       <button
