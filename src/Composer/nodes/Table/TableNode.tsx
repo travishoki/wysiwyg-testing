@@ -25,7 +25,7 @@ import {
   exportTableCellsToHTML,
   plainTextEditorJSON,
 } from "./TableNode.helpers"
-import { Cell, Row, Rows } from "./TableNode.types"
+import { Cell, Rows } from "./TableNode.types"
 
 export const cellTextContentCache: Map<string, string> = new Map()
 
@@ -281,24 +281,5 @@ export const $isTableNode = (node: LexicalNode | null | undefined): node is Tabl
 }
 
 const $createTableNode = (rows: Rows): TableNode => {
-  return new TableNode(rows)
-}
-
-export const $createTableNodeWithDimensions = (
-  rowCount: number,
-  columnCount: number,
-  includeHeaders = true,
-): TableNode => {
-  const rows: Rows = []
-  for (let y = 0; y < columnCount; y++) {
-    const row: Row = createRow()
-    rows.push(row)
-    for (let x = 0; x < rowCount; x++) {
-      row.cells.push(
-        createCell(includeHeaders === true && (y === 0 || x === 0) ? "header" : "normal"),
-      )
-    }
-  }
-
   return new TableNode(rows)
 }
