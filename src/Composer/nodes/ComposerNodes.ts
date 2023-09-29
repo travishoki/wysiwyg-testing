@@ -19,7 +19,6 @@ import { ImageNode } from "./Image/ImageNode"
 import { InlineImageNode } from "./InlineImage/InlineImageNode"
 import { KeywordNode } from "./Keyword/KeywordNode"
 import { MergeFieldNode } from "./MergeField/MergeFieldNode"
-import { TableNode as NewTableNode } from "./Table/TableNode"
 
 export const ComposerNodes: Array<Klass<LexicalNode>> = [
   HeadingNode,
@@ -27,7 +26,6 @@ export const ComposerNodes: Array<Klass<LexicalNode>> = [
   ListItemNode,
   QuoteNode,
   CodeNode,
-  NewTableNode,
   TableNode,
   TableCellNode,
   TableRowNode,

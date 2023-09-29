@@ -23,7 +23,6 @@ import { useTranslation } from "src/i18n"
 import { MergeField } from "types"
 import { useSettings } from "../../context/SettingsContext"
 import { useSharedHistoryContext } from "../../context/SharedHistoryContext"
-import { TableCellNodes } from "../../nodes/Table/TableCellNodes/TableCellNodes"
 import { ActionsPlugin } from "../../plugins/ActionsPlugin/ActionsPlugin"
 import { AutoEmbedPlugin } from "../../plugins/AutoEmbedPlugin/AutoEmbedPlugin"
 import { AutoLinkPlugin } from "../../plugins/AutoLinkPlugin/AutoLinkPlugin"
@@ -45,10 +44,8 @@ import { MergeFieldPlugin } from "../../plugins/MergeFieldPlugin/MergeFieldPlugi
 import { TabFocusPlugin } from "../../plugins/TabFocusPlugin/TabFocusPlugin"
 import { TableActionMenuPlugin } from "../../plugins/TableActionMenuPlugin/TableActionMenuPlugin"
 import { TableCellResizerPlugin } from "../../plugins/TableCellResizerPlugin/TableCellResizerPlugin"
-import { TablePlugin as NewTablePlugin } from "../../plugins/TablePlugin/TablePlugin"
 import { ToolbarPlugin } from "../../plugins/ToolbarPlugin/ToolbarPlugin"
 import { CAN_USE_DOM } from "../../shared/canUseDOM"
-import { ComposerTheme } from "../../themes/ComposerTheme"
 import { ContentEditable } from "../ContentEditable/ContentEditable"
 import { Placeholder } from "../Placeholder/Placeholder"
 import styles from "./Editor.module.scss"
@@ -73,15 +70,6 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
     if (_floatingAnchorElem !== null) {
       setFloatingAnchorElem(_floatingAnchorElem)
     }
-  }
-
-  const cellEditorConfig = {
-    namespace: "Composer",
-    nodes: [...TableCellNodes],
-    onError: (error: Error) => {
-      throw error
-    },
-    theme: ComposerTheme,
   }
 
   useEffect(() => {
@@ -138,19 +126,6 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
           hasCellMerge={tableCellMerge}
         />
         <TableCellResizerPlugin />
-        <NewTablePlugin cellEditorConfig={cellEditorConfig}>
-          <AutoFocusPlugin />
-          <RichTextPlugin
-            ErrorBoundary={LexicalErrorBoundary}
-            contentEditable={<ContentEditable className={styles.tableNodeContentEditable} />}
-            placeholder={null}
-          />
-          <HistoryPlugin />
-          <ImagesPlugin captionsEnabled={false} />
-          <LinkPlugin />
-          <LexicalClickableLinkPlugin />
-          <FloatingTextFormatToolbarPlugin />
-        </NewTablePlugin>
         <MergeFieldPlugin />
         <ImagesPlugin />
         <InlineImagePlugin />
