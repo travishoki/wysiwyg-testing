@@ -28,6 +28,7 @@ import {
   DEPRECATED_GridCellNode as GridCellNode,
 } from "lexical"
 import { createPortal } from "react-dom"
+import { useTranslation } from "src/i18n"
 import { ColorPicker } from "../../../ui/ColorPicker/ColorPicker"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import {
@@ -68,6 +69,8 @@ export const TableActionMenu = ({
   const [backgroundColor, setBackgroundColor] = useState(
     () => currentCellBackgroundColor(editor) || "",
   )
+
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
 
   useEffect(() => {
     return editor.registerMutationListener(TableCellNode, (nodeMutations) => {
@@ -352,7 +355,7 @@ export const TableActionMenu = ({
           data-test-id="table-merge-cells"
           onClick={() => mergeTableCellsAtSelection()}
         >
-          Merge cells
+          {t("Merge cells")}
         </button>
       )
     } else if (canUnmergeCell) {
@@ -362,7 +365,7 @@ export const TableActionMenu = ({
           data-test-id="table-unmerge-cells"
           onClick={() => unmergeTableCellsAtSelection()}
         >
-          Unmerge cells
+          {t("Unmerge cells")}
         </button>
       )
     }
@@ -386,7 +389,7 @@ export const TableActionMenu = ({
           ))
         }
       >
-        <span className={stylesDropdown.dropdownText}>Background color</span>
+        <span className={stylesDropdown.dropdownText}>{t("Background Color")}</span>
       </button>
       <hr />
       <button
@@ -434,21 +437,21 @@ export const TableActionMenu = ({
         data-test-id="table-delete-columns"
         onClick={() => deleteTableColumnAtSelection()}
       >
-        <span className={stylesDropdown.dropdownText}>Delete column</span>
+        <span className={stylesDropdown.dropdownText}>{t("Delete column")}</span>
       </button>
       <button
         className={stylesDropdown.dropdownItem}
         data-test-id="table-delete-rows"
         onClick={() => deleteTableRowAtSelection()}
       >
-        <span className={stylesDropdown.dropdownText}>Delete row</span>
+        <span className={stylesDropdown.dropdownText}>{t("Delete row")}</span>
       </button>
       <button
         className={stylesDropdown.dropdownItem}
         data-test-id="table-delete"
         onClick={() => deleteTableAtSelection()}
       >
-        <span className={stylesDropdown.dropdownText}>Delete table</span>
+        <span className={stylesDropdown.dropdownText}>{t("Delete table")}</span>
       </button>
       <hr />
       <button className={stylesDropdown.dropdownItem} onClick={() => toggleTableRowIsHeader()}>
