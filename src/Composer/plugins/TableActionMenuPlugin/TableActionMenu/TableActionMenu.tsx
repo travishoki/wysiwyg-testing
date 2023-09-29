@@ -457,18 +457,16 @@ export const TableActionMenu = ({
       <button className={stylesDropdown.dropdownItem} onClick={() => toggleTableRowIsHeader()}>
         <span className={stylesDropdown.dropdownText}>
           {(tableCellNode.__headerState & TableCellHeaderStates.ROW) === TableCellHeaderStates.ROW
-            ? "Remove"
-            : "Add"}{" "}
-          row header
+            ? t("Remove row header")
+            : t("Add row header")}
         </span>
       </button>
       <button className={stylesDropdown.dropdownItem} onClick={() => toggleTableColumnIsHeader()}>
         <span className={stylesDropdown.dropdownText}>
           {(tableCellNode.__headerState & TableCellHeaderStates.COLUMN) ===
           TableCellHeaderStates.COLUMN
-            ? "Remove"
-            : "Add"}{" "}
-          column header
+            ? t("Remove column header")
+            : t("Add column header")}
         </span>
       </button>
     </div>,
