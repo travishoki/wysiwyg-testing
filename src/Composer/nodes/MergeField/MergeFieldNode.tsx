@@ -5,7 +5,6 @@ import {
   DOMConversionOutput,
   DOMExportOutput,
   DecoratorNode,
-  LexicalNode,
 } from "lexical"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
 
@@ -86,8 +85,4 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
 export const $createMergeFieldNode = (mergeFieldName: string): MergeFieldNode => {
   return $applyNodeReplacement(new MergeFieldNode(mergeFieldName))
-}
-
-export const $isMergeFieldNode = (node: LexicalNode | null | undefined): node is MergeFieldNode => {
-  return node instanceof MergeFieldNode
 }
