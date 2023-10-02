@@ -11,17 +11,24 @@ type InsertTableDialogProps = {
   onClose: () => void
 }
 
+const MAX_COLUM = 50
+const MAX_ROW = 500
+
+const DEFAULT_COLUMN_COUNT = "5"
+const DEFAULT_ROW_COUNT = "5"
+
 export const InsertTableDialog = ({ activeEditor, onClose }: InsertTableDialogProps) => {
-  const [rows, setRows] = useState("5")
-  const [columns, setColumns] = useState("5")
+  const [rows, setRows] = useState(DEFAULT_ROW_COUNT)
+  const [columns, setColumns] = useState(DEFAULT_COLUMN_COUNT)
   const [isDisabled, setIsDisabled] = useState(true)
 
   const { t: tCommon } = useTranslation("common")
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
 
   useEffect(() => {
     const row = Number(rows)
     const column = Number(columns)
-    if (row && row > 0 && row <= 500 && column && column > 0 && column <= 50) {
+    if (row && row > 0 && row <= MAX_ROW && column && column > 0 && column <= MAX_COLUM) {
       setIsDisabled(false)
     } else {
       setIsDisabled(true)
@@ -43,7 +50,7 @@ export const InsertTableDialog = ({ activeEditor, onClose }: InsertTableDialogPr
         data-test-id="table-modal-rows"
         label={tCommon("Rows")}
         onChange={setRows}
-        placeholder="# of rows (1-500)"
+        placeholder={t("# of rows (1-{{maxRow}})", { maxRow: MAX_ROW })}
         type="number"
         value={rows}
       />
@@ -51,7 +58,7 @@ export const InsertTableDialog = ({ activeEditor, onClose }: InsertTableDialogPr
         data-test-id="table-modal-columns"
         label={tCommon("Columns")}
         onChange={setColumns}
-        placeholder="# of columns (1-50)"
+        placeholder={t("# of columns (1-{{maxColumn}})", { maxColumn: MAX_COLUM })}
         type="number"
         value={columns}
       />
