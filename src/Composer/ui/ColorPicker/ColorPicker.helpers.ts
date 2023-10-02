@@ -25,12 +25,16 @@ export const toHex = (value: string): string => {
     ctx.fillStyle = value
 
     return ctx.fillStyle
-  } else if (value.length === 4 || value.length === 5) {
+  }
+
+  if (value.length === 4 || value.length === 5) {
     return value
       .split("")
       .map((v, i) => (i ? v + v : "#"))
       .join("")
-  } else if (value.length === 7 || value.length === 9) {
+  }
+
+  if (value.length === 7 || value.length === 9) {
     return value
   }
 
