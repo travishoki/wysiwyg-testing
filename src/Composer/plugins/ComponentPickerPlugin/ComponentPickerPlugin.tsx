@@ -163,7 +163,7 @@ export const ComponentPickerPlugin = () => {
             }
           }),
       }),
-      new ComponentPickerOption("Divider", {
+      new ComponentPickerOption("Horizontal Rule", {
         icon: <IconDropdown type="horizontal-rule" />,
         keywords: ["horizontal rule", "divider", "hr"],
         onSelect: () => editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined),
