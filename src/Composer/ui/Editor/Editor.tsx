@@ -38,7 +38,6 @@ import { InitialStatePlugin } from "../../plugins/InitialStatePlugin/InitialStat
 import { InlineImagePlugin } from "../../plugins/InlineImagePlugin/InlineImagePlugin"
 import { KeywordsPlugin } from "../../plugins/KeywordsPlugin/KeywordsPlugin"
 import { LinkPlugin } from "../../plugins/LinkPlugin/LinkPlugin"
-import { ListMaxIndentLevelPlugin } from "../../plugins/ListMaxIndentLevelPlugin/ListMaxIndentLevelPlugin"
 import { MergeFieldPickerPlugin } from "../../plugins/MergeFieldPickerPlugin/MergeFieldPickerPlugin"
 import { MergeFieldPlugin } from "../../plugins/MergeFieldPlugin/MergeFieldPlugin"
 import { TabFocusPlugin } from "../../plugins/TabFocusPlugin/TabFocusPlugin"
@@ -120,7 +119,6 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
         />
         <ListPlugin />
         <CheckListPlugin />
-        <ListMaxIndentLevelPlugin maxDepth={7} />
         <TablePlugin
           hasCellBackgroundColor={tableCellBackgroundColor}
           hasCellMerge={tableCellMerge}
