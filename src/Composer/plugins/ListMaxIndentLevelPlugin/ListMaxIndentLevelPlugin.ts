@@ -15,13 +15,15 @@ type ListMaxIndentLevelPluginProps = Readonly<{
   maxDepth: number | null | undefined
 }>
 
+const MAX_DEPTH_DEFAULT = 7
+
 export const ListMaxIndentLevelPlugin = ({ maxDepth }: ListMaxIndentLevelPluginProps): null => {
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {
     return editor.registerCommand(
       INDENT_CONTENT_COMMAND,
-      () => !isIndentPermitted(maxDepth ?? 7),
+      () => !isIndentPermitted(maxDepth ?? MAX_DEPTH_DEFAULT),
       COMMAND_PRIORITY_CRITICAL,
     )
   }, [editor, maxDepth])
