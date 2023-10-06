@@ -132,6 +132,7 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
         <HorizontalRulePlugin />
         <TabFocusPlugin />
         <TabIndentationPlugin />
+        <ActionsPlugin />
         {floatingAnchorElem && !isSmallWidthViewport && (
           <>
             <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
@@ -140,7 +141,6 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
             <FloatingTextFormatToolbarPlugin anchorElem={floatingAnchorElem} />
           </>
         )}
-        <ActionsPlugin />
       </div>
     </>
   )
