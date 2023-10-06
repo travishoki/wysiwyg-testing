@@ -14,6 +14,7 @@ import {
 } from "@lexical/react/LexicalTypeaheadMenuPlugin"
 import { TextNode } from "lexical"
 import * as ReactDOM from "react-dom"
+import { useTranslation } from "src/i18n"
 import { MergeField } from "types"
 import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
 import { formatMergeFieldTitle } from "../../helpers/mergeFields.helpers"
@@ -31,6 +32,8 @@ export const MergeFieldPickerPlugin = ({ mergeFields }: MergeFieldPickerPluginPr
   const [editor] = useLexicalComposerContext()
   const [_queryString, setQueryString] = useState<string | null>(null)
 
+  const { t } = useTranslation("scenes", { keyPrefix: "documents" })
+
   const checkForTriggerMatch = useBasicTypeaheadTriggerMatch("{", {
     minLength: 0,
   })
@@ -39,7 +42,7 @@ export const MergeFieldPickerPlugin = ({ mergeFields }: MergeFieldPickerPluginPr
     const baseOptions = [
       ...mergeFields.map(
         (mergeField) =>
-          new ComponentPickerOption(formatMergeFieldTitle(mergeField.name) ?? "Merge Field", {
+          new ComponentPickerOption(formatMergeFieldTitle(mergeField.name) ?? t("Merge Field"), {
             icon: <MergeFieldIcon name={mergeField.name} />,
             keywords: ["merge-field"],
             onSelect: () => {
