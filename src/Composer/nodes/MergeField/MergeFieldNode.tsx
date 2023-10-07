@@ -57,6 +57,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   /* eslint-disable-next-line class-methods-use-this */
   createDOM(): HTMLElement {
     const element = document.createElement("span")
+    element.className = "merge-field"
 
     return element
   }
@@ -64,6 +65,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   exportDOM(): DOMExportOutput {
     const element = document.createElement("span")
     element.setAttribute("data-merge-field-component", "true")
+    element.className = "merge-field"
     element.textContent = `{{${this.mergeFieldName}}}`
 
     return { element }
