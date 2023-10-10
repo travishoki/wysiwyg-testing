@@ -24,8 +24,8 @@ export function InitialStatePlugin({ initialState }: InitialStatePluginProps): J
 
       // Clear everything and populate with nodes
       root.clear()
+
       root.append(paragraphNode)
-      root.getFirstDescendant()?.remove()
     })
   }, [editor, initialState])
 
