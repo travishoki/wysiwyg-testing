@@ -5,6 +5,7 @@ import {
   DOMConversionOutput,
   DOMExportOutput,
   DecoratorNode,
+  LexicalNode,
 } from "lexical"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
 
