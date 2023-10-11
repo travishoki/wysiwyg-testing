@@ -9,23 +9,57 @@ import {
   LexicalEditor,
   TextNode,
 } from "lexical"
+import { MergeField } from "types"
 import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
 import { $createMergeFieldNode, MergeFieldNode } from "../../nodes/MergeField/MergeFieldNode"
-import { textNodeTransform } from "./MergeFieldPlugin.helpers"
+import { getIsValidMergeField } from "./MergeFieldPlugin.helpers"
 
-const useMergeFields = (editor: LexicalEditor): void => {
+const regex = /(?<=\{\{).*?(?=\}\})/g
+
+const useMergeFields = (editor: LexicalEditor, mergeFields: MergeField[]): void => {
   useEffect(() => {
     if (!editor.hasNodes([MergeFieldNode])) {
       throw new Error("EmojisPlugin: EmojiNode not registered on editor")
     }
 
-    return editor.registerNodeTransform(TextNode, textNodeTransform)
-  }, [editor])
+    return editor.registerNodeTransform(TextNode, (node: TextNode): void => {
+      const text = node.getTextContent()
+      const handlebarsMatch = text.match(regex)
+
+      const hasHandlebars = !!handlebarsMatch
+
+      if (hasHandlebars) {
+        handlebarsMatch.forEach((mergeField) => {
+          const isValidMergeField = getIsValidMergeField(mergeField, mergeFields)
+
+          if (isValidMergeField) {
+            const mergeFieldNode = $createMergeFieldNode(mergeField)
+
+            const nodes = $createParagraphNode()
+
+            text.split(`{{${mergeField}}}`).forEach((str, index) => {
+              if (index !== 0) {
+                nodes.append(mergeFieldNode)
+              }
+
+              nodes.append(new TextNode(str))
+            })
+
+            node.replace(nodes)
+          }
+        })
+      }
+    })
+  }, [editor, mergeFields])
 }
 
-export const MergeFieldPlugin = (): JSX.Element | null => {
+type MergeFieldPluginProps = {
+  mergeFields: MergeField[]
+}
+
+export const MergeFieldPlugin = ({ mergeFields }: MergeFieldPluginProps): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
-  useMergeFields(editor)
+  useMergeFields(editor, mergeFields)
 
   useEffect(() => {
     if (!editor.hasNodes([MergeFieldNode])) {
