@@ -9,3 +9,9 @@ export const getIsValidMergeField = (
     name: mergeFieldName,
   })
 }
+
+const regex = /(?<=\{\{).*?(?=\}\})/g
+
+export const getHandlebarsMatch = (text: string) => {
+  return text.match(regex)
+}

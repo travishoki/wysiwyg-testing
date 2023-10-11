@@ -12,9 +12,7 @@ import {
 import { MergeField } from "types"
 import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
 import { $createMergeFieldNode, MergeFieldNode } from "../../nodes/MergeField/MergeFieldNode"
-import { getIsValidMergeField } from "./MergeFieldPlugin.helpers"
-
-const regex = /(?<=\{\{).*?(?=\}\})/g
+import { getHandlebarsMatch, getIsValidMergeField } from "./MergeFieldPlugin.helpers"
 
 const useMergeFields = (editor: LexicalEditor, mergeFields: MergeField[]): void => {
   useEffect(() => {
@@ -24,8 +22,7 @@ const useMergeFields = (editor: LexicalEditor, mergeFields: MergeField[]): void 
 
     return editor.registerNodeTransform(TextNode, (node: TextNode): void => {
       const text = node.getTextContent()
-      const handlebarsMatch = text.match(regex)
-
+      const handlebarsMatch = getHandlebarsMatch(text)
       const hasHandlebars = !!handlebarsMatch
 
       if (hasHandlebars) {
