@@ -7,7 +7,14 @@ import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 import { mergeFieldNameArray } from "./MergeFieldControls/MergeFieldControls.const"
 import { MergeField } from "./types"
 
-const initialState: Maybe<string> = null
+let initialState: Maybe<string> = null
+
+initialState =
+  '<p class="composer__paragraph" dir="ltr">' +
+  "<span>a </span>" +
+  '<span data-merge-field-component="true" class="merge-field">{{hoki-1}}</span>' +
+  "<span> b</span>" +
+  "</p>"
 
 // ts-prune-ignore-next
 export const App = () => {
