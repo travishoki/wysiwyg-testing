@@ -9,6 +9,7 @@ import { MergeField } from "./types"
 
 let initialState: Maybe<string> = null
 
+// Merge Field
 initialState =
   '<p class="composer__paragraph" dir="ltr">' +
   "<span>a </span>" +
