@@ -32,17 +32,15 @@ const useMergeFields = (editor: LexicalEditor, mergeFields: MergeField[]): void 
           if (isValidMergeField) {
             const mergeFieldNode = $createMergeFieldNode(mergeField)
 
-            const nodes = $createParagraphNode()
-
             text.split(`{{${mergeField}}}`).forEach((str, index) => {
               if (index !== 0) {
-                nodes.append(mergeFieldNode)
+                node.insertBefore(mergeFieldNode)
               }
 
-              nodes.append(new TextNode(str))
+              node.insertBefore(new TextNode(str))
             })
 
-            node.replace(nodes)
+            node.remove()
           }
         })
       }
