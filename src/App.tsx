@@ -9,13 +9,22 @@ import { MergeField } from "./types"
 
 let initialState: Maybe<string> = null
 
-// Merge Field
+// ----- Text Only -----
+// initialState = "asdf"
+// initialState = '<p class="composer__paragraph" dir="ltr">asdf</p>'
+
+// ----- Merge Fields -----
+// initialState =
+//   '<p class="composer__paragraph" dir="ltr">' +
+//   "<span>a </span>" +
+//   '<span data-merge-field-component="true" class="merge-field">{{hoki-1}}</span>' +
+//   "<span> b</span>" +
+//   "</p>"
+
 initialState =
-  '<p class="composer__paragraph" dir="ltr">' +
   "<span>a </span>" +
   '<span data-merge-field-component="true" class="merge-field">{{hoki-1}}</span>' +
-  "<span> b</span>" +
-  "</p>"
+  "<span> b</span>"
 
 // ts-prune-ignore-next
 export const App = () => {
