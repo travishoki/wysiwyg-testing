@@ -17,7 +17,7 @@ import { getHandlebarsMatch, getIsValidMergeField } from "./MergeFieldPlugin.hel
 const useMergeFields = (editor: LexicalEditor, mergeFields: MergeField[]): void => {
   useEffect(() => {
     if (!editor.hasNodes([MergeFieldNode])) {
-      throw new Error("EmojisPlugin: EmojiNode not registered on editor")
+      throw new Error("MergeFieldPlugin: MergeFieldNode not registered on editor")
     }
 
     return editor.registerNodeTransform(TextNode, (node: TextNode): void => {
