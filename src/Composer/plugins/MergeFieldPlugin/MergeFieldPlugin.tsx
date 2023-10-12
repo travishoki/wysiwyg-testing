@@ -26,13 +26,13 @@ const useMergeFields = (editor: LexicalEditor, mergeFields: MergeField[]): void 
       const hasHandlebars = !!handlebarsMatch
 
       if (hasHandlebars) {
-        handlebarsMatch.forEach((mergeField) => {
-          const isValidMergeField = getIsValidMergeField(mergeField, mergeFields)
+        handlebarsMatch.forEach((mergeFieldName) => {
+          const isValidMergeField = getIsValidMergeField(mergeFieldName, mergeFields)
 
           if (isValidMergeField) {
-            const mergeFieldNode = $createMergeFieldNode(mergeField)
+            const mergeFieldNode = $createMergeFieldNode(mergeFieldName)
 
-            text.split(`{{${mergeField}}}`).forEach((str, index) => {
+            text.split(`{{${mergeFieldName}}}`).forEach((str, index) => {
               if (index !== 0) {
                 node.insertBefore(mergeFieldNode)
               }
