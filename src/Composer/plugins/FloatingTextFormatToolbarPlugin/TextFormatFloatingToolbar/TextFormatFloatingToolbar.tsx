@@ -196,7 +196,7 @@ export const TextFormatFloatingToolbar = ({
             <IconButton type="underline" />
           </button>
           <button
-            aria-label="Format text with a strikethrough"
+            aria-label={t("Format text with a strikethrough")}
             className={classNames(
               styles.popupItem,
               styles.spaced + (isStrikethrough ? styles.active : ""),
@@ -209,7 +209,7 @@ export const TextFormatFloatingToolbar = ({
             <IconButton type="strikethrough" />
           </button>
           <button
-            aria-label="Format Subscript"
+            aria-label={t("Format subscript")}
             className={classNames(
               styles.popupItem,
               styles.spaced + (isSubscript ? styles.active : ""),
@@ -217,13 +217,13 @@ export const TextFormatFloatingToolbar = ({
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "subscript")
             }}
-            title="Subscript"
+            title={t("Subscript")}
             type="button"
           >
             <IconButton type="subscript" />
           </button>
           <button
-            aria-label="Format Superscript"
+            aria-label={t("Format superscript")}
             className={classNames(
               styles.popupItem,
               styles.spaced + (isSuperscript ? styles.active : ""),
@@ -231,13 +231,13 @@ export const TextFormatFloatingToolbar = ({
             onClick={() => {
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "superscript")
             }}
-            title="Superscript"
+            title={t("Superscript")}
             type="button"
           >
             <IconButton type="superscript" />
           </button>
           <button
-            aria-label="Insert link"
+            aria-label={t("Insert link")}
             className={classNames(styles.popupItem, styles.spaced + (isLink ? styles.active : ""))}
             onClick={insertLink}
             type="button"
