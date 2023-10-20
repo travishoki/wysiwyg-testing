@@ -14,17 +14,17 @@ let initialState: Maybe<string> = null
 // initialState = '<p class="composer__paragraph" dir="ltr">asdf</p>'
 
 // ----- Merge Fields -----
-// initialState =
-//   '<p class="composer__paragraph" dir="ltr">' +
-//   "<span>a </span>" +
-//   '<span data-merge-field-component="true" class="merge-field">{{hoki-1}}</span>' +
-//   "<span> b</span>" +
-//   "</p>"
-
 initialState =
+  '<p class="composer__paragraph" dir="ltr">' +
   "<span>a </span>" +
   '<span data-merge-field-component="true" class="merge-field">{{hoki-1}}</span>' +
-  "<span> b</span>"
+  "<span> b</span>" +
+  "</p>"
+
+// initialState =
+//   "<span>a </span>" +
+//   '<span data-merge-field-component="true" class="merge-field">{{hoki-1}}</span>' +
+//   "<span> b</span>"
 
 // ts-prune-ignore-next
 export const App = () => {
@@ -38,7 +38,6 @@ export const App = () => {
 
   const onSubmit = () => {
     const isEmpty = composerRef.current.getIsEmpty()
-
     if (isEmpty) {
       /* eslint-disable-next-line no-alert */
       alert("Empty")
@@ -46,8 +45,16 @@ export const App = () => {
       return
     }
 
+    const isDirty = composerRef.current.getIsDirty()
+    if (isDirty) {
+      /* eslint-disable-next-line no-alert */
+      alert("Dirty")
+
+      return
+    }
+
     if (composerRef.current) {
-      const output = composerRef.current.onSubmit()
+      const output = composerRef.current.getValue()
       /* eslint-disable-next-line no-alert */
       alert(output)
     }

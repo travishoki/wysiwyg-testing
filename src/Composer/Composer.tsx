@@ -1,7 +1,9 @@
-import React, { MutableRefObject } from "react"
+import React, { MutableRefObject, useState } from "react"
+import { $generateHtmlFromNodes } from "@lexical/html"
 import { LexicalComposer } from "@lexical/react/LexicalComposer"
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
 import classNames from "classnames"
+import { EditorState, LexicalEditor } from "lexical"
 import { MergeField } from "types"
 import styles from "./Composer.module.scss"
 import {
@@ -34,16 +36,21 @@ type ComposerProps = {
   composerRef: MutableRefObject<composerRefProps>
   initialState: Maybe<string>
   mergeFields: MergeField[]
-  onChange?: () => void
 }
 
-export const Composer = ({
-  className,
-  composerRef,
-  initialState,
-  mergeFields,
-  onChange,
-}: ComposerProps) => {
+export const Composer = ({ className, composerRef, initialState, mergeFields }: ComposerProps) => {
+  const [isDirty, setIsDirty] = useState(false)
+
+  const onChange = (_editorState: EditorState, editor: LexicalEditor) => {
+    editor.update(() => {
+      const output = $generateHtmlFromNodes(editor, null)
+
+      const newIsDirty = initialState !== output
+
+      setIsDirty(newIsDirty)
+    })
+  }
+
   return (
     <div className={classNames("composer", className)}>
       <LexicalComposer initialConfig={initialConfig}>
@@ -51,9 +58,13 @@ export const Composer = ({
           <TableContext>
             <SharedAutocompleteContext>
               <div className={styles.editorShell}>
-                <ComposerCustomFunctionHandler composerRef={composerRef} />
+                <ComposerCustomFunctionHandler
+                  composerRef={composerRef}
+                  isDirty={isDirty}
+                  setIsDirty={setIsDirty}
+                />
                 <Editor initialState={initialState} mergeFields={mergeFields} />
-                <OnChangePlugin onChange={() => onChange && onChange()} />
+                <OnChangePlugin onChange={onChange} />
               </div>
             </SharedAutocompleteContext>
           </TableContext>

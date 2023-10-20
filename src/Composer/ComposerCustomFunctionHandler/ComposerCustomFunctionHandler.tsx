@@ -7,16 +7,24 @@ import { INSERT_MERGE_FIELD_COMMAND } from "../const"
 
 export type composerRefProps = Maybe<{
   dispatchMergeField: (mergeField: MergeField) => void
+  getIsDirty: () => boolean
   getIsEmpty: () => boolean
+  getValue: () => string
   onLock: () => void
-  onSubmit: () => string
+  setIsDirty: (isDirty: boolean) => void
 }>
 
 type MergeFieldHandlerProps = {
   composerRef: MutableRefObject<composerRefProps>
+  isDirty: boolean
+  setIsDirty: (isDirty: boolean) => void
 }
 
-export const ComposerCustomFunctionHandler = ({ composerRef }: MergeFieldHandlerProps): null => {
+export const ComposerCustomFunctionHandler = ({
+  composerRef,
+  isDirty,
+  setIsDirty,
+}: MergeFieldHandlerProps): null => {
   const [editor] = useLexicalComposerContext()
 
   useImperativeHandle(composerRef, () => ({
@@ -25,6 +33,9 @@ export const ComposerCustomFunctionHandler = ({ composerRef }: MergeFieldHandler
         mergeFieldName: mergeField.name ?? "",
       }
       editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, payload)
+    },
+    getIsDirty(): boolean {
+      return isDirty
     },
     getIsEmpty(): boolean {
       let isEmpty = true
@@ -38,12 +49,7 @@ export const ComposerCustomFunctionHandler = ({ composerRef }: MergeFieldHandler
 
       return isEmpty
     },
-    onLock() {
-      editor.update(() => {
-        editor.setEditable(!editor.isEditable())
-      })
-    },
-    onSubmit(): string {
+    getValue(): string {
       let htmlString = ""
 
       editor.update(() => {
@@ -51,6 +57,14 @@ export const ComposerCustomFunctionHandler = ({ composerRef }: MergeFieldHandler
       })
 
       return htmlString
+    },
+    onLock() {
+      editor.update(() => {
+        editor.setEditable(!editor.isEditable())
+      })
+    },
+    setIsDirty(newIsDirty) {
+      setIsDirty(newIsDirty)
     },
   }))
 
