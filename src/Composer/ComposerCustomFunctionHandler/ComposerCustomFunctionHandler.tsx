@@ -11,19 +11,16 @@ export type composerRefProps = Maybe<{
   getIsEmpty: () => boolean
   getValue: () => string
   onLock: () => void
-  setIsDirty: (isDirty: boolean) => void
 }>
 
 type MergeFieldHandlerProps = {
   composerRef: MutableRefObject<composerRefProps>
   isDirty: boolean
-  setIsDirty: (isDirty: boolean) => void
 }
 
 export const ComposerCustomFunctionHandler = ({
   composerRef,
   isDirty,
-  setIsDirty,
 }: MergeFieldHandlerProps): null => {
   const [editor] = useLexicalComposerContext()
 
@@ -62,9 +59,6 @@ export const ComposerCustomFunctionHandler = ({
       editor.update(() => {
         editor.setEditable(!editor.isEditable())
       })
-    },
-    setIsDirty(newIsDirty) {
-      setIsDirty(newIsDirty)
     },
   }))
 
