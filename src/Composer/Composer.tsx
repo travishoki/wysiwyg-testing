@@ -58,11 +58,7 @@ export const Composer = ({ className, composerRef, initialState, mergeFields }: 
           <TableContext>
             <SharedAutocompleteContext>
               <div className={styles.editorShell}>
-                <ComposerCustomFunctionHandler
-                  composerRef={composerRef}
-                  isDirty={isDirty}
-                  setIsDirty={setIsDirty}
-                />
+                <ComposerCustomFunctionHandler composerRef={composerRef} isDirty={isDirty} />
                 <Editor initialState={initialState} mergeFields={mergeFields} />
                 <OnChangePlugin onChange={onChange} />
               </div>
