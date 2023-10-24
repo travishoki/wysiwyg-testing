@@ -20,20 +20,20 @@ export function InitialStatePlugin({ initialState }: InitialStatePluginProps): J
       // Clear everything and populate with nodes
       root.clear()
 
-      if (nodes.length === 1 && nodes[0].__type === "paragraph") {
+      // Add in all of the nodes
+      const filteredNodes = nodes.filter((n) => {
+        const isEmptyParagraphNode = $isParagraphNode(n) && n.getTextContent() === ""
+
+        return !isEmptyParagraphNode
+      })
+
+      if (filteredNodes.length === 1 && $isParagraphNode(filteredNodes[0])) {
         // Add in the node
-        root.append(nodes[0])
+        root.append(filteredNodes[0])
       } else {
         const paragraphNode = $createParagraphNode()
 
-        // Add in all of the nodes
-        nodes.forEach((n) => {
-          const isEmptyParagraphNode = $isParagraphNode(n) && n.getTextContent() === ""
-
-          if (!isEmptyParagraphNode) {
-            return paragraphNode.append(n)
-          }
-        })
+        filteredNodes.forEach((n) => paragraphNode.append(n))
 
         root.append(paragraphNode)
       }
