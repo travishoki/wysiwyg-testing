@@ -18,10 +18,9 @@ export function InitialStatePlugin({ initialState }: InitialStatePluginProps): J
       const dom = parser.parseFromString(initialState, "text/html")
       const nodes = $generateNodesFromDOM(editor, dom)
 
-      // Clear everything and populate with nodes
+      // Clear everything
       root.clear()
 
-      // Add in all of the nodes
       const filteredNodes = nodes.filter(filterOutEmptyPargraphNodes)
 
       if (filteredNodes.length === 1 && $isParagraphNode(filteredNodes[0])) {
@@ -30,6 +29,7 @@ export function InitialStatePlugin({ initialState }: InitialStatePluginProps): J
       } else {
         const paragraphNode = $createParagraphNode()
 
+        // Add in all of the nodes
         filteredNodes.forEach((n) => paragraphNode.append(n))
 
         root.append(paragraphNode)
