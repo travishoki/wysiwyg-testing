@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useState } from "react"
+import React, { MutableRefObject } from "react"
 import { $generateHtmlFromNodes } from "@lexical/html"
 import { LexicalComposer } from "@lexical/react/LexicalComposer"
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"
@@ -36,15 +36,19 @@ type ComposerProps = {
   composerRef: MutableRefObject<composerRefProps>
   initialState: Maybe<string>
   mergeFields: MergeField[]
+  setIsDirty: (isDirty: boolean) => void
 }
 
-export const Composer = ({ className, composerRef, initialState, mergeFields }: ComposerProps) => {
-  const [isDirty, setIsDirty] = useState(false)
-
+export const Composer = ({
+  className,
+  composerRef,
+  initialState,
+  mergeFields,
+  setIsDirty,
+}: ComposerProps) => {
   const onChange = (_editorState: EditorState, editor: LexicalEditor) => {
     editor.update(() => {
       const output = $generateHtmlFromNodes(editor, null)
-
       const newIsDirty = initialState !== output
 
       setIsDirty(newIsDirty)
@@ -58,7 +62,7 @@ export const Composer = ({ className, composerRef, initialState, mergeFields }: 
           <TableContext>
             <SharedAutocompleteContext>
               <div className={styles.editorShell}>
-                <ComposerCustomFunctionHandler composerRef={composerRef} isDirty={isDirty} />
+                <ComposerCustomFunctionHandler composerRef={composerRef} />
                 <Editor initialState={initialState} mergeFields={mergeFields} />
                 <OnChangePlugin onChange={onChange} />
               </div>

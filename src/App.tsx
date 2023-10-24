@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import styles from "./App.module.scss"
 import { Composer } from "./Composer/Composer"
 import { composerRefProps } from "./Composer/ComposerCustomFunctionHandler/ComposerCustomFunctionHandler"
@@ -29,6 +29,7 @@ initialState =
 // ts-prune-ignore-next
 export const App = () => {
   const composerRef = useRef<composerRefProps>()
+  const [isDirty, setIsDirty] = useState(false)
 
   const onClickMergeField = (mergeField: MergeField) => {
     if (composerRef.current) {
@@ -45,7 +46,6 @@ export const App = () => {
       return
     }
 
-    const isDirty = composerRef.current.getIsDirty()
     if (isDirty) {
       /* eslint-disable-next-line no-alert */
       alert("Dirty")
@@ -57,6 +57,8 @@ export const App = () => {
       const output = composerRef.current.getValue()
       /* eslint-disable-next-line no-alert */
       alert(output)
+
+      initialState = output
     }
   }
 
@@ -68,11 +70,13 @@ export const App = () => {
 
   return (
     <div className={styles.app}>
+      {isDirty ? "Unsaved" : "Saved"}
       <Composer
         className={styles.composer}
         composerRef={composerRef}
         initialState={initialState}
         mergeFields={mergeFieldNameArray}
+        setIsDirty={setIsDirty}
       />
       <MergeFieldControls onClick={onClickMergeField} />
       <Controls onLock={onLock} onSubmit={onSubmit} />
