@@ -2,7 +2,8 @@ import React, { useRef, useState } from "react"
 import styles from "./App.module.scss"
 import { Composer } from "./Composer/Composer"
 import { composerRefProps } from "./Composer/ComposerCustomFunctionHandler/ComposerCustomFunctionHandler"
-import { Controls } from "./Controls/Controls"
+import { Button } from "./Controls/Button/Button"
+import { LockButton } from "./Controls/LockButton/LockButton"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
 import { mergeFieldNameArray } from "./MergeFieldControls/MergeFieldControls.const"
 import { MergeField } from "./types"
@@ -37,18 +38,21 @@ export const App = () => {
     }
   }
 
+  const onGetValue = () => {
+    if (composerRef.current) {
+      const output = composerRef.current.getValue()
+      /* eslint-disable-next-line no-alert */
+      alert(output)
+
+      initialState = output
+    }
+  }
+
   const onSubmit = () => {
     const isEmpty = composerRef.current.getIsEmpty()
     if (isEmpty) {
       /* eslint-disable-next-line no-alert */
       alert("Empty")
-
-      return
-    }
-
-    if (isDirty) {
-      /* eslint-disable-next-line no-alert */
-      alert("Dirty")
 
       return
     }
@@ -70,7 +74,6 @@ export const App = () => {
 
   return (
     <div className={styles.app}>
-      {isDirty ? "Unsaved" : "Saved"}
       <Composer
         className={styles.composer}
         composerRef={composerRef}
@@ -79,7 +82,11 @@ export const App = () => {
         setIsDirty={setIsDirty}
       />
       <MergeFieldControls onClick={onClickMergeField} />
-      <Controls onLock={onLock} onSubmit={onSubmit} />
+      <>
+        <Button disabled={!isDirty} onClick={onSubmit} title="Submit" />
+        <Button onClick={onGetValue} title="Get Value" />
+        <LockButton onClick={onLock} />
+      </>
     </div>
   )
 }
