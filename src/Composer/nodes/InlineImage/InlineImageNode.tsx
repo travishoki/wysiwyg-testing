@@ -166,6 +166,20 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
     return { element }
   }
 
+  exportJSON(): SerializedInlineImageNode {
+    return {
+      altText: this.getAltText(),
+      caption: this.__caption.toJSON(),
+      height: this.__height === "inherit" ? 0 : this.__height,
+      position: this.__position,
+      showCaption: this.__showCaption,
+      src: this.getSrc(),
+      type: "inline-image",
+      version: 1,
+      width: this.__width === "inherit" ? 0 : this.__width,
+    }
+  }
+
   getSrc(): string {
     return this.__src
   }
