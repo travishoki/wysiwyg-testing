@@ -1,5 +1,10 @@
 import React from "react"
-import classNames from "classnames"
+// import UserIcon from "shared/icons/basic/user.svg" // Add when porting over
+// import AtSignIcon from "shared/icons/symbols/at-sign.svg" // Add when porting over
+// import BracketsIcon from "shared/icons/various/brackets.svg" // Add when porting over
+import { ReactComponent as UserIcon } from "../../images/internal/shared/icons/basic/user.svg" // Remove when porting over
+import { ReactComponent as AtSignIcon } from "../../images/internal/shared/icons/symbols/at-sign.svg" // Remove when porting over
+import { ReactComponent as BracketsIcon } from "../../images/internal/shared/icons/various/brackets.svg" // Remove when porting over
 import styles from "./MergeFieldIcon.module.scss"
 
 type MergeFieldIconProps = {
@@ -7,22 +12,19 @@ type MergeFieldIconProps = {
 }
 
 export const MergeFieldIcon = ({ name }: MergeFieldIconProps) => {
-  let icon
+  let Icon
 
   switch (name) {
-    case "DATE_APPROVED":
-      icon = styles.calendarDatesIcon
-      break
     case "EMAIL":
-      icon = styles.atSignIcon
+      Icon = AtSignIcon
       break
     case "FULL_NAME":
-      icon = styles.userIcon
+      Icon = UserIcon
       break
     default:
-      icon = styles.bracketsIcon
+      Icon = BracketsIcon
       break
   }
 
-  return <i className={classNames(styles.icon, icon)} />
+  return <Icon className={styles.icon} />
 }
