@@ -6,6 +6,8 @@ import {
   DOMExportOutput,
   DecoratorNode,
   LexicalNode,
+  SerializedLexicalNode,
+  Spread,
 } from "lexical"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
 
@@ -13,6 +15,13 @@ const MergeFieldComponent = React.lazy(
   // @ts-ignore
   () => import("./MergeFieldComponent/MergeFieldComponent"),
 )
+
+type SerializedMergeFieldNode = Spread<
+  {
+    mergeFieldName: string
+  },
+  SerializedLexicalNode
+>
 
 export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   mergeFieldName: string
@@ -61,6 +70,26 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     element.className = "merge-field"
 
     return element
+  }
+
+  static importJSON(serializedNode: SerializedMergeFieldNode): MergeFieldNode {
+    const node = $createMergeFieldNode(serializedNode.mergeFieldName)
+
+    return node
+  }
+
+  exportJSON(): SerializedMergeFieldNode {
+    return {
+      ...super.exportJSON(),
+      mergeFieldName: this.getClassName(),
+      type: "merge-field",
+    }
+  }
+
+  getClassName(): string {
+    const self = this.getLatest()
+
+    return self.mergeFieldName
   }
 
   exportDOM(): DOMExportOutput {
