@@ -10,8 +10,8 @@ export const getIsValidMergeField = (
   })
 }
 
-const regex = /(?<=\{\{).*?(?=\}\})/g
+export const splitAtHandlebars = (str: string) => {
+  const regEx = /{{(.*?)}}/g
 
-export const getHandlebarsMatch = (text: string) => {
-  return text.match(regex)
+  return str.split(regEx).filter(Boolean)
 }

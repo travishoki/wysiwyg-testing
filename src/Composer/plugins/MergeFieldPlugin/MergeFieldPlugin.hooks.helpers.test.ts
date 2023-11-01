@@ -1,5 +1,5 @@
 import { MergeField } from "types"
-import { getHandlebarsMatch, getIsValidMergeField } from "./MergeFieldPlugin.hooks.helpers"
+import { getIsValidMergeField, splitAtHandlebars } from "./MergeFieldPlugin.hooks.helpers"
 
 describe("getIsValidMergeField", () => {
   const mergeFields: MergeField[] = [
@@ -26,19 +26,12 @@ describe("getIsValidMergeField", () => {
   })
 })
 
-describe("getHandlebarsMatch", () => {
-  it("should return true", () => {
-    const text = "{{foo}}"
-    const result = getHandlebarsMatch(text)
-    const expectResults = ["foo"]
+describe("splitAtHandlebars", () => {
+  it("should split string with text around handlebars", () => {
+    const text = "a{{foo}}b{{foo}}"
+    const result = splitAtHandlebars(text)
+    const expectResults = ["a", "foo", "b", "foo"]
 
     expect(result).toEqual(expectResults)
-  })
-
-  it("should return false", () => {
-    const text = "{foo}"
-    const result = getHandlebarsMatch(text)
-
-    expect(result).toBeNull()
   })
 })

@@ -124,7 +124,7 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
           hasCellMerge={tableCellMerge}
         />
         <TableCellResizerPlugin />
-        <MergeFieldPlugin mergeFields={mergeFields} />
+        <MergeFieldPlugin initialState={initialState} mergeFields={mergeFields} />
         <ImagesPlugin />
         <InlineImagePlugin />
         <LinkPlugin />

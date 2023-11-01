@@ -13,12 +13,16 @@ import { $createMergeFieldNode, MergeFieldNode } from "../../nodes/MergeField/Me
 import { useMergeFields } from "./MergeFieldPlugin.hooks"
 
 type MergeFieldPluginProps = {
+  initialState: Maybe<string>
   mergeFields: MergeField[]
 }
 
-export const MergeFieldPlugin = ({ mergeFields }: MergeFieldPluginProps): JSX.Element | null => {
+export const MergeFieldPlugin = ({
+  initialState,
+  mergeFields,
+}: MergeFieldPluginProps): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
-  useMergeFields(editor, mergeFields)
+  useMergeFields(editor, mergeFields, initialState)
 
   useEffect(() => {
     if (!editor.hasNodes([MergeFieldNode])) {
