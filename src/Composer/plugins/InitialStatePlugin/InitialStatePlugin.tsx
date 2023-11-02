@@ -10,7 +10,6 @@ type InitialStatePluginProps = {
 
 export function InitialStatePlugin({ initialState }: InitialStatePluginProps): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
-
   const [hasBeenIntialized, setHasBeenIntialized] = useState(false)
 
   useEffect(() => {

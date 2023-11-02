@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react"
-import { LexicalEditor, TextNode } from "lexical"
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
+import { TextNode } from "lexical"
 import { MergeField } from "types"
 import { $createMergeFieldNode, MergeFieldNode } from "../../nodes/MergeField/MergeFieldNode"
-import { getIsValidMergeField, splitAtHandlebars } from "./MergeFieldPlugin.hooks.helpers"
+import { getIsValidMergeField, splitAtHandlebars } from "./InitialStateMergeFieldPlugin.helpers"
 
-export const useMergeFields = (
-  editor: LexicalEditor,
-  mergeFields: MergeField[],
-  initialState: Maybe<string>,
-): void => {
+type InitialStateMergeFieldPluginProps = {
+  initialState: string
+  mergeFields: MergeField[]
+}
+
+export function InitialStateMergeFieldPlugin({
+  initialState,
+  mergeFields,
+}: InitialStateMergeFieldPluginProps): JSX.Element | null {
+  const [editor] = useLexicalComposerContext()
   const [storedInitialState, setStoredInitialState] = useState<string>()
 
   useEffect(() => {
@@ -44,4 +50,6 @@ export const useMergeFields = (
       }
     })
   }, [editor, initialState, mergeFields, setStoredInitialState, storedInitialState])
+
+  return null
 }

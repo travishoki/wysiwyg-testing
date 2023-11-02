@@ -34,6 +34,7 @@ import { EmojisPlugin } from "../../plugins/EmojisPlugin/EmojisPlugin"
 import { FloatingLinkEditorPlugin } from "../../plugins/FloatingLinkEditorPlugin/FloatingLinkEditorPlugin"
 import { FloatingTextFormatToolbarPlugin } from "../../plugins/FloatingTextFormatToolbarPlugin/FloatingTextFormatToolbarPlugin"
 import { ImagesPlugin } from "../../plugins/ImagesPlugin/ImagesPlugin"
+import { InitialStateMergeFieldPlugin } from "../../plugins/InitialStateMergeFieldPlugin/InitialStateMergeFieldPlugin"
 import { InitialStatePlugin } from "../../plugins/InitialStatePlugin/InitialStatePlugin"
 import { InlineImagePlugin } from "../../plugins/InlineImagePlugin/InlineImagePlugin"
 import { KeywordsPlugin } from "../../plugins/KeywordsPlugin/KeywordsPlugin"
@@ -91,7 +92,12 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
   return (
     <>
       <ToolbarPlugin />
-      {initialState && <InitialStatePlugin initialState={initialState} />}
+      {initialState && (
+        <>
+          <InitialStatePlugin initialState={initialState} />
+          <InitialStateMergeFieldPlugin initialState={initialState} mergeFields={mergeFields} />
+        </>
+      )}
       <div className={styles.editorContainer}>
         <DragDropPaste />
         <AutoFocusPlugin />
@@ -124,7 +130,10 @@ export const Editor = ({ initialState, mergeFields }: EditorProps) => {
           hasCellMerge={tableCellMerge}
         />
         <TableCellResizerPlugin />
+        <MergeFieldPlugin />
+        {/*
         <MergeFieldPlugin initialState={initialState} mergeFields={mergeFields} />
+        */}
         <ImagesPlugin />
         <InlineImagePlugin />
         <LinkPlugin />

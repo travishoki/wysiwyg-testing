@@ -7,22 +7,11 @@ import {
   $isRootOrShadowRoot,
   COMMAND_PRIORITY_EDITOR,
 } from "lexical"
-import { MergeField } from "types"
 import { INSERT_MERGE_FIELD_COMMAND } from "../../const"
 import { $createMergeFieldNode, MergeFieldNode } from "../../nodes/MergeField/MergeFieldNode"
-import { useMergeFields } from "./MergeFieldPlugin.hooks"
 
-type MergeFieldPluginProps = {
-  initialState: Maybe<string>
-  mergeFields: MergeField[]
-}
-
-export const MergeFieldPlugin = ({
-  initialState,
-  mergeFields,
-}: MergeFieldPluginProps): JSX.Element | null => {
+export const MergeFieldPlugin = (): JSX.Element | null => {
   const [editor] = useLexicalComposerContext()
-  useMergeFields(editor, mergeFields, initialState)
 
   useEffect(() => {
     if (!editor.hasNodes([MergeFieldNode])) {

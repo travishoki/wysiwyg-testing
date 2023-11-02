@@ -1,5 +1,5 @@
 import { MergeField } from "types"
-import { getIsValidMergeField, splitAtHandlebars } from "./MergeFieldPlugin.hooks.helpers"
+import { getIsValidMergeField, splitAtHandlebars } from "./InitialStateMergeFieldPlugin.helpers"
 
 describe("getIsValidMergeField", () => {
   const mergeFields: MergeField[] = [
