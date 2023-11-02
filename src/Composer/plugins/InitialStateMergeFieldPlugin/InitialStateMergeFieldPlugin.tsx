@@ -15,17 +15,17 @@ export function InitialStateMergeFieldPlugin({
   mergeFields,
 }: InitialStateMergeFieldPluginProps): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
-  const [storedInitialState, setStoredInitialState] = useState<string>()
+  const [hasBeenIntialized, setHasBeenIntialized] = useState(false)
 
   useEffect(() => {
+    if (hasBeenIntialized) return
+
+    // Only needs to initialize once
+    setHasBeenIntialized(true)
+
     if (!editor.hasNodes([MergeFieldNode])) {
       throw new Error("MergeFieldPlugin: MergeFieldNode not registered on editor")
     }
-
-    if (!initialState) return
-    if (storedInitialState === initialState) return
-
-    setStoredInitialState(initialState)
 
     return editor.registerNodeTransform(TextNode, (node: TextNode): void => {
       const text = node.getTextContent()
@@ -49,7 +49,7 @@ export function InitialStateMergeFieldPlugin({
         node.remove()
       }
     })
-  }, [editor, initialState, mergeFields, setStoredInitialState, storedInitialState])
+  }, [editor, hasBeenIntialized, initialState, mergeFields, setHasBeenIntialized])
 
   return null
 }
