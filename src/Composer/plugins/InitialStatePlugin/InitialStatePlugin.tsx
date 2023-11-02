@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { $generateNodesFromDOM } from "@lexical/html"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $createParagraphNode, $getRoot, $isParagraphNode } from "lexical"
@@ -11,7 +11,14 @@ type InitialStatePluginProps = {
 export function InitialStatePlugin({ initialState }: InitialStatePluginProps): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
 
+  const [hasBeenIntialized, setHasBeenIntialized] = useState(false)
+
   useEffect(() => {
+    if (hasBeenIntialized) return
+
+    // Only needs to initialize once
+    setHasBeenIntialized(true)
+
     editor.update(() => {
       const root = $getRoot()
       const parser = new DOMParser()
@@ -35,7 +42,7 @@ export function InitialStatePlugin({ initialState }: InitialStatePluginProps): J
         root.append(paragraphNode)
       }
     })
-  }, [editor, initialState])
+  }, [editor, hasBeenIntialized, initialState, setHasBeenIntialized])
 
   return null
 }
