@@ -31,10 +31,6 @@ export function InitialStateMergeFieldPlugin({
       const text = node.getTextContent()
 
       const handlebarTextArray = splitAtHandlebars(text)
-      // /* eslint-disable-next-line */
-      // console.log("handlebarTextArray:")
-      // /* eslint-disable-next-line */
-      // console.dir(handlebarTextArray)
       const hasHandlebars = handlebarTextArray.length > 1
 
       if (hasHandlebars) {
@@ -43,10 +39,6 @@ export function InitialStateMergeFieldPlugin({
           const isValidMergeField = !!mergeField
 
           if (isValidMergeField) {
-            /* eslint-disable-next-line */
-            console.log("mergeField:")
-            /* eslint-disable-next-line */
-            console.dir(mergeField)
             const mergeFieldNode = $createMergeFieldNode(mergeField.id, mergeField.name)
 
             node.insertBefore(mergeFieldNode)
