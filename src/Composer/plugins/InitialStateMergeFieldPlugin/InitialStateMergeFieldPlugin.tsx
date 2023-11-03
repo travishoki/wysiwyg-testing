@@ -27,7 +27,7 @@ export function InitialStateMergeFieldPlugin({
       throw new Error("MergeFieldPlugin: MergeFieldNode not registered on editor")
     }
 
-    return editor.registerNodeTransform(TextNode, (node: TextNode): void => {
+    const removeTransform = editor.registerNodeTransform(TextNode, (node: TextNode): void => {
       const text = node.getTextContent()
 
       const handlebarTextArray = splitAtHandlebars(text)
@@ -49,6 +49,9 @@ export function InitialStateMergeFieldPlugin({
         node.remove()
       }
     })
+
+    // Only run the transform once
+    removeTransform()
   }, [editor, hasBeenIntialized, initialState, mergeFields, setHasBeenIntialized])
 
   return null
