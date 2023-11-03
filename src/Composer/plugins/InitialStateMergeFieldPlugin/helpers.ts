@@ -4,7 +4,7 @@ import { MergeField } from "types"
 export const getValidMergeField = (
   mergeFieldKey: ID | string,
   mergeFields: MergeField[],
-): MergeField | null => {
+): MergeField | undefined => {
   // Try to match on id
   const matchedId = find(mergeFields, {
     id: mergeFieldKey,
