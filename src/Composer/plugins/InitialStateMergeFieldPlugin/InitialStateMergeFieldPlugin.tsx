@@ -3,7 +3,7 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { TextNode } from "lexical"
 import { MergeField } from "types"
 import { $createMergeFieldNode, MergeFieldNode } from "../../nodes/MergeField/MergeFieldNode"
-import { getIsValidMergeField, splitAtHandlebars } from "./helpers"
+import { getValidMergeField, splitAtHandlebars } from "./helpers"
 
 type InitialStateMergeFieldPluginProps = {
   initialState: string
@@ -31,14 +31,23 @@ export function InitialStateMergeFieldPlugin({
       const text = node.getTextContent()
 
       const handlebarTextArray = splitAtHandlebars(text)
+      // /* eslint-disable-next-line */
+      // console.log("handlebarTextArray:")
+      // /* eslint-disable-next-line */
+      // console.dir(handlebarTextArray)
       const hasHandlebars = handlebarTextArray.length > 1
 
       if (hasHandlebars) {
         handlebarTextArray.forEach((textSegment) => {
-          const isValidMergeField = getIsValidMergeField(textSegment, mergeFields)
+          const mergeField = getValidMergeField(textSegment, mergeFields)
+          const isValidMergeField = !!mergeField
 
           if (isValidMergeField) {
-            const mergeFieldNode = $createMergeFieldNode(textSegment)
+            /* eslint-disable-next-line */
+            console.log("mergeField:")
+            /* eslint-disable-next-line */
+            console.dir(mergeField)
+            const mergeFieldNode = $createMergeFieldNode(mergeField.id, mergeField.name)
 
             node.insertBefore(mergeFieldNode)
           } else {

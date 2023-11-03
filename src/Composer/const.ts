@@ -1,6 +1,7 @@
 import { LexicalCommand, createCommand } from "lexical"
 
 type InsertMergeFieldCommandPayload = Readonly<{
+  mergeFieldId: ID
   mergeFieldName: string
 }>
 

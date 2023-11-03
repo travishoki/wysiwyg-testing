@@ -1,26 +1,33 @@
 import { MergeField } from "types"
-import { getIsValidMergeField, splitAtHandlebars } from "./helpers"
+import { getValidMergeField, splitAtHandlebars } from "./helpers"
 
-describe("getIsValidMergeField", () => {
-  const mergeFields: MergeField[] = [
-    {
-      __typename: "MergeField",
-      id: "123",
-      name: "foo",
-      updatedAt: String(new Date()),
-    },
-  ]
+describe("getValidMergeField", () => {
+  const mergeField: MergeField = {
+    __typename: "MergeField",
+    id: "123",
+    name: "foo",
+    updatedAt: String(new Date()),
+  }
 
-  it("should return true", () => {
+  const mergeFields: MergeField[] = [mergeField]
+
+  it("should return true, matching on id", () => {
+    const mergeFieldId = "123"
+    const result = getValidMergeField(mergeFieldId, mergeFields)
+
+    expect(result).toBe(true)
+  })
+
+  it("should return true, matching on name", () => {
     const mergeFieldName = "foo"
-    const result = getIsValidMergeField(mergeFieldName, mergeFields)
+    const result = getValidMergeField(mergeFieldName, mergeFields)
 
     expect(result).toBe(true)
   })
 
   it("should return false", () => {
     const mergeFieldName = "bar"
-    const result = getIsValidMergeField(mergeFieldName, mergeFields)
+    const result = getValidMergeField(mergeFieldName, mergeFields)
 
     expect(result).toBe(false)
   })

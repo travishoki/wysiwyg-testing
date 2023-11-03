@@ -18,12 +18,15 @@ const MergeFieldComponent = React.lazy(
 
 type SerializedMergeFieldNode = Spread<
   {
+    mergeFieldId: ID
     mergeFieldName: string
   },
   SerializedLexicalNode
 >
 
 export class MergeFieldNode extends DecoratorNode<JSX.Element> {
+  mergeFieldId: ID
+
   mergeFieldName: string
 
   static getType(): string {
@@ -31,12 +34,12 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   static clone(node: MergeFieldNode): MergeFieldNode {
-    return new MergeFieldNode(node.mergeFieldName)
+    return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName)
   }
 
   convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
     if (domNode instanceof HTMLElement) {
-      const node = $createMergeFieldNode(this.mergeFieldName)
+      const node = $createMergeFieldNode(this.mergeFieldId, this.mergeFieldName)
 
       return { node }
     }
@@ -59,8 +62,9 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     }
   }
 
-  constructor(mergeFieldName: string) {
+  constructor(mergeFieldId: ID, mergeFieldName: string) {
     super()
+    this.mergeFieldId = mergeFieldId
     this.mergeFieldName = mergeFieldName
   }
 
@@ -73,7 +77,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   static importJSON(serializedNode: SerializedMergeFieldNode): MergeFieldNode {
-    const node = $createMergeFieldNode(serializedNode.mergeFieldName)
+    const node = $createMergeFieldNode(serializedNode.mergeFieldId, serializedNode.mergeFieldName)
 
     return node
   }
@@ -81,12 +85,19 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   exportJSON(): SerializedMergeFieldNode {
     return {
       ...super.exportJSON(),
-      mergeFieldName: this.getClassName(),
+      mergeFieldId: this.getMergeFieldId(),
+      mergeFieldName: this.getMergeFieldName(),
       type: "merge-field",
     }
   }
 
-  getClassName(): string {
+  getMergeFieldId(): string {
+    const self = this.getLatest()
+
+    return self.mergeFieldId
+  }
+
+  getMergeFieldName(): string {
     const self = this.getLatest()
 
     return self.mergeFieldName
@@ -96,7 +107,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     const element = document.createElement("span")
     element.setAttribute("data-merge-field-component", "true")
     element.className = "merge-field"
-    element.textContent = `{{${this.mergeFieldName}}}`
+    element.textContent = `{{${this.mergeFieldId}}}`
 
     return { element }
   }
@@ -119,6 +130,6 @@ export const $isMergeFieldNode = (node: LexicalNode | null | undefined): node is
   return node instanceof MergeFieldNode
 }
 
-export const $createMergeFieldNode = (mergeFieldName: string): MergeFieldNode => {
-  return $applyNodeReplacement(new MergeFieldNode(mergeFieldName))
+export const $createMergeFieldNode = (mergeFieldId: ID, mergeFieldName: string): MergeFieldNode => {
+  return $applyNodeReplacement(new MergeFieldNode(mergeFieldId, mergeFieldName))
 }

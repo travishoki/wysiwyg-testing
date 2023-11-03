@@ -47,6 +47,7 @@ export const MergeFieldPickerPlugin = ({ mergeFields }: MergeFieldPickerPluginPr
             keywords: ["merge-field"],
             onSelect: () => {
               const payload = {
+                mergeFieldId: mergeField.id ?? "",
                 mergeFieldName: mergeField.name ?? "",
               }
               editor.dispatchCommand(INSERT_MERGE_FIELD_COMMAND, payload)
@@ -56,7 +57,7 @@ export const MergeFieldPickerPlugin = ({ mergeFields }: MergeFieldPickerPluginPr
     ]
 
     return baseOptions
-  }, [editor, mergeFields])
+  }, [editor, mergeFields, t])
 
   const onSelectOption = useCallback(
     (

@@ -1,12 +1,20 @@
 import { find } from "lodash"
 import { MergeField } from "types"
 
-export const getIsValidMergeField = (
-  mergeFieldName: string,
+export const getValidMergeField = (
+  mergeFieldKey: ID | string,
   mergeFields: MergeField[],
-): boolean => {
-  return !!find(mergeFields, {
-    name: mergeFieldName,
+): MergeField | null => {
+  // Try to match on id
+  const matchedId = find(mergeFields, {
+    id: mergeFieldKey,
+  })
+
+  if (!!matchedId) return matchedId
+
+  // Try to match on name
+  return find(mergeFields, {
+    name: mergeFieldKey,
   })
 }
 
