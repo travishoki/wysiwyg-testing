@@ -38,7 +38,7 @@ export function InitialStateMergeFieldPlugin({
           const mergeField = getValidMergeField(textSegment, mergeFields)
           const isValidMergeField = !!mergeField
 
-          if (isValidMergeField) {
+          if (isValidMergeField && mergeField.name) {
             const mergeFieldNode = $createMergeFieldNode(mergeField.id, mergeField.name)
 
             node.insertBefore(mergeFieldNode)
