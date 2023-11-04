@@ -22,6 +22,12 @@ export const getValidMergeField = (
   return null
 }
 
+export const getHasHandlebars = (str: string) => {
+  const regEx = /{{(.*?)}}/g
+
+  return str.match(regEx)
+}
+
 export const splitAtHandlebars = (str: string) => {
   const regEx = /{{(.*?)}}/g
 
