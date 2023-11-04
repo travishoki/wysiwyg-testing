@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { $generateNodesFromDOM } from "@lexical/html"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $createParagraphNode, $getRoot, $isParagraphNode } from "lexical"
-import { filterOutEmptyPargraphNodes } from "./helpers"
 
 type InitialStatePluginProps = {
   initialState: string
@@ -26,16 +25,14 @@ export function InitialStatePlugin({ initialState }: InitialStatePluginProps): J
         // Clear everything
         root.clear()
 
-        const filteredNodes = nodes.filter(filterOutEmptyPargraphNodes)
-
-        if (filteredNodes.length === 1 && $isParagraphNode(filteredNodes[0])) {
+        if (nodes.length === 1 && $isParagraphNode(nodes[0])) {
           // Add in the node
-          root.append(filteredNodes[0])
+          root.append(nodes[0])
         } else {
           const paragraphNode = $createParagraphNode()
 
           // Add in all of the nodes
-          filteredNodes.forEach((n) => paragraphNode.append(n))
+          nodes.forEach((n) => paragraphNode.append(n))
 
           root.append(paragraphNode)
         }
