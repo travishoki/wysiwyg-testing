@@ -31,7 +31,7 @@ export function InitialStateMergeFieldPlugin({
       const text = node.getTextContent()
 
       const handlebarTextArray = splitAtHandlebars(text)
-      const hasHandlebars = handlebarTextArray.length > 1
+      const hasHandlebars = handlebarTextArray.length > 0
 
       if (hasHandlebars) {
         handlebarTextArray.forEach((textSegment) => {
