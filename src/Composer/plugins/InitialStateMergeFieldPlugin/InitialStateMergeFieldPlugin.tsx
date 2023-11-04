@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { TextNode } from "lexical"
 import { MergeField } from "types"
-import { $createMergeFieldNode, MergeFieldNode } from "../../nodes/MergeField/MergeFieldNode"
+import { $createMergeFieldNode } from "../../nodes/MergeField/MergeFieldNode"
 import { getValidMergeField, splitAtHandlebars } from "./helpers"
 
 type InitialStateMergeFieldPluginProps = {
@@ -18,10 +18,6 @@ export function InitialStateMergeFieldPlugin({
   const [hasBeenIntialized, setHasBeenIntialized] = useState(false)
 
   useEffect(() => {
-    if (!editor.hasNodes([MergeFieldNode])) {
-      throw new Error("MergeFieldPlugin: MergeFieldNode not registered on editor")
-    }
-
     if (hasBeenIntialized) return
 
     // Only needs to initialize once
