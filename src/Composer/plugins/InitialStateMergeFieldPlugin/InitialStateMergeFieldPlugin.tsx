@@ -18,14 +18,14 @@ export function InitialStateMergeFieldPlugin({
   const [hasBeenIntialized, setHasBeenIntialized] = useState(false)
 
   useEffect(() => {
+    if (!editor.hasNodes([MergeFieldNode])) {
+      throw new Error("MergeFieldPlugin: MergeFieldNode not registered on editor")
+    }
+
     if (hasBeenIntialized) return
 
     // Only needs to initialize once
     setHasBeenIntialized(true)
-
-    if (!editor.hasNodes([MergeFieldNode])) {
-      throw new Error("MergeFieldPlugin: MergeFieldNode not registered on editor")
-    }
 
     const removeTransform = editor.registerNodeTransform(TextNode, (node: TextNode): void => {
       const text = node.getTextContent()
