@@ -1,5 +1,5 @@
 import { MergeField } from "types"
-import { getValidMergeField, splitAtHandlebars } from "./helpers"
+import { getHasHandlebars, getValidMergeField, splitAtHandlebars } from "./helpers"
 
 describe("getValidMergeField", () => {
   const mergeField: MergeField = {
@@ -30,6 +30,22 @@ describe("getValidMergeField", () => {
     const result = getValidMergeField(mergeFieldName, mergeFields)
 
     expect(result).toBe(null)
+  })
+})
+
+describe("getHasHandlebars", () => {
+  it("should return true", () => {
+    const text = "a{{foo}}b"
+    const result = getHasHandlebars(text)
+
+    expect(result).toBe(true)
+  })
+
+  it("should return false", () => {
+    const text = "a{foo}b"
+    const result = getHasHandlebars(text)
+
+    expect(result).toBe(false)
   })
 })
 
