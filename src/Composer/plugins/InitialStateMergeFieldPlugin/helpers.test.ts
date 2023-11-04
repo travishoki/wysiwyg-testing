@@ -15,21 +15,21 @@ describe("getValidMergeField", () => {
     const mergeFieldId = "123"
     const result = getValidMergeField(mergeFieldId, mergeFields)
 
-    expect(result).toBe(true)
+    expect(result).toEqual(mergeField)
   })
 
   it("should return true, matching on name", () => {
     const mergeFieldName = "foo"
     const result = getValidMergeField(mergeFieldName, mergeFields)
 
-    expect(result).toBe(true)
+    expect(result).toBe(mergeField)
   })
 
   it("should return false", () => {
     const mergeFieldName = "bar"
     const result = getValidMergeField(mergeFieldName, mergeFields)
 
-    expect(result).toBe(false)
+    expect(result).toBe(null)
   })
 })
 

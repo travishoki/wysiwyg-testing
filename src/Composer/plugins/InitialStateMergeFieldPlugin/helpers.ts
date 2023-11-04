@@ -4,18 +4,20 @@ import { MergeField } from "types"
 export const getValidMergeField = (
   mergeFieldKey: ID | string,
   mergeFields: MergeField[],
-): MergeField | undefined => {
+): MergeField | null => {
   // Try to match on id
   const matchedId = find(mergeFields, {
     id: mergeFieldKey,
   })
-
   if (!!matchedId) return matchedId
 
   // Try to match on name
-  return find(mergeFields, {
+  const matchedName = find(mergeFields, {
     name: mergeFieldKey,
   })
+  if (!!matchedName) return matchedName
+
+  return null
 }
 
 export const splitAtHandlebars = (str: string) => {
