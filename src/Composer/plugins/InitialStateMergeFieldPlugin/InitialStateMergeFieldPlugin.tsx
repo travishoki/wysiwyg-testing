@@ -18,37 +18,37 @@ export function InitialStateMergeFieldPlugin({
   const [hasBeenIntialized, setHasBeenIntialized] = useState(false)
 
   useEffect(() => {
-    if (hasBeenIntialized) return
-
     // Only needs to initialize once
-    setHasBeenIntialized(true)
+    if (!hasBeenIntialized) {
+      setHasBeenIntialized(true)
 
-    const removeTransform = editor.registerNodeTransform(TextNode, (node: TextNode): void => {
-      const text = node.getTextContent()
+      const removeTransform = editor.registerNodeTransform(TextNode, (node: TextNode): void => {
+        const text = node.getTextContent()
 
-      const handlebarTextArray = splitAtHandlebars(text)
-      const hasHandlebars = handlebarTextArray.length > 0
+        const handlebarTextArray = splitAtHandlebars(text)
+        const hasHandlebars = handlebarTextArray.length > 0
 
-      if (hasHandlebars) {
-        handlebarTextArray.forEach((textSegment) => {
-          const mergeField = getValidMergeField(textSegment, mergeFields)
-          const isValidMergeField = !!mergeField
+        if (hasHandlebars) {
+          handlebarTextArray.forEach((textSegment) => {
+            const mergeField = getValidMergeField(textSegment, mergeFields)
+            const isValidMergeField = !!mergeField
 
-          if (isValidMergeField && mergeField.name) {
-            const mergeFieldNode = $createMergeFieldNode(mergeField.id, mergeField.name)
+            if (isValidMergeField && mergeField.name) {
+              const mergeFieldNode = $createMergeFieldNode(mergeField.id, mergeField.name)
 
-            node.insertBefore(mergeFieldNode)
-          } else {
-            node.insertBefore(new TextNode(textSegment))
-          }
-        })
+              node.insertBefore(mergeFieldNode)
+            } else {
+              node.insertBefore(new TextNode(textSegment))
+            }
+          })
 
-        node.remove()
-      }
-    })
+          node.remove()
+        }
+      })
 
-    // Only run the transform once
-    removeTransform()
+      // Only run the transform once
+      removeTransform()
+    }
   }, [editor, hasBeenIntialized, initialState, mergeFields, setHasBeenIntialized])
 
   return null
