@@ -15,7 +15,8 @@ let initialState: Maybe<string> = null
 
 // initialState = "asdf" // Text only
 // initialState = '<p class="composer__paragraph" dir="ltr">asdf</p>' // Text wrapped in parent
-// initialState = '<p class="composer__paragraph" dir="ltr"><span>a </span><span class="merge-field">{{hoki-1}}</span><span> b</span></p>' // a {{hoki-1}} b
+initialState =
+  '<p class="composer__paragraph" dir="ltr"><span>a </span><span class="merge-field">{{111}}</span><span> b</span></p>' // a {{hoki-1}} b
 // initialState = '<span>a </span><span class="merge-field">{{hoki-1}}</span><span> b</span>' // a {{hoki-1}} b (no parent container)
 // initialState = '<p class="composer__paragraph" dir="ltr"><span class="merge-field">{{hoki-1}}</span> and <span class="merge-field">{{hoki-2}}</span></p>' // {{hoki-1}} and {{hoki-2}}
 

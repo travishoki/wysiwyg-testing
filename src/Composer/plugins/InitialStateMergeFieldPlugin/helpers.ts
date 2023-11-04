@@ -5,17 +5,19 @@ export const getValidMergeField = (
   mergeFieldKey: ID | string,
   mergeFields: MergeField[],
 ): MergeField | null => {
+  let mergeField = null
+
   // Try to match on id
-  const matchedId = find(mergeFields, {
+  mergeField = find(mergeFields, {
     id: mergeFieldKey,
   })
-  if (!!matchedId) return matchedId
+  if (mergeField) return mergeField
 
   // Try to match on name
-  const matchedName = find(mergeFields, {
+  mergeField = find(mergeFields, {
     name: mergeFieldKey,
   })
-  if (!!matchedName) return matchedName
+  if (mergeField) return mergeField
 
   return null
 }
