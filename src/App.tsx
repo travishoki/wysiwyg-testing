@@ -10,15 +10,14 @@ import { MergeField } from "./types"
 
 let initialState: Maybe<string> = null
 
-// ----- Text Only -----
-// initialState =
-
 // initialState = "asdf" // Text only
 // initialState = '<p class="composer__paragraph" dir="ltr">asdf</p>' // Text wrapped in parent
-initialState =
-  '<p class="composer__paragraph" dir="ltr"><span>a </span><span class="merge-field">{{111}}</span><span> b</span></p>' // a {{hoki-1}} b
-// initialState = '<span>a </span><span class="merge-field">{{hoki-1}}</span><span> b</span>' // a {{hoki-1}} b (no parent container)
-// initialState = '<p class="composer__paragraph" dir="ltr"><span class="merge-field">{{hoki-1}}</span> and <span class="merge-field">{{hoki-2}}</span></p>' // {{hoki-1}} and {{hoki-2}}
+// initialState = "{{111}}" // {{hoki-1}}
+// initialState = '<p class="composer__paragraph" dir="ltr"><span class="merge-field">{{111}}</span></p>' // {{hoki-1}}
+// initialState =  '<p class="composer__paragraph" dir="ltr"><span>a </span><span class="merge-field">{{111}}</span><span> b</span></p>' // a {{hoki-1}} b
+// initialState = '<span>a </span><span class="merge-field">{{111}}</span><span> b</span>' // a {{222}} b (no parent container)
+// initialState = '<p class="composer__paragraph" dir="ltr"><span class="merge-field">{{111}}</span> and <span class="merge-field">{{222}}</span></p>' // {{hoki-1}} and {{hoki-2}}
+// initialState =  '<p class="composer__paragraph" dir="ltr"><span>Line 1</span></p><p class="composer__paragraph" dir="ltr"><br></p><p class="composer__paragraph" dir="ltr"><span>Line 2</span></p>' // Line Break
 
 // ts-prune-ignore-next
 export const App = () => {
