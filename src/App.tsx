@@ -13,6 +13,7 @@ let initialState: Maybe<string> = null
 // initialState = "asdf" // Text only
 // initialState = '<p class="composer__paragraph" dir="ltr">asdf</p>' // Text wrapped in parent
 // initialState = "{{111}}" // {{hoki-1}}
+// initialState = "a {{999}} b" // Invalid Merge Field
 // initialState = '<p class="composer__paragraph" dir="ltr"><span class="merge-field">{{111}}</span></p>' // {{hoki-1}}
 // initialState =  '<p class="composer__paragraph" dir="ltr"><span>a </span><span class="merge-field">{{111}}</span><span> b</span></p>' // a {{hoki-1}} b
 // initialState = '<span>a </span><span class="merge-field">{{111}}</span><span> b</span>' // a {{222}} b (no parent container)
