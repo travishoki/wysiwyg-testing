@@ -105,7 +105,6 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
   exportDOM(): DOMExportOutput {
     const element = document.createElement("span")
-    element.setAttribute("data-merge-field-component", "true")
     element.className = "merge-field"
     element.textContent = `{{${this.mergeFieldId}}}`
 
