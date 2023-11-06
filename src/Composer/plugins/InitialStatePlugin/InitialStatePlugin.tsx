@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react"
 import { $generateNodesFromDOM } from "@lexical/html"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
-import {
-  // $createParagraphNode,
-  $getRoot,
-  $isParagraphNode,
-} from "lexical"
+import { $getRoot } from "lexical"
 
 type InitialStatePluginProps = {
   initialState: string
