@@ -36,7 +36,7 @@ type ComposerProps = {
   composerRef: MutableRefObject<composerRefProps>
   initialState: Maybe<string>
   mergeFields: MergeField[]
-  setIsDirty: (isDirty: boolean) => void
+  setContent: React.Dispatch<React.SetStateAction<string | undefined>>
 }
 
 export const Composer = ({
@@ -44,14 +44,13 @@ export const Composer = ({
   composerRef,
   initialState,
   mergeFields,
-  setIsDirty,
+  setContent,
 }: ComposerProps) => {
   const onChange = (_editorState: EditorState, editor: LexicalEditor) => {
     editor.update(() => {
       const output = $generateHtmlFromNodes(editor, null)
-      const newIsDirty = initialState !== output
 
-      setIsDirty(newIsDirty)
+      setContent(output)
     })
   }
 
