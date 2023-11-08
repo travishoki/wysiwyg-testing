@@ -36,8 +36,8 @@ export const App = () => {
   const onGetValue = () => {
     if (composerRef.current) {
       const output = composerRef.current.getValue()
-      /* eslint-disable-next-line no-alert */
-      alert(output)
+      /* eslint-disable-next-line no-console */
+      console.log(output)
 
       initialState = output
     }
@@ -46,8 +46,8 @@ export const App = () => {
   const onSubmit = () => {
     const isEmpty = composerRef.current.getIsEmpty()
     if (isEmpty) {
-      /* eslint-disable-next-line no-alert */
-      alert("Empty")
+      /* eslint-disable-next-line no-console */
+      console.log("Empty")
 
       return
     }
@@ -55,8 +55,8 @@ export const App = () => {
     if (composerRef.current) {
       const output = composerRef.current.getValue()
       setStoredContent(output)
-      /* eslint-disable-next-line no-alert */
-      alert(output)
+      /* eslint-disable-next-line no-console */
+      console.log(output)
     }
   }
 
