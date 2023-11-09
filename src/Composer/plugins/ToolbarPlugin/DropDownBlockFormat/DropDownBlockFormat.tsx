@@ -151,7 +151,7 @@ export const DropDownBlockFormat = ({
         onClick={formatNumberedList}
       >
         <IconDropdown type="numbered-list" />
-        <span className={stylesDropdown.dropdownText}>Numbered List</span>
+        <span className={stylesDropdown.dropdownText}>{t("Numbered List")}</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(
@@ -161,7 +161,7 @@ export const DropDownBlockFormat = ({
         onClick={formatCheckList}
       >
         <IconDropdown type="check-list" />
-        <span className={stylesDropdown.dropdownText}>Check List</span>
+        <span className={stylesDropdown.dropdownText}>{t("Check List")}</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(
@@ -171,7 +171,7 @@ export const DropDownBlockFormat = ({
         onClick={formatQuote}
       >
         <IconDropdown type="quote" />
-        <span className={stylesDropdown.dropdownText}>Quote</span>
+        <span className={stylesDropdown.dropdownText}>{t("Quote")}</span>
       </DropDownItem>
     </DropDown>
   )
