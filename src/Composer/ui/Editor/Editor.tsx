@@ -55,7 +55,7 @@ type EditorProps = {
   mergeFields: MergeField[]
 }
 
-export const Editor = ({ initialState, mergeFields }: EditorProps) => {
+export const Editor = ({ initialState, mergeFields }: EditorProps): JSX.Element => {
   const { historyState } = useSharedHistoryContext()
   const {
     settings: { tableCellBackgroundColor, tableCellMerge },
