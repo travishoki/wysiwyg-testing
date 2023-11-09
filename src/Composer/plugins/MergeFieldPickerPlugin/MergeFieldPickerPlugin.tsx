@@ -43,7 +43,7 @@ export const MergeFieldPickerPlugin = ({ mergeFields }: MergeFieldPickerPluginPr
       ...mergeFields.map(
         (mergeField) =>
           new ComponentPickerOption(formatMergeFieldTitle(mergeField.name) ?? t("Merge Field"), {
-            icon: <MergeFieldIcon name={mergeField.name} />,
+            icon: <MergeFieldIcon name={mergeField.name ?? ""} />,
             keywords: ["merge-field"],
             onSelect: () => {
               const payload = {
