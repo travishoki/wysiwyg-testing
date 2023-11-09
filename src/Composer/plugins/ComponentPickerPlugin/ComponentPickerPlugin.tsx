@@ -38,7 +38,7 @@ import { InsertImageDialog } from "../ImagesPlugin/InsertImageDialog/InsertImage
 import { InsertTableDialog } from "../TablePlugin/InsertTableDialog/InsertTableDialog"
 import { ComponentPickerMenuItem } from "./ComponentPickerMenuItem/ComponentPickerMenuItem"
 import { ComponentPickerOption } from "./ComponentPickerOption/ComponentPickerOption"
-import { getAlignmentType, getHeadingType } from "./ComponentPickerPlugin.helpers"
+import { getAlignmentType, getHeadingTitle, getHeadingType } from "./ComponentPickerPlugin.helpers"
 import styles from "./ComponentPickerPlugin.module.scss"
 
 const alignmentList: alignmentTypes[] = ["left", "center", "right", "justify"]
@@ -114,7 +114,7 @@ export const ComponentPickerPlugin = () => {
       }),
       ...Array.from({ length: 3 }, (_, i) => i + 1).map(
         (n) =>
-          new ComponentPickerOption(`${t("Heading")} ${n}`, {
+          new ComponentPickerOption(getHeadingTitle(n, t), {
             icon: <IconDropdown type={getHeadingType(n)} />,
             keywords: ["heading", "header", `h${n}`],
             onSelect: () =>
