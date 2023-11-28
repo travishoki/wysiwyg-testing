@@ -36,7 +36,7 @@ type ComposerProps = {
   composerRef: MutableRefObject<composerRefProps>
   initialState: Maybe<string>
   mergeFields: MergeField[]
-  setContent: React.Dispatch<React.SetStateAction<string | undefined>>
+  setContent: (html: string) => void
 }
 
 export const Composer = ({

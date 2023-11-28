@@ -26,8 +26,8 @@ let initialState: Maybe<string> = '<p class="composer__paragraph"><br></p>'
 // ts-prune-ignore-next
 export const App = () => {
   const composerRef = useRef<composerRefProps>()
-  const [storedContent, setStoredContent] = useState(initialState)
   const [tempContent, setTempContent] = useState(initialState)
+  const [storedInitialState, setStoredInitialState] = useState<string>()
 
   const onClickMergeField = (mergeField: MergeField) => {
     if (composerRef.current) {
@@ -56,7 +56,7 @@ export const App = () => {
 
     if (composerRef.current) {
       const output = composerRef.current.getValue()
-      setStoredContent(output)
+      setStoredInitialState(output)
       /* eslint-disable-next-line no-console */
       console.log(output)
     }
@@ -68,10 +68,12 @@ export const App = () => {
     }
   }
 
-  /* eslint-disable-next-line */
-  console.log(`tempContent: ${tempContent}`)
+  const handleSetContent = (html: string) => {
+    setTempContent(html)
+    if (!storedInitialState) setStoredInitialState(html)
+  }
 
-  const isDirty = !!tempContent && tempContent !== storedContent
+  const isDirty = !!tempContent && tempContent !== storedInitialState
 
   return (
     <div className={styles.app}>
@@ -81,7 +83,7 @@ export const App = () => {
         composerRef={composerRef}
         initialState={initialState}
         mergeFields={mergeFieldNameArray}
-        setContent={setTempContent}
+        setContent={handleSetContent}
       />
       <MergeFieldControls onClick={onClickMergeField} />
       <>
