@@ -23,6 +23,7 @@ import { TypeaheadPopover } from "../../ui/TypeaheadPopover/TypeaheadPopover"
 import { ComponentPickerMenuItem } from "../ComponentPickerPlugin/ComponentPickerMenuItem/ComponentPickerMenuItem"
 import { ComponentPickerOption } from "../ComponentPickerPlugin/ComponentPickerOption/ComponentPickerOption"
 import styles from "../ComponentPickerPlugin/ComponentPickerPlugin.module.scss"
+import { filterMergeFields } from "./helpers"
 
 type MergeFieldPickerPluginProps = {
   mergeFields: MergeField[]
@@ -30,7 +31,7 @@ type MergeFieldPickerPluginProps = {
 
 export const MergeFieldPickerPlugin = ({ mergeFields }: MergeFieldPickerPluginProps) => {
   const [editor] = useLexicalComposerContext()
-  const [_queryString, setQueryString] = useState<string | null>(null)
+  const [mergeFieldString, setMergeFieldString] = useState<string | null>(null)
 
   const { t } = useTranslation("scenes", { keyPrefix: "documents" })
 
@@ -39,8 +40,9 @@ export const MergeFieldPickerPlugin = ({ mergeFields }: MergeFieldPickerPluginPr
   })
 
   const options = useMemo(() => {
+    const filteredMergeFields = filterMergeFields(mergeFields, mergeFieldString)
     const baseOptions = [
-      ...mergeFields.map(
+      ...filteredMergeFields.map(
         (mergeField) =>
           new ComponentPickerOption(formatMergeFieldTitle(mergeField.name) ?? t("Merge Field"), {
             icon: <MergeFieldIcon name={mergeField.name ?? ""} />,
@@ -57,7 +59,7 @@ export const MergeFieldPickerPlugin = ({ mergeFields }: MergeFieldPickerPluginPr
     ]
 
     return baseOptions
-  }, [editor, mergeFields, t])
+  }, [editor, mergeFields, mergeFieldString, t])
 
   const onSelectOption = useCallback(
     (
@@ -109,7 +111,7 @@ export const MergeFieldPickerPlugin = ({ mergeFields }: MergeFieldPickerPluginPr
               )
             : null
         }
-        onQueryChange={setQueryString}
+        onQueryChange={setMergeFieldString}
         onSelectOption={onSelectOption}
         options={options}
         triggerFn={checkForTriggerMatch}

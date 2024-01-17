@@ -6,19 +6,19 @@ export const mergeFieldNameArray: MergeField[] = [
   {
     __typename: "MergeField",
     id: "111",
-    name: "hoki-1",
+    name: "aaa",
     updatedAt,
   },
   {
     __typename: "MergeField",
     id: "222",
-    name: "hoki-2",
+    name: "baa",
     updatedAt,
   },
   {
     __typename: "MergeField",
     id: "333",
-    name: "hoki-3",
+    name: "aab",
     updatedAt,
   },
 ]
