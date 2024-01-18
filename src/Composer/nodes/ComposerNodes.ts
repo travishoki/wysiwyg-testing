@@ -15,12 +15,14 @@ import { HeadingNode, QuoteNode } from "@lexical/rich-text"
 import { TableCellNode, TableNode, TableRowNode } from "@lexical/table"
 import { Klass, LexicalNode } from "lexical"
 import { EmojiNode } from "./Emoji/EmojiNode"
+import { ExtendedTextNode } from "./ExtendedTextNode/ExtendedTextNode"
 import { ImageNode } from "./Image/ImageNode"
 import { InlineImageNode } from "./InlineImage/InlineImageNode"
 import { KeywordNode } from "./Keyword/KeywordNode"
 import { MergeFieldNode } from "./MergeField/MergeFieldNode"
 
 export const ComposerNodes: Array<Klass<LexicalNode>> = [
+  ExtendedTextNode,
   HeadingNode,
   ListNode,
   ListItemNode,
