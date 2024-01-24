@@ -1,24 +1,24 @@
 import { MergeField } from "types"
-import { filterMergeFields, doesStringBeginWith } from "./helpers"
+import { filterMergeFields, doesStringContain } from "./helpers"
 
-describe("doesStringBeginWith", () => {
+describe("doesStringContain", () => {
   const str = "abc"
 
   it("should return true", () => {
     const searchTerm = "ab"
-    const result = doesStringBeginWith(str, searchTerm)
+    const result = doesStringContain(str, searchTerm)
     expect(result).toBe(true)
   })
 
   it("should return true, even with casing", () => {
     const searchTerm = "AbC"
-    const result = doesStringBeginWith(str, searchTerm)
+    const result = doesStringContain(str, searchTerm)
     expect(result).toBe(true)
   })
 
   it("should return false", () => {
-    const searchTerm = "c"
-    const result = doesStringBeginWith(str, searchTerm)
+    const searchTerm = "d"
+    const result = doesStringContain(str, searchTerm)
     expect(result).toBe(false)
   })
 })
@@ -42,10 +42,10 @@ describe("filterMergeFields", () => {
   })
   const mergeFields = [mergeField1, mergeField2]
 
-  it("should match the string from the beginning", () => {
-    const searchTerm = "a"
+  it("should contain the substring", () => {
+    const searchTerm = "ba"
     const result = filterMergeFields(mergeFields, searchTerm)
-    const expectedResults = [mergeField1]
+    const expectedResults = [mergeField2]
     expect(result).toEqual(expectedResults)
   })
 
