@@ -57,7 +57,7 @@ describe("filterMergeFields", () => {
   })
 
   it("should return the original array, if a search term is not provided", () => {
-    const searchTerm: string = undefined
+    const searchTerm: string | undefined = undefined
     const result = filterMergeFields(mergeFields, searchTerm)
     const expectedResults = mergeFields
     expect(result).toEqual(expectedResults)

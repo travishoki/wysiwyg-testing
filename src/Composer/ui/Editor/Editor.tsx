@@ -41,6 +41,7 @@ import { KeywordsPlugin } from "../../plugins/KeywordsPlugin/KeywordsPlugin"
 import { LinkPlugin } from "../../plugins/LinkPlugin/LinkPlugin"
 import { MergeFieldPickerPlugin } from "../../plugins/MergeFieldPickerPlugin/MergeFieldPickerPlugin"
 import { MergeFieldPlugin } from "../../plugins/MergeFieldPlugin/MergeFieldPlugin"
+import { SelectAllPlugin } from "../../plugins/SelectAllPlugin/SelectAllPlugin"
 import { TabFocusPlugin } from "../../plugins/TabFocusPlugin/TabFocusPlugin"
 import { TableActionMenuPlugin } from "../../plugins/TableActionMenuPlugin/TableActionMenuPlugin"
 import { TableCellResizerPlugin } from "../../plugins/TableCellResizerPlugin/TableCellResizerPlugin"
@@ -139,6 +140,7 @@ export const Editor = ({ initialState, mergeFields }: EditorProps): JSX.Element 
         <TabFocusPlugin />
         <TabIndentationPlugin />
         <ActionsPlugin />
+        <SelectAllPlugin />
         {floatingAnchorElem && !isSmallWidthViewport && (
           <>
             <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
