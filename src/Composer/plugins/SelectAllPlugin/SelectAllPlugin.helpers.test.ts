@@ -16,12 +16,12 @@ describe("isSelectAll", () => {
     const result = isSelectAll(keyCode, metaKey, ctrlKey)
     expect(result).toBe(false)
   })
-})
 
-it("should return false, if not the correct control/meta key", () => {
-  const keyCode = 65
-  const metaKey = false
-  const ctrlKey = false
-  const result = isSelectAll(keyCode, metaKey, ctrlKey)
-  expect(result).toBe(false)
+  it("should return false, if not the correct control/meta key", () => {
+    const keyCode = 65
+    const metaKey = false
+    const ctrlKey = false
+    const result = isSelectAll(keyCode, metaKey, ctrlKey)
+    expect(result).toBe(false)
+  })
 })
