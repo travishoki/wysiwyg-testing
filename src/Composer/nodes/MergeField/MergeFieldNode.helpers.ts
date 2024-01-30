@@ -9,12 +9,14 @@ export const styleObjectToString = (styleObj: Record<string, string>) =>
     .join(" ")
 
 export const styleStringToObject = (styleStr: string) => {
-  var regex = /([\w-]*)\s*:\s*([^;]*)/g
+  const regex = /([\w-]*)\s*:\s*([^;]*)/g
   let match
-  let properties: Record<string, string> = {}
+  const properties: Record<string, string> = {}
 
   while ((match = regex.exec(styleStr))) {
-    properties[camelCase(match[1])] = match[2].trim()
+    const key = camelCase(match[1])
+    const value = match[2].trim()
+    properties[key] = value
   }
 
   return properties
