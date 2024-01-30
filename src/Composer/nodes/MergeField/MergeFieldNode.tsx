@@ -142,7 +142,6 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return self.__style
   }
 
-  /* eslint-disable-next-line class-methods-use-this */
   public setStyle(styleName: string, option: string) {
     const writable = this.getWritable()
 
