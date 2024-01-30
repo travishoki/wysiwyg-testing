@@ -9,7 +9,9 @@ import {
   SerializedLexicalNode,
   Spread,
 } from "lexical"
+import { camelCase } from "lodash"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
+import { styleObjectToString } from "./MergeFieldNode.helpers"
 
 const MergeFieldComponent = React.lazy(
   // @ts-ignore
@@ -20,6 +22,7 @@ type SerializedMergeFieldNode = Spread<
   {
     mergeFieldId: ID
     mergeFieldName: string
+    style: Record<string, string>
   },
   SerializedLexicalNode
 >
@@ -29,17 +32,19 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
   mergeFieldName: string
 
+  style: Record<string, string>
+
   static getType(): string {
     return "merge-field"
   }
 
   static clone(node: MergeFieldNode): MergeFieldNode {
-    return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName)
+    return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName, node.style)
   }
 
   convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
     if (domNode instanceof HTMLElement) {
-      const node = $createMergeFieldNode(this.mergeFieldId, this.mergeFieldName)
+      const node = $createMergeFieldNode(this.mergeFieldId, this.mergeFieldName, this.style)
 
       return { node }
     }
@@ -62,10 +67,11 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     }
   }
 
-  constructor(mergeFieldId: ID, mergeFieldName: string) {
+  constructor(mergeFieldId: ID, mergeFieldName: string, style: Record<string, string>) {
     super()
     this.mergeFieldId = mergeFieldId
     this.mergeFieldName = mergeFieldName
+    this.style = style
   }
 
   /* eslint-disable-next-line class-methods-use-this */
@@ -77,7 +83,11 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   static importJSON(serializedNode: SerializedMergeFieldNode): MergeFieldNode {
-    const node = $createMergeFieldNode(serializedNode.mergeFieldId, serializedNode.mergeFieldName)
+    const node = $createMergeFieldNode(
+      serializedNode.mergeFieldId,
+      serializedNode.mergeFieldName,
+      serializedNode.style,
+    )
 
     return node
   }
@@ -87,6 +97,10 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
       ...super.exportJSON(),
       mergeFieldId: this.getMergeFieldId(),
       mergeFieldName: this.getMergeFieldName(),
+      // style: this.getStyle(),
+      style: {
+        // fontSize: "20px",
+      },
       type: "merge-field",
     }
   }
@@ -108,6 +122,12 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     element.className = "merge-field"
     element.textContent = `{{${this.mergeFieldId}}}`
 
+    const style = styleObjectToString(this.style)
+
+    if (style !== "") {
+      element.setAttribute("style", style)
+    }
+
     return { element }
   }
 
@@ -116,10 +136,29 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return false
   }
 
+  getStyle(): string {
+    const self = this.getLatest()
+
+    return self.__style
+  }
+
+  /* eslint-disable-next-line class-methods-use-this */
+  public setStyle(styleName: string, option: string) {
+    const writable = this.getWritable()
+
+    writable.style = {
+      [camelCase(styleName)]: option,
+    }
+  }
+
   decorate() {
     return (
       <Suspense fallback={<ComposerNodeFallback />}>
-        <MergeFieldComponent mergeFieldName={this.mergeFieldName} nodeKey={this.getKey()} />
+        <MergeFieldComponent
+          mergeFieldName={this.mergeFieldName}
+          nodeKey={this.getKey()}
+          style={this.style}
+        />
       </Suspense>
     )
   }
@@ -129,6 +168,10 @@ export const $isMergeFieldNode = (node: LexicalNode | null | undefined): node is
   return node instanceof MergeFieldNode
 }
 
-export const $createMergeFieldNode = (mergeFieldId: ID, mergeFieldName: string): MergeFieldNode => {
-  return $applyNodeReplacement(new MergeFieldNode(mergeFieldId, mergeFieldName))
+export const $createMergeFieldNode = (
+  mergeFieldId: ID,
+  mergeFieldName: string,
+  style: Record<string, string>,
+): MergeFieldNode => {
+  return $applyNodeReplacement(new MergeFieldNode(mergeFieldId, mergeFieldName, style))
 }

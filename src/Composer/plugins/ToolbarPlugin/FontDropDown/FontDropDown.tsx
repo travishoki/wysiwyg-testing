@@ -3,6 +3,7 @@ import { $patchStyleText } from "@lexical/selection"
 import classNames from "classnames"
 import { $getSelection, $isRangeSelection, LexicalEditor } from "lexical"
 import { useTranslation } from "src/i18n"
+import { $isMergeFieldNode } from "../../..//nodes/MergeField/MergeFieldNode"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
@@ -26,6 +27,15 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
     (option: string) => {
       editor.update(() => {
         const selection = $getSelection()
+
+        // Style MergeFields
+        selection.getNodes().forEach((node) => {
+          if ($isMergeFieldNode(node)) {
+            node.setStyle(styleName, option)
+          }
+        })
+
+        // Style TextNode
         if ($isRangeSelection(selection)) {
           $patchStyleText(selection, {
             [styleName]: option,
