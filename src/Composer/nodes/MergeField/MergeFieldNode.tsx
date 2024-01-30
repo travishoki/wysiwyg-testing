@@ -97,10 +97,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
       ...super.exportJSON(),
       mergeFieldId: this.getMergeFieldId(),
       mergeFieldName: this.getMergeFieldName(),
-      // style: this.getStyle(),
-      style: {
-        // fontSize: "20px",
-      },
+      style: this.getStyle(),
       type: "merge-field",
     }
   }
@@ -136,10 +133,10 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return false
   }
 
-  getStyle(): string {
+  getStyle(): Record<string, string> {
     const self = this.getLatest()
 
-    return self.__style
+    return self.style
   }
 
   public setStyle(styleName: string, option: string) {
