@@ -94,11 +94,11 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
   exportJSON(): SerializedMergeFieldNode {
     return {
-      ...super.exportJSON(),
       mergeFieldId: this.getMergeFieldId(),
       mergeFieldName: this.getMergeFieldName(),
       style: this.getStyle(),
       type: "merge-field",
+      version: 1,
     }
   }
 
@@ -112,6 +112,12 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     const self = this.getLatest()
 
     return self.mergeFieldName
+  }
+
+  getStyle(): Record<string, string> {
+    const self = this.getLatest()
+
+    return self.style
   }
 
   exportDOM(): DOMExportOutput {
@@ -131,12 +137,6 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   /* eslint-disable-next-line class-methods-use-this */
   updateDOM(): false {
     return false
-  }
-
-  getStyle(): Record<string, string> {
-    const self = this.getLatest()
-
-    return self.style
   }
 
   public setStyle(styleName: string, option: string) {
