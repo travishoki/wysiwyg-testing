@@ -11,10 +11,10 @@ type ButtonUnderlineProps = {
   onClick: () => void
 }
 
+const shortcut = IS_APPLE ? "⌘U" : "Ctrl+U"
+
 export const ButtonUnderline = ({ isActive, isEditable, onClick }: ButtonUnderlineProps) => {
   const { t } = useTranslation("scenes", { keyPrefix: "composer" })
-
-  const shortcut = IS_APPLE ? "⌘U" : "Ctrl+U"
 
   return (
     <button
