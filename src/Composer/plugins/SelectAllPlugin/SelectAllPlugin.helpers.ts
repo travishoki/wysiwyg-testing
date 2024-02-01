@@ -1,7 +1,7 @@
 import { $createParagraphNode, $getRoot, $isElementNode, LexicalEditor } from "lexical"
 import { IS_APPLE } from "../../shared/environment"
 
-export const controlOrMeta = (metaKey: boolean, ctrlKey: boolean): boolean => {
+const controlOrMeta = (metaKey: boolean, ctrlKey: boolean): boolean => {
   if (IS_APPLE) {
     return metaKey
   }
