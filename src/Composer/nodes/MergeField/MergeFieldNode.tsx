@@ -1,6 +1,8 @@
 import React, { Suspense } from "react"
 import {
   $applyNodeReplacement,
+  $isTextNode,
+  DOMConversion,
   DOMConversionMap,
   DOMConversionOutput,
   DOMExportOutput,
@@ -8,6 +10,7 @@ import {
   LexicalNode,
   SerializedLexicalNode,
   Spread,
+  TextNode,
 } from "lexical"
 import { camelCase } from "lodash"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
@@ -42,18 +45,36 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName, node.style)
   }
 
-  importDOM(): DOMConversionMap | null {
-    return {
-      span: (domNode: HTMLElement) => {
-        if (!domNode.hasAttribute("data-merge-field-component")) {
-          return null
-        }
+  /* eslint-disable-next-line class-methods-use-this */
+  static importDOM(): DOMConversionMap | null {
+    const importers = TextNode.importDOM()
 
-        return {
-          conversion: convertMergeFieldElement(this.mergeFieldId, this.mergeFieldName, this.style),
-          priority: 1,
-        }
-      },
+    return {
+      ...importers,
+      code: () => ({
+        conversion: convertMergeFieldElement(importers?.code),
+        priority: 1,
+      }),
+      em: () => ({
+        conversion: convertMergeFieldElement(importers?.em),
+        priority: 1,
+      }),
+      span: () => ({
+        conversion: convertMergeFieldElement(importers?.span),
+        priority: 1,
+      }),
+      strong: () => ({
+        conversion: convertMergeFieldElement(importers?.strong),
+        priority: 1,
+      }),
+      sub: () => ({
+        conversion: convertMergeFieldElement(importers?.sub),
+        priority: 1,
+      }),
+      sup: () => ({
+        conversion: convertMergeFieldElement(importers?.sup),
+        priority: 1,
+      }),
     }
   }
 
@@ -162,14 +183,50 @@ export const $createMergeFieldNode = (
   return $applyNodeReplacement(new MergeFieldNode(mergeFieldId, mergeFieldName, style))
 }
 
-const convertMergeFieldElement =
-  (mergeFieldId: ID, mergeFieldName: string, style: Record<string, string>) =>
-  (domNode: Node): null | DOMConversionOutput => {
-    if (domNode instanceof HTMLElement) {
-      const node = $createMergeFieldNode(mergeFieldId, mergeFieldName, style)
+function convertMergeFieldElement(
+  originalDOMConverter?: (node: HTMLElement) => DOMConversion | null,
+): (node: HTMLElement) => DOMConversionOutput | null {
+  return (node) => {
+    const original = originalDOMConverter?.(node)
+    if (!original) {
+      return null
+    }
+    const originalOutput = original.conversion(node)
 
-      return { node }
+    if (!originalOutput) {
+      return originalOutput
     }
 
-    return null
+    const backgroundColor = node.style.backgroundColor
+    const color = node.style.color
+    const fontFamily = node.style.fontFamily
+    const fontWeight = node.style.fontWeight
+    const fontSize = node.style.fontSize
+    const textDecoration = node.style.textDecoration
+
+    return {
+      ...originalOutput,
+      forChild: (lexicalNode, parent) => {
+        const originalForChild = originalOutput?.forChild ?? ((x) => x)
+        const result = originalForChild(lexicalNode, parent)
+        if ($isTextNode(result)) {
+          const style = [
+            backgroundColor ? `background-color: ${backgroundColor}` : null,
+            color ? `color: ${color}` : null,
+            fontFamily ? `font-family: ${fontFamily}` : null,
+            fontWeight ? `font-weight: ${fontWeight}` : null,
+            fontSize ? `font-size: ${fontSize}` : null,
+            textDecoration ? `text-decoration: ${textDecoration}` : null,
+          ]
+            .filter((value) => value != null)
+            .join("; ")
+          if (style.length) {
+            return result.setStyle(style)
+          }
+        }
+
+        return result
+      },
+    }
   }
+}
