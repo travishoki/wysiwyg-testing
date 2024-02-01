@@ -42,16 +42,6 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName, node.style)
   }
 
-  convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
-    if (domNode instanceof HTMLElement) {
-      const node = $createMergeFieldNode(this.mergeFieldId, this.mergeFieldName, this.style)
-
-      return { node }
-    }
-
-    return null
-  }
-
   importDOM(): DOMConversionMap | null {
     return {
       span: (domNode: HTMLElement) => {
@@ -60,7 +50,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
         }
 
         return {
-          conversion: this.convertMergeFieldElement,
+          conversion: convertMergeFieldElement(this.mergeFieldId, this.mergeFieldName, this.style),
           priority: 1,
         }
       },
@@ -171,3 +161,15 @@ export const $createMergeFieldNode = (
 ): MergeFieldNode => {
   return $applyNodeReplacement(new MergeFieldNode(mergeFieldId, mergeFieldName, style))
 }
+
+const convertMergeFieldElement =
+  (mergeFieldId: ID, mergeFieldName: string, style: Record<string, string>) =>
+  (domNode: Node): null | DOMConversionOutput => {
+    if (domNode instanceof HTMLElement) {
+      const node = $createMergeFieldNode(mergeFieldId, mergeFieldName, style)
+
+      return { node }
+    }
+
+    return null
+  }
