@@ -1,10 +1,7 @@
 import React, { Suspense } from "react"
 import {
   $applyNodeReplacement,
-  $isTextNode,
-  DOMConversion,
   DOMConversionMap,
-  DOMConversionOutput,
   DOMExportOutput,
   DecoratorNode,
   LexicalNode,
@@ -14,7 +11,7 @@ import {
 } from "lexical"
 import { camelCase } from "lodash"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
-import { styleObjectToString } from "./MergeFieldNode.helpers"
+import { patchStyleConversion, styleObjectToString } from "./MergeFieldNode.helpers"
 
 const MergeFieldComponent = React.lazy(
   // @ts-ignore
@@ -52,27 +49,31 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return {
       ...importers,
       code: () => ({
-        conversion: convertMergeFieldElement(importers?.code),
+        conversion: patchStyleConversion(importers?.code),
+        priority: 1,
+      }),
+      div: () => ({
+        conversion: patchStyleConversion(importers?.div),
         priority: 1,
       }),
       em: () => ({
-        conversion: convertMergeFieldElement(importers?.em),
+        conversion: patchStyleConversion(importers?.em),
         priority: 1,
       }),
       span: () => ({
-        conversion: convertMergeFieldElement(importers?.span),
+        conversion: patchStyleConversion(importers?.span),
         priority: 1,
       }),
       strong: () => ({
-        conversion: convertMergeFieldElement(importers?.strong),
+        conversion: patchStyleConversion(importers?.strong),
         priority: 1,
       }),
       sub: () => ({
-        conversion: convertMergeFieldElement(importers?.sub),
+        conversion: patchStyleConversion(importers?.sub),
         priority: 1,
       }),
       sup: () => ({
-        conversion: convertMergeFieldElement(importers?.sup),
+        conversion: patchStyleConversion(importers?.sup),
         priority: 1,
       }),
     }
@@ -181,52 +182,4 @@ export const $createMergeFieldNode = (
   style: Record<string, string>,
 ): MergeFieldNode => {
   return $applyNodeReplacement(new MergeFieldNode(mergeFieldId, mergeFieldName, style))
-}
-
-function convertMergeFieldElement(
-  originalDOMConverter?: (node: HTMLElement) => DOMConversion | null,
-): (node: HTMLElement) => DOMConversionOutput | null {
-  return (node) => {
-    const original = originalDOMConverter?.(node)
-    if (!original) {
-      return null
-    }
-    const originalOutput = original.conversion(node)
-
-    if (!originalOutput) {
-      return originalOutput
-    }
-
-    const backgroundColor = node.style.backgroundColor
-    const color = node.style.color
-    const fontFamily = node.style.fontFamily
-    const fontWeight = node.style.fontWeight
-    const fontSize = node.style.fontSize
-    const textDecoration = node.style.textDecoration
-
-    return {
-      ...originalOutput,
-      forChild: (lexicalNode, parent) => {
-        const originalForChild = originalOutput?.forChild ?? ((x) => x)
-        const result = originalForChild(lexicalNode, parent)
-        if ($isTextNode(result)) {
-          const style = [
-            backgroundColor ? `background-color: ${backgroundColor}` : null,
-            color ? `color: ${color}` : null,
-            fontFamily ? `font-family: ${fontFamily}` : null,
-            fontWeight ? `font-weight: ${fontWeight}` : null,
-            fontSize ? `font-size: ${fontSize}` : null,
-            textDecoration ? `text-decoration: ${textDecoration}` : null,
-          ]
-            .filter((value) => value != null)
-            .join("; ")
-          if (style.length) {
-            return result.setStyle(style)
-          }
-        }
-
-        return result
-      },
-    }
-  }
 }
