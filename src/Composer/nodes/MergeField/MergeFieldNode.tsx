@@ -2,16 +2,16 @@ import React, { Suspense } from "react"
 import {
   $applyNodeReplacement,
   DOMConversionMap,
+  DOMConversionOutput,
   DOMExportOutput,
   DecoratorNode,
   LexicalNode,
   SerializedLexicalNode,
   Spread,
-  TextNode,
 } from "lexical"
 import { camelCase } from "lodash"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
-import { patchStyleConversion, styleObjectToString } from "./MergeFieldNode.helpers"
+import { styleObjectToString } from "./MergeFieldNode.helpers"
 
 const MergeFieldComponent = React.lazy(
   // @ts-ignore
@@ -42,40 +42,28 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName, node.style)
   }
 
-  /* eslint-disable-next-line class-methods-use-this */
-  static importDOM(): DOMConversionMap | null {
-    const importers = TextNode.importDOM()
+  convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
+    if (domNode instanceof HTMLElement) {
+      const node = $createMergeFieldNode(this.mergeFieldId, this.mergeFieldName, this.style)
 
+      return { node }
+    }
+
+    return null
+  }
+
+  importDOM(): DOMConversionMap | null {
     return {
-      ...importers,
-      code: () => ({
-        conversion: patchStyleConversion(importers?.code),
-        priority: 1,
-      }),
-      div: () => ({
-        conversion: patchStyleConversion(importers?.div),
-        priority: 1,
-      }),
-      em: () => ({
-        conversion: patchStyleConversion(importers?.em),
-        priority: 1,
-      }),
-      span: () => ({
-        conversion: patchStyleConversion(importers?.span),
-        priority: 1,
-      }),
-      strong: () => ({
-        conversion: patchStyleConversion(importers?.strong),
-        priority: 1,
-      }),
-      sub: () => ({
-        conversion: patchStyleConversion(importers?.sub),
-        priority: 1,
-      }),
-      sup: () => ({
-        conversion: patchStyleConversion(importers?.sup),
-        priority: 1,
-      }),
+      span: (domNode: HTMLElement) => {
+        if (!domNode.hasAttribute("data-merge-field-component")) {
+          return null
+        }
+
+        return {
+          conversion: this.convertMergeFieldElement,
+          priority: 1,
+        }
+      },
     }
   }
 
