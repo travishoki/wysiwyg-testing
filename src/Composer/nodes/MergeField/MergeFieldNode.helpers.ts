@@ -29,6 +29,12 @@ export const getFormatTypeClassStyle = (format: TextFormatType): string => {
       return ComposerTheme.text.bold
     case "italic":
       return ComposerTheme.text.italic
+    case "strikethrough":
+      return ComposerTheme.text.strikethrough
+    case "subscript":
+      return ComposerTheme.text.subscript
+    case "superscript":
+      return ComposerTheme.text.superscript
     case "underline":
       return ComposerTheme.text.underline
     default:
