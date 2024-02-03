@@ -23,7 +23,9 @@ const MergeFieldComponent = ({
         FORMAT_TEXT_COMMAND,
         (formatType) => {
           const node = $getNodeByKey(nodeKey)
-          node.toggleFormatType(formatType)
+          if (node && isSelected) {
+            node.toggleFormatType(formatType)
+          }
 
           return false
         },
