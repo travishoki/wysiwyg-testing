@@ -5,13 +5,15 @@ import {
   DOMConversionOutput,
   DOMExportOutput,
   DecoratorNode,
+  LexicalEditor,
   LexicalNode,
   SerializedLexicalNode,
   Spread,
+  TextFormatType,
 } from "lexical"
 import { camelCase } from "lodash"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
-import { styleObjectToString } from "./MergeFieldNode.helpers"
+import { getFormatTypeClassStyle, styleObjectToString } from "./MergeFieldNode.helpers"
 
 const MergeFieldComponent = React.lazy(
   // @ts-ignore
@@ -69,6 +71,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
   constructor(mergeFieldId: ID, mergeFieldName: string, style: Record<string, string>) {
     super()
+    this.formatType = null
     this.mergeFieldId = mergeFieldId
     this.mergeFieldName = mergeFieldName
     this.style = style
@@ -147,10 +150,32 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     }
   }
 
-  decorate() {
+  getFormatType() {
+    const self = this.getLatest()
+
+    return self.formatType
+  }
+
+  setFormatType(formatType: Maybe<TextFormatType>) {
+    const self = this.getWritable()
+    self.formatType = formatType
+
+    return self
+  }
+
+  /* eslint-disable-next-line class-methods-use-this */
+  public toggleFormatType(formatType: TextFormatType) {
+    const currentFormat = this.getFormatType()
+    const newFormat = formatType === currentFormat ? null : formatType
+
+    this.setFormatType(newFormat)
+  }
+
+  decorate(_editor: LexicalEditor) {
     return (
       <Suspense fallback={<ComposerNodeFallback />}>
         <MergeFieldComponent
+          className={getFormatTypeClassStyle(this.getFormatType())}
           mergeFieldName={this.mergeFieldName}
           nodeKey={this.getKey()}
           style={this.style}
