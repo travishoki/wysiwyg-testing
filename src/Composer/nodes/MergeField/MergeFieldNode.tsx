@@ -125,7 +125,9 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
   exportDOM(): DOMExportOutput {
     const element = document.createElement("span")
-    element.className = "merge-field"
+    const formatClasses = getFormatTypeClassStyle(this.getFormatType())
+    element.className = `merge-field ${formatClasses}`
+
     element.textContent = `{{${this.mergeFieldId}}}`
 
     const style = styleObjectToString(this.style)
