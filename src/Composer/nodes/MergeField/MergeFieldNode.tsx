@@ -17,7 +17,6 @@ import {
   getFormatTypeClassStyle,
   styleObjectToString,
   wrapElementWith,
-  // wrapElementWith,
 } from "./MergeFieldNode.helpers"
 import { TEXT_TYPE_TO_FORMAT } from "./const"
 
