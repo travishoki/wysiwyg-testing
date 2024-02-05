@@ -48,3 +48,10 @@ export const getFormatTypeClassStyle = (format: number): string => {
       return ""
   }
 }
+
+export const wrapElementWith = (element: HTMLElement, tag: string) => {
+  const el = document.createElement(tag)
+  el.appendChild(element)
+
+  return el
+}

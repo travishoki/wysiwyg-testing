@@ -13,7 +13,12 @@ import {
 } from "lexical"
 import { camelCase } from "lodash"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
-import { getFormatTypeClassStyle, styleObjectToString } from "./MergeFieldNode.helpers"
+import {
+  getFormatTypeClassStyle,
+  styleObjectToString,
+  wrapElementWith,
+  // wrapElementWith,
+} from "./MergeFieldNode.helpers"
 import { TEXT_TYPE_TO_FORMAT } from "./const"
 
 const MergeFieldComponent = React.lazy(
@@ -126,7 +131,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   exportDOM(): DOMExportOutput {
-    const element = document.createElement("span")
+    let element = document.createElement("span")
     const formatClasses = getFormatTypeClassStyle(this.getFormat())
     const style = styleObjectToString(this.style)
 
@@ -135,6 +140,21 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
     if (style !== "") {
       element.setAttribute("style", style)
+    }
+
+    if (element !== null) {
+      if (this.hasFormat("bold")) {
+        element = wrapElementWith(element, "b")
+      }
+      if (this.hasFormat("italic")) {
+        element = wrapElementWith(element, "i")
+      }
+      if (this.hasFormat("strikethrough")) {
+        element = wrapElementWith(element, "s")
+      }
+      if (this.hasFormat("underline")) {
+        element = wrapElementWith(element, "u")
+      }
     }
 
     return { element }
@@ -164,6 +184,12 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     self.__format = typeof format === "string" ? TEXT_TYPE_TO_FORMAT[format] : format
 
     return self
+  }
+
+  hasFormat(type: TextFormatType) {
+    const formatFlag = TEXT_TYPE_TO_FORMAT[type]
+
+    return (this.getFormat() & formatFlag) !== 0
   }
 
   public toggleFormatType(formatType: TextFormatType) {
