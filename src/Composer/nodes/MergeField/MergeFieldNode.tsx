@@ -14,6 +14,7 @@ import {
 import { camelCase } from "lodash"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
 import { getFormatTypeClassStyle, styleObjectToString } from "./MergeFieldNode.helpers"
+import { TEXT_TYPE_TO_FORMAT } from "./const"
 
 const MergeFieldComponent = React.lazy(
   // @ts-ignore
@@ -71,6 +72,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
   constructor(mergeFieldId: ID, mergeFieldName: string, style: Record<string, string>) {
     super()
+    this.__format = 0
     this.formatType = null
     this.mergeFieldId = mergeFieldId
     this.mergeFieldName = mergeFieldName
@@ -125,12 +127,11 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
   exportDOM(): DOMExportOutput {
     const element = document.createElement("span")
-    const formatClasses = getFormatTypeClassStyle(this.getFormatType())
-    element.className = `merge-field ${formatClasses}`
-
-    element.textContent = `{{${this.mergeFieldId}}}`
-
+    const formatClasses = getFormatTypeClassStyle(this.getFormat())
     const style = styleObjectToString(this.style)
+
+    element.className = `merge-field ${formatClasses}`
+    element.textContent = `{{${this.mergeFieldId}}}`
 
     if (style !== "") {
       element.setAttribute("style", style)
@@ -152,32 +153,32 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     }
   }
 
-  getFormatType() {
+  getFormat() {
     const self = this.getLatest()
 
-    return self.formatType
+    return self.__format
   }
 
-  setFormatType(formatType: Maybe<TextFormatType>) {
+  setFormat(format: TextFormatType | number) {
     const self = this.getWritable()
-    self.formatType = formatType
+    self.__format = typeof format === "string" ? TEXT_TYPE_TO_FORMAT[format] : format
 
     return self
   }
 
-  /* eslint-disable-next-line class-methods-use-this */
   public toggleFormatType(formatType: TextFormatType) {
-    const currentFormat = this.getFormatType()
-    const newFormat = formatType === currentFormat ? null : formatType
+    const currentFormat = this.getFormat()
+    const format = TEXT_TYPE_TO_FORMAT[formatType]
+    const newFormat = format === currentFormat ? 0 : format
 
-    this.setFormatType(newFormat)
+    this.setFormat(newFormat)
   }
 
   decorate(_editor: LexicalEditor) {
     return (
       <Suspense fallback={<ComposerNodeFallback />}>
         <MergeFieldComponent
-          className={getFormatTypeClassStyle(this.getFormatType())}
+          className={getFormatTypeClassStyle(this.getFormat())}
           mergeFieldName={this.mergeFieldName}
           nodeKey={this.getKey()}
           style={this.style}

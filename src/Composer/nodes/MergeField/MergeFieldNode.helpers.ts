@@ -1,6 +1,13 @@
-import { TextFormatType } from "lexical"
 import { camelCase } from "lodash"
 import { ComposerTheme } from "../../themes/ComposerTheme"
+import {
+  IS_BOLD,
+  IS_ITALIC,
+  IS_STRIKETHROUGH,
+  IS_SUBSCRIPT,
+  IS_SUPERSCRIPT,
+  IS_UNDERLINE,
+} from "./const"
 
 export const camelCaseToKebab = (str: string) =>
   str.replace(/[A-Z]+(?![a-z])|[A-Z]/g, ($, ofs) => (ofs ? "-" : "") + $.toLowerCase())
@@ -23,19 +30,19 @@ export const styleStringToObject = (styleStr: string) =>
     return collector
   }, {})
 
-export const getFormatTypeClassStyle = (format: TextFormatType): string => {
+export const getFormatTypeClassStyle = (format: number): string => {
   switch (format) {
-    case "bold":
+    case IS_BOLD:
       return ComposerTheme.text.bold
-    case "italic":
+    case IS_ITALIC:
       return ComposerTheme.text.italic
-    case "strikethrough":
+    case IS_STRIKETHROUGH:
       return ComposerTheme.text.strikethrough
-    case "subscript":
+    case IS_SUBSCRIPT:
       return ComposerTheme.text.subscript
-    case "superscript":
+    case IS_SUPERSCRIPT:
       return ComposerTheme.text.superscript
-    case "underline":
+    case IS_UNDERLINE:
       return ComposerTheme.text.underline
     default:
       return ""
