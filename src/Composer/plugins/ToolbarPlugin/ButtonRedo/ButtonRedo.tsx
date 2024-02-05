@@ -11,10 +11,9 @@ type ButtonRedoProps = {
   onClick: () => void
 }
 
-const shortcut = IS_APPLE ? "⌘Y" : "Ctrl+Y"
-
 export const ButtonRedo = ({ canRedo, isEditable, onClick }: ButtonRedoProps) => {
   const { t } = useTranslation("scenes", { keyPrefix: "composer" })
+  const shortcut = IS_APPLE ? t("⌘Y") : t("Ctrl+Y")
 
   return (
     <button

@@ -11,10 +11,9 @@ type ButtonUndoProps = {
   onClick: () => void
 }
 
-const shortcut = IS_APPLE ? "⌘Z" : "Ctrl+Z"
-
 export const ButtonUndo = ({ canUndo, isEditable, onClick }: ButtonUndoProps) => {
   const { t } = useTranslation("scenes", { keyPrefix: "composer" })
+  const shortcut = IS_APPLE ? t("⌘Z") : t("Ctrl+Z")
 
   return (
     <button

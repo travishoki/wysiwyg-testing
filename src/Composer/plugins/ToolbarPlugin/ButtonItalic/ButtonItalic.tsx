@@ -11,10 +11,9 @@ type ButtonItalicProps = {
   onClick: () => void
 }
 
-const shortcut = IS_APPLE ? "⌘I" : "Ctrl+I"
-
 export const ButtonItalic = ({ isActive, isEditable, onClick }: ButtonItalicProps) => {
   const { t } = useTranslation("scenes", { keyPrefix: "composer" })
+  const shortcut = IS_APPLE ? t("⌘I") : t("Ctrl+I")
 
   return (
     <button
