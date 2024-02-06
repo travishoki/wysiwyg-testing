@@ -161,27 +161,19 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   getMergeFieldId(): string {
-    const self = this.getLatest()
-
-    return self.mergeFieldId
+    return this.getLatest().mergeFieldId
   }
 
   getMergeFieldName(): string {
-    const self = this.getLatest()
-
-    return self.mergeFieldName
+    return this.getLatest().mergeFieldName
   }
 
   getStyle(): Record<string, string> {
-    const self = this.getLatest()
-
-    return self.style
+    return this.getLatest().style
   }
 
   getFormat() {
-    const self = this.getLatest()
-
-    return self.__format
+    return this.getLatest().__format
   }
 
   setFormat(format: TextFormatType | number) {
