@@ -44,6 +44,7 @@ import { useTranslation } from "src/i18n"
 import { getSelectedNode } from "../../helpers/getSelectedNode"
 import { sanitizeUrl } from "../../helpers/url"
 import { useModal } from "../../hooks/useModal"
+import { $isMergeFieldNode } from "../../nodes/MergeField/MergeFieldNode"
 import { DropdownColorPicker } from "../../ui/DropDown/ColorPicker/ColorPicker"
 import stylesIconDropdown from "../../ui/DropDown/IconDropdown/IconDropdown.module.scss"
 import stylesIcon from "../../ui/Icon/Icon.module.scss"
@@ -231,7 +232,7 @@ export const ToolbarPlugin = () => {
           return
         }
 
-        nodes.forEach((node, idx) => {
+        nodes.forEach((node, idx: number) => {
           // We split the first and last node by the selection
           // So that we don't format unselected text inside those nodes
           if ($isTextNode(node)) {
@@ -248,6 +249,10 @@ export const ToolbarPlugin = () => {
             if (node.__format !== 0) {
               node.setFormat(0)
               $getNearestBlockElementAncestorOrThrow(node).setFormat("")
+            }
+          } else if ($isMergeFieldNode(node)) {
+            if (node.__format !== 0) {
+              node.setFormat(0)
             }
           } else if ($isHeadingNode(node) || $isQuoteNode(node)) {
             node.replace($createParagraphNode(), true)
