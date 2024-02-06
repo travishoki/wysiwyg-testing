@@ -1,5 +1,6 @@
 .merge-field {
   align-items: center;
+  color: #777d80;
   display: flex;
   display: inline-block;
   justify-content: center;
@@ -10,6 +11,6 @@
 }
 
 .title {
-  color: #777d80;
+  color: inherit;
   margin: 0;
 }
