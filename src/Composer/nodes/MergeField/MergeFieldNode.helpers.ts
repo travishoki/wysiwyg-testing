@@ -36,14 +36,16 @@ export const getFormatTypeClass = (format: number): string => {
   const { text } = ComposerTheme
   const classNames: string[] = []
 
-  if (format & IS_BOLD) classNames.push(text?.bold)
-  if (format & IS_CODE) classNames.push(text?.code)
-  if (format & IS_HIGHLIGHT) classNames.push(text?.highlight)
-  if (format & IS_ITALIC) classNames.push(text?.italic)
-  if (format & IS_STRIKETHROUGH) classNames.push(text?.strikethrough)
-  if (format & IS_SUBSCRIPT) classNames.push(text?.subscript)
-  if (format & IS_SUPERSCRIPT) classNames.push(text?.superscript)
-  if (format & IS_UNDERLINE) classNames.push(text?.underline)
+  if (text) {
+    if (format & IS_BOLD) classNames.push(text.bold)
+    if (format & IS_CODE) classNames.push(text.code)
+    if (format & IS_HIGHLIGHT) classNames.push(text.highlight)
+    if (format & IS_ITALIC) classNames.push(text.italic)
+    if (format & IS_STRIKETHROUGH) classNames.push(text.strikethrough)
+    if (format & IS_SUBSCRIPT) classNames.push(text.subscript)
+    if (format & IS_SUPERSCRIPT) classNames.push(text.superscript)
+    if (format & IS_UNDERLINE) classNames.push(text.underline)
+  }
 
   return classNames.join(" ")
 }
