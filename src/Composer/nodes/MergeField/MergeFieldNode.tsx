@@ -160,6 +160,12 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     writable.style = {}
   }
 
+  public toggleFormatType(type: TextFormatType) {
+    const formatFlag = TEXT_TYPE_TO_FORMAT[type]
+
+    return this.setFormat(this.getFormat() ^ formatFlag)
+  }
+
   getMergeFieldId(): string {
     return this.getLatest().mergeFieldId
   }
@@ -187,12 +193,6 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     const formatFlag = TEXT_TYPE_TO_FORMAT[type]
 
     return (this.getFormat() & formatFlag) !== 0
-  }
-
-  public toggleFormatType(type: TextFormatType) {
-    const formatFlag = TEXT_TYPE_TO_FORMAT[type]
-
-    return this.setFormat(this.getFormat() ^ formatFlag)
   }
 
   decorate(_editor: LexicalEditor) {
