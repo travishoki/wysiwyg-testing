@@ -32,7 +32,7 @@ export const styleStringToObject = (styleStr: string) =>
     return collector
   }, {})
 
-export const getFormatTypeClassStyle = (format: number): string => {
+export const getFormatTypeClass = (format: number): string => {
   const classNames: string[] = []
   if (format & IS_BOLD) classNames.push(ComposerTheme.text.bold)
   if (format & IS_CODE) classNames.push(ComposerTheme.text.code)

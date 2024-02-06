@@ -1,6 +1,6 @@
 import {
   camelCaseToKebab,
-  getFormatTypeClassStyle,
+  getFormatTypeClass,
   styleObjectToString,
   styleStringToObject,
 } from "./MergeFieldNode.helpers"
@@ -41,18 +41,18 @@ describe("styleStringToObject", () => {
   })
 })
 
-describe("getFormatTypeClassStyle", () => {
+describe("getFormatTypeClass", () => {
   it("should return classes, provided a format number", () => {
-    expect(getFormatTypeClassStyle(1)).toEqual("composer__textBold")
-    expect(getFormatTypeClassStyle(2)).toEqual("composer__textItalic")
-    expect(getFormatTypeClassStyle(4)).toEqual("composer__textStrikethrough")
-    expect(getFormatTypeClassStyle(8)).toEqual("composer__textUnderline")
-    expect(getFormatTypeClassStyle(16)).toEqual("composer__textCode")
-    expect(getFormatTypeClassStyle(32)).toEqual("composer__textSubscript")
-    expect(getFormatTypeClassStyle(64)).toEqual("composer__textSuperscript")
+    expect(getFormatTypeClass(1)).toEqual("composer__textBold")
+    expect(getFormatTypeClass(2)).toEqual("composer__textItalic")
+    expect(getFormatTypeClass(4)).toEqual("composer__textStrikethrough")
+    expect(getFormatTypeClass(8)).toEqual("composer__textUnderline")
+    expect(getFormatTypeClass(16)).toEqual("composer__textCode")
+    expect(getFormatTypeClass(32)).toEqual("composer__textSubscript")
+    expect(getFormatTypeClass(64)).toEqual("composer__textSuperscript")
 
-    expect(getFormatTypeClassStyle(3)).toEqual("composer__textBold composer__textItalic")
-    expect(getFormatTypeClassStyle(9)).toEqual("composer__textBold composer__textUnderline")
-    expect(getFormatTypeClassStyle(10)).toEqual("composer__textItalic composer__textUnderline")
+    expect(getFormatTypeClass(3)).toEqual("composer__textBold composer__textItalic")
+    expect(getFormatTypeClass(9)).toEqual("composer__textBold composer__textUnderline")
+    expect(getFormatTypeClass(10)).toEqual("composer__textItalic composer__textUnderline")
   })
 })

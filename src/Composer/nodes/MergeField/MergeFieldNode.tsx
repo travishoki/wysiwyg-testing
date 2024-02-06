@@ -13,11 +13,7 @@ import {
 } from "lexical"
 import { camelCase } from "lodash"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
-import {
-  getFormatTypeClassStyle,
-  styleObjectToString,
-  wrapElementWith,
-} from "./MergeFieldNode.helpers"
+import { getFormatTypeClass, styleObjectToString, wrapElementWith } from "./MergeFieldNode.helpers"
 import { TEXT_TYPE_TO_FORMAT } from "./const"
 
 const MergeFieldComponent = React.lazy(
@@ -131,7 +127,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
   exportDOM(): DOMExportOutput {
     let element = document.createElement("span")
-    const formatClasses = getFormatTypeClassStyle(this.getFormat())
+    const formatClasses = getFormatTypeClass(this.getFormat())
     const style = styleObjectToString(this.style)
 
     element.className = `merge-field ${formatClasses}`
@@ -203,7 +199,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return (
       <Suspense fallback={<ComposerNodeFallback />}>
         <MergeFieldComponent
-          className={getFormatTypeClassStyle(this.getFormat())}
+          className={getFormatTypeClass(this.getFormat())}
           mergeFieldName={this.mergeFieldName}
           nodeKey={this.getKey()}
           style={this.style}
