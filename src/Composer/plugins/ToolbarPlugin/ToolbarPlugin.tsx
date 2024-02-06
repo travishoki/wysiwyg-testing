@@ -262,7 +262,9 @@ export const ToolbarPlugin = () => {
               $getNearestBlockElementAncestorOrThrow(node).setFormat("")
             }
           } else if ($isMergeFieldNode(node)) {
-            node.clearStyle()
+            if (node.__style !== "") {
+              node.setStyle("")
+            }
             if (node.__format !== 0) {
               node.setFormat(0)
             }

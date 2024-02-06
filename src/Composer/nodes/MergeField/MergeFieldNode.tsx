@@ -176,14 +176,6 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return self
   }
 
-  public clearStyle() {
-    const self = this.getWritable()
-
-    self.__style = ""
-
-    return self
-  }
-
   public toggleFormatType(type: TextFormatType) {
     const formatFlag = TEXT_TYPE_TO_FORMAT[type]
     const newFormat = this.getFormat() ^ formatFlag
