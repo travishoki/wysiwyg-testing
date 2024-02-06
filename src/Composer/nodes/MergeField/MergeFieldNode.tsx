@@ -48,6 +48,14 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName, node.style)
   }
 
+  constructor(mergeFieldId: ID, mergeFieldName: string, style: Record<string, string>) {
+    super()
+    this.__format = 0
+    this.mergeFieldId = mergeFieldId
+    this.mergeFieldName = mergeFieldName
+    this.style = style
+  }
+
   convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
     if (domNode instanceof HTMLElement) {
       const node = $createMergeFieldNode(this.mergeFieldId, this.mergeFieldName, this.style)
@@ -71,14 +79,6 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
         }
       },
     }
-  }
-
-  constructor(mergeFieldId: ID, mergeFieldName: string, style: Record<string, string>) {
-    super()
-    this.__format = 0
-    this.mergeFieldId = mergeFieldId
-    this.mergeFieldName = mergeFieldName
-    this.style = style
   }
 
   /* eslint-disable-next-line class-methods-use-this */
