@@ -23,6 +23,7 @@ const MergeFieldComponent = React.lazy(
 
 type SerializedMergeFieldNode = Spread<
   {
+    __format: number
     mergeFieldId: ID
     mergeFieldName: string
     style: Record<string, string>
@@ -31,6 +32,8 @@ type SerializedMergeFieldNode = Spread<
 >
 
 export class MergeFieldNode extends DecoratorNode<JSX.Element> {
+  __format: number
+
   mergeFieldId: ID
 
   mergeFieldName: string
@@ -93,12 +96,14 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
       serializedNode.mergeFieldName,
       serializedNode.style,
     )
+    node.setFormat(serializedNode.__format)
 
     return node
   }
 
   exportJSON(): SerializedMergeFieldNode {
     return {
+      __format: this.getFormat(),
       mergeFieldId: this.getMergeFieldId(),
       mergeFieldName: this.getMergeFieldName(),
       style: this.getStyle(),
