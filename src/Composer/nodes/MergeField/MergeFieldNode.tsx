@@ -210,7 +210,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
           className={getFormatTypeClass(this.getFormat())}
           mergeFieldName={this.mergeFieldName}
           nodeKey={this.getKey()}
-          style={this.style}
+          style={this.getStyle()}
         />
       </Suspense>
     )
