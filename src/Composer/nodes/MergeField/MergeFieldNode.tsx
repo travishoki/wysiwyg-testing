@@ -24,9 +24,9 @@ const MergeFieldComponent = React.lazy(
 type SerializedMergeFieldNode = Spread<
   {
     __format: number
+    __style: Record<string, string>
     mergeFieldId: ID
     mergeFieldName: string
-    style: Record<string, string>
   },
   SerializedLexicalNode
 >
@@ -34,31 +34,31 @@ type SerializedMergeFieldNode = Spread<
 export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   __format: number
 
+  __style: Record<string, string>
+
   mergeFieldId: ID
 
   mergeFieldName: string
-
-  style: Record<string, string>
 
   static getType(): string {
     return "merge-field"
   }
 
   static clone(node: MergeFieldNode): MergeFieldNode {
-    return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName, node.style)
+    return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName, node.__style)
   }
 
   constructor(mergeFieldId: ID, mergeFieldName: string, style: Record<string, string>) {
     super()
     this.__format = 0
+    this.__style = style
     this.mergeFieldId = mergeFieldId
     this.mergeFieldName = mergeFieldName
-    this.style = style
   }
 
   convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
     if (domNode instanceof HTMLElement) {
-      const node = $createMergeFieldNode(this.mergeFieldId, this.mergeFieldName, this.style)
+      const node = $createMergeFieldNode(this.mergeFieldId, this.mergeFieldName, this.__style)
 
       return { node }
     }
@@ -93,7 +93,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     const node = $createMergeFieldNode(
       serializedNode.mergeFieldId,
       serializedNode.mergeFieldName,
-      serializedNode.style,
+      serializedNode.__style,
     )
     node.setFormat(serializedNode.__format)
 
@@ -103,9 +103,9 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   exportJSON(): SerializedMergeFieldNode {
     return {
       __format: this.getFormat(),
+      __style: this.getStyle(),
       mergeFieldId: this.getMergeFieldId(),
       mergeFieldName: this.getMergeFieldName(),
-      style: this.getStyle(),
       type: "merge-field",
       version: 1,
     }
@@ -149,7 +149,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   public setStyle(styleName: string, option: string) {
     const writable = this.getWritable()
 
-    writable.style = {
+    writable.__style = {
       [camelCase(styleName)]: option,
     }
   }
@@ -157,7 +157,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   public clearStyle() {
     const writable = this.getWritable()
 
-    writable.style = {}
+    writable.__style = {}
   }
 
   public toggleFormatType(type: TextFormatType) {
@@ -175,7 +175,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   getStyle(): Record<string, string> {
-    return this.getLatest().style
+    return this.getLatest().__style
   }
 
   getFormat() {
