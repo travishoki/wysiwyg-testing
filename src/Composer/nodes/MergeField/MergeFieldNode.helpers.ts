@@ -33,26 +33,17 @@ export const styleStringToObject = (styleStr: string) =>
   }, {})
 
 export const getFormatTypeClassStyle = (format: number): string => {
-  switch (format) {
-    case IS_BOLD:
-      return ComposerTheme.text.bold
-    case IS_CODE:
-      return ComposerTheme.text.code
-    case IS_HIGHLIGHT:
-      return ComposerTheme.text.highlight
-    case IS_ITALIC:
-      return ComposerTheme.text.italic
-    case IS_STRIKETHROUGH:
-      return ComposerTheme.text.strikethrough
-    case IS_SUBSCRIPT:
-      return ComposerTheme.text.subscript
-    case IS_SUPERSCRIPT:
-      return ComposerTheme.text.superscript
-    case IS_UNDERLINE:
-      return ComposerTheme.text.underline
-    default:
-      return ""
-  }
+  const classNames: string[] = []
+  if (format & IS_BOLD) classNames.push(ComposerTheme.text.bold)
+  if (format & IS_CODE) classNames.push(ComposerTheme.text.code)
+  if (format & IS_HIGHLIGHT) classNames.push(ComposerTheme.text.highlight)
+  if (format & IS_ITALIC) classNames.push(ComposerTheme.text.italic)
+  if (format & IS_STRIKETHROUGH) classNames.push(ComposerTheme.text.strikethrough)
+  if (format & IS_SUBSCRIPT) classNames.push(ComposerTheme.text.subscript)
+  if (format & IS_SUPERSCRIPT) classNames.push(ComposerTheme.text.superscript)
+  if (format & IS_UNDERLINE) classNames.push(ComposerTheme.text.underline)
+
+  return classNames.join(" ")
 }
 
 export const wrapElementWith = (element: HTMLElement, tag: string) => {

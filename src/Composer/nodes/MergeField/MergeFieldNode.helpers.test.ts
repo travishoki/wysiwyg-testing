@@ -42,7 +42,7 @@ describe("styleStringToObject", () => {
 })
 
 describe("getFormatTypeClassStyle", () => {
-  it("should return bold", () => {
+  it("should return classes, provided a format number", () => {
     expect(getFormatTypeClassStyle(1)).toEqual("composer__textBold")
     expect(getFormatTypeClassStyle(2)).toEqual("composer__textItalic")
     expect(getFormatTypeClassStyle(4)).toEqual("composer__textStrikethrough")
@@ -51,6 +51,8 @@ describe("getFormatTypeClassStyle", () => {
     expect(getFormatTypeClassStyle(32)).toEqual("composer__textSubscript")
     expect(getFormatTypeClassStyle(64)).toEqual("composer__textSuperscript")
 
-    expect(getFormatTypeClassStyle(128)).toEqual("composer__textHighlight")
+    expect(getFormatTypeClassStyle(3)).toEqual("composer__textBold composer__textItalic")
+    expect(getFormatTypeClassStyle(9)).toEqual("composer__textBold composer__textUnderline")
+    expect(getFormatTypeClassStyle(10)).toEqual("composer__textItalic composer__textUnderline")
   })
 })
