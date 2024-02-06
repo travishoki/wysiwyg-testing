@@ -1,5 +1,6 @@
 import {
   camelCaseToKebab,
+  getFormatTypeClassStyle,
   styleObjectToString,
   styleStringToObject,
 } from "./MergeFieldNode.helpers"
@@ -37,5 +38,19 @@ describe("styleStringToObject", () => {
     }
 
     expect(result).toEqual(expectedResult)
+  })
+})
+
+describe("getFormatTypeClassStyle", () => {
+  it("should return bold", () => {
+    expect(getFormatTypeClassStyle(1)).toEqual("composer__textBold")
+    expect(getFormatTypeClassStyle(2)).toEqual("composer__textItalic")
+    expect(getFormatTypeClassStyle(4)).toEqual("composer__textStrikethrough")
+    expect(getFormatTypeClassStyle(8)).toEqual("composer__textUnderline")
+    expect(getFormatTypeClassStyle(16)).toEqual("composer__textCode")
+    expect(getFormatTypeClassStyle(32)).toEqual("composer__textSubscript")
+    expect(getFormatTypeClassStyle(64)).toEqual("composer__textSuperscript")
+
+    expect(getFormatTypeClassStyle(128)).toEqual("composer__textHighlight")
   })
 })
