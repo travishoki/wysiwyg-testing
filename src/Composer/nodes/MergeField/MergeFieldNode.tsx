@@ -76,7 +76,6 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   constructor(mergeFieldId: ID, mergeFieldName: string, style: Record<string, string>) {
     super()
     this.__format = 0
-    this.formatType = null
     this.mergeFieldId = mergeFieldId
     this.mergeFieldName = mergeFieldName
     this.style = style
