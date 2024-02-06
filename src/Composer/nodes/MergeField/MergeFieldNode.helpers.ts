@@ -2,6 +2,8 @@ import { camelCase } from "lodash"
 import { ComposerTheme } from "../../themes/ComposerTheme"
 import {
   IS_BOLD,
+  IS_CODE,
+  IS_HIGHLIGHT,
   IS_ITALIC,
   IS_STRIKETHROUGH,
   IS_SUBSCRIPT,
@@ -34,6 +36,10 @@ export const getFormatTypeClassStyle = (format: number): string => {
   switch (format) {
     case IS_BOLD:
       return ComposerTheme.text.bold
+    case IS_CODE:
+      return ComposerTheme.text.code
+    case IS_HIGHLIGHT:
+      return ComposerTheme.text.highlight
     case IS_ITALIC:
       return ComposerTheme.text.italic
     case IS_STRIKETHROUGH:
