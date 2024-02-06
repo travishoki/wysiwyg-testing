@@ -212,6 +212,17 @@ export const ToolbarPlugin = () => {
     (stylesText: Record<string, string>) => {
       activeEditor.update(() => {
         const selection = $getSelection()
+
+        // Style MergeFields
+        selection?.getNodes().forEach((node) => {
+          if ($isMergeFieldNode(node)) {
+            Object.entries(stylesText).forEach(([key, value]) => {
+              node.setStyleValue(key, value)
+            })
+          }
+        })
+
+        // Style TextNode
         if ($isRangeSelection(selection)) {
           $patchStyleText(selection, stylesText)
         }
