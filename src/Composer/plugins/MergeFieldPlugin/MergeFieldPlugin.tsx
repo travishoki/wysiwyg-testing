@@ -21,9 +21,8 @@ export const MergeFieldPlugin = (): JSX.Element | null => {
     return mergeRegister(
       editor.registerCommand(
         INSERT_MERGE_FIELD_COMMAND,
-        (payload) => {
-          const { mergeFieldId, mergeFieldName } = payload
-          const MergeFieldNode = $createMergeFieldNode(mergeFieldId, mergeFieldName)
+        ({ mergeFieldId, mergeFieldName }) => {
+          const MergeFieldNode = $createMergeFieldNode(mergeFieldId, mergeFieldName, 0, "")
           $insertNodes([MergeFieldNode])
           if ($isRootOrShadowRoot(MergeFieldNode.getParentOrThrow())) {
             $wrapNodeInElement(MergeFieldNode, $createParagraphNode).selectEnd()

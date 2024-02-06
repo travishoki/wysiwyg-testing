@@ -50,20 +50,25 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   static clone(node: MergeFieldNode): MergeFieldNode {
-    return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName)
+    return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName, node.__format, node.__style)
   }
 
-  constructor(mergeFieldId: ID, mergeFieldName: string) {
+  constructor(mergeFieldId: ID, mergeFieldName: string, format: number, style: string) {
     super()
-    this.__format = 0
-    this.__style = ""
+    this.__format = format
+    this.__style = style
     this.mergeFieldId = mergeFieldId
     this.mergeFieldName = mergeFieldName
   }
 
   convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
     if (domNode instanceof HTMLElement) {
-      const node = $createMergeFieldNode(this.mergeFieldId, this.mergeFieldName)
+      const node = $createMergeFieldNode(
+        this.mergeFieldId,
+        this.mergeFieldName,
+        this.__format,
+        this.style,
+      )
 
       return { node }
     }
@@ -95,7 +100,12 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   static importJSON(serializedNode: SerializedMergeFieldNode): MergeFieldNode {
-    const node = $createMergeFieldNode(serializedNode.mergeFieldId, serializedNode.mergeFieldName)
+    const node = $createMergeFieldNode(
+      serializedNode.mergeFieldId,
+      serializedNode.mergeFieldName,
+      serializedNode.__format,
+      serializedNode.__style,
+    )
     node.setFormat(serializedNode.__format)
 
     return node
@@ -229,6 +239,11 @@ export const $isMergeFieldNode = (node: LexicalNode | null | undefined): node is
   return node instanceof MergeFieldNode
 }
 
-export const $createMergeFieldNode = (mergeFieldId: ID, mergeFieldName: string): MergeFieldNode => {
-  return $applyNodeReplacement(new MergeFieldNode(mergeFieldId, mergeFieldName))
+export const $createMergeFieldNode = (
+  mergeFieldId: ID,
+  mergeFieldName: string,
+  format: number,
+  style: string,
+): MergeFieldNode => {
+  return $applyNodeReplacement(new MergeFieldNode(mergeFieldId, mergeFieldName, format, style))
 }
