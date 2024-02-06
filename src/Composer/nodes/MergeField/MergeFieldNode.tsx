@@ -13,7 +13,12 @@ import {
 } from "lexical"
 import { camelCase } from "lodash"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
-import { getFormatTypeClass, styleObjectToString, wrapElementWith } from "./MergeFieldNode.helpers"
+import {
+  getFormatTypeClass,
+  styleObjectToString,
+  styleStringToObject,
+  wrapElementWith,
+} from "./MergeFieldNode.helpers"
 import { TEXT_TYPE_TO_FORMAT } from "./const"
 
 const MergeFieldComponent = React.lazy(
@@ -24,7 +29,7 @@ const MergeFieldComponent = React.lazy(
 type SerializedMergeFieldNode = Spread<
   {
     __format: number
-    __style: Record<string, string>
+    __style: string
     mergeFieldId: ID
     mergeFieldName: string
   },
@@ -34,7 +39,7 @@ type SerializedMergeFieldNode = Spread<
 export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   __format: number
 
-  __style: Record<string, string>
+  __style: string
 
   mergeFieldId: ID
 
@@ -45,20 +50,20 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   static clone(node: MergeFieldNode): MergeFieldNode {
-    return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName, node.__style)
+    return new MergeFieldNode(node.mergeFieldId, node.mergeFieldName)
   }
 
-  constructor(mergeFieldId: ID, mergeFieldName: string, style: Record<string, string>) {
+  constructor(mergeFieldId: ID, mergeFieldName: string) {
     super()
     this.__format = 0
-    this.__style = style
+    this.__style = ""
     this.mergeFieldId = mergeFieldId
     this.mergeFieldName = mergeFieldName
   }
 
   convertMergeFieldElement(domNode: Node): null | DOMConversionOutput {
     if (domNode instanceof HTMLElement) {
-      const node = $createMergeFieldNode(this.mergeFieldId, this.mergeFieldName, this.__style)
+      const node = $createMergeFieldNode(this.mergeFieldId, this.mergeFieldName)
 
       return { node }
     }
@@ -90,11 +95,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   static importJSON(serializedNode: SerializedMergeFieldNode): MergeFieldNode {
-    const node = $createMergeFieldNode(
-      serializedNode.mergeFieldId,
-      serializedNode.mergeFieldName,
-      serializedNode.__style,
-    )
+    const node = $createMergeFieldNode(serializedNode.mergeFieldId, serializedNode.mergeFieldName)
     node.setFormat(serializedNode.__format)
 
     return node
@@ -114,7 +115,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   exportDOM(): DOMExportOutput {
     let element = document.createElement("span")
     const formatClasses = getFormatTypeClass(this.getFormat())
-    const style = styleObjectToString(this.getStyle())
+    const style = this.getStyle()
 
     element.className = `merge-field ${formatClasses}`
     element.textContent = `{{${this.mergeFieldId}}}`
@@ -146,18 +147,25 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return false
   }
 
-  public setStyle(styleName: string, option: string) {
-    const writable = this.getWritable()
+  public setStyle(style: string) {
+    const self = this.getWritable()
 
-    writable.__style = {
-      [camelCase(styleName)]: option,
-    }
+    self.__style = style
+  }
+
+  public setStyleValue(styleName: string, option: string) {
+    const writable = this.getWritable()
+    const styleObj = styleStringToObject(this.getStyle())
+
+    styleObj[camelCase(styleName)] = option
+
+    writable.__style = styleObjectToString(styleObj)
   }
 
   public clearStyle() {
-    const writable = this.getWritable()
+    const self = this.getWritable()
 
-    writable.__style = {}
+    self.__style = ""
   }
 
   public toggleFormatType(type: TextFormatType) {
@@ -174,11 +182,11 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return this.getLatest().mergeFieldName
   }
 
-  getStyle(): Record<string, string> {
+  getStyle(): string {
     return this.getLatest().__style
   }
 
-  getFormat() {
+  getFormat(): number {
     return this.getLatest().__format
   }
 
@@ -202,7 +210,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
           className={getFormatTypeClass(this.getFormat())}
           mergeFieldName={this.mergeFieldName}
           nodeKey={this.getKey()}
-          style={this.getStyle()}
+          style={styleStringToObject(this.getStyle())}
         />
       </Suspense>
     )
@@ -213,10 +221,6 @@ export const $isMergeFieldNode = (node: LexicalNode | null | undefined): node is
   return node instanceof MergeFieldNode
 }
 
-export const $createMergeFieldNode = (
-  mergeFieldId: ID,
-  mergeFieldName: string,
-  style: Record<string, string>,
-): MergeFieldNode => {
-  return $applyNodeReplacement(new MergeFieldNode(mergeFieldId, mergeFieldName, style))
+export const $createMergeFieldNode = (mergeFieldId: ID, mergeFieldName: string): MergeFieldNode => {
+  return $applyNodeReplacement(new MergeFieldNode(mergeFieldId, mergeFieldName))
 }

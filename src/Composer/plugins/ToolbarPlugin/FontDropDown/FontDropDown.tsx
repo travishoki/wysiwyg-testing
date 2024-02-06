@@ -31,7 +31,7 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
         // Style MergeFields
         selection?.getNodes().forEach((node) => {
           if ($isMergeFieldNode(node)) {
-            node.setStyle(styleName, option)
+            node.setStyleValue(styleName, option)
           }
         })
 

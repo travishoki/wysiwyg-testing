@@ -3,7 +3,6 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { TextNode } from "lexical"
 import { MergeField } from "types"
 import { $createMergeFieldNode } from "../../nodes/MergeField/MergeFieldNode"
-import { styleStringToObject } from "../../nodes/MergeField/MergeFieldNode.helpers"
 import { getHasHandlebars, getValidMergeField, splitAtHandlebars } from "./helpers"
 
 type InitialStateMergeFieldPluginProps = {
@@ -35,8 +34,8 @@ export function InitialStateMergeFieldPlugin({
             const isValidMergeField = !!mergeField
 
             if (isValidMergeField && mergeField.name) {
-              const style = styleStringToObject(node.getStyle())
-              const mergeFieldNode = $createMergeFieldNode(mergeField.id, mergeField.name, style)
+              const mergeFieldNode = $createMergeFieldNode(mergeField.id, mergeField.name)
+              mergeFieldNode.setStyle(node.getStyle())
               mergeFieldNode.setFormat(node.getFormat())
 
               node.insertBefore(mergeFieldNode)
