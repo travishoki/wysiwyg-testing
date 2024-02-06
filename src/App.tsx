@@ -23,8 +23,10 @@ let initialState: Maybe<string> = '<p class="composer__paragraph"><br></p>'
 // initialState = '<p class="composer__paragraph" dir="ltr"><span>Line 1</span></p><p class="composer__paragraph" dir="ltr"><br></p><p class="composer__paragraph" dir="ltr"><span>Line 2</span></p>' // Line Break
 // initialState = '<p class="composer__paragraph"><br></p><table class="composer__table"><colgroup><col><col></colgroup><tbody><tr><th class="composer__tableCell composer__tableCellHeader" style="border: 1px solid black; width: 350px; vertical-align: top; text-align: start; background-color: rgb(242, 243, 245);"><p class="composer__paragraph" dir="ltr"><span>a</span></p></th><th class="composer__tableCell composer__tableCellHeader" style="border: 1px solid black; width: 350px; vertical-align: top; text-align: start; background-color: rgb(242, 243, 245);"><p class="composer__paragraph" dir="ltr"><span>b</span></p></th></tr><tr><th class="composer__tableCell composer__tableCellHeader" style="border: 1px solid black; width: 350px; vertical-align: top; text-align: start; background-color: rgb(242, 243, 245);"><p class="composer__paragraph" dir="ltr"><span>c</span></p></th><td class="composer__tableCell" style="border: 1px solid black; width: 350px; vertical-align: top; text-align: start;"><p class="composer__paragraph" dir="ltr"><span>d</span></p></td></tr></tbody></table><p class="composer__paragraph"><br></p>' // Table
 // initialState = '<p class="composer__paragraph" dir="ltr"><span style="font-family: Georgia; font-size: 40px;">Hoki Test 1</span></p>' // Styling
-initialState = '<p class="composer__paragraph"><span class="merge-field">{{111}}</span></p>' // Merge Field
-// initialState = '<p class="composer__paragraph" dir="ltr"><span class="merge-field" style="font-size: 10px;">{{111}}</span></p>' // Merge Field with styles
+// initialState = '<p class="composer__paragraph"><span class="merge-field">{{111}}</span></p>' // Merge Field
+// initialState = '<p class="composer__paragraph" dir="ltr"><span class="merge-field" style="font-size: 10px;">{{111}}</span></p>' // Merge Field with css styles
+// initialState = '<p class="composer__paragraph"><u><span class="merge-field composer__textUnderline">{{111}}</span></u></p>' // Merge Field with bold style
+// initialState = '<p class="composer__paragraph" dir="ltr"><i><b><span class="merge-field composer__textBold composer__textUnderline">{{111}}</span></b></i></p>' // Merge Field with bold and undeline style
 
 // ts-prune-ignore-next
 export const App = () => {
