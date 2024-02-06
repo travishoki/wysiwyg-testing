@@ -151,27 +151,34 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     const self = this.getWritable()
 
     self.__style = style
+
+    return self
   }
 
   public setStyleValue(styleName: string, option: string) {
-    const writable = this.getWritable()
+    const self = this.getWritable()
     const styleObj = styleStringToObject(this.getStyle())
 
     styleObj[camelCase(styleName)] = option
 
-    writable.__style = styleObjectToString(styleObj)
+    self.__style = styleObjectToString(styleObj)
+
+    return self
   }
 
   public clearStyle() {
     const self = this.getWritable()
 
     self.__style = ""
+
+    return self
   }
 
   public toggleFormatType(type: TextFormatType) {
     const formatFlag = TEXT_TYPE_TO_FORMAT[type]
+    const newFormat = this.getFormat() ^ formatFlag
 
-    return this.setFormat(this.getFormat() ^ formatFlag)
+    return this.setFormat(newFormat)
   }
 
   getMergeFieldId(): string {
@@ -192,6 +199,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
   setFormat(format: TextFormatType | number) {
     const self = this.getWritable()
+
     self.__format = typeof format === "string" ? TEXT_TYPE_TO_FORMAT[format] : format
 
     return self
