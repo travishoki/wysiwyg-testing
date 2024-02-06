@@ -54,5 +54,8 @@ describe("getFormatTypeClass", () => {
     expect(getFormatTypeClass(3)).toEqual("composer__textBold composer__textItalic")
     expect(getFormatTypeClass(9)).toEqual("composer__textBold composer__textUnderline")
     expect(getFormatTypeClass(10)).toEqual("composer__textItalic composer__textUnderline")
+    expect(getFormatTypeClass(11)).toEqual(
+      "composer__textBold composer__textItalic composer__textUnderline",
+    )
   })
 })
