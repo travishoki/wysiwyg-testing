@@ -111,24 +111,6 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     }
   }
 
-  getMergeFieldId(): string {
-    const self = this.getLatest()
-
-    return self.mergeFieldId
-  }
-
-  getMergeFieldName(): string {
-    const self = this.getLatest()
-
-    return self.mergeFieldName
-  }
-
-  getStyle(): Record<string, string> {
-    const self = this.getLatest()
-
-    return self.style
-  }
-
   exportDOM(): DOMExportOutput {
     let element = document.createElement("span")
     const formatClasses = getFormatTypeClass(this.getFormat())
@@ -176,6 +158,24 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     const writable = this.getWritable()
 
     writable.style = {}
+  }
+
+  getMergeFieldId(): string {
+    const self = this.getLatest()
+
+    return self.mergeFieldId
+  }
+
+  getMergeFieldName(): string {
+    const self = this.getLatest()
+
+    return self.mergeFieldName
+  }
+
+  getStyle(): Record<string, string> {
+    const self = this.getLatest()
+
+    return self.style
   }
 
   getFormat() {
