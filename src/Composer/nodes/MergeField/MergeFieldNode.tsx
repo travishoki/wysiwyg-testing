@@ -168,6 +168,12 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     }
   }
 
+  public clearStyle() {
+    const writable = this.getWritable()
+
+    writable.style = {}
+  }
+
   getFormat() {
     const self = this.getLatest()
 
