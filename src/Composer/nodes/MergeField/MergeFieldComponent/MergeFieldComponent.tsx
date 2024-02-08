@@ -40,13 +40,13 @@ const MergeFieldComponent = ({
 
   return (
     <Suspense fallback={<ComposerNodeFallback />}>
-      <div className={classNames(styles["merge-field"], className)} style={style}>
+      <span className={classNames(styles["merge-field"], className)} style={style}>
         <p className={styles.title}>
           <span>{"{ "}</span>
           {formatMergeFieldTitle(mergeFieldName)}
           <span>{" }"}</span>
         </p>
-      </div>
+      </span>
     </Suspense>
   )
 }
