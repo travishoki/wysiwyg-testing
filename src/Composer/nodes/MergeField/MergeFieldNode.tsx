@@ -67,7 +67,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
         this.mergeFieldId,
         this.mergeFieldName,
         this.__format,
-        this.style,
+        this.__style,
       )
 
       return { node }
