@@ -106,7 +106,6 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
       serializedNode.__format,
       serializedNode.__style,
     )
-    node.setFormat(serializedNode.__format)
 
     return node
   }
