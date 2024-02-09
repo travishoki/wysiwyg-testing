@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import styles from "./App.module.scss"
 import { Composer } from "./Composer/Composer"
 import { composerRefProps } from "./Composer/ComposerCustomFunctionHandler/ComposerCustomFunctionHandler"
+import { CleanButton } from "./Composer/ui/CleanButton/CleanButton"
 import { Button } from "./Controls/Button/Button"
 import { LockButton } from "./Controls/LockButton/LockButton"
 import { MergeFieldControls } from "./MergeFieldControls/MergeFieldControls"
@@ -82,7 +83,7 @@ export const App = () => {
 
   return (
     <div className={styles.app}>
-      {isDirty ? "Dirty" : "Clean"}
+      <CleanButton isDirty={isDirty} />
       <Composer
         className={styles.composer}
         composerRef={composerRef}
