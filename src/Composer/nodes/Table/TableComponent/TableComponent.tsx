@@ -47,6 +47,7 @@ import {
   TextFormatType,
   createEditor,
 } from "lexical"
+import { useTranslation } from "src/i18n"
 import { CellContext } from "../../../plugins/TablePlugin/TablePlugin.const"
 import { TableCell } from "../TableCell/TableCell"
 import { $isTableNode, TableNode, cellTextContentCache } from "../TableNode"
@@ -128,6 +129,7 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
   const mouseDownRef = useRef(false)
   const [resizingID, setResizingID] = useState<null | string>(null)
   const tableRef = useRef<null | HTMLTableElement>(null)
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
   const cellCoordMap = useMemo(() => {
     const map = new Map()
 
@@ -1138,11 +1140,15 @@ const TableComponent = ({ nodeKey, rows: rawRows, theme }: TableComponentProps) 
         </tbody>
       </table>
       {showAddColumns && (
-        <button aria-label="button" className={theme.tableAddColumns} onClick={addColumns} />
+        <button
+          aria-label={t("Add column")}
+          className={theme.tableAddColumns}
+          onClick={addColumns}
+        />
       )}
       {showAddRows && (
         <button
-          aria-label="button"
+          aria-label={t("Add row")}
           className={theme.tableAddRows}
           onClick={addRows}
           ref={addRowsRef}

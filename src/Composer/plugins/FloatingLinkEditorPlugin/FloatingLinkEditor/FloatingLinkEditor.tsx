@@ -14,6 +14,7 @@ import {
   RangeSelection,
   SELECTION_CHANGE_COMMAND,
 } from "lexical"
+import { useTranslation } from "src/i18n"
 import { getSelectedNode } from "../../../helpers/getSelectedNode"
 import { setFloatingElemPositionForLinkEditor } from "../../../helpers/setFloatingElemPositionForLinkEditor"
 import { sanitizeUrl } from "../../../helpers/url"
@@ -44,6 +45,7 @@ export const FloatingLinkEditor = ({
   const [lastSelection, setLastSelection] = useState<
     RangeSelection | GridSelection | NodeSelection | null
   >(null)
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
 
   const updateLinkEditor = useCallback(() => {
     const selection = $getSelection()
@@ -187,7 +189,7 @@ export const FloatingLinkEditor = ({
       {!isLink ? null : isEditMode ? (
         <>
           <input
-            aria-label="input"
+            aria-label={t("Link input")}
             className={classNames("composer-link-input", styles.linkInput)}
             onChange={(event) => {
               setEditedLinkUrl(event.target.value)
