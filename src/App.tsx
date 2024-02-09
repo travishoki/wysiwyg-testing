@@ -28,6 +28,7 @@ let initialState: Maybe<string> = '<p class="composer__paragraph"><br></p>'
 // initialState = '<p class="composer__paragraph" dir="ltr"><span class="merge-field" style="font-size: 10px;">{{111}}</span></p>' // Merge Field with css styles
 // initialState = '<p class="composer__paragraph"><u><span class="merge-field composer__textBold">{{111}}</span></u></p>' // Merge Field with bold style
 // initialState = '<p class="composer__paragraph" dir="ltr"><i><b><span class="merge-field composer__textBold composer__textUnderline">{{111}}</span></b></i></p>' // Merge Field with bold and underline style
+// initialState = '<p class="composer__paragraph"><h1 class="merge-field composer__h1">{{111}}</h1></p>' // Merge Field as a h1
 
 // ts-prune-ignore-next
 export const App = () => {
