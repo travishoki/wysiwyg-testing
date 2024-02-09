@@ -1,4 +1,5 @@
 import React from "react"
+import { useTranslation } from "src/i18n"
 import styles from "./ButtonClose.module.scss"
 
 type ButtonCloseProps = {
@@ -6,8 +7,10 @@ type ButtonCloseProps = {
 }
 
 export const ButtonClose = ({ onClick }: ButtonCloseProps) => {
+  const { t } = useTranslation("common")
+
   return (
-    <button aria-label="Close modal" className={styles.closeButton} onClick={onClick} type="button">
+    <button aria-label={t("Close")} className={styles.closeButton} onClick={onClick} type="button">
       X
     </button>
   )
