@@ -116,7 +116,7 @@ export const DropDownBlockFormat = ({
 
   return (
     <DropDown
-      buttonAriaLabel="Formatting options for text style"
+      buttonAriaLabel={t("Formatting options for text style")}
       buttonClassName={stylesToolbar.toolbarItem}
       buttonIconClassName={classNames(stylesToolbar.icon, styleIcon[blockType])}
       buttonLabel={blockTypeToBlockName[blockType]}

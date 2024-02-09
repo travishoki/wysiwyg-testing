@@ -35,7 +35,7 @@ export const DropdownTextStyle = ({
       buttonAriaLabel={t("Formatting options for additional text styles")}
       buttonClassName={classNames(stylesToolbarPlugin.toolbarItem, stylesToolbarPlugin.spaced)}
       buttonIconClassName={classNames(stylesIconDropdown.icon, stylesIcon["dropdown-more"])}
-      buttonLabel=""
+      buttonLabel={t("Text formatting")}
       disabled={!isEditable}
     >
       <DropDownItem
