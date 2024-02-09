@@ -16,6 +16,7 @@ import {
   LexicalEditor,
 } from "lexical"
 import { useTranslation } from "src/i18n"
+import { $isMergeFieldNode } from "../../../nodes/MergeField/MergeFieldNode"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
@@ -41,6 +42,16 @@ export const DropDownBlockFormat = ({
   const formatParagraph = () => {
     editor.update(() => {
       const selection = $getSelection()
+
+      // Style MergeFields
+      selection?.getNodes().forEach((node) => {
+        if ($isMergeFieldNode(node)) {
+          node.setTag("")
+          node.setFormat(0)
+        }
+      })
+
+      // Style TextNode
       if ($isRangeSelection(selection) || $isGridSelection(selection)) {
         $setBlocksType(selection, () => $createParagraphNode())
       }
@@ -51,6 +62,16 @@ export const DropDownBlockFormat = ({
     if (blockType !== headingSize) {
       editor.update(() => {
         const selection = $getSelection()
+
+        // Style MergeFields
+        selection?.getNodes().forEach((node) => {
+          if ($isMergeFieldNode(node)) {
+            node.setTag(headingSize)
+            node.setFormat(0)
+          }
+        })
+
+        // Style TextNode
         if ($isRangeSelection(selection) || $isGridSelection(selection)) {
           $setBlocksType(selection, () => $createHeadingNode(headingSize))
         }

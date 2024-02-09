@@ -1,3 +1,4 @@
+import { HeadingTagType } from "@lexical/rich-text"
 import { camelCase } from "lodash"
 import { ComposerTheme } from "../../themes/ComposerTheme"
 import {
@@ -53,4 +54,15 @@ export const wrapElementWith = (element: HTMLElement, tag: string) => {
   el.appendChild(element)
 
   return el
+}
+
+export const getHeadingClass = (tag: HeadingTagType | string): string => {
+  const { heading } = ComposerTheme
+  const classNames: string[] = []
+
+  if (tag === "h1") classNames.push(heading.h1)
+  if (tag === "h2") classNames.push(heading.h2)
+  if (tag === "h3") classNames.push(heading.h3)
+
+  return classNames.join(" ")
 }

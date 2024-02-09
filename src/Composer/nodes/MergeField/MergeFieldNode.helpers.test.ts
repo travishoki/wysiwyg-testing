@@ -1,6 +1,7 @@
 import {
   camelCaseToKebab,
   getFormatTypeClass,
+  getHeadingClass,
   styleObjectToString,
   styleStringToObject,
 } from "./MergeFieldNode.helpers"
@@ -57,5 +58,14 @@ describe("getFormatTypeClass", () => {
     expect(getFormatTypeClass(11)).toEqual(
       "composer__textBold composer__textItalic composer__textUnderline",
     )
+  })
+})
+
+describe("getHeadingClass", () => {
+  it("should return classes, provided a type", () => {
+    expect(getHeadingClass("h1")).toEqual("composer__h1")
+    expect(getHeadingClass("h2")).toEqual("composer__h2")
+    expect(getHeadingClass("h3")).toEqual("composer__h3")
+    expect(getHeadingClass("span")).toEqual("")
   })
 })

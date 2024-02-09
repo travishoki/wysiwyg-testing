@@ -1,4 +1,6 @@
 import React, { Suspense } from "react"
+import { HeadingTagType } from "@lexical/rich-text"
+import classNames from "classnames"
 import {
   $applyNodeReplacement,
   DOMConversionMap,
@@ -15,6 +17,7 @@ import { camelCase } from "lodash"
 import { ComposerNodeFallback } from "../../ui/ComposerNodeFallback/ComposerNodeFallback"
 import {
   getFormatTypeClass,
+  getHeadingClass,
   styleObjectToString,
   styleStringToObject,
   wrapElementWith,
@@ -41,6 +44,8 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
 
   __style: string
 
+  __tag: HeadingTagType | string
+
   mergeFieldId: ID
 
   mergeFieldName: string
@@ -57,6 +62,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     super()
     this.__format = format
     this.__style = style
+    this.__tag = "span"
     this.mergeFieldId = mergeFieldId
     this.mergeFieldName = mergeFieldName
   }
@@ -122,8 +128,10 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
   }
 
   exportDOM(): DOMExportOutput {
-    let element = document.createElement("span")
-    const formatClasses = getFormatTypeClass(this.getFormat())
+    let tag = this.getTag()
+    if (tag === "") tag = "span"
+    let element = document.createElement(tag)
+    const formatClasses = this.getClassNames()
     const style = this.getStyle()
 
     element.className = `merge-field ${formatClasses}`
@@ -164,6 +172,14 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return self
   }
 
+  public setTag(tag: HeadingTagType | string) {
+    const self = this.getWritable()
+
+    self.__tag = tag
+
+    return self
+  }
+
   public setStyleValue(styleName: string, option: string) {
     const self = this.getWritable()
     const styleObj = styleStringToObject(this.getStyle())
@@ -198,6 +214,14 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return this.getLatest().__format
   }
 
+  getTag(): HeadingTagType | string {
+    return this.getLatest().__tag
+  }
+
+  getClassNames() {
+    return classNames(getFormatTypeClass(this.getFormat()), getHeadingClass(this.getTag()))
+  }
+
   setFormat(format: TextFormatType | number) {
     const self = this.getWritable()
 
@@ -216,7 +240,7 @@ export class MergeFieldNode extends DecoratorNode<JSX.Element> {
     return (
       <Suspense fallback={<ComposerNodeFallback />}>
         <MergeFieldComponent
-          className={getFormatTypeClass(this.getFormat())}
+          className={this.getClassNames()}
           mergeFieldName={this.mergeFieldName}
           nodeKey={this.getKey()}
           style={styleStringToObject(this.getStyle())}
