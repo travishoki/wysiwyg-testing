@@ -13,7 +13,7 @@ export const SelectAllPlugin = (): null => {
       if (isSelectAll(keyCode, metaKey, ctrlKey)) {
         event.preventDefault()
         editor.update(() => {
-          $selectAll(editor)
+          $selectAll()
         })
 
         return true
