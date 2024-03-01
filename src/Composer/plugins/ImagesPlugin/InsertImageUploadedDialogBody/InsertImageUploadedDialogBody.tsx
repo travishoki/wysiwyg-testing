@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useTranslation } from "src/i18n"
 import { Button } from "../../../ui/Button/Button"
 import { DialogActions } from "../../../ui/Dialog/Dialog"
 import { FileInput } from "../../../ui/FileInput/FileInput"
@@ -12,6 +13,8 @@ type InsertImageUploadedDialogBodyProps = {
 export const InsertImageUploadedDialogBody = ({ onClick }: InsertImageUploadedDialogBodyProps) => {
   const [src, setSrc] = useState("")
   const [altText, setAltText] = useState("")
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
+  const { t: tCommon } = useTranslation("common")
 
   const isDisabled = src === ""
 
@@ -35,12 +38,12 @@ export const InsertImageUploadedDialogBody = ({ onClick }: InsertImageUploadedDi
       <FileInput
         accept="image/*"
         data-test-id="image-modal-file-upload"
-        label="Image Upload"
+        label={t("Image Upload")}
         onChange={loadImage}
       />
       <TextInput
         data-test-id="image-modal-alt-text-input"
-        label="Alt Text"
+        label={t("Alt Text")}
         onChange={setAltText}
         placeholder="Descriptive alternative text"
         value={altText}
@@ -51,7 +54,7 @@ export const InsertImageUploadedDialogBody = ({ onClick }: InsertImageUploadedDi
           disabled={isDisabled}
           onClick={() => onClick({ altText, src })}
         >
-          Confirm
+          {tCommon("Confirm")}
         </Button>
       </DialogActions>
     </>
