@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useTranslation } from "src/i18n"
 import { Button } from "../../../ui/Button/Button"
 import { DialogActions } from "../../../ui/Dialog/Dialog"
 import { TextInput } from "../../../ui/TextInput/TextInput"
@@ -11,6 +12,7 @@ type InsertImageUriDialogBodyProps = {
 export const InsertImageUriDialogBody = ({ onClick }: InsertImageUriDialogBodyProps) => {
   const [src, setSrc] = useState("")
   const [altText, setAltText] = useState("")
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
 
   const isDisabled = src === ""
 
@@ -18,14 +20,14 @@ export const InsertImageUriDialogBody = ({ onClick }: InsertImageUriDialogBodyPr
     <>
       <TextInput
         data-test-id="image-modal-url-input"
-        label="Image URL"
+        label={t("Image URL")}
         onChange={setSrc}
         placeholder="i.e. https://source.unsplash.com/random"
         value={src}
       />
       <TextInput
         data-test-id="image-modal-alt-text-input"
-        label="Alt Text"
+        label={t("Alt Text")}
         onChange={setAltText}
         placeholder="Random unsplash image"
         value={altText}
