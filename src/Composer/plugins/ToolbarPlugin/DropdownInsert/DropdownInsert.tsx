@@ -45,7 +45,7 @@ export const DropdownInsert = ({ activeEditor, isEditable, showModal }: Dropdown
       <DropDownItem
         className={stylesDropdown.dropdownItem}
         onClick={() => {
-          showModal("Insert Image", (onClose) => (
+          showModal(t("Insert Image"), (onClose) => (
             <InsertImageDialog activeEditor={activeEditor} onClose={onClose} />
           ))
         }}

@@ -188,7 +188,7 @@ export const ComponentPickerPlugin = () => {
         key: "images",
         keywords: ["image", "photo", "picture", "file"],
         onSelect: () =>
-          showModal("Insert Image", (onClose) => (
+          showModal(t("Insert Image"), (onClose) => (
             <InsertImageDialog activeEditor={editor} onClose={onClose} />
           )),
       }),

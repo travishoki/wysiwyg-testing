@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import { LexicalEditor } from "lexical"
+import { useTranslation } from "src/i18n"
 import landscapeImage from "../../../images/landscape.jpg"
 import yellowFlowerImage from "../../../images/yellow-flower.jpg"
 import { Button } from "../../../ui/Button/Button"
@@ -15,6 +16,7 @@ type InsertImageDialogProps = {
 }
 
 export const InsertImageDialog = ({ activeEditor, onClose }: InsertImageDialogProps) => {
+  const { t } = useTranslation("scenes", { keyPrefix: "composer" })
   const [mode, setMode] = useState<null | "url" | "file">(null)
   const hasModifier = useRef(false)
 
@@ -58,10 +60,10 @@ export const InsertImageDialog = ({ activeEditor, onClose }: InsertImageDialogPr
             Sample
           </Button>
           <Button data-test-id="image-modal-option-url" onClick={() => setMode("url")}>
-            URL
+            {t("URL")}
           </Button>
           <Button data-test-id="image-modal-option-file" onClick={() => setMode("file")}>
-            File
+            {t("File")}
           </Button>
         </DialogButtonsList>
       )}
