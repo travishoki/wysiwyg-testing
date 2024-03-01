@@ -1,7 +1,12 @@
 import i18next from "i18next"
 import { TFunction } from "react-i18next"
 import { alignmentTypes } from "../../ui/Icon/types"
-import { getAlignmentType, getHeadingTitle, getHeadingType } from "./ComponentPickerPlugin.helpers"
+import {
+  getAlignedText,
+  getAlignmentType,
+  getHeadingTitle,
+  getHeadingType,
+} from "./ComponentPickerPlugin.helpers"
 
 describe("getAlignmentType", () => {
   it("should return correct heading by num", () => {
@@ -32,5 +37,16 @@ describe("getHeadingTitle", () => {
     expect(getHeadingTitle(3, t)).toEqual(t("Heading 3"))
     expect(getHeadingTitle(4, t)).toEqual(t("Heading 4"))
     expect(getHeadingTitle(5, t)).toEqual(t("Heading 5"))
+  })
+})
+
+describe("getAlignedText", () => {
+  const t = i18next.t as TFunction<"scenes", "composer">
+
+  it("should return correct heading by num", () => {
+    expect(getAlignedText("center", t)).toEqual(t("Align Center"))
+    expect(getAlignedText("justify", t)).toEqual(t("Align Justify"))
+    expect(getAlignedText("left", t)).toEqual(t("Align Left"))
+    expect(getAlignedText("right", t)).toEqual(t("Align Right"))
   })
 })

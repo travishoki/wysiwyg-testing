@@ -53,3 +53,18 @@ export const getHeadingTitle = (num: number, t: TFunction<"scenes", "composer">)
       return t("Heading 1")
   }
 }
+
+export const getAlignedText = (alignment: alignmentTypes, t: TFunction<"scenes", "composer">) => {
+  switch (alignment) {
+    case "left":
+      return t("Align Left")
+    case "center":
+      return t("Align Center")
+    case "right":
+      return t("Align Right")
+    case "justify":
+      return t("Align Justify")
+    default:
+      return t("Align Left")
+  }
+}
