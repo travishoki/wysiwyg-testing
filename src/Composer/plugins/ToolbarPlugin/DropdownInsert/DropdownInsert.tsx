@@ -51,7 +51,7 @@ export const DropdownInsert = ({ activeEditor, isEditable, showModal }: Dropdown
         }}
       >
         <IconDropdown type="image" />
-        <span className={stylesDropdown.dropdownText}>Image</span>
+        <span className={stylesDropdown.dropdownText}>{t("Image")}</span>
       </DropDownItem>
       <DropDownItem
         className={stylesDropdown.dropdownItem}

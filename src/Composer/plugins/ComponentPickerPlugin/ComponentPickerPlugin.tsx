@@ -129,7 +129,7 @@ export const ComponentPickerPlugin = () => {
               }),
           }),
       ),
-      new ComponentPickerOption("Table", {
+      new ComponentPickerOption(t("Table"), {
         icon: <IconDropdown type="table" />,
         keywords: ["table", "grid", "spreadsheet", "rows", "columns"],
         onSelect: () =>
@@ -137,22 +137,22 @@ export const ComponentPickerPlugin = () => {
             <InsertTableDialog activeEditor={editor} onClose={onClose} />
           )),
       }),
-      new ComponentPickerOption("Numbered List", {
+      new ComponentPickerOption(t("Numbered List"), {
         icon: <IconDropdown type="number" />,
         keywords: ["numbered list", "ordered list", "ol"],
         onSelect: () => editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined),
       }),
-      new ComponentPickerOption("Bulleted List", {
+      new ComponentPickerOption(t("Bullet List"), {
         icon: <IconDropdown type="bullet" />,
         keywords: ["bulleted list", "unordered list", "ul"],
         onSelect: () => editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined),
       }),
-      new ComponentPickerOption("Check List", {
+      new ComponentPickerOption(t("Check List"), {
         icon: <IconDropdown type="check" />,
         keywords: ["check list", "todo list"],
         onSelect: () => editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined),
       }),
-      new ComponentPickerOption("Quote", {
+      new ComponentPickerOption(t("Quote"), {
         icon: <IconDropdown type="quote" />,
         keywords: ["block quote"],
         onSelect: () =>
