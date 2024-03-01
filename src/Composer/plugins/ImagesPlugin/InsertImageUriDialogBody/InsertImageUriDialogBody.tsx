@@ -13,6 +13,7 @@ export const InsertImageUriDialogBody = ({ onClick }: InsertImageUriDialogBodyPr
   const [src, setSrc] = useState("")
   const [altText, setAltText] = useState("")
   const { t } = useTranslation("scenes", { keyPrefix: "composer" })
+  const { t: tCommon } = useTranslation("common")
 
   const isDisabled = src === ""
 
@@ -38,7 +39,7 @@ export const InsertImageUriDialogBody = ({ onClick }: InsertImageUriDialogBodyPr
           disabled={isDisabled}
           onClick={() => onClick({ altText, src })}
         >
-          Confirm
+          {tCommon("Confirm")}
         </Button>
       </DialogActions>
     </>
