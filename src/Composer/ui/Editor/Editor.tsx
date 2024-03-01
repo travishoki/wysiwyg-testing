@@ -141,6 +141,7 @@ export const Editor = ({ initialState, mergeFields }: EditorProps): JSX.Element 
         <TabIndentationPlugin />
         <ActionsPlugin />
         <SelectAllPlugin />
+
         {floatingAnchorElem && !isSmallWidthViewport && (
           <>
             <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
