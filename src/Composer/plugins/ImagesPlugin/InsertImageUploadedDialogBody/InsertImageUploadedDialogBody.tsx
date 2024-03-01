@@ -45,7 +45,7 @@ export const InsertImageUploadedDialogBody = ({ onClick }: InsertImageUploadedDi
         data-test-id="image-modal-alt-text-input"
         label={t("Alt Text")}
         onChange={setAltText}
-        placeholder="Descriptive alternative text"
+        placeholder={t("Descriptive alternative text")}
         value={altText}
       />
       <DialogActions>

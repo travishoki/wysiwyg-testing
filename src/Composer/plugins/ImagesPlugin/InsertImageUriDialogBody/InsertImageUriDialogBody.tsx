@@ -30,7 +30,7 @@ export const InsertImageUriDialogBody = ({ onClick }: InsertImageUriDialogBodyPr
         data-test-id="image-modal-alt-text-input"
         label={t("Alt Text")}
         onChange={setAltText}
-        placeholder={t("Image alternate text")}
+        placeholder={t("Descriptive alternate text")}
         value={altText}
       />
       <DialogActions>
