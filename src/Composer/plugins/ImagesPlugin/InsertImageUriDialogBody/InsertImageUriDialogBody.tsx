@@ -23,14 +23,14 @@ export const InsertImageUriDialogBody = ({ onClick }: InsertImageUriDialogBodyPr
         data-test-id="image-modal-url-input"
         label={t("Image URL")}
         onChange={setSrc}
-        placeholder="i.e. https://source.unsplash.com/random"
+        placeholder={t("Image source URL")}
         value={src}
       />
       <TextInput
         data-test-id="image-modal-alt-text-input"
         label={t("Alt Text")}
         onChange={setAltText}
-        placeholder="Random unsplash image"
+        placeholder={t("Image alternate text")}
         value={altText}
       />
       <DialogActions>
