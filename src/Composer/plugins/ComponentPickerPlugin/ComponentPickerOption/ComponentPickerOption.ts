@@ -7,6 +7,9 @@ export class ComponentPickerOption extends MenuOption {
   // Icon for display
   icon?: JSX.Element
 
+  // React Component Key
+  key: string
+
   // For extra searching.
   keywords: Array<string>
 
@@ -20,6 +23,7 @@ export class ComponentPickerOption extends MenuOption {
     title: string,
     options: {
       icon?: JSX.Element
+      key: string
       keyboardShortcut?: string
       keywords?: Array<string>
       onSelect: (queryString: string) => void
@@ -27,6 +31,7 @@ export class ComponentPickerOption extends MenuOption {
   ) {
     super(title)
     this.title = title
+    this.key = options.key
     this.keywords = options.keywords || []
     this.icon = options.icon
     this.keyboardShortcut = options.keyboardShortcut
