@@ -186,8 +186,6 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
     writable.__showCaption = showCaption
   }
 
-  // View
-
   /* eslint-disable-next-line class-methods-use-this */
   createDOM(config: EditorConfig): HTMLElement {
     const span = document.createElement("span")
