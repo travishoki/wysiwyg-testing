@@ -8,6 +8,7 @@ import {
   FORMAT_TEXT_COMMAND,
   LexicalEditor,
   SELECTION_CHANGE_COMMAND,
+  TextFormatType,
 } from "lexical"
 import { useTranslation } from "src/i18n"
 import { getDOMRangeRect } from "../../../helpers/getDOMRangeRect"
@@ -155,6 +156,10 @@ export const TextFormatFloatingToolbar = ({
     )
   }, [editor, updateTextFormatFloatingToolbar])
 
+  const formatText = (format: TextFormatType) => {
+    editor.dispatchCommand(FORMAT_TEXT_COMMAND, format)
+  }
+
   return (
     <div className={styles.floatingTextFormatPopup} ref={popupCharStylesEditorRef}>
       {editor.isEditable() && (
@@ -163,7 +168,7 @@ export const TextFormatFloatingToolbar = ({
             aria-label={t("Format text as bold.")}
             className={classNames(styles.popupItem, styles.spaced + (isBold ? styles.active : ""))}
             onClick={() => {
-              editor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")
+              formatText("bold")
             }}
             type="button"
           >
@@ -176,7 +181,7 @@ export const TextFormatFloatingToolbar = ({
               styles.spaced + (isItalic ? styles.active : ""),
             )}
             onClick={() => {
-              editor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic")
+              formatText("italic")
             }}
             type="button"
           >
@@ -189,7 +194,7 @@ export const TextFormatFloatingToolbar = ({
               styles.spaced + (isUnderline ? styles.active : ""),
             )}
             onClick={() => {
-              editor.dispatchCommand(FORMAT_TEXT_COMMAND, "underline")
+              formatText("underline")
             }}
             type="button"
           >
@@ -202,7 +207,7 @@ export const TextFormatFloatingToolbar = ({
               styles.spaced + (isStrikethrough ? styles.active : ""),
             )}
             onClick={() => {
-              editor.dispatchCommand(FORMAT_TEXT_COMMAND, "strikethrough")
+              formatText("strikethrough")
             }}
             type="button"
           >
@@ -215,7 +220,7 @@ export const TextFormatFloatingToolbar = ({
               styles.spaced + (isSubscript ? styles.active : ""),
             )}
             onClick={() => {
-              editor.dispatchCommand(FORMAT_TEXT_COMMAND, "subscript")
+              formatText("subscript")
             }}
             title={t("Subscript")}
             type="button"
@@ -229,7 +234,7 @@ export const TextFormatFloatingToolbar = ({
               styles.spaced + (isSuperscript ? styles.active : ""),
             )}
             onClick={() => {
-              editor.dispatchCommand(FORMAT_TEXT_COMMAND, "superscript")
+              formatText("superscript")
             }}
             title={t("Superscript")}
             type="button"
