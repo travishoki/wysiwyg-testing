@@ -9,7 +9,6 @@ export type iconType =
   | "chevron-down"
   | "clear"
   | "close"
-  | "copy"
   | "h1"
   | "h2"
   | "h3"
