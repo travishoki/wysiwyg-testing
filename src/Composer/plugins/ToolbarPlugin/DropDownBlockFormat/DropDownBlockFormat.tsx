@@ -40,6 +40,9 @@ export const DropDownBlockFormat = ({
   const { t } = useTranslation("scenes", { keyPrefix: "composer" })
 
   const formatParagraph = () => {
+    // Set font size
+    updateFontSize("15px")
+
     editor.update(() => {
       const selection = $getSelection()
 
