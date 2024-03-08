@@ -6,7 +6,7 @@ import {
   REMOVE_LIST_COMMAND,
 } from "@lexical/list"
 import { $createHeadingNode, $createQuoteNode, HeadingTagType } from "@lexical/rich-text"
-import { $setBlocksType } from "@lexical/selection"
+import { $patchStyleText, $setBlocksType } from "@lexical/selection"
 import classNames from "classnames"
 import {
   $createParagraphNode,
@@ -58,7 +58,43 @@ export const DropDownBlockFormat = ({
     })
   }
 
+  const updateFontSize = (option: string) => {
+    editor.update(() => {
+      const selection = $getSelection()
+
+      const styleName = "font-size"
+
+      // Style MergeFields
+      selection?.getNodes().forEach((node) => {
+        if ($isMergeFieldNode(node)) {
+          node.setStyleValue(styleName, option)
+        }
+      })
+
+      // Style TextNode
+      if ($isRangeSelection(selection)) {
+        $patchStyleText(selection, {
+          [styleName]: option,
+        })
+      }
+    })
+  }
+
   const formatHeading = (headingSize: HeadingTagType) => {
+    // Set font size
+    switch (headingSize) {
+      case "h1":
+        updateFontSize("24px")
+        break
+      case "h2":
+        updateFontSize("15px")
+        break
+      case "h3":
+        updateFontSize("13px")
+        break
+      default:
+    }
+
     if (blockType !== headingSize) {
       editor.update(() => {
         const selection = $getSelection()
