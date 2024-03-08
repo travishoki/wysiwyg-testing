@@ -65,19 +65,17 @@ export const DropDownBlockFormat = ({
     editor.update(() => {
       const selection = $getSelection()
 
-      const styleName = "font-size"
-
       // Style MergeFields
       selection?.getNodes().forEach((node) => {
         if ($isMergeFieldNode(node)) {
-          node.setStyleValue(styleName, option)
+          node.setStyleValue("font-size", option)
         }
       })
 
       // Style TextNode
       if ($isRangeSelection(selection)) {
         $patchStyleText(selection, {
-          [styleName]: option,
+          "font-size": option,
         })
       }
     })
