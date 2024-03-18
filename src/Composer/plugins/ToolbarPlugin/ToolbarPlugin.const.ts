@@ -1,6 +1,7 @@
 export const blockTypeToBlockName = {
   bullet: "Bulleted List",
   check: "Check List",
+  custom: "Custom",
   h1: "Heading 1",
   h2: "Heading 2",
   h3: "Heading 3",
@@ -8,6 +9,6 @@ export const blockTypeToBlockName = {
   h5: "Heading 5",
   h6: "Heading 6",
   number: "Numbered List",
-  paragraph: "Normal",
+  paragraph: "Paragraph",
   quote: "Quote",
 }

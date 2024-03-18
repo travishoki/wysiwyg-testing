@@ -62,6 +62,7 @@ import { DropdownTextStyle } from "./DropdownTextStyle/DropdownTextStyle"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
 import { FontSize } from "./FontSize/FontSize"
 import { blockTypeToBlockName } from "./ToolbarPlugin.const"
+import { getIsPureBlockType } from "./ToolbarPlugin.helpers"
 import styles from "./ToolbarPlugin.module.scss"
 
 export const ToolbarPlugin = () => {
@@ -130,6 +131,8 @@ export const ToolbarPlugin = () => {
           const parentList = $getNearestNodeOfType<ListNode>(anchorNode, ListNode)
           const type = parentList ? parentList.getListType() : element.getListType()
           setBlockType(type)
+        } else if (!getIsPureBlockType(selection)) {
+          setBlockType("custom")
         } else {
           const type = $isHeadingNode(element) ? element.getTag() : element.getType()
           if (type in blockTypeToBlockName) {
