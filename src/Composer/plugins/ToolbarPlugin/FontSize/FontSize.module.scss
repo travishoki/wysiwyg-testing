@@ -1,0 +1,72 @@
+.add-icon {
+  background-image: url(../../../../shared/icons/basic/plus-compact.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.minus-icon {
+  background-image: url(../../../../shared/icons/basic/minus-compact.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.font-decrement {
+  margin-right: 3px;
+  padding: 0px;
+}
+
+.font-increment {
+  margin-left: 3px;
+  padding: 0px;
+}
+
+.toolbar-item {
+  border: 0;
+  display: flex;
+  background: none;
+  border-radius: 10px;
+  cursor: pointer;
+  vertical-align: middle;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover:not([disabled]) {
+    background-color: #eee;
+  }
+}
+
+.font-size-input {
+  border-color: grey;
+  border-radius: 5px;
+  border-style: inset;
+  border-width: 2px;
+  color: #777;
+  font-size: 14px;
+  font-weight: bold;
+  height: 32px;
+  margin: 0;
+  padding: 2px 4px;
+  text-align: center;
+  width: 29px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  & {
+    -moz-appearance: textfield;
+  }
+}
+
+.format {
+  background-size: contain;
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  vertical-align: -0.25em;
+  display: flex;
+  opacity: 0.6;
+}

@@ -10,7 +10,7 @@ import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
 import stylesIcon from "../../../ui/Icon/Icon.module.scss"
 import { dropDownActiveClass } from "../ToolbarPlugin.helpers"
 import stylesToolbar from "../ToolbarPlugin.module.scss"
-import { FONT_FAMILY_OPTIONS, FONT_SIZE_OPTIONS } from "./FontDropDown.const"
+import { FONT_FAMILY_OPTIONS } from "./FontDropDown.const"
 import styles from "./FontDropDown.module.scss"
 
 type FontDropDownProps = {
@@ -46,14 +46,9 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
     [editor, styleName],
   )
 
-  const buttonAriaLabel =
-    styleName === "font-family"
-      ? t("Formatting options for font family")
-      : t("Formatting options for font size")
-
   return (
     <DropDown
-      buttonAriaLabel={buttonAriaLabel}
+      buttonAriaLabel={t("Formatting options for font family")}
       buttonClassName={classNames(stylesToolbar.toolbarItem, styleName)}
       buttonIconClassName={
         styleName === "font-family" ? classNames(stylesToolbar.icon, stylesIcon["font-family"]) : ""
@@ -62,28 +57,26 @@ export const FontDropDown = ({ disabled = false, editor, styleName, value }: Fon
       disabled={disabled}
       hideLabelOnMobile={styleName === "font-family"}
     >
-      {(styleName === "font-family" ? FONT_FAMILY_OPTIONS : FONT_SIZE_OPTIONS).map(
-        ([option, text]) => (
-          <DropDownItem
-            key={option}
+      {FONT_FAMILY_OPTIONS.map(([option, text]) => (
+        <DropDownItem
+          key={option}
+          className={classNames(
+            stylesDropdown.dropdownItem,
+            dropDownActiveClass(value === option),
+            `${styleName === "font-size" ? styles.fontsizeItem : ""}`,
+          )}
+          onClick={() => handleClick(option)}
+        >
+          <span
             className={classNames(
-              stylesDropdown.dropdownItem,
-              dropDownActiveClass(value === option),
-              `${styleName === "font-size" ? styles.fontsizeItem : ""}`,
+              stylesDropdown.dropdownText,
+              `${styleName === "font-size" ? styles.fontsizeItemText : ""}`,
             )}
-            onClick={() => handleClick(option)}
           >
-            <span
-              className={classNames(
-                stylesDropdown.dropdownText,
-                `${styleName === "font-size" ? styles.fontsizeItemText : ""}`,
-              )}
-            >
-              {text}
-            </span>
-          </DropDownItem>
-        ),
-      )}
+            {text}
+          </span>
+        </DropDownItem>
+      ))}
     </DropDown>
   )
 }

@@ -60,6 +60,7 @@ import { DropDownTextAlignment } from "./DropDownTextAlignment/DropDownTextAlign
 import { DropdownInsert } from "./DropdownInsert/DropdownInsert"
 import { DropdownTextStyle } from "./DropdownTextStyle/DropdownTextStyle"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
+import { FontSize } from "./FontSize/FontSize"
 import { blockTypeToBlockName } from "./ToolbarPlugin.const"
 import styles from "./ToolbarPlugin.module.scss"
 
@@ -329,7 +330,7 @@ export const ToolbarPlugin = () => {
         styleName="font-family"
         value={fontFamily}
       />
-      <FontDropDown disabled={!isEditable} editor={editor} styleName="font-size" value={fontSize} />
+      <FontSize disabled={!isEditable} editor={editor} selectionFontSize={fontSize.slice(0, -2)} />
       <Divider />
       <ButtonBold
         isActive={isBold}
