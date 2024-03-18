@@ -168,7 +168,7 @@ export const DropDownBlockFormat = ({
         onClick={formatParagraph}
       >
         <IconDropdown type="paragraph" />
-        <span className={stylesDropdown.dropdownText}>{t("Normal")}</span>
+        <span className={stylesDropdown.dropdownText}>{t("Paragraph")}</span>
       </DropDownItem>
       <DropDownItem
         className={classNames(stylesDropdown.dropdownItem, dropDownActiveClass(blockType === "h1"))}
