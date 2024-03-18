@@ -45,7 +45,7 @@ export const FontSize = ({ disabled, editor, selectionFontSize }: FontSizeProps)
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const inputValueNumber = Number(inputValue)
 
-    if (["e", "E", "+", "-"].includes(e.key) || isNaN(inputValueNumber)) {
+    if (["e", "E", "+", "-"].includes(e.key) || Number.isNaN(inputValueNumber)) {
       e.preventDefault()
       setInputValue("")
 
