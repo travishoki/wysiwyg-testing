@@ -317,11 +317,6 @@ export const ToolbarPlugin = () => {
     }
   }, [editor, isLink])
 
-  const formatText = (format: TextFormatType) => {
-    formatParagraph()
-    activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, format)
-  }
-
   const updateFontSize = useCallback(
     (option: string) => {
       editor.update(() => {
@@ -364,8 +359,32 @@ export const ToolbarPlugin = () => {
     })
   }, [editor])
 
+  const styleText = useCallback(
+    (format: TextFormatType) => {
+      formatParagraph()
+      activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, format)
+    },
+    [activeEditor, formatParagraph],
+  )
+
+  const resetFontStyling = useCallback(() => {
+    if (isBold) {
+      styleText("bold")
+    }
+
+    if (isItalic) {
+      styleText("italic")
+    }
+
+    if (isUnderline) {
+      styleText("underline")
+    }
+  }, [isUnderline, isItalic, isBold, styleText])
+
   const formatHeading = useCallback(
     (headingSize: HeadingTagType) => {
+      resetFontStyling()
+
       // Set font size
       switch (headingSize) {
         case "h1":
@@ -399,7 +418,7 @@ export const ToolbarPlugin = () => {
         })
       }
     },
-    [blockType, editor, updateFontSize],
+    [blockType, editor, resetFontStyling, updateFontSize],
   )
 
   useEffect(() => {
@@ -464,21 +483,21 @@ export const ToolbarPlugin = () => {
         isActive={isBold}
         isEditable={isEditable}
         onClick={() => {
-          formatText("bold")
+          styleText("bold")
         }}
       />
       <ButtonItalic
         isActive={isItalic}
         isEditable={isEditable}
         onClick={() => {
-          formatText("italic")
+          styleText("italic")
         }}
       />
       <ButtonUnderline
         isActive={isUnderline}
         isEditable={isEditable}
         onClick={() => {
-          formatText("underline")
+          styleText("underline")
         }}
       />
       <ButtonLink isActive={isLink} isEditable={isEditable} onClick={insertLink} />
