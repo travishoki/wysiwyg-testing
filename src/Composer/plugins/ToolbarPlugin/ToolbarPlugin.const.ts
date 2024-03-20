@@ -1,3 +1,4 @@
+import { HeadingTagType } from "@lexical/rich-text"
 import { createCommand, LexicalCommand } from "lexical"
 
 export const blockTypeToBlockName = {
@@ -15,5 +16,5 @@ export const blockTypeToBlockName = {
   quote: "Quote",
 }
 
+export const TOOLBAR_FORMAT_HEADING_COMMAND: LexicalCommand<HeadingTagType> = createCommand()
 export const TOOLBAR_FORMAT_PARAGRAPH_COMMAND: LexicalCommand<null> = createCommand()
-export const TOOLBAR_UPDATE_SIZE_COMMAND: LexicalCommand<string> = createCommand()

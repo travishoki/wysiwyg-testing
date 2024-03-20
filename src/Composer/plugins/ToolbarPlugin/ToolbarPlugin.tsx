@@ -11,7 +11,12 @@ import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link"
 import { $isListNode, ListNode } from "@lexical/list"
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
 import { $isDecoratorBlockNode } from "@lexical/react/LexicalDecoratorBlockNode"
-import { $isHeadingNode, $isQuoteNode } from "@lexical/rich-text"
+import {
+  $createHeadingNode,
+  $isHeadingNode,
+  $isQuoteNode,
+  HeadingTagType,
+} from "@lexical/rich-text"
 import {
   $getSelectionStyleValueForProperty,
   $isParentElementRTL,
@@ -66,8 +71,8 @@ import { DropdownTextStyle } from "./DropdownTextStyle/DropdownTextStyle"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
 import { FontSize } from "./FontSize/FontSize"
 import {
+  TOOLBAR_FORMAT_HEADING_COMMAND,
   TOOLBAR_FORMAT_PARAGRAPH_COMMAND,
-  TOOLBAR_UPDATE_SIZE_COMMAND,
   blockTypeToBlockName,
 } from "./ToolbarPlugin.const"
 import styles from "./ToolbarPlugin.module.scss"
@@ -356,6 +361,44 @@ export const ToolbarPlugin = () => {
     })
   }, [editor])
 
+  const formatHeading = useCallback(
+    (headingSize: HeadingTagType) => {
+      // Set font size
+      switch (headingSize) {
+        case "h1":
+          updateFontSize("24px")
+          break
+        case "h2":
+          updateFontSize("15px")
+          break
+        case "h3":
+          updateFontSize("13px")
+          break
+        default:
+      }
+
+      if (blockType !== headingSize) {
+        editor.update(() => {
+          const selection = $getSelection()
+
+          // Style MergeFields
+          selection?.getNodes().forEach((node) => {
+            if ($isMergeFieldNode(node)) {
+              node.setTag(headingSize)
+              node.setFormat(0)
+            }
+          })
+
+          // Style TextNode
+          if ($isRangeSelection(selection) || $isGridSelection(selection)) {
+            $setBlocksType(selection, () => $createHeadingNode(headingSize))
+          }
+        })
+      }
+    },
+    [blockType, editor, updateFontSize],
+  )
+
   useEffect(() => {
     const unregister = mergeRegister(
       editor.registerCommand(
@@ -368,9 +411,9 @@ export const ToolbarPlugin = () => {
         COMMAND_PRIORITY_LOW,
       ),
       editor.registerCommand(
-        TOOLBAR_UPDATE_SIZE_COMMAND,
-        (newFontSize) => {
-          updateFontSize(newFontSize)
+        TOOLBAR_FORMAT_HEADING_COMMAND,
+        (headingSize) => {
+          formatHeading(headingSize)
 
           return false
         },
@@ -381,7 +424,7 @@ export const ToolbarPlugin = () => {
     return () => {
       unregister()
     }
-  }, [editor, formatParagraph, updateFontSize])
+  }, [editor, formatHeading, formatParagraph, updateFontSize])
 
   return (
     <div className={styles.toolbar}>

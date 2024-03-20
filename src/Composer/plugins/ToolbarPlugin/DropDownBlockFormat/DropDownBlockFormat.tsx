@@ -5,7 +5,7 @@ import {
   INSERT_UNORDERED_LIST_COMMAND,
   REMOVE_LIST_COMMAND,
 } from "@lexical/list"
-import { $createHeadingNode, $createQuoteNode, HeadingTagType } from "@lexical/rich-text"
+import { $createQuoteNode, HeadingTagType } from "@lexical/rich-text"
 import { $setBlocksType } from "@lexical/selection"
 import classNames from "classnames"
 import {
@@ -15,15 +15,14 @@ import {
   LexicalEditor,
 } from "lexical"
 import { useTranslation } from "src/i18n"
-import { $isMergeFieldNode } from "../../../nodes/MergeField/MergeFieldNode"
 import { DropDown } from "../../../ui/DropDown/DropDown"
 import stylesDropdown from "../../../ui/DropDown/DropDown.module.scss"
 import { DropDownItem } from "../../../ui/DropDown/DropDownItem/DropDownItem"
 import { IconDropdown } from "../../../ui/DropDown/IconDropdown/IconDropdown"
 import styleIcon from "../../../ui/Icon/Icon.module.scss"
 import {
+  TOOLBAR_FORMAT_HEADING_COMMAND,
   TOOLBAR_FORMAT_PARAGRAPH_COMMAND,
-  TOOLBAR_UPDATE_SIZE_COMMAND,
   blockTypeToBlockName,
 } from "../ToolbarPlugin.const"
 import { dropDownActiveClass } from "../ToolbarPlugin.helpers"
@@ -44,42 +43,10 @@ export const DropDownBlockFormat = ({
 
   const formatParagraph = () => {
     editor.dispatchCommand(TOOLBAR_FORMAT_PARAGRAPH_COMMAND, null)
-    editor.dispatchCommand(TOOLBAR_UPDATE_SIZE_COMMAND, "15px")
   }
 
   const formatHeading = (headingSize: HeadingTagType) => {
-    // Set font size
-    switch (headingSize) {
-      case "h1":
-        editor.dispatchCommand(TOOLBAR_UPDATE_SIZE_COMMAND, "24px")
-        break
-      case "h2":
-        editor.dispatchCommand(TOOLBAR_UPDATE_SIZE_COMMAND, "15px")
-        break
-      case "h3":
-        editor.dispatchCommand(TOOLBAR_UPDATE_SIZE_COMMAND, "13px")
-        break
-      default:
-    }
-
-    if (blockType !== headingSize) {
-      editor.update(() => {
-        const selection = $getSelection()
-
-        // Style MergeFields
-        selection?.getNodes().forEach((node) => {
-          if ($isMergeFieldNode(node)) {
-            node.setTag(headingSize)
-            node.setFormat(0)
-          }
-        })
-
-        // Style TextNode
-        if ($isRangeSelection(selection) || $isGridSelection(selection)) {
-          $setBlocksType(selection, () => $createHeadingNode(headingSize))
-        }
-      })
-    }
+    editor.dispatchCommand(TOOLBAR_FORMAT_HEADING_COMMAND, headingSize)
   }
 
   const formatBulletList = () => {
