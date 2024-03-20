@@ -368,17 +368,9 @@ export const ToolbarPlugin = () => {
   )
 
   const resetFontStyling = useCallback(() => {
-    if (isBold) {
-      styleText("bold")
-    }
-
-    if (isItalic) {
-      styleText("italic")
-    }
-
-    if (isUnderline) {
-      styleText("underline")
-    }
+    if (isBold) styleText("bold")
+    if (isItalic) styleText("italic")
+    if (isUnderline) styleText("underline")
   }, [isUnderline, isItalic, isBold, styleText])
 
   const formatHeading = useCallback(
