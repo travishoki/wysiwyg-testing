@@ -373,8 +373,8 @@ export const ToolbarPlugin = () => {
   }, [editor])
 
   const onHandleStyleChange = (format: TextFormatType) => {
-    styleText(format)
     formatParagraph()
+    styleText(format)
   }
 
   const formatHeading = useCallback(
