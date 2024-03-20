@@ -340,6 +340,19 @@ export const ToolbarPlugin = () => {
     [editor],
   )
 
+  const styleText = useCallback(
+    (format: TextFormatType) => {
+      activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, format)
+    },
+    [activeEditor],
+  )
+
+  const resetFontStyling = useCallback(() => {
+    if (isBold) styleText("bold")
+    if (isItalic) styleText("italic")
+    if (isUnderline) styleText("underline")
+  }, [isUnderline, isItalic, isBold, styleText])
+
   const formatParagraph = useCallback(() => {
     editor.update(() => {
       const selection = $getSelection()
@@ -359,24 +372,13 @@ export const ToolbarPlugin = () => {
     })
   }, [editor])
 
-  const styleText = useCallback(
-    (format: TextFormatType) => {
-      formatParagraph()
-      activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, format)
-    },
-    [activeEditor, formatParagraph],
-  )
-
-  const resetFontStyling = useCallback(() => {
-    if (isBold) styleText("bold")
-    if (isItalic) styleText("italic")
-    if (isUnderline) styleText("underline")
-  }, [isUnderline, isItalic, isBold, styleText])
+  const onHandleStyleChange = (format: TextFormatType) => {
+    styleText(format)
+    formatParagraph()
+  }
 
   const formatHeading = useCallback(
     (headingSize: HeadingTagType) => {
-      resetFontStyling()
-
       // Set font size
       switch (headingSize) {
         case "h1":
@@ -410,7 +412,7 @@ export const ToolbarPlugin = () => {
         })
       }
     },
-    [blockType, editor, resetFontStyling, updateFontSize],
+    [blockType, editor, updateFontSize],
   )
 
   useEffect(() => {
@@ -418,6 +420,7 @@ export const ToolbarPlugin = () => {
       editor.registerCommand(
         TOOLBAR_FORMAT_PARAGRAPH_COMMAND,
         () => {
+          resetFontStyling()
           formatParagraph()
 
           return false
@@ -427,6 +430,7 @@ export const ToolbarPlugin = () => {
       editor.registerCommand(
         TOOLBAR_FORMAT_HEADING_COMMAND,
         (headingSize) => {
+          resetFontStyling()
           formatHeading(headingSize)
 
           return false
@@ -438,7 +442,7 @@ export const ToolbarPlugin = () => {
     return () => {
       unregister()
     }
-  }, [editor, formatHeading, formatParagraph, updateFontSize])
+  }, [editor, formatHeading, formatParagraph, resetFontStyling, updateFontSize])
 
   return (
     <div className={styles.toolbar}>
@@ -475,21 +479,21 @@ export const ToolbarPlugin = () => {
         isActive={isBold}
         isEditable={isEditable}
         onClick={() => {
-          styleText("bold")
+          onHandleStyleChange("bold")
         }}
       />
       <ButtonItalic
         isActive={isItalic}
         isEditable={isEditable}
         onClick={() => {
-          styleText("italic")
+          onHandleStyleChange("italic")
         }}
       />
       <ButtonUnderline
         isActive={isUnderline}
         isEditable={isEditable}
         onClick={() => {
-          styleText("underline")
+          onHandleStyleChange("underline")
         }}
       />
       <ButtonLink isActive={isLink} isEditable={isEditable} onClick={insertLink} />
