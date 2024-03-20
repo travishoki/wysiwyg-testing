@@ -1,3 +1,5 @@
+import { createCommand, LexicalCommand } from "lexical"
+
 export const blockTypeToBlockName = {
   bullet: "Bulleted List",
   check: "Check List",
@@ -12,3 +14,6 @@ export const blockTypeToBlockName = {
   paragraph: "Paragraph",
   quote: "Quote",
 }
+
+export const TOOLBAR_FORMAT_PARAGRAPH_COMMAND: LexicalCommand<null> = createCommand()
+export const TOOLBAR_UPDATE_SIZE_COMMAND: LexicalCommand<string> = createCommand()

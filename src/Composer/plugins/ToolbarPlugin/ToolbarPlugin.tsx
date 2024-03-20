@@ -16,6 +16,7 @@ import {
   $getSelectionStyleValueForProperty,
   $isParentElementRTL,
   $patchStyleText,
+  $setBlocksType,
 } from "@lexical/selection"
 import {
   $findMatchingParent,
@@ -33,7 +34,9 @@ import {
   CAN_REDO_COMMAND,
   CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_CRITICAL,
+  COMMAND_PRIORITY_LOW,
   COMMAND_PRIORITY_NORMAL,
+  DEPRECATED_$isGridSelection as $isGridSelection,
   FORMAT_TEXT_COMMAND,
   KEY_MODIFIER_COMMAND,
   REDO_COMMAND,
@@ -62,8 +65,11 @@ import { DropdownInsert } from "./DropdownInsert/DropdownInsert"
 import { DropdownTextStyle } from "./DropdownTextStyle/DropdownTextStyle"
 import { FontDropDown } from "./FontDropDown/FontDropDown"
 import { FontSize } from "./FontSize/FontSize"
-import { blockTypeToBlockName } from "./ToolbarPlugin.const"
-import { getIsPureBlockType } from "./ToolbarPlugin.helpers"
+import {
+  TOOLBAR_FORMAT_PARAGRAPH_COMMAND,
+  TOOLBAR_UPDATE_SIZE_COMMAND,
+  blockTypeToBlockName,
+} from "./ToolbarPlugin.const"
 import styles from "./ToolbarPlugin.module.scss"
 
 export const ToolbarPlugin = () => {
@@ -132,8 +138,6 @@ export const ToolbarPlugin = () => {
           const parentList = $getNearestNodeOfType<ListNode>(anchorNode, ListNode)
           const type = parentList ? parentList.getListType() : element.getListType()
           setBlockType(type)
-        } else if (!getIsPureBlockType(selection)) {
-          setBlockType("custom")
         } else {
           const type = $isHeadingNode(element) ? element.getTag() : element.getType()
           if (type in blockTypeToBlockName) {
@@ -307,7 +311,77 @@ export const ToolbarPlugin = () => {
 
   const formatText = (format: TextFormatType) => {
     activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, format)
+    formatParagraph()
   }
+
+  const updateFontSize = useCallback(
+    (option: string) => {
+      editor.update(() => {
+        const selection = $getSelection()
+
+        // Style MergeFields
+        selection?.getNodes().forEach((node) => {
+          if ($isMergeFieldNode(node)) {
+            node.setStyleValue("font-size", option)
+          }
+        })
+
+        // Style TextNode
+        if ($isRangeSelection(selection)) {
+          $patchStyleText(selection, {
+            "font-size": option,
+          })
+        }
+      })
+    },
+    [editor],
+  )
+
+  const formatParagraph = useCallback(() => {
+    editor.update(() => {
+      const selection = $getSelection()
+
+      // Style MergeFields
+      selection?.getNodes().forEach((node) => {
+        if ($isMergeFieldNode(node)) {
+          node.setTag("")
+          node.setFormat(0)
+        }
+      })
+
+      // Style TextNode
+      if ($isRangeSelection(selection) || $isGridSelection(selection)) {
+        $setBlocksType(selection, () => $createParagraphNode())
+      }
+    })
+  }, [editor])
+
+  useEffect(() => {
+    const unregister = mergeRegister(
+      editor.registerCommand(
+        TOOLBAR_FORMAT_PARAGRAPH_COMMAND,
+        () => {
+          formatParagraph()
+
+          return false
+        },
+        COMMAND_PRIORITY_LOW,
+      ),
+      editor.registerCommand(
+        TOOLBAR_UPDATE_SIZE_COMMAND,
+        (newFontSize) => {
+          updateFontSize(newFontSize)
+
+          return false
+        },
+        COMMAND_PRIORITY_LOW,
+      ),
+    )
+
+    return () => {
+      unregister()
+    }
+  }, [editor, formatParagraph, updateFontSize])
 
   return (
     <div className={styles.toolbar}>
