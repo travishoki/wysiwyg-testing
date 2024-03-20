@@ -38,6 +38,7 @@ import {
   KEY_MODIFIER_COMMAND,
   REDO_COMMAND,
   SELECTION_CHANGE_COMMAND,
+  TextFormatType,
   UNDO_COMMAND,
 } from "lexical"
 import { useTranslation } from "src/i18n"
@@ -304,6 +305,10 @@ export const ToolbarPlugin = () => {
     }
   }, [editor, isLink])
 
+  const formatText = (format: TextFormatType) => {
+    activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, format)
+  }
+
   return (
     <div className={styles.toolbar}>
       <ButtonUndo
@@ -339,21 +344,21 @@ export const ToolbarPlugin = () => {
         isActive={isBold}
         isEditable={isEditable}
         onClick={() => {
-          activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")
+          formatText("bold")
         }}
       />
       <ButtonItalic
         isActive={isItalic}
         isEditable={isEditable}
         onClick={() => {
-          activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic")
+          formatText("italic")
         }}
       />
       <ButtonUnderline
         isActive={isUnderline}
         isEditable={isEditable}
         onClick={() => {
-          activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "underline")
+          formatText("underline")
         }}
       />
       <ButtonLink isActive={isLink} isEditable={isEditable} onClick={insertLink} />
