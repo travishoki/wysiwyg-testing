@@ -310,8 +310,8 @@ export const ToolbarPlugin = () => {
   }, [editor, isLink])
 
   const formatText = (format: TextFormatType) => {
-    activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, format)
     formatParagraph()
+    activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, format)
   }
 
   const updateFontSize = useCallback(
